@@ -254,8 +254,12 @@
           "symbol": "USDTUSD",
           "quote_basis": "USD",
           "data_type": "KLINE_1M",
-          "source": "binance_us_public_history",
-          "status": "UNVERIFIED_SOURCE"
+          "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+          "status": "OBSERVED_LOCAL",
+          "observed_range_utc": [
+            "2022-10-01",
+            "2022-11-30"
+          ]
         },
         {
           "venue": "binance",
@@ -504,8 +508,12 @@
           "symbol": "USDTUSD",
           "quote_basis": "USD",
           "data_type": "KLINE_1M",
-          "source": "binance_us_public_history",
-          "status": "UNVERIFIED_SOURCE"
+          "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+          "status": "OBSERVED_LOCAL",
+          "observed_range_utc": [
+            "2023-05-01",
+            "2023-06-30"
+          ]
         }
       ],
       "notes": "Reported magnitude (30-50 bps) is below R1. It is expected to be a negative case and is kept so that the selection is not one-sided; it is not rejected until measured."

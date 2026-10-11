@@ -242,7 +242,8 @@ def run_from_spec(event: Mapping[str, Any], spec: Mapping[str, Any],
             q_prefix = f"{qs['venue']}_{qs['symbol'].lower()}".replace("-", "_")
             quote, qprov = load_binance_months(Path(qs["path"]), qs["symbol"], q_prefix)
             qprov = {**qprov, "venue": qs["venue"]}
-        wedge, wprov = binance_triangle(path, spec["triangle_coin"]) if spec.get("triangle_coin") else (None, None)
+        wedge, wprov = (binance_triangle(path, spec["triangle_coin"], spec.get("triangle_quote", "USDT"))
+                        if spec.get("triangle_coin") else (None, None))
         btc_prefix = "binance_" + spec["btc"].lower() if spec.get("btc") else None
         btc = load_binance_months(path, spec["btc"], btc_prefix)[0][btc_prefix + "_close"] if btc_prefix else None
     else:

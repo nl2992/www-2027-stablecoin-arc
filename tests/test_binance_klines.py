@@ -90,3 +90,17 @@ def test_zip_reader_checksum_and_manifest(tmp_path):
     checksum.write_text(f"{digest}  OTHER.zip\n")
     with pytest.raises(ValueError, match="names"):
         verify_checksum(archive, checksum)
+
+
+def test_binance_us_11_column_header_layout_parses_to_the_same_frame():
+    header = ("open_time,open,high,low,close,volume,close_time,quote_volume,count,"
+              "taker_buy_base_volume,taker_buy_quote_volume")
+    rows = [f"{t},1.0,1.001,0.999,1.0,10.0,{t + 59_999},10.0,5,1,1" for t in (T0_MS, T0_MS + 60_000)]
+    us = parse_kline_csv(header + "\n" + "\n".join(rows) + "\n")
+    com = parse_kline_csv(csv([T0_MS, T0_MS + 60_000]))
+    assert us.layout == "binance_us_11col_header" and com.layout == "binance_com_12col_noheader"
+    assert us.frame.index.equals(com.frame.index)
+    assert (us.frame[["open", "high", "low", "close", "volume", "trades"]] ==
+            com.frame[["open", "high", "low", "close", "volume", "trades"]]).all().all()
+    with pytest.raises(ValueError, match="unrecognised"):
+        parse_kline_csv(header.replace("count", "n") + "\n" + rows[0] + "\n")

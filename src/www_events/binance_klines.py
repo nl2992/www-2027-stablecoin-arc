@@ -24,6 +24,10 @@ KLINE_COLUMNS = [
     "quote_volume", "trades", "taker_buy_base_volume", "taker_buy_quote_volume", "ignore",
 ]
 PRICE_COLUMNS = ["open", "high", "low", "close"]
+# Binance.US public archives (observed 2026-10-11 on the first acquired files): a header row and 11 columns,
+# i.e. the Binance.com schema without the trailing "ignore" field and with "count" for the trade count.
+BINANCE_US_HEADER = ["open_time", "open", "high", "low", "close", "volume", "close_time", "quote_volume", "count",
+                     "taker_buy_base_volume", "taker_buy_quote_volume"]
 
 
 def sha256_file(path: Path) -> str:
@@ -64,15 +68,30 @@ class KlineFile:
     rows: int
     duplicates_dropped: int
     issues: tuple[str, ...]
+    layout: str = "binance_com_12col_noheader"
 
 
 def parse_kline_csv(text: str, *, interval_minutes: int = 1) -> KlineFile:
-    raw = pd.read_csv(io.StringIO(text), header=None)
-    if raw.shape[1] != len(KLINE_COLUMNS):
-        raise ValueError(f"expected {len(KLINE_COLUMNS)} columns, got {raw.shape[1]}")
-    if not np.issubdtype(raw[0].dtype, np.integer):
-        raise ValueError("first column must be integer open times (unexpected header row?)")
-    raw.columns = KLINE_COLUMNS
+    first_line = text.split("\n", 1)[0].strip()
+    if first_line.startswith("open_time"):
+        header = first_line.split(",")
+        if header != BINANCE_US_HEADER:
+            raise ValueError(f"unrecognised kline header: {header}")
+        raw = pd.read_csv(io.StringIO(text))
+        if not np.issubdtype(raw["open_time"].dtype, np.integer):
+            raise ValueError("open_time must be integer")
+        raw = raw.rename(columns={"count": "trades"})
+        raw["ignore"] = 0
+        raw = raw[KLINE_COLUMNS]
+        layout = "binance_us_11col_header"
+    else:
+        raw = pd.read_csv(io.StringIO(text), header=None)
+        if raw.shape[1] != len(KLINE_COLUMNS):
+            raise ValueError(f"expected {len(KLINE_COLUMNS)} columns, got {raw.shape[1]}")
+        if not np.issubdtype(raw[0].dtype, np.integer):
+            raise ValueError("first column must be integer open times (unexpected header row?)")
+        raw.columns = KLINE_COLUMNS
+        layout = "binance_com_12col_noheader"
     unit = infer_time_unit(raw["open_time"].to_numpy())
     times = pd.to_datetime(raw["open_time"], unit=unit, utc=True)
     issues: list[str] = []
@@ -97,7 +116,7 @@ def parse_kline_csv(text: str, *, interval_minutes: int = 1) -> KlineFile:
         frame["low"] > frame[["open", "close", "high"]].min(axis=1))
     if inconsistent.any():
         raise ValueError(f"{int(inconsistent.sum())} rows violate low <= open/close <= high")
-    return KlineFile(frame, unit, len(raw), int(duplicated.sum()), tuple(issues))
+    return KlineFile(frame, unit, len(raw), int(duplicated.sum()), tuple(issues), layout)
 
 
 def read_kline_zip(archive: Path, *, interval_minutes: int = 1) -> KlineFile:

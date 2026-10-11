@@ -1,5 +1,5 @@
 {
-  "note": "Run specs for python -m www_events.batch. Runs whose data path is absent are skipped with a reason. Binance archives belong in data/raw/binance (git-ignored) and need explicit download authorization. Without a USD reference leg, Binance runs are USDT-relative, so they can reach DATA_VERIFIED but never ACCEPTED. Binance runs reference a Binance.US USDTUSD leg (data/raw/binance_us) per docs/e2_usd_reference_design.md; they are skipped until both archives exist.",
+  "note": "Run specs for python -m www_events.batch. Runs whose data path is absent are skipped with a reason. Binance archives belong in data/raw/binance (git-ignored) and need explicit download authorization. Without a USD reference leg, Binance runs are USDT-relative, so they can reach DATA_VERIFIED but never ACCEPTED. Binance runs reference a Binance.US USDTUSD leg (data/raw/binance_us) per docs/e2_usd_reference_design.md; archives acquired 2026-10-11 under user authorization (see reports/events/acquisition_manifest.json).",
   "runs": [
     {
       "event_id": "E2023-03-USDC-SVB",
@@ -78,6 +78,28 @@
         "path": "data/raw/binance_us",
         "symbol": "USDTUSD"
       }
+    },
+    {
+      "event_id": "E2022-11-USDT-FTX",
+      "source": "binance",
+      "path": "data/raw/binance_us",
+      "stable": "USDTUSD",
+      "quote_basis": "USD",
+      "btc": "BTCUSD",
+      "triangle_coin": "USDT",
+      "triangle_quote": "USD",
+      "venue_note": "Binance.US USD-quoted archive"
+    },
+    {
+      "event_id": "N2023-06-USDT-3POOL",
+      "source": "binance",
+      "path": "data/raw/binance_us",
+      "stable": "USDTUSD",
+      "quote_basis": "USD",
+      "btc": "BTCUSD",
+      "triangle_coin": "USDT",
+      "triangle_quote": "USD",
+      "venue_note": "Binance.US USD-quoted archive"
     }
   ]
 }
