@@ -148,3 +148,22 @@ UST remains EXPLORATORY (user decision, 2026-10-11).
 - These are single pre-event blocks, not intra-event paths.
 
 **No capacity has been computed.** The contract registry marks these three contracts LIVE_VERIFIED, with block-level evidence.
+
+## 13. Swap cross-checks and on-chain capacity (user-approved; definition committed first at `15083b5`)
+
+**Swap cross-checks** (`uv run python -m www_c2.archive_checks`; `reports/c2/archive_checks.json`): get_dy at the block before a clean historical swap equals the amount actually received.
+
+| Pool | Swap | Result |
+|---|---|---|
+| 3pool, SVB | block 16,794,068 | difference 0 |
+| 3pool, June 2023 | block 17,481,613 | difference 0 |
+| Wormhole-UST/3CRV | underlying swap, block 14,726,611; EIP-1167 implementation `0x213be373…5bbe` | difference 0 |
+| Legacy UST metapool | underlying swap | 0.08 bps difference; no clean direct swap found, so **excluded** |
+
+**On-chain capacity** (`uv run python -m www_capacity.onchain_path`, 1,953 read-only calls; `reports/c6/onchain_capacity.json`; table `reports/c6/onchain_capacity_summary.md`). Medians at δ = 50 bps, baseline → event:
+- SVB USDC→DAI absorption: 177.4 M → 154.0 M (×0.87); USDC→USDT: 157.5 M → 0.
+- June 2023 USDT→DAI: 132.0 M → 42.5 M (×0.32), with the USDT share of the pool 30% → 67%.
+- UST→3CRV: 379.9 M → 0, with the UST share 51% → 92%; still 0 in recovery.
+- Restoration capacity rose in every case.
+
+**Scope.** On-chain only, par-relative upper bounds. The DAI counterpart is valued at par even though DAI depegged during SVB, which overstates absorption. These are associations, not causal effects, and not CEX–DEX capacity.

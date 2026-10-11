@@ -21,8 +21,9 @@ thousands of basis points while the wedge barely moved (median change \NumAnchor
 \NumFdusdDvFour{} bps for USDC, TUSD and FDUSD): cross-quote arbitrage kept relative prices aligned while the dollar
 value of the token did not hold. The episodes also split into market-wide and issuer-specific stress. Because no
 accepted episode is both confirmatory and in-sample, the pre-registered hypothesis tests are reported as
-insufficient, and all findings are descriptive. Executable restoration capacity is formalised and validated on
-synthetic order books and pool states, but not measured historically.
+insufficient, and all findings are descriptive. Executable restoration capacity is formalised and validated; on-chain
+absorption capacity, measured on swap-validated Curve pools, contracted in every stress episode examined, but exchange
+depth could not be measured, so no CEX--DEX capacity is reported.
 \end{abstract}
 
 \maketitle
@@ -283,11 +284,22 @@ constraints. On-chain legs use integer StableSwap, Uniswap~v2 and single-range U
 primary-market access is modelled by a timezone-aware redemption window. All components are validated against
 hand-computed synthetic cases.
 
-Historical estimation is not possible with the data available to this study. Crisis-day exchange order books are
-offered only under paid licences, which were declined. Historical pool state is now readable through a free archive key, and
-pool states and quotes have been reproduced exactly at event blocks; capacity computation on those states awaits
-independent review. Crisis-day exchange depth remains unavailable, so any capacity reported later will be on-chain
-only and will not represent comprehensive CEX--DEX restoration capacity. No capacity figures are reported.
+\paragraph{On-chain results (descriptive; on-chain only).} For pools whose reproduced state was also validated
+against a real historical swap, we sample state every six hours across each event's windows
+(Table~\ref{tab:onchain}). Absorption capacity fell in all three cases. It reached zero where the pool filled with the
+stressed coin (UST in May 2022; the USDC-to-USDT leg in March 2023), while restoration capacity---the stressed coin
+available to buyers---rose. In June 2023, 3pool absorption fell to about a third of its baseline as the pool
+became USDT-heavy, yet USDT's dollar price on a venue with redeemable dollars never met the severity rule: on-chain
+contraction alone did not produce an exchange-level dislocation. With three pools these are associations, and they
+measure on-chain capacity only.
+
+\input{generated/onchain_capacity_table}
+
+Historical estimation of exchange capacity is not possible with the data available to this study. Crisis-day
+exchange order books are offered only under paid licences, which were declined. Historical pool state is readable through a free archive key; pool states
+and quotes were reproduced exactly at event blocks and validated against real swaps. Crisis-day exchange depth remains
+unavailable, so the capacity reported above is on-chain only and does not represent comprehensive CEX--DEX
+restoration capacity. No exchange capacity figures are reported.
 
 \section{Limitations}
 Four accepted episodes (two exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;

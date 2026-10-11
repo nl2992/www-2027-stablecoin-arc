@@ -50,7 +50,7 @@ def test_labels_resolve_and_pending_sections_are_marked():
     labels = set(re.findall(r"\\label\{([^}]+)\}", MAIN + generated))
     refs = set(re.findall(r"\\ref\{([^}]+)\}", MAIN))
     assert refs <= labels
-    assert "Executable Capacity: Method and Limits" in MAIN and "No capacity figures are reported" in MAIN
+    assert "Executable Capacity: Method and Limits" in MAIN and "No exchange capacity figures are reported" in MAIN
     assert "descriptive" in MAIN.split("\\begin{abstract}")[1].split("\\end{abstract}")[0]
 
 
@@ -100,3 +100,10 @@ def test_mechanism_table_is_current_included_and_labels_the_assumption():
     assert "\\input{generated/mechanism_table}" in MAIN and "emph{assumed}" in table
     assert "NumClosedBaseRate" in MAIN  # the base-rate caveat must accompany the redemption-hours column
     assert "{76}" in OUTPUT.read_text()  # 128 of 168 weekly hours fall outside 9:00-17:00 weekdays
+
+
+def test_onchain_capacity_table_current_included_and_scoped():
+    from www_paper.macros import CAPACITY_TABLE_OUTPUT, build_capacity_table
+    table = CAPACITY_TABLE_OUTPUT.read_text()
+    assert table == build_capacity_table() and "\\input{generated/onchain_capacity_table}" in MAIN
+    assert "ON-CHAIN ONLY" in table and "not CEX--DEX capacity" in table
