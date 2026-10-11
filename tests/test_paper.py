@@ -90,3 +90,13 @@ def test_robustness_table_is_current_and_included():
     from www_paper.macros import ROBUSTNESS_TABLE_OUTPUT, build_robustness_table
     assert ROBUSTNESS_TABLE_OUTPUT.read_text() == build_robustness_table()
     assert "\\input{generated/robustness_table}" in MAIN
+
+
+def test_mechanism_table_is_current_included_and_labels_the_assumption():
+    from www_paper.macros import (MECHANISM_MD_OUTPUT, MECHANISM_TABLE_OUTPUT, build_mechanism_markdown,
+                                  build_mechanism_table)
+    table = MECHANISM_TABLE_OUTPUT.read_text()
+    assert table == build_mechanism_table() and MECHANISM_MD_OUTPUT.read_text() == build_mechanism_markdown()
+    assert "\\input{generated/mechanism_table}" in MAIN and "emph{assumed}" in table
+    assert "NumClosedBaseRate" in MAIN  # the base-rate caveat must accompany the redemption-hours column
+    assert "{76}" in OUTPUT.read_text()  # 128 of 168 weekly hours fall outside 9:00-17:00 weekdays

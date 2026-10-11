@@ -241,6 +241,15 @@ near a unit root for TUSD, and increasing with bin width for FDUSD, so persisten
 
 \input{generated/robustness_table}
 
+\paragraph{Alternative explanations (associations only).} Table~\ref{tab:mechanism} reports the pre-listed covariates.
+The accepted episodes split by market-wide stress: SVB, UST and USDe coincided with BTC volatility two to four times
+its reference level, whereas TUSD and FDUSD occurred at or below reference volatility, consistent with issuer-specific
+rather than market-wide shocks. Extremes fell outside a generic US banking window in most events, but such hours make
+up about \NumClosedBaseRate\% of a week, so this is close to the base rate and is not evidence for a redemption-hours mechanism; the
+window is an assumption, not issuer-documented.
+
+\input{generated/mechanism_table}
+
 \paragraph{Data quality.} Bitstamp's USDT/USD history contains a corrupt print (2,959.99 on 2022-11-08 09:42 UTC,
 carried forward for several minutes). It affects only a robustness run (FTX on Bitstamp); no outlier filter was
 pre-specified, so none is applied, and that robustness result is not interpreted.
