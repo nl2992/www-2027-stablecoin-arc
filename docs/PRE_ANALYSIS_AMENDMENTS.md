@@ -53,3 +53,27 @@ If any precondition fails, the splice is not used and UST is recorded as not acc
 **Classification.** UST's event-window severity (R1 pass, from the USTUSDT segment) had already been measured when A5 was written. A5 only adds recovery-window coverage. UST is therefore labelled **EXPLORATORY (post-hoc eligibility)** and excluded from confirmatory H1 counts. Cross-event summaries are reported both with and without it.
 
 **Data seen.** Seen: listing metadata and minute coverage for USTBUSD (2022-05-01 → 2022-05-26 14:59, including a 361-minute halt ending 2022-05-13 14:30), plus UST's earlier event-window results. **No** USTBUSD-based recovery-window values had been computed.
+
+## A6 — 2026-10-11 (UTC), sections 1–3, systematic in-sample event screen (written **before** any screen data were downloaded or read)
+
+**Purpose.** No accepted confirmatory in-sample event exists. Every in-sample registry candidate came from news selection and was either rejected, made exploratory, or lacks data. A rule-based screen discovers episodes without news selection, and it reports false positives and non-detections too.
+
+**Universe.** Binance.US USD-quoted stablecoin pairs USDCUSD, USDTUSD, DAIUSD and TUSDUSD: every monthly 1-minute archive from the first available month through **2023-05**. That is the period before the A2 USD-rail impairment, entirely before the 2024 out-of-sample boundary. Archives must pass their published checksums. No other venue or pair is screened.
+
+**Detection.**
+1. Apply R1 unchanged to each series: at least 30 traded minutes with \|log deviation\| ≥ 100 bps within a rolling 24 h window.
+2. A detection is a maximal run of breaching minutes belonging to R1-satisfying windows. Detections of the same coin less than 14 days apart are merged (R2).
+3. Episode start and end are the UTC dates of the first and last breaching minute.
+
+**Clustering and matching.**
+- Episodes of different coins that overlap, or start within 14 days of each other, form one cluster. The primary is the coin with the largest \|extreme\|.
+- A cluster overlapping an existing registry event's reported window ±14 days is assigned to that cluster and adds no new episode.
+
+**Eligibility.**
+- New clusters enter the registry as `CANDIDATE` with role `IN_SAMPLE`. R4 still applies: they become `SOURCE_DOCUMENTED` only if at least two independent publishers describe the episode.
+- They are then measured by the unchanged batch protocol on the same Binance.US series. They are **confirmatory-eligible**, because this rule precedes the data.
+- Detections without sources are reported as **unexplained detections** (possible venue-specific dislocations or data defects) and are never accepted.
+
+**Reporting.** All detections, all clusters, months scanned, coverage per month, and non-detections are written to `reports/events/screen_A6.json`.
+
+**Data seen.** Seen: only archive availability (HEAD requests: month ranges per pair). Previously measured on Binance.US: USDCUSD for March 2023 (the anchor panel) and USDTUSD for 2022-04/05, 2022-10/11, 2023-01/02 and 2023-05/06. No screen detection has been computed.
