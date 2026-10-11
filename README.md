@@ -36,4 +36,8 @@ C2 compares historical Binance.US access options, documents Ethereum indexed/arc
 
 ## C3 observed fragmentation
 
-`src/www_c3/` measures FX-corrected USDC and USDT parity wedges, and how persistent they are, on the audited IAQF minute panel. See [`docs/c3_fragmentation.md`](docs/c3_fragmentation.md). These are trade-price measurements, not executable capacity. Task status lives in [`docs/IMPLEMENTATION_TRACKER.md`](docs/IMPLEMENTATION_TRACKER.md).
+`src/www_c3/` measures FX-corrected USDC and USDT parity wedges, and how persistent they are, on the audited IAQF minute panel. See [`docs/c3_fragmentation.md`](docs/c3_fragmentation.md). These are trade-price measurements, not executable capacity. Task status lives in [`docs/RESEARCH_STATE.md`](docs/RESEARCH_STATE.md).
+
+## E1 multi-event design
+
+The study covers multiple events. `configs/event_registry.json` records candidate stablecoin stress episodes from 2020 to 2026 with sources, pre-specified qualification rules (R1–R4), independence clusters, out-of-sample and placebo roles, and a machine-readable coverage matrix. See [`docs/e1_event_registry.md`](docs/e1_event_registry.md). Only the March 2023 anchor is measured so far.
