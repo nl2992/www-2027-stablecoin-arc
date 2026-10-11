@@ -41,3 +41,7 @@ C2 compares historical Binance.US access options, documents Ethereum indexed/arc
 ## E1 multi-event design
 
 The study covers multiple events. `configs/event_registry.json` records candidate stablecoin stress episodes from 2020 to 2026 with sources, pre-specified qualification rules (R1–R4), independence clusters, out-of-sample and placebo roles, and a machine-readable coverage matrix. See [`docs/e1_event_registry.md`](docs/e1_event_registry.md). Only the March 2023 anchor is measured so far.
+
+## Reproduction and review
+
+[`REPRODUCE.md`](REPRODUCE.md) lists every command in order, together with data inputs, hashes and authorization status. [`docs/review_packet_post_c2.md`](docs/review_packet_post_c2.md) is the review packet for all work after C2.

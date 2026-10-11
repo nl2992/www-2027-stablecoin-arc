@@ -25,7 +25,8 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | P1 pre-analysis plan (frozen) + plan DVs + batch + USD-leg design | p1/pre-analysis-plan | 1057fcd | pushed, no PR |
 | C5 event-linked contract registry | c5/event-contracts | 7344b16 | pushed, no PR |
 | M4 multi-event data section | m4/data-section | 8e2cec9 | pushed, no PR |
-| C5b block-pinned validation plan (offline) | c5b/validation-plan | see iteration log | pushed, no PR |
+| C5b block-pinned validation plan (offline) | c5b/validation-plan | a6b77a8 | pushed, no PR |
+| R1 replication guide + post-C2 review packet | r1/replication-package | see iteration log | pushed, no PR |
 
 ## Component status
 
@@ -82,8 +83,7 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 ## Prioritized next tasks
 
 
-1. **Replication package and reviewer packet:** a top-level REPRODUCE.md listing every command in order (tests → C3 → events batch → summary → macros → figures), data inputs with hashes and authorization status, and a consolidated review packet for E1–E2/P1/C4–C5 that mirrors the existing C0–C2 packets.
-2. **Robustness hooks from plan section 7** (R1 at 50/200 bps, 30/60-minute DV2 bins, trimmed event windows) in the runner, with synthetic tests.
+1. **Robustness hooks from plan section 7** (R1 at 50/200 bps, 30/60-minute DV2 bins, trimmed event windows) in the runner, with synthetic tests.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -112,4 +112,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 18 | 11:55 | p1 @ 1057fcd | USD reference design (Binance.US primary, Bitstamp secondary, Kraken bundle tertiary; Coinbase excluded, Kraken REST unusable); cross-venue quote leg in runner/batch | 157 passed |
 | 19 | 12:25 | c5 @ 7344b16 | Event-linked contract registry: wormhole-UST/3CRV (Jump-documented), legacy UST, BUSD, USDe/USDC (UNVERIFIED aggregator) | 158 passed |
 | 20 | 12:55 | m4 @ 8e2cec9 | Multi-event data section; generated coverage appendix table; brace/environment balance test (no TeX available) | 160 passed |
-| 21 | 13:25 | c5b @ (this commit) | Offline block-pinned validation plan: pure-Python keccak (vector-tested), calldata, block search, dry run; 4 pool/event items, 0 network calls | 165 passed |
+| 21 | 13:25 | c5b @ a6b77a8 | Offline block-pinned validation plan: pure-Python keccak (vector-tested), calldata, block search, dry run; 4 pool/event items, 0 network calls | 165 passed |
+| 22 | 13:55 | r1 @ (this commit) | REPRODUCE.md, post-C2 review packet, command/hash consistency tests | 167 passed |
