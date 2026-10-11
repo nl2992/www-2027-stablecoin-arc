@@ -108,3 +108,19 @@ Checked on 2026-10-11 from listing metadata only. These files are listed in `rep
 | USDe 2025 | — | **BTCUSDE not listed**, so DV4/DV5 are undefined on Binance |
 
 `runner.binance_triangle` builds W = log BTC/coin + log coin/USDT − log BTC/USDT. USDT cancels, so W is a valid within-venue measure even when USDT itself is off peg. A minute counts as observed only if all three legs traded in it. Run with `--binance-dir … --triangle-coin TUSD`.
+
+## Batch driver and status rules
+
+`uv run python -m www_events.batch` runs every spec in `configs/event_runs.json` whose data path exists, writes `reports/events/<id>_protocol.json`, updates registry statuses, appends every change to `reports/events/status_log.json`, and rebuilds the cross-event summary. Then run `python -m www_paper.macros` and `python -m www_paper.figures`.
+
+The status rules (`batch.apply_status`) are fixed:
+
+| Condition | New status |
+|---|---|
+| R1 measured on a basis that is not USD-verified (USDT-relative with no USD reference leg) | `DATA_VERIFIED`, never `ACCEPTED` |
+| R1 passes on a USD basis, and the baseline, event and recovery windows are covered | `ACCEPTED` |
+| R1 passes on a USD basis, but window coverage is incomplete | `DATA_VERIFIED` |
+| R1 fails on a USD basis | `REJECTED`, with the breach count recorded as the reason |
+| Event measured before the plan freeze (the anchor) | never re-classified |
+
+**Consequence:** with Binance.com archives alone, which are all USDT-quoted, the UST, TUSD, FDUSD, USDe and BUSD runs can reach at most `DATA_VERIFIED`. For them to be accepted toward the three-episode target, a USD reference leg is needed (USDT/USD on a USD venue), which is open decision 2. Current run: the anchor was re-executed with its results unchanged, and the five Binance events were skipped with `data not acquired`.

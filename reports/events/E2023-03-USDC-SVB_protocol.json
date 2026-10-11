@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2023-03-USDC-SVB",
-  "measured_utc": "2026-10-11T14:15Z",
+  "measured_utc": "2026-10-11T15:15Z",
   "plan": {
     "analysis_status": "EXPLORATORY",
     "confirmatory_eligible": true,
@@ -104,6 +104,10 @@
     "stable": {
       "sha256": "17704ff01a86c3c678c690aeb7b9a9f2a86702bd69bbe5cceaf359c68c6711b3",
       "source": "iaqf_panel"
+    },
+    "triangle": {
+      "source": "iaqf_panel",
+      "triangle": "usdc"
     }
   },
   "r1": {

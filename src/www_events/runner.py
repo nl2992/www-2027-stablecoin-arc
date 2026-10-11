@@ -212,6 +212,43 @@ def binance_triangle(directory: Path, coin: str, quote: str = "USDT") -> tuple[p
     return pd.DataFrame({"wedge_bps": wedge, "observed": observed & wedge.notna()}), prov
 
 
+def run_from_spec(event: Mapping[str, Any], spec: Mapping[str, Any],
+                  freeze_path: Path = Path("configs/plan_freeze.json")) -> dict[str, Any]:
+    """Run the protocol for one event from a run spec (shared by the CLI and the batch driver).
+
+    spec: {"source": "iaqf"|"binance", "path": ..., "stable": ..., "quote_basis": ..., optional "quote_usd",
+    "btc", "triangle" (IAQF), "triangle_coin" (Binance)}.
+    """
+    path = Path(spec["path"])
+    if spec["source"] == "iaqf":
+        stable, prov = load_iaqf(path, spec["stable"])
+        quote, qprov = load_iaqf(path, spec["quote_usd"]) if spec.get("quote_usd") else (None, None)
+        s_prefix, q_prefix = spec["stable"], spec.get("quote_usd")
+        btc = load_iaqf(path, spec["btc"])[0][f"{spec['btc']}_close"] if spec.get("btc") else None
+        wedge, wprov = None, None
+        if spec.get("triangle"):
+            from www_c3.fragmentation import build_wedges
+            w = build_wedges(pd.read_parquet(path))
+            wedge = pd.DataFrame({"wedge_bps": w[f"{spec['triangle']}_wedge_bps"], "observed": w[f"{spec['triangle']}_fresh"]})
+            wprov = {"source": "iaqf_panel", "triangle": spec["triangle"]}
+    elif spec["source"] == "binance":
+        s_prefix = "binance_" + spec["stable"].lower()
+        stable, prov = load_binance_months(path, spec["stable"], s_prefix)
+        q_prefix = "binance_" + spec["quote_usd"].lower() if spec.get("quote_usd") else None
+        quote, qprov = load_binance_months(path, spec["quote_usd"], q_prefix) if spec.get("quote_usd") else (None, None)
+        wedge, wprov = binance_triangle(path, spec["triangle_coin"]) if spec.get("triangle_coin") else (None, None)
+        btc_prefix = "binance_" + spec["btc"].lower() if spec.get("btc") else None
+        btc = load_binance_months(path, spec["btc"], btc_prefix)[0][btc_prefix + "_close"] if btc_prefix else None
+    else:
+        raise ValueError(f"unknown source {spec['source']}")
+    result = run_event(event, stable, s_prefix, spec["quote_basis"], quote, q_prefix, btc, wedge)
+    result["measured_utc"] = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%MZ")
+    result["plan"]["analysis_status"] = analysis_status(event["id"], result["plan"]["confirmatory_eligible"],
+                                                        freeze_path)
+    result["provenance"] = {"stable": prov, "quote_usd": qprov, "triangle": wprov}
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--registry", type=Path, default=Path("configs/event_registry.json"))
@@ -228,29 +265,10 @@ def main() -> None:
     parser.add_argument("--triangle-coin", help="Binance only: coin for BTC/coin, coin/USDT, BTC/USDT triangle")
     args = parser.parse_args()
     event = next(e for e in load_registry(args.registry) if e["id"] == args.event_id)
-    if args.iaqf_panel:
-        stable, prov = load_iaqf(args.iaqf_panel, args.stable)
-        quote, qprov = load_iaqf(args.iaqf_panel, args.quote_usd) if args.quote_usd else (None, None)
-        s_prefix, q_prefix = args.stable, args.quote_usd
-        btc = load_iaqf(args.iaqf_panel, args.btc)[0][f"{args.btc}_close"] if args.btc else None
-        wedge, wprov = None, None
-        if args.triangle:
-            from www_c3.fragmentation import build_wedges
-            w = build_wedges(pd.read_parquet(args.iaqf_panel))
-            wedge = pd.DataFrame({"wedge_bps": w[f"{args.triangle}_wedge_bps"], "observed": w[f"{args.triangle}_fresh"]})
-            wprov = {"source": "iaqf_panel", "triangle": args.triangle}
-    else:
-        s_prefix = "binance_" + args.stable.lower()
-        stable, prov = load_binance_months(args.binance_dir, args.stable, s_prefix)
-        q_prefix = "binance_" + args.quote_usd.lower() if args.quote_usd else None
-        quote, qprov = load_binance_months(args.binance_dir, args.quote_usd, q_prefix) if args.quote_usd else (None, None)
-        wedge, wprov = binance_triangle(args.binance_dir, args.triangle_coin) if args.triangle_coin else (None, None)
-        btc = (load_binance_months(args.binance_dir, args.btc, "binance_" + args.btc.lower())[0]
-               ["binance_" + args.btc.lower() + "_close"] if args.btc else None)
-    result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix, btc, wedge)
-    result["measured_utc"] = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%MZ")
-    result["plan"]["analysis_status"] = analysis_status(event["id"], result["plan"]["confirmatory_eligible"])
-    result["provenance"] = {"stable": prov, "quote_usd": qprov, "triangle": wprov}
+    spec = {"source": "iaqf" if args.iaqf_panel else "binance", "path": args.iaqf_panel or args.binance_dir,
+            "stable": args.stable, "quote_basis": args.quote_basis, "quote_usd": args.quote_usd, "btc": args.btc,
+            "triangle": args.triangle, "triangle_coin": args.triangle_coin}
+    result = run_from_spec(event, spec)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     r1 = result["r1"] or {}

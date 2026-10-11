@@ -54,7 +54,7 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | Item | State |
 |---|---|
 | Paid data / accounts / credentials / provider contact | NOT authorized |
-| Downloading free public data files (Binance data.binance.vision, Binance.US, Coinbase/Kraken public candles) | NOT YET authorized; requested in E1 |
+| Downloading free public data files (Binance data.binance.vision, Binance.US, Coinbase/Kraken public candles) | NOT YET authorized; requested in E1. After authorization: place archives in `data/raw/binance` and run `python -m www_events.batch` |
 | Historical capacity estimation | FORBIDDEN until execution-state data validated **and** separately authorized |
 | Continuity standard for L2 (PROVIDER_NORMALIZED vs NATIVE_SEQUENCE) | open user decision; current default PROVIDER_NORMALIZED |
 
@@ -78,7 +78,8 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 ## Prioritized next tasks
 
 
-1. **Event-batch driver:** one command that runs the protocol for every registry event with available local data (IAQF or Binance archive directory), writes each protocol report with `measured_utc`, updates the registry measurement blocks and statuses by rule (R1 pass + coverage → ACCEPTED/DATA_VERIFIED; R1 fail → REJECTED with reason), and rebuilds summary, macros and figures. Synthetic end-to-end test.
+1. **USD reference leg design (no download):** document candidate public USDT/USD sources per event window (Binance.US public data, Coinbase and Kraken public OHLC endpoints): exact pairs, granularity, history depth, terms, and how they'd plug into the runner's `quote_usd`. Listing and metadata only.
+2. **Ethereum event-specific contracts:** extend the contract registry with UST-3CRV (2022), 3pool (2023), and USDe pools (2025), source-documented only.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -102,4 +103,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 13 | 09:25 | p1 @ 4d90727 | Plan DVs (DV1 bootstrap test, DV3 trailing recovery, gates, covariates) in runner; amendment A1 (DV3 window clipped at extreme); anchor re-run EXPLORATORY | 144 passed |
 | 14 | 09:55 | p1 @ 24f5cb3 | Cross-event summary builder applying frozen decision rules (currently INSUFFICIENT_EVENTS); anchor plan results in paper via macros | 149 passed |
 | 15 | 10:25 | p1 @ 4da93f2 | DV4/DV5 in runner; H2 rule in summary; anchor DV5 ≈ 95 (exploratory) | 152 passed |
-| 16 | 10:55 | p1 @ (this commit) | Binance triangle adapter; triangle-leg listings in coverage matrix (USDe has no BTCUSDE) | 153 passed |
+| 16 | 10:55 | p1 @ 66789db | Binance triangle adapter; triangle-leg listings in coverage matrix (USDe has no BTCUSDE) | 153 passed |
+| 17 | 11:25 | p1 @ (this commit) | Batch driver with rule-based status updates and audit log; run config; anchor re-run unchanged, 5 Binance events skipped (data not acquired) | 156 passed |

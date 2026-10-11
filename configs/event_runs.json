@@ -1,0 +1,17 @@
+{
+  "note": "Run specs for python -m www_events.batch. Runs whose data path is absent are skipped with a reason. Binance archives belong in data/raw/binance (git-ignored) and need explicit download authorization. Without a USD reference leg, Binance runs are USDT-relative, so they can reach DATA_VERIFIED but never ACCEPTED.",
+  "runs": [
+    {"event_id": "E2023-03-USDC-SVB", "source": "iaqf", "path": "../IAQF/IAQF-2026-Submission/data/parquet/panel_1min.parquet",
+     "stable": "bnus_usdcusd", "quote_basis": "USD", "btc": "bnus_btcusd", "triangle": "usdc"},
+    {"event_id": "E2022-05-UST-COLLAPSE", "source": "binance", "path": "data/raw/binance",
+     "stable": "USTUSDT", "quote_basis": "USDT", "btc": "BTCUSDT", "triangle_coin": "UST"},
+    {"event_id": "P2023-02-BUSD-PAXOS-HALT", "source": "binance", "path": "data/raw/binance",
+     "stable": "BUSDUSDT", "quote_basis": "USDT", "btc": "BTCUSDT", "triangle_coin": "BUSD"},
+    {"event_id": "E2024-01-TUSD", "source": "binance", "path": "data/raw/binance",
+     "stable": "TUSDUSDT", "quote_basis": "USDT", "btc": "BTCUSDT", "triangle_coin": "TUSD"},
+    {"event_id": "E2025-04-FDUSD", "source": "binance", "path": "data/raw/binance",
+     "stable": "FDUSDUSDT", "quote_basis": "USDT", "btc": "BTCUSDT", "triangle_coin": "FDUSD"},
+    {"event_id": "E2025-10-USDE-BINANCE", "source": "binance", "path": "data/raw/binance",
+     "stable": "USDEUSDT", "quote_basis": "USDT", "btc": "BTCUSDT"}
+  ]
+}
