@@ -20,6 +20,10 @@
 
 - **Grid and computation.** \(\delta \in \{10, 50, 100\}\) bps. Both quantities are solved by bisection on the integer StableSwap arithmetic (`www_capacity.amm.stableswap_get_dy`), applied to state read at block \(b\): A, fee, balances, decimals, and the virtual price for metapools. They are reported in units of \(s\), which equal USD at par.
 
+## Inclusion rule (added before any computation, after the swap cross-checks)
+
+Only pools whose reproduced state was also validated against a real historical swap enter the capacity computation, per `reports/c2/archive_checks.json`. Included: 3pool (SVB, June 2023) and wormhole-UST/3CRV (UST 2022). **Excluded:** the legacy UST metapool, whose cross-check was inconclusive.
+
 ## Sampling path
 
 - **Samples.** One block about every 6 hours, from the event's baseline start to its recovery end (R3 windows). Steps are 1,800 blocks after the Merge and 1,640 blocks before it. The actual timestamp of each sampled block is recorded.

@@ -33,7 +33,15 @@
      "code_bytes": 21199,
      "get_dy_abs_diff_raw": 0
     }
-   ]
+   ],
+   "swap_validation": {
+    "tx": "0x94402246b88cd94e2de82c33dcc53c358d551311050d5b4f2c2f850146f37eae",
+    "block": 17481613,
+    "kind": "direct",
+    "abs_diff_raw": 0,
+    "matches": true,
+    "direct_check": null
+   }
   },
   {
    "name": "Curve Ethereum 3pool LP token",
@@ -99,7 +107,21 @@
      "get_dy_abs_diff_raw": 0
     }
    ],
-   "notes": "Bytecode is a minimal proxy (factory clone); implementation contract not yet identified."
+   "notes": "EIP-1167 minimal proxy; implementation resolved and hashed at the event block (reports/c2/archive_checks.json).",
+   "swap_validation": {
+    "tx": "0xcc3be65348c69bb17f2d40bb0b8967d0ecce320900337272ad2ddba5f0b4e94d",
+    "block": 14726611,
+    "kind": "underlying",
+    "abs_diff_raw": 0,
+    "matches": true,
+    "direct_check": null
+   },
+   "proxy_implementation": {
+    "standard": "EIP-1167",
+    "implementation": "0x213be373fdff327658139c7df330817dad2d5bbe",
+    "implementation_code_bytes": 22255,
+    "implementation_code_keccak": "0x86092e83f01ab6d7a368475cdf5c75f0a18352f943cdc4de65248f10d4881267"
+   }
   },
   {
    "name": "Curve legacy UST metapool (StableSwapUST.vy)",
@@ -122,7 +144,16 @@
      "code_bytes": 22886,
      "get_dy_abs_diff_raw": 0
     }
-   ]
+   ],
+   "swap_validation": {
+    "tx": "0x7c9c05653a81d462c21d27155c6011ec86ea2e47745126d1276f0b2f0bded7e8",
+    "block": 14727182,
+    "kind": "underlying",
+    "abs_diff_raw": 88707243175372867,
+    "matches": false,
+    "direct_check": "NO_CLEAN_SWAP_FOUND"
+   },
+   "notes": "Swap cross-check inconclusive: underlying swap differs by 0.08 bps from get_dy_underlying; no clean direct swap within ~4,000 blocks; excluded from capacity."
   },
   {
    "name": "Curve BUSD pool",
