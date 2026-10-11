@@ -25,3 +25,14 @@ Each entry in `reports/c2/contract_registry.json` now lists the registry events 
 | Curve USDe/USDC pool | `0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72` | **Aggregator listing only**, so labelled `UNVERIFIED`; a test enforces this | E2025-10-USDE-BINANCE |
 
 The 3pool entries now also link to the June 2023 USDT negative case. None of these entries is verified at a target block. Using any of them for capacity requires an authorized archive endpoint, followed by block-pinned checks of code, coin order, decimals, A, fee and balances.
+
+## Block-pinned validation plan (offline; 0 network calls)
+
+`uv run python -m www_c2.validation_plan` writes `reports/c2/validation_plan.json`. For each `SOURCE_DOCUMENTED` pool with a known interface, and each linked event, it records:
+- the target timestamp (event start, 00:00 UTC);
+- how the target block is found: `block_at_or_before`, a binary search for the last block whose timestamp is at or before the target;
+- the exact read-only requests to send: `eth_getCode` for bytecode identity, then `eth_call` for `A()`, `fee()`, `coins(i)`, `balances(i)` and a `get_dy` quote.
+
+Calldata is built offline. The pure-Python Keccak-256 used for selectors is tested against standard vectors (the empty-string hash, `transfer(address,uint256)` → `0xa9059cbb`, `balanceOf(address)` → `0x70a08231`). The dry run rejects any method other than `eth_getCode` / `eth_call`, malformed calldata, and selector mismatches.
+
+**Planned:** 3pool (anchor and June 2023), wormhole-UST/3CRV and the legacy UST pool (May 2022). **Not planned:** the BUSD pool (interface not established), the USDe/USDC pool (`UNVERIFIED` source), the Uniswap factory, and the Maker PSM; each needs its own interface work. ABI signatures are marked `ASSUMED` and must be confirmed against verified source code before any result is used. Executing the plan requires an authorized archive endpoint via `www_c2.rpc`.
