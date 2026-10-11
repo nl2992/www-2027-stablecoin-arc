@@ -22,6 +22,7 @@ from www_c3.robustness import horizon_medians
 from .binance_klines import gap_summary, read_kline_zip, sha256_file, to_minute_grid, verify_checksum
 from .bitstamp import load_months as load_bitstamp
 from .plan_dvs import (
+    as_bool,
     coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, dv5_ratio, robustness_block, usdt_stability_gate,
 )
 from .registry import RULES, _parse_date, analysis_windows, load_registry, r1_severity
@@ -44,7 +45,7 @@ def usd_price(stable: pd.DataFrame, s_prefix: str, quote_basis: str,
     elif quote_usd is not None and q_prefix is not None:
         q = quote_usd.reindex(stable.index)
         out["price"] = price * q[f"{q_prefix}_close"]
-        out["traded"] = traded & q[f"{q_prefix}_traded"].fillna(False).astype(bool)
+        out["traded"] = traded & as_bool(q[f"{q_prefix}_traded"])
         out["basis"] = "USD_VIA_" + quote_basis
     else:
         out["price"], out["traded"], out["basis"] = price, traded, quote_basis + "_RELATIVE"
@@ -52,7 +53,7 @@ def usd_price(stable: pd.DataFrame, s_prefix: str, quote_basis: str,
 
 
 def window_diagnostics(series: pd.DataFrame, peg: float = 1.0) -> dict[str, Any]:
-    traded = series["traded"].fillna(False).astype(bool).to_numpy()
+    traded = as_bool(series["traded"]).to_numpy()
     price = series["price"].to_numpy(dtype=float)
     dev = 10_000 * np.log(price / peg)
     obs = traded & np.isfinite(dev)
@@ -95,7 +96,7 @@ def run_event(event: Mapping[str, Any], stable: pd.DataFrame, s_prefix: str, quo
     hi = window_bounds(windows["event"])[1] + pd.Timedelta("1D")
     ev = series[(series.index >= lo) & (series.index < hi)]
     if len(ev):
-        volume = np.where(ev["traded"].fillna(False).astype(bool), 1.0, 0.0)
+        volume = np.where(as_bool(ev["traded"]), 1.0, 0.0)
         result["r1"] = r1_severity(ev.index, ev["price"].to_numpy(dtype=float), volume)
         result["r1"]["judged_range_utc"] = [lo.isoformat(), hi.isoformat()]
     else:
@@ -113,8 +114,8 @@ def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, p
                wedge: pd.DataFrame | None = None) -> dict[str, Any]:
     """Pre-analysis-plan quantities (docs/PRE_ANALYSIS_PLAN.md sections 2, 5 and 6)."""
     dev = 10_000 * np.log(series["price"].astype(float))
-    traded = series["traded"].fillna(False).astype(bool)
-    present = present.reindex(series.index).fillna(False).astype(bool)
+    traded = as_bool(series["traded"])
+    present = as_bool(present.reindex(series.index))
     bounds = {name: window_bounds(w) for name, w in windows.items()}
 
     def part(x: pd.Series, name: str) -> pd.Series:
@@ -135,7 +136,7 @@ def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, p
         out["usdt_gate"] = {"passes": True, "reason": "USD-quoted series; gate not applicable"}
     elif quote_usd is not None and q_prefix is not None:
         q = quote_usd.reindex(series.index)
-        q_dev = 10_000 * np.log(q[f"{q_prefix}_close"].where(q[f"{q_prefix}_traded"].fillna(False).astype(bool)))
+        q_dev = 10_000 * np.log(q[f"{q_prefix}_close"].where(as_bool(q[f"{q_prefix}_traded"])))
         out["usdt_gate"] = usdt_stability_gate(part(q_dev, "event").to_numpy())
     else:
         out["usdt_gate"] = {"passes": False, "reason": "no quote/USD leg supplied"}
@@ -145,7 +146,7 @@ def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, p
         out["dv4"] = out["dv5"] = {"estimate": None, "reason": "no triangle legs supplied"}
     else:
         w = wedge.reindex(series.index)
-        w_obs = w["observed"].fillna(False).astype(bool)
+        w_obs = as_bool(w["observed"])
         w_val = w["wedge_bps"].astype(float)
         if gates["event"]["passes"] and gates[reference]["passes"]:
             out["dv4"] = dv1_contrast(part(w_val[w_obs], "event").to_numpy(), part(w_val[w_obs], reference).to_numpy())
@@ -161,8 +162,8 @@ def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, p
 
 def analysis_status(event_id: str, eligible: bool, freeze_path: Path = Path("configs/plan_freeze.json")) -> str:
     """EXPLORATORY for events measured before the plan freeze; otherwise CONFIRMATORY only if data-eligible."""
-    measured_before = json.loads(freeze_path.read_text())["measured_before_freeze"] if freeze_path.is_file() else []
-    if event_id in measured_before:
+    freeze = json.loads(freeze_path.read_text()) if freeze_path.is_file() else {}
+    if event_id in freeze.get("measured_before_freeze", []) or event_id in freeze.get("exploratory_post_hoc", []):
         return "EXPLORATORY"
     return "CONFIRMATORY" if eligible else "DESCRIPTIVE_ONLY"
 
@@ -286,6 +287,23 @@ def run_from_spec(event: Mapping[str, Any], spec: Mapping[str, Any],
             obs = g["btc_coin"]["traded"] & g["coin_quote"]["traded"] & g["btc_quote"]["traded"]
             wedge = pd.DataFrame({"wedge_bps": w, "observed": obs & w.notna()})
             wprov = {"source": "bitstamp_public_ohlc", "legs": list(legs.values())}
+    elif spec["source"] == "ust_splice":
+        # Amendments A4/A5: spliced UST series; the continuation instrument is named in the spec.
+        from .ust_splice import build_series
+        segs, files = {}, []
+        for sym, sub in (("USTUSDT", "binance"), (spec["continuation"], "binance"), ("BUSDUSDT", "binance"),
+                         ("USDTUSD", "binance_us")):
+            grid, gprov = load_binance_months(path / sub, sym, "x")
+            segs[sym] = grid.rename(columns=lambda col: col[2:])
+            files += [{**f, "venue_dir": sub} for f in gprov["files"]]
+        stable = build_series(segs["USTUSDT"], segs[spec["continuation"]], segs["BUSDUSDT"], segs["USDTUSD"])
+        s_prefix, quote, qprov, q_prefix, wedge, wprov = "ust", None, None, None, None, None
+        prov = {"source": "binance_vision_monthly_klines", "splice": ["USTUSDT", spec["continuation"]],
+                "conversion": ["BUSDUSDT (binance)", "USDTUSD (binance-us)"], "amendment": spec.get("amendment"),
+                "files": files}
+        btc_prefix = "binance_" + spec["btc"].lower() if spec.get("btc") else None
+        btc = (load_binance_months(path / "binance", spec["btc"], btc_prefix)[0][btc_prefix + "_close"]
+               if btc_prefix else None)
     else:
         raise ValueError(f"unknown source {spec['source']}")
     result = run_event(event, stable, s_prefix, spec["quote_basis"], quote, q_prefix, btc, wedge)

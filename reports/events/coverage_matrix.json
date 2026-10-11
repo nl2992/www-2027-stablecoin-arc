@@ -1,5 +1,5 @@
 {
- "checked_utc": "2026-10-11T18:27Z",
+ "checked_utc": "2026-10-11T19:19Z",
  "listing_endpoint": "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?delimiter=/&prefix={prefix}",
  "rows": [
   {
@@ -761,7 +761,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -775,7 +775,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -789,7 +789,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -803,7 +803,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -817,7 +817,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -831,7 +831,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -845,7 +845,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -859,7 +859,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -873,7 +873,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -887,7 +887,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -901,7 +901,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -915,7 +915,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "event"
@@ -929,7 +929,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -943,7 +943,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -957,7 +957,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -971,7 +971,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -985,7 +985,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -999,7 +999,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -1013,7 +1013,7 @@
    "file_key": "data/spot/monthly/klines/USTBUSD/1m/USTBUSD-1m-2022-05.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -8456,16 +8456,17 @@
   },
   "E2022-05-UST-COLLAPSE|binance|USTBUSD": {
    "baseline": {
-    "LISTED": 7
+    "LISTED": 2,
+    "OBSERVED_LOCAL": 5
    },
    "control": {
     "LISTED": 7
    },
    "event": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2022-05-UST-COLLAPSE|binance|USTUSDT": {

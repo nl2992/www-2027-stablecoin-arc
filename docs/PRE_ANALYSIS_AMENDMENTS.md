@@ -43,3 +43,13 @@ Consequences:
 If any precondition fails, the splice is not used and UST is recorded as not acceptable under R3. The decision is logged either way.
 
 **Data seen.** USTUSDT through 2022-05-13 00:49 had been measured (status DATA_VERIFIED, recovery coverage 0%). No USTC, BUSDUSDT-2022-05 or spliced-series price had been acquired or analysed. Listing metadata showing USTCBUSD files from 2022-05 had been seen. Execution waits for independent review of the Phase 0 audit.
+
+## A5 — 2026-10-11 (UTC), sections 1 and 2, UST continuation via UST/BUSD (**approved by the user after inspection of coverage, not prices**)
+
+**Rule.** This replaces A4's continuation instrument. The UST series is Binance USTUSDT up to its last minute (2022-05-13 00:49 UTC), then Binance **USTBUSD** from its first minute after that. That pair is the same token under its original ticker; per Binance, it reopened against BUSD at about 14:30 UTC on 2022-05-13. Prices are converted to USD as UST/BUSD × BUSD/USDT (Binance) × USDT/USD (Binance.US, valid under A2 in 2022). A minute counts as traded only if every leg in use traded. The gap between the two segments stays missing. The registered event windows are unchanged.
+
+**Why A4 was insufficient.** The A4 continuation (USTC/BUSD) opened on 2022-05-30 09:30 UTC, after the registered recovery window (May 14–20) had ended. Under A4 the recovery window had 0 covered minutes.
+
+**Classification.** UST's event-window severity (R1 pass, from the USTUSDT segment) had already been measured when A5 was written. A5 only adds recovery-window coverage. UST is therefore labelled **EXPLORATORY (post-hoc eligibility)** and excluded from confirmatory H1 counts. Cross-event summaries are reported both with and without it.
+
+**Data seen.** Seen: listing metadata and minute coverage for USTBUSD (2022-05-01 → 2022-05-26 14:59, including a 361-minute halt ending 2022-05-13 14:30), plus UST's earlier event-window results. **No** USTBUSD-based recovery-window values had been computed.

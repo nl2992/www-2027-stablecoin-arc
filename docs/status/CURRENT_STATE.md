@@ -84,3 +84,13 @@ The user agreed on 2026-10-11 to pre-register the UST series rule before any mea
 | Tardis free first-of-month L2 | `uv run python -m www_events.acquire`; `uv run python -m www_c1.depth --inputs data/raw/tardis/*.csv.gz` | 3 files (60 KB–3 MB). Replay is clean: 0 timestamp regressions, 0 crossed samples, 0 invalid rows. Median depth within ±10 bps: Binance.US USDC/USD about $0.57 M bid / $1.54 M ask; Binance TUSD/USDT about 1.66 M / 1.67 M USDT; Binance FDUSD/USDT about 62 M / 52 M USDT. Spreads are at one tick (about 1 bp). **Normal-market only.** | `reports/c1/normal_market_depth.json`; manifest records `tardis:*` |
 
 The decision register, including the CEX–DEX versus on-chain-only scope split, is in `docs/status/DECISION_REGISTER.md`.
+
+## 8. UST under amendment A5 (user-approved)
+
+`uv run python -m www_events.batch` with the A5 spec in `configs/event_runs.json` (source `ust_splice`, continuation USTBUSD). The spliced series covers baseline 100%, control 100%, event 96% and recovery 100% of minutes. Results:
+- R1 passes: extreme −32,190 bps at 2022-05-13 01:41 UTC; 1,440 breaching minutes.
+- DV1 +1,028 bps (95% CI 723–2,244).
+- Recovery censored at 190+ h (recovery-window median \|D\| 23,627 bps: no recovery).
+- Robustness: R1 passes at 50 and 200 bps; trimmed DV1 +1,027 bps.
+
+Registry status is **ACCEPTED** and analysis status is **EXPLORATORY** (post-hoc eligibility). There are now 4 accepted independent clusters: UST and SVB exploratory, TUSD and FDUSD confirmatory and out-of-sample. Framing remains DESCRIPTIVE.

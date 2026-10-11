@@ -1,24 +1,24 @@
 {
   "events": [
     {
-      "analysis_status": "CONFIRMATORY",
+      "analysis_status": "EXPLORATORY",
       "ci95": [
-        104.98739053193582,
-        1100.478184518847
+        722.5572718580951,
+        2243.724755676193
       ],
       "cluster_id": "CL-2022-05-TERRA",
       "dv5_ratio": null,
-      "estimate": 841.5161744126016,
+      "estimate": 1028.1911900151056,
       "event_id": "E2022-05-UST-COLLAPSE",
       "mechanism": "ALGORITHMIC_COLLAPSE",
       "p_value": 0.001,
       "recovery_censored": true,
-      "recovery_minutes": 2471.0,
+      "recovery_minutes": 11418.0,
       "reference_is_fallback": false,
-      "registry_status": "DATA_VERIFIED",
+      "registry_status": "ACCEPTED",
       "role": "PRIMARY",
       "sample_role": "IN_SAMPLE",
-      "se": 283.3506308116898
+      "se": 431.4897655720946
     },
     {
       "analysis_status": "CONFIRMATORY",
@@ -162,6 +162,7 @@
     }
   ],
   "exploratory_events": [
+    "E2022-05-UST-COLLAPSE",
     "E2023-03-USDC-SVB"
   ],
   "framing": "DESCRIPTIVE: fewer than three independent confirmatory episodes",
@@ -197,6 +198,7 @@
     "reason": "capacity gate closed: no validated execution state or authorization"
   },
   "independent_accepted_clusters": [
+    "CL-2022-05-TERRA",
     "CL-2023-03-SVB",
     "CL-2024-01-TUSD",
     "CL-2025-04-FDUSD"

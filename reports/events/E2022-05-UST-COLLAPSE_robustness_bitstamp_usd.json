@@ -1,9 +1,9 @@
 {
   "coverage_ok": false,
   "event_id": "E2022-05-UST-COLLAPSE",
-  "measured_utc": "2026-10-11T18:30Z",
+  "measured_utc": "2026-10-11T19:18Z",
   "plan": {
-    "analysis_status": "DESCRIPTIVE_ONLY",
+    "analysis_status": "EXPLORATORY",
     "confirmatory_eligible": false,
     "covariates": {
       "baseline": {

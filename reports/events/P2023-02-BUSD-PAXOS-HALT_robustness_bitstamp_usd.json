@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "P2023-02-BUSD-PAXOS-HALT",
-  "measured_utc": "2026-10-11T18:30Z",
+  "measured_utc": "2026-10-11T19:18Z",
   "plan": {
     "analysis_status": "CONFIRMATORY",
     "confirmatory_eligible": true,
@@ -226,6 +226,13 @@
     "stable": {
       "files": [
         {
+          "file": "BUSDUSDT-1m-2022-05.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "025790222bd90109c9d2c6ea10d0a6022c4a371e89d20c1c40d199caf5fe712e",
+          "time_unit": "ms"
+        },
+        {
           "file": "BUSDUSDT-1m-2023-01.zip",
           "issues": [],
           "rows": 44640,
@@ -241,11 +248,11 @@
         }
       ],
       "gaps": {
-        "grid_minutes": 84960,
-        "longest_missing_run_minutes": 0,
-        "missing_minutes": 0,
+        "grid_minutes": 437760,
+        "longest_missing_run_minutes": 308160,
+        "missing_minutes": 308160,
         "present_untraded_minutes": 0,
-        "traded_minutes": 84960
+        "traded_minutes": 129600
       },
       "source": "binance_vision_monthly_klines"
     },
@@ -368,6 +375,13 @@
       "BUSDUSDT": {
         "files": [
           {
+            "file": "BUSDUSDT-1m-2022-05.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "025790222bd90109c9d2c6ea10d0a6022c4a371e89d20c1c40d199caf5fe712e",
+            "time_unit": "ms"
+          },
+          {
             "file": "BUSDUSDT-1m-2023-01.zip",
             "issues": [],
             "rows": 44640,
@@ -383,11 +397,11 @@
           }
         ],
         "gaps": {
-          "grid_minutes": 84960,
-          "longest_missing_run_minutes": 0,
-          "missing_minutes": 0,
+          "grid_minutes": 437760,
+          "longest_missing_run_minutes": 308160,
+          "missing_minutes": 308160,
           "present_untraded_minutes": 0,
-          "traded_minutes": 84960
+          "traded_minutes": 129600
         },
         "source": "binance_vision_monthly_klines"
       }

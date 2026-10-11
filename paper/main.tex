@@ -17,8 +17,9 @@ a sourced registry of \NumRegistryEntries{} candidate episodes from 2020--2026 i
 independence clusters, explicit severity and independence rules, matched control windows, placebo and
 expected-negative cases, and events after 2024 held out for out-of-sample evaluation. Applying the protocol to
 eight measured candidates on public exchange archives yields \NumAcceptedClusters{} accepted independent episodes
-(the anchor, TUSD in January 2024 and FDUSD in April 2025); because the anchor is exploratory and both confirmatory
-episodes are out-of-sample, the pre-registered confirmatory in-sample test cannot yet be run and all results are
+(UST in May 2022, the anchor, TUSD in January 2024 and FDUSD in April 2025); UST and the anchor are exploratory, and
+both confirmatory episodes are out-of-sample, so the pre-registered confirmatory in-sample test cannot yet be run and
+all results are
 reported descriptively; the placebo shock and the expected-negative case do not qualify. In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
 half-life of about \NumAnchorEventHalfLife{} minutes, while within-venue cross-quote wedges reverted within
 minutes, which separates redemption-market dislocation from cross-quote arbitrage failure. All results are
@@ -221,8 +222,13 @@ anchor, cross-quote arbitrage on the venue kept relative prices aligned while th
 \paragraph{Negative and placebo cases.} The BUSD issuance halt, a regulatory shock with guaranteed redemptions, fails
 R1 (median $|D|$ change \NumPlaceboDvOne{} bps), as does the FTX-period USDT candidate on Binance.US, whose reported
 dislocation occurred on other venues. USDe's Binance-only dislocation (extreme \NumUsdeExtreme{} bps) is measured but not
-accepted because USDT/USD itself moved by a median of \NumUsdeUsdtGate{} bps in the event window, and UST lacks a
-recovery window after its delisting.
+accepted because USDT/USD itself moved by a median of \NumUsdeUsdtGate{} bps in the event window.
+
+\paragraph{UST and post-hoc eligibility.} Binance removed UST/USDT on 2022-05-13 and UST continued only against BUSD
+until the token was renamed USTC (USTC/BUSD from 2022-05-30). A pre-registered splice onto USTC/BUSD (A4) left the
+recovery window empty; a user-approved amendment written after inspecting coverage (A5) splices onto UST/BUSD instead.
+UST then qualifies, with an extreme of \NumUstExtreme{} bps and no recovery (Table~\ref{tab:results}), but because its
+event-window result was known before A5, it is treated as exploratory and excluded from confirmatory counts.
 
 \paragraph{A caution on H2.} The peg-to-wedge half-life ratio exceeds one in every event where it is defined,
 \emph{including the placebo} (\NumPlaceboDvFive), and it is numerically unstable when the wedge half-life is near zero
@@ -244,7 +250,7 @@ Capacity estimation is gated on validated crisis-period L2 or on-chain execution
 authorization. No capacity figures are reported.
 
 \section{Limitations}
-Three accepted episodes (one exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
+Four accepted episodes (two exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
 USDT-quoted archives require USD correction; no executable depth; normalized L2 lacks native sequence IDs.
 
 \section{Reproducibility}

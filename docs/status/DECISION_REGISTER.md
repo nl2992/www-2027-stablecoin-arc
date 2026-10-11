@@ -11,6 +11,7 @@ Each decision lists its evidence and who made it. Scope decisions need independe
 | D5 | 2026-10-11 | Reviewer: bounded free archive-RPC tests permitted after terms check; stop if historical state is inadequate | Reviewer C2C, decision 2; `reports/c2/archive_probe.json` | **Stopped: no free, keyless, terms-compatible archive endpoint found** |
 | D6 | 2026-10-11 | Reviewer: UST A4 experiment permitted after precondition checks | Reviewer C2C, decision 4; `reports/events/E2022-05-UST-COLLAPSE_a4_splice.json` | Executed. Negative: recovery window uncovered |
 | D7 | 2026-10-11 | Reviewer: free Tardis first-of-month samples for normal-market comparison | Reviewer C2C, decision 5; `reports/c1/normal_market_depth.json` | Executed (3 files) |
+| D8 | 2026-10-11 | User approved A5 (UST continuation via UST/BUSD); UST is classified EXPLORATORY (post-hoc eligibility) | User instruction; `docs/PRE_ANALYSIS_AMENDMENTS.md` A5; `configs/plan_freeze.json` (`exploratory_post_hoc`) | Executed. UST ACCEPTED as an episode, excluded from confirmatory counts. **Reviewer to confirm the classification.** |
 
 ## Scope: CEX–DEX restoration capacity vs on-chain-only fallback
 
@@ -31,6 +32,6 @@ Each decision lists its evidence and who made it. Scope decisions need independe
 
 **Claims allowed now:** descriptive, candle-level, multi-event evidence on peg dislocation versus within-venue wedges, plus normal-market CEX depth levels. **Not allowed:** any restoration-capacity number, and any CEX–DEX capacity claim.
 
-## Proposed, needs approval
+## Open classification question for the reviewer
 
-- **A5 (proposal, not executed):** continue the UST series with Binance **USTBUSD**, the same token under its original ticker, which reopened against BUSD at about 2022-05-13 14:30 UTC and covers the registered recovery window, in place of USTCBUSD, which opened on 2022-05-30. Its preconditions and data have been inspected (coverage only, no measurement), so it would be labelled as written after inspecting coverage.
+- Should UST under A5 count as confirmatory in-sample? The current conservative choice is no, because its event-window R1 result was known before A5. If the reviewer rules yes, H1 in-sample would have n = 1, which is still insufficient for the plan's two-thirds rule to be meaningful.

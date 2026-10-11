@@ -30,3 +30,13 @@ def test_untraded_leg_makes_minute_untraded():
     usdt = grid("2022-05-12", "2022-05-17", 1.0)
     s = build_series(ust, ustc, busd, usdt)
     assert s.loc["2022-05-12 12:00", "ust_traded"] and not s.loc["2022-05-15 12:00", "ust_traded"]
+
+
+def test_overlapping_continuation_is_used_only_after_the_first_segment_ends():
+    ust = grid("2022-05-12", "2022-05-13", 0.5)
+    ustbusd = grid("2022-05-12", "2022-05-15", 0.3)  # overlaps the USTUSDT segment, as Binance USTBUSD did
+    busd = grid("2022-05-12", "2022-05-16", 1.0)
+    usdt = grid("2022-05-12", "2022-05-16", 1.0)
+    s = build_series(ust, ustbusd, busd, usdt)
+    assert s.loc["2022-05-12 12:00", "ust_close"] == 0.5          # USTUSDT segment wins before its end
+    assert s.loc["2022-05-14 12:00", "ust_close"] == 0.3          # continuation only afterwards

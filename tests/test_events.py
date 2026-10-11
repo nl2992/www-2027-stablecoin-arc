@@ -28,8 +28,9 @@ def test_only_measured_events_are_accepted_and_multi_event_target_is_not_claimed
     evs = events()
     accepted = [e for e in evs if e["status"] == "ACCEPTED"]
     assert all((e.get("measurement") or {}).get("r1_pass") for e in accepted)
-    # Evidence as of the 2026-10-11 Bitstamp run: three accepted independent clusters (anchor exploratory).
-    assert independent_clusters(evs, {"ACCEPTED"}) == ["CL-2023-03-SVB", "CL-2024-01-TUSD", "CL-2025-04-FDUSD"]
+    # Evidence after amendment A5 (2026-10-11): four accepted clusters; SVB and UST are exploratory.
+    assert independent_clusters(evs, {"ACCEPTED"}) == ["CL-2022-05-TERRA", "CL-2023-03-SVB", "CL-2024-01-TUSD",
+                                                       "CL-2025-04-FDUSD"]
     # Linked legs never count as extra independent episodes.
     assert len(independent_clusters(evs, {"SOURCE_DOCUMENTED", "ACCEPTED"})) < len(
         [e for e in evs if e["status"] in {"SOURCE_DOCUMENTED", "ACCEPTED"}])

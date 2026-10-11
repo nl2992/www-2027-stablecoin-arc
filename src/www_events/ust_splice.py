@@ -43,7 +43,8 @@ def build_series(ustusdt: pd.DataFrame, ustcbusd: pd.DataFrame, busdusdt: pd.Dat
     u, c = ustusdt.reindex(index), ustcbusd.reindex(index)
     b, t = busdusdt.reindex(index), usdtusd.reindex(index)
     last_u = ustusdt.index[ustusdt["present"]][-1]
-    first_c = ustcbusd.index[ustcbusd["present"]][0]
+    after = ustcbusd.index[ustcbusd["present"] & (ustcbusd.index > last_u)]
+    first_c = after[0]  # continuation starts at its first minute after the USTUSDT segment ends
     tr = lambda f: f["traded"].astype("boolean").fillna(False).to_numpy(dtype=bool)
     pre, post = np.asarray(index <= last_u), np.asarray(index >= first_c)
     price = np.full(len(index), np.nan)
@@ -57,6 +58,10 @@ def build_series(ustusdt: pd.DataFrame, ustcbusd: pd.DataFrame, busdusdt: pd.Dat
     out["ust_close"], out["ust_traded"] = price, traded & price.notna()
     out["ust_present"], out["ust_volume"] = price.notna(), traded.astype(float)
     return out
+
+
+def segment_grid(directory: Path, symbol: str) -> pd.DataFrame:
+    return _grid(directory, symbol)
 
 
 def _grid(directory: Path, symbol: str) -> pd.DataFrame:

@@ -42,6 +42,7 @@ PLACEBO = "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
 NEG = "reports/events/N2023-06-USDT-3POOL_protocol.json"
 NEG_BNUS = "reports/events/N2023-06-USDT-3POOL_robustness_binanceus.json"
 TUSD = "reports/events/E2024-01-TUSD_protocol.json"
+UST = "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
 USDE = "reports/events/E2025-10-USDE-BINANCE_protocol.json"
 U = "wedges/usdc/all_legs_traded"
 
@@ -97,6 +98,7 @@ SPEC: list[tuple[str, str, str, Callable[[Any], str]]] = [
     ("NumNegativeExtreme", NEG_BNUS, "r1/extreme_deviation_bps", _fmt(0)),
     ("NumNegativeExtremeBitstamp", NEG, "r1/extreme_deviation_bps", _fmt(0)),
     ("NumTusdExtreme", TUSD, "r1/extreme_deviation_bps", _fmt(0)),
+    ("NumUstExtreme", UST, "r1/extreme_deviation_bps", _fmt(0)),
     ("NumTusdDvOne", TUSD, "plan/dv1/estimate", _fmt(0)),
     ("NumTusdDvOneLo", TUSD, "plan/dv1/ci95/0", _fmt(0)),
     ("NumTusdDvOneHi", TUSD, "plan/dv1/ci95/1", _fmt(0)),

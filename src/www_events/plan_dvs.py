@@ -16,6 +16,11 @@ RECOVERY_THRESHOLD_BPS = 25.0
 RECOVERY_TRAILING = "6h"
 
 
+def as_bool(series: pd.Series) -> pd.Series:
+    """Missing -> False without pandas' deprecated object-dtype downcasting."""
+    return series.astype("boolean").fillna(False).astype(bool)
+
+
 def dv1_contrast(event_dev: np.ndarray, reference_dev: np.ndarray, *, block: int = 60, draws: int = 1000,
                  seed: int = SEED) -> dict[str, Any]:
     """DV1: median|D| event minus reference, with moving-block bootstrap CI and two-sided p-value."""
@@ -128,12 +133,12 @@ def robustness_block(dev: pd.Series, traded: pd.Series, event_lo: pd.Timestamp, 
 
     lo, hi = judged
     window = dev[(dev.index >= lo) & (dev.index < hi)]
-    w_traded = traded.reindex(window.index).fillna(False).astype(bool)
+    w_traded = as_bool(traded.reindex(window.index))
     price = np.exp(window.to_numpy(dtype=float) / 10_000)
     volume = np.where(w_traded.to_numpy(), 1.0, 0.0)
     r1_alt = {str(int(t)): r1_severity(window.index, price, volume, threshold_bps=t)["r1_pass"] for t in (50.0, 200.0)}
     in_event = (dev.index >= event_lo) & (dev.index < event_hi)
-    ev, ev_obs = dev[in_event], traded[in_event].fillna(False).astype(bool)
+    ev, ev_obs = dev[in_event], as_bool(traded[in_event])
     trimmed = (ev.index >= event_lo + pd.Timedelta("6h")) & (ev.index < event_hi - pd.Timedelta("6h"))
     trim_vals = ev[trimmed & ev_obs.to_numpy()].to_numpy()
     dv1_trim = (dv1_contrast(trim_vals, reference.to_numpy()) if trim_vals.size >= 2

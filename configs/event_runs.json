@@ -13,17 +13,14 @@
     },
     {
       "event_id": "E2022-05-UST-COLLAPSE",
-      "source": "binance",
-      "path": "data/raw/binance",
-      "stable": "USTUSDT",
-      "quote_basis": "USDT",
+      "source": "ust_splice",
+      "path": "data/raw",
+      "continuation": "USTBUSD",
+      "amendment": "A5",
+      "quote_basis": "USD",
+      "usd_venue": "binance-us",
       "btc": "BTCUSDT",
-      "triangle_coin": "UST",
-      "quote_usd_source": {
-        "venue": "binance-us",
-        "path": "data/raw/binance_us",
-        "symbol": "USDTUSD"
-      }
+      "venue_note": "A5 splice: USTUSDT then USTBUSD, USD via BUSDUSDT x Binance.US USDTUSD"
     },
     {
       "event_id": "E2022-05-UST-COLLAPSE",
