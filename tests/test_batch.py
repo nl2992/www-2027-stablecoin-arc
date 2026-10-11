@@ -82,3 +82,23 @@ def test_run_config_references_registry_events():
     runs = json.loads((ROOT / "configs/event_runs.json").read_text())["runs"]
     ids = {e["id"] for e in json.loads((ROOT / "configs/event_registry.json").read_text())["events"]}
     assert {r["event_id"] for r in runs} <= ids
+
+
+def test_usd_reference_leg_from_second_venue_enables_acceptance(tmp_path):
+    root = _repo(tmp_path)
+    (root / "data/raw/binance").mkdir(parents=True)
+    (root / "data/raw/binance_us").mkdir(parents=True)
+    depeg = lambda t: np.where((t >= "2024-06-10 06:00") & (t < "2024-06-11 18:00"), 0.97, 1.0)
+    par = lambda t: np.full(len(t), 1.0)
+    for month, days in (("2024-05-01", 31), ("2024-06-01", 30)):
+        _write_month(root / "data/raw/binance", "DEPUSDT", month, days, depeg)
+        _write_month(root / "data/raw/binance_us", "USDTUSD", month, days, par)
+    base = {"event_id": "SYN-DEPEG", "source": "binance", "path": "data/raw/binance", "stable": "DEPUSDT",
+            "quote_basis": "USDT"}
+    relative = run_batch(root, [base], write=False)
+    assert relative["status_changes"][0]["new_status"] == "DATA_VERIFIED"  # no USD leg: cannot be accepted
+    with_usd = {**base, "quote_usd_source": {"venue": "binance-us", "path": "data/raw/binance_us", "symbol": "USDTUSD"}}
+    out = run_batch(root, [with_usd], write=False)
+    assert out["status_changes"][0]["new_status"] == "ACCEPTED"
+    missing = {**base, "quote_usd_source": {"venue": "binance-us", "path": "data/raw/absent", "symbol": "USDTUSD"}}
+    assert run_batch(root, [missing], write=False)["skipped"][0]["reason"].startswith("USD reference leg")

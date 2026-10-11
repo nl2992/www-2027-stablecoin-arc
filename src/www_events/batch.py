@@ -76,7 +76,15 @@ def run_batch(root: Path, runs: list[Mapping[str, Any]], *, write: bool = True) 
         if not data_path.exists():
             skipped.append({"event_id": event["id"], "reason": f"data not acquired: {spec['path']}"})
             continue
-        result = run_from_spec(event, {**spec, "path": data_path}, root / "configs/plan_freeze.json")
+        spec = {**spec, "path": data_path}
+        if spec.get("quote_usd_source"):
+            qs = dict(spec["quote_usd_source"])
+            qpath = Path(qs["path"]) if Path(qs["path"]).is_absolute() else root / qs["path"]
+            if not qpath.exists():
+                skipped.append({"event_id": event["id"], "reason": f"USD reference leg not acquired: {qs['path']}"})
+                continue
+            spec["quote_usd_source"] = {**qs, "path": qpath}
+        result = run_from_spec(event, spec, root / "configs/plan_freeze.json")
         rel = f"reports/events/{event['id']}_protocol.json"
         if write:
             (root / rel).write_text(json.dumps(result, indent=2, sort_keys=True, default=str) + "\n")
