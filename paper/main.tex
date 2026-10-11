@@ -113,6 +113,12 @@ The registry holds \NumRegistryEntries{} entries in \NumRegistryClusters{} clust
 \NumDocumentedPrimaries{} source-documented primary candidates (including one placebo---the BUSD issuance
 halt~\cite{paxos2023busd}---and one expected negative case), \NumUnresolved{} unresolved candidates, and
 \NumAcceptedClusters{} accepted cluster so far. \input{generated/registry_table}
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/event_timeline.pdf}
+\caption{Registry events by reported window, status and role (generated from the registry). The dotted line marks the
+pre-registered out-of-sample boundary.}
+\label{fig:timeline}
+\end{figure*}
 [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
 USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
 
@@ -121,7 +127,14 @@ Anchor data: a 30,240-minute Binance.US one-minute candle panel (2023-03-01 to 2
 audited. Order-book reconstruction is validated on one public normalized L2 sample
 (\NumSampleRows{} rows; BTCUSD, 2023-03-01)~\cite{tardis2026binanceus}; normalized feeds omit native exchange
 sequence identifiers~\cite{coinapi2026limitbook}, so continuity is disclosed as unverifiable. Multi-event
-candle data are listed in public archives but not yet acquired. Candle closes are last trades, not quotes.
+candle data are listed in public archives but not yet acquired (Figure~\ref{fig:coverage}). Candle closes are
+last trades, not quotes.
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figures/coverage_heatmap.pdf}
+\caption{Data coverage by event, venue/symbol and analysis window: observed locally, listed in a public archive
+(not downloaded), source unverified, or not listed.}
+\label{fig:coverage}
+\end{figure}
 
 \section{Anchor Event: USDC, March 2023 (provisional)}
 \label{sec:anchor}
@@ -139,7 +152,13 @@ jointly traded crisis minutes exceeded 25 bps (\NumUsdcShareAboveTwentyFivePre\%
 one-minute closes and \NumUsdcHalfLifeFifteenCrisis--\NumUsdcHalfLifeSixtyCrisis{} minutes on 15--60-minute medians. Using
 Coinbase BTC-USD as the dollar leg gives a crisis median of \NumUsdcCoinbaseMedAbsCrisis{} bps.
 
-\textbf{Interpretation.} Cross-quote arbitrage kept relative prices close while USDC's dollar value stayed
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/anchor_series.pdf}
+\caption{Anchor event: 15-minute medians of USDC peg dislocation $D$ and the USDC triangle wedge $W$ on Binance.US
+(traded minutes only; dotted lines mark the reported event window).}
+\label{fig:anchor}
+\end{figure*}
+\textbf{Interpretation.} Figure~\ref{fig:anchor} shows the separation directly. Cross-quote arbitrage kept relative prices close while USDC's dollar value stayed
 dislocated---consistent with H2 and with impaired redemption~\cite{du2025shadow}, but one event cannot
 establish it.
 
