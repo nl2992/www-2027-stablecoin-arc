@@ -3,7 +3,9 @@
 import re
 from pathlib import Path
 
-from www_paper.macros import OUTPUT, TABLE_OUTPUT, build, build_registry_table
+from www_paper.macros import (
+    COVERAGE_TABLE_OUTPUT, OUTPUT, TABLE_OUTPUT, build, build_coverage_table, build_registry_table,
+)
 
 ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
@@ -44,9 +46,32 @@ def test_every_citation_has_a_bib_entry_and_every_entry_is_cited():
 
 
 def test_labels_resolve_and_pending_sections_are_marked():
-    generated = TABLE_OUTPUT.read_text()
+    generated = TABLE_OUTPUT.read_text() + COVERAGE_TABLE_OUTPUT.read_text()
     labels = set(re.findall(r"\\label\{([^}]+)\}", MAIN + generated))
     refs = set(re.findall(r"\\ref\{([^}]+)\}", MAIN))
     assert refs <= labels
     assert "Executable Capacity [PENDING]" in MAIN
     assert "not yet met" in MAIN
+
+
+def test_coverage_table_is_current_balanced_and_included():
+    table = COVERAGE_TABLE_OUTPUT.read_text()
+    assert table == build_coverage_table(), "run `uv run python -m www_paper.macros`"
+    assert table.count("{") == table.count("}")
+    assert "\\input{generated/coverage_table}" in MAIN
+    assert "BTCUSDE & N & N & N & N" in table  # the USDe triangle gap is shown, not hidden
+
+
+def test_braces_and_environments_balance_without_a_tex_compiler():
+    """No TeX toolchain is installed, so check the cheapest structural invariants directly."""
+    sources = [MAIN] + [p.read_text() for p in (ROOT / "paper/generated").glob("*.tex")]
+    total_envs = 0
+    for text in sources:
+        stripped = re.sub(r"\\[{}%]", "", text)       # drop escaped braces and escaped percent signs
+        stripped = re.sub(r"%.*", "", stripped)          # then drop comments
+        assert stripped.count("{") == stripped.count("}")
+        begins = re.findall(r"\\begin\{([^}]+)\}", stripped)
+        ends = re.findall(r"\\end\{([^}]+)\}", stripped)
+        assert sorted(begins) == sorted(ends)
+        total_envs += len(begins)
+    assert total_envs >= 8  # the check must actually see the document, figure, table and tabular environments

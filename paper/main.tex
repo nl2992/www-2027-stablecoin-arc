@@ -124,12 +124,32 @@ current evidence the in-sample H1 decision is ``insufficient events''. [PENDING:
 USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
 
 \section{Data}
-Anchor data: a 30,240-minute Binance.US one-minute candle panel (2023-03-01 to 2023-03-21), hash-pinned and
-audited. Order-book reconstruction is validated on one public normalized L2 sample
+\label{sec:data}
+\paragraph{Anchor.} A 30,240-minute Binance.US one-minute candle panel (2023-03-01 to 2023-03-21), hash-pinned and
+audited, provides USDC/USD, USDT/USD and the BTC legs of both triangles on a single venue.
+
+\paragraph{Multi-event candle sources.} For the remaining candidates, the only free public archives identified with
+complete windows are Binance.com monthly one-minute klines. They are listed (with byte sizes and ETags) for UST,
+TUSD, FDUSD, USDe and the BUSD placebo, together with the BTC/stablecoin legs needed for within-venue triangles,
+except that no BTC/USDe market is listed (Table~\ref{tab:coverage}, Figure~\ref{fig:coverage}). None has yet been
+downloaded. Archives are accepted only after checksum verification; timestamp units (milliseconds before 2025,
+microseconds after) are inferred per file, and missing minutes are kept missing rather than filled.
+
+\paragraph{Quote basis.} Binance.com quotes these stablecoins in USDT, so a raw series measures deviation from USDT,
+not from the dollar. Following the pre-analysis plan, such series enter confirmatory tests only after conversion with
+a USD reference leg on a USD venue and only in windows where USDT/USD itself stays within 10~bps of par. The
+designated reference is Binance.US USDT/USD history; Bitstamp's public USDT/USD market is a robustness alternative.
+Without the reference leg an event can be measured but not accepted. The within-venue triangle
+$W=\log P(\mathrm{BTC}/q)+\log P(q/\mathrm{USDT})-\log P(\mathrm{BTC}/\mathrm{USDT})$ is unaffected, because USDT
+cancels.
+
+\paragraph{Order books and on-chain state.} Order-book reconstruction is validated on one public normalized L2 sample
 (\NumSampleRows{} rows; BTCUSD, 2023-03-01)~\cite{tardis2026binanceus}; normalized feeds omit native exchange
-sequence identifiers~\cite{coinapi2026limitbook}, so continuity is disclosed as unverifiable. Multi-event
-candle data are listed in public archives but not yet acquired (Figure~\ref{fig:coverage}). Candle closes are
-last trades, not quotes.
+sequence identifiers~\cite{coinapi2026limitbook}, so continuity is disclosed as unverifiable. Event-specific Curve
+pools are source-documented (for May 2022, the wormhole-UST/3CRV pool analysed by~\cite{jump2022ust}) but no
+pool state has been read at a historical block. Candle closes are last trades, not quotes.
+
+\input{generated/coverage_table}
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figures/coverage_heatmap.pdf}
 \caption{Data coverage by event, venue/symbol and analysis window: observed locally, listed in a public archive
