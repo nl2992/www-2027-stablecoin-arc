@@ -19,7 +19,8 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | E1 multi-event registry + adapters | e1/multi-event-registry | ef2e29d | pushed, no PR |
 | M1 manuscript skeleton | m1/manuscript-skeleton | 96b9a4d | pushed, no PR |
 | C4 capacity method (offline) | c4/capacity-method | 9924197 | pushed, no PR |
-| M2 literature + generated tables | m2/literature-and-tables | see iteration log | pushed, no PR |
+| M2 literature + generated tables | m2/literature-and-tables | dac411f | pushed, no PR |
+| C4b v3 swap + redemption window | c4b/v3-and-redemption-window | see iteration log | pushed, no PR |
 
 ## Component status
 
@@ -67,8 +68,9 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 ## Prioritized next tasks
 
 
-1. **Capacity method extensions (offline):** Uniswap v3 single-range swap math, a redemption-window (banking-hours) constraint, and a two-venue transfer-delay bound.
-2. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
+1. **Figures module:** event timeline and coverage heatmap generated from the registry and coverage matrix; anchor time-series figure of peg dislocation vs triangle wedge (matplotlib, deterministic).
+2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
+3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
 ## Iteration log
 
@@ -83,4 +85,5 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | 6 | 05:55 | m1 @ 96b9a4d | Manuscript skeleton, generated number macros, verified bibliography, consistency tests | 99 passed |
 | 7 | 06:20 | c4 @ a6af6f8 | Offline capacity method on synthetic books | 110 passed |
 | 8 | 06:45 | c4 @ 9924197 | Reverse loop; Curve StableSwap + Uniswap v2 integer math (synthetic) | 118 passed |
-| 9 | 07:10 | m2 @ (this commit) | Related work with 7 newly verified references; generated registry table; paper tests extended | 119 passed |
+| 9 | 07:10 | m2 @ dac411f | Related work with 7 newly verified references; generated registry table; paper tests extended | 119 passed |
+| 10 | 07:35 | c4b @ (this commit) | Uniswap v3 single-range swap; DST-aware redemption window | 125 passed |

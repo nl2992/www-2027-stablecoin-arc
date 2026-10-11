@@ -17,8 +17,8 @@ Code: `src/www_capacity/orderbook.py`. Tests: `tests/test_capacity.py`, which ha
 - hidden or iceberg liquidity;
 - maker rebates and volume-tiered fees;
 - withdrawal and transfer delays between venues;
-- redemption limits and banking hours (the primary market);
-- Uniswap v3 concentrated liquidity, gas, and MEV.
+- issuer-specific redemption limits and minimums (only a generic banking-hours window is modeled);
+- Uniswap v3 tick crossing across multiple ranges, gas, and MEV.
 
 The C1 replay engine supplies book states through `levels_from_book`. Because normalized feeds lack native sequence IDs, any capacity computed from them inherits the disclosed continuity limitation.
 
@@ -30,3 +30,8 @@ The C1 replay engine supplies book states through `levels_from_book`. Because no
   - The Uniswap v2 `getAmountOut` formula.
 
   Tests cover the invariant, decimals, imbalance pricing, sensitivity to the amplification parameter, and one hand-computed v2 output. **These are not yet validated against block-pinned on-chain `get_dy` calls**; that requires an authorized archive endpoint (C5). Until then they are reference implementations used on synthetic states only.
+
+## Added in iteration 10
+
+- **Uniswap v3, single range** (`uniswap_v3_swap_within_range`). This is an exact-input swap in Q96 integer arithmetic. The fee comes off the input, the price is rounded in the pool's favour, and the output is rounded down. Input beyond the range edge is returned unused; it is never extrapolated, because spending it would require crossing a tick. Validated against constant-product math on virtual reserves to within 2 raw units.
+- **Redemption window** (`src/www_capacity/redemption.py`). `RedemptionSchedule` is DST-aware, with weekday hours, closed dates, `next_open` and `minutes_until_open`. The default schedule (US banking hours, America/New_York) is labelled an **assumption**. The test reproduces the SVB weekend: from Saturday 2023-03-11 12:00 UTC, the next opening is Monday 13:00 UTC, because DST began on 2023-03-12. Issuer-specific schedules must be sourced before any historical use.
