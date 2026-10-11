@@ -20,7 +20,8 @@ def rpc_call(endpoint: str, method: str, params: list[Any], *, timeout: float = 
     if method not in {"eth_chainId", "eth_blockNumber", "eth_getBlockByNumber", "eth_getCode", "eth_call"}:
         raise ValueError("only explicitly allowed read-only RPC methods are supported")
     body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    request = urllib.request.Request(endpoint, data=body, headers={"Content-Type": "application/json"}, method="POST")
+    headers = {"Content-Type": "application/json", "User-Agent": "www-stablecoin-research/0.1 (read-only)"}
+    request = urllib.request.Request(endpoint, data=body, headers=headers, method="POST")
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             payload = json.loads(response.read())

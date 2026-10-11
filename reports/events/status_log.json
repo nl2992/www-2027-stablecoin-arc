@@ -278,5 +278,13 @@
     "rule": "R1 not met on USD basis",
     "measured_utc": "2026-10-11T18:31Z",
     "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "A4 splice executed as registered; recovery window uncovered (USTC/BUSD opened 2022-05-30), R3 still fails",
+    "measured_utc": "2026-10-11T19:04Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_a4_splice.json"
   }
 ]

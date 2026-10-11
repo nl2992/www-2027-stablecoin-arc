@@ -1,0 +1,65 @@
+{
+ "checked_utc": "2026-10-11T19:05Z",
+ "network_calls_total": 5,
+ "all_read_only": true,
+ "candidates": [
+  {
+   "provider": "rpcfree.com",
+   "endpoint": "https://rpcfree.com/ethereum-rpc",
+   "archive": "not on free tier (provider page: archive data only with keyed plan)",
+   "terms": "rate limits only; no ToS link",
+   "calls": 0,
+   "verdict": "EXCLUDED: no archive"
+  },
+  {
+   "provider": "PublicNode",
+   "endpoint": "https://ethereum.publicnode.com",
+   "archive": "offered as separate 'Get Archive Access'",
+   "terms": "ToS prohibits 'data mining, robots, scraping, or similar data gathering or extraction methods'",
+   "calls": 0,
+   "verdict": "EXCLUDED: terms"
+  },
+  {
+   "provider": "Cloudflare Ethereum Gateway",
+   "archive": "documented for eth_call/eth_getStorageAt beyond 128 blocks",
+   "terms": "public keyless endpoint not documented; gateway creation implies an account",
+   "calls": 0,
+   "verdict": "EXCLUDED: account required"
+  },
+  {
+   "provider": "NodeFlare",
+   "endpoint": "https://rpc.nodeflare.app/eth/public",
+   "archive": "docs: 'available on all plans'",
+   "terms": "permits data-infrastructure use; prohibits abusive traffic and rate-limit circumvention; public limit 1 req/10 s/IP",
+   "calls": 5,
+   "results": [
+    {
+     "method": "eth_chainId",
+     "result": "0x1",
+     "note": "first attempt HTTP-blocked default Python user agent; succeeded with an explicit User-Agent"
+    },
+    {
+     "method": "eth_getCode",
+     "params": [
+      "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "0xd59f80"
+     ],
+     "error": {
+      "code": -32603,
+      "message": "state at block #14000001 is pruned"
+     }
+    },
+    {
+     "method": "eth_getCode",
+     "params": [
+      "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "latest"
+     ],
+     "result": "non-empty bytecode (3pool live)"
+    }
+   ],
+   "verdict": "STOPPED: keyless tier serves only recent state; historical-state support inadequate"
+  }
+ ],
+ "decision": "Stop condition met (reviewer decision 2). No historical pool state was reproduced. Unblocking requires a user-created free provider key (account creation needs user authorization)."
+}

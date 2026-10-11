@@ -74,3 +74,13 @@ All values below are read from committed reports.
 ## 6. Pre-registration recorded in this audit (no measurement)
 
 The user agreed on 2026-10-11 to pre-register the UST series rule before any measurement. It is recorded as amendment **A4** in `docs/PRE_ANALYSIS_AMENDMENTS.md`. Acquiring and measuring the USTC/BUSD continuation waits until after independent review.
+
+## 7. Bounded feasibility checkpoint (after reviewer decisions 2, 4 and 5)
+
+| Check | Commands | Outcome | Evidence |
+|---|---|---|---|
+| UST A4 preconditions and run | `uv run python -m www_events.acquire`; `uv run python -m www_events.ust_splice` | All preconditions **pass**. Chronology: Binance removed UST pairs at 2022-05-13 00:40; UST/BUSD reopened at about 14:30 the same day; USTC/BUSD opened 2022-05-30 09:30. **The registered USTCBUSD splice covers 0 of 10,080 recovery-window minutes, so R3 still fails and UST stays DATA_VERIFIED.** This is a negative result for the rule as registered. | `reports/events/E2022-05-UST-COLLAPSE_a4_splice.json`; status log entry; archives USTBUSD, USTCBUSD and BUSDUSDT for 2022-05 in the manifest |
+| Ethereum archive (free) | 5 read-only calls in total (see probe) | **Stopped.** NodeFlare public tier: `state at block #14000001 is pruned`. Other candidates excluded on terms, archive or account grounds. No historical pool state was reproduced. | `reports/c2/archive_probe.json` |
+| Tardis free first-of-month L2 | `uv run python -m www_events.acquire`; `uv run python -m www_c1.depth --inputs data/raw/tardis/*.csv.gz` | 3 files (60 KB–3 MB). Replay is clean: 0 timestamp regressions, 0 crossed samples, 0 invalid rows. Median depth within ±10 bps: Binance.US USDC/USD about $0.57 M bid / $1.54 M ask; Binance TUSD/USDT about 1.66 M / 1.67 M USDT; Binance FDUSD/USDT about 62 M / 52 M USDT. Spreads are at one tick (about 1 bp). **Normal-market only.** | `reports/c1/normal_market_depth.json`; manifest records `tardis:*` |
+
+The decision register, including the CEX–DEX versus on-chain-only scope split, is in `docs/status/DECISION_REGISTER.md`.

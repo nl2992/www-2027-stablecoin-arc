@@ -93,6 +93,42 @@ def acquire_bitstamp(root: Path, pair: str, month: str) -> dict[str, Any]:
     return record
 
 
+TARDIS = "https://datasets.tardis.dev/v1/{exchange}/{dtype}/{y}/{m}/{d}/{symbol}.csv.gz"
+TARDIS_MAX_BYTES = 300 * 1024 * 1024
+TARDIS_NOTE = ("Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded "
+               "with reviewer approval for normal-market comparison only; licence page not located; raw files are "
+               "not redistributed.")
+
+
+def acquire_tardis(root: Path, exchange: str, dtype: str, date: str, symbol: str) -> dict[str, Any]:
+    """Bounded download of one free first-of-month file; refuses non-first days and files over the size cap."""
+    import hashlib
+    y, m, d = date.split("-")
+    record: dict[str, Any] = {"venue": f"tardis:{exchange}", "symbol": symbol, "month": date, "data_type": dtype,
+                              "url": TARDIS.format(exchange=exchange, dtype=dtype, y=y, m=m, d=d, symbol=symbol)}
+    if d != "01":
+        record.update(status="NOT_AVAILABLE", error="only first-of-month files are free")
+        return record
+    path = root / "data/raw/tardis" / f"{exchange}_{dtype}_{date}_{symbol}.csv.gz"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists():
+        req = urllib.request.Request(record["url"], headers={"User-Agent": "www-stablecoin-research/0.1"})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as response:  # noqa: S310 - fixed public https host
+                data = response.read(TARDIS_MAX_BYTES + 1)
+        except urllib.error.HTTPError as exc:
+            record.update(status="NOT_AVAILABLE", http_status=exc.code)
+            return record
+        if len(data) > TARDIS_MAX_BYTES:
+            record.update(status="NOT_AVAILABLE", error="exceeds bounded size cap; not stored")
+            return record
+        path.write_bytes(data)
+    record.update(status="VERIFIED", file=str(path.relative_to(root)), bytes=path.stat().st_size,
+                  sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+                  hash_kind="self-recorded at acquisition (provider publishes no checksum)", terms_note=TARDIS_NOTE)
+    return record
+
+
 def pd_ts(seconds: int) -> str:
     import datetime as _dt
     return _dt.datetime.fromtimestamp(int(seconds), _dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
@@ -112,7 +148,11 @@ def main() -> None:
     for item in plan["items"]:
         for month in item["months"]:
             for symbol in item["symbols"]:
-                if item["venue"] == "bitstamp":
+                if item["venue"].startswith("tardis:"):
+                    if (item["venue"], symbol, month) in done:
+                        continue
+                    rec = acquire_tardis(args.root, item["venue"].split(":", 1)[1], item["data_type"], month, symbol)
+                elif item["venue"] == "bitstamp":
                     if ("bitstamp", symbol.upper(), month) in done:
                         continue  # never re-page an already verified month; keeps recorded hashes stable
                     rec = acquire_bitstamp(args.root, symbol, month)

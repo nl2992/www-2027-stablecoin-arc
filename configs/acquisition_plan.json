@@ -1,5 +1,5 @@
 {
-  "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11.",
+  "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only.",
   "items": [
     {
       "venue": "binance",
@@ -172,6 +172,59 @@
       "symbols": [
         "btcusd",
         "btcusdt"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "E2022-05-UST-COLLAPSE (A4 precondition sample)"
+      ],
+      "months": [
+        "2022-05"
+      ],
+      "symbols": [
+        "USTBUSD",
+        "USTCBUSD",
+        "BUSDUSDT"
+      ]
+    },
+    {
+      "venue": "tardis:binance-us",
+      "data_type": "incremental_book_L2",
+      "events": [
+        "normal-market L2 (anchor venue)"
+      ],
+      "months": [
+        "2023-03-01"
+      ],
+      "symbols": [
+        "USDCUSD"
+      ]
+    },
+    {
+      "venue": "tardis:binance",
+      "data_type": "incremental_book_L2",
+      "events": [
+        "normal-market L2 (TUSD event month)"
+      ],
+      "months": [
+        "2024-01-01"
+      ],
+      "symbols": [
+        "TUSDUSDT"
+      ]
+    },
+    {
+      "venue": "tardis:binance",
+      "data_type": "incremental_book_L2",
+      "events": [
+        "normal-market L2 (FDUSD event month)"
+      ],
+      "months": [
+        "2025-04-01"
+      ],
+      "symbols": [
+        "FDUSDUSDT"
       ]
     }
   ]
