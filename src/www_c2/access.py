@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
+from decimal import Decimal
 from enum import StrEnum
 
 
@@ -21,6 +22,7 @@ class AccessRequest:
     venue: str
     symbols: frozenset[str]
     required_delivery: str  # "csv" or "raw_replay"
+    required_capabilities: frozenset[str] = frozenset()
 
 
 @dataclass(frozen=True)
@@ -35,6 +37,7 @@ class SourceOffer:
     licensed: bool | None
     access_window_verified: bool
     exact_files_verified: bool = False
+    capabilities: frozenset[str] | None = None
 
 
 @dataclass(frozen=True)
@@ -69,6 +72,13 @@ def evaluate_access(request: AccessRequest, offer: SourceOffer) -> AccessDecisio
         unknown.append("delivery capabilities are not documented")
     elif request.required_delivery not in offer.delivery:
         failures.append("required delivery format is not included")
+    if request.required_capabilities:
+        if offer.capabilities is None:
+            unknown.append("required market-data capabilities are not verified")
+        else:
+            missing_capabilities = sorted(request.required_capabilities - offer.capabilities)
+            if missing_capabilities:
+                failures.append("missing required capabilities: " + ", ".join(missing_capabilities))
     if offer.authenticated is None:
         unknown.append("authentication requirement is unknown")
     elif offer.authenticated:
@@ -89,3 +99,15 @@ def evaluate_access(request: AccessRequest, offer: SourceOffer) -> AccessDecisio
     if unknown:
         return AccessDecision(Verdict.UNKNOWN, tuple(unknown))
     return AccessDecision(Verdict.SUFFICIENT, ("documented request and files verified",))
+
+
+def estimate_orderbook_transfer_cost(gib_per_day_per_sku: Decimal | None) -> Decimal | None:
+    """Estimate CoinAPI PAYG full-book transfer only; excludes LIST/API charges and tax."""
+    if gib_per_day_per_sku is None:
+        return None
+    if gib_per_day_per_sku < 0:
+        raise ValueError("transfer size cannot be negative")
+    first_tier = min(gib_per_day_per_sku, Decimal("1"))
+    second_tier = min(max(gib_per_day_per_sku - Decimal("1"), Decimal("0")), Decimal("9"))
+    third_tier = max(gib_per_day_per_sku - Decimal("10"), Decimal("0"))
+    return first_tier * Decimal("8") + second_tier * Decimal("4") + third_tier * Decimal("2")

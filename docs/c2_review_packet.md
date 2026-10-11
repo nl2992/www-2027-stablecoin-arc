@@ -9,6 +9,7 @@
 
 - C1 remains accepted; its March 10–12, 2023 coverage remains access-blocked, not absent.
 - Tardis documents that Spot covers Binance.US and that yearly Academic/Solo/Pro access reaches four years; on 2026-10-11 the target period falls within that published window. Monthly and quarterly do not. Academic/Solo provide CSV only; raw replay is Pro/Business. Exact target files, prices, academic license, and native sequence/disconnect evidence were not provider-confirmed. Cost is recorded as `PRICE_NOT_VERIFIED_FROM_PRIMARY_SOURCE`.
+- CoinAPI documents a distinct `BINANCEUS` exchange identifier, full-book products generally, and PAYG usage rates. Exact Binance.US target-symbol/date book files and sizes remain `NOT_PUBLICLY_VERIFIED`; total download cost and research/redistribution rights remain unresolved. See [`docs/c2_coinapi_flatfiles.md`](c2_coinapi_flatfiles.md).
 - Binance.US advertises free historical candles, trades and aggregate trades back to 2019, but its official product description does not list historical L2; this is not a book-data alternative.
 - Google Blockchain Analytics offers indexed historical event data; the first 1 TiB/month of on-demand query processing is documented free. It does not supply arbitrary historical contract state calls. Alchemy lists full archive data on its free tier but requires an account/API key. Cloudflare documents historical archive methods, but usable endpoint terms/configuration were not verified. No live RPC probe was run.
 - Curve 3pool, Uniswap v3 factory and legacy Maker USDC PSM candidates are source-documented only. Their target-block deployment and state remain unverified; no pool set or historical parameters are claimed as measured.
@@ -20,6 +21,7 @@
 - `src/www_c2/access.py`, `src/www_c2/contracts.py`, `src/www_c2/rpc.py`
 - `tests/test_c2_access.py`, `tests/test_c2_contracts.py`, `tests/test_c2_rpc.py`
 - `docs/c2_cex_access.md`, `docs/c2_ethereum_access.md`, `docs/c2_contract_registry.md`
+- `docs/c2_coinapi_flatfiles.md`
 - `reports/c2/access_matrix.json`, `reports/c2/contract_registry.json`
 
 ## Reproduction
@@ -36,6 +38,7 @@ Run `uv sync --group dev`, `uv run pytest -q`, `git diff --check`, and validate 
 
 - C0+C1 regression suite plus all new C2 tests pass.
 - Access windows, delivery capabilities, price uncertainty, and data-versus-entitlement distinction are explicit.
+- CoinAPI's venue identifier, data format, sequence limitations, usage-price tiers and account/license requirements are separated from exact file availability.
 - Every contract candidate has a source and conservative verification status.
 - No credentials, purchases, provider contact, live RPC calls or capacity calculations occurred.
 - Remaining blockers and decisions are explicit.

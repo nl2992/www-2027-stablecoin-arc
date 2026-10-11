@@ -7,6 +7,17 @@ sources:
     cost: free historical candlesticks, trades and aggregate trades
     historical_l2: not listed in documented downloadable datasets
     status: NOT_A_SUBSTITUTE_FOR_L2
+  - id: coinapi_flat_files
+    url: https://www.coinapi.io/products/flat-files/docs
+    provider: CoinAPI / API BRICKS
+    exchange_identifier: BINANCEUS is listed; BINANCE is a separate venue
+    product: full limit book with snapshots and updates is generally documented
+    historical_l2_dates_by_target_symbol: NOT_PUBLICLY_VERIFIED
+    native_exchange_sequence_fields: NOT_PUBLICLY_VERIFIED; documented normalized schema lists no native update sequence field
+    price: pay-as-you-go orderbook transfer rates are published; total cost unknown without exact file sizes and LIST/request charges
+    account: account, funded usage-credit balance and Flat Files API key required to list/download
+    license: academic publication, derived outputs and external exchange-data rights need review/confirmation
+    actual_file_access: false
   - id: tardis_spot
     url: https://docs.tardis.dev/faq/billing-and-subscriptions
     provider: Tardis

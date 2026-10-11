@@ -12,6 +12,7 @@ Binance.US itself advertises free historical candlesticks, trades and aggregated
 |---|---|---|---|
 | Existing first-of-month public CSV | No; March 10–12 are not first-of-month | Normalized CSV omits native Binance.US U/u IDs and disconnect events | No subscription, but not the crisis dates |
 | Binance.US public historical downloads | Price bars, trades and aggregate trades available historically | No historical L2 product listed in the official announcement | Free, but does not satisfy the book requirement |
+| CoinAPI Flat Files PAYG | The product lists `BINANCEUS` separately from `BINANCE` and documents full limit-book files generally | The normalized schema lists exchange/ingest timestamps and update operations, but not Binance-native update IDs; exact Binance.US symbol/day book data is not publicly verified | Public rate: $8/GiB first 1 GiB per UTC day per SKU, then $4/GiB for next 9 GiB and $2/GiB thereafter. Total remains unknown without exact files/sizes and LIST charges; funded account/key required |
 | Academic/Solo annual Spot CSV | Four-year window would include March 2023 | No raw replay API; native sequence continuity cannot be checked from the normalized CSV | Exact price, eligibility, license and file availability not confirmed |
 | Pro annual Spot | Four-year window would include March 2023 | Raw replay API is included, subject to confirming the feed's native IDs/disconnect representation | Exact price, eligibility, license and file availability not confirmed |
 | Business annual Spot | Published as all available history | Raw replay API included | Likely broader than necessary; exact quote and files not confirmed |
@@ -29,4 +30,5 @@ No verified no-cost source has been identified for the crisis-day files plus nat
 - [Tardis Binance.US market-data details](https://docs.tardis.dev/historical-data-details/binance-us) (reviewed 2026-10-11).
 - [Tardis downloadable CSV overview and authentication](https://docs.tardis.dev/downloadable-csv-files/overview) (reviewed 2026-10-11).
 - [Binance.US free historical market-data announcement](https://support.binance.us/en/articles/9843310-introducing-historical-market-data-from-binance-us-download-for-free) (reviewed 2026-10-11).
+- [CoinAPI-specific flat-file assessment](c2_coinapi_flatfiles.md).
 - [C1 coverage evidence](../c1_source_coverage.md) and [machine-readable access matrix](../reports/c1/coverage_matrix.json).
