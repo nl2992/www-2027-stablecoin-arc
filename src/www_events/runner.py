@@ -20,6 +20,7 @@ from www_c3.fragmentation import ar1_to_parity
 from www_c3.robustness import horizon_medians
 
 from .binance_klines import gap_summary, read_kline_zip, sha256_file, to_minute_grid, verify_checksum
+from .bitstamp import load_months as load_bitstamp
 from .plan_dvs import coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, dv5_ratio, usdt_stability_gate
 from .registry import RULES, _parse_date, analysis_windows, load_registry, r1_severity
 
@@ -250,15 +251,37 @@ def run_from_spec(event: Mapping[str, Any], spec: Mapping[str, Any],
         q_prefix = "binance_" + spec["quote_usd"].lower() if spec.get("quote_usd") else None
         quote, qprov = load_binance_months(path, spec["quote_usd"], q_prefix) if spec.get("quote_usd") else (None, None)
         if spec.get("quote_usd_source"):
-            # USD reference leg from a different venue/archive (e.g. Binance.US USDTUSD); aligned on the UTC grid.
+            # USD reference leg from a different venue/archive (e.g. Binance.US or Bitstamp USDTUSD), aligned on UTC.
             qs = spec["quote_usd_source"]
             q_prefix = f"{qs['venue']}_{qs['symbol'].lower()}".replace("-", "_")
-            quote, qprov = load_binance_months(Path(qs["path"]), qs["symbol"], q_prefix)
+            if qs["venue"] == "bitstamp":
+                quote, qprov = load_bitstamp(Path(qs["path"]), qs["symbol"], q_prefix,
+                                             Path(qs.get("manifest", "reports/events/acquisition_manifest.json")))
+            else:
+                quote, qprov = load_binance_months(Path(qs["path"]), qs["symbol"], q_prefix)
             qprov = {**qprov, "venue": qs["venue"]}
         wedge, wprov = (binance_triangle(path, spec["triangle_coin"], spec.get("triangle_quote", "USDT"))
                         if spec.get("triangle_coin") else (None, None))
         btc_prefix = "binance_" + spec["btc"].lower() if spec.get("btc") else None
         btc = load_binance_months(path, spec["btc"], btc_prefix)[0][btc_prefix + "_close"] if btc_prefix else None
+    elif spec["source"] == "bitstamp":
+        manifest = Path(spec.get("manifest", "reports/events/acquisition_manifest.json"))
+        s_prefix = "bitstamp_" + spec["stable"].lower()
+        stable, prov = load_bitstamp(path, spec["stable"], s_prefix, manifest)
+        quote, qprov, q_prefix = None, None, None
+        btc_prefix = "bitstamp_" + spec["btc"].lower() if spec.get("btc") else None
+        btc = load_bitstamp(path, spec["btc"], btc_prefix, manifest)[0][btc_prefix + "_close"] if btc_prefix else None
+        wedge, wprov = None, None
+        if spec.get("triangle_coin"):
+            coin, quote_ccy = spec["triangle_coin"].upper(), spec.get("triangle_quote", "USD").upper()
+            legs = {"btc_coin": f"BTC{coin}", "coin_quote": f"{coin}{quote_ccy}", "btc_quote": f"BTC{quote_ccy}"}
+            g = {k: load_bitstamp(path, sym, "x", manifest)[0].rename(columns=lambda c: c[2:]) for k, sym in legs.items()}
+            idx = g["btc_coin"].index.intersection(g["coin_quote"].index).intersection(g["btc_quote"].index)
+            g = {k: v.reindex(idx) for k, v in g.items()}
+            w = 10_000 * (np.log(g["btc_coin"]["close"]) + np.log(g["coin_quote"]["close"]) - np.log(g["btc_quote"]["close"]))
+            obs = g["btc_coin"]["traded"] & g["coin_quote"]["traded"] & g["btc_quote"]["traded"]
+            wedge = pd.DataFrame({"wedge_bps": w, "observed": obs & w.notna()})
+            wprov = {"source": "bitstamp_public_ohlc", "legs": list(legs.values())}
     else:
         raise ValueError(f"unknown source {spec['source']}")
     result = run_event(event, stable, s_prefix, spec["quote_basis"], quote, q_prefix, btc, wedge)

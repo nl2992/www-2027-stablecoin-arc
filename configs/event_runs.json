@@ -1,5 +1,5 @@
 {
-  "note": "Run specs for python -m www_events.batch. Runs whose data path is absent are skipped with a reason. Binance archives belong in data/raw/binance (git-ignored) and need explicit download authorization. Without a USD reference leg, Binance runs are USDT-relative, so they can reach DATA_VERIFIED but never ACCEPTED. Binance runs reference a Binance.US USDTUSD leg (data/raw/binance_us) per docs/e2_usd_reference_design.md; archives acquired 2026-10-11 under user authorization (see reports/events/acquisition_manifest.json).",
+  "note": "Run specs for python -m www_events.batch. Runs whose data path is absent are skipped with a reason. Binance archives belong in data/raw/binance (git-ignored) and need explicit download authorization. Without a USD reference leg, Binance runs are USDT-relative, so they can reach DATA_VERIFIED but never ACCEPTED. Binance runs reference a Binance.US USDTUSD leg (data/raw/binance_us) per docs/e2_usd_reference_design.md; archives acquired 2026-10-11 under user authorization (see reports/events/acquisition_manifest.json). Venue priority per amendment A3; entries with robustness_label never change registry status.",
   "runs": [
     {
       "event_id": "E2023-03-USDC-SVB",
@@ -26,6 +26,21 @@
       }
     },
     {
+      "event_id": "E2022-05-UST-COLLAPSE",
+      "source": "binance",
+      "path": "data/raw/binance",
+      "stable": "USTUSDT",
+      "quote_basis": "USDT",
+      "btc": "BTCUSDT",
+      "triangle_coin": "UST",
+      "quote_usd_source": {
+        "venue": "bitstamp",
+        "path": "data/raw/bitstamp",
+        "symbol": "USDTUSD"
+      },
+      "robustness_label": "bitstamp_usd"
+    },
+    {
       "event_id": "P2023-02-BUSD-PAXOS-HALT",
       "source": "binance",
       "path": "data/raw/binance",
@@ -40,6 +55,36 @@
       }
     },
     {
+      "event_id": "P2023-02-BUSD-PAXOS-HALT",
+      "source": "binance",
+      "path": "data/raw/binance",
+      "stable": "BUSDUSDT",
+      "quote_basis": "USDT",
+      "btc": "BTCUSDT",
+      "triangle_coin": "BUSD",
+      "quote_usd_source": {
+        "venue": "bitstamp",
+        "path": "data/raw/bitstamp",
+        "symbol": "USDTUSD"
+      },
+      "robustness_label": "bitstamp_usd"
+    },
+    {
+      "event_id": "E2024-01-TUSD",
+      "source": "binance",
+      "path": "data/raw/binance",
+      "stable": "TUSDUSDT",
+      "quote_basis": "USDT",
+      "btc": "BTCUSDT",
+      "triangle_coin": "TUSD",
+      "quote_usd_source": {
+        "venue": "bitstamp",
+        "path": "data/raw/bitstamp",
+        "symbol": "USDTUSD"
+      },
+      "venue_note": "A3: Bitstamp USD leg (Binance.US impaired under A2)"
+    },
+    {
       "event_id": "E2024-01-TUSD",
       "source": "binance",
       "path": "data/raw/binance",
@@ -51,7 +96,8 @@
         "venue": "binance-us",
         "path": "data/raw/binance_us",
         "symbol": "USDTUSD"
-      }
+      },
+      "robustness_label": "binanceus"
     },
     {
       "event_id": "E2025-04-FDUSD",
@@ -68,6 +114,21 @@
       }
     },
     {
+      "event_id": "E2025-04-FDUSD",
+      "source": "binance",
+      "path": "data/raw/binance",
+      "stable": "FDUSDUSDT",
+      "quote_basis": "USDT",
+      "btc": "BTCUSDT",
+      "triangle_coin": "FDUSD",
+      "quote_usd_source": {
+        "venue": "bitstamp",
+        "path": "data/raw/bitstamp",
+        "symbol": "USDTUSD"
+      },
+      "robustness_label": "bitstamp_usd"
+    },
+    {
       "event_id": "E2025-10-USDE-BINANCE",
       "source": "binance",
       "path": "data/raw/binance",
@@ -79,6 +140,20 @@
         "path": "data/raw/binance_us",
         "symbol": "USDTUSD"
       }
+    },
+    {
+      "event_id": "E2025-10-USDE-BINANCE",
+      "source": "binance",
+      "path": "data/raw/binance",
+      "stable": "USDEUSDT",
+      "quote_basis": "USDT",
+      "btc": "BTCUSDT",
+      "quote_usd_source": {
+        "venue": "bitstamp",
+        "path": "data/raw/bitstamp",
+        "symbol": "USDTUSD"
+      },
+      "robustness_label": "bitstamp_usd"
     },
     {
       "event_id": "E2022-11-USDT-FTX",
@@ -93,6 +168,30 @@
       "usd_venue": "binance-us"
     },
     {
+      "event_id": "E2022-11-USDT-FTX",
+      "source": "bitstamp",
+      "path": "data/raw/bitstamp",
+      "stable": "USDTUSD",
+      "quote_basis": "USD",
+      "usd_venue": "bitstamp",
+      "btc": "BTCUSD",
+      "triangle_coin": "USDT",
+      "triangle_quote": "USD",
+      "robustness_label": "bitstamp"
+    },
+    {
+      "event_id": "N2023-06-USDT-3POOL",
+      "source": "bitstamp",
+      "path": "data/raw/bitstamp",
+      "stable": "USDTUSD",
+      "quote_basis": "USD",
+      "usd_venue": "bitstamp",
+      "btc": "BTCUSD",
+      "triangle_coin": "USDT",
+      "triangle_quote": "USD",
+      "venue_note": "A3: Bitstamp is the designated USD venue (Binance.US impaired under A2)"
+    },
+    {
       "event_id": "N2023-06-USDT-3POOL",
       "source": "binance",
       "path": "data/raw/binance_us",
@@ -102,7 +201,8 @@
       "triangle_coin": "USDT",
       "triangle_quote": "USD",
       "venue_note": "Binance.US USD-quoted archive",
-      "usd_venue": "binance-us"
+      "usd_venue": "binance-us",
+      "robustness_label": "binanceus"
     }
   ]
 }

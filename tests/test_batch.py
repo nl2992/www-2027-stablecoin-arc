@@ -105,3 +105,18 @@ def test_usd_reference_leg_from_second_venue_enables_acceptance(tmp_path):
     assert out["status_changes"][0]["new_status"] == "ACCEPTED"
     missing = {**base, "quote_usd_source": {"venue": "binance-us", "path": "data/raw/absent", "symbol": "USDTUSD"}}
     assert run_batch(root, [missing], write=False)["skipped"][0]["reason"].startswith("USD reference leg")
+
+
+def test_robustness_runs_never_change_registry_status(tmp_path):
+    root = _repo(tmp_path)
+    data = root / "data/raw/synthetic"
+    data.mkdir(parents=True)
+    depeg = lambda t: np.where((t >= "2024-06-10 06:00") & (t < "2024-06-11 18:00"), 0.97, 1.0)
+    for month, days in (("2024-05-01", 31), ("2024-06-01", 30)):
+        _write_month(data, "DEPUSD", month, days, depeg)
+    spec = {"event_id": "SYN-DEPEG", "source": "binance", "path": "data/raw/synthetic", "stable": "DEPUSD",
+            "quote_basis": "USD", "robustness_label": "altvenue"}
+    out = run_batch(root, [spec])
+    registry = {e["id"]: e for e in json.loads((root / "configs/event_registry.json").read_text())["events"]}
+    assert registry["SYN-DEPEG"]["status"] == "SOURCE_DOCUMENTED" and out["status_changes"] == []
+    assert (root / "reports/events/SYN-DEPEG_robustness_altvenue.json").is_file()

@@ -17,3 +17,16 @@ Each amendment must give: the date (UTC); the section changed; the reason; and w
 **Reason.** The first batch run measured the June 2023 USDT candidate on Binance.US USDT/USD. It produced a +361 bps USDT *premium* that breached continuously from 2023-06-14. Reports of the June 2023 Curve event describe a small USDT *discount*. The sign, size and timing instead match the documented suspension of Binance.US USD services from 2023-06-09: that venue's "USD" was no longer redeemable dollars. The frozen plan's USDT-stability gate does not cover an impaired USD leg.
 
 **Data seen.** Yes. This amendment was written **after** the batch run of 2026-10-11 18:02 UTC, prompted by the June 2023 result. It is applied mechanically to every event, and it can only remove eligibility, never add it. Status changes it causes are logged in `reports/events/status_log.json`, and the paper reports results both before and after A2.
+
+## A3 — 2026-10-11 (UTC), section 5, USD venue priority (written **before** any Bitstamp data were analysed)
+
+**Change.** The USD leg comes from a fixed priority order. First choice is Binance.US, the anchor's venue family, for any span that amendment A2 does not mark as impaired. The fallback is Bitstamp, used only when A2 excludes Binance.US. A result computed on any non-designated venue is a **robustness check**. It is written to `reports/events/<id>_robustness_<venue>.json`, reported alongside the primary result, and **never changes registry status or confirmatory counts**.
+
+Consequences:
+- June 2023 USDT and TUSD (January 2024) use Bitstamp as their designated USD venue, because A2 excludes Binance.US.
+- FTX-period USDT keeps Binance.US as its designated venue (not impaired), so its R1 rejection stands. A Bitstamp run of FTX is robustness only.
+- UST, the BUSD placebo, FDUSD and USDe keep Binance.US.
+
+**Reason.** With two USD venues available, choosing between them after seeing results would allow venue shopping. This order follows from A2 and the plan's existing preference for the anchor's venue family. It is fixed before any Bitstamp-based measurement.
+
+**Data seen.** Bitstamp archives were downloaded but **not analysed** when this was written. Earlier Binance.US results for all events had been seen (see A2).

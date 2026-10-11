@@ -88,6 +88,14 @@ def run_batch(root: Path, runs: list[Mapping[str, Any]], *, write: bool = True) 
                 continue
             spec["quote_usd_source"] = {**qs, "path": qpath}
         result = run_from_spec(event, spec, root / "configs/plan_freeze.json")
+        if spec.get("robustness_label"):
+            # Amendment A3: non-designated venues are robustness only and never touch the registry.
+            result["robustness_of"] = event["id"]
+            rel = f"reports/events/{event['id']}_robustness_{spec['robustness_label']}.json"
+            if write:
+                (root / rel).write_text(json.dumps(result, indent=2, sort_keys=True, default=str) + "\n")
+            executed.append(f"{event['id']} [robustness:{spec['robustness_label']}]")
+            continue
         rel = f"reports/events/{event['id']}_protocol.json"
         if write:
             (root / rel).write_text(json.dumps(result, indent=2, sort_keys=True, default=str) + "\n")
