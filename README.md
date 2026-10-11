@@ -33,3 +33,7 @@ The C1 replay prototype is under `src/www_c1/`. Run `uv run pytest -q` for C0+C1
 ## C2 access feasibility
 
 C2 compares historical Binance.US access options, documents Ethereum indexed/archive-state capabilities, and registers source-documented contract candidates without claiming historical state verification. See [`docs/c2_review_packet.md`](docs/c2_review_packet.md). The offline RPC probe can be run only against a user-authorized endpoint by setting `WWW_ETH_RPC_URL` locally; C2 itself made no live RPC calls, purchased no data, and estimated no capacity. The CEX L2 source gate is recorded in [`docs/c2_source_decision.md`](docs/c2_source_decision.md): CoinAPI is CONDITIONAL (REJECT under a native-sequence standard) and no crisis-day L2 source is selected yet.
+
+## C3 observed fragmentation
+
+`src/www_c3/` measures FX-corrected USDC and USDT parity wedges, and how persistent they are, on the audited IAQF minute panel. See [`docs/c3_fragmentation.md`](docs/c3_fragmentation.md). These are trade-price measurements, not executable capacity. Task status lives in [`docs/IMPLEMENTATION_TRACKER.md`](docs/IMPLEMENTATION_TRACKER.md).

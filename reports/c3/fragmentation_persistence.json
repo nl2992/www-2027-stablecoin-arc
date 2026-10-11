@@ -1,0 +1,896 @@
+{
+  "bootstrap": {
+    "block_minutes": 60,
+    "draws": 500,
+    "method": "moving-block over adjacent pairs",
+    "seed": 20230310
+  },
+  "checkpoint": "C3",
+  "input_bytes": 9690047,
+  "input_sha256": "17704ff01a86c3c678c690aeb7b9a9f2a86702bd69bbe5cceaf359c68c6711b3",
+  "limitations": [
+    "Wedges use one-minute last-trade closes; legs are not synchronized quotes and asynchronous trading alone creates apparent wedges.",
+    "all_minutes_last_close carries stale closes through no-trade minutes, which mechanically inflates AR(1) persistence.",
+    "all_legs_traded keeps only minutes in which every leg printed volume; it is less stale but selects on activity.",
+    "Episodes are judged at observed minutes only and are censored at regime boundaries.",
+    "Last-trade closes contain bid-ask bounce, which biases minute-level AR(1) persistence downward.",
+    "ar1_phi reverts toward the regime-window mean; ar1_to_parity_phi reverts toward a zero wedge.",
+    "Regimes are the upstream calendar labels, not estimated states.",
+    "No executable cost, depth or arbitrage capacity is measured here."
+  ],
+  "source_revision": "b484e8bc75429e293c87f10a8856a5ce196b9df8",
+  "wedges": {
+    "usdc": {
+      "all_legs_traded": {
+        "crisis": {
+          "ar1_adjacent_pairs": 2008,
+          "ar1_phi": 0.2696693705317885,
+          "ar1_phi_ci95": [
+            0.16015397848908908,
+            0.4343089270126947
+          ],
+          "ar1_to_parity_phi": 0.2703276892654335,
+          "half_life_ci95_minutes": [
+            0.37843403473671555,
+            0.8311125397599866
+          ],
+          "half_life_minutes": 0.5288944484389456,
+          "half_life_to_parity_minutes": 0.5298802654822797,
+          "max_abs_bps": 341.07639287872973,
+          "mean_bps": -1.4540446170350885,
+          "median_abs_bps": 8.134149432796889,
+          "observed_minutes": 2570,
+          "p95_abs_bps": 77.826237242048,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 1,
+              "episodes": 318,
+              "max_duration_minutes": 68.0,
+              "median_duration_minutes": 3.0,
+              "share_observed_minutes_above": 0.4466926070038911
+            },
+            "25.0": {
+              "censored_episodes": 1,
+              "episodes": 237,
+              "max_duration_minutes": 52.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.21867704280155642
+            },
+            "50.0": {
+              "censored_episodes": 1,
+              "episodes": 146,
+              "max_duration_minutes": 42.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.10233463035019455
+            }
+          }
+        },
+        "full_sample": {
+          "ar1_adjacent_pairs": 3892,
+          "ar1_phi": 0.26622358421117376,
+          "ar1_phi_ci95": [
+            0.17771462766112983,
+            0.4156174991806295
+          ],
+          "ar1_to_parity_phi": 0.266483665738634,
+          "half_life_ci95_minutes": [
+            0.40122523584294345,
+            0.7894705495595415
+          ],
+          "half_life_minutes": 0.5237549825143857,
+          "half_life_to_parity_minutes": 0.5241417076100374,
+          "max_abs_bps": 382.0350157518959,
+          "mean_bps": -0.7187203065957364,
+          "median_abs_bps": 4.840780918069498,
+          "observed_minutes": 6945,
+          "p95_abs_bps": 42.68204245408209,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 744,
+              "max_duration_minutes": 162.0,
+              "median_duration_minutes": 3.0,
+              "share_observed_minutes_above": 0.27717782577393807
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 337,
+              "max_duration_minutes": 52.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.10194384449244061
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 163,
+              "max_duration_minutes": 42.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.040316774658027354
+            }
+          }
+        },
+        "post": {
+          "ar1_adjacent_pairs": 685,
+          "ar1_phi": 0.42551256983938984,
+          "ar1_phi_ci95": [
+            0.23388194964151146,
+            0.5448376763552314
+          ],
+          "ar1_to_parity_phi": 0.4543686326277164,
+          "half_life_ci95_minutes": [
+            0.47706564810318236,
+            1.1414200968751707
+          ],
+          "half_life_minutes": 0.8112100503824088,
+          "half_life_to_parity_minutes": 0.878684547034189,
+          "max_abs_bps": 38.67447657333045,
+          "mean_bps": 0.39806359230720173,
+          "median_abs_bps": 5.097280673016513,
+          "observed_minutes": 1582,
+          "p95_abs_bps": 16.132587966319882,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 200,
+              "max_duration_minutes": 142.0,
+              "median_duration_minutes": 3.0,
+              "share_observed_minutes_above": 0.20353982300884957
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 12,
+              "max_duration_minutes": 28.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.007585335018963337
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "pre_crisis": {
+          "ar1_adjacent_pairs": 659,
+          "ar1_phi": 0.17355268989686523,
+          "ar1_phi_ci95": [
+            0.0486394834179123,
+            0.2565097147104968
+          ],
+          "ar1_to_parity_phi": 0.21580460777374721,
+          "half_life_ci95_minutes": [
+            0.22926691785023462,
+            0.5094465062705047
+          ],
+          "half_life_minutes": 0.39579595523294847,
+          "half_life_to_parity_minutes": 0.45203819881001067,
+          "max_abs_bps": 97.22307074667924,
+          "mean_bps": -0.7751021662175784,
+          "median_abs_bps": 2.058924685339747,
+          "observed_minutes": 1638,
+          "p95_abs_bps": 8.611157391852583,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 52,
+              "max_duration_minutes": 162.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.0347985347985348
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 5,
+              "max_duration_minutes": 17.0,
+              "median_duration_minutes": 8.0,
+              "share_observed_minutes_above": 0.0030525030525030525
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 2,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 7.5,
+              "share_observed_minutes_above": 0.001221001221001221
+            }
+          }
+        },
+        "recovery": {
+          "ar1_adjacent_pairs": 540,
+          "ar1_phi": 0.191235946330475,
+          "ar1_phi_ci95": [
+            0.08644377962304962,
+            0.6068167964362168
+          ],
+          "ar1_to_parity_phi": 0.19314521922744363,
+          "half_life_ci95_minutes": [
+            0.2831181700296622,
+            1.3876032830198295
+          ],
+          "half_life_minutes": 0.4190106181959614,
+          "half_life_to_parity_minutes": 0.42154213042256755,
+          "max_abs_bps": 382.0350157518959,
+          "mean_bps": -0.5322399292578457,
+          "median_abs_bps": 6.404293313249099,
+          "observed_minutes": 1155,
+          "p95_abs_bps": 32.539850144392084,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 1,
+              "episodes": 174,
+              "max_duration_minutes": 114.0,
+              "median_duration_minutes": 3.0,
+              "share_observed_minutes_above": 0.3445887445887446
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 83,
+              "max_duration_minutes": 36.0,
+              "median_duration_minutes": 3.0,
+              "share_observed_minutes_above": 0.11168831168831168
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 15,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.012987012987012988
+            }
+          }
+        }
+      },
+      "all_minutes_last_close": {
+        "crisis": {
+          "ar1_adjacent_pairs": 4319,
+          "ar1_phi": 0.39930603809666576,
+          "ar1_phi_ci95": [
+            0.2782310836815827,
+            0.49337564515325716
+          ],
+          "ar1_to_parity_phi": 0.40358729377458186,
+          "half_life_ci95_minutes": [
+            0.5418161545256155,
+            0.9811216551958469
+          ],
+          "half_life_minutes": 0.7550399632533903,
+          "half_life_to_parity_minutes": 0.763914313205804,
+          "max_abs_bps": 341.07639287872973,
+          "mean_bps": -2.8471964400570515,
+          "median_abs_bps": 8.554369362974157,
+          "observed_minutes": 4320,
+          "p95_abs_bps": 74.1485532374258,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 1,
+              "episodes": 510,
+              "max_duration_minutes": 68.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.45625
+            },
+            "25.0": {
+              "censored_episodes": 1,
+              "episodes": 330,
+              "max_duration_minutes": 24.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.22013888888888888
+            },
+            "50.0": {
+              "censored_episodes": 1,
+              "episodes": 203,
+              "max_duration_minutes": 12.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.10185185185185185
+            }
+          }
+        },
+        "full_sample": {
+          "ar1_adjacent_pairs": 30239,
+          "ar1_phi": 0.4497284486442666,
+          "ar1_phi_ci95": [
+            0.369515510155676,
+            0.5337080331678066
+          ],
+          "ar1_to_parity_phi": 0.45241084973184004,
+          "half_life_ci95_minutes": [
+            0.6962366867083054,
+            1.103902177893682
+          ],
+          "half_life_minutes": 0.8673975179195167,
+          "half_life_to_parity_minutes": 0.8739008550562262,
+          "max_abs_bps": 460.5401757402028,
+          "mean_bps": -1.1101989694705117,
+          "median_abs_bps": 3.882178334748687,
+          "observed_minutes": 30240,
+          "p95_abs_bps": 26.471996592349885,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 2411,
+              "max_duration_minutes": 68.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.20806878306878307
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 701,
+              "max_duration_minutes": 24.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.05578703703703704
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 247,
+              "max_duration_minutes": 12.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.017493386243386245
+            }
+          }
+        },
+        "post": {
+          "ar1_adjacent_pairs": 8639,
+          "ar1_phi": 0.6186306198594866,
+          "ar1_phi_ci95": [
+            0.5682962679151476,
+            0.6626305444874513
+          ],
+          "ar1_to_parity_phi": 0.6243019342637229,
+          "half_life_ci95_minutes": [
+            1.2265651634143462,
+            1.6842860170834768
+          ],
+          "half_life_minutes": 1.4433141573549346,
+          "half_life_to_parity_minutes": 1.471271599390091,
+          "max_abs_bps": 58.7431885349865,
+          "mean_bps": -1.2170033767022481,
+          "median_abs_bps": 5.3640566661528055,
+          "observed_minutes": 8640,
+          "p95_abs_bps": 20.274332455950447,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 1044,
+              "max_duration_minutes": 39.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.24895833333333334
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 116,
+              "max_duration_minutes": 21.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.023842592592592592
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 6,
+              "max_duration_minutes": 3.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.001388888888888889
+            }
+          }
+        },
+        "pre_crisis": {
+          "ar1_adjacent_pairs": 12959,
+          "ar1_phi": 0.681650269270886,
+          "ar1_phi_ci95": [
+            0.5948597028222284,
+            0.7504370313741144
+          ],
+          "ar1_to_parity_phi": 0.6844916506764096,
+          "half_life_ci95_minutes": [
+            1.3344388807134369,
+            2.414309670655415
+          ],
+          "half_life_minutes": 1.8086572260095513,
+          "half_life_to_parity_minutes": 1.8285040524610496,
+          "max_abs_bps": 103.27827629536657,
+          "mean_bps": -0.5389939697138572,
+          "median_abs_bps": 2.267224432381809,
+          "observed_minutes": 12960,
+          "p95_abs_bps": 9.037948991434948,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 278,
+              "max_duration_minutes": 17.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.03641975308641975
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 17,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.004012345679012346
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 5,
+              "max_duration_minutes": 6.0,
+              "median_duration_minutes": 4.0,
+              "share_observed_minutes_above": 0.0016203703703703703
+            }
+          }
+        },
+        "recovery": {
+          "ar1_adjacent_pairs": 4319,
+          "ar1_phi": 0.4484450157211378,
+          "ar1_phi_ci95": [
+            0.31631700691812364,
+            0.6440477251574085
+          ],
+          "ar1_to_parity_phi": 0.4496910531545416,
+          "half_life_ci95_minutes": [
+            0.6022075834585787,
+            1.5753973444587215
+          ],
+          "half_life_minutes": 0.8643064842751921,
+          "half_life_to_parity_minutes": 0.8673072667953524,
+          "max_abs_bps": 460.5401757402028,
+          "mean_bps": -0.8732076836904638,
+          "median_abs_bps": 7.384678336643802,
+          "observed_minutes": 4320,
+          "p95_abs_bps": 33.14270967851751,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 1,
+              "episodes": 579,
+              "max_duration_minutes": 49.0,
+              "median_duration_minutes": 2.0,
+              "share_observed_minutes_above": 0.39305555555555555
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 238,
+              "max_duration_minutes": 11.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.11064814814814815
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 33,
+              "max_duration_minutes": 6.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.012962962962962963
+            }
+          }
+        }
+      }
+    },
+    "usdt": {
+      "all_legs_traded": {
+        "crisis": {
+          "ar1_adjacent_pairs": 2989,
+          "ar1_phi": 0.5199469956127507,
+          "ar1_phi_ci95": [
+            0.43074332412140337,
+            0.5921836131918633
+          ],
+          "ar1_to_parity_phi": 0.5765884380657122,
+          "half_life_ci95_minutes": [
+            0.8229777644261037,
+            1.3229551456192425
+          ],
+          "half_life_minutes": 1.0598120451616255,
+          "half_life_to_parity_minutes": 1.25883357010056,
+          "max_abs_bps": 28.56511864242961,
+          "mean_bps": -1.2297917195040025,
+          "median_abs_bps": 1.9329828829484086,
+          "observed_minutes": 3479,
+          "p95_abs_bps": 7.745967217713811,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 53,
+              "max_duration_minutes": 3.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.01724633515377982
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 2,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.5,
+              "share_observed_minutes_above": 0.0008623167576889911
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "full_sample": {
+          "ar1_adjacent_pairs": 19879,
+          "ar1_phi": 0.38207773570356907,
+          "ar1_phi_ci95": [
+            0.3346369388569456,
+            0.4283598025205962
+          ],
+          "ar1_to_parity_phi": 0.4069625359817003,
+          "half_life_ci95_minutes": [
+            0.6331793358632047,
+            0.8175912998971946
+          ],
+          "half_life_minutes": 0.7204289649296133,
+          "half_life_to_parity_minutes": 0.770990938333905,
+          "max_abs_bps": 31.578511248291363,
+          "mean_bps": -0.606408302730595,
+          "median_abs_bps": 1.608443147507188,
+          "observed_minutes": 23729,
+          "p95_abs_bps": 6.936995173525414,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 238,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.01171562223439673
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 6,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.0003371402081840786
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "post": {
+          "ar1_adjacent_pairs": 6485,
+          "ar1_phi": 0.3334905672305418,
+          "ar1_phi_ci95": [
+            0.2643014642136073,
+            0.3989642208522579
+          ],
+          "ar1_to_parity_phi": 0.3541821980330548,
+          "half_life_ci95_minutes": [
+            0.5209028745601852,
+            0.7543362698019541
+          ],
+          "half_life_minutes": 0.6312007028795853,
+          "half_life_to_parity_minutes": 0.6678079977429864,
+          "max_abs_bps": 18.517414336010063,
+          "mean_bps": -0.6342390486707487,
+          "median_abs_bps": 2.39452807782925,
+          "observed_minutes": 7367,
+          "p95_abs_bps": 7.727728885209117,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 98,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.015610153386724583
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "pre_crisis": {
+          "ar1_adjacent_pairs": 6932,
+          "ar1_phi": 0.2258316769078325,
+          "ar1_phi_ci95": [
+            0.0952385850491082,
+            0.3460814670802319
+          ],
+          "ar1_to_parity_phi": 0.2262488152741795,
+          "half_life_ci95_minutes": [
+            0.29478437970504257,
+            0.6532461987682551
+          ],
+          "half_life_minutes": 0.46583556581043223,
+          "half_life_to_parity_minutes": 0.4664140257284388,
+          "max_abs_bps": 30.662763090898437,
+          "mean_bps": 0.05257052030608011,
+          "median_abs_bps": 1.0267705886590761,
+          "observed_minutes": 9071,
+          "p95_abs_bps": 3.2687256734043046,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 7,
+              "max_duration_minutes": 6.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.0013228971447469958
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 1,
+              "max_duration_minutes": 1.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.00011024142872891633
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "recovery": {
+          "ar1_adjacent_pairs": 3471,
+          "ar1_phi": 0.3463856974443446,
+          "ar1_phi_ci95": [
+            0.2774773566448288,
+            0.41349764808453904
+          ],
+          "ar1_to_parity_phi": 0.4319794457351431,
+          "half_life_ci95_minutes": [
+            0.540669702502089,
+            0.7848991856030665
+          ],
+          "half_life_minutes": 0.6537876028272417,
+          "half_life_to_parity_minutes": 0.8257874073477549,
+          "max_abs_bps": 31.578511248291363,
+          "mean_bps": -1.5517957349105223,
+          "median_abs_bps": 2.494779195876262,
+          "observed_minutes": 3812,
+          "p95_abs_bps": 8.46282262285136,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 80,
+              "max_duration_minutes": 6.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.023871983210912908
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 3,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.001049317943336831
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        }
+      },
+      "all_minutes_last_close": {
+        "crisis": {
+          "ar1_adjacent_pairs": 4319,
+          "ar1_phi": 0.5180840928081151,
+          "ar1_phi_ci95": [
+            0.45020165136854795,
+            0.5745841394416237
+          ],
+          "ar1_to_parity_phi": 0.5636813130990871,
+          "half_life_ci95_minutes": [
+            0.8685405312569081,
+            1.2509226728032945
+          ],
+          "half_life_minutes": 1.0540275475047978,
+          "half_life_to_parity_minutes": 1.2091191463676982,
+          "max_abs_bps": 28.56511864242961,
+          "mean_bps": -1.1077795173618343,
+          "median_abs_bps": 1.8825403370481553,
+          "observed_minutes": 4320,
+          "p95_abs_bps": 7.540284580199954,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 57,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.014814814814814815
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 2,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.5,
+              "share_observed_minutes_above": 0.0006944444444444445
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "full_sample": {
+          "ar1_adjacent_pairs": 30239,
+          "ar1_phi": 0.3969100074689182,
+          "ar1_phi_ci95": [
+            0.353826202372832,
+            0.4308610514201779
+          ],
+          "ar1_to_parity_phi": 0.4116147081005814,
+          "half_life_ci95_minutes": [
+            0.6671616093818298,
+            0.8232448749246903
+          ],
+          "half_life_minutes": 0.7501221817136442,
+          "half_life_to_parity_minutes": 0.7808634967512282,
+          "max_abs_bps": 31.578511248291363,
+          "mean_bps": -0.49130084848590705,
+          "median_abs_bps": 1.527478064540233,
+          "observed_minutes": 30240,
+          "p95_abs_bps": 6.657765830963669,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 256,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.009854497354497355
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 6,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.00026455026455026457
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "post": {
+          "ar1_adjacent_pairs": 8639,
+          "ar1_phi": 0.3540756661883403,
+          "ar1_phi_ci95": [
+            0.2953675339726398,
+            0.40288212905830373
+          ],
+          "ar1_to_parity_phi": 0.36678581289545154,
+          "half_life_ci95_minutes": [
+            0.5683701433213504,
+            0.7624448443275836
+          ],
+          "half_life_minutes": 0.6676145026490183,
+          "half_life_to_parity_minutes": 0.6910896564192824,
+          "max_abs_bps": 18.517414336010063,
+          "mean_bps": -0.5357497003997372,
+          "median_abs_bps": 2.3914633163801824,
+          "observed_minutes": 8640,
+          "p95_abs_bps": 7.649162900214889,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 108,
+              "max_duration_minutes": 10.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.014467592592592593
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "pre_crisis": {
+          "ar1_adjacent_pairs": 12959,
+          "ar1_phi": 0.25003663424936473,
+          "ar1_phi_ci95": [
+            0.15790281597549297,
+            0.3311535004257078
+          ],
+          "ar1_to_parity_phi": 0.25153101047778637,
+          "half_life_ci95_minutes": [
+            0.37553167845235813,
+            0.6271841740963369
+          ],
+          "half_life_minutes": 0.5000528537643233,
+          "half_life_to_parity_minutes": 0.5022117862833946,
+          "max_abs_bps": 30.662763090898437,
+          "mean_bps": 0.07617326616351752,
+          "median_abs_bps": 1.0230973729896675,
+          "observed_minutes": 12960,
+          "p95_abs_bps": 3.1816046887218588,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 8,
+              "max_duration_minutes": 6.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.0010030864197530865
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 1,
+              "max_duration_minutes": 1.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 7.716049382716049e-05
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        },
+        "recovery": {
+          "ar1_adjacent_pairs": 4319,
+          "ar1_phi": 0.3772066569185386,
+          "ar1_phi_ci95": [
+            0.30614739980444644,
+            0.445220160563835
+          ],
+          "ar1_to_parity_phi": 0.4521678153234088,
+          "half_life_ci95_minutes": [
+            0.5855823768992936,
+            0.8565976897826927
+          ],
+          "half_life_minutes": 0.7109478354952816,
+          "half_life_to_parity_minutes": 0.8733092168968534,
+          "max_abs_bps": 31.578511248291363,
+          "mean_bps": -1.4883468197305925,
+          "median_abs_bps": 2.447535061298467,
+          "observed_minutes": 4320,
+          "p95_abs_bps": 8.371520662284304,
+          "thresholds": {
+            "10.0": {
+              "censored_episodes": 0,
+              "episodes": 83,
+              "max_duration_minutes": 3.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.022222222222222223
+            },
+            "25.0": {
+              "censored_episodes": 0,
+              "episodes": 3,
+              "max_duration_minutes": 2.0,
+              "median_duration_minutes": 1.0,
+              "share_observed_minutes_above": 0.000925925925925926
+            },
+            "50.0": {
+              "censored_episodes": 0,
+              "episodes": 0,
+              "max_duration_minutes": null,
+              "median_duration_minutes": null,
+              "share_observed_minutes_above": 0.0
+            }
+          }
+        }
+      }
+    }
+  }
+}
