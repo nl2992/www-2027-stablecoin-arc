@@ -26,7 +26,8 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | C5 event-linked contract registry | c5/event-contracts | 7344b16 | pushed, no PR |
 | M4 multi-event data section | m4/data-section | 8e2cec9 | pushed, no PR |
 | C5b block-pinned validation plan (offline) | c5b/validation-plan | a6b77a8 | pushed, no PR |
-| R1 replication guide + post-C2 review packet | r1/replication-package | see iteration log | pushed, no PR |
+| R1 replication guide + post-C2 review packet | r1/replication-package | 75051f0 | pushed, no PR |
+| E3 authorized data acquisition + first multi-event run | e3/acquire-public-data | see iteration log | pushed, no PR |
 
 ## Component status
 
@@ -46,26 +47,32 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | C6 | Capacity → persistence inference | BLOCKED on C4/C5 | — |
 | M | Manuscript | SKELETON + related work (16 verified bib entries) + generated registry table + 3 generated figures (timeline, coverage heatmap, anchor D vs W) + generated coverage table + multi-event data section; numbers generated from reports; PDF build unverified (no TeX installed) | `paper/` |
 
-## Event coverage (from `configs/event_registry.json`)
+## Event coverage (from `configs/event_registry.json`, after the 2026-10-11 batch)
 
-- ACCEPTED: 1 cluster (CL-2023-03-SVB, anchor). The **multi-event criterion is not met**.
-- SOURCE_DOCUMENTED primaries with listed free public minute data: UST 2022, TUSD 2024 (OOS), FDUSD 2025 (OOS), USDe 2025 (OOS), BUSD 2023 (placebo).
-- SOURCE_DOCUMENTED primaries without identified data: DAI 2020, USDD 2022, USDT FTX 2022 (needs USD venue), USDT June 2023 (expected negative).
-- UNRESOLVED: USDe 2024 (no evidence), USR 2026, MIM 2026 (weak sources).
+- ACCEPTED independent clusters: 2. These are CL-2023-03-SVB (anchor, exploratory) and CL-2025-04-FDUSD (out-of-sample). The **three-episode criterion is not met**.
+- DATA_VERIFIED:
+  - UST 2022: Binance delisting, so no recovery window.
+  - TUSD 2024: amendment A2, Binance.US USD impaired.
+  - June 2023 USDT: A2.
+  - USDe 2025: the USDT gate failed (15 bps).
+- REJECTED (R1 not met): the BUSD placebo, and FTX-USDT on Binance.US (a venue-specific dislocation elsewhere).
+- SOURCE_DOCUMENTED without data: DAI 2020, USDD 2022.
+- UNRESOLVED: USDe 2024, USR 2026, MIM 2026.
+- Results table: `reports/events/cross_event_results.md` and `paper/generated/results_table.tex`.
 
 ## Authorization state
 
 | Item | State |
 |---|---|
-| Paid data / accounts / credentials / provider contact | NOT authorized |
-| Downloading free public data files: Binance.com klines (stablecoin, triangle and BTC legs) and Binance.US USDTUSD (USD reference) | NOT YET authorized. Requested in E1 and E2 (`docs/e2_usd_reference_design.md`). After authorization: place archives in `data/raw/binance` and `data/raw/binance_us`, then run `python -m www_events.batch` |
+| Paid data / accounts / credentials / provider contact | NOT authorized (user reconfirmed: no paid access) |
+| Downloading free public data files: Binance.com and Binance.US klines | **AUTHORIZED by user 2026-10-11** (no paid access). 54 archives acquired and checksum-verified (`reports/events/acquisition_manifest.json`) |
 | Optional robustness USD venue (Bitstamp public OHLC `usdtusd`) | NOT authorized; optional |
 | Historical capacity estimation | FORBIDDEN until execution-state data validated **and** separately authorized |
 | Continuity standard for L2 (PROVIDER_NORMALIZED vs NATIVE_SEQUENCE) | open user decision; current default PROVIDER_NORMALIZED |
 
 ## Cross-event decisions (generated)
 
-`python -m www_events.summary` produces `reports/events/cross_event_summary.json`. Current output: framing DESCRIPTIVE; H1 in-sample INSUFFICIENT_EVENTS; H2 INSUFFICIENT_EVENTS (anchor DV5 ≈ 95 is exploratory); H3 NOT_TESTABLE; one exploratory event (the anchor).
+`python -m www_events.summary` produces `reports/events/cross_event_summary.json`. Current output: framing DESCRIPTIVE; H1 in-sample INSUFFICIENT_EVENTS (no accepted in-sample confirmatory event); out-of-sample FDUSD satisfies H1 (1/1), with no in-sample result to replicate; H2 DESCRIPTIVE_ONLY (n=1), with the caveat that the placebo DV5 is also above 1; H3 NOT_TESTABLE.
 
 ## Pre-analysis plan
 
@@ -81,6 +88,11 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 4. The anchor control window (February 2023) is not covered by the IAQF panel.
 
 ## Prioritized next tasks
+
+0. **Toward a third accepted episode (no paid data):**
+   - (a) The UST recovery window is lost on Binance. Check whether USTBUSD or other free archives extend past 2022-05-13. If not, record that UST cannot be accepted under R3.
+   - (b) Robustness venue for TUSD and June 2023: a USD leg from a venue with redeemable USD in 2023–24 (Bitstamp public OHLC `usdtusd`, which is free, needs a download-scope check with the user, and needs its history depth verified).
+   - (c) A USDe USD leg on a venue whose USDT/USD stayed within 10 bps.
 
 
 1. **Robustness hooks from plan section 7** (R1 at 50/200 bps, 30/60-minute DV2 bins, trimmed event windows) in the runner, with synthetic tests.
@@ -113,4 +125,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 19 | 12:25 | c5 @ 7344b16 | Event-linked contract registry: wormhole-UST/3CRV (Jump-documented), legacy UST, BUSD, USDe/USDC (UNVERIFIED aggregator) | 158 passed |
 | 20 | 12:55 | m4 @ 8e2cec9 | Multi-event data section; generated coverage appendix table; brace/environment balance test (no TeX available) | 160 passed |
 | 21 | 13:25 | c5b @ a6b77a8 | Offline block-pinned validation plan: pure-Python keccak (vector-tested), calldata, block search, dry run; 4 pool/event items, 0 network calls | 165 passed |
-| 22 | 13:55 | r1 @ (this commit) | REPRODUCE.md, post-C2 review packet, command/hash consistency tests | 167 passed |
+| 22 | 13:55 | r1 @ 75051f0 | REPRODUCE.md, post-C2 review packet, command/hash consistency tests | 167 passed |
+| 23 | 14:30 | e3 @ feca745 + this commit | User authorized downloads; 54 archives acquired and verified; Binance.US 11-column layout supported; batch over 8 events; amendment A2 (post-data, USD-rail validity); summary bug fixed (only ACCEPTED primaries are confirmatory); results table and multi-event paper section | 170 passed |

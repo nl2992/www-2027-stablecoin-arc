@@ -46,7 +46,7 @@ def test_every_citation_has_a_bib_entry_and_every_entry_is_cited():
 
 
 def test_labels_resolve_and_pending_sections_are_marked():
-    generated = TABLE_OUTPUT.read_text() + COVERAGE_TABLE_OUTPUT.read_text()
+    generated = "".join(p.read_text() for p in (ROOT / "paper/generated").glob("*.tex"))
     labels = set(re.findall(r"\\label\{([^}]+)\}", MAIN + generated))
     refs = set(re.findall(r"\\ref\{([^}]+)\}", MAIN))
     assert refs <= labels
@@ -75,3 +75,12 @@ def test_braces_and_environments_balance_without_a_tex_compiler():
         assert sorted(begins) == sorted(ends)
         total_envs += len(begins)
     assert total_envs >= 8  # the check must actually see the document, figure, table and tabular environments
+
+
+def test_results_table_and_markdown_are_current_and_included():
+    from www_paper.macros import RESULTS_MD_OUTPUT, RESULTS_TABLE_OUTPUT, build_results_markdown, build_results_table
+    assert RESULTS_TABLE_OUTPUT.read_text() == build_results_table(), "run `uv run python -m www_paper.macros`"
+    assert RESULTS_MD_OUTPUT.read_text() == build_results_markdown()
+    assert "\\input{generated/results_table}" in MAIN
+    protocols = list((ROOT / "reports/events").glob("*_protocol.json"))
+    assert RESULTS_TABLE_OUTPUT.read_text().count("\\\\") == len(protocols) + 1  # header + one row per event

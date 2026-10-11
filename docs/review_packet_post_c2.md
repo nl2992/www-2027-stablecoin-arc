@@ -29,8 +29,13 @@
   - Triangle wedge: +6.5 bps (CI 4.6–9.4).
   - Half-life ratio D/W ≈ 95.
   - BTC volatility roughly doubled, which is a competing explanation.
-- **Not established:** any other event, any confirmatory hypothesis test, executable capacity, or historical on-chain state.
-- **Cross-event decisions (generated):** H1 INSUFFICIENT_EVENTS; H2 INSUFFICIENT_EVENTS; H3 NOT_TESTABLE; framing DESCRIPTIVE.
+- **Multi-event (2026-10-11, after authorized downloads):** eight candidates measured; see `reports/events/cross_event_results.md`.
+  - Two accepted independent clusters: the SVB anchor (exploratory) and FDUSD 2025 (out-of-sample).
+  - Placebo BUSD and FTX-USDT on Binance.US rejected.
+  - UST, TUSD, June 2023 USDT and USDe are DATA_VERIFIED only.
+  - Amendment A2 (made after seeing data) is the reason for TUSD and June 2023 USDT, via the Binance.US USD-rail impairment.
+- **Not established:** a three-episode confirmatory sample, any confirmatory in-sample test, executable capacity, or historical on-chain state.
+- **Cross-event decisions (generated):** H1 in-sample INSUFFICIENT_EVENTS; out-of-sample 1/1 satisfies H1, with no in-sample result to replicate; H2 descriptive (the placebo also has a ratio above one); H3 NOT_TESTABLE; framing DESCRIPTIVE.
 
 ## Known limitations a reviewer should weigh
 

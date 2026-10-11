@@ -15,8 +15,10 @@ arbitrage capacity---depth, redemption access, settlement timing and inventory--
 fragmentation becomes, how long it lasts, and how it resolves. We build a pre-registered multi-event design:
 a sourced registry of \NumRegistryEntries{} candidate episodes from 2020--2026 in \NumRegistryClusters{}
 independence clusters, explicit severity and independence rules, matched control windows, placebo and
-expected-negative cases, and events after 2024 held out for out-of-sample evaluation. [PENDING: cross-event
-results.] In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
+expected-negative cases, and events after 2024 held out for out-of-sample evaluation. Applying the protocol to
+eight measured candidates on public exchange archives yields \NumAcceptedClusters{} accepted independent episodes
+(the anchor and FDUSD in April 2025), so the confirmatory multi-event criterion is not yet met and all results are
+reported descriptively; the placebo shock does not qualify. In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
 half-life of about \NumAnchorEventHalfLife{} minutes, while within-venue cross-quote wedges reverted within
 minutes, which separates redemption-market dislocation from cross-quote arbitrage failure. All results are
 descriptive; executable capacity is not yet measured.
@@ -119,8 +121,8 @@ halt~\cite{paxos2023busd}---and one expected negative case), \NumUnresolved{} un
 pre-registered out-of-sample boundary.}
 \label{fig:timeline}
 \end{figure*}
-Decisions across events are produced mechanically by applying the frozen plan to all measured events; with the
-current evidence the in-sample H1 decision is ``insufficient events''. [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
+Decisions across events are produced mechanically by applying the frozen plan to all measured events
+(Section~\ref{sec:multievent}); with the current evidence the in-sample H1 decision is ``insufficient events''. [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
 USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
 
 \section{Data}
@@ -193,12 +195,39 @@ Under the plan definitions, the event-minus-baseline change in median $|W|$ is \
 dislocated---consistent with H2 and with impaired redemption~\cite{du2025shadow}, but one event cannot
 establish it.
 
+\section{Multi-Event Results (descriptive)}
+\label{sec:multievent}
+Table~\ref{tab:results} reports every measured candidate. Status changes follow fixed rules and are logged. One
+amendment made after seeing data (A2) removes eligibility when a venue's on-platform USD was not redeemable: Binance.US
+USD services were suspended from June 2023 to February 2025, which invalidates the USD leg for the TUSD (January
+2024) and June 2023 USDT candidates. The latter's apparent USDT \emph{premium} of \NumNegativeExtreme{} bps is
+attributable to that impairment rather than to the reported Curve imbalance, and it is not counted.
+
+\input{generated/results_table}
+
+\paragraph{Accepted out-of-sample episode.} FDUSD (April 2025, issuer-solvency allegation) reached an extreme of
+\NumFdusdExtreme{} bps against USD; median $|D|$ rose by \NumFdusdDvOne{} bps relative to the matched control (95\% CI
+[\NumFdusdDvOneLo, \NumFdusdDvOneHi]) and recovered in about \NumFdusdRecoveryHours{} hours. The within-venue triangle
+wedge did not move (change \NumFdusdDvFour{} bps, CI [\NumFdusdDvFourLo, \NumFdusdDvFourHi]), and market-wide BTC
+volatility was lower than in the control window (\NumFdusdVolControl{} vs \NumFdusdVolEvent{} bps per hour). As in the
+anchor, cross-quote arbitrage on the venue kept relative prices aligned while the token's dollar value dislocated.
+
+\paragraph{Negative and placebo cases.} The BUSD issuance halt, a regulatory shock with guaranteed redemptions, fails
+R1 (median $|D|$ change \NumPlaceboDvOne{} bps), as does the FTX-period USDT candidate on Binance.US, whose reported
+dislocation occurred on other venues. USDe's Binance-only dislocation (extreme \NumUsdeExtreme{} bps) is measured but not
+accepted because USDT/USD itself moved by a median of \NumUsdeUsdtGate{} bps in the event window, and UST lacks a
+recovery window after its delisting.
+
+\paragraph{A caution on H2.} The peg-to-wedge half-life ratio exceeds one in every event where it is defined,
+\emph{including the placebo} (\NumPlaceboDvFive), so a ratio above one is not by itself evidence of stress-specific
+persistence; persistence comparisons must be made against each event's own control.
+
 \section{Executable Capacity [PENDING]}
 Capacity estimation is gated on validated crisis-period L2 or on-chain execution state and explicit
 authorization. No capacity figures are reported.
 
 \section{Limitations}
-Single measured event; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
+Two accepted episodes (one exploratory); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
 USDT-quoted archives require USD correction; no executable depth; normalized L2 lacks native sequence IDs.
 
 \section{Reproducibility}
