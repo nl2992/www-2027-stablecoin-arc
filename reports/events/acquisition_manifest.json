@@ -1,5 +1,5 @@
 {
- "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access.",
+ "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11.",
  "records": [
   {
    "venue": "binance",
@@ -983,10 +983,508 @@
    "for_events": [
     "N2023-06-USDT-3POOL"
    ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2022-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2022-04.csv",
+   "bytes": 1925263,
+   "sha256": "52b2bdebe5491ebad2a59a9d322acedeea07df564be7800c05dd8009c432abe8",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 4659,
+   "first_utc": "2022-04-01T00:00Z",
+   "last_utc": "2022-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2022-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2022-05.csv",
+   "bytes": 2019393,
+   "sha256": "bc4752cb14fa0539ea95563f9abc6f8509b323b910bb45768ac60302fe114a06",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 6397,
+   "first_utc": "2022-05-01T00:00Z",
+   "last_utc": "2022-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2022-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2022-10.csv",
+   "bytes": 1951992,
+   "sha256": "abb7d14fc5a9f0e964c40482c137b9ececec815b7564bd04ddd7d0b74af0649f",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 3988,
+   "first_utc": "2022-10-01T00:00Z",
+   "last_utc": "2022-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2022-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2022-11.csv",
+   "bytes": 2047784,
+   "sha256": "ed87711d6c5345634992b8c10481dc7b5d497172e7f442cc3c8d118c58019f69",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 18354,
+   "first_utc": "2022-11-01T00:00Z",
+   "last_utc": "2022-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-01",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-01.csv",
+   "bytes": 1997064,
+   "sha256": "1a0ed354f0855624c6884084670006b0bde324ce769fddb285561af50c9e1835",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 5673,
+   "first_utc": "2023-01-01T00:00Z",
+   "last_utc": "2023-01-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-02.csv",
+   "bytes": 1800985,
+   "sha256": "29a9651bff8524d0240b21ba2048c52d4587a1ea5b2ebcc03e8786227be37d01",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 5372,
+   "first_utc": "2023-02-01T00:00Z",
+   "last_utc": "2023-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-05.csv",
+   "bytes": 2084996,
+   "sha256": "ba3165dd2c0b8d657b9c2d244ecf6c769f07b1f239690299397a7d1353a474a2",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 14045,
+   "first_utc": "2023-05-01T00:00Z",
+   "last_utc": "2023-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-06.csv",
+   "bytes": 2017038,
+   "sha256": "686ab3ca0a5f299d41d6fee7062d71c7bb6bce812e3c3bd2cf447c747c726c32",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 13571,
+   "first_utc": "2023-06-01T00:00Z",
+   "last_utc": "2023-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-12",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-12.csv",
+   "bytes": 2152647,
+   "sha256": "e0781e599d489fadd3266f2a603b6f699ced668040569e79031a0c03e554f670",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 22447,
+   "first_utc": "2023-12-01T00:00Z",
+   "last_utc": "2023-12-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-01",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-01.csv",
+   "bytes": 2161891,
+   "sha256": "7f490e0155b3e1cd2040f63cc975c933f786c2a39f777753b0299c1b22cd7391",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 22276,
+   "first_utc": "2024-01-01T00:00Z",
+   "last_utc": "2024-01-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2025-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2025-02.csv",
+   "bytes": 1834161,
+   "sha256": "245d99b177077e4b72230ad2571dbd17411416dbeed23283cc8cc0c0d59fc0e5",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 7100,
+   "first_utc": "2025-02-01T00:00Z",
+   "last_utc": "2025-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2025-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2025-03.csv",
+   "bytes": 2017501,
+   "sha256": "eedc2535d0827942fdd66ee689f7902b21734b65fde261dbe1446e5b44ab0e97",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 6237,
+   "first_utc": "2025-03-01T00:00Z",
+   "last_utc": "2025-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2025-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2025-04.csv",
+   "bytes": 1953156,
+   "sha256": "b68d075a2023803dd220947bf3fde381d3520c32ccefefe0f2d98534cff4774d",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 6229,
+   "first_utc": "2025-04-01T00:00Z",
+   "last_utc": "2025-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2025-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2025-09.csv",
+   "bytes": 1960405,
+   "sha256": "216f9fee8ae1f247abe1bef8889e1218cf7687ac8e9ece42814969d4a6ae6753",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 6822,
+   "first_utc": "2025-09-01T00:00Z",
+   "last_utc": "2025-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2025-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2025-10.csv",
+   "bytes": 2054909,
+   "sha256": "ac9cb0f06d0cf473f32d934757ea4a85d84e1557f6795c05133cb8438a9c985e",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 10596,
+   "first_utc": "2025-10-01T00:00Z",
+   "last_utc": "2025-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "USD reference leg (robustness / A2-valid venue)",
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2022-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2022-10.csv",
+   "bytes": 1990070,
+   "sha256": "be5852de567921c2adc1c1edcc2df877e327a60c73972797f83f851999001e82",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43254,
+   "first_utc": "2022-10-01T00:00Z",
+   "last_utc": "2022-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDT",
+   "month": "2022-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdt/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDT-1m-2022-10.csv",
+   "bytes": 1697483,
+   "sha256": "bd9ce98328f95842aefa93975e16a95a939f3f7bba51a2dd9d843ff80a0920f6",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 5460,
+   "first_utc": "2022-10-01T00:00Z",
+   "last_utc": "2022-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2022-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2022-11.csv",
+   "bytes": 1943837,
+   "sha256": "148a7a2981597718b69020ad574c4b5e550f62308f6a7d144cb2f2045b3a31e7",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 42371,
+   "first_utc": "2022-11-01T00:00Z",
+   "last_utc": "2022-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDT",
+   "month": "2022-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdt/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDT-1m-2022-11.csv",
+   "bytes": 1770472,
+   "sha256": "acbafbd6c1125da97d4119ccaaf2cb2b4908a23db4ed4d3e40c04320dfc93232",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 19545,
+   "first_utc": "2022-11-01T00:00Z",
+   "last_utc": "2022-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-05.csv",
+   "bytes": 2010330,
+   "sha256": "3302ae0e7225a9f1f6a02de40006693deeb673b7a4adb9e4e0f95ff995257fc4",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 42725,
+   "first_utc": "2023-05-01T00:00Z",
+   "last_utc": "2023-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDT",
+   "month": "2023-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdt/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDT-1m-2023-05.csv",
+   "bytes": 1749809,
+   "sha256": "26f36eb5f138f144469577a04b828564b468022e91d7f72ca8600fc8ed9c50bf",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 11688,
+   "first_utc": "2023-05-01T00:00Z",
+   "last_utc": "2023-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-06.csv",
+   "bytes": 1954083,
+   "sha256": "51c9a143565d63a4adbe29f67f785dae95b521b8ef5720421f88f3ff6dc20dcb",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 41710,
+   "first_utc": "2023-06-01T00:00Z",
+   "last_utc": "2023-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDT",
+   "month": "2023-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdt/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDT-1m-2023-06.csv",
+   "bytes": 1710097,
+   "sha256": "fba3ead7aad38a34bca4e54aea388902e894995b0011b38b0af1d32aeeeb751b",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 13273,
+   "first_utc": "2023-06-01T00:00Z",
+   "last_utc": "2023-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "E2022-11-USDT-FTX",
+    "N2023-06-USDT-3POOL"
+   ]
   }
  ],
  "summary": {
-  "VERIFIED": 54,
+  "VERIFIED": 77,
   "NOT_AVAILABLE": 0,
   "CHECKSUM_FAILED": 0
  }
