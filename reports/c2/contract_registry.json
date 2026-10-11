@@ -8,13 +8,31 @@
    "chain_id": 1,
    "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
    "source": "https://curve.readthedocs.io/ref-addresses.html",
-   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
-   "verification": "SOURCE_DOCUMENTED",
-   "interface": "StableSwap3Pool.vy; ABI not yet pinned",
-   "historical_state": "UNVERIFIED",
+   "deployment_status": "HISTORICALLY_VERIFIED",
+   "verification": "LIVE_VERIFIED",
+   "interface": "StableSwap3Pool.vy; ABI signatures confirmed by exact get_dy reproduction",
+   "historical_state": "Read at event blocks via Alchemy archive (read-only); A, fee, coins, decimals, balances and get_dy reproduced offline exactly (reports/c2/archive_validation.json)",
    "event_ids": [
     "E2023-03-USDC-SVB",
     "N2023-06-USDT-3POOL"
+   ],
+   "verified_at": [
+    {
+     "event_id": "E2023-03-USDC-SVB",
+     "block": 16794061,
+     "block_hash": "0x58a4b7c7fb0f7e0757de582730dbff58563cf1468dba52934d3ac53c097edc6a",
+     "code_keccak": "0x954a1e212c557c85043985931498ffa3e2fcbe7dfe9cd61513f36eb47d6f4dfc",
+     "code_bytes": 21199,
+     "get_dy_abs_diff_raw": 0
+    },
+    {
+     "event_id": "N2023-06-USDT-3POOL",
+     "block": 17481592,
+     "block_hash": "0x96a6550a01bf9fdae927c53400289fe5700e244d607dad42642b30aad2969097",
+     "code_keccak": "0x954a1e212c557c85043985931498ffa3e2fcbe7dfe9cd61513f36eb47d6f4dfc",
+     "code_bytes": 21199,
+     "get_dy_abs_diff_raw": 0
+    }
    ]
   },
   {
@@ -64,25 +82,46 @@
    "chain_id": 1,
    "address": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
    "source": "https://jumpcrypto.com/writing/the-depegging-of-ust/",
-   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
-   "verification": "SOURCE_DOCUMENTED",
-   "interface": "Curve metapool (UST(Wormhole) vs 3CRV); ABI not yet pinned",
-   "historical_state": "UNVERIFIED; named by Jump Crypto as the most liquid DEX market for UST on 2022-05-07..09",
+   "deployment_status": "HISTORICALLY_VERIFIED",
+   "verification": "LIVE_VERIFIED",
+   "interface": "Curve metapool (UST(Wormhole) vs 3CRV); ABI signatures confirmed by exact get_dy reproduction",
+   "historical_state": "Read at event blocks via Alchemy archive (read-only); A, fee, coins, decimals, balances and get_dy reproduced offline exactly (reports/c2/archive_validation.json)",
    "event_ids": [
     "E2022-05-UST-COLLAPSE"
-   ]
+   ],
+   "verified_at": [
+    {
+     "event_id": "E2022-05-UST-COLLAPSE",
+     "block": 14726563,
+     "block_hash": "0x4fc4cb61192c5f992e3b2ad3991d75b5b958580622ee885a4368a2bb26ec9a92",
+     "code_keccak": "0xb03eac48901ed5f36399381b3bbbaa60db83ea38ea7b05acc2a46c42c9f6b6ce",
+     "code_bytes": 45,
+     "get_dy_abs_diff_raw": 0
+    }
+   ],
+   "notes": "Bytecode is a minimal proxy (factory clone); implementation contract not yet identified."
   },
   {
    "name": "Curve legacy UST metapool (StableSwapUST.vy)",
    "chain_id": 1,
    "address": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
    "source": "https://curve.readthedocs.io/ref-addresses.html",
-   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
-   "verification": "SOURCE_DOCUMENTED",
-   "interface": "StableSwapUST.vy; ABI not yet pinned",
-   "historical_state": "UNVERIFIED; pre-Wormhole UST pool, relevance to May 2022 liquidity not established",
+   "deployment_status": "HISTORICALLY_VERIFIED",
+   "verification": "LIVE_VERIFIED",
+   "interface": "StableSwapUST.vy; ABI signatures confirmed by exact get_dy reproduction",
+   "historical_state": "Read at event blocks via Alchemy archive (read-only); A, fee, coins, decimals, balances and get_dy reproduced offline exactly (reports/c2/archive_validation.json)",
    "event_ids": [
     "E2022-05-UST-COLLAPSE"
+   ],
+   "verified_at": [
+    {
+     "event_id": "E2022-05-UST-COLLAPSE",
+     "block": 14726563,
+     "block_hash": "0x4fc4cb61192c5f992e3b2ad3991d75b5b958580622ee885a4368a2bb26ec9a92",
+     "code_keccak": "0x04fe4a36bda86015bb016299c3bc7e99e2fccc1508b95d6accfd829606543353",
+     "code_bytes": 22886,
+     "get_dy_abs_diff_raw": 0
+    }
    ]
   },
   {

@@ -124,3 +124,27 @@ UST remains EXPLORATORY (user decision, 2026-10-11).
 
 - **Framing:** a descriptive, pre-registered multi-event study (decision D10). H1–H3 are frozen questions, reported as insufficient or untestable. Capacity is presented as validated method with explicit data limits.
 - **Archive executor:** `src/www_c2/archive_run.py`. It reads the endpoint from `WWW_ETH_RPC_URL` or a git-ignored `.env` and never writes it out. It resolves blocks, reads A, fee, coins, decimals, balances and `get_dy` (plus the 3pool virtual price for metapools), and reproduces each quote offline with `stableswap_get_dy`. It stops on pruned state, a wrong chain, or a spent call budget (default 150). Tested against a mock node, including the real error path. **Waiting only for the user-created key.**
+
+## 12. Historical on-chain state reproduced (reviewer decision 2; user-created free Alchemy key)
+
+`uv run python -m www_c2.archive_run` made 84 read-only calls against `eth-mainnet.g.alchemy.com`. The key is held only in the git-ignored `.env` and was never written out; this is verified by checking the report. Output: `reports/c2/archive_validation.json`. Status COMPLETED, all 4 items reproduced.
+
+| Event | Pool | Block (time UTC) | A | Fee | Balances | get_dy (1,000 units) | Offline difference |
+|---|---|---|---|---|---|---|---|
+| SVB 2023 | 3pool | 16,794,061 (2023-03-09 23:59:59) | 2000 | 1 bp | DAI 160.8 M, USDC 157.1 M, USDT 211.3 M | 999.886454 USDC | 0 |
+| June 2023 | 3pool | 17,481,592 (2023-06-14 23:59:59) | 2000 | 1 bp | 101.9 M / 104.6 M / 176.3 M | 999.917911 | 0 |
+| UST 2022 | Wormhole UST/3CRV | 14,726,563 (2022-05-06 23:59:42) | 200 | 4 bp | UST 664.6 M, 3CRV 568.6 M (virtual price 1.020807) | 978.560310 3CRV | 0 |
+| UST 2022 | Legacy UST metapool | same | 100 | 4 bp | 10.8 M / 10.3 M | 978.967404 3CRV | 0 |
+
+**Independent evidence:**
+- 3pool `coins()` match the canonical DAI, USDC and USDT contracts.
+- 3pool bytecode hashes are identical at both 2023 blocks.
+- Block hashes and timestamps are recorded.
+- Offline StableSwap reproduces every quote exactly.
+
+**Limitations:**
+- The Wormhole pool is a 45-byte minimal proxy; its implementation is not yet identified.
+- No cross-check against an independently observed swap transaction has been done yet.
+- These are single pre-event blocks, not intra-event paths.
+
+**No capacity has been computed.** The contract registry marks these three contracts LIVE_VERIFIED, with block-level evidence.

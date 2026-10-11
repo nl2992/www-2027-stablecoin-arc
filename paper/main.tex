@@ -160,8 +160,10 @@ cancels.
 \paragraph{Order books and on-chain state.} Order-book reconstruction is validated on one public normalized L2 sample
 (\NumSampleRows{} rows; BTCUSD, 2023-03-01)~\cite{tardis2026binanceus}; normalized feeds omit native exchange
 sequence identifiers~\cite{coinapi2026limitbook}, so continuity is disclosed as unverifiable. Event-specific Curve
-pools are source-documented (for May 2022, the wormhole-UST/3CRV pool analysed by~\cite{jump2022ust}) but no
-pool state has been read at a historical block. Candle closes are last trades, not quotes.
+pools are source-documented (for May 2022, the wormhole-UST/3CRV pool analysed by~\cite{jump2022ust}). Using a free
+archive endpoint, the state of Curve's 3pool (March and June 2023) and of both UST metapools (May 2022) was read at the
+block preceding each event window, and every on-chain \texttt{get\_dy} quote was reproduced exactly by our offline
+StableSwap implementation; no capacity has yet been computed from these states. Candle closes are last trades, not quotes.
 
 \input{generated/coverage_table}
 \begin{figure}[t]
@@ -282,9 +284,10 @@ primary-market access is modelled by a timezone-aware redemption window. All com
 hand-computed synthetic cases.
 
 Historical estimation is not possible with the data available to this study. Crisis-day exchange order books are
-offered only under paid licences, which were declined. Historical pool state requires an archive node; the free,
-keyless public endpoints examined either exclude archive data, prohibit automated extraction, require an account, or
-return pruned state at the event blocks. No capacity figures are reported.
+offered only under paid licences, which were declined. Historical pool state is now readable through a free archive key, and
+pool states and quotes have been reproduced exactly at event blocks; capacity computation on those states awaits
+independent review. Crisis-day exchange depth remains unavailable, so any capacity reported later will be on-chain
+only and will not represent comprehensive CEX--DEX restoration capacity. No capacity figures are reported.
 
 \section{Limitations}
 Four accepted episodes (two exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;

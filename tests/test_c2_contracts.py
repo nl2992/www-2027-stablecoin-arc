@@ -8,7 +8,12 @@ def test_documented_candidate_registry_is_structurally_valid():
     path = Path(__file__).parents[1] / "reports/c2/contract_registry.json"
     entries = json.loads(path.read_text())["entries"]
     assert validate_registry(entries) == []
-    assert all(item["deployment_status"] == "UNVERIFIED_AT_TARGET_BLOCK" for item in entries)
+    for item in entries:  # LIVE_VERIFIED only with recorded block-level reproduction evidence
+        if item["verification"] == "LIVE_VERIFIED":
+            assert item["deployment_status"] == "HISTORICALLY_VERIFIED" and item["verified_at"]
+            assert all(v["get_dy_abs_diff_raw"] <= 2 and v["block_hash"].startswith("0x") for v in item["verified_at"])
+        else:
+            assert item["deployment_status"] == "UNVERIFIED_AT_TARGET_BLOCK"
 
 
 def test_duplicate_address_and_false_live_status_are_rejected():

@@ -138,12 +138,15 @@ POOL_INTERFACE = {
 }
 
 
+PLANNABLE = {"SOURCE_DOCUMENTED", "LIVE_VERIFIED"}  # never UNVERIFIED (e.g. aggregator-only listings)
+
+
 def build_plan(contracts: list[Mapping[str, Any]], events: list[Mapping[str, Any]]) -> dict[str, Any]:
     by_id = {e["id"]: e for e in events}
     items = []
     for c in contracts:
         interface = POOL_INTERFACE.get(c["address"])
-        if c["verification"] != "SOURCE_DOCUMENTED" or interface is None:
+        if c["verification"] not in PLANNABLE or interface is None:
             continue
         for eid in c["event_ids"]:
             start = by_id[eid]["reported_window_utc"]["start"]
@@ -154,7 +157,7 @@ def build_plan(contracts: list[Mapping[str, Any]], events: list[Mapping[str, Any
                 "block": "TO_RESOLVE via block_at_or_before on an authorized archive endpoint",
                 "requests": requests_for(c["address"], "<BLOCK_HEX>", INTERFACES[interface]()),
             })
-    skipped = [c["name"] for c in contracts if c["verification"] != "SOURCE_DOCUMENTED"
+    skipped = [c["name"] for c in contracts if c["verification"] not in PLANNABLE
                or c["address"] not in POOL_INTERFACE]
     return {"network_calls_made": 0, "items": items, "not_planned": skipped,
             "note": "Requests are constructed offline; ABI signatures ASSUMED until checked against verified source."}
