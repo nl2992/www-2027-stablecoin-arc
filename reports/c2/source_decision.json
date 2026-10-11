@@ -1,0 +1,82 @@
+{
+  "checkpoint": "C2",
+  "as_of": "2026-10-11",
+  "requirement": {
+    "venue": "binance-us (CoinAPI BINANCEUS; not Binance.com)",
+    "symbols": ["BTCUSD", "BTCUSDC", "USDCUSD", "BTCUSDT", "USDCUSDT", "USDTUSD"],
+    "dates_utc": ["2023-03-10", "2023-03-11", "2023-03-12"],
+    "symbol_day_cells": 18,
+    "granularity": "full-depth L2: initial snapshot plus incremental price-level updates",
+    "reproducibility": "every replayed observation traceable to a checksummed raw artifact; deterministic replay",
+    "rights": "academic publication of derived book states/aggregates, manifests and reproduction instructions"
+  },
+  "gated_activity_authorized": false,
+  "standards_evaluated": ["PROVIDER_NORMALIZED", "NATIVE_SEQUENCE"],
+  "project_standard": "PROVIDER_NORMALIZED",
+  "project_standard_basis": "C1 accepted the Tardis normalized CSV replay with native-sequence continuity disclosed as unverifiable; raising the standard to NATIVE_SEQUENCE is an open user decision",
+  "candidates": [
+    {
+      "id": "coinapi_flat_files_payg",
+      "evidence": {
+        "venue": {"status": "VERIFIED", "basis": "Flat Files exchange table lists BINANCEUS separately from BINANCE"},
+        "symbol_day_availability": {"status": "UNVERIFIED", "basis": "no funded LIST call; public docs do not enumerate the 18 symbol/day L2 files"},
+        "transfer_size_and_cost": {"status": "UNVERIFIED", "basis": "per-GiB PAYG tiers published, but file sizes and LIST charges unknown; no estimate computed"},
+        "snapshot_update_semantics": {"status": "UNVERIFIED", "basis": "update operations (ADD/SUB/MATCH/SET/DELETE/SNAPSHOT) documented generically; L2 delta-vs-absolute behaviour and snapshot cadence for BINANCEUS not observed on any artifact"},
+        "native_sequence_ids": {"status": "FAILED", "basis": "published normalized schema lists exchange/ingest timestamps but no Binance update id; provider recommends timestamp ordering"},
+        "research_rights": {"status": "UNVERIFIED", "basis": "customer agreement scopes use to internal business purposes; publication/derived-output rights not granted in public terms"}
+      },
+      "decisions": {
+        "PROVIDER_NORMALIZED": {"decision": "CONDITIONAL", "failed": [], "open": ["symbol_day_availability", "transfer_size_and_cost", "snapshot_update_semantics", "research_rights"], "disclosed_limitations": ["native exchange sequence continuity cannot be independently proven"]},
+        "NATIVE_SEQUENCE": {"decision": "REJECT", "failed": ["native_sequence_ids"], "open": ["symbol_day_availability", "transfer_size_and_cost", "snapshot_update_semantics", "research_rights"], "disclosed_limitations": []}
+      }
+    },
+    {
+      "id": "tardis_spot_annual_csv",
+      "evidence": {
+        "venue": {"status": "VERIFIED", "basis": "Spot plan documents Binance US coverage"},
+        "symbol_day_availability": {"status": "UNVERIFIED", "basis": "four-year annual window covers March 2023, but exact files not provider-confirmed; C1 cells ACCESS_BLOCKED"},
+        "transfer_size_and_cost": {"status": "UNVERIFIED", "basis": "PRICE_NOT_VERIFIED_FROM_PRIMARY_SOURCE"},
+        "snapshot_update_semantics": {"status": "VERIFIED", "basis": "documented absolute-size semantics replayed on the checksummed 2023-03-01 BTCUSD sample in C1"},
+        "native_sequence_ids": {"status": "FAILED", "basis": "normalized CSV schema omits Binance.US U/u; disconnects not in CSV"},
+        "research_rights": {"status": "UNVERIFIED", "basis": "academic eligibility and derived-data publication rights need confirmation"}
+      },
+      "decisions": {
+        "PROVIDER_NORMALIZED": {"decision": "CONDITIONAL", "failed": [], "open": ["symbol_day_availability", "transfer_size_and_cost", "research_rights"], "disclosed_limitations": ["native exchange sequence continuity cannot be independently proven"]},
+        "NATIVE_SEQUENCE": {"decision": "REJECT", "failed": ["native_sequence_ids"], "open": ["symbol_day_availability", "transfer_size_and_cost", "research_rights"], "disclosed_limitations": []}
+      }
+    },
+    {
+      "id": "tardis_spot_annual_pro_raw_replay",
+      "evidence": {
+        "venue": {"status": "VERIFIED", "basis": "Spot plan documents Binance US coverage"},
+        "symbol_day_availability": {"status": "UNVERIFIED", "basis": "four-year annual window covers March 2023, but exact files not provider-confirmed"},
+        "transfer_size_and_cost": {"status": "UNVERIFIED", "basis": "PRICE_NOT_VERIFIED_FROM_PRIMARY_SOURCE"},
+        "snapshot_update_semantics": {"status": "UNVERIFIED", "basis": "raw replay format not acquired or replayed; C1 validated normalized CSV only"},
+        "native_sequence_ids": {"status": "UNVERIFIED", "basis": "provider says it validates U/u during collection; presence of U/u and disconnect markers in raw replay output not observed"},
+        "research_rights": {"status": "UNVERIFIED", "basis": "academic/derived-data publication rights need confirmation"}
+      },
+      "decisions": {
+        "PROVIDER_NORMALIZED": {"decision": "CONDITIONAL", "failed": [], "open": ["symbol_day_availability", "transfer_size_and_cost", "snapshot_update_semantics", "research_rights"], "disclosed_limitations": ["native exchange sequence continuity cannot be independently proven"]},
+        "NATIVE_SEQUENCE": {"decision": "CONDITIONAL", "failed": [], "open": ["symbol_day_availability", "transfer_size_and_cost", "snapshot_update_semantics", "native_sequence_ids", "research_rights"], "disclosed_limitations": []}
+      }
+    },
+    {
+      "id": "binance_us_public_history",
+      "evidence": {
+        "venue": {"status": "VERIFIED", "basis": "first-party Binance.US downloads"},
+        "symbol_day_availability": {"status": "FAILED", "basis": "documented datasets are candles, trades and aggregate trades; no historical L2"},
+        "transfer_size_and_cost": {"status": "VERIFIED", "basis": "free download"},
+        "snapshot_update_semantics": {"status": "FAILED", "basis": "no order-book snapshots or updates offered"},
+        "native_sequence_ids": {"status": "FAILED", "basis": "no order-book stream offered"},
+        "research_rights": {"status": "UNVERIFIED", "basis": "terms not reviewed for publication"}
+      },
+      "decisions": {
+        "PROVIDER_NORMALIZED": {"decision": "REJECT", "failed": ["symbol_day_availability", "snapshot_update_semantics"], "open": ["research_rights"], "disclosed_limitations": ["native exchange sequence continuity cannot be independently proven"]},
+        "NATIVE_SEQUENCE": {"decision": "REJECT", "failed": ["symbol_day_availability", "snapshot_update_semantics", "native_sequence_ids"], "open": ["research_rights"], "disclosed_limitations": []}
+      }
+    }
+  ],
+  "selected_empirical_l2_source": null,
+  "selection_status": "NONE_SELECTED: no candidate is ACCEPT; every remaining route needs gated access or written provider confirmation that has not been authorized",
+  "ingestion_layer_status": "NOT_BUILT: deferred until a source passes the gate, to avoid fitting a parser to undocumented semantics"
+}

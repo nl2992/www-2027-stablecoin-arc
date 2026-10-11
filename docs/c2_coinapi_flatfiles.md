@@ -23,6 +23,8 @@ The vendor's current customer agreement says use of services is for internal bus
 
 CoinAPI is a **potential usage-priced path, not a verified source solution**. Its per-GiB price model could fit a limited set of days if the files are small and present, but the published evidence does not establish exact Binance.US crisis-day L2 data or native sequence continuity. A funded listing request is a future access decision; it must not be run without authorization. The current classification for all 18 symbol/day cells remains `NOT_PUBLICLY_VERIFIED` for CoinAPI and C1 remains `ACCESS_BLOCKED` for crisis L2 overall.
 
+**Gate decision:** `CONDITIONAL` under the project's current provider-normalized continuity standard; `REJECT` if the paper requires native exchange sequence IDs. See [`c2_source_decision.md`](c2_source_decision.md).
+
 ## Sources
 
 - [CoinAPI Flat Files overview and exchange identifiers](https://www.coinapi.io/products/flat-files/docs) — `BINANCEUS` entry and account/usage-credit requirements.

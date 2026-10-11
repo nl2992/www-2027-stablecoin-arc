@@ -13,20 +13,21 @@
 - Binance.US advertises free historical candles, trades and aggregate trades back to 2019, but its official product description does not list historical L2; this is not a book-data alternative.
 - Google Blockchain Analytics offers indexed historical event data; the first 1 TiB/month of on-demand query processing is documented free. It does not supply arbitrary historical contract state calls. Alchemy lists full archive data on its free tier but requires an account/API key. Cloudflare documents historical archive methods, but usable endpoint terms/configuration were not verified. No live RPC probe was run.
 - Curve 3pool, Uniswap v3 factory and legacy Maker USDC PSM candidates are source-documented only. Their target-block deployment and state remain unverified; no pool set or historical parameters are claimed as measured.
+- Source-selection gate ([`docs/c2_source_decision.md`](c2_source_decision.md), `reports/c2/source_decision.json`): CoinAPI is **CONDITIONAL** under the current provider-normalized continuity standard and **REJECT** under a native-sequence standard; no L2 source is selected and ingestion is deferred until one passes.
 - The offline access evaluator, registry validator and read-only RPC probe have synthetic tests. Synthetic tests establish tool behavior only, not provider access or historical truth.
 
 ## Files
 
 - `configs/c2_sources.yaml`, `configs/c2_contracts.yaml`
-- `src/www_c2/access.py`, `src/www_c2/contracts.py`, `src/www_c2/rpc.py`
-- `tests/test_c2_access.py`, `tests/test_c2_contracts.py`, `tests/test_c2_rpc.py`
+- `src/www_c2/access.py`, `src/www_c2/contracts.py`, `src/www_c2/rpc.py`, `src/www_c2/decision.py`
+- `tests/test_c2_access.py`, `tests/test_c2_contracts.py`, `tests/test_c2_rpc.py`, `tests/test_c2_decision.py`
 - `docs/c2_cex_access.md`, `docs/c2_ethereum_access.md`, `docs/c2_contract_registry.md`
-- `docs/c2_coinapi_flatfiles.md`
-- `reports/c2/access_matrix.json`, `reports/c2/contract_registry.json`
+- `docs/c2_coinapi_flatfiles.md`, `docs/c2_source_decision.md`
+- `reports/c2/access_matrix.json`, `reports/c2/contract_registry.json`, `reports/c2/source_decision.json`
 
 ## Reproduction
 
-Run `uv sync --group dev`, `uv run pytest -q`, `git diff --check`, and validate the two JSON reports with `python -m json.tool`. Tests use synthetic inputs and mocks; no network calls are part of the test suite. The `www-c2-rpc-probe` entry point is documented but not executed.
+Run `uv sync --group dev`, `uv run pytest -q`, `git diff --check`, and validate the three JSON reports with `python -m json.tool`. Tests use synthetic inputs and mocks; no network calls are part of the test suite. The `www-c2-rpc-probe` entry point is documented but not executed.
 
 ## Open decisions / next step
 
