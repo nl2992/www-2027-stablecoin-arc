@@ -1,0 +1,138 @@
+% PROVISIONAL DRAFT -- not for submission. Every empirical number is a \Num... macro generated from
+% committed reports (paper/generated/numbers.tex). Sections marked [PENDING] depend on data or
+% authorization that does not exist yet; they must not be filled with unmeasured values.
+\documentclass[sigconf,review,anonymous]{acmart}
+\input{generated/numbers}
+
+\begin{document}
+
+\title{When Arbitrage Cannot Restore the Peg: Executable Capacity and Stablecoin Fragmentation Across Stress Events}
+
+\begin{abstract}
+Stablecoins are meant to trade at par across venues and quote currencies, yet stress episodes repeatedly
+produce prices that differ across markets for hours or days. We ask whether limits on \emph{executable}
+arbitrage capacity---depth, redemption access, settlement timing and inventory---help explain how large such
+fragmentation becomes, how long it lasts, and how it resolves. We build a pre-registered multi-event design:
+a sourced registry of \NumRegistryEntries{} candidate episodes from 2020--2026 in \NumRegistryClusters{}
+independence clusters, explicit severity and independence rules, matched control windows, placebo and
+expected-negative cases, and events after 2024 held out for out-of-sample evaluation. [PENDING: cross-event
+results.] In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
+half-life of about \NumAnchorEventHalfLife{} minutes, while within-venue cross-quote wedges reverted within
+minutes, which separates redemption-market dislocation from cross-quote arbitrage failure. All results are
+descriptive; executable capacity is not yet measured.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Fiat-backed and synthetic stablecoins rely on arbitrage to hold the peg: when the secondary-market price
+falls below par, traders buy and redeem; when relative prices across quote currencies diverge, traders route
+across them. Both mechanisms need \emph{capacity}---the quantity that can actually be executed at a given cost
+within a given time. Prior work shows that arbitrage design matters for peg stability~\cite{lyons2023keeps},
+that primary-market access shapes crisis dynamics beyond what secondary prices reveal~\cite{watsky2024primary,du2025shadow},
+and that cross-exchange crypto price deviations can be large and persistent when arbitrage capital is
+constrained~\cite{makarov2020trading}.
+
+\paragraph{Why multiple events.} A single crisis cannot separate mechanisms: in March 2023, bank-reserve risk,
+weekend redemption closure and exchange-specific liquidity all moved together. We therefore pre-specify a
+multi-event design covering algorithmic collapses, bank-reserve runs, exchange-failure contagion, issuer
+solvency allegations and venue-infrastructure failures, with negative cases and placebo shocks evaluated
+under the same rules. This improves on a March 2023-only study in three ways: (i) heterogeneity across
+mechanisms becomes testable rather than assumed away; (ii) selection is rule-based and includes events
+expected \emph{not} to qualify; (iii) post-2024 events are held out, so conclusions drawn from the in-sample
+period face an honest test.
+
+\paragraph{Contributions (current status).}
+(1) A sourced, machine-validated event registry with independence clustering and coverage matrices
+(\S\ref{sec:events}). (2) A measurement framework that separates peg dislocation, within-venue triangle wedges and
+cross-venue wedges, and separates parity deviations from gross, executable and realized arbitrage
+(\S\ref{sec:framework}). (3) Anchor-event evidence that these objects behave very differently
+(\S\ref{sec:anchor}). (4) [PENDING] Cross-event comparisons and executable-capacity measurement.
+
+\section{Related Work}
+\label{sec:related}
+Arbitrage and segmentation in crypto markets are documented by~\cite{makarov2020trading}. Stablecoin peg
+mechanics and the role of arbitrage access are studied by~\cite{lyons2023keeps}; the legal and run-risk
+framing by~\cite{zhang2023taming}; primary versus secondary markets and the SVB episode by
+Federal Reserve staff~\cite{watsky2024primary,du2025shadow}. [PENDING: a systematic literature review, restricted
+to verified sources, covering limits to arbitrage, market microstructure of crypto order books, AMM
+liquidity, and stablecoin event studies.]
+
+\section{Measurement Framework}
+\label{sec:framework}
+For stablecoin $q$ with USD peg, let $S_t^{q}$ be its USD price on a venue. We distinguish:
+\begin{itemize}
+\item \textbf{Peg dislocation} $D_t^{q} = 10^4 \log S_t^{q}$ (bps).
+\item \textbf{Within-venue triangle wedge} $W_t^{q} = 10^4[\log P_t(\mathrm{BTC}/q) + \log S_t^{q} - \log P_t(\mathrm{BTC}/\mathrm{USD})]$,
+which is zero under frictionless cross-quote arbitrage on one venue regardless of $S_t^q$.
+\item \textbf{Cross-venue wedge}: the same construction with legs from different venues.
+\end{itemize}
+A nonzero $D$ or $W$ is a \emph{parity deviation}. It is a \emph{gross opportunity} only after quoted
+spreads, a \emph{executable opportunity} only after fees, depth, latency, settlement and inventory, and a
+\emph{realized trade} only when observed in trade data. Restoration capacity $K_t(\delta)$ is the
+largest quantity that can be executed around the loop at all-in cost at most $\delta$ within horizon $h$.
+Candle data identify parity deviations only; $K_t$ requires order-book or on-chain execution state.
+
+\section{Hypotheses (pre-specified)}
+\textbf{H1.} Fragmentation magnitude and persistence increase in stress windows relative to matched controls.
+\textbf{H2.} Peg dislocations are more persistent than within-venue wedges when redemption access is impaired.
+\textbf{H3.} Conditional on stress, lower executable restoration capacity is associated with larger and more persistent wedges.
+H1--H2 are testable with candle data; H3 requires validated execution state and is [PENDING].
+
+\section{Event Selection}
+\label{sec:events}
+Rules were fixed before measuring any non-anchor event. \emph{R1 (severity):} at least 30 traded minutes with
+$|D| \ge 100$ bps inside some 24-hour window; $\ge 500$ bps marks the severe class. \emph{R2 (independence):} one
+episode per primary trigger; contagion legs share their primary's cluster and never add episodes.
+\emph{R3 (windows):} 7-day baseline ending two days before the event, the event window, a 7-day recovery, and a
+7-day matched control ending 28 days before. \emph{R4 (sourcing):} at least two distinct publishers.
+Events from 2024 onward are out-of-sample.
+
+The registry holds \NumRegistryEntries{} entries in \NumRegistryClusters{} clusters:
+\NumDocumentedPrimaries{} source-documented primary candidates (including one placebo---the BUSD issuance
+halt~\cite{paxos2023busd}---and one expected negative case), \NumUnresolved{} unresolved candidates, and
+\NumAcceptedClusters{} accepted cluster so far. [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
+USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
+
+\section{Data}
+Anchor data: a 30,240-minute Binance.US one-minute candle panel (2023-03-01 to 2023-03-21), hash-pinned and
+audited. Order-book reconstruction is validated on one public normalized L2 sample
+(\NumSampleRows{} rows; BTCUSD, 2023-03-01)~\cite{tardis2026binanceus}; normalized feeds omit native exchange
+sequence identifiers~\cite{coinapi2026limitbook}, so continuity is disclosed as unverifiable. Multi-event
+candle data are listed in public archives but not yet acquired. Candle closes are last trades, not quotes.
+
+\section{Anchor Event: USDC, March 2023 (provisional)}
+\label{sec:anchor}
+\textbf{Peg dislocation.} On Binance.US, R1 is met with \NumAnchorBreachMinutes{} breaching minutes in the worst
+24-hour window and an extreme of \NumAnchorExtremeBps{} bps. The median $|D|$ was \NumAnchorBaselineMedAbs{} bps in
+the baseline, \NumAnchorEventMedAbs{} bps in the event window (\NumAnchorEventShareHundred\% of traded minutes
+beyond 100 bps) and \NumAnchorRecoveryMedAbs{} bps in recovery. On 15-minute medians the event-window half-life
+to par was about \NumAnchorEventHalfLife{} minutes.
+
+\textbf{Triangle wedge.} The median $|W^{\mathrm{USDC}}|$ rose from \NumUsdcMedAbsPre{} to \NumUsdcMedAbsCrisis{} bps
+(difference \NumUsdcDiffMedAbs{} bps, 95\% block-bootstrap CI [\NumUsdcDiffMedAbsLo, \NumUsdcDiffMedAbsHi]); its 95th
+percentile rose from \NumUsdcPNinetyFivePre{} to \NumUsdcPNinetyFiveCrisis{} bps, and \NumUsdcShareAboveTwentyFiveCrisis\% of
+jointly traded crisis minutes exceeded 25 bps (\NumUsdcShareAboveTwentyFivePre\% before). USDT wedges stayed small
+(crisis P95 \NumUsdtPNinetyFiveCrisis{} bps). Yet $W$ reverted fast: half-life \NumUsdcHalfLifeOneMinCrisis{} minutes on
+one-minute closes and \NumUsdcHalfLifeFifteenCrisis--\NumUsdcHalfLifeSixtyCrisis{} minutes on 15--60-minute medians. Using
+Coinbase BTC-USD as the dollar leg gives a crisis median of \NumUsdcCoinbaseMedAbsCrisis{} bps.
+
+\textbf{Interpretation.} Cross-quote arbitrage kept relative prices close while USDC's dollar value stayed
+dislocated---consistent with H2 and with impaired redemption~\cite{du2025shadow}, but one event cannot
+establish it.
+
+\section{Executable Capacity [PENDING]}
+Capacity estimation is gated on validated crisis-period L2 or on-chain execution state and explicit
+authorization. No capacity figures are reported.
+
+\section{Limitations}
+Single measured event; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
+USDT-quoted archives require USD correction; no executable depth; normalized L2 lacks native sequence IDs.
+
+\section{Reproducibility}
+Code, registry, rules and reports are versioned; raw licensed data are referenced by hash. Every number in
+this draft is generated by \texttt{python -m www\_paper.macros} from committed JSON reports.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}
