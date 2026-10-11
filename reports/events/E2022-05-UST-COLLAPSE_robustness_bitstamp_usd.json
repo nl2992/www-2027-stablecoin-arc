@@ -1,0 +1,474 @@
+{
+  "coverage_ok": false,
+  "event_id": "E2022-05-UST-COLLAPSE",
+  "measured_utc": "2026-10-11T18:25Z",
+  "plan": {
+    "analysis_status": "DESCRIPTIVE_ONLY",
+    "confirmatory_eligible": false,
+    "covariates": {
+      "baseline": {
+        "btc_realized_vol_bps_per_hour": 56.75092270483646,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.10734126984126983
+      },
+      "control": {
+        "btc_realized_vol_bps_per_hour": 55.97753574094838,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.10882936507936508
+      },
+      "event": {
+        "btc_realized_vol_bps_per_hour": 147.19352945578112,
+        "longest_missing_run_minutes": 1390,
+        "missing_runs_over_15m": 1,
+        "traded_minute_share": 0.16646825396825396
+      },
+      "recovery": {
+        "btc_realized_vol_bps_per_hour": 75.49937922211245,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": null
+      }
+    },
+    "coverage_gates": {
+      "baseline": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "control": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "event": {
+        "passes": true,
+        "present_share": 0.8621031746031746
+      },
+      "recovery": {
+        "passes": false,
+        "present_share": 0.0
+      }
+    },
+    "dv1": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        2094.0918066861213,
+        7066.242654924082
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 4853.105177951769,
+      "p_value": 0.001,
+      "se": 1218.2979403996715
+    },
+    "dv1_reference_is_fallback": false,
+    "dv1_reference_window": "control",
+    "dv3": {
+      "censored": true,
+      "extreme_abs_bps": 14187.544763024196,
+      "extreme_utc": "2022-05-11T07:37:00+00:00",
+      "recovery_minutes": 2471.0
+    },
+    "dv4": {
+      "estimate": null,
+      "reason": "fewer than two observations in a window"
+    },
+    "dv5": {
+      "h2_direction": true,
+      "half_life_D_minutes": 3628.6857313782593,
+      "half_life_W_minutes": 8.752673620697628,
+      "ratio": 414.5802629721542
+    },
+    "usd_rail": {
+      "applicable": true,
+      "impairments": [],
+      "span": [
+        "2022-04-03",
+        "2022-05-20"
+      ],
+      "valid": true,
+      "venue": "bitstamp"
+    },
+    "usdt_gate": {
+      "median_abs_bps": 15.712337414851369,
+      "passes": false
+    }
+  },
+  "price_basis": "USD_VIA_USDT",
+  "provenance": {
+    "quote_usd": {
+      "files": [
+        {
+          "file": "USDTUSD-1m-2022-04.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "52b2bdebe5491ebad2a59a9d322acedeea07df564be7800c05dd8009c432abe8"
+        },
+        {
+          "file": "USDTUSD-1m-2022-05.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "bc4752cb14fa0539ea95563f9abc6f8509b323b910bb45768ac60302fe114a06"
+        },
+        {
+          "file": "USDTUSD-1m-2022-10.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "abb7d14fc5a9f0e964c40482c137b9ececec815b7564bd04ddd7d0b74af0649f"
+        },
+        {
+          "file": "USDTUSD-1m-2022-11.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ed87711d6c5345634992b8c10481dc7b5d497172e7f442cc3c8d118c58019f69"
+        },
+        {
+          "file": "USDTUSD-1m-2023-01.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "1a0ed354f0855624c6884084670006b0bde324ce769fddb285561af50c9e1835"
+        },
+        {
+          "file": "USDTUSD-1m-2023-02.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "29a9651bff8524d0240b21ba2048c52d4587a1ea5b2ebcc03e8786227be37d01"
+        },
+        {
+          "file": "USDTUSD-1m-2023-05.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ba3165dd2c0b8d657b9c2d244ecf6c769f07b1f239690299397a7d1353a474a2"
+        },
+        {
+          "file": "USDTUSD-1m-2023-06.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "686ab3ca0a5f299d41d6fee7062d71c7bb6bce812e3c3bd2cf447c747c726c32"
+        },
+        {
+          "file": "USDTUSD-1m-2023-12.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "e0781e599d489fadd3266f2a603b6f699ced668040569e79031a0c03e554f670"
+        },
+        {
+          "file": "USDTUSD-1m-2024-01.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "7f490e0155b3e1cd2040f63cc975c933f786c2a39f777753b0299c1b22cd7391"
+        },
+        {
+          "file": "USDTUSD-1m-2025-02.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "245d99b177077e4b72230ad2571dbd17411416dbeed23283cc8cc0c0d59fc0e5"
+        },
+        {
+          "file": "USDTUSD-1m-2025-03.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "eedc2535d0827942fdd66ee689f7902b21734b65fde261dbe1446e5b44ab0e97"
+        },
+        {
+          "file": "USDTUSD-1m-2025-04.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "b68d075a2023803dd220947bf3fde381d3520c32ccefefe0f2d98534cff4774d"
+        },
+        {
+          "file": "USDTUSD-1m-2025-09.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "216f9fee8ae1f247abe1bef8889e1218cf7687ac8e9ece42814969d4a6ae6753"
+        },
+        {
+          "file": "USDTUSD-1m-2025-10.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ac9cb0f06d0cf473f32d934757ea4a85d84e1557f6795c05133cb8438a9c985e"
+        }
+      ],
+      "gaps": {
+        "grid_minutes": 1886400,
+        "longest_missing_run_minutes": 527040,
+        "missing_minutes": 1232640,
+        "present_untraded_minutes": 499994,
+        "traded_minutes": 153766
+      },
+      "source": "bitstamp_public_ohlc",
+      "venue": "bitstamp"
+    },
+    "stable": {
+      "files": [
+        {
+          "file": "USTUSDT-1m-2022-04.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "bae3c379e70ba61ce2e2b802ec9264d6fc25dcc0119d413544a72f9d0e6a4535",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USTUSDT-1m-2022-05.zip",
+          "issues": [],
+          "rows": 17330,
+          "sha256": "1cb94ed95394bad96c8ee031ae3bca321d8b0e28d05acb8a33ab103ccf8e5ce8",
+          "time_unit": "ms"
+        }
+      ],
+      "gaps": {
+        "grid_minutes": 61920,
+        "longest_missing_run_minutes": 1390,
+        "missing_minutes": 1390,
+        "present_untraded_minutes": 102,
+        "traded_minutes": 60428
+      },
+      "source": "binance_vision_monthly_klines"
+    },
+    "triangle": {
+      "BTCUSDT": {
+        "files": [
+          {
+            "file": "BTCUSDT-1m-2022-04.zip",
+            "issues": [],
+            "rows": 43200,
+            "sha256": "6e840c81076ac25e6acdbfe4aaeb7aa8b1895a70d8111a3c2908c5134072f097",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUSDT-1m-2022-05.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "154311f08aa264e233b0c7b472aa490c8cfd1b6083ba86cf6c18134e50536b89",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUSDT-1m-2023-01.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "664116c2f33465d191684887f0d4834c02eb0a2635ada43eca855a99e6b6b0c5",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUSDT-1m-2023-02.zip",
+            "issues": [],
+            "rows": 40320,
+            "sha256": "bff03104aa247f791a12a122336cb8c928e19fea5b74276d83a248878b9a619a",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUSDT-1m-2023-12.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "c8b684a66b5ddbb58bf116251359c2dd83a07ce46791f4caa16dd4301eb17636",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUSDT-1m-2024-01.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "40b78258091a468f8756843f207f5913eafc1d6e756c40a78711320d93fa5e75",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUSDT-1m-2025-02.zip",
+            "issues": [],
+            "rows": 40320,
+            "sha256": "26b3795072983a66bdbe8327e0d5e71069bdd5ca831d4da3850ba68ef7a991ef",
+            "time_unit": "us"
+          },
+          {
+            "file": "BTCUSDT-1m-2025-03.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "e333601b6c721434f3cdd6670ffde2371bef7946572864c49ba6431a690ab1ca",
+            "time_unit": "us"
+          },
+          {
+            "file": "BTCUSDT-1m-2025-04.zip",
+            "issues": [],
+            "rows": 43200,
+            "sha256": "4103d48887f9f5ec04144b190314ec31db9e3094674e5d53a3436b338854848f",
+            "time_unit": "us"
+          },
+          {
+            "file": "BTCUSDT-1m-2025-09.zip",
+            "issues": [],
+            "rows": 43200,
+            "sha256": "52bb4a4a52afbcc0af77e3eb92c114bf810982ca63bf02f8fe15062e59c5f44b",
+            "time_unit": "us"
+          },
+          {
+            "file": "BTCUSDT-1m-2025-10.zip",
+            "issues": [],
+            "rows": 44640,
+            "sha256": "985d878cacbfdde85c9e0da2e8830ab913fe01bfdcde6e488563d8194df11f6b",
+            "time_unit": "us"
+          }
+        ],
+        "gaps": {
+          "grid_minutes": 1886400,
+          "longest_missing_run_minutes": 527040,
+          "missing_minutes": 1408320,
+          "present_untraded_minutes": 0,
+          "traded_minutes": 478080
+        },
+        "source": "binance_vision_monthly_klines"
+      },
+      "BTCUST": {
+        "files": [
+          {
+            "file": "BTCUST-1m-2022-04.zip",
+            "issues": [],
+            "rows": 12420,
+            "sha256": "464e5d4d9ddbac638e98d13eccb2fd46796ea5c22bdd19ae99c73c48fbd466a1",
+            "time_unit": "ms"
+          },
+          {
+            "file": "BTCUST-1m-2022-05.zip",
+            "issues": [],
+            "rows": 17330,
+            "sha256": "52666d7c98d7e6b6ecd2fe602c0218db842bcaf2165e27a8fe74c6351155c7dd",
+            "time_unit": "ms"
+          }
+        ],
+        "gaps": {
+          "grid_minutes": 31680,
+          "longest_missing_run_minutes": 1390,
+          "missing_minutes": 1930,
+          "present_untraded_minutes": 7719,
+          "traded_minutes": 22031
+        },
+        "source": "binance_vision_monthly_klines"
+      },
+      "USTUSDT": {
+        "files": [
+          {
+            "file": "USTUSDT-1m-2022-04.zip",
+            "issues": [],
+            "rows": 43200,
+            "sha256": "bae3c379e70ba61ce2e2b802ec9264d6fc25dcc0119d413544a72f9d0e6a4535",
+            "time_unit": "ms"
+          },
+          {
+            "file": "USTUSDT-1m-2022-05.zip",
+            "issues": [],
+            "rows": 17330,
+            "sha256": "1cb94ed95394bad96c8ee031ae3bca321d8b0e28d05acb8a33ab103ccf8e5ce8",
+            "time_unit": "ms"
+          }
+        ],
+        "gaps": {
+          "grid_minutes": 61920,
+          "longest_missing_run_minutes": 1390,
+          "missing_minutes": 1390,
+          "present_untraded_minutes": 102,
+          "traded_minutes": 60428
+        },
+        "source": "binance_vision_monthly_klines"
+      }
+    }
+  },
+  "r1": {
+    "breach_minutes": 1489,
+    "extreme_deviation_bps": -14187.544763024196,
+    "extreme_utc": "2022-05-11T07:37:00+00:00",
+    "first_breach_utc": "2022-05-07T22:45:00+00:00",
+    "judged_range_utc": [
+      "2022-05-06T00:00:00+00:00",
+      "2022-05-15T00:00:00+00:00"
+    ],
+    "last_breach_utc": "2022-05-13T00:48:00+00:00",
+    "max_breach_minutes_in_window": 644,
+    "min_minutes": 30,
+    "r1_pass": true,
+    "severe_class": true,
+    "threshold_bps": 100.0,
+    "traded_minutes": 1863,
+    "window": "24h"
+  },
+  "robustness_of": "E2022-05-UST-COLLAPSE",
+  "rules": {
+    "R1_severe_class_bps": 500.0,
+    "R1_severity": {
+      "min_minutes": 30,
+      "observation": "minute closes with positive volume on the stablecoin leg",
+      "threshold_bps": 100.0,
+      "window": "24h"
+    },
+    "R2_cluster_gap_days": 14,
+    "R3_windows_days": {
+      "baseline": 7,
+      "baseline_gap": 1,
+      "control": 7,
+      "control_min_lead": 28,
+      "recovery": 7
+    },
+    "R4_min_distinct_publishers": 2,
+    "out_of_sample_start": "2024-01-01"
+  },
+  "series": "binance_ustusdt",
+  "windows": {
+    "baseline": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2022-05-05",
+        "start": "2022-04-29"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 62,
+        "bins_15m": 146,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 79.9007870802149,
+        "max_abs_dev_bps": 55.15180688110111,
+        "mean_dev_bps": -0.7768313343846799,
+        "median_abs_dev_bps": 1.8001620194422046,
+        "p95_abs_dev_bps": 5.201352468875849,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 1082
+      },
+      "expected_minutes": 10080
+    },
+    "control": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2022-04-09",
+        "start": "2022-04-03"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 71,
+        "bins_15m": 150,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 46.87067187352344,
+        "max_abs_dev_bps": 77.60577666944191,
+        "mean_dev_bps": 3.0265919728276742,
+        "median_abs_dev_bps": 2.899769526192351,
+        "p95_abs_dev_bps": 6.998230667042002,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 1097
+      },
+      "expected_minutes": 10080
+    },
+    "event": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2022-05-13",
+        "start": "2022-05-07"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 173,
+        "bins_15m": 234,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 3628.6857313782593,
+        "max_abs_dev_bps": 14187.544763024196,
+        "mean_dev_bps": -4880.852678777871,
+        "median_abs_dev_bps": 4856.004947477962,
+        "p95_abs_dev_bps": 11061.647123712499,
+        "share_traded_minutes_ge_100bps": 0.8873659117997617,
+        "traded_minutes": 1678
+      },
+      "expected_minutes": 10080
+    },
+    "recovery": {
+      "coverage_complete": false,
+      "covered_minutes": 0,
+      "dates": {
+        "end": "2022-05-20",
+        "start": "2022-05-14"
+      },
+      "diagnostics": null,
+      "expected_minutes": 10080
+    }
+  }
+}

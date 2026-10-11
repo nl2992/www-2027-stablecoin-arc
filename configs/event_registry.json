@@ -124,7 +124,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "3c9142084f766a42cce762cc5a15c3fdc1d83d4b18ca6b2e0dbec3557cffac14",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T18:05Z"
+        "measured_utc": "2026-10-11T18:25Z"
       }
     },
     {
@@ -284,7 +284,7 @@
         "basis": "USD",
         "input_sha256": "a0dc365885f07d7a712d15e6c4081459505b2597a9d478a3e6765369a4a7075a",
         "r1_pass": false,
-        "measured_utc": "2026-10-11T18:05Z"
+        "measured_utc": "2026-10-11T18:26Z"
       },
       "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
@@ -349,7 +349,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "d15ecc3c42986231648f363882661e428ab143dd3217c7b904a4cb5a5e733962",
         "r1_pass": false,
-        "measured_utc": "2026-10-11T18:05Z"
+        "measured_utc": "2026-10-11T18:25Z"
       },
       "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
@@ -526,7 +526,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "DATA_VERIFIED",
+      "status": "REJECTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
         {
@@ -545,13 +545,14 @@
       "notes": "Reported magnitude (30-50 bps) is below R1. It is expected to be a negative case and is kept so that the selection is not one-sided; it is not rejected until measured.",
       "measurement": {
         "report": "reports/events/N2023-06-USDT-3POOL_protocol.json",
-        "series": "binance_usdtusd",
+        "series": "bitstamp_usdtusd",
         "basis": "USD",
-        "input_sha256": "a0dc365885f07d7a712d15e6c4081459505b2597a9d478a3e6765369a4a7075a",
-        "r1_pass": true,
-        "measured_utc": "2026-10-11T18:05Z"
+        "input_sha256": "f3d9c49dd2f93ef4d94b1cc39f64a78a0a4a82dbe4a00ef6647a93c3d183da7c",
+        "r1_pass": false,
+        "measured_utc": "2026-10-11T18:26Z"
       },
-      "coverage_ok": true
+      "coverage_ok": true,
+      "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
     {
       "id": "E2024-01-TUSD",
@@ -584,7 +585,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "DATA_VERIFIED",
+      "status": "ACCEPTED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
         {
@@ -618,7 +619,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "43391b9af45b6127b7d572ff21a9add795ed33efeb05555726df9d031b2ccf12",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T18:05Z"
+        "measured_utc": "2026-10-11T18:26Z"
       },
       "coverage_ok": true
     },
@@ -687,7 +688,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "f73229334f339a5bc61e42cc3f9ab22d39aef654dd256e06c4c218a69c731fbd",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T18:05Z"
+        "measured_utc": "2026-10-11T18:26Z"
       },
       "coverage_ok": true
     },
@@ -762,7 +763,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "b6439b4eab1ebc67948a1239e5a9c0fe3122166794b97646b982eca84edab643",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T18:05Z"
+        "measured_utc": "2026-10-11T18:26Z"
       }
     },
     {

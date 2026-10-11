@@ -5,8 +5,8 @@
 | E2022-05-UST-COLLAPSE | UST | in sample | data verified | descriptive (not accepted) | -14,502 | 1,440 | 842 [105, 1,100] | 41+ | -- | -- | 56 → 147 |
 | E2022-11-USDT-FTX | USDT | in sample | rejected | descriptive (not accepted) | -25 | 0 | 9 [2, 15] | 0 | 1.37 | -- | 43 → 155 |
 | E2023-03-USDC-SVB | USDC | in sample | accepted | exploratory | -1,470 | 1,379 | 208 [92, 336] (b) | 68 | 6.53 | 94.8 | 40 → 80 |
-| E2024-01-TUSD | TUSD | out of sample | data verified | descriptive only | -287 | 474 | 103 [92, 114] | 213+ | -0.08 | 469.2 | 47 → 50 |
+| E2024-01-TUSD | TUSD | out of sample | accepted | confirmatory | -297 | 960 | 113 [100, 121] | 213+ | -0.08 | 39,414.4 | 47 → 50 |
 | E2025-04-FDUSD | FDUSD | out of sample | accepted | confirmatory | -1,279 | 416 | 45 [34, 51] | 130 | 0.02 | 10.4 | 91 → 69 |
 | E2025-10-USDE-BINANCE | USDe | out of sample | data verified | descriptive only | -4,080 | 804 | 35 [3, 66] | 42 | -- | -- | 26 → 114 |
-| N2023-06-USDT-3POOL | USDT | in sample | data verified | descriptive only | 361 | 1,411 | 148 [141, 162] | 53 | 1.38 | 409.9 | 40 → 40 |
+| N2023-06-USDT-3POOL | USDT | in sample | rejected | descriptive (not accepted) | -40 | 0 | 8 [6, 20] | 4 | 0.18 | 3,420.6 | 40 → 40 |
 | P2023-02-BUSD-PAXOS-HALT | BUSD | placebo | rejected | descriptive (not accepted) | -15 | 0 | -3 [-4, -3] | 0 | -0.02 | 5.4 | 62 → 55 |

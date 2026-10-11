@@ -17,8 +17,9 @@ a sourced registry of \NumRegistryEntries{} candidate episodes from 2020--2026 i
 independence clusters, explicit severity and independence rules, matched control windows, placebo and
 expected-negative cases, and events after 2024 held out for out-of-sample evaluation. Applying the protocol to
 eight measured candidates on public exchange archives yields \NumAcceptedClusters{} accepted independent episodes
-(the anchor and FDUSD in April 2025), so the confirmatory multi-event criterion is not yet met and all results are
-reported descriptively; the placebo shock does not qualify. In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
+(the anchor, TUSD in January 2024 and FDUSD in April 2025); because the anchor is exploratory and both confirmatory
+episodes are out-of-sample, the pre-registered confirmatory in-sample test cannot yet be run and all results are
+reported descriptively; the placebo shock and the expected-negative case do not qualify. In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
 half-life of about \NumAnchorEventHalfLife{} minutes, while within-venue cross-quote wedges reverted within
 minutes, which separates redemption-market dislocation from cross-quote arbitrage failure. All results are
 descriptive; executable capacity is not yet measured.
@@ -197,15 +198,20 @@ establish it.
 
 \section{Multi-Event Results (descriptive)}
 \label{sec:multievent}
-Table~\ref{tab:results} reports every measured candidate. Status changes follow fixed rules and are logged. One
-amendment made after seeing data (A2) removes eligibility when a venue's on-platform USD was not redeemable: Binance.US
-USD services were suspended from June 2023 to February 2025, which invalidates the USD leg for the TUSD (January
-2024) and June 2023 USDT candidates. The latter's apparent USDT \emph{premium} of \NumNegativeExtreme{} bps is
-attributable to that impairment rather than to the reported Curve imbalance, and it is not counted.
+Table~\ref{tab:results} reports every measured candidate. Status changes follow fixed rules and are logged.
+Two amendments govern the dollar leg. A2 (made after seeing data) removes eligibility when a venue's on-platform USD
+was not redeemable: Binance.US USD services were suspended from June 2023 to February 2025. On Binance.US, the June
+2023 USDT candidate shows a USDT \emph{premium} of \NumNegativeExtreme{} bps that tracks that impairment rather than
+the reported Curve imbalance. A3 (fixed before any Bitstamp data were analysed) designates Bitstamp as the dollar
+venue whenever A2 excludes Binance.US, and treats any other venue as robustness only. On Bitstamp's redeemable dollar
+the June 2023 candidate peaks at \NumNegativeExtremeBitstamp{} bps and fails R1, as its reported magnitude implied;
+TUSD qualifies.
 
 \input{generated/results_table}
 
-\paragraph{Accepted out-of-sample episode.} FDUSD (April 2025, issuer-solvency allegation) reached an extreme of
+\paragraph{Accepted out-of-sample episodes.} TUSD (January 2024, reserve-attestation concerns) reached
+\NumTusdExtreme{} bps against USD (Bitstamp dollar leg), with median $|D|$ up \NumTusdDvOne{} bps on its control (95\% CI
+[\NumTusdDvOneLo, \NumTusdDvOneHi]) while its Binance triangle wedge was unchanged (\NumTusdDvFour{} bps). FDUSD (April 2025, issuer-solvency allegation) reached an extreme of
 \NumFdusdExtreme{} bps against USD; median $|D|$ rose by \NumFdusdDvOne{} bps relative to the matched control (95\% CI
 [\NumFdusdDvOneLo, \NumFdusdDvOneHi]) and recovered in about \NumFdusdRecoveryHours{} hours. The within-venue triangle
 wedge did not move (change \NumFdusdDvFour{} bps, CI [\NumFdusdDvFourLo, \NumFdusdDvFourHi]), and market-wide BTC
@@ -219,15 +225,20 @@ accepted because USDT/USD itself moved by a median of \NumUsdeUsdtGate{} bps in 
 recovery window after its delisting.
 
 \paragraph{A caution on H2.} The peg-to-wedge half-life ratio exceeds one in every event where it is defined,
-\emph{including the placebo} (\NumPlaceboDvFive), so a ratio above one is not by itself evidence of stress-specific
-persistence; persistence comparisons must be made against each event's own control.
+\emph{including the placebo} (\NumPlaceboDvFive), and it is numerically unstable when the wedge half-life is near zero
+(Table~\ref{tab:results}). A ratio above one is therefore not by itself evidence of stress-specific persistence;
+persistence comparisons must be made against each event's own control.
+
+\paragraph{Data quality.} Bitstamp's USDT/USD history contains a corrupt print (2,959.99 on 2022-11-08 09:42 UTC,
+carried forward for several minutes). It affects only a robustness run (FTX on Bitstamp); no outlier filter was
+pre-specified, so none is applied, and that robustness result is not interpreted.
 
 \section{Executable Capacity [PENDING]}
 Capacity estimation is gated on validated crisis-period L2 or on-chain execution state and explicit
 authorization. No capacity figures are reported.
 
 \section{Limitations}
-Two accepted episodes (one exploratory); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
+Three accepted episodes (one exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
 USDT-quoted archives require USD correction; no executable depth; normalized L2 lacks native sequence IDs.
 
 \section{Reproducibility}

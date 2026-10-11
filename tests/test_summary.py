@@ -23,7 +23,9 @@ def test_current_repository_state_reports_insufficient_events_honestly():
     protocols = [json.loads(p.read_text()) for p in (ROOT / "reports/events").glob("*_protocol.json")]
     out = build_summary(registry, protocols)
     assert "E2023-03-USDC-SVB" in out["exploratory_events"]
-    assert not out["multi_event_criterion_met"] and out["framing"].startswith("DESCRIPTIVE")
+    # Three accepted episodes, but only two confirmatory (both out-of-sample): framing stays descriptive.
+    assert out["multi_event_criterion_met"] and out["framing"].startswith("DESCRIPTIVE")
+    assert out["h1"]["in_sample"]["decision"] == "INSUFFICIENT_EVENTS" and out["h1"]["out_of_sample"]["n"] == 2
     assert out["h3"]["decision"] == "NOT_TESTABLE"
 
 

@@ -40,6 +40,8 @@ C1 = "reports/c1/march01_sample_validation.json"
 FDUSD = "reports/events/E2025-04-FDUSD_protocol.json"
 PLACEBO = "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
 NEG = "reports/events/N2023-06-USDT-3POOL_protocol.json"
+NEG_BNUS = "reports/events/N2023-06-USDT-3POOL_robustness_binanceus.json"
+TUSD = "reports/events/E2024-01-TUSD_protocol.json"
 USDE = "reports/events/E2025-10-USDE-BINANCE_protocol.json"
 U = "wedges/usdc/all_legs_traded"
 
@@ -92,7 +94,13 @@ SPEC: list[tuple[str, str, str, Callable[[Any], str]]] = [
     ("NumFdusdVolEvent", FDUSD, "plan/covariates/event/btc_realized_vol_bps_per_hour", _fmt(0)),
     ("NumPlaceboDvOne", PLACEBO, "plan/dv1/estimate", _fmt(0)),
     ("NumPlaceboDvFive", PLACEBO, "plan/dv5/ratio", _fmt(1)),
-    ("NumNegativeExtreme", NEG, "r1/extreme_deviation_bps", _fmt(0)),
+    ("NumNegativeExtreme", NEG_BNUS, "r1/extreme_deviation_bps", _fmt(0)),
+    ("NumNegativeExtremeBitstamp", NEG, "r1/extreme_deviation_bps", _fmt(0)),
+    ("NumTusdExtreme", TUSD, "r1/extreme_deviation_bps", _fmt(0)),
+    ("NumTusdDvOne", TUSD, "plan/dv1/estimate", _fmt(0)),
+    ("NumTusdDvOneLo", TUSD, "plan/dv1/ci95/0", _fmt(0)),
+    ("NumTusdDvOneHi", TUSD, "plan/dv1/ci95/1", _fmt(0)),
+    ("NumTusdDvFour", TUSD, "plan/dv4/estimate", _fmt(2)),
     ("NumUsdeExtreme", USDE, "r1/extreme_deviation_bps", _fmt(0)),
     ("NumUsdeUsdtGate", USDE, "plan/usdt_gate/median_abs_bps", _fmt(0)),
 ]

@@ -1,34 +1,34 @@
 {
   "coverage_ok": true,
   "event_id": "E2024-01-TUSD",
-  "measured_utc": "2026-10-11T18:05Z",
+  "measured_utc": "2026-10-11T18:26Z",
   "plan": {
-    "analysis_status": "DESCRIPTIVE_ONLY",
-    "confirmatory_eligible": false,
+    "analysis_status": "CONFIRMATORY",
+    "confirmatory_eligible": true,
     "covariates": {
       "baseline": {
         "btc_realized_vol_bps_per_hour": 83.05592659225059,
         "longest_missing_run_minutes": 0,
         "missing_runs_over_15m": 0,
-        "traded_minute_share": 0.47579365079365077
+        "traded_minute_share": 0.5075396825396825
       },
       "control": {
         "btc_realized_vol_bps_per_hour": 46.74707418816636,
         "longest_missing_run_minutes": 0,
         "missing_runs_over_15m": 0,
-        "traded_minute_share": 0.46478174603174605
+        "traded_minute_share": 0.4820436507936508
       },
       "event": {
         "btc_realized_vol_bps_per_hour": 49.799978967474516,
         "longest_missing_run_minutes": 0,
         "missing_runs_over_15m": 0,
-        "traded_minute_share": 0.32569444444444445
+        "traded_minute_share": 0.5963888888888889
       },
       "recovery": {
         "btc_realized_vol_bps_per_hour": 47.75327232873331,
         "longest_missing_run_minutes": 0,
         "missing_runs_over_15m": 0,
-        "traded_minute_share": 0.2189484126984127
+        "traded_minute_share": 0.5413690476190476
       }
     },
     "coverage_gates": {
@@ -56,21 +56,21 @@
         "seed": 20230310
       },
       "ci95": [
-        92.43141048326059,
-        113.71639353384963
+        99.52805981067205,
+        120.63227785625182
       ],
       "ci_excludes_zero": true,
-      "estimate": 102.75652426293316,
+      "estimate": 112.88724961394551,
       "p_value": 0.001,
-      "se": 5.911327504215259
+      "se": 5.3577741892780555
     },
     "dv1_reference_is_fallback": false,
     "dv1_reference_window": "control",
     "dv3": {
       "censored": true,
-      "extreme_abs_bps": 286.99519530699973,
-      "extreme_utc": "2024-01-18T03:01:00+00:00",
-      "recovery_minutes": 12777.0
+      "extreme_abs_bps": 296.7863489118958,
+      "extreme_utc": "2024-01-18T02:56:00+00:00",
+      "recovery_minutes": 12780.0
     },
     "dv4": {
       "bootstrap": {
@@ -89,28 +89,22 @@
     },
     "dv5": {
       "h2_direction": true,
-      "half_life_D_minutes": 3227.479662551451,
+      "half_life_D_minutes": 271107.96205433045,
       "half_life_W_minutes": 6.878405062934029,
-      "ratio": 469.2191915162885
+      "ratio": 39414.36416928426
     },
     "usd_rail": {
       "applicable": true,
-      "impairments": [
-        {
-          "description": "USD deposits suspended 2023-06-09; banking partners ceased USD payments 2023-06-13; USD pairs delisted; USD deposits/withdrawals restored 2025-02-19 with a phased rollout.",
-          "end_utc": "2025-02-19",
-          "start_utc": "2023-06-09"
-        }
-      ],
+      "impairments": [],
       "span": [
         "2023-12-12",
         "2024-01-26"
       ],
-      "valid": false,
-      "venue": "binance-us"
+      "valid": true,
+      "venue": "bitstamp"
     },
     "usdt_gate": {
-      "median_abs_bps": 5.998200719675495,
+      "median_abs_bps": 9.10414301361862,
       "passes": true
     }
   },
@@ -119,120 +113,90 @@
     "quote_usd": {
       "files": [
         {
-          "file": "USDTUSD-1m-2022-04.zip",
-          "issues": [],
-          "rows": 43200,
-          "sha256": "412bad3d8cf622c88c17d8e380c01322a7a5463a904ede35b8df26262946133c",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2022-04.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "52b2bdebe5491ebad2a59a9d322acedeea07df564be7800c05dd8009c432abe8"
         },
         {
-          "file": "USDTUSD-1m-2022-05.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "edc57d0f29f5e68d6204f4e160ee9763ab11cbe0b8fde716e1e08efef48099a0",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2022-05.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "bc4752cb14fa0539ea95563f9abc6f8509b323b910bb45768ac60302fe114a06"
         },
         {
-          "file": "USDTUSD-1m-2022-10.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "add6b7d9a22e85be4e794a60a230f89d679fe380b8d2ed8463756aa72cdaa7bf",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2022-10.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "abb7d14fc5a9f0e964c40482c137b9ececec815b7564bd04ddd7d0b74af0649f"
         },
         {
-          "file": "USDTUSD-1m-2022-11.zip",
-          "issues": [],
-          "rows": 43200,
-          "sha256": "908f8c273157276f359b594ac5d7ae3025d8a7c214e74137e2385c8241a385e2",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2022-11.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ed87711d6c5345634992b8c10481dc7b5d497172e7f442cc3c8d118c58019f69"
         },
         {
-          "file": "USDTUSD-1m-2023-01.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "1a0643db6b7392dcbce7396fb7078751fdc23cd3c53ea05685126ad5e2f7a4b9",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2023-01.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "1a0ed354f0855624c6884084670006b0bde324ce769fddb285561af50c9e1835"
         },
         {
-          "file": "USDTUSD-1m-2023-02.zip",
-          "issues": [],
-          "rows": 39891,
-          "sha256": "dd7b025eebee9191c5937f65dcf6c26b1c596a617cb2dbee507f9a79c09cf66c",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2023-02.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "29a9651bff8524d0240b21ba2048c52d4587a1ea5b2ebcc03e8786227be37d01"
         },
         {
-          "file": "USDTUSD-1m-2023-05.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "363b199df87cbce8b8ec02626300c88e1badce06f23d1eccb90fb59e5a89ede6",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2023-05.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ba3165dd2c0b8d657b9c2d244ecf6c769f07b1f239690299397a7d1353a474a2"
         },
         {
-          "file": "USDTUSD-1m-2023-06.zip",
-          "issues": [],
-          "rows": 43200,
-          "sha256": "bfd2e32451d7b7a0bd2ec65630a55b9995846303d011716c8da777a187b00e57",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2023-06.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "686ab3ca0a5f299d41d6fee7062d71c7bb6bce812e3c3bd2cf447c747c726c32"
         },
         {
-          "file": "USDTUSD-1m-2023-12.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "8366370653f6cb993b9287a36b92147a450af62b83eab99bedde21001bfce05f",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2023-12.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "e0781e599d489fadd3266f2a603b6f699ced668040569e79031a0c03e554f670"
         },
         {
-          "file": "USDTUSD-1m-2024-01.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "dc9c4974ccfa0e82ec00a8d61977fd6b33f76b7c0fdfbc2869bd715971cc8fa0",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2024-01.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "7f490e0155b3e1cd2040f63cc975c933f786c2a39f777753b0299c1b22cd7391"
         },
         {
-          "file": "USDTUSD-1m-2025-02.zip",
-          "issues": [],
-          "rows": 40320,
-          "sha256": "8f954fae33c699c13c9c9e95dea21c4ddb3efb1401561c04887f686b8f47941b",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2025-02.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "245d99b177077e4b72230ad2571dbd17411416dbeed23283cc8cc0c0d59fc0e5"
         },
         {
-          "file": "USDTUSD-1m-2025-03.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "428d109f47797966a71ffe410c6de48b8bbc58d76e98f9f5297e861d1b844d34",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2025-03.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "eedc2535d0827942fdd66ee689f7902b21734b65fde261dbe1446e5b44ab0e97"
         },
         {
-          "file": "USDTUSD-1m-2025-04.zip",
-          "issues": [],
-          "rows": 43200,
-          "sha256": "3ecfe244c0cdd5286199f6e2a9c564f6538f15da7c8f7de79cd7c9c20de12652",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2025-04.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "b68d075a2023803dd220947bf3fde381d3520c32ccefefe0f2d98534cff4774d"
         },
         {
-          "file": "USDTUSD-1m-2025-09.zip",
-          "issues": [],
-          "rows": 43200,
-          "sha256": "7e6b5b37d377723418f46ae63378abbde48a726ee99e6ea9cd1297037839158a",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2025-09.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "216f9fee8ae1f247abe1bef8889e1218cf7687ac8e9ece42814969d4a6ae6753"
         },
         {
-          "file": "USDTUSD-1m-2025-10.zip",
-          "issues": [],
-          "rows": 44640,
-          "sha256": "db454c74dfd99efbc22cadd28e6b8672d918bd753357f89e027f71afd86a2da3",
-          "time_unit": "ms"
+          "file": "USDTUSD-1m-2025-10.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ac9cb0f06d0cf473f32d934757ea4a85d84e1557f6795c05133cb8438a9c985e"
         }
       ],
       "gaps": {
         "grid_minutes": 1886400,
         "longest_missing_run_minutes": 527040,
-        "missing_minutes": 1233069,
-        "present_untraded_minutes": 182597,
-        "traded_minutes": 470734
+        "missing_minutes": 1232640,
+        "present_untraded_minutes": 499994,
+        "traded_minutes": 153766
       },
-      "source": "binance_vision_monthly_klines",
-      "venue": "binance-us"
+      "source": "bitstamp_public_ohlc",
+      "venue": "bitstamp"
     },
     "stable": {
       "files": [
@@ -405,21 +369,21 @@
     }
   },
   "r1": {
-    "breach_minutes": 1901,
-    "extreme_deviation_bps": -286.99519530699973,
-    "extreme_utc": "2024-01-18T03:01:00+00:00",
+    "breach_minutes": 3920,
+    "extreme_deviation_bps": -296.7863489118958,
+    "extreme_utc": "2024-01-18T02:56:00+00:00",
     "first_breach_utc": "2024-01-15T12:34:00+00:00",
     "judged_range_utc": [
       "2024-01-14T00:00:00+00:00",
       "2024-01-21T00:00:00+00:00"
     ],
-    "last_breach_utc": "2024-01-20T23:46:00+00:00",
-    "max_breach_minutes_in_window": 474,
+    "last_breach_utc": "2024-01-20T23:59:00+00:00",
+    "max_breach_minutes_in_window": 960,
     "min_minutes": 30,
     "r1_pass": true,
     "severe_class": false,
     "threshold_bps": 100.0,
-    "traded_minutes": 3195,
+    "traded_minutes": 5488,
     "window": "24h"
   },
   "rules": {
@@ -451,16 +415,16 @@
         "start": "2024-01-07"
       },
       "diagnostics": {
-        "adjacent_bin_pairs_15m": 555,
-        "bins_15m": 597,
+        "adjacent_bin_pairs_15m": 574,
+        "bins_15m": 614,
         "grid_minutes": 10080,
-        "half_life_to_parity_minutes_15m_bins": 100.80225557072484,
-        "max_abs_dev_bps": 128.52845075113171,
-        "mean_dev_bps": -40.862539290993496,
-        "median_abs_dev_bps": 40.074440884857644,
-        "p95_abs_dev_bps": 93.21995097430633,
-        "share_traded_minutes_ge_100bps": 0.022727272727272728,
-        "traded_minutes": 4796
+        "half_life_to_parity_minutes_15m_bins": null,
+        "max_abs_dev_bps": 62.841399115631376,
+        "mean_dev_bps": -34.5051598539207,
+        "median_abs_dev_bps": 37.78482482567251,
+        "p95_abs_dev_bps": 53.830858433853116,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 5116
       },
       "expected_minutes": 10080
     },
@@ -472,16 +436,16 @@
         "start": "2023-12-12"
       },
       "diagnostics": {
-        "adjacent_bin_pairs_15m": 554,
-        "bins_15m": 602,
+        "adjacent_bin_pairs_15m": 607,
+        "bins_15m": 638,
         "grid_minutes": 10080,
-        "half_life_to_parity_minutes_15m_bins": 29.575968808924348,
-        "max_abs_dev_bps": 39.043721508337406,
-        "mean_dev_bps": -0.3016434870320752,
-        "median_abs_dev_bps": 10.95899282959111,
-        "p95_abs_dev_bps": 27.72570861656068,
+        "half_life_to_parity_minutes_15m_bins": 3040.6280418362726,
+        "max_abs_dev_bps": 38.036246173012955,
+        "mean_dev_bps": -19.18190371915595,
+        "median_abs_dev_bps": 18.01171135269043,
+        "p95_abs_dev_bps": 32.232210002128326,
         "share_traded_minutes_ge_100bps": 0.0,
-        "traded_minutes": 4685
+        "traded_minutes": 4859
       },
       "expected_minutes": 10080
     },
@@ -493,16 +457,16 @@
         "start": "2024-01-15"
       },
       "diagnostics": {
-        "adjacent_bin_pairs_15m": 284,
-        "bins_15m": 345,
+        "adjacent_bin_pairs_15m": 441,
+        "bins_15m": 459,
         "grid_minutes": 7200,
-        "half_life_to_parity_minutes_15m_bins": 3227.479662551451,
-        "max_abs_dev_bps": 286.99519530699973,
-        "mean_dev_bps": -111.82511774080228,
-        "median_abs_dev_bps": 113.71551709252427,
-        "p95_abs_dev_bps": 159.9219621868674,
-        "share_traded_minutes_ge_100bps": 0.6746268656716418,
-        "traded_minutes": 2345
+        "half_life_to_parity_minutes_15m_bins": 271107.96205433045,
+        "max_abs_dev_bps": 296.7863489118958,
+        "mean_dev_bps": -125.51543686564357,
+        "median_abs_dev_bps": 130.89896096663594,
+        "p95_abs_dev_bps": 177.29720847400958,
+        "share_traded_minutes_ge_100bps": 0.7543083372147182,
+        "traded_minutes": 4294
       },
       "expected_minutes": 7200
     },
@@ -514,16 +478,16 @@
         "start": "2024-01-20"
       },
       "diagnostics": {
-        "adjacent_bin_pairs_15m": 276,
-        "bins_15m": 398,
+        "adjacent_bin_pairs_15m": 607,
+        "bins_15m": 635,
         "grid_minutes": 10080,
-        "half_life_to_parity_minutes_15m_bins": 1978.3684807115926,
-        "max_abs_dev_bps": 320.90805858951774,
-        "mean_dev_bps": -127.99980397816898,
-        "median_abs_dev_bps": 126.00048255765748,
-        "p95_abs_dev_bps": 165.33547592938893,
-        "share_traded_minutes_ge_100bps": 0.9216130493883099,
-        "traded_minutes": 2207
+        "half_life_to_parity_minutes_15m_bins": 5358.472848246418,
+        "max_abs_dev_bps": 350.38081764154424,
+        "mean_dev_bps": -153.32851872179128,
+        "median_abs_dev_bps": 150.13416436438717,
+        "p95_abs_dev_bps": 208.32516544009874,
+        "share_traded_minutes_ge_100bps": 0.9622503206890233,
+        "traded_minutes": 5457
       },
       "expected_minutes": 10080
     }

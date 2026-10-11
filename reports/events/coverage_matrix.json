@@ -1,5 +1,5 @@
 {
- "checked_utc": "2026-10-11T18:06Z",
+ "checked_utc": "2026-10-11T18:27Z",
  "listing_endpoint": "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?delimiter=/&prefix={prefix}",
  "rows": [
   {

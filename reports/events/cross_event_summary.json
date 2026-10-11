@@ -61,24 +61,24 @@
       "se": 74.08773770829045
     },
     {
-      "analysis_status": "DESCRIPTIVE_ONLY",
+      "analysis_status": "CONFIRMATORY",
       "ci95": [
-        92.43141048326059,
-        113.71639353384963
+        99.52805981067205,
+        120.63227785625182
       ],
       "cluster_id": "CL-2024-01-TUSD",
-      "dv5_ratio": 469.2191915162885,
-      "estimate": 102.75652426293316,
+      "dv5_ratio": 39414.36416928426,
+      "estimate": 112.88724961394551,
       "event_id": "E2024-01-TUSD",
       "mechanism": "RESERVE_TRANSPARENCY",
       "p_value": 0.001,
       "recovery_censored": true,
-      "recovery_minutes": 12777.0,
+      "recovery_minutes": 12780.0,
       "reference_is_fallback": false,
-      "registry_status": "DATA_VERIFIED",
+      "registry_status": "ACCEPTED",
       "role": "PRIMARY",
       "sample_role": "OUT_OF_SAMPLE",
-      "se": 5.911327504215259
+      "se": 5.3577741892780555
     },
     {
       "analysis_status": "CONFIRMATORY",
@@ -121,24 +121,24 @@
       "se": 18.58603038581245
     },
     {
-      "analysis_status": "DESCRIPTIVE_ONLY",
+      "analysis_status": "CONFIRMATORY",
       "ci95": [
-        140.93127261249094,
-        161.62168277651338
+        5.60501151426508,
+        20.03119739038633
       ],
       "cluster_id": "CL-2023-06-USDT-3POOL",
-      "dv5_ratio": 409.90610503175304,
-      "estimate": 147.84215303713162,
+      "dv5_ratio": 3420.5509625408145,
+      "estimate": 8.056292332766663,
       "event_id": "N2023-06-USDT-3POOL",
       "mechanism": "DEFI_POOL_IMBALANCE",
       "p_value": 0.001,
       "recovery_censored": false,
-      "recovery_minutes": 3178.0,
+      "recovery_minutes": 230.0,
       "reference_is_fallback": false,
-      "registry_status": "DATA_VERIFIED",
+      "registry_status": "REJECTED",
       "role": "PRIMARY",
       "sample_role": "IN_SAMPLE",
-      "se": 5.195261560341306
+      "se": 4.65864948971084
     },
     {
       "analysis_status": "CONFIRMATORY",
@@ -173,12 +173,14 @@
       "satisfied": []
     },
     "out_of_sample": {
-      "decision": "NO_IN_SAMPLE_RESULT (1/1 out-of-sample events satisfy H1)",
+      "decision": "NO_IN_SAMPLE_RESULT (2/2 out-of-sample events satisfy H1)",
       "holm_adjusted_p": {
-        "E2025-04-FDUSD": 0.001
+        "E2024-01-TUSD": 0.002,
+        "E2025-04-FDUSD": 0.002
       },
-      "n": 1,
+      "n": 2,
       "satisfied": [
+        "E2024-01-TUSD",
         "E2025-04-FDUSD"
       ]
     },
@@ -186,9 +188,9 @@
   },
   "h2": {
     "decision": "DESCRIPTIVE_ONLY",
-    "n": 1,
-    "ratio_above_one": 1,
-    "sign_test_p": 1.0
+    "n": 2,
+    "ratio_above_one": 2,
+    "sign_test_p": 0.5
   },
   "h3": {
     "decision": "NOT_TESTABLE",
@@ -196,6 +198,7 @@
   },
   "independent_accepted_clusters": [
     "CL-2023-03-SVB",
+    "CL-2024-01-TUSD",
     "CL-2025-04-FDUSD"
   ],
   "mechanism_summaries": {
@@ -206,8 +209,16 @@
       "k": 1,
       "note": "single cluster: reported individually, not pooled",
       "random_effects": null
+    },
+    "RESERVE_TRANSPARENCY": {
+      "clusters": [
+        "CL-2024-01-TUSD"
+      ],
+      "k": 1,
+      "note": "single cluster: reported individually, not pooled",
+      "random_effects": null
     }
   },
-  "multi_event_criterion_met": false,
+  "multi_event_criterion_met": true,
   "plan": "docs/PRE_ANALYSIS_PLAN.md (frozen; see configs/plan_freeze.json)"
 }
