@@ -1,5 +1,5 @@
 {
- "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only.",
+ "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only. A6 screen: Binance.US USD-quoted stablecoin klines through 2023-05 (same authorized free source).",
  "records": [
   {
    "venue": "bitstamp",
@@ -497,6 +497,54 @@
    "for_events": [
     "E2022-11-USDT-FTX",
     "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "venue": "tardis:binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-03-01",
+   "data_type": "incremental_book_L2",
+   "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/01/USDCUSD.csv.gz",
+   "status": "VERIFIED",
+   "file": "data/raw/tardis/binance-us_incremental_book_L2_2023-03-01_USDCUSD.csv.gz",
+   "bytes": 60090,
+   "sha256": "04ea987b12e695de1f86b30c9ffb38a8a526cb5f337e04f6e843055b42b74da5",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "terms_note": "Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded with reviewer approval for normal-market comparison only; licence page not located; raw files are not redistributed.",
+   "for_events": [
+    "normal-market L2 (anchor venue)"
+   ]
+  },
+  {
+   "venue": "tardis:binance",
+   "symbol": "TUSDUSDT",
+   "month": "2024-01-01",
+   "data_type": "incremental_book_L2",
+   "url": "https://datasets.tardis.dev/v1/binance/incremental_book_L2/2024/01/01/TUSDUSDT.csv.gz",
+   "status": "VERIFIED",
+   "file": "data/raw/tardis/binance_incremental_book_L2_2024-01-01_TUSDUSDT.csv.gz",
+   "bytes": 1481625,
+   "sha256": "8b6af2111069bb13c6b8f7f19c1e3e3b7a3229e3c844a88b656f50146e952ce2",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "terms_note": "Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded with reviewer approval for normal-market comparison only; licence page not located; raw files are not redistributed.",
+   "for_events": [
+    "normal-market L2 (TUSD event month)"
+   ]
+  },
+  {
+   "venue": "tardis:binance",
+   "symbol": "FDUSDUSDT",
+   "month": "2025-04-01",
+   "data_type": "incremental_book_L2",
+   "url": "https://datasets.tardis.dev/v1/binance/incremental_book_L2/2025/04/01/FDUSDUSDT.csv.gz",
+   "status": "VERIFIED",
+   "file": "data/raw/tardis/binance_incremental_book_L2_2025-04-01_FDUSDUSDT.csv.gz",
+   "bytes": 3006107,
+   "sha256": "409b80333b7cfa3c451f0ab73cca7d35531144bb04e81952c1fd8e98c0c4ce08",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "terms_note": "Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded with reviewer approval for normal-market comparison only; licence page not located; raw files are not redistributed.",
+   "for_events": [
+    "normal-market L2 (FDUSD event month)"
    ]
   },
   {
@@ -1537,56 +1585,2204 @@
    ]
   },
   {
-   "venue": "tardis:binance-us",
+   "venue": "binance-us",
    "symbol": "USDCUSD",
-   "month": "2023-03-01",
-   "data_type": "incremental_book_L2",
-   "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/01/USDCUSD.csv.gz",
+   "month": "2020-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-07.zip",
    "status": "VERIFIED",
-   "file": "data/raw/tardis/binance-us_incremental_book_L2_2023-03-01_USDCUSD.csv.gz",
-   "bytes": 60090,
-   "sha256": "04ea987b12e695de1f86b30c9ffb38a8a526cb5f337e04f6e843055b42b74da5",
-   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
-   "terms_note": "Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded with reviewer approval for normal-market comparison only; licence page not located; raw files are not redistributed.",
+   "file": "data/raw/binance_us/USDCUSD-1m-2020-07.zip",
+   "bytes": 72118,
+   "sha256": "55413500a399735017aac3dc9c1139e2e7c0fa4a925f99cf0bf71382c78d273d",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
    "for_events": [
-    "normal-market L2 (anchor venue)"
+    "A6 systematic in-sample screen"
    ]
   },
   {
-   "venue": "tardis:binance",
-   "symbol": "TUSDUSDT",
-   "month": "2024-01-01",
-   "data_type": "incremental_book_L2",
-   "url": "https://datasets.tardis.dev/v1/binance/incremental_book_L2/2024/01/01/TUSDUSDT.csv.gz",
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2020-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-08.zip",
    "status": "VERIFIED",
-   "file": "data/raw/tardis/binance_incremental_book_L2_2024-01-01_TUSDUSDT.csv.gz",
-   "bytes": 1481625,
-   "sha256": "8b6af2111069bb13c6b8f7f19c1e3e3b7a3229e3c844a88b656f50146e952ce2",
-   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
-   "terms_note": "Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded with reviewer approval for normal-market comparison only; licence page not located; raw files are not redistributed.",
+   "file": "data/raw/binance_us/USDCUSD-1m-2020-08.zip",
+   "bytes": 307759,
+   "sha256": "9b249a4c8f4c202d713e4ea65cc3a12a340a95627dd2acfc908e86255aff4849",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
    "for_events": [
-    "normal-market L2 (TUSD event month)"
+    "A6 systematic in-sample screen"
    ]
   },
   {
-   "venue": "tardis:binance",
-   "symbol": "FDUSDUSDT",
-   "month": "2025-04-01",
-   "data_type": "incremental_book_L2",
-   "url": "https://datasets.tardis.dev/v1/binance/incremental_book_L2/2025/04/01/FDUSDUSDT.csv.gz",
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2020-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-09.zip",
    "status": "VERIFIED",
-   "file": "data/raw/tardis/binance_incremental_book_L2_2025-04-01_FDUSDUSDT.csv.gz",
-   "bytes": 3006107,
-   "sha256": "409b80333b7cfa3c451f0ab73cca7d35531144bb04e81952c1fd8e98c0c4ce08",
-   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
-   "terms_note": "Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded with reviewer approval for normal-market comparison only; licence page not located; raw files are not redistributed.",
+   "file": "data/raw/binance_us/USDCUSD-1m-2020-09.zip",
+   "bytes": 300298,
+   "sha256": "9da7d0aadbecb5b2b23fc01b3456b09c5bd8f3fa5598d36692d8077b15d1f1bd",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
    "for_events": [
-    "normal-market L2 (FDUSD event month)"
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2020-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2020-10.zip",
+   "bytes": 297697,
+   "sha256": "cb8185779efbfbf1cbb02f8823904d52b7e3820465ebb1da1fd61d76f8edb23b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2020-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2020-11.zip",
+   "bytes": 307568,
+   "sha256": "35acf03ebb813ce62321eb23d98baedab524bd5aa6b992da6b55e362ae1a0a35",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2020-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2020-12.zip",
+   "bytes": 340528,
+   "sha256": "d552a919246dad68e09530f6f31b0b778603e37ef2339cc43b3adb424fd1563e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2020-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-01.zip",
+   "bytes": 436340,
+   "sha256": "ad05fbe5bc97184f2db7523c6aabc5aafb84e08fdd96914d50a77be8079205dc",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-02.zip",
+   "bytes": 503042,
+   "sha256": "87f6860e927ef32ef04f8f3e81ae558a8aac2198486c6b246f963a052c87c211",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-03.zip",
+   "bytes": 512034,
+   "sha256": "d0bdc4c3e50a307b42e3ad18511737ce950eb37e5432178ae1e079fc17785359",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-04.zip",
+   "bytes": 528581,
+   "sha256": "406def40d5e973d2ede8fac776a842bc1b4bef4216bb56d22f4ccbf7f9987f16",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-05.zip",
+   "bytes": 591502,
+   "sha256": "7ab66925a80de78f6fbed171d520bb0dc6acd01f2b3ed4ad7c344a01ea5f1730",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-06.zip",
+   "bytes": 471182,
+   "sha256": "0ed8876e32a28dfa4e48de5cb0ed2baf939d894b3d22b40e1be48b987027fe2d",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-07.zip",
+   "bytes": 415015,
+   "sha256": "7303b976cef4be256dfd5b5d21df917c82962e21154ef8fca2e7a207a51d3ca9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-08.zip",
+   "bytes": 428890,
+   "sha256": "8543c900325b1a6a1447155fd458d7e85ea65eb3c2fa591452acbe69185e0002",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-09.zip",
+   "bytes": 421206,
+   "sha256": "2dfc412fc59b69ff422dc476bd7e77358db2987928501e921b4d4dd84ece9791",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-10.zip",
+   "bytes": 449208,
+   "sha256": "c66bd2bb41cffdaef756263bf9b699f4d7f631b0342424c5cd1fb73a30a2969a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-11.zip",
+   "bytes": 456479,
+   "sha256": "9796f530485247d9ccbc42e1de856181ed660002d3e1850199f17d5958aa2bf2",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2021-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2021-12.zip",
+   "bytes": 460367,
+   "sha256": "0fbd96ea124993b78c8d3786ddcc0148399df8395d3f841bc0d3bd39ce3a07e5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2021-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-01.zip",
+   "bytes": 450815,
+   "sha256": "f568902286f364b839a0da0b49bdcecf51211c791fd477e864c87ceb4f5a7ad6",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-02.zip",
+   "bytes": 378734,
+   "sha256": "285f3ffbe2ce00c24c9c33e460c031d3afcceac1c251771138b3d4324d0f648a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-03.zip",
+   "bytes": 457258,
+   "sha256": "ec20bb1b97d671169e43b7e5aa62951b94ffe124f56fdbbd8377c7f968384268",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-04.zip",
+   "bytes": 470943,
+   "sha256": "09671101d2edb0ce6b82f23c796792b316e80555a5994e9036fe39cb6be710c3",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-05.zip",
+   "bytes": 530192,
+   "sha256": "dae913a67d94f101c05265566e412dfcb1260384bde09125f77fbd8b3903dd1c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-06.zip",
+   "bytes": 553365,
+   "sha256": "b2b2e4e7260ac0615feaa2aab9da85d820a1ebd9e0271a532dad1d8b420476fe",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-07.zip",
+   "bytes": 596088,
+   "sha256": "e32c35d11b00e48c36cb6d8c0515f3d7bfa951a221238603c6ce4af6fff82896",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-08.zip",
+   "bytes": 522702,
+   "sha256": "cfb1891e4a4ca782391cecf479d32eae1ddad5a8166f9e274202fa82b7df630c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-09.zip",
+   "bytes": 478319,
+   "sha256": "cb388c1d2e144c8e48bb2b8306fd174ef8949668331361172f6dafc421c6cf5b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-10.zip",
+   "bytes": 423294,
+   "sha256": "470872bec436cbb13847257f554a2c1ad95a2f5b23f42b4f6713f02d9b8e86e8",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-11.zip",
+   "bytes": 596676,
+   "sha256": "4abe36606cfb8639171bb9ceab76ec3f314aa325b08d6a7f7b496da70fbf119f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2022-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2022-12.zip",
+   "bytes": 610022,
+   "sha256": "2474363a4f9e18cd931c18d37171222404718955726ff139ceb8cf3891455e84",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2022-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-01.zip",
+   "bytes": 633986,
+   "sha256": "faaaca9314c37a08115a3b464be0667bf7f6a14adb6fbed8b9b8e4d73453ce40",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-02.zip",
+   "bytes": 443915,
+   "sha256": "7231e2f51fa69f6d275c588516c44a10b37d8ed7f355a04c22e48390eb0ecbbc",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-03.zip",
+   "bytes": 569637,
+   "sha256": "e7fdf74fe25cb0a3e8aa8d5b0bfb816dc467f0af3124671bb7a2ebf72a2af2c5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-04.zip",
+   "bytes": 585548,
+   "sha256": "f3ec7fe099557d5f185a9179a37555fbb6960343f639a8600ab0b7806774e397",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-05.zip",
+   "bytes": 671016,
+   "sha256": "c87ba0b3db95467b09653e372600a9da8b13af4f4daa3f865aaf6eba770ca075",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2019-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2019-09.zip",
+   "bytes": 140581,
+   "sha256": "9f6a9a8f8134ed123fd4af11fb88fabd125939fdd123b50bcd0c51b8ca3306dc",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2019-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2019-10.zip",
+   "bytes": 823881,
+   "sha256": "c13496753649b8f45600cb874156591ce1337928628fda92266c911eb43edaae",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2019-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2019-11.zip",
+   "bytes": 614627,
+   "sha256": "533aa2b5013a132f51afa6984370d457e7366270003c875c2161160c62babb4e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2019-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2019-12.zip",
+   "bytes": 559853,
+   "sha256": "f4107eee20fa642f6f64b488d1a732696e334b9b39e6cec3480f9dc7c529d47e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2019-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-01.zip",
+   "bytes": 645730,
+   "sha256": "1dac30412872e0489846c274fdbd7f9098968ae786661282d2fa7481b09f00b0",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-02.zip",
+   "bytes": 838623,
+   "sha256": "ccbacec16cba6e53bed12ad88f4eb58dcd04a784487294e667444c89ccb17eec",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-03.zip",
+   "bytes": 658030,
+   "sha256": "4045be296e5791f32ce25231c66231be5ea7bc19dfade03099d5f7891232e34a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-04.zip",
+   "bytes": 531813,
+   "sha256": "98805e1b8b748ab4e84f3ce9b15cbc1d3d27adace23b1e445105f7d626906ed5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-05.zip",
+   "bytes": 590974,
+   "sha256": "0f1e386cdff3e25e346e6ac3a5fc25c4631533c7227bba16d5b04edd73a49484",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-06.zip",
+   "bytes": 545151,
+   "sha256": "66b2f3291b882fe6227f9289c956c81f4f8c894220ff462ac4e57e7bfb229364",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-07.zip",
+   "bytes": 736112,
+   "sha256": "f6f36dde6db3afa68f261481f194a34c60084c3dca10d8e68b854c678e492306",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-08.zip",
+   "bytes": 807482,
+   "sha256": "a688d9d5123e90ce0e89a86ce2683dda3c467534dc7bda26abc9ba095a8b6273",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-09.zip",
+   "bytes": 766956,
+   "sha256": "0b3469ad28fe8baff3c2777901fbda02c4b3ecde99183679caef9605dbec34f5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-10.zip",
+   "bytes": 662909,
+   "sha256": "fba303467fe55efc1a04085b2f5d2f582d9d79b2aaf851e961cb3cca8321dc6f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-11.zip",
+   "bytes": 843246,
+   "sha256": "727c517a7149492658aed133b9bf4ca7ac6022e8f09e132624e1afe3d23efb07",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2020-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2020-12.zip",
+   "bytes": 972304,
+   "sha256": "0ce636b9c5ab619db009b797961169fbcbab3601ff1db76faee5e36f0dc6f943",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2020-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-01.zip",
+   "bytes": 1317270,
+   "sha256": "690487ae230d02997d41adfa2b728ba2252a9f258b7dba90ff86552a89dc19b3",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-02.zip",
+   "bytes": 1315535,
+   "sha256": "b1d4012226bee4f19c7e032caa63c20f6702b567aae0b4317438c0fa37c8671b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-03.zip",
+   "bytes": 1352013,
+   "sha256": "618756b5fc1c2534aef7e734ccc31f90a99ed8f96f1c9d2c29e8e82d80e8a5ee",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-04.zip",
+   "bytes": 1347860,
+   "sha256": "aa3f4eeceb8c2936ad426156954e2f64e0b64c77f7fe65f8ddcbd30f3b61e2fa",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-05.zip",
+   "bytes": 1452722,
+   "sha256": "3dfd3758536b763091eccb271be3c9ac4dc36c07df63e60fa717978e175029a1",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-06.zip",
+   "bytes": 1009620,
+   "sha256": "b9e17636462dc62632a3fc19960cc7b134547a175fa30ef5856199ed0c2b90d0",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-07.zip",
+   "bytes": 858645,
+   "sha256": "dbae8005711085f3e39a5b9669f1369e6bd53bf7ff1428ef7aace8b10211e296",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-08.zip",
+   "bytes": 1010152,
+   "sha256": "69a53b4b9d9821d9f0b29c98b6117c36dc359ac7e3b7e5c23be1987fcea2f139",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-09.zip",
+   "bytes": 1016733,
+   "sha256": "2e513c36f364dafad583d90df911c45c59588599249a987b8c93048bfe401c4c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-10.zip",
+   "bytes": 1260380,
+   "sha256": "64742203e5e458ea9eef701af0ca68247d331b3cd62f46685ac930448a857951",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-11.zip",
+   "bytes": 1286913,
+   "sha256": "fd9a90afbeb9f6f19b4d417a78f51f1544330cea15598dee42ba3c09ec25aa7e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2021-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2021-12.zip",
+   "bytes": 1202925,
+   "sha256": "27947749ca8d0b582577bb0f5f482165fbf6086a0a58f0653297ba6dc477703a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2021-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-01.zip",
+   "bytes": 1112026,
+   "sha256": "b1a6ce9bbc64f9ffbf3a646e2b5b73fc23ef8f1b987c6c5d2aca71f82b412b98",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-02.zip",
+   "bytes": 980740,
+   "sha256": "400b236f4254d6a66712e45890b56335728a76956fde8646e0787c2e7e37dd52",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-03.zip",
+   "bytes": 1148332,
+   "sha256": "94a752bd728f5de5a5f67d74de70c02767f15ebad1e623c0608038fbd5f55558",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-04.zip",
+   "bytes": 1083667,
+   "sha256": "412bad3d8cf622c88c17d8e380c01322a7a5463a904ede35b8df26262946133c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-05.zip",
+   "bytes": 1265152,
+   "sha256": "edc57d0f29f5e68d6204f4e160ee9763ab11cbe0b8fde716e1e08efef48099a0",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-06.zip",
+   "bytes": 1169331,
+   "sha256": "6b318c08ecb72f53f7c3d6c2bc15394d3d9fe7a452622a97850813ef69761647",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-07.zip",
+   "bytes": 1157585,
+   "sha256": "d90b64739414ddb97f659a362bc29a8bc415d6e63bf836e1141ce9a6f55da61c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-08.zip",
+   "bytes": 936400,
+   "sha256": "07b3f5fb929adf5f460d3d851fbd1ee2f6e31f8b03ce7433457e9c544ee5f1a2",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-09.zip",
+   "bytes": 791255,
+   "sha256": "637367e075af7e3f538f0a4120a3e27caf0c2d0df6824e8a7d66200aa281125b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-10.zip",
+   "bytes": 791881,
+   "sha256": "add6b7d9a22e85be4e794a60a230f89d679fe380b8d2ed8463756aa72cdaa7bf",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-11.zip",
+   "bytes": 926394,
+   "sha256": "908f8c273157276f359b594ac5d7ae3025d8a7c214e74137e2385c8241a385e2",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2022-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2022-12.zip",
+   "bytes": 822226,
+   "sha256": "50232a278925ac5a24c6543f9cfec61847835e03a11c03cdb9c1e30ebc77589f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2022-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-01.zip",
+   "bytes": 962471,
+   "sha256": "1a0643db6b7392dcbce7396fb7078751fdc23cd3c53ea05685126ad5e2f7a4b9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-02.zip",
+   "bytes": 922464,
+   "sha256": "dd7b025eebee9191c5937f65dcf6c26b1c596a617cb2dbee507f9a79c09cf66c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-03.zip",
+   "bytes": 933636,
+   "sha256": "5b61034dcfae9765a4b541fa27947162a85be05e4dd9984f2d920eb8b299e98b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-04.zip",
+   "bytes": 977929,
+   "sha256": "2bf4e22462fa531960ead77b0738eeff7f4c4d08fc1e14aafde521a6017e2493",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-05.zip",
+   "bytes": 1017045,
+   "sha256": "363b199df87cbce8b8ec02626300c88e1badce06f23d1eccb90fb59e5a89ede6",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2020-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2020-08.zip",
+   "bytes": 106229,
+   "sha256": "f6ce43ac96f460494c0e5d17c0f7fee7a164e84e8b1bb77e4cf41663ce5f7ab6",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2020-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2020-09.zip",
+   "bytes": 278684,
+   "sha256": "2e93a75b6f5e5b4f0b6611e5777621dc90898420e32ddf99323278ec6d43eb56",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2020-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2020-10.zip",
+   "bytes": 270772,
+   "sha256": "b84fb75b5f74f08260cb7652fe2f043ccdd8e320a50c5d265c9af619198ca606",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2020-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2020-11.zip",
+   "bytes": 270223,
+   "sha256": "84ae0092100ef6aec80c7c0a8334a219af3ee9efb6007b24bd735e1cf371f323",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2020-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2020-12.zip",
+   "bytes": 296300,
+   "sha256": "9c96dc151d97f55797755dedda7e3fb7059ce2c802db4f2c9e642663783d56a9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2020-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-01.zip",
+   "bytes": 324713,
+   "sha256": "f4d3f619a1390d335b38b7fe2be1d75851218bb847ee296dd3eab9f6b6c8ac08",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-02.zip",
+   "bytes": 351046,
+   "sha256": "e84f7c6fca67f5b0b4e6768fc9cbff6df9533ba9f7a3e7f4373982c72c10448b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-03.zip",
+   "bytes": 371944,
+   "sha256": "dcef6107c28cf3f5ad9e8714cc36b9862c9cacb735bee91c02d8615b50619e4d",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-04.zip",
+   "bytes": 395204,
+   "sha256": "b81c306ace98a05d0e785505dd632fb36cf5233158d75473ec28ee9f4a6d5244",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-05.zip",
+   "bytes": 466554,
+   "sha256": "ef333bca454a785f05ae0d3dcf9c2f4c8b63d7eaa0e2138e1839d419185cd899",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-06.zip",
+   "bytes": 357033,
+   "sha256": "1526541bd7d5f5954d54f2581a3e9936aa264cf499cffb9c25c72fadfcd02edf",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-07.zip",
+   "bytes": 311420,
+   "sha256": "5ba104a23d18eff8bbf5992e0714da483118517c5edfe3e9563dbb41954f3b44",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-08.zip",
+   "bytes": 317156,
+   "sha256": "f24141baaf0fa6869940a0b199f2a6f3b69313fc6df0f6f07dc8ecb515d85f0e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-09.zip",
+   "bytes": 312000,
+   "sha256": "66bd905361af1967bbb4fb9dd65e7d8ebdc1f6e48bbc7d4b6aa6149ad646a823",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-10.zip",
+   "bytes": 333710,
+   "sha256": "849fa05085cb31c9a4112a19803d29b4d1897b09ba4ac85801c0ab5497fbaedd",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-11.zip",
+   "bytes": 344859,
+   "sha256": "68efcfc342ceb8a7f5d14bbfea20376a388a671f25171b3d9dffe5e7b2d35831",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2021-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2021-12.zip",
+   "bytes": 329399,
+   "sha256": "714b8fae0817cf9621812b9b5ec084a2b242976e235acd5d86eab8e147f17fce",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2021-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-01.zip",
+   "bytes": 309872,
+   "sha256": "f8a114b4f6eefc766a02eec4fdfd8b00906447113b5d321bd2a4f366d669029f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-02.zip",
+   "bytes": 269700,
+   "sha256": "0a4a08dd7b897daf6884a3f8bcf506543e465cb5355af6c0ce1bcbdb2068e4f5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-03.zip",
+   "bytes": 284620,
+   "sha256": "cfbf04b24163c89b22045e07d02847f01c9340a780f2fb7722d6f19e94af853a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-04.zip",
+   "bytes": 272507,
+   "sha256": "ab68feca89a642a0f4a861dd893acbf6258c52b4f454e647209b658fad0410fa",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-05.zip",
+   "bytes": 280322,
+   "sha256": "05982b5b2f6aafede8fe810231d2b34ff7455ccad6ac9bd764e7210f5d47031f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-06.zip",
+   "bytes": 267613,
+   "sha256": "cd91fce78555f923b4c3fbd9e00c08776bc6261e44da4b6c8b4f45f11d91b30e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-07.zip",
+   "bytes": 269691,
+   "sha256": "e869e64edcb85d1be0f95bf2a0d7d989f8954e7848972e7732d60a4b072baeea",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-08.zip",
+   "bytes": 274971,
+   "sha256": "1fcc032ff8ffd1bf50ca42111f9f30e547172b0374a1dcd30b5187adcf965ce8",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-09.zip",
+   "bytes": 262037,
+   "sha256": "54bb5239f2ba6c98b30848cd4448f668f803c47b24cc4c9a058beee30fee2e5a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-10.zip",
+   "bytes": 268787,
+   "sha256": "48b06bf69638b23c9676cd8f22bd79d5e3cffc67b491861807fb675dcbc108c6",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-11.zip",
+   "bytes": 263291,
+   "sha256": "57809f82e80c85f7fce301d27735f7a2cd2cb0918612f5dfa25f55fb7a664485",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2022-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2022-12.zip",
+   "bytes": 266602,
+   "sha256": "38c8d6daca65acf0364b1c2c07fcbb81d918b1dd3c1f23aa9dbe047fe6d3e1df",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2022-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2023-01.zip",
+   "bytes": 265821,
+   "sha256": "0b1d26b8c8b1cfae5b768edd3e37b744358238168cb963e728008b03285275ad",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2023-02.zip",
+   "bytes": 242536,
+   "sha256": "f916cd6c0bf3b011bd323348f2ea27cca06d2c09d937d007d6504f0457fba630",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2023-03.zip",
+   "bytes": 293419,
+   "sha256": "a3673b10523f5342b0da98b13cebedac26deda9f85428a3c0d1e8bd44f381a1a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2023-04.zip",
+   "bytes": 268933,
+   "sha256": "19325019806b737365264c0d2fc25d0985d39dba030540302fb6f4a0cb6b8589",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "DAIUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/DAIUSD-1m-2023-05.zip",
+   "bytes": 282101,
+   "sha256": "1a32688a080bdff4a6d3824d8294c8bff1bbb54a5168d825e75d4ae10b6bdf28",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/DAIUSD/1m/DAIUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2022-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2022-10.zip",
+   "bytes": 48101,
+   "sha256": "39acc60afe90293d8fa5f455229590174e5ec509a0994d1b844c736bef9aa888",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2022-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2022-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2022-11.zip",
+   "bytes": 246484,
+   "sha256": "225c48dc5c027d2bed9511aa908c2eb1153e9938495c7ebab785ab8559bf9dc5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2022-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2022-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2022-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2022-12.zip",
+   "bytes": 252919,
+   "sha256": "371186601377a7e7a55dd6bb5a649191f3524a7f6b243111509534141d7a9757",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2022-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2023-01.zip",
+   "bytes": 250046,
+   "sha256": "0f3a3f34511e1d2bf125a787afa0f568f915d978331a744f4ece9a6c14133470",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2023-02.zip",
+   "bytes": 225545,
+   "sha256": "36757b54fcd5018b2dbd8fb8892549939fda073b5ac0a9c49d6b7ca302bc7370",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2023-03.zip",
+   "bytes": 259916,
+   "sha256": "f21d45f226e4870d0a38dbce002a04c38f99d97bf67a13ec0449eeb6376fb317",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2023-04.zip",
+   "bytes": 277640,
+   "sha256": "f738e3bc88a5593e7b858851b249beb3ed6e0cfd09b0e73cc03f26fb185ecc36",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "TUSDUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/TUSDUSD-1m-2023-05.zip",
+   "bytes": 303415,
+   "sha256": "603325b48210041c47e9213b435ae5d793a5572a36750ff4cc52ef59233ddb75",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/TUSDUSD/1m/TUSDUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "A6 systematic in-sample screen"
    ]
   }
  ],
  "summary": {
-  "VERIFIED": 83,
+  "VERIFIED": 205,
   "NOT_AVAILABLE": 0,
   "CHECKSUM_FAILED": 0
  }

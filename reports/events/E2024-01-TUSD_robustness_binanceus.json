@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2024-01-TUSD",
-  "measured_utc": "2026-10-11T19:18Z",
+  "measured_utc": "2026-10-11T20:52Z",
   "plan": {
     "analysis_status": "DESCRIPTIVE_ONLY",
     "confirmatory_eligible": false,
@@ -143,6 +143,223 @@
     "quote_usd": {
       "files": [
         {
+          "file": "USDTUSD-1m-2019-09.zip",
+          "issues": [],
+          "rows": 19284,
+          "sha256": "9f6a9a8f8134ed123fd4af11fb88fabd125939fdd123b50bcd0c51b8ca3306dc",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2019-10.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "c13496753649b8f45600cb874156591ce1337928628fda92266c911eb43edaae",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2019-11.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "533aa2b5013a132f51afa6984370d457e7366270003c875c2161160c62babb4e",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2019-12.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "f4107eee20fa642f6f64b488d1a732696e334b9b39e6cec3480f9dc7c529d47e",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-01.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "1dac30412872e0489846c274fdbd7f9098968ae786661282d2fa7481b09f00b0",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-02.zip",
+          "issues": [],
+          "rows": 41760,
+          "sha256": "ccbacec16cba6e53bed12ad88f4eb58dcd04a784487294e667444c89ccb17eec",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-03.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "4045be296e5791f32ce25231c66231be5ea7bc19dfade03099d5f7891232e34a",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-04.zip",
+          "issues": [],
+          "rows": 42660,
+          "sha256": "98805e1b8b748ab4e84f3ce9b15cbc1d3d27adace23b1e445105f7d626906ed5",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-05.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "0f1e386cdff3e25e346e6ac3a5fc25c4631533c7227bba16d5b04edd73a49484",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-06.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "66b2f3291b882fe6227f9289c956c81f4f8c894220ff462ac4e57e7bfb229364",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-07.zip",
+          "issues": [],
+          "rows": 44040,
+          "sha256": "f6f36dde6db3afa68f261481f194a34c60084c3dca10d8e68b854c678e492306",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-08.zip",
+          "issues": [],
+          "rows": 44273,
+          "sha256": "a688d9d5123e90ce0e89a86ce2683dda3c467534dc7bda26abc9ba095a8b6273",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-09.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "0b3469ad28fe8baff3c2777901fbda02c4b3ecde99183679caef9605dbec34f5",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-10.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "fba303467fe55efc1a04085b2f5d2f582d9d79b2aaf851e961cb3cca8321dc6f",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-11.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "727c517a7149492658aed133b9bf4ca7ac6022e8f09e132624e1afe3d23efb07",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2020-12.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "0ce636b9c5ab619db009b797961169fbcbab3601ff1db76faee5e36f0dc6f943",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-01.zip",
+          "issues": [],
+          "rows": 44430,
+          "sha256": "690487ae230d02997d41adfa2b728ba2252a9f258b7dba90ff86552a89dc19b3",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-02.zip",
+          "issues": [],
+          "rows": 40320,
+          "sha256": "b1d4012226bee4f19c7e032caa63c20f6702b567aae0b4317438c0fa37c8671b",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-03.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "618756b5fc1c2534aef7e734ccc31f90a99ed8f96f1c9d2c29e8e82d80e8a5ee",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-04.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "aa3f4eeceb8c2936ad426156954e2f64e0b64c77f7fe65f8ddcbd30f3b61e2fa",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-05.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "3dfd3758536b763091eccb271be3c9ac4dc36c07df63e60fa717978e175029a1",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-06.zip",
+          "issues": [],
+          "rows": 42735,
+          "sha256": "b9e17636462dc62632a3fc19960cc7b134547a175fa30ef5856199ed0c2b90d0",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-07.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "dbae8005711085f3e39a5b9669f1369e6bd53bf7ff1428ef7aace8b10211e296",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-08.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "69a53b4b9d9821d9f0b29c98b6117c36dc359ac7e3b7e5c23be1987fcea2f139",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-09.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "2e513c36f364dafad583d90df911c45c59588599249a987b8c93048bfe401c4c",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-10.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "64742203e5e458ea9eef701af0ca68247d331b3cd62f46685ac930448a857951",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-11.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "fd9a90afbeb9f6f19b4d417a78f51f1544330cea15598dee42ba3c09ec25aa7e",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2021-12.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "27947749ca8d0b582577bb0f5f482165fbf6086a0a58f0653297ba6dc477703a",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-01.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "b1a6ce9bbc64f9ffbf3a646e2b5b73fc23ef8f1b987c6c5d2aca71f82b412b98",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-02.zip",
+          "issues": [],
+          "rows": 40286,
+          "sha256": "400b236f4254d6a66712e45890b56335728a76956fde8646e0787c2e7e37dd52",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-03.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "94a752bd728f5de5a5f67d74de70c02767f15ebad1e623c0608038fbd5f55558",
+          "time_unit": "ms"
+        },
+        {
           "file": "USDTUSD-1m-2022-04.zip",
           "issues": [],
           "rows": 43200,
@@ -154,6 +371,34 @@
           "issues": [],
           "rows": 44640,
           "sha256": "edc57d0f29f5e68d6204f4e160ee9763ab11cbe0b8fde716e1e08efef48099a0",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-06.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "6b318c08ecb72f53f7c3d6c2bc15394d3d9fe7a452622a97850813ef69761647",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-07.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "d90b64739414ddb97f659a362bc29a8bc415d6e63bf836e1141ce9a6f55da61c",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-08.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "07b3f5fb929adf5f460d3d851fbd1ee2f6e31f8b03ce7433457e9c544ee5f1a2",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2022-09.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "637367e075af7e3f538f0a4120a3e27caf0c2d0df6824e8a7d66200aa281125b",
           "time_unit": "ms"
         },
         {
@@ -171,6 +416,13 @@
           "time_unit": "ms"
         },
         {
+          "file": "USDTUSD-1m-2022-12.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "50232a278925ac5a24c6543f9cfec61847835e03a11c03cdb9c1e30ebc77589f",
+          "time_unit": "ms"
+        },
+        {
           "file": "USDTUSD-1m-2023-01.zip",
           "issues": [],
           "rows": 44640,
@@ -182,6 +434,20 @@
           "issues": [],
           "rows": 39891,
           "sha256": "dd7b025eebee9191c5937f65dcf6c26b1c596a617cb2dbee507f9a79c09cf66c",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2023-03.zip",
+          "issues": [],
+          "rows": 44640,
+          "sha256": "5b61034dcfae9765a4b541fa27947162a85be05e4dd9984f2d920eb8b299e98b",
+          "time_unit": "ms"
+        },
+        {
+          "file": "USDTUSD-1m-2023-04.zip",
+          "issues": [],
+          "rows": 43200,
+          "sha256": "2bf4e22462fa531960ead77b0738eeff7f4c4d08fc1e14aafde521a6017e2493",
           "time_unit": "ms"
         },
         {
@@ -249,11 +515,11 @@
         }
       ],
       "gaps": {
-        "grid_minutes": 1886400,
+        "grid_minutes": 3221280,
         "longest_missing_run_minutes": 527040,
-        "missing_minutes": 1233069,
-        "present_untraded_minutes": 182597,
-        "traded_minutes": 470734
+        "missing_minutes": 928001,
+        "present_untraded_minutes": 625730,
+        "traded_minutes": 1667549
       },
       "source": "binance_vision_monthly_klines",
       "venue": "binance-us"

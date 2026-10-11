@@ -2,6 +2,7 @@
 
 | event | mechanism | status | vol_ratio | traded_share | outage_runs | closed_share | extreme_closed |
 |---|---|---|---|---|---|---|---|
+| E2020-08-DAI-YIELD-PREMIUM | demand premium | data verified | -- | 2 → 2 | 0 | 75 | no |
 | E2022-05-UST-COLLAPSE | algorithmic collapse | accepted | 2.63 | 92 → 94 | 1 | 76 | yes |
 | E2022-11-USDT-FTX | exchange failure contagion | rejected | 3.62 | 70 → 89 | 0 | 67 | yes |
 | E2023-03-USDC-SVB | bank reserve run | accepted | 2.03 | 19 → 79 | 0 | 83 | yes |

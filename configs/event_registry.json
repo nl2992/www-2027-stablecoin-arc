@@ -122,9 +122,9 @@
         "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json",
         "series": "ust",
         "basis": "USD",
-        "input_sha256": "c4ce1d4ab1b7303f9193d7fbeb6e90deae79a00c09b2cc692009f820388ec337",
+        "input_sha256": "ff8a7e9284aaef744996e0660a34005e636802247a30b88af26f1be7c01bfa2c",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T19:18Z"
+        "measured_utc": "2026-10-11T20:51Z"
       },
       "coverage_ok": true
     },
@@ -283,9 +283,9 @@
         "report": "reports/events/E2022-11-USDT-FTX_protocol.json",
         "series": "binance_usdtusd",
         "basis": "USD",
-        "input_sha256": "a0dc365885f07d7a712d15e6c4081459505b2597a9d478a3e6765369a4a7075a",
+        "input_sha256": "20456504e6fafd66801c5938d1ecffbf998925b930da79b3848d38e649463220",
         "r1_pass": false,
-        "measured_utc": "2026-10-11T19:19Z"
+        "measured_utc": "2026-10-11T20:53Z"
       },
       "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
@@ -350,7 +350,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "87a57b2a1624959502ac5928ffe3dd1e8d612f8512597d352a73bc7b6c8457b6",
         "r1_pass": false,
-        "measured_utc": "2026-10-11T19:18Z"
+        "measured_utc": "2026-10-11T20:52Z"
       },
       "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
@@ -550,7 +550,7 @@
         "basis": "USD",
         "input_sha256": "f3d9c49dd2f93ef4d94b1cc39f64a78a0a4a82dbe4a00ef6647a93c3d183da7c",
         "r1_pass": false,
-        "measured_utc": "2026-10-11T19:19Z"
+        "measured_utc": "2026-10-11T20:53Z"
       },
       "coverage_ok": true,
       "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
@@ -620,7 +620,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "43391b9af45b6127b7d572ff21a9add795ed33efeb05555726df9d031b2ccf12",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T19:18Z"
+        "measured_utc": "2026-10-11T20:52Z"
       },
       "coverage_ok": true
     },
@@ -689,7 +689,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "f73229334f339a5bc61e42cc3f9ab22d39aef654dd256e06c4c218a69c731fbd",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T19:19Z"
+        "measured_utc": "2026-10-11T20:52Z"
       },
       "coverage_ok": true
     },
@@ -764,7 +764,7 @@
         "basis": "USD_VIA_USDT",
         "input_sha256": "b6439b4eab1ebc67948a1239e5a9c0fe3122166794b97646b982eca84edab643",
         "r1_pass": true,
-        "measured_utc": "2026-10-11T19:19Z"
+        "measured_utc": "2026-10-11T20:52Z"
       }
     },
     {
@@ -829,6 +829,131 @@
       "status": "UNRESOLVED",
       "sample_role": "UNASSIGNED",
       "reason": "Mentioned only by an aggregator news snippet without a verifiable article; the mechanism category is a placeholder.",
+      "data_candidates": []
+    },
+    {
+      "id": "E2020-08-DAI-YIELD-PREMIUM",
+      "cluster_id": "CL-2020-08-DAI-YIELD",
+      "role": "PRIMARY",
+      "stablecoin": "DAI",
+      "peg": "USD",
+      "mechanism": "DEMAND_PREMIUM",
+      "direction": "PREMIUM",
+      "reported_window_utc": {
+        "start": "2020-08-24",
+        "end": "2020-09-19"
+      },
+      "reported_extreme": {
+        "price": "about 1.02-1.03 on DEXs",
+        "scope": "market reports",
+        "source_index": 0
+      },
+      "sources": [
+        {
+          "url": "https://www.coindesk.com/makerdao-defi-dai-broken-peg/",
+          "publisher": "CoinDesk",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://decrypt.co/34852/the-unintended-consequences-of-yield-farming",
+          "publisher": "Decrypt",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://cointelegraph.com/news/maker-community-thanks-yearn-for-seemingly-restoring-dai-peg",
+          "publisher": "Cointelegraph",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
+      ],
+      "status": "DATA_VERIFIED",
+      "sample_role": "IN_SAMPLE",
+      "discovered_by": "A6 screen (reports/events/screen_A6.json)",
+      "data_candidates": [
+        {
+          "venue": "binance-us",
+          "symbol": "DAIUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "binance_us_public_history (acquired; acquisition manifest)",
+          "status": "OBSERVED_LOCAL",
+          "observed_range_utc": [
+            "2020-08-20",
+            "2023-05-31"
+          ]
+        }
+      ],
+      "notes": "Window = first/last A6 breach dates. Binance.US DAIUSD listed 2020-08-20 13:04 UTC with 2.2% traded minutes in August; the venue extreme (+550 bps) exceeds reported DEX levels, so venue amplification is likely.",
+      "measurement": {
+        "report": "reports/events/E2020-08-DAI-YIELD-PREMIUM_protocol.json",
+        "series": "binance_daiusd",
+        "basis": "USD",
+        "input_sha256": "ed9322a2c62359958c899b81802ec026abcc29315b2d3711e6e9b2f3b290933d",
+        "r1_pass": true,
+        "measured_utc": "2026-10-11T20:53Z"
+      }
+    },
+    {
+      "id": "E2020-03-USDT-PREMIUM-BINANCEUS",
+      "cluster_id": "CL-2020-03-COVID-CRASH",
+      "role": "LINKED_LEG",
+      "linked_to": "E2020-03-DAI-BLACKTHURSDAY",
+      "stablecoin": "USDT",
+      "peg": "USD",
+      "mechanism": "DELEVERAGING_PREMIUM",
+      "direction": "PREMIUM",
+      "reported_window_utc": {
+        "start": "2020-03-12",
+        "end": "2020-03-14"
+      },
+      "reported_extreme": null,
+      "sources": [],
+      "status": "CANDIDATE",
+      "sample_role": "IN_SAMPLE",
+      "discovered_by": "A6 screen",
+      "data_candidates": [
+        {
+          "venue": "binance-us",
+          "symbol": "USDTUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "binance_us_public_history (acquired)",
+          "status": "OBSERVED_LOCAL",
+          "observed_range_utc": [
+            "2019-09-01",
+            "2023-05-31"
+          ]
+        }
+      ],
+      "notes": "A6 detection: USDT/USD +706 bps premium on Binance.US (85 breaching minutes). Linked leg of the Black Thursday cluster; not an independent episode."
+    },
+    {
+      "id": "U2023-05-BINANCEUS-USD-LIQUIDITY",
+      "cluster_id": "CL-2023-05-BINANCEUS-USD",
+      "role": "PRIMARY",
+      "stablecoin": "USDC",
+      "peg": "USD",
+      "mechanism": "VENUE_INFRASTRUCTURE",
+      "direction": "PREMIUM",
+      "reported_window_utc": {
+        "start": "2023-05-07",
+        "end": "2023-05-09"
+      },
+      "reported_extreme": null,
+      "sources": [
+        {
+          "url": "https://blockworks.com/news/bitcoin-on-binance-premium",
+          "publisher": "Blockworks",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
+      ],
+      "status": "UNRESOLVED",
+      "sample_role": "IN_SAMPLE",
+      "discovered_by": "A6 screen",
+      "reason": "A6 detection: all four screened stablecoins at a premium to USD on Binance.US at once (USDC +953, TUSD +519, USDT +363, DAI +363 bps), which points to venue USD-liquidity stress. Only one publisher (Blockworks: BTC/ETH >3% premium on Binance.US in May 2023), so R4 is not met. Not accepted.",
       "data_candidates": []
     }
   ]

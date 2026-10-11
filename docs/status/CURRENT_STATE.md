@@ -103,3 +103,19 @@ Registry status is **ACCEPTED** and analysis status is **EXPLORATORY** (post-hoc
 - **Extremes outside a generic US banking window:** 6 of 8 events. Such hours make up 76% of a week, so this is close to the base rate and is **not** evidence for a redemption-hours mechanism. The window is an assumption, not issuer-documented.
 
 UST remains EXPLORATORY (user decision, 2026-10-11).
+
+## 10. Systematic in-sample screen (amendment A6, pre-registered at `a3ad1a6` before any screen data)
+
+`uv run python -m www_events.acquire` acquired 122 Binance.US archives, all checksum-verified. `uv run python -m www_events.screen` wrote `reports/events/screen_A6.json`: 10 detections in 5 clusters.
+
+| Cluster | Detections (bps) | Outcome |
+|---|---|---|
+| 2020-03-12 → 14 | USDT +706 (premium) | Matches Black Thursday; registered as a linked leg (CANDIDATE) |
+| 2020-08-24 → 09-19 | DAI +550 (premium) | **New**. Sourced: yield-farming premium (CoinDesk, Decrypt, Cointelegraph). Measured: R1 passes but R3 fails (Binance.US DAIUSD listed 2020-08-20; baseline 35%, control 0%), so DATA_VERIFIED |
+| 2022-05-12 | USDT −458 | Matches Terra |
+| 2023-03-10 → 13 | USDC −1,470, DAI −1,161, USDT +164 | Matches SVB; reproduces the anchor independently |
+| 2023-05-07 → 09 | USDC +953, TUSD +519, USDT +363, DAI +363 | **New**. All coins at a premium together, which points to venue USD stress. Only one source (Blockworks), so UNRESOLVED |
+
+- No detection appears for FTX (November 2022), which is consistent with that rejection.
+- **The screen adds no confirmatory in-sample episode.**
+- **New limitation:** Binance.US's dollar already showed stress in May 2023, before the documented A2 impairment of 2023-06-09.

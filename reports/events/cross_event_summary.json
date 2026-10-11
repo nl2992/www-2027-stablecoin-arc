@@ -1,6 +1,23 @@
 {
   "events": [
     {
+      "analysis_status": "DESCRIPTIVE_ONLY",
+      "ci95": null,
+      "cluster_id": "CL-2020-08-DAI-YIELD",
+      "dv5_ratio": null,
+      "estimate": null,
+      "event_id": "E2020-08-DAI-YIELD-PREMIUM",
+      "mechanism": "DEMAND_PREMIUM",
+      "p_value": null,
+      "recovery_censored": true,
+      "recovery_minutes": 17706.0,
+      "reference_is_fallback": true,
+      "registry_status": "DATA_VERIFIED",
+      "role": "PRIMARY",
+      "sample_role": "IN_SAMPLE",
+      "se": null
+    },
+    {
       "analysis_status": "EXPLORATORY",
       "ci95": [
         722.5572718580951,

@@ -2,6 +2,7 @@
 
 | event | coin | role | status | analysis | extreme | breach | dv1 | dv3 | dv4 | dv5 | vol |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| E2020-08-DAI-YIELD-PREMIUM | DAI | in sample | data verified | descriptive only | 550 | 159 | -- (b) | 295+ | -- | -- | -- → -- |
 | E2022-05-UST-COLLAPSE | UST | in sample | accepted | exploratory | -32,190 | 1,440 | 1,028 [723, 2,244] | 190+ | -- | -- | 56 → 147 |
 | E2022-11-USDT-FTX | USDT | in sample | rejected | descriptive (not accepted) | -25 | 0 | 9 [2, 15] | 0 | 1.37 | -- | 43 → 155 |
 | E2023-03-USDC-SVB | USDC | in sample | accepted | exploratory | -1,470 | 1,379 | 208 [92, 336] (b) | 68 | 6.53 | 94.8 | 40 → 80 |

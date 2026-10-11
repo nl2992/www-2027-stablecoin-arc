@@ -108,6 +108,15 @@ SPEC: list[tuple[str, str, str, Callable[[Any], str]]] = [
 ]
 
 
+def screen_counts() -> dict[str, int]:
+    path = ROOT / "reports/events/screen_A6.json"
+    if not path.is_file():
+        return {}
+    summary = json.loads(path.read_text())["summary"]
+    return {"NumScreenEpisodes": summary["episodes"], "NumScreenClusters": summary["clusters"],
+            "NumScreenMatched": summary["matched"], "NumScreenNew": summary["new"]}
+
+
 def closed_base_rate() -> str:
     """Share of hours in a generic week that fall outside the assumed US banking redemption window."""
     import pandas as pd
@@ -136,6 +145,8 @@ def build() -> str:
         data = cache.setdefault(report, json.loads((ROOT / report).read_text()))
         lines.append(f"\\newcommand{{\\{name}}}{{{fmt(_get(data, path))}}} % {report}: {path}")
     lines.append(f"\\newcommand{{\\NumClosedBaseRate}}{{{closed_base_rate()}}} % www_capacity.redemption weekly base rate")
+    for name, value in screen_counts().items():
+        lines.append(f"\\newcommand{{\\{name}}}{{{value}}} % reports/events/screen_A6.json")
     for name, value in registry_counts().items():
         lines.append(f"\\newcommand{{\\{name}}}{{{value}}} % configs/event_registry.json")
     return "\n".join(lines) + "\n"

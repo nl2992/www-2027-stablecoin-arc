@@ -200,6 +200,15 @@
       "venue_note": "Binance.US USD-quoted archive",
       "usd_venue": "binance-us",
       "robustness_label": "binanceus"
+    },
+    {
+      "event_id": "E2020-08-DAI-YIELD-PREMIUM",
+      "source": "binance",
+      "path": "data/raw/binance_us",
+      "stable": "DAIUSD",
+      "quote_basis": "USD",
+      "usd_venue": "binance-us",
+      "venue_note": "A6-discovered; Binance.US USD-quoted"
     }
   ]
 }
