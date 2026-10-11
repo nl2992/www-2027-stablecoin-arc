@@ -71,6 +71,33 @@ def acquire(root: Path, venue: str, symbol: str, month: str) -> dict[str, Any]:
     return record
 
 
+def acquire_bitstamp(root: Path, pair: str, month: str) -> dict[str, Any]:
+    from .bitstamp import ENDPOINT, fetch_month, save_month
+    path = root / "data/raw/bitstamp" / f"{pair.upper()}-1m-{month}.csv"
+    record: dict[str, Any] = {"venue": "bitstamp", "symbol": pair.upper(), "month": month,
+                              "url": ENDPOINT.format(pair=pair.lower(), start="<paged>")}
+    try:
+        frame, pages = fetch_month(pair, month)
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        record.update(status="NOT_AVAILABLE", error=f"{type(exc).__name__}: {exc}")
+        return record
+    if frame.empty:
+        record.update(status="NOT_AVAILABLE", error="no bars returned")
+        return record
+    digest = save_month(frame, path)
+    record.update(status="VERIFIED", file=str(path.relative_to(root)), bytes=path.stat().st_size, sha256=digest,
+                  hash_kind="self-recorded at acquisition (provider publishes no checksum)", pages=pages,
+                  rows=len(frame), traded_minutes=int((frame["volume"] > 0).sum()),
+                  first_utc=pd_ts(frame["timestamp"].iloc[0]), last_utc=pd_ts(frame["timestamp"].iloc[-1]),
+                  terms_note=TERMS_NOTE)
+    return record
+
+
+def pd_ts(seconds: int) -> str:
+    import datetime as _dt
+    return _dt.datetime.fromtimestamp(int(seconds), _dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
@@ -78,14 +105,25 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, default=Path("reports/events/acquisition_manifest.json"))
     args = parser.parse_args()
     plan = json.loads((args.root / args.plan).read_text())
+    manifest_path = args.root / args.manifest
+    previous = json.loads(manifest_path.read_text())["records"] if manifest_path.is_file() else []
     records = []
+    done = {(r["venue"], r["symbol"], r["month"]) for r in previous if r["status"] == "VERIFIED"}
     for item in plan["items"]:
         for month in item["months"]:
             for symbol in item["symbols"]:
-                rec = acquire(args.root, item["venue"], symbol, month)
+                if item["venue"] == "bitstamp":
+                    if ("bitstamp", symbol.upper(), month) in done:
+                        continue  # never re-page an already verified month; keeps recorded hashes stable
+                    rec = acquire_bitstamp(args.root, symbol, month)
+                else:
+                    rec = acquire(args.root, item["venue"], symbol, month)
                 rec["for_events"] = item["events"]
                 records.append(rec)
                 print(f"{rec['status']:16} {item['venue']:10} {symbol:10} {month}")
+    kept = [r for r in previous if (r["venue"], r["symbol"], r["month"]) not in
+            {(x["venue"], x["symbol"], x["month"]) for x in records}]
+    records = kept + records
     out = {"authorized": plan["authorized"], "records": records,
            "summary": {s: sum(r["status"] == s for r in records) for s in ("VERIFIED", "NOT_AVAILABLE", "CHECKSUM_FAILED")}}
     (args.root / args.manifest).write_text(json.dumps(out, indent=1) + "\n")
