@@ -49,3 +49,12 @@ uv run python -m www_c3.cli \
 ```
 
 The run is deterministic: the bootstrap seed is fixed, and `tests/test_c3_fragmentation.py` checks that repeated runs give identical output. The input SHA-256 is recorded in the report and must match the value above.
+
+## Robustness (`reports/c3/robustness.json`)
+
+Reproduce with `uv run python -m www_c3.robustness --panel <panel_1min.parquet> --output reports/c3/robustness.json`. The bootstrap uses 1,000 draws, 60-observation blocks and seed 20230310. Values below are copied from the JSON.
+
+- **Crisis vs pre-crisis (USDC, all-legs-traded).** The median absolute wedge rises by 6.08 bps (95% CI 3.75–9.16), the P95 by 69.2 bps (48.9–84.0), and the share of minutes above 25 bps by 21.6 percentage points (14.7–28.4). All three intervals exclude zero. For post vs pre-crisis, the median and P95 are still higher (+3.04 bps, CI 2.38–3.98), but the >25 bps share is not distinguishable from zero.
+- **USDT.** The crisis increases are small (median +0.91 bps, CI 0.66–1.20), and the >25 bps share does not change detectably.
+- **Horizon aggregation.** Medians over 5-, 15- and 60-minute bins reduce last-trade bounce. For USDC in the crisis, the 15-minute median |wedge| is 4.83 bps, against 1.32 bps pre-crisis. The parity-anchored half-life measured on bin medians is about 13–16 clock minutes in the crisis (12.6 min at 15-minute bins, 16.2 min at 60-minute bins), compared with 0.5 min on one-minute closes. Minute-level reversion therefore overstates how fast fragmentation cleared once microstructure noise is averaged out. Half-lives in calm regimes rest on wedges near zero and are imprecise.
+- **Alternative dollar leg.** Replacing Binance.US BTC-USD with Coinbase BTC-USD gives the same ordering: the USDC crisis median is 10.78 bps vs 2.06 bps pre-crisis, and the >25 bps share is 28.1% vs 0.2%. This version includes a cross-venue BTC basis.
