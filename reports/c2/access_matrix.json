@@ -1,0 +1,16 @@
+{
+  "checkpoint": "C2",
+  "as_of": "2026-10-11",
+  "observations": [
+    {"source":"Binance.US free historical market data","status":"AVAILABLE_FOR_TRADES_AND_BARS_NOT_L2","cost":"free download for historical candlesticks, trades and aggregate trades","limits":"official announcement does not list historical L2 order-book files"},
+    {"source":"Tardis public first-of-month CSV","status":"AVAILABLE_FOR_EXISTING_SAMPLE","cost":"no subscription for first day of month","limits":"does not provide March 10-12 files; normalized CSV lacks native Binance.US U/u identifiers"},
+    {"source":"Tardis Spot annual Academic/Solo CSV","status":"DOCUMENTED_ELIGIBILITY_ONLY","target_window":"March 2023 falls within four years if subscription starts 2026-10-11","price":"not verified from primary source","limits":"exact files and symbol/day delivery not provider-confirmed; no native raw replay on Academic/Solo"},
+    {"source":"Tardis Spot annual Pro raw replay","status":"DOCUMENTED_ELIGIBILITY_ONLY","target_window":"March 2023 falls within four years if subscription starts 2026-10-11","price":"not verified from primary source","limits":"exact files, price, academic rights and sequence/disconnect representation require provider confirmation"},
+    {"source":"Tardis monthly or quarterly plans","status":"INSUFFICIENT_FOR_TARGET_DATE","limits":"published lookback 4 months monthly or 12 months quarterly; target is older"},
+    {"source":"Google Blockchain Analytics","status":"POTENTIAL_EVENT_DATA_SOURCE","cost":"first 1 TiB monthly query processing free under on-demand pricing","limits":"indexed data is not arbitrary historical contract-state eth_call; account/billing setup not attempted"},
+    {"source":"Alchemy archive API","status":"POTENTIAL_HISTORICAL_STATE_SOURCE","cost":"free tier lists Full Archive Data; 30M base compute units in current docs","limits":"requires account/API key; no account or live query authorized"},
+    {"source":"Cloudflare Ethereum Gateway","status":"ARCHIVE_CAPABILITY_DOCUMENTED","cost":"not verified","limits":"historical state methods documented; endpoint access terms/setup not verified; no live query"},
+    {"source":"Ethereum anonymous public endpoint","status":"NO_SUITABLE_ENDPOINT_CONFIRMED","limits":"no provider with both documented public-use terms and needed historical state capability selected"}
+  ],
+  "decision": "No verified no-cost route yet establishes both required licensed crisis-day CEX L2 files and independently checkable native sequence continuity. No historical Ethereum RPC probe has been run."
+}

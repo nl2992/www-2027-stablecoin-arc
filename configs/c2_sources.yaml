@@ -1,0 +1,38 @@
+checkpoint: C2
+as_of: 2026-10-11
+sources:
+  - id: binance_us_public_history
+    url: https://support.binance.us/en/articles/9843310-introducing-historical-market-data-from-binance-us-download-for-free
+    provider: Binance.US
+    cost: free historical candlesticks, trades and aggregate trades
+    historical_l2: not listed in documented downloadable datasets
+    status: NOT_A_SUBSTITUTE_FOR_L2
+  - id: tardis_spot
+    url: https://docs.tardis.dev/faq/billing-and-subscriptions
+    provider: Tardis
+    venue_scope: Binance US spot included
+    csv: all subscription types
+    raw_replay: Pro and Business only
+    history: annual Academic/Solo/Pro 4 years; quarterly 12 months; monthly 4 months
+    target_date_eligible_if_started_2026_10_11: annual only among documented intervals
+    exact_crisis_files_obtained: false
+    price: PRICE_NOT_VERIFIED_FROM_PRIMARY_SOURCE
+    license: confirm academic research and derived-data publication rights before purchase
+  - id: google_blockchain_analytics
+    url: https://cloud.google.com/blockchain-analytics/pricing
+    provider: Google Cloud BigQuery
+    capability: indexed blocks, transactions, logs, traces; not arbitrary historical eth_call state
+    price: first 1 TiB processed per month free on-demand; Google Cloud account/billing setup may be required
+    exact_contract_state: false
+  - id: alchemy_archive
+    url: https://www.alchemy.com/docs/reference/pricing-plans
+    provider: Alchemy
+    capability: full archive data listed on free tier
+    authentication: account and API key required; not anonymous access
+    actual_probe: not run; no credentials or provider account authorized
+  - id: cloudflare_archive
+    url: https://developers.cloudflare.com/web3/ethereum-gateway/concepts/node-types/
+    provider: Cloudflare Ethereum Gateway
+    capability: archive eth_getCode, eth_getStorageAt, eth_call and related historical state methods
+    authentication_and_terms: endpoint setup and permitted unauthenticated use not verified
+    actual_probe: not run
