@@ -25,3 +25,14 @@ def test_malformed_address_and_unknown_status_are_rejected():
     errors = validate_registry([item])
     assert any("20-byte" in issue for issue in errors)
     assert any("invalid deployment" in issue for issue in errors)
+
+
+def test_every_contract_is_linked_to_existing_registry_events():
+    reg = json.loads((Path(__file__).parents[1] / "reports/c2/contract_registry.json").read_text())
+    events = {e["id"] for e in json.loads((Path(__file__).parents[1] / "configs/event_registry.json").read_text())["events"]}
+    for entry in reg["entries"]:
+        assert entry["event_ids"] and set(entry["event_ids"]) <= events, entry["name"]
+    # Aggregator-only listings must not be labelled source-documented.
+    for entry in reg["entries"]:
+        if "dexpaprika" in entry["source"]:
+            assert entry["verification"] == "UNVERIFIED"

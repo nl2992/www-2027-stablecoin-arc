@@ -22,7 +22,8 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | M2 literature + generated tables | m2/literature-and-tables | dac411f | pushed, no PR |
 | C4b v3 swap + redemption window | c4b/v3-and-redemption-window | 15459bf | pushed, no PR |
 | M3 figures | m3/figures | d4af74b | pushed, no PR |
-| P1 pre-analysis plan (frozen) + plan DVs | p1/pre-analysis-plan | see iteration log | pushed, no PR |
+| P1 pre-analysis plan (frozen) + plan DVs + batch + USD-leg design | p1/pre-analysis-plan | 1057fcd | pushed, no PR |
+| C5 event-linked contract registry | c5/event-contracts | see iteration log | pushed, no PR |
 
 ## Component status
 
@@ -79,7 +80,8 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 ## Prioritized next tasks
 
 
-1. **Ethereum event-specific contracts:** extend the contract registry with UST-3CRV (2022), 3pool (2023), and USDe pools (2025), source-documented only.
+1. **Paper update:** write the multi-event data section (sources per event, quote-basis handling, USD reference design, triangle availability incl. USDe gap) and an event-coverage appendix table generated from the coverage matrix.
+2. **Block-pinned validation plan (offline):** for each SOURCE_DOCUMENTED pool, list the exact read-only calls (coins(i), A(), fee(), balances(i), get_dy) and target blocks to be resolved from event timestamps, with a dry-run harness that validates request construction without any network call.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -105,4 +107,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 15 | 10:25 | p1 @ 4da93f2 | DV4/DV5 in runner; H2 rule in summary; anchor DV5 ≈ 95 (exploratory) | 152 passed |
 | 16 | 10:55 | p1 @ 66789db | Binance triangle adapter; triangle-leg listings in coverage matrix (USDe has no BTCUSDE) | 153 passed |
 | 17 | 11:25 | p1 @ adcf75a | Batch driver with rule-based status updates and audit log; run config; anchor re-run unchanged, 5 Binance events skipped (data not acquired) | 156 passed |
-| 18 | 11:55 | p1 @ (this commit) | USD reference design (Binance.US primary, Bitstamp secondary, Kraken bundle tertiary; Coinbase excluded, Kraken REST unusable); cross-venue quote leg in runner/batch | 157 passed |
+| 18 | 11:55 | p1 @ 1057fcd | USD reference design (Binance.US primary, Bitstamp secondary, Kraken bundle tertiary; Coinbase excluded, Kraken REST unusable); cross-venue quote leg in runner/batch | 157 passed |
+| 19 | 12:25 | c5 @ (this commit) | Event-linked contract registry: wormhole-UST/3CRV (Jump-documented), legacy UST, BUSD, USDe/USDC (UNVERIFIED aggregator) | 158 passed |
