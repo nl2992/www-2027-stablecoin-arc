@@ -84,3 +84,9 @@ def test_results_table_and_markdown_are_current_and_included():
     assert "\\input{generated/results_table}" in MAIN
     protocols = list((ROOT / "reports/events").glob("*_protocol.json"))
     assert RESULTS_TABLE_OUTPUT.read_text().count("\\\\") == len(protocols) + 1  # header + one row per event
+
+
+def test_robustness_table_is_current_and_included():
+    from www_paper.macros import ROBUSTNESS_TABLE_OUTPUT, build_robustness_table
+    assert ROBUSTNESS_TABLE_OUTPUT.read_text() == build_robustness_table()
+    assert "\\input{generated/robustness_table}" in MAIN

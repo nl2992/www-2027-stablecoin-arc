@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2025-10-USDE-BINANCE",
-  "measured_utc": "2026-10-11T18:26Z",
+  "measured_utc": "2026-10-11T18:31Z",
   "plan": {
     "analysis_status": "DESCRIPTIVE_ONLY",
     "confirmatory_eligible": false,
@@ -80,6 +80,30 @@
     "dv5": {
       "estimate": null,
       "reason": "no triangle legs supplied"
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          2.9925479856371973,
+          61.72612624002731
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 33.78667431946319,
+        "p_value": 0.002,
+        "se": 17.031784635839063
+      },
+      "half_life_D_minutes": {
+        "15": 39.38951325412909,
+        "30": 28.656220551748923,
+        "60": 78.73431506038034
+      },
+      "r1_threshold_200": true,
+      "r1_threshold_50": true
     },
     "usd_rail": {
       "applicable": true,

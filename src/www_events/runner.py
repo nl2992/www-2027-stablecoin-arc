@@ -21,7 +21,9 @@ from www_c3.robustness import horizon_medians
 
 from .binance_klines import gap_summary, read_kline_zip, sha256_file, to_minute_grid, verify_checksum
 from .bitstamp import load_months as load_bitstamp
-from .plan_dvs import coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, dv5_ratio, usdt_stability_gate
+from .plan_dvs import (
+    coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, dv5_ratio, robustness_block, usdt_stability_gate,
+)
 from .registry import RULES, _parse_date, analysis_windows, load_registry, r1_severity
 
 
@@ -150,6 +152,8 @@ def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, p
         else:
             out["dv4"] = {"estimate": None, "reason": "coverage gate failed"}
         out["dv5"] = dv5_ratio(part(dev, "event"), part(traded, "event"), part(w_val, "event"), part(w_obs, "event"))
+    judged = (bounds["event"][0] - pd.Timedelta("1D"), bounds["event"][1] + pd.Timedelta("1D"))
+    out["robustness"] = robustness_block(dev, traded, *bounds["event"], part(dev[traded], reference), judged)
     out["covariates"] = {name: covariates(None if btc_close is None else part(btc_close, name),
                                           part(present, name), part(traded, name)) for name in bounds}
     return out

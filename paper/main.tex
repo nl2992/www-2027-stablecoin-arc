@@ -229,6 +229,12 @@ recovery window after its delisting.
 (Table~\ref{tab:results}). A ratio above one is therefore not by itself evidence of stress-specific persistence;
 persistence comparisons must be made against each event's own control.
 
+\paragraph{Robustness.} Every event's R1 classification is unchanged at 50, 100 and 200~bps, and the trimmed-window
+DV1 keeps its sign (Table~\ref{tab:robustness}). Half-lives are fragile: undefined for UST, which never mean-reverts,
+near a unit root for TUSD, and increasing with bin width for FDUSD, so persistence is reported descriptively.
+
+\input{generated/robustness_table}
+
 \paragraph{Data quality.} Bitstamp's USDT/USD history contains a corrupt print (2,959.99 on 2022-11-08 09:42 UTC,
 carried forward for several minutes). It affects only a robustness run (FTX on Bitstamp); no outlier filter was
 pre-specified, so none is applied, and that robustness result is not interpreted.

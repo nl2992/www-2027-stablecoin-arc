@@ -134,3 +134,14 @@ def test_run_event_reports_dv4_dv5_only_with_triangle_input():
     wedge.loc[(wedge.index >= "2024-03-10") & (wedge.index < "2024-03-12"), "wedge_bps"] *= 10
     tri = run_event(EVENT, s, "s", "USD", wedge=wedge)["plan"]
     assert tri["dv4"]["estimate"] > 0 and "half_life_W_minutes" in tri["dv5"]
+
+
+def test_robustness_block_reports_alternative_thresholds_trimming_and_bins():
+    s = _grid("2024-02-01", 50, "s")
+    s.loc[(s.index >= "2024-03-10 06:00") & (s.index < "2024-03-11 18:00"), "s_close"] = 0.985  # about -151 bps
+    rob = run_event(EVENT, s, "s", "USD")["plan"]["robustness"]
+    assert rob["r1_threshold_50"] and not rob["r1_threshold_200"]  # passes 50 and 100, fails 200
+    assert rob["dv1_trimmed_6h"]["estimate"] > 0
+    assert set(rob["half_life_D_minutes"]) == {"15", "30", "60"}
+    short = {"id": "S", "reported_window_utc": {"start": "2024-03-10", "end": "2024-03-10"}}
+    assert run_event(short, s, "s", "USD")["plan"]["robustness"]["dv1_trimmed_6h"]["estimate"] is not None

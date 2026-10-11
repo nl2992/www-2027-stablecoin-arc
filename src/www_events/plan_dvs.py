@@ -111,14 +111,38 @@ def _runs_over(present: pd.Series, minutes: int) -> int:
     return count + (run > minutes)
 
 
-def half_life_15m(values: pd.Series, observed: pd.Series) -> float | None:
-    """Parity-anchored AR(1) half-life (clock minutes) on 15-minute medians with >= 3 observed minutes."""
+def half_life_15m(values: pd.Series, observed: pd.Series, minutes: int = 15) -> float | None:
+    """Parity-anchored AR(1) half-life (clock minutes) on ``minutes``-bin medians with >= minutes/5 observations."""
     from www_c3.fragmentation import ar1_to_parity
     from www_c3.robustness import horizon_medians
 
-    bins = horizon_medians(values, observed.astype(bool), 15, min_obs=3).to_numpy()
+    bins = horizon_medians(values, observed.astype(bool), minutes, min_obs=max(3, minutes // 5)).to_numpy()
     fit = ar1_to_parity(bins, np.isfinite(bins))
-    return None if fit.half_life_minutes is None else fit.half_life_minutes * 15
+    return None if fit.half_life_minutes is None else fit.half_life_minutes * minutes
+
+
+def robustness_block(dev: pd.Series, traded: pd.Series, event_lo: pd.Timestamp, event_hi: pd.Timestamp,
+                     reference: pd.Series, judged: tuple[pd.Timestamp, pd.Timestamp]) -> dict[str, Any]:
+    """Plan section 7 robustness checks. Reported alongside the primary result; never used for status."""
+    from .registry import r1_severity
+
+    lo, hi = judged
+    window = dev[(dev.index >= lo) & (dev.index < hi)]
+    w_traded = traded.reindex(window.index).fillna(False).astype(bool)
+    price = np.exp(window.to_numpy(dtype=float) / 10_000)
+    volume = np.where(w_traded.to_numpy(), 1.0, 0.0)
+    r1_alt = {str(int(t)): r1_severity(window.index, price, volume, threshold_bps=t)["r1_pass"] for t in (50.0, 200.0)}
+    in_event = (dev.index >= event_lo) & (dev.index < event_hi)
+    ev, ev_obs = dev[in_event], traded[in_event].fillna(False).astype(bool)
+    trimmed = (ev.index >= event_lo + pd.Timedelta("6h")) & (ev.index < event_hi - pd.Timedelta("6h"))
+    trim_vals = ev[trimmed & ev_obs.to_numpy()].to_numpy()
+    dv1_trim = (dv1_contrast(trim_vals, reference.to_numpy()) if trim_vals.size >= 2
+                else {"estimate": None, "reason": "event window shorter than 12 hours after trimming"})
+    return {
+        "r1_threshold_50": r1_alt["50"], "r1_threshold_200": r1_alt["200"],
+        "dv1_trimmed_6h": dv1_trim,
+        "half_life_D_minutes": {str(m): half_life_15m(ev, ev_obs, m) for m in (15, 30, 60)},
+    }
 
 
 def dv5_ratio(peg_dev: pd.Series, peg_obs: pd.Series, wedge: pd.Series, wedge_obs: pd.Series) -> dict[str, Any]:

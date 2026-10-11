@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2024-01-TUSD",
-  "measured_utc": "2026-10-11T18:26Z",
+  "measured_utc": "2026-10-11T18:31Z",
   "plan": {
     "analysis_status": "DESCRIPTIVE_ONLY",
     "confirmatory_eligible": false,
@@ -92,6 +92,30 @@
       "half_life_D_minutes": 3227.479662551451,
       "half_life_W_minutes": 6.878405062934029,
       "ratio": 469.2191915162885
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          93.44278629681733,
+          115.87125102709192
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 105.82614869327105,
+        "p_value": 0.001,
+        "se": 6.158560175921429
+      },
+      "half_life_D_minutes": {
+        "15": 3227.479662551451,
+        "30": null,
+        "60": null
+      },
+      "r1_threshold_200": true,
+      "r1_threshold_50": true
     },
     "usd_rail": {
       "applicable": true,

@@ -28,7 +28,7 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | C5b block-pinned validation plan (offline) | c5b/validation-plan | a6b77a8 | pushed, no PR |
 | R1 replication guide + post-C2 review packet | r1/replication-package | 75051f0 | pushed, no PR |
 | E3 authorized data acquisition + first multi-event run | e3/acquire-public-data | 355fb27 | pushed |
-| E4 Bitstamp USD leg (A3) + re-run | e4/bitstamp-usd-leg | see iteration log | **PR nl2992/www-2027-stablecoin-arc#4** (base c2/data-access-feasibility) |
+| E4 Bitstamp USD leg (A3) + re-run | e4/bitstamp-usd-leg | 9460500 | **PR nl2992/www-2027-stablecoin-arc#4** (base c2/data-access-feasibility) |
 
 ## Component status
 
@@ -96,7 +96,7 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 0. **Toward a confirmatory in-sample event (free data only):**
    - candidates: DAI 2020 and USDD 2022, which need a free USD-venue source;
    - pre-register a UST splice (USTUSDT then USTCBUSD with a BUSD→USD conversion) **before** measuring it, or record UST as unacceptable under R3.
-1. **Robustness hooks from plan section 7** (R1 at 50/200 bps, 30/60-minute DV2 bins, trimmed event windows) in the runner, with synthetic tests.
+1. **Mechanism covariate table:** tabulate the plan-6 covariates (BTC volatility, traded share, missing runs, redemption-window hours) per accepted event as associations only.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -129,3 +129,4 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 22 | 13:55 | r1 @ 75051f0 | REPRODUCE.md, post-C2 review packet, command/hash consistency tests | 167 passed |
 | 23 | 14:30 | e3 @ feca745 + this commit | User authorized downloads; 54 archives acquired and verified; Binance.US 11-column layout supported; batch over 8 events; amendment A2 (post-data, USD-rail validity); summary bug fixed (only ACCEPTED primaries are confirmatory); results table and multi-event paper section | 170 passed |
 | 24 | 15:10 | e4 @ (this commit) | Bitstamp authorized; 23 months acquired; A3 venue priority committed before analysis; re-run: TUSD ACCEPTED, June 2023 REJECTED on valid USD; 3 accepted clusters; PR #4 opened | 173 passed |
+| 25 | 14:45 | p2 @ (this commit) | Plan-7 robustness in runner (R1 at 50/200, trimmed DV1, 15/30/60-min half-lives); robustness appendix table; classifications threshold-invariant; half-lives fragile | 175 passed |

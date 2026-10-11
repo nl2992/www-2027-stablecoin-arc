@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "N2023-06-USDT-3POOL",
-  "measured_utc": "2026-10-11T18:26Z",
+  "measured_utc": "2026-10-11T18:31Z",
   "plan": {
     "analysis_status": "DESCRIPTIVE_ONLY",
     "confirmatory_eligible": false,
@@ -93,6 +93,30 @@
       "half_life_D_minutes": 2829.6672806340684,
       "half_life_W_minutes": 6.903208432123426,
       "ratio": 409.90610503175304
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          137.49501867970383,
+          149.81182016975498
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 143.90165451308454,
+        "p_value": 0.001,
+        "se": 3.0559088808177592
+      },
+      "half_life_D_minutes": {
+        "15": 2829.6672806340684,
+        "30": 2202.863827512434,
+        "60": 2579.427673191278
+      },
+      "r1_threshold_200": true,
+      "r1_threshold_50": true
     },
     "usd_rail": {
       "applicable": true,

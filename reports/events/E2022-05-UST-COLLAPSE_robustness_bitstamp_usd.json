@@ -1,7 +1,7 @@
 {
   "coverage_ok": false,
   "event_id": "E2022-05-UST-COLLAPSE",
-  "measured_utc": "2026-10-11T18:25Z",
+  "measured_utc": "2026-10-11T18:30Z",
   "plan": {
     "analysis_status": "DESCRIPTIVE_ONLY",
     "confirmatory_eligible": false,
@@ -81,6 +81,30 @@
       "half_life_D_minutes": 3628.6857313782593,
       "half_life_W_minutes": 8.752673620697628,
       "ratio": 414.5802629721542
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          2081.075077988513,
+          7067.140820378433
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 4895.4951405584525,
+        "p_value": 0.001,
+        "se": 1199.5384044394677
+      },
+      "half_life_D_minutes": {
+        "15": 3628.6857313782593,
+        "30": null,
+        "60": 5652.524174259713
+      },
+      "r1_threshold_200": true,
+      "r1_threshold_50": true
     },
     "usd_rail": {
       "applicable": true,

@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2025-04-FDUSD",
-  "measured_utc": "2026-10-11T18:26Z",
+  "measured_utc": "2026-10-11T18:31Z",
   "plan": {
     "analysis_status": "CONFIRMATORY",
     "confirmatory_eligible": true,
@@ -93,6 +93,30 @@
       "half_life_D_minutes": 35.67648352675998,
       "half_life_W_minutes": 9.38441589810926,
       "ratio": 3.801673318202783
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          25.565348724937785,
+          47.47437166650446
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 42.05119736615055,
+        "p_value": 0.001,
+        "se": 8.943572435999945
+      },
+      "half_life_D_minutes": {
+        "15": 35.67648352675998,
+        "30": 58.62696531913996,
+        "60": 697.4786261852088
+      },
+      "r1_threshold_200": true,
+      "r1_threshold_50": true
     },
     "usd_rail": {
       "applicable": true,

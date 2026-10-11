@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2022-11-USDT-FTX",
-  "measured_utc": "2026-10-11T18:26Z",
+  "measured_utc": "2026-10-11T18:31Z",
   "plan": {
     "analysis_status": "CONFIRMATORY",
     "confirmatory_eligible": true,
@@ -93,6 +93,30 @@
       "half_life_D_minutes": 153.0452859065961,
       "half_life_W_minutes": 17.708387682706196,
       "ratio": 8.642530796638157
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          2.8983623217981984,
+          11.80867980231047
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 7.904319090097033,
+        "p_value": 0.001,
+        "se": 2.2966017697130683
+      },
+      "half_life_D_minutes": {
+        "15": 153.0452859065961,
+        "30": 239.07957068948295,
+        "60": 200.80645390155627
+      },
+      "r1_threshold_200": false,
+      "r1_threshold_50": true
     },
     "usd_rail": {
       "applicable": true,

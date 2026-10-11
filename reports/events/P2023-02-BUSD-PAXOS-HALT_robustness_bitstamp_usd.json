@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "P2023-02-BUSD-PAXOS-HALT",
-  "measured_utc": "2026-10-11T18:25Z",
+  "measured_utc": "2026-10-11T18:30Z",
   "plan": {
     "analysis_status": "CONFIRMATORY",
     "confirmatory_eligible": true,
@@ -93,6 +93,30 @@
       "half_life_D_minutes": 105.23907075774363,
       "half_life_W_minutes": 13.210429910615716,
       "ratio": 7.966362296292492
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          -0.09923519119722699,
+          0.600540220507848
+        ],
+        "ci_excludes_zero": false,
+        "estimate": 0.10063855744783778,
+        "p_value": 0.146,
+        "se": 0.17725937730607472
+      },
+      "half_life_D_minutes": {
+        "15": 105.23907075774363,
+        "30": 190.55002641208188,
+        "60": 215.84585959402864
+      },
+      "r1_threshold_200": false,
+      "r1_threshold_50": false
     },
     "usd_rail": {
       "applicable": true,
