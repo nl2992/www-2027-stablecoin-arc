@@ -1,0 +1,23 @@
+project: WWW 2027 stablecoin arbitrage capacity
+checkpoint: C0
+upstream_iaqf:
+  repository: https://github.com/nl2992/IAQF-2026-Submission
+  revision: b484e8bc75429e293c87f10a8856a5ce196b9df8
+  minute_panel: data/parquet/panel_1min.parquet
+  harmonized_copy: data/parquet/harmonized_raw_1min.parquet
+  raw_inputs_present: false
+cex_l2:
+  provider: Tardis.dev
+  venue: binance-us
+  instrument: BTCUSD
+  sample_date: 2023-03-01
+  sample_kind: normalized_incremental_book_L2
+  local_path: data/external/tardis_binance-us_BTCUSD_2023-03-01_incremental_book_L2.csv.gz
+  sha256: 2061a9ff9898b24900692aae31d9c98cd547aa7e815223329b37a0834ebd8511
+  crisis_days_verified: false
+  additional_symbol_entitlement_verified: false
+  paid_access_purchased: false
+ethereum:
+  event_source_documented: Google Cloud Blockchain Analytics
+  archive_state_access_verified: false
+  historical_quotes_validated: false
