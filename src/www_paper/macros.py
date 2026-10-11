@@ -66,6 +66,12 @@ SPEC: list[tuple[str, str, str, Callable[[Any], str]]] = [
     ("NumAnchorBaselineMedAbs", ANCHOR, "windows/baseline/diagnostics/median_abs_dev_bps", _fmt(1)),
     ("NumAnchorRecoveryMedAbs", ANCHOR, "windows/recovery/diagnostics/median_abs_dev_bps", _fmt(1)),
     ("NumSampleRows", C1, "rows", _int),
+    ("NumAnchorDvOne", ANCHOR, "plan/dv1/estimate", _fmt(0)),
+    ("NumAnchorDvOneLo", ANCHOR, "plan/dv1/ci95/0", _fmt(0)),
+    ("NumAnchorDvOneHi", ANCHOR, "plan/dv1/ci95/1", _fmt(0)),
+    ("NumAnchorRecoveryHours", ANCHOR, "plan/dv3/recovery_minutes", lambda v: f"{v / 60:.0f}"),
+    ("NumAnchorBtcVolBaseline", ANCHOR, "plan/covariates/baseline/btc_realized_vol_bps_per_hour", _fmt(0)),
+    ("NumAnchorBtcVolEvent", ANCHOR, "plan/covariates/event/btc_realized_vol_bps_per_hour", _fmt(0)),
 ]
 
 

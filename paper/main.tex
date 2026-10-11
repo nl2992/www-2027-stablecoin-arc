@@ -119,7 +119,8 @@ halt~\cite{paxos2023busd}---and one expected negative case), \NumUnresolved{} un
 pre-registered out-of-sample boundary.}
 \label{fig:timeline}
 \end{figure*}
-[PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
+Decisions across events are produced mechanically by applying the frozen plan to all measured events; with the
+current evidence the in-sample H1 decision is ``insufficient events''. [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
 USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
 
 \section{Data}
@@ -143,6 +144,12 @@ last trades, not quotes.
 the baseline, \NumAnchorEventMedAbs{} bps in the event window (\NumAnchorEventShareHundred\% of traded minutes
 beyond 100 bps) and \NumAnchorRecoveryMedAbs{} bps in recovery. On 15-minute medians the event-window half-life
 to par was about \NumAnchorEventHalfLife{} minutes.
+
+Under the pre-analysis-plan definitions (exploratory for this event), the event-minus-baseline change in median
+$|D|$ is \NumAnchorDvOne{} bps (95\% block-bootstrap CI [\NumAnchorDvOneLo, \NumAnchorDvOneHi]; the matched control
+window is not covered), and recovery---the trailing median $|D|$ falling below 25 bps after the extreme---took about
+\NumAnchorRecoveryHours{} hours. BTC realized volatility roughly doubled (\NumAnchorBtcVolBaseline{} to
+\NumAnchorBtcVolEvent{} bps per hour), an alternative explanation that any capacity interpretation must address.
 
 \textbf{Triangle wedge.} The median $|W^{\mathrm{USDC}}|$ rose from \NumUsdcMedAbsPre{} to \NumUsdcMedAbsCrisis{} bps
 (difference \NumUsdcDiffMedAbs{} bps, 95\% block-bootstrap CI [\NumUsdcDiffMedAbsLo, \NumUsdcDiffMedAbsHi]); its 95th

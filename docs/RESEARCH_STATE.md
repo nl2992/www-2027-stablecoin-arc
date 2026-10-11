@@ -58,6 +58,10 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | Historical capacity estimation | FORBIDDEN until execution-state data validated **and** separately authorized |
 | Continuity standard for L2 (PROVIDER_NORMALIZED vs NATIVE_SEQUENCE) | open user decision; current default PROVIDER_NORMALIZED |
 
+## Cross-event decisions (generated)
+
+`python -m www_events.summary` produces `reports/events/cross_event_summary.json`. Current output: framing DESCRIPTIVE; H1 in-sample INSUFFICIENT_EVENTS; H2 NOT_YET_MEASURED; H3 NOT_TESTABLE; one exploratory event (the anchor).
+
 ## Pre-analysis plan
 
 Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_freeze.json`). Amendments go only in `docs/PRE_ANALYSIS_AMENDMENTS.md`. The anchor is exploratory. Newly measured events must carry `measurement.measured_utc` after the freeze.
@@ -74,8 +78,7 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 ## Prioritized next tasks
 
 
-1. **Cross-event report builder:** read all per-event protocol reports, apply the plan's decision rules (H1 Holm counts, placebo check, OOS replication, H2 sign count, mechanism-grouped random effects) and emit `reports/events/cross_event_summary.json` plus generated paper table; it must output 'insufficient events' honestly with the current single exploratory event.
-2. **DV4/DV5 in the runner** (triangle wedge contrast and half-life ratio) where triangle legs exist.
+1. **DV4/DV5 in the runner** (triangle wedge contrast and half-life ratio) where triangle legs exist.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -96,4 +99,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 10 | 07:35 | c4b @ 15459bf | Uniswap v3 single-range swap; DST-aware redemption window | 125 passed |
 | 11 | 08:20 | m3 @ d4af74b | Deterministic figures (timeline, coverage heatmap, anchor D vs W) wired into the paper; matplotlib dependency | 130 passed |
 | 12 | 08:50 | p1 @ c94425c | Frozen pre-analysis plan + hash test + amendments log; DL random effects, Holm, sign test | 137 passed |
-| 13 | 09:25 | p1 @ (this commit) | Plan DVs (DV1 bootstrap test, DV3 trailing recovery, gates, covariates) in runner; amendment A1 (DV3 window clipped at extreme); anchor re-run EXPLORATORY | 144 passed |
+| 13 | 09:25 | p1 @ 4d90727 | Plan DVs (DV1 bootstrap test, DV3 trailing recovery, gates, covariates) in runner; amendment A1 (DV3 window clipped at extreme); anchor re-run EXPLORATORY | 144 passed |
+| 14 | 09:55 | p1 @ (this commit) | Cross-event summary builder applying frozen decision rules (currently INSUFFICIENT_EVENTS); anchor plan results in paper via macros | 149 passed |
