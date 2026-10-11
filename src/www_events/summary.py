@@ -13,7 +13,7 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
-from .crossevent import holm, summarize_by_mechanism
+from .crossevent import holm, sign_test, summarize_by_mechanism
 
 ALPHA = 0.05
 MIN_INDEPENDENT_EPISODES = 3
@@ -30,6 +30,7 @@ def _row(protocol: Mapping[str, Any], event: Mapping[str, Any]) -> dict[str, Any
         "ci95": dv1.get("ci95"), "reference_is_fallback": plan.get("dv1_reference_is_fallback"),
         "recovery_minutes": plan.get("dv3", {}).get("recovery_minutes"),
         "recovery_censored": plan.get("dv3", {}).get("censored"),
+        "dv5_ratio": plan.get("dv5", {}).get("ratio"),
     }
 
 
@@ -43,6 +44,17 @@ def _h1_family(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     adjusted = holm({r["event_id"]: r["p_value"] for r in usable}) if usable else {}
     satisfied = [r["event_id"] for r in usable if _satisfies_h1(r, adjusted.get(r["event_id"]))]
     return {"n": len(usable), "satisfied": satisfied, "holm_adjusted_p": adjusted}
+
+
+def _h2(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    """Plan 3: count DV5 > 1 across independent confirmatory clusters; sign test is descriptive below six."""
+    measured = [r for r in rows if r.get("dv5_ratio") is not None]
+    n, k = len(measured), sum(r["dv5_ratio"] > 1 for r in measured)
+    if n == 0:
+        return {"n": 0, "decision": "INSUFFICIENT_EVENTS"}
+    p = sign_test(k, n)
+    return {"n": n, "ratio_above_one": k, "sign_test_p": p,
+            "decision": ("DESCRIPTIVE_ONLY" if n < 6 else "SUPPORTED" if p < ALPHA and k > n / 2 else "NOT_SUPPORTED")}
 
 
 def build_summary(registry: Sequence[Mapping[str, Any]], protocols: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
@@ -76,7 +88,7 @@ def build_summary(registry: Sequence[Mapping[str, Any]], protocols: Sequence[Map
         "exploratory_events": [r["event_id"] for r in rows if r["analysis_status"] == "EXPLORATORY"],
         "h1": {"in_sample": {**h1_in, "decision": h1_decision}, "placebo_satisfying_h1": placebo_hits,
                "out_of_sample": {**h1_oos, "decision": oos_decision}},
-        "h2": {"decision": "NOT_YET_MEASURED", "reason": "DV5 (half-life ratio) not yet implemented in the runner"},
+        "h2": _h2(confirm_in + confirm_oos),
         "h3": {"decision": "NOT_TESTABLE", "reason": "capacity gate closed: no validated execution state or authorization"},
         "mechanism_summaries": summarize_by_mechanism(pooled_rows) if pooled_rows else {},
     }

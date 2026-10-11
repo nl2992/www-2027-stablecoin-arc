@@ -7,6 +7,7 @@
         335.60196492301867
       ],
       "cluster_id": "CL-2023-03-SVB",
+      "dv5_ratio": 94.8478578631316,
       "estimate": 208.1724325505496,
       "event_id": "E2023-03-USDC-SVB",
       "mechanism": "BANK_RESERVE_RUN",
@@ -39,8 +40,8 @@
     "placebo_satisfying_h1": []
   },
   "h2": {
-    "decision": "NOT_YET_MEASURED",
-    "reason": "DV5 (half-life ratio) not yet implemented in the runner"
+    "decision": "INSUFFICIENT_EVENTS",
+    "n": 0
   },
   "h3": {
     "decision": "NOT_TESTABLE",

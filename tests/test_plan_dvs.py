@@ -104,3 +104,33 @@ def test_bootstrap_p_value_is_floored_and_anchor_is_exploratory(tmp_path):
     assert analysis_status("E2023-03-USDC-SVB", True, freeze) == "EXPLORATORY"
     assert analysis_status("E2024-01-TUSD", True, freeze) == "CONFIRMATORY"
     assert analysis_status("E2024-01-TUSD", False, freeze) == "DESCRIPTIVE_ONLY"
+
+
+def _ar1_series(phi, n, seed, start="2024-03-01"):
+    rng = np.random.default_rng(seed)
+    x = np.zeros(n)
+    for i in range(1, n):
+        x[i] = phi * x[i - 1] + rng.normal()
+    return pd.Series(x, index=idx(n, start))
+
+
+def test_dv5_ratio_exceeds_one_when_peg_is_more_persistent_than_wedge():
+    from www_events.plan_dvs import dv5_ratio
+    slow = _ar1_series(0.999, 20_000, 1)  # persistent peg dislocation
+    fast = _ar1_series(0.5, 20_000, 2)    # fast-reverting wedge
+    obs = pd.Series(True, index=slow.index)
+    out = dv5_ratio(slow, obs, fast, obs)
+    assert out["ratio"] > 1 and out["h2_direction"]
+    assert dv5_ratio(fast, obs, slow, obs)["ratio"] < 1
+
+
+def test_run_event_reports_dv4_dv5_only_with_triangle_input():
+    s = _grid("2024-02-01", 50, "s")
+    s.loc[(s.index >= "2024-03-10 06:00") & (s.index < "2024-03-11 18:00"), "s_close"] = 0.97
+    no_tri = run_event(EVENT, s, "s", "USD")["plan"]
+    assert no_tri["dv4"]["estimate"] is None and "no triangle" in no_tri["dv4"]["reason"]
+    rng = np.random.default_rng(3)
+    wedge = pd.DataFrame({"wedge_bps": rng.normal(0, 2, len(s)), "observed": True}, index=s.index)
+    wedge.loc[(wedge.index >= "2024-03-10") & (wedge.index < "2024-03-12"), "wedge_bps"] *= 10
+    tri = run_event(EVENT, s, "s", "USD", wedge=wedge)["plan"]
+    assert tri["dv4"]["estimate"] > 0 and "half_life_W_minutes" in tri["dv5"]

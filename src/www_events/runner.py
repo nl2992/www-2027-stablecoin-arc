@@ -20,7 +20,7 @@ from www_c3.fragmentation import ar1_to_parity
 from www_c3.robustness import horizon_medians
 
 from .binance_klines import gap_summary, read_kline_zip, sha256_file, to_minute_grid, verify_checksum
-from .plan_dvs import coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, usdt_stability_gate
+from .plan_dvs import coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, dv5_ratio, usdt_stability_gate
 from .registry import RULES, _parse_date, analysis_windows, load_registry, r1_severity
 
 
@@ -73,7 +73,7 @@ def window_diagnostics(series: pd.DataFrame, peg: float = 1.0) -> dict[str, Any]
 
 def run_event(event: Mapping[str, Any], stable: pd.DataFrame, s_prefix: str, quote_basis: str,
               quote_usd: pd.DataFrame | None = None, q_prefix: str | None = None,
-              btc_close: pd.Series | None = None) -> dict[str, Any]:
+              btc_close: pd.Series | None = None, wedge: pd.DataFrame | None = None) -> dict[str, Any]:
     windows = analysis_windows(_parse_date(event["reported_window_utc"]["start"]),
                                _parse_date(event["reported_window_utc"]["end"]))
     series = usd_price(stable, s_prefix, quote_basis, quote_usd, q_prefix)
@@ -101,12 +101,13 @@ def run_event(event: Mapping[str, Any], stable: pd.DataFrame, s_prefix: str, quo
     if series["basis"].iloc[0].endswith("_RELATIVE"):
         result["warning"] = "deviation measured against the quote stablecoin, not USD; R1 is not USD-verified"
     result["plan"] = plan_block(windows, series, stable[f"{s_prefix}_present"], quote_basis, quote_usd, q_prefix,
-                                btc_close)
+                                btc_close, wedge)
     return result
 
 
 def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, present: pd.Series, quote_basis: str,
-               quote_usd: pd.DataFrame | None, q_prefix: str | None, btc_close: pd.Series | None) -> dict[str, Any]:
+               quote_usd: pd.DataFrame | None, q_prefix: str | None, btc_close: pd.Series | None,
+               wedge: pd.DataFrame | None = None) -> dict[str, Any]:
     """Pre-analysis-plan quantities (docs/PRE_ANALYSIS_PLAN.md sections 2, 5 and 6)."""
     dev = 10_000 * np.log(series["price"].astype(float))
     traded = series["traded"].fillna(False).astype(bool)
@@ -137,6 +138,17 @@ def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, p
         out["usdt_gate"] = {"passes": False, "reason": "no quote/USD leg supplied"}
     out["confirmatory_eligible"] = bool(out["dv1"].get("estimate") is not None and out["usdt_gate"]["passes"]
                                         and not str(series["basis"].iloc[0]).endswith("_RELATIVE"))
+    if wedge is None:
+        out["dv4"] = out["dv5"] = {"estimate": None, "reason": "no triangle legs supplied"}
+    else:
+        w = wedge.reindex(series.index)
+        w_obs = w["observed"].fillna(False).astype(bool)
+        w_val = w["wedge_bps"].astype(float)
+        if gates["event"]["passes"] and gates[reference]["passes"]:
+            out["dv4"] = dv1_contrast(part(w_val[w_obs], "event").to_numpy(), part(w_val[w_obs], reference).to_numpy())
+        else:
+            out["dv4"] = {"estimate": None, "reason": "coverage gate failed"}
+        out["dv5"] = dv5_ratio(part(dev, "event"), part(traded, "event"), part(w_val, "event"), part(w_obs, "event"))
     out["covariates"] = {name: covariates(None if btc_close is None else part(btc_close, name),
                                           part(present, name), part(traded, name)) for name in bounds}
     return out
@@ -192,6 +204,7 @@ def main() -> None:
     parser.add_argument("--quote-basis", required=True, choices=["USD", "USDT", "BUSD"])
     parser.add_argument("--quote-usd", help="optional quote/USD series (same source) to convert to USD")
     parser.add_argument("--btc", help="optional BTC/USD series (same source) for the volatility covariate")
+    parser.add_argument("--triangle", choices=["usdc", "usdt"], help="IAQF only: within-venue triangle for DV4/DV5")
     args = parser.parse_args()
     event = next(e for e in load_registry(args.registry) if e["id"] == args.event_id)
     if args.iaqf_panel:
@@ -199,14 +212,20 @@ def main() -> None:
         quote, qprov = load_iaqf(args.iaqf_panel, args.quote_usd) if args.quote_usd else (None, None)
         s_prefix, q_prefix = args.stable, args.quote_usd
         btc = load_iaqf(args.iaqf_panel, args.btc)[0][f"{args.btc}_close"] if args.btc else None
+        wedge = None
+        if args.triangle:
+            from www_c3.fragmentation import build_wedges
+            w = build_wedges(pd.read_parquet(args.iaqf_panel))
+            wedge = pd.DataFrame({"wedge_bps": w[f"{args.triangle}_wedge_bps"], "observed": w[f"{args.triangle}_fresh"]})
     else:
         s_prefix = "binance_" + args.stable.lower()
         stable, prov = load_binance_months(args.binance_dir, args.stable, s_prefix)
         q_prefix = "binance_" + args.quote_usd.lower() if args.quote_usd else None
         quote, qprov = load_binance_months(args.binance_dir, args.quote_usd, q_prefix) if args.quote_usd else (None, None)
+        wedge = None  # Binance triangles need BTC/q and BTC/USDT archives; added when data are authorized
         btc = (load_binance_months(args.binance_dir, args.btc, "binance_" + args.btc.lower())[0]
                ["binance_" + args.btc.lower() + "_close"] if args.btc else None)
-    result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix, btc)
+    result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix, btc, wedge)
     result["measured_utc"] = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%MZ")
     result["plan"]["analysis_status"] = analysis_status(event["id"], result["plan"]["confirmatory_eligible"])
     result["provenance"] = {"stable": prov, "quote_usd": qprov}

@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2023-03-USDC-SVB",
-  "measured_utc": "2026-10-11T13:17Z",
+  "measured_utc": "2026-10-11T14:15Z",
   "plan": {
     "analysis_status": "EXPLORATORY",
     "confirmatory_eligible": true,
@@ -71,6 +71,27 @@
       "extreme_utc": "2023-03-11T07:55:00+00:00",
       "recovered_utc": "2023-03-14T04:19:00+00:00",
       "recovery_minutes": 4104.0
+    },
+    "dv4": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        4.588087933214968,
+        9.42536614119449
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 6.527994775282764,
+      "p_value": 0.001,
+      "se": 1.3024328706239712
+    },
+    "dv5": {
+      "h2_direction": true,
+      "half_life_D_minutes": 1211.6890581083633,
+      "half_life_W_minutes": 12.775080907540033,
+      "ratio": 94.8478578631316
     },
     "usdt_gate": {
       "passes": true,

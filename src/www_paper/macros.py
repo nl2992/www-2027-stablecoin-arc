@@ -72,6 +72,10 @@ SPEC: list[tuple[str, str, str, Callable[[Any], str]]] = [
     ("NumAnchorRecoveryHours", ANCHOR, "plan/dv3/recovery_minutes", lambda v: f"{v / 60:.0f}"),
     ("NumAnchorBtcVolBaseline", ANCHOR, "plan/covariates/baseline/btc_realized_vol_bps_per_hour", _fmt(0)),
     ("NumAnchorBtcVolEvent", ANCHOR, "plan/covariates/event/btc_realized_vol_bps_per_hour", _fmt(0)),
+    ("NumAnchorDvFour", ANCHOR, "plan/dv4/estimate", _fmt(1)),
+    ("NumAnchorDvFourLo", ANCHOR, "plan/dv4/ci95/0", _fmt(1)),
+    ("NumAnchorDvFourHi", ANCHOR, "plan/dv4/ci95/1", _fmt(1)),
+    ("NumAnchorDvFive", ANCHOR, "plan/dv5/ratio", _fmt(0)),
 ]
 
 

@@ -109,3 +109,23 @@ def _runs_over(present: pd.Series, minutes: int) -> int:
         else:
             run += 1
     return count + (run > minutes)
+
+
+def half_life_15m(values: pd.Series, observed: pd.Series) -> float | None:
+    """Parity-anchored AR(1) half-life (clock minutes) on 15-minute medians with >= 3 observed minutes."""
+    from www_c3.fragmentation import ar1_to_parity
+    from www_c3.robustness import horizon_medians
+
+    bins = horizon_medians(values, observed.astype(bool), 15, min_obs=3).to_numpy()
+    fit = ar1_to_parity(bins, np.isfinite(bins))
+    return None if fit.half_life_minutes is None else fit.half_life_minutes * 15
+
+
+def dv5_ratio(peg_dev: pd.Series, peg_obs: pd.Series, wedge: pd.Series, wedge_obs: pd.Series) -> dict[str, Any]:
+    """DV5: half-life of D divided by half-life of W in the same window (H2 predicts > 1)."""
+    hl_d, hl_w = half_life_15m(peg_dev, peg_obs), half_life_15m(wedge, wedge_obs)
+    if hl_d is None or hl_w is None:
+        return {"half_life_D_minutes": hl_d, "half_life_W_minutes": hl_w, "ratio": None,
+                "reason": "a half-life is undefined (no mean reversion or too few bins)"}
+    return {"half_life_D_minutes": hl_d, "half_life_W_minutes": hl_w, "ratio": hl_d / hl_w,
+            "h2_direction": hl_d > hl_w}

@@ -62,3 +62,13 @@ def test_committed_cross_event_summary_is_current():
     protocols = [json.loads(p.read_text()) for p in sorted((ROOT / "reports/events").glob("*_protocol.json"))]
     committed = json.loads((ROOT / "reports/events/cross_event_summary.json").read_text())
     assert committed == json.loads(json.dumps(build_summary(registry, protocols))), "run python -m www_events.summary"
+
+
+def test_h2_counts_ratio_above_one_and_stays_descriptive_below_six():
+    reg = [ev(x, "C" + x) for x in "ABC"]
+    protos = [proto(x, 5, 0.001) for x in "ABC"]
+    for p, ratio in zip(protos, (3.0, 2.0, 0.5)):
+        p["plan"]["dv5"] = {"ratio": ratio}
+    h2 = build_summary(reg, protos)["h2"]
+    assert h2["n"] == 3 and h2["ratio_above_one"] == 2 and h2["decision"] == "DESCRIPTIVE_ONLY"
+    assert h2["sign_test_p"] == 1.0
