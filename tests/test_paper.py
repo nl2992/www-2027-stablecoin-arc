@@ -50,8 +50,8 @@ def test_labels_resolve_and_pending_sections_are_marked():
     labels = set(re.findall(r"\\label\{([^}]+)\}", MAIN + generated))
     refs = set(re.findall(r"\\ref\{([^}]+)\}", MAIN))
     assert refs <= labels
-    assert "Executable Capacity [PENDING]" in MAIN
-    assert "not yet met" in MAIN
+    assert "Executable Capacity: Method and Limits" in MAIN and "No capacity figures are reported" in MAIN
+    assert "descriptive" in MAIN.split("\\begin{abstract}")[1].split("\\end{abstract}")[0]
 
 
 def test_coverage_table_is_current_balanced_and_included():

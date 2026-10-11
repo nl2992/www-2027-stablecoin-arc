@@ -1,29 +1,28 @@
-% PROVISIONAL DRAFT -- not for submission. Every empirical number is a \Num... macro generated from
-% committed reports (paper/generated/numbers.tex). Sections marked [PENDING] depend on data or
+% PROVISIONAL DRAFT (descriptive multi-event framing, user decision 2026-10-11) -- not for submission. Every empirical number is a \Num... macro generated from
+% committed reports (paper/generated/numbers.tex). Statements about unmeasured quantities depend on data or
 % authorization that does not exist yet; they must not be filled with unmeasured values.
 \documentclass[sigconf,review,anonymous]{acmart}
 \input{generated/numbers}
 
 \begin{document}
 
-\title{When Arbitrage Cannot Restore the Peg: Executable Capacity and Stablecoin Fragmentation Across Stress Events}
+\title{Dislocated Dollars, Aligned Quotes: A Pre-Registered Multi-Event Study of Stablecoin Fragmentation}
 
 \begin{abstract}
-Stablecoins are meant to trade at par across venues and quote currencies, yet stress episodes repeatedly
-produce prices that differ across markets for hours or days. We ask whether limits on \emph{executable}
-arbitrage capacity---depth, redemption access, settlement timing and inventory---help explain how large such
-fragmentation becomes, how long it lasts, and how it resolves. We build a pre-registered multi-event design:
-a sourced registry of \NumRegistryEntries{} candidate episodes from 2020--2026 in \NumRegistryClusters{}
-independence clusters, explicit severity and independence rules, matched control windows, placebo and
-expected-negative cases, and events after 2024 held out for out-of-sample evaluation. Applying the protocol to
-eight measured candidates on public exchange archives yields \NumAcceptedClusters{} accepted independent episodes
-(UST in May 2022, the anchor, TUSD in January 2024 and FDUSD in April 2025); UST and the anchor are exploratory, and
-both confirmatory episodes are out-of-sample, so the pre-registered confirmatory in-sample test cannot yet be run and
-all results are
-reported descriptively; the placebo shock and the expected-negative case do not qualify. In the anchor episode (USDC, March 2023), the stablecoin's own dollar price stayed dislocated with a
-half-life of about \NumAnchorEventHalfLife{} minutes, while within-venue cross-quote wedges reverted within
-minutes, which separates redemption-market dislocation from cross-quote arbitrage failure. All results are
-descriptive; executable capacity is not yet measured.
+Stablecoins are meant to trade at par across venues and quote currencies, yet stress episodes repeatedly produce
+prices that differ across markets for hours or days. We present a descriptive, pre-registered multi-event study of
+how such fragmentation arises and resolves. A sourced registry of \NumRegistryEntries{} candidate episodes from
+2020--2026, explicit severity, independence and coverage rules, matched control windows, placebo and
+expected-negative cases, a rule-based screen of venue data, and a post-2024 out-of-sample set yield
+\NumAcceptedClusters{} accepted independent episodes: the TerraUSD collapse (2022) and the USDC/SVB run (2023),
+both exploratory, and the TUSD (2024) and FDUSD (2025) dislocations, both out-of-sample. Across them we separate a
+stablecoin's own dollar price from the within-venue cross-quote wedge. The dollar price dislocated by hundreds to
+thousands of basis points while the wedge barely moved (median change \NumAnchorDvFour{}, \NumTusdDvFour{} and
+\NumFdusdDvFour{} bps for USDC, TUSD and FDUSD): cross-quote arbitrage kept relative prices aligned while the dollar
+value of the token did not hold. The episodes also split into market-wide and issuer-specific stress. Because no
+accepted episode is both confirmatory and in-sample, the pre-registered hypothesis tests are reported as
+insufficient, and all findings are descriptive. Executable restoration capacity is formalised and validated on
+synthetic order books and pool states, but not measured historically.
 \end{abstract}
 
 \maketitle
@@ -46,12 +45,19 @@ mechanisms becomes testable rather than assumed away; (ii) selection is rule-bas
 expected \emph{not} to qualify; (iii) post-2024 events are held out, so conclusions drawn from the in-sample
 period face an honest test.
 
-\paragraph{Contributions (current status).}
-(1) A sourced, machine-validated event registry with independence clustering and coverage matrices
-(\S\ref{sec:events}). (2) A measurement framework that separates peg dislocation, within-venue triangle wedges and
-cross-venue wedges, and separates parity deviations from gross, executable and realized arbitrage
-(\S\ref{sec:framework}). (3) Anchor-event evidence that these objects behave very differently
-(\S\ref{sec:anchor}). (4) [PENDING] Cross-event comparisons and executable-capacity measurement.
+\paragraph{Contributions.}
+(1) A pre-registered, machine-validated multi-event design: a sourced event registry with independence clustering,
+severity and coverage rules, placebo and negative cases, a rule-based screen, an out-of-sample set, and a frozen
+analysis plan with a public amendment log (\S\ref{sec:events}). (2) A measurement framework that separates peg
+dislocation, within-venue triangle wedges and cross-venue wedges, and distinguishes parity deviations from gross,
+executable and realised arbitrage (\S\ref{sec:framework}). (3) Descriptive cross-event evidence that the dollar price
+and the cross-quote wedge behave very differently in stress, and that episodes divide into market-wide and
+issuer-specific types (\S\ref{sec:multievent}). (4) Reproducible, offline-validated methods for executable
+restoration capacity on order books and AMM pools, with the data limits that currently prevent historical
+estimation stated explicitly.
+
+\paragraph{Scope.} The study is descriptive. It does not identify causal effects, and it does not claim that the
+findings generalise beyond the accepted episodes.
 
 \section{Related Work}
 \label{sec:related}
@@ -98,11 +104,16 @@ spreads, a \emph{executable opportunity} only after fees, depth, latency, settle
 largest quantity that can be executed around the loop at all-in cost at most $\delta$ within horizon $h$.
 Candle data identify parity deviations only; $K_t$ requires order-book or on-chain execution state.
 
-\section{Hypotheses (pre-specified)}
-\textbf{H1.} Fragmentation magnitude and persistence increase in stress windows relative to matched controls.
-\textbf{H2.} Peg dislocations are more persistent than within-venue wedges when redemption access is impaired.
-\textbf{H3.} Conditional on stress, lower executable restoration capacity is associated with larger and more persistent wedges.
-H1--H2 are testable with candle data; H3 requires validated execution state and is [PENDING]. Decision rules, dependent variables, multiplicity control and the out-of-sample protocol are fixed in a pre-analysis plan frozen (by content hash) before any non-anchor event was measured; the anchor, measured earlier, is treated as exploratory.
+\section{Pre-Registered Questions}
+The frozen plan names three hypotheses, retained here as questions. \textbf{H1}: are fragmentation magnitude and
+persistence higher in stress windows than in matched controls? \textbf{H2}: are peg dislocations more persistent
+than within-venue wedges when redemption access is impaired? \textbf{H3}: conditional on stress, is lower executable
+restoration capacity associated with larger and more persistent wedges? The plan's confirmatory test for H1 requires
+accepted in-sample episodes measured after the plan was frozen; none exists, so H1 is reported as insufficient and
+the evidence is presented descriptively. H2's ratio statistic proves unstable and exceeds one even in the placebo
+(\S\ref{sec:multievent}). H3 requires historical execution state that is not available. Decision rules, dependent
+variables, multiplicity control and the out-of-sample protocol are fixed in a pre-analysis plan frozen by content
+hash before any non-anchor event was measured; amendments are logged with whether data had been seen.
 
 \section{Event Selection}
 \label{sec:events}
@@ -124,8 +135,7 @@ pre-registered out-of-sample boundary.}
 \label{fig:timeline}
 \end{figure*}
 Decisions across events are produced mechanically by applying the frozen plan to all measured events
-(Section~\ref{sec:multievent}); with the current evidence the in-sample H1 decision is ``insufficient events''. [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
-USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
+(Section~\ref{sec:multievent}); with the current evidence the in-sample H1 decision is ``insufficient events''. All registry primaries with available data have been measured (Table~\ref{tab:results}); the UST collapse is analysed in~\cite{jump2022ust}.
 
 \section{Data}
 \label{sec:data}
@@ -262,9 +272,19 @@ window is an assumption, not issuer-documented.
 carried forward for several minutes). It affects only a robustness run (FTX on Bitstamp); no outlier filter was
 pre-specified, so none is applied, and that robustness result is not interpreted.
 
-\section{Executable Capacity [PENDING]}
-Capacity estimation is gated on validated crisis-period L2 or on-chain execution state and explicit
-authorization. No capacity figures are reported.
+\section{Executable Capacity: Method and Limits}
+We formalise two quantities that the framework keeps separate. \emph{Standardised restoration capacity}
+$K_t(\delta)$ is the largest quantity executable at all-in cost at most $\delta$ relative to a reference price, solved
+exactly level by level on an order book. \emph{Restoration quantity} is the size routed around a triangle loop until
+its marginal unit no longer pays after fees, in either direction, with depth and inventory limits reported as binding
+constraints. On-chain legs use integer StableSwap, Uniswap~v2 and single-range Uniswap~v3 swap arithmetic, and
+primary-market access is modelled by a timezone-aware redemption window. All components are validated against
+hand-computed synthetic cases.
+
+Historical estimation is not possible with the data available to this study. Crisis-day exchange order books are
+offered only under paid licences, which were declined. Historical pool state requires an archive node; the free,
+keyless public endpoints examined either exclude archive data, prohibit automated extraction, require an account, or
+return pruned state at the event blocks. No capacity figures are reported.
 
 \section{Limitations}
 Four accepted episodes (two exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
