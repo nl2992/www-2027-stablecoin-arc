@@ -212,6 +212,19 @@ def binance_triangle(directory: Path, coin: str, quote: str = "USDT") -> tuple[p
     return pd.DataFrame({"wedge_bps": wedge, "observed": observed & wedge.notna()}), prov
 
 
+def usd_rail_check(windows: Mapping[str, Mapping[str, str]], venue: str | None,
+                   calendar_path: Path = Path("configs/usd_rail_impairments.json")) -> dict[str, Any]:
+    """Amendment A2: the USD leg must come from a venue whose USD was redeemable throughout control..recovery."""
+    if venue is None:
+        return {"applicable": False, "valid": True, "reason": "no USD leg"}
+    lo = min(w["start"] for w in windows.values())
+    hi = max(w["end"] for w in windows.values())
+    impairments = json.loads(calendar_path.read_text())["impairments"] if calendar_path.is_file() else []
+    hits = [i for i in impairments if i["venue"] == venue and i["start_utc"] <= hi and lo <= i["end_utc"]]
+    return {"applicable": True, "venue": venue, "span": [lo, hi], "valid": not hits,
+            "impairments": [{k: i[k] for k in ("start_utc", "end_utc", "description")} for i in hits]}
+
+
 def run_from_spec(event: Mapping[str, Any], spec: Mapping[str, Any],
                   freeze_path: Path = Path("configs/plan_freeze.json")) -> dict[str, Any]:
     """Run the protocol for one event from a run spec (shared by the CLI and the batch driver).
@@ -249,6 +262,14 @@ def run_from_spec(event: Mapping[str, Any], spec: Mapping[str, Any],
     else:
         raise ValueError(f"unknown source {spec['source']}")
     result = run_event(event, stable, s_prefix, spec["quote_basis"], quote, q_prefix, btc, wedge)
+    usd_venue = (spec["quote_usd_source"]["venue"] if spec.get("quote_usd_source")
+                 else spec.get("usd_venue") if spec["quote_basis"] == "USD" else None)
+    windows = analysis_windows(_parse_date(event["reported_window_utc"]["start"]),
+                               _parse_date(event["reported_window_utc"]["end"]))
+    rail = usd_rail_check(windows, usd_venue, freeze_path.parent / "usd_rail_impairments.json")
+    result["plan"]["usd_rail"] = rail
+    if not rail["valid"]:
+        result["plan"]["confirmatory_eligible"] = False
     result["measured_utc"] = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%MZ")
     result["plan"]["analysis_status"] = analysis_status(event["id"], result["plan"]["confirmatory_eligible"],
                                                         freeze_path)

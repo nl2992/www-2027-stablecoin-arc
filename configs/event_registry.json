@@ -83,7 +83,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "DATA_VERIFIED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
         {
@@ -117,7 +117,15 @@
           "purpose": "triangle leg for DV4/DV5"
         }
       ],
-      "notes": "Terminal failure: no recovery window in the usual sense. USDT itself was stressed in this window, so USDT-quoted prices need a USDT/USD correction."
+      "notes": "Terminal failure: no recovery window in the usual sense. USDT itself was stressed in this window, so USDT-quoted prices need a USDT/USD correction.",
+      "measurement": {
+        "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json",
+        "series": "binance_ustusdt",
+        "basis": "USD_VIA_USDT",
+        "input_sha256": "3c9142084f766a42cce762cc5a15c3fdc1d83d4b18ca6b2e0dbec3557cffac14",
+        "r1_pass": true,
+        "measured_utc": "2026-10-11T18:05Z"
+      }
     },
     {
       "id": "E2022-05-USDT-TERRA-CONTAGION",
@@ -246,7 +254,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "REJECTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
         {
@@ -269,7 +277,16 @@
           "source": "binance_vision_monthly_klines"
         }
       ],
-      "notes": "Reported severity is venue-dependent. Whether it passes R1 (>= 30 traded minutes beyond 100 bps on a USD venue) is unknown until measured."
+      "notes": "Reported severity is venue-dependent. Whether it passes R1 (>= 30 traded minutes beyond 100 bps on a USD venue) is unknown until measured.",
+      "measurement": {
+        "report": "reports/events/E2022-11-USDT-FTX_protocol.json",
+        "series": "binance_usdtusd",
+        "basis": "USD",
+        "input_sha256": "a0dc365885f07d7a712d15e6c4081459505b2597a9d478a3e6765369a4a7075a",
+        "r1_pass": false,
+        "measured_utc": "2026-10-11T18:05Z"
+      },
+      "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
     {
       "id": "P2023-02-BUSD-PAXOS-HALT",
@@ -298,7 +315,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "REJECTED",
       "sample_role": "PLACEBO",
       "data_candidates": [
         {
@@ -325,7 +342,16 @@
           "purpose": "triangle leg for DV4/DV5"
         }
       ],
-      "notes": "Placebo/negative-case candidate: a major regulatory shock with redemptions guaranteed and no reported price dislocation. If R1 fails, it is retained as a negative case, not dropped."
+      "notes": "Placebo/negative-case candidate: a major regulatory shock with redemptions guaranteed and no reported price dislocation. If R1 fails, it is retained as a negative case, not dropped.",
+      "measurement": {
+        "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json",
+        "series": "binance_busdusdt",
+        "basis": "USD_VIA_USDT",
+        "input_sha256": "d15ecc3c42986231648f363882661e428ab143dd3217c7b904a4cb5a5e733962",
+        "r1_pass": false,
+        "measured_utc": "2026-10-11T18:05Z"
+      },
+      "reason": "R1 not met: max 0 breaching traded minutes in 24h (need 30)"
     },
     {
       "id": "E2023-03-USDC-SVB",
@@ -500,7 +526,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "DATA_VERIFIED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
         {
@@ -516,7 +542,16 @@
           ]
         }
       ],
-      "notes": "Reported magnitude (30-50 bps) is below R1. It is expected to be a negative case and is kept so that the selection is not one-sided; it is not rejected until measured."
+      "notes": "Reported magnitude (30-50 bps) is below R1. It is expected to be a negative case and is kept so that the selection is not one-sided; it is not rejected until measured.",
+      "measurement": {
+        "report": "reports/events/N2023-06-USDT-3POOL_protocol.json",
+        "series": "binance_usdtusd",
+        "basis": "USD",
+        "input_sha256": "a0dc365885f07d7a712d15e6c4081459505b2597a9d478a3e6765369a4a7075a",
+        "r1_pass": true,
+        "measured_utc": "2026-10-11T18:05Z"
+      },
+      "coverage_ok": true
     },
     {
       "id": "E2024-01-TUSD",
@@ -549,7 +584,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "DATA_VERIFIED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
         {
@@ -576,7 +611,16 @@
           "purpose": "triangle leg for DV4/DV5"
         }
       ],
-      "notes": "Sources also cite Binance Launchpool flows as a cause, so the mechanism is mixed."
+      "notes": "Sources also cite Binance Launchpool flows as a cause, so the mechanism is mixed.",
+      "measurement": {
+        "report": "reports/events/E2024-01-TUSD_protocol.json",
+        "series": "binance_tusdusdt",
+        "basis": "USD_VIA_USDT",
+        "input_sha256": "43391b9af45b6127b7d572ff21a9add795ed33efeb05555726df9d031b2ccf12",
+        "r1_pass": true,
+        "measured_utc": "2026-10-11T18:05Z"
+      },
+      "coverage_ok": true
     },
     {
       "id": "E2025-04-FDUSD",
@@ -609,7 +653,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "ACCEPTED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
         {
@@ -636,7 +680,16 @@
           "purpose": "triangle leg for DV4/DV5"
         }
       ],
-      "notes": "Supply concentrated on Binance (reported 94%)."
+      "notes": "Supply concentrated on Binance (reported 94%).",
+      "measurement": {
+        "report": "reports/events/E2025-04-FDUSD_protocol.json",
+        "series": "binance_fdusdusdt",
+        "basis": "USD_VIA_USDT",
+        "input_sha256": "f73229334f339a5bc61e42cc3f9ab22d39aef654dd256e06c4c218a69c731fbd",
+        "r1_pass": true,
+        "measured_utc": "2026-10-11T18:05Z"
+      },
+      "coverage_ok": true
     },
     {
       "id": "E2025-10-USDE-BINANCE",
@@ -675,7 +728,7 @@
           "accessed": "2026-10-11"
         }
       ],
-      "status": "SOURCE_DOCUMENTED",
+      "status": "DATA_VERIFIED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
         {
@@ -702,7 +755,15 @@
           "purpose": "triangle leg for DV4/DV5"
         }
       ],
-      "notes": "Cross-venue fragmentation case: the dislocation is reported on one CEX while DEX prices held, which suits the restoration-capacity question. Binance.com USDEUSDT listings start 2025-09, so the 28-day matched control window is covered. Binance.com lists no BTCUSDE klines, so no within-venue Binance triangle exists for this event; DV4/DV5 are undefined here unless another venue supplies all three legs."
+      "notes": "Cross-venue fragmentation case: the dislocation is reported on one CEX while DEX prices held, which suits the restoration-capacity question. Binance.com USDEUSDT listings start 2025-09, so the 28-day matched control window is covered. Binance.com lists no BTCUSDE klines, so no within-venue Binance triangle exists for this event; DV4/DV5 are undefined here unless another venue supplies all three legs.",
+      "measurement": {
+        "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json",
+        "series": "binance_usdeusdt",
+        "basis": "USD_VIA_USDT",
+        "input_sha256": "b6439b4eab1ebc67948a1239e5a9c0fe3122166794b97646b982eca84edab643",
+        "r1_pass": true,
+        "measured_utc": "2026-10-11T18:05Z"
+      }
     },
     {
       "id": "U2024-USDE-2024",

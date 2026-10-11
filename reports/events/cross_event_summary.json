@@ -1,6 +1,46 @@
 {
   "events": [
     {
+      "analysis_status": "CONFIRMATORY",
+      "ci95": [
+        104.98739053193582,
+        1100.478184518847
+      ],
+      "cluster_id": "CL-2022-05-TERRA",
+      "dv5_ratio": null,
+      "estimate": 841.5161744126016,
+      "event_id": "E2022-05-UST-COLLAPSE",
+      "mechanism": "ALGORITHMIC_COLLAPSE",
+      "p_value": 0.001,
+      "recovery_censored": true,
+      "recovery_minutes": 2471.0,
+      "reference_is_fallback": false,
+      "registry_status": "DATA_VERIFIED",
+      "role": "PRIMARY",
+      "sample_role": "IN_SAMPLE",
+      "se": 283.3506308116898
+    },
+    {
+      "analysis_status": "CONFIRMATORY",
+      "ci95": [
+        2.000500086686951,
+        15.01286366640582
+      ],
+      "cluster_id": "CL-2022-11-FTX",
+      "dv5_ratio": null,
+      "estimate": 9.00505333250237,
+      "event_id": "E2022-11-USDT-FTX",
+      "mechanism": "EXCHANGE_FAILURE_CONTAGION",
+      "p_value": 0.001,
+      "recovery_censored": false,
+      "recovery_minutes": 1.0,
+      "reference_is_fallback": false,
+      "registry_status": "REJECTED",
+      "role": "PRIMARY",
+      "sample_role": "IN_SAMPLE",
+      "se": 3.9411108216819235
+    },
+    {
       "analysis_status": "EXPLORATORY",
       "ci95": [
         92.40986661913621,
@@ -15,9 +55,110 @@
       "recovery_censored": false,
       "recovery_minutes": 4104.0,
       "reference_is_fallback": true,
+      "registry_status": "ACCEPTED",
       "role": "PRIMARY",
       "sample_role": "IN_SAMPLE",
       "se": 74.08773770829045
+    },
+    {
+      "analysis_status": "DESCRIPTIVE_ONLY",
+      "ci95": [
+        92.43141048326059,
+        113.71639353384963
+      ],
+      "cluster_id": "CL-2024-01-TUSD",
+      "dv5_ratio": 469.2191915162885,
+      "estimate": 102.75652426293316,
+      "event_id": "E2024-01-TUSD",
+      "mechanism": "RESERVE_TRANSPARENCY",
+      "p_value": 0.001,
+      "recovery_censored": true,
+      "recovery_minutes": 12777.0,
+      "reference_is_fallback": false,
+      "registry_status": "DATA_VERIFIED",
+      "role": "PRIMARY",
+      "sample_role": "OUT_OF_SAMPLE",
+      "se": 5.911327504215259
+    },
+    {
+      "analysis_status": "CONFIRMATORY",
+      "ci95": [
+        34.08463512181509,
+        51.1594376156044
+      ],
+      "cluster_id": "CL-2025-04-FDUSD",
+      "dv5_ratio": 10.402266029736143,
+      "estimate": 45.14379964064071,
+      "event_id": "E2025-04-FDUSD",
+      "mechanism": "ISSUER_SOLVENCY_ALLEGATION",
+      "p_value": 0.001,
+      "recovery_censored": false,
+      "recovery_minutes": 7803.0,
+      "reference_is_fallback": false,
+      "registry_status": "ACCEPTED",
+      "role": "PRIMARY",
+      "sample_role": "OUT_OF_SAMPLE",
+      "se": 4.446207362528389
+    },
+    {
+      "analysis_status": "DESCRIPTIVE_ONLY",
+      "ci95": [
+        2.9959440108336604,
+        65.72944984371635
+      ],
+      "cluster_id": "CL-2025-10-LIQUIDATION",
+      "dv5_ratio": null,
+      "estimate": 34.67665393857294,
+      "event_id": "E2025-10-USDE-BINANCE",
+      "mechanism": "VENUE_INFRASTRUCTURE",
+      "p_value": 0.001,
+      "recovery_censored": false,
+      "recovery_minutes": 2517.0,
+      "reference_is_fallback": false,
+      "registry_status": "DATA_VERIFIED",
+      "role": "PRIMARY",
+      "sample_role": "OUT_OF_SAMPLE",
+      "se": 18.58603038581245
+    },
+    {
+      "analysis_status": "DESCRIPTIVE_ONLY",
+      "ci95": [
+        140.93127261249094,
+        161.62168277651338
+      ],
+      "cluster_id": "CL-2023-06-USDT-3POOL",
+      "dv5_ratio": 409.90610503175304,
+      "estimate": 147.84215303713162,
+      "event_id": "N2023-06-USDT-3POOL",
+      "mechanism": "DEFI_POOL_IMBALANCE",
+      "p_value": 0.001,
+      "recovery_censored": false,
+      "recovery_minutes": 3178.0,
+      "reference_is_fallback": false,
+      "registry_status": "DATA_VERIFIED",
+      "role": "PRIMARY",
+      "sample_role": "IN_SAMPLE",
+      "se": 5.195261560341306
+    },
+    {
+      "analysis_status": "CONFIRMATORY",
+      "ci95": [
+        -4.00100039348506,
+        -2.9995500899789462
+      ],
+      "cluster_id": "CL-2023-02-BUSD",
+      "dv5_ratio": 5.427717928278551,
+      "estimate": -3.0005501900595446,
+      "event_id": "P2023-02-BUSD-PAXOS-HALT",
+      "mechanism": "REGULATORY_ISSUANCE_HALT",
+      "p_value": 0.001,
+      "recovery_censored": false,
+      "recovery_minutes": 1.0,
+      "reference_is_fallback": false,
+      "registry_status": "REJECTED",
+      "role": "PRIMARY",
+      "sample_role": "PLACEBO",
+      "se": 0.45831131967273425
     }
   ],
   "exploratory_events": [
@@ -32,25 +173,41 @@
       "satisfied": []
     },
     "out_of_sample": {
-      "decision": "INSUFFICIENT_EVENTS",
-      "holm_adjusted_p": {},
-      "n": 0,
-      "satisfied": []
+      "decision": "NO_IN_SAMPLE_RESULT (1/1 out-of-sample events satisfy H1)",
+      "holm_adjusted_p": {
+        "E2025-04-FDUSD": 0.001
+      },
+      "n": 1,
+      "satisfied": [
+        "E2025-04-FDUSD"
+      ]
     },
     "placebo_satisfying_h1": []
   },
   "h2": {
-    "decision": "INSUFFICIENT_EVENTS",
-    "n": 0
+    "decision": "DESCRIPTIVE_ONLY",
+    "n": 1,
+    "ratio_above_one": 1,
+    "sign_test_p": 1.0
   },
   "h3": {
     "decision": "NOT_TESTABLE",
     "reason": "capacity gate closed: no validated execution state or authorization"
   },
   "independent_accepted_clusters": [
-    "CL-2023-03-SVB"
+    "CL-2023-03-SVB",
+    "CL-2025-04-FDUSD"
   ],
-  "mechanism_summaries": {},
+  "mechanism_summaries": {
+    "ISSUER_SOLVENCY_ALLEGATION": {
+      "clusters": [
+        "CL-2025-04-FDUSD"
+      ],
+      "k": 1,
+      "note": "single cluster: reported individually, not pooled",
+      "random_effects": null
+    }
+  },
   "multi_event_criterion_met": false,
   "plan": "docs/PRE_ANALYSIS_PLAN.md (frozen; see configs/plan_freeze.json)"
 }

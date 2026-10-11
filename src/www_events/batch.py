@@ -30,13 +30,16 @@ def apply_status(event: dict[str, Any], result: Mapping[str, Any], report_path: 
     if "r1_pass" not in r1:
         return None
     relative = str(result.get("price_basis", "")).endswith("_RELATIVE")
-    usd_verified = not relative and bool(result["plan"]["usdt_gate"]["passes"])
+    rail_ok = result["plan"].get("usd_rail", {}).get("valid", True)
+    usd_verified = not relative and bool(result["plan"]["usdt_gate"]["passes"]) and rail_ok
     old = event["status"]
     measurement = {"report": report_path, "series": result["series"], "basis": result["price_basis"],
                    "input_sha256": _stable_hash(result), "r1_pass": bool(r1["r1_pass"]),
                    "measured_utc": result["measured_utc"]}
     event["measurement"] = measurement
-    if not usd_verified:
+    if not rail_ok:
+        event["status"], rule = "DATA_VERIFIED", "USD leg venue impaired during the analysis span (amendment A2)"
+    elif not usd_verified:
         event["status"], rule = "DATA_VERIFIED", "R1 measured on a non-USD-verified basis; cannot be ACCEPTED"
     elif r1["r1_pass"] and result.get("coverage_ok"):
         event["status"], rule = "ACCEPTED", "R1 passed on USD basis with baseline/event/recovery coverage"

@@ -51,7 +51,8 @@ def fetch_binance_vision_listing(symbol: str, interval: str = "1m") -> str:
 
 
 def coverage_rows(events: Sequence[Mapping[str, Any]],
-                  listing_for: Callable[[str], Mapping[str, Mapping[str, Any]]]) -> list[dict[str, Any]]:
+                  listing_for: Callable[[str], Mapping[str, Mapping[str, Any]]],
+                  acquired: set[tuple[str, str, str]] | None = None) -> list[dict[str, Any]]:
     """Expand each event's data candidates to one row per analysis window day."""
     rows: list[dict[str, Any]] = []
     for e in events:
@@ -67,6 +68,8 @@ def coverage_rows(events: Sequence[Mapping[str, Any]],
                     if listing is not None:
                         meta = listing.get(day[:7])
                         row["status"] = "LISTED" if meta else "NOT_LISTED"
+                        if acquired and (cand["venue"], cand["symbol"], day[:7]) in acquired:
+                            row["status"] = "OBSERVED_LOCAL"
                         if meta:
                             row.update(file_key=meta["key"], file_bytes=meta["bytes"], etag=meta["etag"])
                     else:
@@ -103,12 +106,17 @@ def main() -> None:
             cache[symbol] = parse_monthly_kline_listing(fetch_binance_vision_listing(symbol), symbol)
         return cache[symbol]
 
-    rows = coverage_rows(events, listing_for)
+    manifest = Path("reports/events/acquisition_manifest.json")
+    acquired = set()
+    if manifest.is_file():
+        acquired = {(r["venue"], r["symbol"], r["month"]) for r in json.loads(manifest.read_text())["records"]
+                    if r["status"] == "VERIFIED"}
+    rows = coverage_rows(events, listing_for, acquired)
     result = {
         "checked_utc": args.checked_utc,
         "listing_endpoint": BINANCE_VISION_LIST,
         "status_meaning": {
-            "OBSERVED_LOCAL": "acquired, hashed and audited in this repository",
+            "OBSERVED_LOCAL": "acquired locally and checksum-verified (IAQF panel or acquisition manifest)",
             "LISTED": "public provider index lists a monthly file covering the day; content not checked",
             "NOT_LISTED": "no file listed (or acquired data does not cover the day)",
             "UNVERIFIED_SOURCE": "venue/source plausible but no listing or acquisition checked",

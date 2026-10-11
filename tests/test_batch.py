@@ -35,7 +35,9 @@ def _repo(tmp_path):
     template = next(e for e in registry["events"] if e["id"] == "E2024-01-TUSD")
     for eid, start in (("SYN-DEPEG", "2024-06-10"), ("SYN-CALM", "2024-06-10")):
         e = json.loads(json.dumps(template))
-        e.update(id=eid, cluster_id="CL-" + eid, reported_window_utc={"start": start, "end": "2024-06-11"},
+        for key in ("measurement", "reason", "coverage_ok"):
+            e.pop(key, None)
+        e.update(status="SOURCE_DOCUMENTED", id=eid, cluster_id="CL-" + eid, reported_window_utc={"start": start, "end": "2024-06-11"},
                  data_candidates=[])
         registry["events"].append(e)
     (tmp_path / "configs/event_registry.json").write_text(json.dumps(registry))
@@ -63,7 +65,8 @@ def test_batch_accepts_usd_depeg_rejects_calm_and_skips_missing_data(tmp_path):
     registry = {e["id"]: e for e in json.loads((root / "configs/event_registry.json").read_text())["events"]}
     assert registry["SYN-DEPEG"]["status"] == "ACCEPTED" and registry["SYN-DEPEG"]["measurement"]["r1_pass"]
     assert registry["SYN-CALM"]["status"] == "REJECTED" and "R1 not met" in registry["SYN-CALM"]["reason"]
-    assert registry["E2024-01-TUSD"]["status"] == "SOURCE_DOCUMENTED"  # untouched: no data
+    original = {e["id"]: e for e in json.loads((ROOT / "configs/event_registry.json").read_text())["events"]}
+    assert registry["E2024-01-TUSD"]["status"] == original["E2024-01-TUSD"]["status"]  # untouched: no data
     log = json.loads((root / "reports/events/status_log.json").read_text())
     assert {r["event_id"] for r in log} == {"SYN-DEPEG", "SYN-CALM"}
     assert (root / "reports/events/cross_event_summary.json").is_file()

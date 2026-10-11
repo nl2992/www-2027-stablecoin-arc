@@ -1,5 +1,5 @@
 {
- "checked_utc": "2026-10-11T14:45Z",
+ "checked_utc": "2026-10-11T18:06Z",
  "listing_endpoint": "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision?delimiter=/&prefix={prefix}",
  "rows": [
   {
@@ -341,7 +341,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -355,7 +355,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -369,7 +369,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -383,7 +383,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -397,7 +397,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -411,7 +411,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -425,7 +425,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -439,7 +439,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -453,7 +453,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -467,7 +467,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -481,7 +481,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -495,7 +495,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -509,7 +509,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -523,7 +523,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "event"
@@ -537,7 +537,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -551,7 +551,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -565,7 +565,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -579,7 +579,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -593,7 +593,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -607,7 +607,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -621,7 +621,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -635,7 +635,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -649,7 +649,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -663,7 +663,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -677,7 +677,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -691,7 +691,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -705,7 +705,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -719,7 +719,7 @@
    "file_key": "data/spot/monthly/klines/USTUSDT/1m/USTUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USTUSDT",
    "venue": "binance",
    "window": "control"
@@ -1125,7 +1125,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1139,7 +1139,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1153,7 +1153,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1167,7 +1167,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1181,7 +1181,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1195,7 +1195,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1209,7 +1209,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "baseline"
@@ -1223,7 +1223,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1237,7 +1237,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1251,7 +1251,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1265,7 +1265,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1279,7 +1279,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1293,7 +1293,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1307,7 +1307,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "event"
@@ -1321,7 +1321,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1335,7 +1335,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1349,7 +1349,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1363,7 +1363,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1377,7 +1377,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1391,7 +1391,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1405,7 +1405,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-05.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "recovery"
@@ -1419,7 +1419,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1433,7 +1433,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1447,7 +1447,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1461,7 +1461,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1475,7 +1475,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1489,7 +1489,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1503,7 +1503,7 @@
    "file_key": "data/spot/monthly/klines/BTCUST/1m/BTCUST-1m-2022-04.zip",
    "quote_basis": "UST",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUST",
    "venue": "binance",
    "window": "control"
@@ -1517,7 +1517,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1531,7 +1531,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1545,7 +1545,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1559,7 +1559,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1573,7 +1573,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1587,7 +1587,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1601,7 +1601,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -1615,7 +1615,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1629,7 +1629,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1643,7 +1643,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1657,7 +1657,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1671,7 +1671,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1685,7 +1685,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1699,7 +1699,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -1713,7 +1713,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1727,7 +1727,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1741,7 +1741,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1755,7 +1755,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1769,7 +1769,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1783,7 +1783,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1797,7 +1797,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-05.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -1811,7 +1811,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -1825,7 +1825,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -1839,7 +1839,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -1853,7 +1853,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -1867,7 +1867,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -1881,7 +1881,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -1895,7 +1895,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2022-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -2477,8 +2477,8 @@
    "day": "2022-10-30",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2488,8 +2488,8 @@
    "day": "2022-10-31",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2499,8 +2499,8 @@
    "day": "2022-11-01",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2510,8 +2510,8 @@
    "day": "2022-11-02",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2521,8 +2521,8 @@
    "day": "2022-11-03",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2532,8 +2532,8 @@
    "day": "2022-11-04",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2543,8 +2543,8 @@
    "day": "2022-11-05",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -2554,8 +2554,8 @@
    "day": "2022-11-07",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "event"
@@ -2565,8 +2565,8 @@
    "day": "2022-11-08",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "event"
@@ -2576,8 +2576,8 @@
    "day": "2022-11-09",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "event"
@@ -2587,8 +2587,8 @@
    "day": "2022-11-10",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "event"
@@ -2598,8 +2598,8 @@
    "day": "2022-11-11",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "event"
@@ -2609,8 +2609,8 @@
    "day": "2022-11-12",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2620,8 +2620,8 @@
    "day": "2022-11-13",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2631,8 +2631,8 @@
    "day": "2022-11-14",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2642,8 +2642,8 @@
    "day": "2022-11-15",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2653,8 +2653,8 @@
    "day": "2022-11-16",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2664,8 +2664,8 @@
    "day": "2022-11-17",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2675,8 +2675,8 @@
    "day": "2022-11-18",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -2686,8 +2686,8 @@
    "day": "2022-10-04",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -2697,8 +2697,8 @@
    "day": "2022-10-05",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -2708,8 +2708,8 @@
    "day": "2022-10-06",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -2719,8 +2719,8 @@
    "day": "2022-10-07",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -2730,8 +2730,8 @@
    "day": "2022-10-08",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -2741,8 +2741,8 @@
    "day": "2022-10-09",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -2752,8 +2752,8 @@
    "day": "2022-10-10",
    "event_id": "E2022-11-USDT-FTX",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -3053,7 +3053,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3067,7 +3067,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3081,7 +3081,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3095,7 +3095,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3109,7 +3109,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3123,7 +3123,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3137,7 +3137,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3151,7 +3151,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3165,7 +3165,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3179,7 +3179,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3193,7 +3193,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3207,7 +3207,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3221,7 +3221,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3235,7 +3235,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3249,7 +3249,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3263,7 +3263,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -3277,7 +3277,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3291,7 +3291,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3305,7 +3305,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3319,7 +3319,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3333,7 +3333,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3347,7 +3347,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3361,7 +3361,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -3375,7 +3375,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3389,7 +3389,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3403,7 +3403,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3417,7 +3417,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3431,7 +3431,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3445,7 +3445,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3459,7 +3459,7 @@
    "file_key": "data/spot/monthly/klines/BUSDUSDT/1m/BUSDUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -3473,7 +3473,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3487,7 +3487,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3501,7 +3501,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3515,7 +3515,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3529,7 +3529,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3543,7 +3543,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3557,7 +3557,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "baseline"
@@ -3571,7 +3571,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3585,7 +3585,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3599,7 +3599,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3613,7 +3613,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3627,7 +3627,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3641,7 +3641,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3655,7 +3655,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3669,7 +3669,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3683,7 +3683,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "event"
@@ -3697,7 +3697,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3711,7 +3711,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3725,7 +3725,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3739,7 +3739,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3753,7 +3753,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3767,7 +3767,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3781,7 +3781,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-02.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "recovery"
@@ -3795,7 +3795,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3809,7 +3809,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3823,7 +3823,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3837,7 +3837,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3851,7 +3851,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3865,7 +3865,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3879,7 +3879,7 @@
    "file_key": "data/spot/monthly/klines/BTCBUSD/1m/BTCBUSD-1m-2023-01.zip",
    "quote_basis": "BUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCBUSD",
    "venue": "binance",
    "window": "control"
@@ -3893,7 +3893,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3907,7 +3907,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3921,7 +3921,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3935,7 +3935,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3949,7 +3949,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3963,7 +3963,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3977,7 +3977,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -3991,7 +3991,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4005,7 +4005,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4019,7 +4019,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4033,7 +4033,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4047,7 +4047,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4061,7 +4061,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4075,7 +4075,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4089,7 +4089,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4103,7 +4103,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -4117,7 +4117,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4131,7 +4131,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4145,7 +4145,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4159,7 +4159,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4173,7 +4173,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4187,7 +4187,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4201,7 +4201,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -4215,7 +4215,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -4229,7 +4229,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -4243,7 +4243,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -4257,7 +4257,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -4271,7 +4271,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -4285,7 +4285,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -4299,7 +4299,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -5155,8 +5155,8 @@
    "day": "2023-06-07",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5166,8 +5166,8 @@
    "day": "2023-06-08",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5177,8 +5177,8 @@
    "day": "2023-06-09",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5188,8 +5188,8 @@
    "day": "2023-06-10",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5199,8 +5199,8 @@
    "day": "2023-06-11",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5210,8 +5210,8 @@
    "day": "2023-06-12",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5221,8 +5221,8 @@
    "day": "2023-06-13",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "baseline"
@@ -5232,8 +5232,8 @@
    "day": "2023-06-15",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "event"
@@ -5243,8 +5243,8 @@
    "day": "2023-06-16",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5254,8 +5254,8 @@
    "day": "2023-06-17",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5265,8 +5265,8 @@
    "day": "2023-06-18",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5276,8 +5276,8 @@
    "day": "2023-06-19",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5287,8 +5287,8 @@
    "day": "2023-06-20",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5298,8 +5298,8 @@
    "day": "2023-06-21",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5309,8 +5309,8 @@
    "day": "2023-06-22",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "recovery"
@@ -5320,8 +5320,8 @@
    "day": "2023-05-12",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5331,8 +5331,8 @@
    "day": "2023-05-13",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5342,8 +5342,8 @@
    "day": "2023-05-14",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5353,8 +5353,8 @@
    "day": "2023-05-15",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5364,8 +5364,8 @@
    "day": "2023-05-16",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5375,8 +5375,8 @@
    "day": "2023-05-17",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5386,8 +5386,8 @@
    "day": "2023-05-18",
    "event_id": "N2023-06-USDT-3POOL",
    "quote_basis": "USD",
-   "source": "binance_us_public_history",
-   "status": "UNVERIFIED_SOURCE",
+   "source": "binance_us_public_history (acquired 2026-10-11; reports/events/acquisition_manifest.json)",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDTUSD",
    "venue": "binance-us",
    "window": "control"
@@ -5401,7 +5401,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5415,7 +5415,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5429,7 +5429,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5443,7 +5443,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5457,7 +5457,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5471,7 +5471,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5485,7 +5485,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -5499,7 +5499,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -5513,7 +5513,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -5527,7 +5527,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -5541,7 +5541,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -5555,7 +5555,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -5569,7 +5569,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5583,7 +5583,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5597,7 +5597,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5611,7 +5611,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5625,7 +5625,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5639,7 +5639,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5653,7 +5653,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -5667,7 +5667,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5681,7 +5681,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5695,7 +5695,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5709,7 +5709,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5723,7 +5723,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5737,7 +5737,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5751,7 +5751,7 @@
    "file_key": "data/spot/monthly/klines/TUSDUSDT/1m/TUSDUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "TUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -5765,7 +5765,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5779,7 +5779,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5793,7 +5793,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5807,7 +5807,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5821,7 +5821,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5835,7 +5835,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5849,7 +5849,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "baseline"
@@ -5863,7 +5863,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "event"
@@ -5877,7 +5877,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "event"
@@ -5891,7 +5891,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "event"
@@ -5905,7 +5905,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "event"
@@ -5919,7 +5919,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "event"
@@ -5933,7 +5933,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -5947,7 +5947,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -5961,7 +5961,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -5975,7 +5975,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -5989,7 +5989,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -6003,7 +6003,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -6017,7 +6017,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2024-01.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "recovery"
@@ -6031,7 +6031,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6045,7 +6045,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6059,7 +6059,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6073,7 +6073,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6087,7 +6087,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6101,7 +6101,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6115,7 +6115,7 @@
    "file_key": "data/spot/monthly/klines/BTCTUSD/1m/BTCTUSD-1m-2023-12.zip",
    "quote_basis": "TUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCTUSD",
    "venue": "binance",
    "window": "control"
@@ -6129,7 +6129,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6143,7 +6143,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6157,7 +6157,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6171,7 +6171,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6185,7 +6185,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6199,7 +6199,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6213,7 +6213,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6227,7 +6227,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -6241,7 +6241,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -6255,7 +6255,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -6269,7 +6269,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -6283,7 +6283,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -6297,7 +6297,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6311,7 +6311,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6325,7 +6325,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6339,7 +6339,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6353,7 +6353,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6367,7 +6367,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6381,7 +6381,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6395,7 +6395,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6409,7 +6409,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6423,7 +6423,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6437,7 +6437,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6451,7 +6451,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6465,7 +6465,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6479,7 +6479,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -6493,7 +6493,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6507,7 +6507,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6521,7 +6521,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6535,7 +6535,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6549,7 +6549,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6563,7 +6563,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6577,7 +6577,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -6591,7 +6591,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -6605,7 +6605,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -6619,7 +6619,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "event"
@@ -6633,7 +6633,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6647,7 +6647,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6661,7 +6661,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6675,7 +6675,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6689,7 +6689,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6703,7 +6703,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6717,7 +6717,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -6731,7 +6731,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6745,7 +6745,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6759,7 +6759,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6773,7 +6773,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6787,7 +6787,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6801,7 +6801,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6815,7 +6815,7 @@
    "file_key": "data/spot/monthly/klines/FDUSDUSDT/1m/FDUSDUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "FDUSDUSDT",
    "venue": "binance",
    "window": "control"
@@ -6829,7 +6829,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6843,7 +6843,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6857,7 +6857,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6871,7 +6871,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6885,7 +6885,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6899,7 +6899,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6913,7 +6913,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "baseline"
@@ -6927,7 +6927,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "event"
@@ -6941,7 +6941,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "event"
@@ -6955,7 +6955,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "event"
@@ -6969,7 +6969,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -6983,7 +6983,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -6997,7 +6997,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -7011,7 +7011,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -7025,7 +7025,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -7039,7 +7039,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -7053,7 +7053,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-04.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "recovery"
@@ -7067,7 +7067,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-02.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7081,7 +7081,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-02.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7095,7 +7095,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7109,7 +7109,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7123,7 +7123,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7137,7 +7137,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7151,7 +7151,7 @@
    "file_key": "data/spot/monthly/klines/BTCFDUSD/1m/BTCFDUSD-1m-2025-03.zip",
    "quote_basis": "FDUSD",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCFDUSD",
    "venue": "binance",
    "window": "control"
@@ -7165,7 +7165,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7179,7 +7179,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7193,7 +7193,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7207,7 +7207,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7221,7 +7221,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7235,7 +7235,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7249,7 +7249,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7263,7 +7263,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -7277,7 +7277,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -7291,7 +7291,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -7305,7 +7305,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7319,7 +7319,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7333,7 +7333,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7347,7 +7347,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7361,7 +7361,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7375,7 +7375,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7389,7 +7389,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7403,7 +7403,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7417,7 +7417,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-02.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7431,7 +7431,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7445,7 +7445,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7459,7 +7459,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7473,7 +7473,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7487,7 +7487,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -7501,7 +7501,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7515,7 +7515,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7529,7 +7529,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7543,7 +7543,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7557,7 +7557,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7571,7 +7571,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7585,7 +7585,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -7599,7 +7599,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "event"
@@ -7613,7 +7613,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "event"
@@ -7627,7 +7627,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7641,7 +7641,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7655,7 +7655,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7669,7 +7669,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7683,7 +7683,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7697,7 +7697,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7711,7 +7711,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -7725,7 +7725,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -7739,7 +7739,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -7753,7 +7753,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -7767,7 +7767,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -7781,7 +7781,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -7795,7 +7795,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -7809,7 +7809,7 @@
    "file_key": "data/spot/monthly/klines/USDEUSDT/1m/USDEUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "USDEUSDT",
    "venue": "binance",
    "window": "control"
@@ -8076,7 +8076,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8090,7 +8090,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8104,7 +8104,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8118,7 +8118,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8132,7 +8132,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8146,7 +8146,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8160,7 +8160,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "baseline"
@@ -8174,7 +8174,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -8188,7 +8188,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "event"
@@ -8202,7 +8202,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8216,7 +8216,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8230,7 +8230,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8244,7 +8244,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8258,7 +8258,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8272,7 +8272,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8286,7 +8286,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "recovery"
@@ -8300,7 +8300,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8314,7 +8314,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8328,7 +8328,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8342,7 +8342,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8356,7 +8356,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8370,7 +8370,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8384,7 +8384,7 @@
    "file_key": "data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
    "quote_basis": "USDT",
    "source": "binance_vision_monthly_klines",
-   "status": "LISTED",
+   "status": "OBSERVED_LOCAL",
    "symbol": "BTCUSDT",
    "venue": "binance",
    "window": "control"
@@ -8394,7 +8394,7 @@
   "ACCESS_BLOCKED": "requires authentication, payment or authorization not granted",
   "LISTED": "public provider index lists a monthly file covering the day; content not checked",
   "NOT_LISTED": "no file listed (or acquired data does not cover the day)",
-  "OBSERVED_LOCAL": "acquired, hashed and audited in this repository",
+  "OBSERVED_LOCAL": "acquired locally and checksum-verified (IAQF panel or acquisition manifest)",
   "UNVERIFIED_SOURCE": "venue/source plausible but no listing or acquisition checked"
  },
  "summary": {
@@ -8428,30 +8428,30 @@
   },
   "E2022-05-UST-COLLAPSE|binance|BTCUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2022-05-UST-COLLAPSE|binance|BTCUST": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2022-05-UST-COLLAPSE|binance|USTBUSD": {
@@ -8470,16 +8470,16 @@
   },
   "E2022-05-UST-COLLAPSE|binance|USTUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2022-06-USDD|binance|USDDUSDT": {
@@ -8498,16 +8498,16 @@
   },
   "E2022-11-USDT-FTX|binance-us|USDTUSD": {
    "baseline": {
-    "UNVERIFIED_SOURCE": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "UNVERIFIED_SOURCE": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "UNVERIFIED_SOURCE": 5
+    "OBSERVED_LOCAL": 5
    },
    "recovery": {
-    "UNVERIFIED_SOURCE": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2022-11-USDT-FTX|binance|USDCUSDT": {
@@ -8568,86 +8568,86 @@
   },
   "E2024-01-TUSD|binance|BTCTUSD": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 5
+    "OBSERVED_LOCAL": 5
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2024-01-TUSD|binance|BTCUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 5
+    "OBSERVED_LOCAL": 5
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2024-01-TUSD|binance|TUSDUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 5
+    "OBSERVED_LOCAL": 5
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2025-04-FDUSD|binance|BTCFDUSD": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 3
+    "OBSERVED_LOCAL": 3
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2025-04-FDUSD|binance|BTCUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 3
+    "OBSERVED_LOCAL": 3
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2025-04-FDUSD|binance|FDUSDUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 3
+    "OBSERVED_LOCAL": 3
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2025-10-USDE-BINANCE|binance|BTCUSDE": {
@@ -8666,86 +8666,86 @@
   },
   "E2025-10-USDE-BINANCE|binance|BTCUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 2
+    "OBSERVED_LOCAL": 2
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "E2025-10-USDE-BINANCE|binance|USDEUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 2
+    "OBSERVED_LOCAL": 2
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "N2023-06-USDT-3POOL|binance-us|USDTUSD": {
    "baseline": {
-    "UNVERIFIED_SOURCE": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "UNVERIFIED_SOURCE": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "UNVERIFIED_SOURCE": 1
+    "OBSERVED_LOCAL": 1
    },
    "recovery": {
-    "UNVERIFIED_SOURCE": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "P2023-02-BUSD-PAXOS-HALT|binance|BTCBUSD": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 9
+    "OBSERVED_LOCAL": 9
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "P2023-02-BUSD-PAXOS-HALT|binance|BTCUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 9
+    "OBSERVED_LOCAL": 9
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   },
   "P2023-02-BUSD-PAXOS-HALT|binance|BUSDUSDT": {
    "baseline": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "control": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    },
    "event": {
-    "LISTED": 9
+    "OBSERVED_LOCAL": 9
    },
    "recovery": {
-    "LISTED": 7
+    "OBSERVED_LOCAL": 7
    }
   }
  }

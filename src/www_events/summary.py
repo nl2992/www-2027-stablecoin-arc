@@ -24,6 +24,7 @@ def _row(protocol: Mapping[str, Any], event: Mapping[str, Any]) -> dict[str, Any
     dv1 = plan.get("dv1", {})
     return {
         "event_id": event["id"], "cluster_id": event["cluster_id"], "role": event["role"],
+        "registry_status": event["status"],
         "mechanism": event["mechanism"], "sample_role": event["sample_role"],
         "analysis_status": plan.get("analysis_status", "UNLABELLED"),
         "estimate": dv1.get("estimate"), "se": dv1.get("se"), "p_value": dv1.get("p_value"),
@@ -61,8 +62,11 @@ def build_summary(registry: Sequence[Mapping[str, Any]], protocols: Sequence[Map
     by_id = {e["id"]: e for e in registry}
     rows = [_row(p, by_id[p["event_id"]]) for p in protocols if p["event_id"] in by_id]
     primaries = [r for r in rows if r["role"] == "PRIMARY"]
-    confirm_in = [r for r in primaries if r["analysis_status"] == "CONFIRMATORY" and r["sample_role"] == "IN_SAMPLE"]
-    confirm_oos = [r for r in primaries if r["analysis_status"] == "CONFIRMATORY" and r["sample_role"] == "OUT_OF_SAMPLE"]
+    # Plan section 1: confirmatory sets are ACCEPTED primaries only (qualified stress episodes), never events
+    # that failed R1/R3 or whose USD basis is invalid, and never the exploratory anchor.
+    confirmed = [r for r in primaries if r["analysis_status"] == "CONFIRMATORY" and r["registry_status"] == "ACCEPTED"]
+    confirm_in = [r for r in confirmed if r["sample_role"] == "IN_SAMPLE"]
+    confirm_oos = [r for r in confirmed if r["sample_role"] == "OUT_OF_SAMPLE"]
     placebos = [r for r in primaries if r["sample_role"] == "PLACEBO"]
     accepted_clusters = sorted({e["cluster_id"] for e in registry if e["role"] == "PRIMARY" and e["status"] == "ACCEPTED"})
 
@@ -73,8 +77,13 @@ def build_summary(registry: Sequence[Mapping[str, Any]], protocols: Sequence[Map
     else:
         share = len(h1_in["satisfied"]) / h1_in["n"]
         h1_decision = "SUPPORTED" if share >= 2 / 3 and not placebo_hits else "NOT_SUPPORTED"
-    oos_decision = ("INSUFFICIENT_EVENTS" if h1_oos["n"] == 0
-                    else "REPLICATED" if len(h1_oos["satisfied"]) > h1_oos["n"] / 2 else "NOT_REPLICATED")
+    if h1_oos["n"] == 0:
+        oos_decision = "INSUFFICIENT_EVENTS"
+    elif h1_decision == "INSUFFICIENT_EVENTS":
+        # Replication presupposes an in-sample result; report the raw count without a replication verdict.
+        oos_decision = f"NO_IN_SAMPLE_RESULT ({len(h1_oos['satisfied'])}/{h1_oos['n']} out-of-sample events satisfy H1)"
+    else:
+        oos_decision = "REPLICATED" if len(h1_oos["satisfied"]) > h1_oos["n"] / 2 else "NOT_REPLICATED"
     pooled_rows = [{"cluster_id": r["cluster_id"], "mechanism": r["mechanism"], "role": r["role"],
                     "estimate": r["estimate"], "se": r["se"]}
                    for r in confirm_in + confirm_oos if r["estimate"] is not None and r["se"]]

@@ -1,7 +1,7 @@
 {
   "coverage_ok": true,
   "event_id": "E2023-03-USDC-SVB",
-  "measured_utc": "2026-10-11T15:15Z",
+  "measured_utc": "2026-10-11T18:05Z",
   "plan": {
     "analysis_status": "EXPLORATORY",
     "confirmatory_eligible": true,
@@ -92,6 +92,16 @@
       "half_life_D_minutes": 1211.6890581083633,
       "half_life_W_minutes": 12.775080907540033,
       "ratio": 94.8478578631316
+    },
+    "usd_rail": {
+      "applicable": true,
+      "impairments": [],
+      "span": [
+        "2023-02-04",
+        "2023-03-20"
+      ],
+      "valid": true,
+      "venue": "binance-us"
     },
     "usdt_gate": {
       "passes": true,

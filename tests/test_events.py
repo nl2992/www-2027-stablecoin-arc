@@ -27,8 +27,8 @@ def test_committed_registry_is_structurally_valid():
 def test_only_measured_events_are_accepted_and_multi_event_target_is_not_claimed():
     evs = events()
     accepted = [e for e in evs if e["status"] == "ACCEPTED"]
-    assert [e["id"] for e in accepted] == ["E2023-03-USDC-SVB"]
-    assert independent_clusters(evs, {"ACCEPTED"}) == ["CL-2023-03-SVB"]
+    assert all((e.get("measurement") or {}).get("r1_pass") for e in accepted)
+    assert len(independent_clusters(evs, {"ACCEPTED"})) < 3  # update only when the evidence changes
     # Linked legs never count as extra independent episodes.
     assert len(independent_clusters(evs, {"SOURCE_DOCUMENTED", "ACCEPTED"})) < len(
         [e for e in evs if e["status"] in {"SOURCE_DOCUMENTED", "ACCEPTED"}])

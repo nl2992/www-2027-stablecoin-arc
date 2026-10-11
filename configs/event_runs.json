@@ -8,7 +8,8 @@
       "stable": "bnus_usdcusd",
       "quote_basis": "USD",
       "btc": "bnus_btcusd",
-      "triangle": "usdc"
+      "triangle": "usdc",
+      "usd_venue": "binance-us"
     },
     {
       "event_id": "E2022-05-UST-COLLAPSE",
@@ -88,7 +89,8 @@
       "btc": "BTCUSD",
       "triangle_coin": "USDT",
       "triangle_quote": "USD",
-      "venue_note": "Binance.US USD-quoted archive"
+      "venue_note": "Binance.US USD-quoted archive",
+      "usd_venue": "binance-us"
     },
     {
       "event_id": "N2023-06-USDT-3POOL",
@@ -99,7 +101,8 @@
       "btc": "BTCUSD",
       "triangle_coin": "USDT",
       "triangle_quote": "USD",
-      "venue_note": "Binance.US USD-quoted archive"
+      "venue_note": "Binance.US USD-quoted archive",
+      "usd_venue": "binance-us"
     }
   ]
 }
