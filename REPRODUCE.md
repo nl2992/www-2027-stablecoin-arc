@@ -63,7 +63,7 @@ uv run python -m www_paper.figures    # paper/figures/*.pdf; add --iaqf-panel "$
 
 ```sh
 uv run python -m www_c2.validation_plan                  # offline request plan; 0 network calls
-WWW_ETH_RPC_URL=… uv run python -m www_c2.rpc --block <hex> --contract <address> --call-data <hex>   # only with an authorized endpoint
+uv run python -m www_c2.archive_run      # executes the plan; needs WWW_ETH_RPC_URL in the shell or a git-ignored .env; key never logged
 ```
 
 ## What cannot be reproduced yet

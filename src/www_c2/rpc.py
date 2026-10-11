@@ -29,7 +29,8 @@ def rpc_call(endpoint: str, method: str, params: list[Any], *, timeout: float = 
         raise RpcError(f"request failed ({type(exc).__name__}); endpoint redacted") from exc
     if "error" in payload:
         error = payload["error"]
-        raise RpcError(f"provider error code={error.get('code', 'unknown')}; endpoint redacted")
+        message = str(error.get("message", ""))[:200]
+        raise RpcError(f"provider error code={error.get('code', 'unknown')}: {message}; endpoint redacted")
     if "result" not in payload:
         raise RpcError("malformed JSON-RPC response; endpoint redacted")
     return payload["result"]

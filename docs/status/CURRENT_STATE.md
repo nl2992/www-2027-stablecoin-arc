@@ -119,3 +119,8 @@ UST remains EXPLORATORY (user decision, 2026-10-11).
 - No detection appears for FTX (November 2022), which is consistent with that rejection.
 - **The screen adds no confirmatory in-sample episode.**
 - **New limitation:** Binance.US's dollar already showed stress in May 2023, before the documented A2 impairment of 2023-06-09.
+
+## 11. Paper framing and archive readiness
+
+- **Framing:** a descriptive, pre-registered multi-event study (decision D10). H1–H3 are frozen questions, reported as insufficient or untestable. Capacity is presented as validated method with explicit data limits.
+- **Archive executor:** `src/www_c2/archive_run.py`. It reads the endpoint from `WWW_ETH_RPC_URL` or a git-ignored `.env` and never writes it out. It resolves blocks, reads A, fee, coins, decimals, balances and `get_dy` (plus the 3pool virtual price for metapools), and reproduces each quote offline with `stableswap_get_dy`. It stops on pruned state, a wrong chain, or a spent call budget (default 150). Tested against a mock node, including the real error path. **Waiting only for the user-created key.**
