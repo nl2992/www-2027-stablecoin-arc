@@ -21,7 +21,8 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | C4 capacity method (offline) | c4/capacity-method | 9924197 | pushed, no PR |
 | M2 literature + generated tables | m2/literature-and-tables | dac411f | pushed, no PR |
 | C4b v3 swap + redemption window | c4b/v3-and-redemption-window | 15459bf | pushed, no PR |
-| M3 figures | m3/figures | see iteration log | pushed, no PR |
+| M3 figures | m3/figures | d4af74b | pushed, no PR |
+| P1 pre-analysis plan (frozen) | p1/pre-analysis-plan | see iteration log | pushed, no PR |
 
 ## Component status
 
@@ -57,6 +58,10 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | Historical capacity estimation | FORBIDDEN until execution-state data validated **and** separately authorized |
 | Continuity standard for L2 (PROVIDER_NORMALIZED vs NATIVE_SEQUENCE) | open user decision; current default PROVIDER_NORMALIZED |
 
+## Pre-analysis plan
+
+Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_freeze.json`). Amendments go only in `docs/PRE_ANALYSIS_AMENDMENTS.md`. The anchor is exploratory. Newly measured events must carry `measurement.measured_utc` after the freeze.
+
 ## Outstanding scientific issues
 
 0. Anchor finding to test across events: the peg dislocation (stablecoin/USD) is far more persistent than the within-venue triangle wedge (half-life about 20 h vs minutes). Fragmentation measures must keep these separate.
@@ -69,7 +74,7 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 ## Prioritized next tasks
 
 
-1. **Pre-analysis plan:** a frozen document of primary dependent variables, the cross-event estimator (per-event estimates plus mechanism-grouped random-effects summary, no blind pooling), dependence-robust inference, placebo and out-of-sample protocol, and the decision rules for H1–H2, committed before any non-anchor event is measured.
+1. **Implement plan DVs in the runner:** DV3 recovery time (trailing, no look-ahead), event−control DV1 bootstrap test with p-value, USDT/USD stability gate, 50% coverage gate, alternative-explanation covariates (BTC realized vol, activity, missing-minute runs). Synthetic tests; re-run anchor (exploratory).
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -88,4 +93,5 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | 8 | 06:45 | c4 @ 9924197 | Reverse loop; Curve StableSwap + Uniswap v2 integer math (synthetic) | 118 passed |
 | 9 | 07:10 | m2 @ dac411f | Related work with 7 newly verified references; generated registry table; paper tests extended | 119 passed |
 | 10 | 07:35 | c4b @ 15459bf | Uniswap v3 single-range swap; DST-aware redemption window | 125 passed |
-| 11 | 08:20 | m3 @ (this commit) | Deterministic figures (timeline, coverage heatmap, anchor D vs W) wired into the paper; matplotlib dependency | 130 passed |
+| 11 | 08:20 | m3 @ d4af74b | Deterministic figures (timeline, coverage heatmap, anchor D vs W) wired into the paper; matplotlib dependency | 130 passed |
+| 12 | 08:50 | p1 @ (this commit) | Frozen pre-analysis plan + hash test + amendments log; DL random effects, Holm, sign test | 137 passed |

@@ -98,7 +98,7 @@ Candle data identify parity deviations only; $K_t$ requires order-book or on-cha
 \textbf{H1.} Fragmentation magnitude and persistence increase in stress windows relative to matched controls.
 \textbf{H2.} Peg dislocations are more persistent than within-venue wedges when redemption access is impaired.
 \textbf{H3.} Conditional on stress, lower executable restoration capacity is associated with larger and more persistent wedges.
-H1--H2 are testable with candle data; H3 requires validated execution state and is [PENDING].
+H1--H2 are testable with candle data; H3 requires validated execution state and is [PENDING]. Decision rules, dependent variables, multiplicity control and the out-of-sample protocol are fixed in a pre-analysis plan frozen (by content hash) before any non-anchor event was measured; the anchor, measured earlier, is treated as exploratory.
 
 \section{Event Selection}
 \label{sec:events}
@@ -136,7 +136,7 @@ last trades, not quotes.
 \label{fig:coverage}
 \end{figure}
 
-\section{Anchor Event: USDC, March 2023 (provisional)}
+\section{Anchor Event: USDC, March 2023 (exploratory)}
 \label{sec:anchor}
 \textbf{Peg dislocation.} On Binance.US, R1 is met with \NumAnchorBreachMinutes{} breaching minutes in the worst
 24-hour window and an extreme of \NumAnchorExtremeBps{} bps. The median $|D|$ was \NumAnchorBaselineMedAbs{} bps in
