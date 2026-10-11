@@ -1,0 +1,165 @@
+"""Run the pre-specified event protocol (R1 + window diagnostics) for one registry event.
+
+Data come only from local, already-acquired artifacts: the audited IAQF panel or
+checksum-verified Binance public kline archives. Nothing is downloaded here.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from collections.abc import Mapping
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+import pandas as pd
+
+from www_c0.quality import validate_utc_minutes
+from www_c3.fragmentation import ar1_to_parity
+from www_c3.robustness import horizon_medians
+
+from .binance_klines import gap_summary, read_kline_zip, sha256_file, to_minute_grid, verify_checksum
+from .registry import RULES, _parse_date, analysis_windows, load_registry, r1_severity
+
+
+def window_bounds(window: Mapping[str, str]) -> tuple[pd.Timestamp, pd.Timestamp]:
+    """Inclusive UTC dates -> half-open minute range [start 00:00, day after end 00:00)."""
+    start = pd.Timestamp(window["start"], tz="UTC")
+    return start, pd.Timestamp(window["end"], tz="UTC") + pd.Timedelta("1D")
+
+
+def usd_price(stable: pd.DataFrame, s_prefix: str, quote_basis: str,
+              quote_usd: pd.DataFrame | None = None, q_prefix: str | None = None) -> pd.DataFrame:
+    """Stablecoin price in USD plus a traded mask; USDT-quoted series need a USDT/USD leg or stay relative."""
+    out = pd.DataFrame(index=stable.index)
+    price = stable[f"{s_prefix}_close"]
+    traded = stable[f"{s_prefix}_traded"]
+    if quote_basis == "USD":
+        out["price"], out["traded"], out["basis"] = price, traded, "USD"
+    elif quote_usd is not None and q_prefix is not None:
+        q = quote_usd.reindex(stable.index)
+        out["price"] = price * q[f"{q_prefix}_close"]
+        out["traded"] = traded & q[f"{q_prefix}_traded"].fillna(False).astype(bool)
+        out["basis"] = "USD_VIA_" + quote_basis
+    else:
+        out["price"], out["traded"], out["basis"] = price, traded, quote_basis + "_RELATIVE"
+    return out
+
+
+def window_diagnostics(series: pd.DataFrame, peg: float = 1.0) -> dict[str, Any]:
+    traded = series["traded"].fillna(False).astype(bool).to_numpy()
+    price = series["price"].to_numpy(dtype=float)
+    dev = 10_000 * np.log(price / peg)
+    obs = traded & np.isfinite(dev)
+    a = np.abs(dev[obs])
+    bins = horizon_medians(pd.Series(dev, index=series.index), pd.Series(obs, index=series.index), 15, min_obs=3)
+    arr = bins.to_numpy()
+    fit = ar1_to_parity(arr, np.isfinite(arr))
+    return {
+        "grid_minutes": int(len(series)),
+        "traded_minutes": int(obs.sum()),
+        "mean_dev_bps": float(dev[obs].mean()) if a.size else None,
+        "median_abs_dev_bps": float(np.median(a)) if a.size else None,
+        "p95_abs_dev_bps": float(np.percentile(a, 95)) if a.size else None,
+        "max_abs_dev_bps": float(a.max()) if a.size else None,
+        "share_traded_minutes_ge_100bps": float((a >= 100).mean()) if a.size else None,
+        "half_life_to_parity_minutes_15m_bins": None if fit.half_life_minutes is None else fit.half_life_minutes * 15,
+        "bins_15m": int(np.isfinite(arr).sum()),
+        "adjacent_bin_pairs_15m": fit.pairs,
+    }
+
+
+def run_event(event: Mapping[str, Any], stable: pd.DataFrame, s_prefix: str, quote_basis: str,
+              quote_usd: pd.DataFrame | None = None, q_prefix: str | None = None) -> dict[str, Any]:
+    windows = analysis_windows(_parse_date(event["reported_window_utc"]["start"]),
+                               _parse_date(event["reported_window_utc"]["end"]))
+    series = usd_price(stable, s_prefix, quote_basis, quote_usd, q_prefix)
+    result: dict[str, Any] = {"event_id": event["id"], "series": s_prefix, "price_basis": str(series["basis"].iloc[0]),
+                              "windows": {}, "rules": RULES}
+    for name, window in windows.items():
+        lo, hi = window_bounds(window)
+        part = series[(series.index >= lo) & (series.index < hi)]
+        expected = int((hi - lo) / pd.Timedelta("1min"))
+        entry: dict[str, Any] = {"dates": window, "expected_minutes": expected, "covered_minutes": int(len(part))}
+        entry["coverage_complete"] = entry["covered_minutes"] == expected
+        entry["diagnostics"] = window_diagnostics(part) if len(part) else None
+        result["windows"][name] = entry
+    # R1 is judged over the event window extended by one day on each side (reported dates are approximate).
+    lo = window_bounds(windows["event"])[0] - pd.Timedelta("1D")
+    hi = window_bounds(windows["event"])[1] + pd.Timedelta("1D")
+    ev = series[(series.index >= lo) & (series.index < hi)]
+    if len(ev):
+        volume = np.where(ev["traded"].fillna(False).astype(bool), 1.0, 0.0)
+        result["r1"] = r1_severity(ev.index, ev["price"].to_numpy(dtype=float), volume)
+        result["r1"]["judged_range_utc"] = [lo.isoformat(), hi.isoformat()]
+    else:
+        result["r1"] = None
+    result["coverage_ok"] = all(result["windows"][w]["coverage_complete"] for w in ("baseline", "event", "recovery"))
+    if series["basis"].iloc[0].endswith("_RELATIVE"):
+        result["warning"] = "deviation measured against the quote stablecoin, not USD; R1 is not USD-verified"
+    return result
+
+
+def load_iaqf(panel_path: Path, prefix: str) -> tuple[pd.DataFrame, dict[str, Any]]:
+    panel = pd.read_parquet(panel_path)
+    index = validate_utc_minutes(panel["timestamp_utc"])
+    frame = pd.DataFrame(index=index)
+    frame[f"{prefix}_close"] = panel[f"{prefix}_close"].to_numpy()
+    frame[f"{prefix}_volume"] = panel[f"{prefix}_volume"].to_numpy()
+    frame[f"{prefix}_present"] = frame[f"{prefix}_close"].notna()
+    frame[f"{prefix}_traded"] = frame[f"{prefix}_volume"].fillna(0) > 0
+    return frame, {"source": "iaqf_panel", "sha256": sha256_file(panel_path)}
+
+
+def load_binance_months(directory: Path, symbol: str, prefix: str) -> tuple[pd.DataFrame, dict[str, Any]]:
+    """Load every ``{symbol}-1m-YYYY-MM.zip`` in ``directory``; each must pass its .CHECKSUM."""
+    archives = sorted(directory.glob(f"{symbol}-1m-*.zip"))
+    if not archives:
+        raise FileNotFoundError(f"no {symbol} archives in {directory}")
+    frames, manifest = [], []
+    for archive in archives:
+        digest = verify_checksum(archive, archive.with_name(archive.name + ".CHECKSUM"))
+        parsed = read_kline_zip(archive)
+        frames.append(parsed.frame)
+        manifest.append({"file": archive.name, "sha256": digest, "time_unit": parsed.time_unit,
+                         "rows": parsed.rows, "issues": list(parsed.issues)})
+    frame = pd.concat(frames).sort_index()
+    if frame.index.has_duplicates:
+        raise ValueError("overlapping archives")
+    grid = to_minute_grid(frame, frame.index[0].floor("D"), frame.index[-1].floor("D") + pd.Timedelta("1D"), prefix)
+    return grid, {"source": "binance_vision_monthly_klines", "files": manifest, "gaps": gap_summary(grid, prefix)}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--registry", type=Path, default=Path("configs/event_registry.json"))
+    parser.add_argument("--event-id", required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    src = parser.add_mutually_exclusive_group(required=True)
+    src.add_argument("--iaqf-panel", type=Path)
+    src.add_argument("--binance-dir", type=Path)
+    parser.add_argument("--stable", required=True, help="IAQF prefix (e.g. bnus_usdcusd) or Binance symbol")
+    parser.add_argument("--quote-basis", required=True, choices=["USD", "USDT", "BUSD"])
+    parser.add_argument("--quote-usd", help="optional quote/USD series (same source) to convert to USD")
+    args = parser.parse_args()
+    event = next(e for e in load_registry(args.registry) if e["id"] == args.event_id)
+    if args.iaqf_panel:
+        stable, prov = load_iaqf(args.iaqf_panel, args.stable)
+        quote, qprov = load_iaqf(args.iaqf_panel, args.quote_usd) if args.quote_usd else (None, None)
+        s_prefix, q_prefix = args.stable, args.quote_usd
+    else:
+        s_prefix = "binance_" + args.stable.lower()
+        stable, prov = load_binance_months(args.binance_dir, args.stable, s_prefix)
+        q_prefix = "binance_" + args.quote_usd.lower() if args.quote_usd else None
+        quote, qprov = load_binance_months(args.binance_dir, args.quote_usd, q_prefix) if args.quote_usd else (None, None)
+    result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix)
+    result["provenance"] = {"stable": prov, "quote_usd": qprov}
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+    r1 = result["r1"] or {}
+    print(f"{event['id']}: r1_pass={r1.get('r1_pass')} coverage_ok={result['coverage_ok']} basis={result['price_basis']}")
+
+
+if __name__ == "__main__":
+    main()

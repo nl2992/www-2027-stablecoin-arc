@@ -1,0 +1,125 @@
+{
+  "coverage_ok": true,
+  "event_id": "E2023-03-USDC-SVB",
+  "price_basis": "USD",
+  "provenance": {
+    "quote_usd": null,
+    "stable": {
+      "sha256": "17704ff01a86c3c678c690aeb7b9a9f2a86702bd69bbe5cceaf359c68c6711b3",
+      "source": "iaqf_panel"
+    }
+  },
+  "r1": {
+    "breach_minutes": 2720,
+    "extreme_deviation_bps": -1469.9302374066012,
+    "extreme_utc": "2023-03-11T07:55:00+00:00",
+    "first_breach_utc": "2023-03-11T02:08:00+00:00",
+    "judged_range_utc": [
+      "2023-03-09T00:00:00+00:00",
+      "2023-03-15T00:00:00+00:00"
+    ],
+    "last_breach_utc": "2023-03-13T18:50:00+00:00",
+    "max_breach_minutes_in_window": 1379,
+    "min_minutes": 30,
+    "r1_pass": true,
+    "severe_class": true,
+    "threshold_bps": 100.0,
+    "traded_minutes": 5403,
+    "window": "24h"
+  },
+  "rules": {
+    "R1_severe_class_bps": 500.0,
+    "R1_severity": {
+      "min_minutes": 30,
+      "observation": "minute closes with positive volume on the stablecoin leg",
+      "threshold_bps": 100.0,
+      "window": "24h"
+    },
+    "R2_cluster_gap_days": 14,
+    "R3_windows_days": {
+      "baseline": 7,
+      "baseline_gap": 1,
+      "control": 7,
+      "control_min_lead": 28,
+      "recovery": 7
+    },
+    "R4_min_distinct_publishers": 2,
+    "out_of_sample_start": "2024-01-01"
+  },
+  "series": "bnus_usdcusd",
+  "windows": {
+    "baseline": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2023-03-08",
+        "start": "2023-03-02"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 156,
+        "bins_15m": 256,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 22.640244580045806,
+        "max_abs_dev_bps": 96.53257028138346,
+        "mean_dev_bps": -0.8371420134145895,
+        "median_abs_dev_bps": 1.0000500033334732,
+        "p95_abs_dev_bps": 3.0004500900199242,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 1946
+      },
+      "expected_minutes": 10080
+    },
+    "control": {
+      "coverage_complete": false,
+      "covered_minutes": 0,
+      "dates": {
+        "end": "2023-02-10",
+        "start": "2023-02-04"
+      },
+      "diagnostics": null,
+      "expected_minutes": 10080
+    },
+    "event": {
+      "coverage_complete": true,
+      "covered_minutes": 5760,
+      "dates": {
+        "end": "2023-03-13",
+        "start": "2023-03-10"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 373,
+        "bins_15m": 379,
+        "grid_minutes": 5760,
+        "half_life_to_parity_minutes_15m_bins": 1211.6890581083633,
+        "max_abs_dev_bps": 1469.9302374066012,
+        "mean_dev_bps": -285.41181585095154,
+        "median_abs_dev_bps": 209.17248255388307,
+        "p95_abs_dev_bps": 950.8020625026991,
+        "share_traded_minutes_ge_100bps": 0.5960990576375191,
+        "traded_minutes": 4563
+      },
+      "expected_minutes": 5760
+    },
+    "recovery": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2023-03-20",
+        "start": "2023-03-14"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 321,
+        "bins_15m": 440,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 82.27151281040486,
+        "max_abs_dev_bps": 59.17473764037623,
+        "mean_dev_bps": -7.809861452846434,
+        "median_abs_dev_bps": 5.001250416822429,
+        "p95_abs_dev_bps": 26.63545292634856,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 2889
+      },
+      "expected_minutes": 10080
+    }
+  }
+}

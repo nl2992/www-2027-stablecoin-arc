@@ -58,3 +58,26 @@ Statuses, in order of evidence: `CANDIDATE` → `SOURCE_DOCUMENTED` → `DATA_VE
 
 1. **Authorize downloading free public data files** from `data.binance.vision`: monthly 1-minute klines for USTUSDT, USTBUSD, TUSDUSDT, FDUSDUSDT, USDEUSDT, BUSDUSDT and USDCUSDT, and BTCUSDT for cross-rates. That is about 15 files of roughly 0.5–4 MB each, judging from listed sizes such as 931,777 bytes for USDEUSDT 2025-10. Binance's public data terms would need a quick review first. Without this, no further event can move past SOURCE_DOCUMENTED.
 2. **USD reference venue for USDT-stress clusters.** Optional sources are Binance.US public history and Coinbase/Kraken public candles. Each also needs download permission.
+
+## Event protocol runner
+
+`src/www_events/runner.py` applies the same protocol to any registry event. It builds the R3 windows, then loads local data: the IAQF panel, or Binance archives that must each pass their `.CHECKSUM`. It converts USDT-quoted prices to USD only when a USDT/USD leg is supplied, and otherwise labels the result `USDT_RELATIVE` with a warning. Then it applies R1 over the event window ±1 day and reports diagnostics for each window. Command for the anchor:
+
+```sh
+uv run python -m www_events.runner --event-id E2023-03-USDC-SVB \
+  --iaqf-panel /path/to/panel_1min.parquet --stable bnus_usdcusd --quote-basis USD \
+  --output reports/events/E2023-03-USDC-SVB_protocol.json
+```
+
+A Binance event would run with `--binance-dir data/raw/binance --stable USDEUSDT --quote-basis USDT` once the files are authorized and acquired.
+
+**Anchor result** (`reports/events/E2023-03-USDC-SVB_protocol.json`; Binance.US USDC/USD, traded minutes):
+
+| Window | Dates | Traded minutes | Median abs dev | P95 abs dev | Share ≥ 100 bps | Half-life to par, 15-min bins |
+|---|---|---:|---:|---:|---:|---:|
+| baseline | 03-02 → 03-08 | 1,946 | 1.0 bps | 3.0 | 0% | 22.6 min |
+| event | 03-10 → 03-13 | 4,563 | 209.2 bps | 950.8 | 60% | 1,211.7 min |
+| recovery | 03-14 → 03-20 | 2,889 | 5.0 bps | 26.6 | 0% | 82.3 min |
+| control | 02-04 → 02-10 | not covered | — | — | — | — |
+
+**Interpretation, used to design the cross-event analysis.** The *peg dislocation* (USDC's own USD price) persisted for about a day per half-life during the event. Over the same window, the *within-venue triangle wedge* (C3) reverted within minutes at minute resolution and within about 13–16 minutes on 15-minute bins. These are two separate objects. Cross-quote arbitrage kept relative prices aligned while the USD value of USDC itself stayed dislocated, which points to redemption and settlement frictions rather than cross-quote execution. This is a descriptive contrast for one event. Treat the half-life as a description of the window, not a structural estimate: the level moved away from par and back within the window. Whether the same separation holds across events is the first cross-event question for E2.
