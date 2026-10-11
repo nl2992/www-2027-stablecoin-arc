@@ -3,7 +3,7 @@
 import re
 from pathlib import Path
 
-from www_paper.macros import OUTPUT, build
+from www_paper.macros import OUTPUT, TABLE_OUTPUT, build, build_registry_table
 
 ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
@@ -11,6 +11,17 @@ MAIN = (ROOT / "paper/main.tex").read_text()
 
 def test_generated_numbers_are_current():
     assert OUTPUT.read_text() == build(), "run `uv run python -m www_paper.macros`"
+    assert TABLE_OUTPUT.read_text() == build_registry_table(), "run `uv run python -m www_paper.macros`"
+
+
+def test_registry_table_lists_every_event_and_marks_linked_legs():
+    import json
+    events = json.loads((ROOT / "configs/event_registry.json").read_text())["events"]
+    table = TABLE_OUTPUT.read_text()
+    assert all(e["id"] in table for e in events)
+    linked_rows = [line for line in table.splitlines() if line.startswith("$\\hookrightarrow$ ")]
+    assert len(linked_rows) == sum(e["role"] == "LINKED_LEG" for e in events)
+    assert "\\input{generated/registry_table}" in MAIN
 
 
 def test_every_number_macro_used_is_defined_and_no_literal_bps_values_slip_in():
@@ -33,7 +44,8 @@ def test_every_citation_has_a_bib_entry_and_every_entry_is_cited():
 
 
 def test_labels_resolve_and_pending_sections_are_marked():
-    labels = set(re.findall(r"\\label\{([^}]+)\}", MAIN))
+    generated = TABLE_OUTPUT.read_text()
+    labels = set(re.findall(r"\\label\{([^}]+)\}", MAIN + generated))
     refs = set(re.findall(r"\\ref\{([^}]+)\}", MAIN))
     assert refs <= labels
     assert "Executable Capacity [PENDING]" in MAIN

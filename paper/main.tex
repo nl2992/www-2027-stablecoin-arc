@@ -51,12 +51,33 @@ cross-venue wedges, and separates parity deviations from gross, executable and r
 
 \section{Related Work}
 \label{sec:related}
-Arbitrage and segmentation in crypto markets are documented by~\cite{makarov2020trading}. Stablecoin peg
-mechanics and the role of arbitrage access are studied by~\cite{lyons2023keeps}; the legal and run-risk
-framing by~\cite{zhang2023taming}; primary versus secondary markets and the SVB episode by
-Federal Reserve staff~\cite{watsky2024primary,du2025shadow}. [PENDING: a systematic literature review, restricted
-to verified sources, covering limits to arbitrage, market microstructure of crypto order books, AMM
-liquidity, and stablecoin event studies.]
+\paragraph{Limits to arbitrage.} Classic theory explains why mispricing can persist when arbitrage is
+performed by specialized, capital-constrained agents~\cite{shleifer1997limits}; the survey
+of~\cite{gromb2010limits} organizes these frictions into fundamental and non-fundamental risk, short-selling
+costs, leverage and margin constraints, and equity-capital constraints. Our restoration-capacity measure is an
+execution-level counterpart: it asks how much quantity could actually be routed at a given cost, rather than
+assuming that any visible price gap is arbitraged.
+
+\paragraph{Crypto market segmentation.} Large, recurrent cross-exchange price deviations, with greater
+segmentation across than within countries, are documented by~\cite{makarov2020trading}. We study the
+stablecoin analogue, where the deviation is between quote currencies and between a token and its peg.
+
+\paragraph{Stablecoin pegs, redemption and runs.} Improved access to primary-market arbitrage roughly halved
+Tether's peg deviations in~\cite{lyons2023keeps}. \cite{ma2025runs} show that major issuers concentrate
+redemption in a few authorized arbitrageurs, trading off secondary-market price stability against run risk.
+\cite{anadu2023runs} document flight-to-safety flows across stablecoins in stress and a break-the-buck threshold
+near \$1. Federal Reserve staff analyses stress that secondary prices alone do not reveal primary-market
+conditions~\cite{watsky2024primary} and describe USDC's loss of peg when primary operations paused over the SVB
+weekend~\cite{du2025shadow}. The legal framing of stablecoin issuers as unregulated banks is developed
+by~\cite{zhang2023taming}. Relative to this literature we add (i) a pre-registered, multi-event, multi-mechanism
+event design and (ii) a separation of peg dislocation from cross-quote wedges that maps directly to the
+redemption versus secondary-market channels.
+
+\paragraph{AMM liquidity.} StableSwap~\cite{egorov2019stableswap} and concentrated
+liquidity~\cite{adams2021uniswapv3} determine on-chain execution costs for stablecoin swaps; \cite{lehar2025uniswap}
+compare Uniswap with a centralized limit order book and document the absence of long-lived arbitrage
+opportunities between them. Our on-chain capacity measures will use historically pinned pool states rather than
+current protocol parameters.
 
 \section{Measurement Framework}
 \label{sec:framework}
@@ -81,7 +102,7 @@ H1--H2 are testable with candle data; H3 requires validated execution state and 
 
 \section{Event Selection}
 \label{sec:events}
-Rules were fixed before measuring any non-anchor event. \emph{R1 (severity):} at least 30 traded minutes with
+Rules were fixed before measuring any non-anchor event (Table~\ref{tab:registry}). \emph{R1 (severity):} at least 30 traded minutes with
 $|D| \ge 100$ bps inside some 24-hour window; $\ge 500$ bps marks the severe class. \emph{R2 (independence):} one
 episode per primary trigger; contagion legs share their primary's cluster and never add episodes.
 \emph{R3 (windows):} 7-day baseline ending two days before the event, the event window, a 7-day recovery, and a
@@ -91,7 +112,8 @@ Events from 2024 onward are out-of-sample.
 The registry holds \NumRegistryEntries{} entries in \NumRegistryClusters{} clusters:
 \NumDocumentedPrimaries{} source-documented primary candidates (including one placebo---the BUSD issuance
 halt~\cite{paxos2023busd}---and one expected negative case), \NumUnresolved{} unresolved candidates, and
-\NumAcceptedClusters{} accepted cluster so far. [PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
+\NumAcceptedClusters{} accepted cluster so far. \input{generated/registry_table}
+[PENDING: R1 measurement for UST~\cite{jump2022ust}, TUSD, FDUSD,
 USDe and the placebo; the target of at least three independent accepted episodes is \emph{not yet met}.]
 
 \section{Data}
