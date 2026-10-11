@@ -10,16 +10,39 @@
       "peg": "USD",
       "mechanism": "DELEVERAGING_PREMIUM",
       "direction": "PREMIUM",
-      "reported_window_utc": {"start": "2020-03-12", "end": "2020-03-20"},
-      "reported_extreme": {"price": "above 1.08", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2020-03-12",
+        "end": "2020-03-20"
+      },
+      "reported_extreme": {
+        "price": "above 1.08",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://research.glassnode.com/what-really-happened-to-makerdao/", "publisher": "Glassnode", "type": "RESEARCH", "accessed": "2026-10-11"},
-        {"url": "https://cointelegraph.com/news/maker-debt-crisis-post-mortem-recommends-new-safeguards", "publisher": "Cointelegraph", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://research.glassnode.com/what-really-happened-to-makerdao/",
+          "publisher": "Glassnode",
+          "type": "RESEARCH",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://cointelegraph.com/news/maker-debt-crisis-post-mortem-recommends-new-safeguards",
+          "publisher": "Cointelegraph",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
-        {"venue": "binance", "symbol": "DAIUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "DAIUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        }
       ],
       "notes": "Premium (not discount) driven by vault repayment demand; end date of the premium is not established from sources. Binance.com lists DAIUSDT only for 2020-07..2020-08, so a USD venue is still needed."
     },
@@ -31,18 +54,68 @@
       "peg": "USD",
       "mechanism": "ALGORITHMIC_COLLAPSE",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2022-05-07", "end": "2022-05-13"},
-      "reported_extreme": {"price": "below 0.35; no recovery", "scope": "market reports", "source_index": 1},
+      "reported_window_utc": {
+        "start": "2022-05-07",
+        "end": "2022-05-13"
+      },
+      "reported_extreme": {
+        "price": "below 0.35; no recovery",
+        "scope": "market reports",
+        "source_index": 1
+      },
       "sources": [
-        {"url": "https://jumpcrypto.com/writing/the-depegging-of-ust/", "publisher": "Jump Crypto", "type": "RESEARCH", "accessed": "2026-10-11"},
-        {"url": "https://coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna", "publisher": "CoinDesk", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://coindesk.com/business/2022/05/09/ust-stablecoin-falls-below-dollar-peg-for-second-time-in-48-hours", "publisher": "CoinDesk", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://jumpcrypto.com/writing/the-depegging-of-ust/",
+          "publisher": "Jump Crypto",
+          "type": "RESEARCH",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna",
+          "publisher": "CoinDesk",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://coindesk.com/business/2022/05/09/ust-stablecoin-falls-below-dollar-peg-for-second-time-in-48-hours",
+          "publisher": "CoinDesk",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
-        {"venue": "binance", "symbol": "USTUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"},
-        {"venue": "binance", "symbol": "USTBUSD", "quote_basis": "BUSD", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "USTUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        },
+        {
+          "venue": "binance",
+          "symbol": "USTBUSD",
+          "quote_basis": "BUSD",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUST",
+          "quote_basis": "UST",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        }
       ],
       "notes": "Terminal failure: no recovery window in the usual sense. USDT itself was stressed in this window, so USDT-quoted prices need a USDT/USD correction."
     },
@@ -55,16 +128,40 @@
       "peg": "USD",
       "mechanism": "COLLATERAL_CONTAGION",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2022-05-12", "end": "2022-05-13"},
-      "reported_extreme": {"price": "0.948 (reported low across major exchanges)", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2022-05-12",
+        "end": "2022-05-13"
+      },
+      "reported_extreme": {
+        "price": "0.948 (reported low across major exchanges)",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://decrypt.co/100173/tether-loses-dollar-peg-ongoing-stablecoin-crisis", "publisher": "Decrypt", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://k33.com/research/archive/articles/tethers-peg-got-challenged-last-week-peak-irrational-markets", "publisher": "K33 Research", "type": "RESEARCH", "accessed": "2026-10-11"}
+        {
+          "url": "https://decrypt.co/100173/tether-loses-dollar-peg-ongoing-stablecoin-crisis",
+          "publisher": "Decrypt",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://k33.com/research/archive/articles/tethers-peg-got-challenged-last-week-peak-irrational-markets",
+          "publisher": "K33 Research",
+          "type": "RESEARCH",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
-        {"venue": "binance-us", "symbol": "USDTUSD", "quote_basis": "USD", "data_type": "KLINE_1M", "source": "binance_us_public_history", "status": "UNVERIFIED_SOURCE"}
+        {
+          "venue": "binance-us",
+          "symbol": "USDTUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "binance_us_public_history",
+          "status": "UNVERIFIED_SOURCE"
+        }
       ],
       "notes": "Contagion leg of the Terra cluster; it is not an independent event."
     },
@@ -76,16 +173,39 @@
       "peg": "USD",
       "mechanism": "ALGORITHMIC_COLLAPSE",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2022-06-13", "end": "2022-06-20"},
-      "reported_extreme": {"price": "0.91", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2022-06-13",
+        "end": "2022-06-20"
+      },
+      "reported_extreme": {
+        "price": "0.91",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://fortune.com/2022/06/13/algorithmic-stablecoin-usdd-loses-peg-justin-sun-tron-decentralized-usd/", "publisher": "Fortune", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://www.theblock.co/post/151872/tron-usdd-stablecoin-breaks-dollar-peg", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://fortune.com/2022/06/13/algorithmic-stablecoin-usdd-loses-peg-justin-sun-tron-decentralized-usd/",
+          "publisher": "Fortune",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://www.theblock.co/post/151872/tron-usdd-stablecoin-breaks-dollar-peg",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
-        {"venue": "binance", "symbol": "USDDUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "USDDUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        }
       ],
       "notes": "Binance.com lists no USDDUSDT klines; the venues where USDD traded have not been identified with public minute data."
     },
@@ -97,18 +217,53 @@
       "peg": "USD",
       "mechanism": "EXCHANGE_FAILURE_CONTAGION",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2022-11-07", "end": "2022-11-11"},
-      "reported_extreme": {"price": "0.938 on Kraken (brief); 0.9755 broader", "scope": "venue-specific", "source_index": 1},
+      "reported_window_utc": {
+        "start": "2022-11-07",
+        "end": "2022-11-11"
+      },
+      "reported_extreme": {
+        "price": "0.938 on Kraken (brief); 0.9755 broader",
+        "scope": "venue-specific",
+        "source_index": 1
+      },
       "sources": [
-        {"url": "https://www.kitco.com/news/article/2022-11-10/stablecoin-tether-slips-below-usd-peg-rate-ftx-contagion-spreads", "publisher": "Kitco", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://cryptoslate.com/tether-dollar-peg-sinks-1-7-as-ftx-induced-turmoil-persists/", "publisher": "CryptoSlate", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://www.bnnbloomberg.ca/tether-dips-below-1-as-ftx-fallout-continues-to-roil-markets-1.1844519", "publisher": "BNN Bloomberg", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.kitco.com/news/article/2022-11-10/stablecoin-tether-slips-below-usd-peg-rate-ftx-contagion-spreads",
+          "publisher": "Kitco",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://cryptoslate.com/tether-dollar-peg-sinks-1-7-as-ftx-induced-turmoil-persists/",
+          "publisher": "CryptoSlate",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://www.bnnbloomberg.ca/tether-dips-below-1-as-ftx-fallout-continues-to-roil-markets-1.1844519",
+          "publisher": "BNN Bloomberg",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
-        {"venue": "binance-us", "symbol": "USDTUSD", "quote_basis": "USD", "data_type": "KLINE_1M", "source": "binance_us_public_history", "status": "UNVERIFIED_SOURCE"},
-        {"venue": "binance", "symbol": "USDCUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance-us",
+          "symbol": "USDTUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "binance_us_public_history",
+          "status": "UNVERIFIED_SOURCE"
+        },
+        {
+          "venue": "binance",
+          "symbol": "USDCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        }
       ],
       "notes": "Reported severity is venue-dependent. Whether it passes R1 (>= 30 traded minutes beyond 100 bps on a USD venue) is unknown until measured."
     },
@@ -120,16 +275,51 @@
       "peg": "USD",
       "mechanism": "REGULATORY_ISSUANCE_HALT",
       "direction": "NONE_REPORTED",
-      "reported_window_utc": {"start": "2023-02-13", "end": "2023-02-21"},
+      "reported_window_utc": {
+        "start": "2023-02-13",
+        "end": "2023-02-21"
+      },
       "reported_extreme": null,
       "sources": [
-        {"url": "https://paxos.com/2023/02/13/paxos-will-halt-minting-new-busd-tokens", "publisher": "Paxos", "type": "PRIMARY", "accessed": "2026-10-11"},
-        {"url": "https://www.theblock.co/post/210932/paxos-will-no-longer-issue-binance-usd-stablecoin", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://paxos.com/2023/02/13/paxos-will-halt-minting-new-busd-tokens",
+          "publisher": "Paxos",
+          "type": "PRIMARY",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://www.theblock.co/post/210932/paxos-will-no-longer-issue-binance-usd-stablecoin",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "PLACEBO",
       "data_candidates": [
-        {"venue": "binance", "symbol": "BUSDUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "BUSDUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCBUSD",
+          "quote_basis": "BUSD",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        }
       ],
       "notes": "Placebo/negative-case candidate: a major regulatory shock with redemptions guaranteed and no reported price dislocation. If R1 fails, it is retained as a negative case, not dropped."
     },
@@ -141,11 +331,28 @@
       "peg": "USD",
       "mechanism": "BANK_RESERVE_RUN",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2023-03-10", "end": "2023-03-13"},
-      "reported_extreme": {"price": "about 0.88-0.90", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2023-03-10",
+        "end": "2023-03-13"
+      },
+      "reported_extreme": {
+        "price": "about 0.88-0.90",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://www.theblock.co/post/218993/usdc-and-dai-remain-at-about-0-90-following-circles-disclosure-of-funds-at-svb", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://eigenphi.substack.com/p/usdc-depegging-victims-signals-and-opportunities", "publisher": "EigenPhi", "type": "RESEARCH", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.theblock.co/post/218993/usdc-and-dai-remain-at-about-0-90-following-circles-disclosure-of-funds-at-svb",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://eigenphi.substack.com/p/usdc-depegging-victims-signals-and-opportunities",
+          "publisher": "EigenPhi",
+          "type": "RESEARCH",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "ACCEPTED",
       "coverage_ok": true,
@@ -157,8 +364,25 @@
         "r1_pass": true
       },
       "data_candidates": [
-        {"venue": "binance-us", "symbol": "USDCUSD", "quote_basis": "USD", "data_type": "KLINE_1M", "source": "iaqf_panel_b484e8b", "status": "OBSERVED_LOCAL", "observed_range_utc": ["2023-03-01", "2023-03-21"]},
-        {"venue": "binance", "symbol": "USDCUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance-us",
+          "symbol": "USDCUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "iaqf_panel_b484e8b",
+          "status": "OBSERVED_LOCAL",
+          "observed_range_utc": [
+            "2023-03-01",
+            "2023-03-21"
+          ]
+        },
+        {
+          "venue": "binance",
+          "symbol": "USDCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        }
       ],
       "notes": "Anchor event. Baseline, event and recovery windows are covered by the audited panel; the matched control window (February 2023) is not."
     },
@@ -171,11 +395,28 @@
       "peg": "USD",
       "mechanism": "COLLATERAL_CONTAGION",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2023-03-11", "end": "2023-03-13"},
-      "reported_extreme": {"price": "0.88-0.897", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2023-03-11",
+        "end": "2023-03-13"
+      },
+      "reported_extreme": {
+        "price": "0.88-0.897",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://www.theblock.co/post/218993/usdc-and-dai-remain-at-about-0-90-following-circles-disclosure-of-funds-at-svb", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://eigenphi.substack.com/p/usdc-depegging-victims-signals-and-opportunities", "publisher": "EigenPhi", "type": "RESEARCH", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.theblock.co/post/218993/usdc-and-dai-remain-at-about-0-90-following-circles-disclosure-of-funds-at-svb",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://eigenphi.substack.com/p/usdc-depegging-victims-signals-and-opportunities",
+          "publisher": "EigenPhi",
+          "type": "RESEARCH",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
@@ -191,7 +432,10 @@
       "peg": "USD",
       "mechanism": "COLLATERAL_CONTAGION",
       "direction": "PREMIUM",
-      "reported_window_utc": {"start": "2023-03-12", "end": "2023-03-12"},
+      "reported_window_utc": {
+        "start": "2023-03-12",
+        "end": "2023-03-12"
+      },
       "reported_extreme": null,
       "sources": [],
       "status": "CANDIDATE",
@@ -206,7 +450,18 @@
         "last_breach_utc": "2023-03-12T22:44:00+00:00"
       },
       "data_candidates": [
-        {"venue": "binance-us", "symbol": "USDTUSD", "quote_basis": "USD", "data_type": "KLINE_1M", "source": "iaqf_panel_b484e8b", "status": "OBSERVED_LOCAL", "observed_range_utc": ["2023-03-01", "2023-03-21"]}
+        {
+          "venue": "binance-us",
+          "symbol": "USDTUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "iaqf_panel_b484e8b",
+          "status": "OBSERVED_LOCAL",
+          "observed_range_utc": [
+            "2023-03-01",
+            "2023-03-21"
+          ]
+        }
       ],
       "notes": "Found by applying R1 to the anchor panel, not from news: a USDT premium on Binance.US on 2023-03-12. It is a linked leg of the SVB cluster, and remains CANDIDATE until a citable source corroborates it."
     },
@@ -218,16 +473,40 @@
       "peg": "USD",
       "mechanism": "DEFI_POOL_IMBALANCE",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2023-06-15", "end": "2023-06-15"},
-      "reported_extreme": {"price": "about 0.995-0.997", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2023-06-15",
+        "end": "2023-06-15"
+      },
+      "reported_extreme": {
+        "price": "about 0.995-0.997",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://www.theblock.co/post/234822/tether-depeg-curve-3pool", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://www.galaxy.com/insights/research/stablecoins-week-in-review-061623", "publisher": "Galaxy Research", "type": "RESEARCH", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.theblock.co/post/234822/tether-depeg-curve-3pool",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://www.galaxy.com/insights/research/stablecoins-week-in-review-061623",
+          "publisher": "Galaxy Research",
+          "type": "RESEARCH",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "IN_SAMPLE",
       "data_candidates": [
-        {"venue": "binance-us", "symbol": "USDTUSD", "quote_basis": "USD", "data_type": "KLINE_1M", "source": "binance_us_public_history", "status": "UNVERIFIED_SOURCE"}
+        {
+          "venue": "binance-us",
+          "symbol": "USDTUSD",
+          "quote_basis": "USD",
+          "data_type": "KLINE_1M",
+          "source": "binance_us_public_history",
+          "status": "UNVERIFIED_SOURCE"
+        }
       ],
       "notes": "Reported magnitude (30-50 bps) is below R1. It is expected to be a negative case and is kept so that the selection is not one-sided; it is not rejected until measured."
     },
@@ -239,16 +518,55 @@
       "peg": "USD",
       "mechanism": "RESERVE_TRANSPARENCY",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2024-01-15", "end": "2024-01-19"},
-      "reported_extreme": {"price": "0.97", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2024-01-15",
+        "end": "2024-01-19"
+      },
+      "reported_extreme": {
+        "price": "0.97",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://www.theblock.co/news/markets/2024-01-18-trueusd-continues-to-depeg-hits-low-point-of-0-97-273263", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://forklog.com/en/tusd-stablecoin-loses-dollar-peg/", "publisher": "ForkLog", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.theblock.co/news/markets/2024-01-18-trueusd-continues-to-depeg-hits-low-point-of-0-97-273263",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://forklog.com/en/tusd-stablecoin-loses-dollar-peg/",
+          "publisher": "ForkLog",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
-        {"venue": "binance", "symbol": "TUSDUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "TUSDUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCTUSD",
+          "quote_basis": "TUSD",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        }
       ],
       "notes": "Sources also cite Binance Launchpool flows as a cause, so the mechanism is mixed."
     },
@@ -260,16 +578,55 @@
       "peg": "USD",
       "mechanism": "ISSUER_SOLVENCY_ALLEGATION",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2025-04-02", "end": "2025-04-04"},
-      "reported_extreme": {"price": "0.8726", "scope": "market reports", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2025-04-02",
+        "end": "2025-04-04"
+      },
+      "reported_extreme": {
+        "price": "0.8726",
+        "scope": "market reports",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://www.theblock.co/post/349289/fdusd-stablecoin-depegs-9-after-justin-sun-raises-concerns-over-first-digital-solvency", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://thedefiant.io/news/cefi/justin-sun-declares-first-digital-trust-insolvent-fdusd-depegs-binance-holds-1-fcdb4d5a", "publisher": "The Defiant", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.theblock.co/post/349289/fdusd-stablecoin-depegs-9-after-justin-sun-raises-concerns-over-first-digital-solvency",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://thedefiant.io/news/cefi/justin-sun-declares-first-digital-trust-insolvent-fdusd-depegs-binance-holds-1-fcdb4d5a",
+          "publisher": "The Defiant",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
-        {"venue": "binance", "symbol": "FDUSDUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "FDUSDUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCFDUSD",
+          "quote_basis": "FDUSD",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        }
       ],
       "notes": "Supply concentrated on Binance (reported 94%)."
     },
@@ -281,19 +638,63 @@
       "peg": "USD",
       "mechanism": "VENUE_INFRASTRUCTURE",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2025-10-10", "end": "2025-10-11"},
-      "reported_extreme": {"price": "0.65 on Binance only; about 0.99 on Curve/Uniswap", "scope": "venue-specific", "source_index": 0},
+      "reported_window_utc": {
+        "start": "2025-10-10",
+        "end": "2025-10-11"
+      },
+      "reported_extreme": {
+        "price": "0.65 on Binance only; about 0.99 on Curve/Uniswap",
+        "scope": "venue-specific",
+        "source_index": 0
+      },
       "sources": [
-        {"url": "https://theblock.co/post/374295/binance-pays-283-million-in-compensation-following-fridays-depegs-covering-user-losses", "publisher": "The Block", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://news.bloomberglaw.com/crypto/third-largest-stablecoin-briefly-loses-dollar-peg-in-crypto-rout", "publisher": "Bloomberg", "type": "NEWS", "accessed": "2026-10-11"},
-        {"url": "https://cointelegraph.com/news/usde-depeg-oracle-issues-ethena-founder", "publisher": "Cointelegraph", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://theblock.co/post/374295/binance-pays-283-million-in-compensation-following-fridays-depegs-covering-user-losses",
+          "publisher": "The Block",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://news.bloomberglaw.com/crypto/third-largest-stablecoin-briefly-loses-dollar-peg-in-crypto-rout",
+          "publisher": "Bloomberg",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        },
+        {
+          "url": "https://cointelegraph.com/news/usde-depeg-oracle-issues-ethena-founder",
+          "publisher": "Cointelegraph",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "SOURCE_DOCUMENTED",
       "sample_role": "OUT_OF_SAMPLE",
       "data_candidates": [
-        {"venue": "binance", "symbol": "USDEUSDT", "quote_basis": "USDT", "data_type": "KLINE_1M", "source": "binance_vision_monthly_klines"}
+        {
+          "venue": "binance",
+          "symbol": "USDEUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUSDE",
+          "quote_basis": "USDE",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BTCUSDT",
+          "quote_basis": "USDT",
+          "data_type": "KLINE_1M",
+          "source": "binance_vision_monthly_klines",
+          "purpose": "triangle leg for DV4/DV5"
+        }
       ],
-      "notes": "Cross-venue fragmentation case: the dislocation is reported on one CEX while DEX prices held, which suits the restoration-capacity question. Binance.com USDEUSDT listings start 2025-09, so the 28-day matched control window is covered."
+      "notes": "Cross-venue fragmentation case: the dislocation is reported on one CEX while DEX prices held, which suits the restoration-capacity question. Binance.com USDEUSDT listings start 2025-09, so the 28-day matched control window is covered. Binance.com lists no BTCUSDE klines, so no within-venue Binance triangle exists for this event; DV4/DV5 are undefined here unless another venue supplies all three legs."
     },
     {
       "id": "U2024-USDE-2024",
@@ -303,7 +704,10 @@
       "peg": "USD",
       "mechanism": "VENUE_INFRASTRUCTURE",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2024-03-01", "end": "2024-04-30"},
+      "reported_window_utc": {
+        "start": "2024-03-01",
+        "end": "2024-04-30"
+      },
       "reported_extreme": null,
       "sources": [],
       "status": "UNRESOLVED",
@@ -319,10 +723,18 @@
       "peg": "USD",
       "mechanism": "UNBACKED_MINT",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2026-03-22", "end": "2026-03-23"},
+      "reported_window_utc": {
+        "start": "2026-03-22",
+        "end": "2026-03-23"
+      },
       "reported_extreme": null,
       "sources": [
-        {"url": "https://www.webacy.com/blog/stablecoin-depeg-failure-mechanisms", "publisher": "Webacy", "type": "NEWS", "accessed": "2026-10-11"}
+        {
+          "url": "https://www.webacy.com/blog/stablecoin-depeg-failure-mechanisms",
+          "publisher": "Webacy",
+          "type": "NEWS",
+          "accessed": "2026-10-11"
+        }
       ],
       "status": "UNRESOLVED",
       "sample_role": "UNASSIGNED",
@@ -337,7 +749,10 @@
       "peg": "USD",
       "mechanism": "COLLATERAL_CONTAGION",
       "direction": "DISCOUNT",
-      "reported_window_utc": {"start": "2026-06-25", "end": "2026-06-25"},
+      "reported_window_utc": {
+        "start": "2026-06-25",
+        "end": "2026-06-25"
+      },
       "reported_extreme": null,
       "sources": [],
       "status": "UNRESOLVED",

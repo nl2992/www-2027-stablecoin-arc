@@ -78,7 +78,7 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 ## Prioritized next tasks
 
 
-1. **Binance triangle adapter:** build W from Binance archives (BTC/q, q/USDT, BTC/USDT) so DV4/DV5 run for UST, TUSD, FDUSD and USDe once data are authorized; add the archive symbols to the coverage matrix.
+1. **Event-batch driver:** one command that runs the protocol for every registry event with available local data (IAQF or Binance archive directory), writes each protocol report with `measured_utc`, updates the registry measurement blocks and statuses by rule (R1 pass + coverage → ACCEPTED/DATA_VERIFIED; R1 fail → REJECTED with reason), and rebuilds summary, macros and figures. Synthetic end-to-end test.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -101,4 +101,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 12 | 08:50 | p1 @ c94425c | Frozen pre-analysis plan + hash test + amendments log; DL random effects, Holm, sign test | 137 passed |
 | 13 | 09:25 | p1 @ 4d90727 | Plan DVs (DV1 bootstrap test, DV3 trailing recovery, gates, covariates) in runner; amendment A1 (DV3 window clipped at extreme); anchor re-run EXPLORATORY | 144 passed |
 | 14 | 09:55 | p1 @ 24f5cb3 | Cross-event summary builder applying frozen decision rules (currently INSUFFICIENT_EVENTS); anchor plan results in paper via macros | 149 passed |
-| 15 | 10:25 | p1 @ (this commit) | DV4/DV5 in runner; H2 rule in summary; anchor DV5 ≈ 95 (exploratory) | 152 passed |
+| 15 | 10:25 | p1 @ 4da93f2 | DV4/DV5 in runner; H2 rule in summary; anchor DV5 ≈ 95 (exploratory) | 152 passed |
+| 16 | 10:55 | p1 @ (this commit) | Binance triangle adapter; triangle-leg listings in coverage matrix (USDe has no BTCUSDE) | 153 passed |

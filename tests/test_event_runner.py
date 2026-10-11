@@ -79,3 +79,27 @@ def test_load_binance_months_verifies_checksums_and_builds_gap_preserving_grid(t
     (tmp_path / "USDEUSDT-1m-2024-03.zip.CHECKSUM").write_text("0" * 64 + "  USDEUSDT-1m-2024-03.zip\n")
     with pytest.raises(ValueError, match="mismatch"):
         load_binance_months(tmp_path, "USDEUSDT", "binance_usdeusdt")
+
+
+def test_binance_triangle_cancels_quote_and_requires_all_legs_traded(tmp_path):
+    from www_events.runner import binance_triangle
+    t0 = 1_709_251_200_000  # 2024-03-01T00:00Z
+    times = [t0 + i * 60_000 for i in range(3)]
+
+    def write(symbol, closes, volumes):
+        name = f"{symbol}-1m-2024-03.zip"
+        rows = "\n".join(f"{t},{c},{c},{c},{c},{v},{t + 59_999},1,1,1,1,0" for t, c, v in zip(times, closes, volumes))
+        path = tmp_path / name
+        with zipfile.ZipFile(path, "w") as zf:
+            zf.writestr(name.replace(".zip", ".csv"), rows + "\n")
+        (tmp_path / (name + ".CHECKSUM")).write_text(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {name}\n")
+
+    # BTC/TUSD 100.0, TUSD/USDT 0.99, BTC/USDT 99.0 -> parity holds exactly although TUSD is off peg.
+    write("BTCTUSD", [100.0, 100.0, 100.0], [1, 1, 0])
+    write("TUSDUSDT", [0.99, 0.99, 0.99], [1, 1, 1])
+    write("BTCUSDT", [99.0, 99.99, 99.0], [1, 1, 1])
+    wedge, prov = binance_triangle(tmp_path, "TUSD")
+    assert wedge["wedge_bps"].iloc[0] == pytest.approx(0.0, abs=1e-9)
+    assert wedge["wedge_bps"].iloc[1] == pytest.approx(10_000 * np.log(99.0 / 99.99))
+    assert wedge["observed"].iloc[:3].tolist() == [True, True, False]  # third minute: BTC/TUSD untraded
+    assert set(prov) == {"BTCTUSD", "TUSDUSDT", "BTCUSDT"}

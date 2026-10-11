@@ -192,6 +192,26 @@ def load_binance_months(directory: Path, symbol: str, prefix: str) -> tuple[pd.D
     return grid, {"source": "binance_vision_monthly_klines", "files": manifest, "gaps": gap_summary(grid, prefix)}
 
 
+def binance_triangle(directory: Path, coin: str, quote: str = "USDT") -> tuple[pd.DataFrame, dict[str, Any]]:
+    """Within-venue triangle W = log BTC/coin + log coin/quote - log BTC/quote from Binance archives.
+
+    The quote currency cancels, so W does not depend on the quote's own USD value. ``observed`` requires a
+    traded minute on all three legs; missing minutes stay missing.
+    """
+    legs = {"btc_coin": f"BTC{coin}", "coin_quote": f"{coin}{quote}", "btc_quote": f"BTC{quote}"}
+    frames, prov = {}, {}
+    for name, symbol in legs.items():
+        prefix = "binance_" + symbol.lower()
+        grid, provenance = load_binance_months(directory, symbol, prefix)
+        frames[name] = grid.rename(columns=lambda c, p=prefix: c.replace(p + "_", ""))
+        prov[symbol] = provenance
+    index = frames["btc_coin"].index.intersection(frames["coin_quote"].index).intersection(frames["btc_quote"].index)
+    f = {k: v.reindex(index) for k, v in frames.items()}
+    wedge = 10_000 * (np.log(f["btc_coin"]["close"]) + np.log(f["coin_quote"]["close"]) - np.log(f["btc_quote"]["close"]))
+    observed = f["btc_coin"]["traded"] & f["coin_quote"]["traded"] & f["btc_quote"]["traded"]
+    return pd.DataFrame({"wedge_bps": wedge, "observed": observed & wedge.notna()}), prov
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--registry", type=Path, default=Path("configs/event_registry.json"))
@@ -205,6 +225,7 @@ def main() -> None:
     parser.add_argument("--quote-usd", help="optional quote/USD series (same source) to convert to USD")
     parser.add_argument("--btc", help="optional BTC/USD series (same source) for the volatility covariate")
     parser.add_argument("--triangle", choices=["usdc", "usdt"], help="IAQF only: within-venue triangle for DV4/DV5")
+    parser.add_argument("--triangle-coin", help="Binance only: coin for BTC/coin, coin/USDT, BTC/USDT triangle")
     args = parser.parse_args()
     event = next(e for e in load_registry(args.registry) if e["id"] == args.event_id)
     if args.iaqf_panel:
@@ -212,23 +233,24 @@ def main() -> None:
         quote, qprov = load_iaqf(args.iaqf_panel, args.quote_usd) if args.quote_usd else (None, None)
         s_prefix, q_prefix = args.stable, args.quote_usd
         btc = load_iaqf(args.iaqf_panel, args.btc)[0][f"{args.btc}_close"] if args.btc else None
-        wedge = None
+        wedge, wprov = None, None
         if args.triangle:
             from www_c3.fragmentation import build_wedges
             w = build_wedges(pd.read_parquet(args.iaqf_panel))
             wedge = pd.DataFrame({"wedge_bps": w[f"{args.triangle}_wedge_bps"], "observed": w[f"{args.triangle}_fresh"]})
+            wprov = {"source": "iaqf_panel", "triangle": args.triangle}
     else:
         s_prefix = "binance_" + args.stable.lower()
         stable, prov = load_binance_months(args.binance_dir, args.stable, s_prefix)
         q_prefix = "binance_" + args.quote_usd.lower() if args.quote_usd else None
         quote, qprov = load_binance_months(args.binance_dir, args.quote_usd, q_prefix) if args.quote_usd else (None, None)
-        wedge = None  # Binance triangles need BTC/q and BTC/USDT archives; added when data are authorized
+        wedge, wprov = binance_triangle(args.binance_dir, args.triangle_coin) if args.triangle_coin else (None, None)
         btc = (load_binance_months(args.binance_dir, args.btc, "binance_" + args.btc.lower())[0]
                ["binance_" + args.btc.lower() + "_close"] if args.btc else None)
     result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix, btc, wedge)
     result["measured_utc"] = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%MZ")
     result["plan"]["analysis_status"] = analysis_status(event["id"], result["plan"]["confirmatory_eligible"])
-    result["provenance"] = {"stable": prov, "quote_usd": qprov}
+    result["provenance"] = {"stable": prov, "quote_usd": qprov, "triangle": wprov}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     r1 = result["r1"] or {}

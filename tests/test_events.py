@@ -117,7 +117,7 @@ def test_coverage_rows_mark_listed_months_and_local_observations():
     evs = [e for e in events() if e["id"] in {"E2025-10-USDE-BINANCE", "E2023-03-USDC-SVB"}]
     xml = (ROOT / "tests/fixtures/events/usdeusdt_listing.xml").read_text()
     listings = {"USDEUSDT": parse_monthly_kline_listing(xml, "USDEUSDT"), "USDCUSDT": {}}
-    rows = coverage_rows(evs, lambda s: listings[s])
+    rows = coverage_rows(evs, lambda s: listings.get(s, {}))  # unlisted symbols: NOT_LISTED
     summary = summarize(rows)
     usde = summary["E2025-10-USDE-BINANCE|binance|USDEUSDT"]
     assert usde["event"] == {"LISTED": 2} and usde["control"] == {"LISTED": 7}

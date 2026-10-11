@@ -94,3 +94,17 @@ The runner now emits a `plan` block for each event (`src/www_events/plan_dvs.py`
   - The IAQF panel carries closes through no-trade minutes, so its "missing minutes" are always 0. Activity shows up through the traded-minute share instead.
 - **DV4** (USDC triangle wedge; event window minus baseline, median \|W\|): **+6.5 bps** (95% CI 4.6–9.4). This uses the plan's event window (03-10 → 03-13), so it differs slightly from C3's calendar-regime figure of +6.08 bps for 03-10 → 03-12.
 - **DV5** (half-life of D ÷ half-life of W in the event window, 15-minute medians): 1,212 min ÷ 12.8 min ≈ **95**, in the direction H2 predicts. This is exploratory and is excluded from the H2 count, which stays `INSUFFICIENT_EVENTS`.
+
+## Triangle legs for DV4/DV5 (Binance public archives)
+
+Checked on 2026-10-11 from listing metadata only. These files are listed in `reports/events/coverage_matrix.json`. Each triangle also uses BTCUSDT, which is listed for every window.
+
+| Event | Triangle | BTC/coin listing |
+|---|---|---|
+| UST 2022 | BTCUST · USTUSDT · BTCUSDT | listed 2022-04 → 2022-05 (covers all windows) |
+| BUSD placebo 2023 | BTCBUSD · BUSDUSDT · BTCUSDT | listed |
+| TUSD 2024 | BTCTUSD · TUSDUSDT · BTCUSDT | listed |
+| FDUSD 2025 | BTCFDUSD · FDUSDUSDT · BTCUSDT | listed |
+| USDe 2025 | — | **BTCUSDE not listed**, so DV4/DV5 are undefined on Binance |
+
+`runner.binance_triangle` builds W = log BTC/coin + log coin/USDT − log BTC/USDT. USDT cancels, so W is a valid within-venue measure even when USDT itself is off peg. A minute counts as observed only if all three legs traded in it. Run with `--binance-dir … --triangle-coin TUSD`.
