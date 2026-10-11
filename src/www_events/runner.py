@@ -20,6 +20,7 @@ from www_c3.fragmentation import ar1_to_parity
 from www_c3.robustness import horizon_medians
 
 from .binance_klines import gap_summary, read_kline_zip, sha256_file, to_minute_grid, verify_checksum
+from .plan_dvs import coverage_gate, covariates, dv1_contrast, dv3_recovery_minutes, usdt_stability_gate
 from .registry import RULES, _parse_date, analysis_windows, load_registry, r1_severity
 
 
@@ -71,7 +72,8 @@ def window_diagnostics(series: pd.DataFrame, peg: float = 1.0) -> dict[str, Any]
 
 
 def run_event(event: Mapping[str, Any], stable: pd.DataFrame, s_prefix: str, quote_basis: str,
-              quote_usd: pd.DataFrame | None = None, q_prefix: str | None = None) -> dict[str, Any]:
+              quote_usd: pd.DataFrame | None = None, q_prefix: str | None = None,
+              btc_close: pd.Series | None = None) -> dict[str, Any]:
     windows = analysis_windows(_parse_date(event["reported_window_utc"]["start"]),
                                _parse_date(event["reported_window_utc"]["end"]))
     series = usd_price(stable, s_prefix, quote_basis, quote_usd, q_prefix)
@@ -98,7 +100,54 @@ def run_event(event: Mapping[str, Any], stable: pd.DataFrame, s_prefix: str, quo
     result["coverage_ok"] = all(result["windows"][w]["coverage_complete"] for w in ("baseline", "event", "recovery"))
     if series["basis"].iloc[0].endswith("_RELATIVE"):
         result["warning"] = "deviation measured against the quote stablecoin, not USD; R1 is not USD-verified"
+    result["plan"] = plan_block(windows, series, stable[f"{s_prefix}_present"], quote_basis, quote_usd, q_prefix,
+                                btc_close)
     return result
+
+
+def plan_block(windows: Mapping[str, Mapping[str, str]], series: pd.DataFrame, present: pd.Series, quote_basis: str,
+               quote_usd: pd.DataFrame | None, q_prefix: str | None, btc_close: pd.Series | None) -> dict[str, Any]:
+    """Pre-analysis-plan quantities (docs/PRE_ANALYSIS_PLAN.md sections 2, 5 and 6)."""
+    dev = 10_000 * np.log(series["price"].astype(float))
+    traded = series["traded"].fillna(False).astype(bool)
+    present = present.reindex(series.index).fillna(False).astype(bool)
+    bounds = {name: window_bounds(w) for name, w in windows.items()}
+
+    def part(x: pd.Series, name: str) -> pd.Series:
+        lo, hi = bounds[name]
+        return x[(x.index >= lo) & (x.index < hi)]
+
+    gates = {name: coverage_gate(part(present, name), int((hi - lo) / pd.Timedelta("1min")))
+             for name, (lo, hi) in bounds.items()}
+    reference = "control" if gates["control"]["passes"] else "baseline"
+    out: dict[str, Any] = {"coverage_gates": gates, "dv1_reference_window": reference,
+                           "dv1_reference_is_fallback": reference != "control"}
+    if gates["event"]["passes"] and gates[reference]["passes"]:
+        out["dv1"] = dv1_contrast(part(dev[traded], "event").to_numpy(), part(dev[traded], reference).to_numpy())
+    else:
+        out["dv1"] = {"estimate": None, "reason": "coverage gate failed"}
+    out["dv3"] = dv3_recovery_minutes(dev, traded, *bounds["event"], bounds["recovery"][1])
+    if quote_basis == "USD":
+        out["usdt_gate"] = {"passes": True, "reason": "USD-quoted series; gate not applicable"}
+    elif quote_usd is not None and q_prefix is not None:
+        q = quote_usd.reindex(series.index)
+        q_dev = 10_000 * np.log(q[f"{q_prefix}_close"].where(q[f"{q_prefix}_traded"].fillna(False).astype(bool)))
+        out["usdt_gate"] = usdt_stability_gate(part(q_dev, "event").to_numpy())
+    else:
+        out["usdt_gate"] = {"passes": False, "reason": "no quote/USD leg supplied"}
+    out["confirmatory_eligible"] = bool(out["dv1"].get("estimate") is not None and out["usdt_gate"]["passes"]
+                                        and not str(series["basis"].iloc[0]).endswith("_RELATIVE"))
+    out["covariates"] = {name: covariates(None if btc_close is None else part(btc_close, name),
+                                          part(present, name), part(traded, name)) for name in bounds}
+    return out
+
+
+def analysis_status(event_id: str, eligible: bool, freeze_path: Path = Path("configs/plan_freeze.json")) -> str:
+    """EXPLORATORY for events measured before the plan freeze; otherwise CONFIRMATORY only if data-eligible."""
+    measured_before = json.loads(freeze_path.read_text())["measured_before_freeze"] if freeze_path.is_file() else []
+    if event_id in measured_before:
+        return "EXPLORATORY"
+    return "CONFIRMATORY" if eligible else "DESCRIPTIVE_ONLY"
 
 
 def load_iaqf(panel_path: Path, prefix: str) -> tuple[pd.DataFrame, dict[str, Any]]:
@@ -142,18 +191,24 @@ def main() -> None:
     parser.add_argument("--stable", required=True, help="IAQF prefix (e.g. bnus_usdcusd) or Binance symbol")
     parser.add_argument("--quote-basis", required=True, choices=["USD", "USDT", "BUSD"])
     parser.add_argument("--quote-usd", help="optional quote/USD series (same source) to convert to USD")
+    parser.add_argument("--btc", help="optional BTC/USD series (same source) for the volatility covariate")
     args = parser.parse_args()
     event = next(e for e in load_registry(args.registry) if e["id"] == args.event_id)
     if args.iaqf_panel:
         stable, prov = load_iaqf(args.iaqf_panel, args.stable)
         quote, qprov = load_iaqf(args.iaqf_panel, args.quote_usd) if args.quote_usd else (None, None)
         s_prefix, q_prefix = args.stable, args.quote_usd
+        btc = load_iaqf(args.iaqf_panel, args.btc)[0][f"{args.btc}_close"] if args.btc else None
     else:
         s_prefix = "binance_" + args.stable.lower()
         stable, prov = load_binance_months(args.binance_dir, args.stable, s_prefix)
         q_prefix = "binance_" + args.quote_usd.lower() if args.quote_usd else None
         quote, qprov = load_binance_months(args.binance_dir, args.quote_usd, q_prefix) if args.quote_usd else (None, None)
-    result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix)
+        btc = (load_binance_months(args.binance_dir, args.btc, "binance_" + args.btc.lower())[0]
+               ["binance_" + args.btc.lower() + "_close"] if args.btc else None)
+    result = run_event(event, stable, s_prefix, args.quote_basis, quote, q_prefix, btc)
+    result["measured_utc"] = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%MZ")
+    result["plan"]["analysis_status"] = analysis_status(event["id"], result["plan"]["confirmatory_eligible"])
     result["provenance"] = {"stable": prov, "quote_usd": qprov}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")

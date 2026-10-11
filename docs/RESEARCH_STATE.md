@@ -22,7 +22,7 @@ Cross-check against `git log` and the code before acting. Update at the end of e
 | M2 literature + generated tables | m2/literature-and-tables | dac411f | pushed, no PR |
 | C4b v3 swap + redemption window | c4b/v3-and-redemption-window | 15459bf | pushed, no PR |
 | M3 figures | m3/figures | d4af74b | pushed, no PR |
-| P1 pre-analysis plan (frozen) | p1/pre-analysis-plan | see iteration log | pushed, no PR |
+| P1 pre-analysis plan (frozen) + plan DVs | p1/pre-analysis-plan | see iteration log | pushed, no PR |
 
 ## Component status
 
@@ -74,7 +74,8 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 ## Prioritized next tasks
 
 
-1. **Implement plan DVs in the runner:** DV3 recovery time (trailing, no look-ahead), event−control DV1 bootstrap test with p-value, USDT/USD stability gate, 50% coverage gate, alternative-explanation covariates (BTC realized vol, activity, missing-minute runs). Synthetic tests; re-run anchor (exploratory).
+1. **Cross-event report builder:** read all per-event protocol reports, apply the plan's decision rules (H1 Holm counts, placebo check, OOS replication, H2 sign count, mechanism-grouped random effects) and emit `reports/events/cross_event_summary.json` plus generated paper table; it must output 'insufficient events' honestly with the current single exploratory event.
+2. **DV4/DV5 in the runner** (triangle wedge contrast and half-life ratio) where triangle legs exist.
 2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
 3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
 
@@ -94,4 +95,5 @@ Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_
 | 9 | 07:10 | m2 @ dac411f | Related work with 7 newly verified references; generated registry table; paper tests extended | 119 passed |
 | 10 | 07:35 | c4b @ 15459bf | Uniswap v3 single-range swap; DST-aware redemption window | 125 passed |
 | 11 | 08:20 | m3 @ d4af74b | Deterministic figures (timeline, coverage heatmap, anchor D vs W) wired into the paper; matplotlib dependency | 130 passed |
-| 12 | 08:50 | p1 @ (this commit) | Frozen pre-analysis plan + hash test + amendments log; DL random effects, Holm, sign test | 137 passed |
+| 12 | 08:50 | p1 @ c94425c | Frozen pre-analysis plan + hash test + amendments log; DL random effects, Holm, sign test | 137 passed |
+| 13 | 09:25 | p1 @ (this commit) | Plan DVs (DV1 bootstrap test, DV3 trailing recovery, gates, covariates) in runner; amendment A1 (DV3 window clipped at extreme); anchor re-run EXPLORATORY | 144 passed |

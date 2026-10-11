@@ -81,3 +81,14 @@ A Binance event would run with `--binance-dir data/raw/binance --stable USDEUSDT
 | control | 02-04 → 02-10 | not covered | — | — | — | — |
 
 **Interpretation, used to design the cross-event analysis.** The *peg dislocation* (USDC's own USD price) persisted for about a day per half-life during the event. Over the same window, the *within-venue triangle wedge* (C3) reverted within minutes at minute resolution and within about 13–16 minutes on 15-minute bins. These are two separate objects. Cross-quote arbitrage kept relative prices aligned while the USD value of USDC itself stayed dislocated, which points to redemption and settlement frictions rather than cross-quote execution. This is a descriptive contrast for one event. Treat the half-life as a description of the window, not a structural estimate: the level moved away from par and back within the window. Whether the same separation holds across events is the first cross-event question for E2.
+
+## Pre-analysis-plan quantities (anchor, EXPLORATORY)
+
+The runner now emits a `plan` block for each event (`src/www_events/plan_dvs.py`), implementing plan sections 2, 5 and 6 and amendment A1. Anchor values below come from `reports/events/E2023-03-USDC-SVB_protocol.json`. The anchor was measured before the freeze, so they are labelled `EXPLORATORY` and excluded from every confirmatory count.
+
+- **DV1.** The control window (February 2023) has 0% coverage, so the reference falls back to the baseline, and the result is flagged. Median \|D\| in the event window minus the baseline is **+208 bps** (95% CI 92–336, block-bootstrap SE 74). The p-value sits at its floor of 1/1,000 draws.
+- **DV3.** The extreme was −1,470 bps at 2023-03-11 07:55 UTC. The trailing median \|D\| (from the extreme onward) first fell below 25 bps at 2023-03-14 04:19 UTC, giving a recovery time of **4,104 minutes (≈ 68 h)**, uncensored.
+- **Covariates (associations only).**
+  - BTC/USD realized volatility: 40 bps/h in the baseline, 80 in the event window, 85 in recovery. Market-wide volatility roughly doubled, which is an alternative explanation to report next to any capacity interpretation.
+  - Traded-minute share on the USDC/USD leg: 19% in the baseline, 79% in the event window, 29% in recovery.
+  - The IAQF panel carries closes through no-trade minutes, so its "missing minutes" are always 0. Activity shows up through the traded-minute share instead.

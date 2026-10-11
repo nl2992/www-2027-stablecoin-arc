@@ -1,6 +1,82 @@
 {
   "coverage_ok": true,
   "event_id": "E2023-03-USDC-SVB",
+  "measured_utc": "2026-10-11T13:17Z",
+  "plan": {
+    "analysis_status": "EXPLORATORY",
+    "confirmatory_eligible": true,
+    "covariates": {
+      "baseline": {
+        "btc_realized_vol_bps_per_hour": 39.62133804973957,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.19305555555555556
+      },
+      "control": {
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": null
+      },
+      "event": {
+        "btc_realized_vol_bps_per_hour": 80.47327536390738,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.7921875
+      },
+      "recovery": {
+        "btc_realized_vol_bps_per_hour": 85.32578346360656,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.28660714285714284
+      }
+    },
+    "coverage_gates": {
+      "baseline": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "control": {
+        "passes": false,
+        "present_share": 0.0
+      },
+      "event": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "recovery": {
+        "passes": true,
+        "present_share": 1.0
+      }
+    },
+    "dv1": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        92.40986661913621,
+        335.60196492301867
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 208.1724325505496,
+      "p_value": 0.001,
+      "se": 74.08773770829045
+    },
+    "dv1_reference_is_fallback": true,
+    "dv1_reference_window": "baseline",
+    "dv3": {
+      "censored": false,
+      "extreme_abs_bps": 1469.9302374066012,
+      "extreme_utc": "2023-03-11T07:55:00+00:00",
+      "recovered_utc": "2023-03-14T04:19:00+00:00",
+      "recovery_minutes": 4104.0
+    },
+    "usdt_gate": {
+      "passes": true,
+      "reason": "USD-quoted series; gate not applicable"
+    }
+  },
   "price_basis": "USD",
   "provenance": {
     "quote_usd": null,
