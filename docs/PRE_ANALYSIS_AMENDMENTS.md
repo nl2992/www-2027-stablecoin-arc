@@ -30,3 +30,16 @@ Consequences:
 **Reason.** With two USD venues available, choosing between them after seeing results would allow venue shopping. This order follows from A2 and the plan's existing preference for the anchor's venue family. It is fixed before any Bitstamp-based measurement.
 
 **Data seen.** Bitstamp archives were downloaded but **not analysed** when this was written. Earlier Binance.US results for all events had been seen (see A2).
+
+## A4 — 2026-10-11 (UTC), sections 1 and 2, UST series continuation (written **before** any USTC data were acquired or measured; user-approved pre-registration)
+
+**Rule.** The UST event series is built from Binance USTUSDT up to and including its last published minute (2022-05-13 00:49 UTC). From the first minute after that, it continues with Binance USTCBUSD, converted to USD as USTC/BUSD × BUSD/USDT (Binance) × USDT/USD (Binance.US, which is valid under A2 in 2022). A minute counts as traded only if every leg in use traded. Minutes between the two series stay missing; they are never interpolated. R1, R3 coverage and DV1–DV5 are then computed on this spliced series exactly as for every other event. Within-venue triangle measures (DV4, DV5) use only the pre-delisting BTCUST leg, and are undefined where it is absent.
+
+**Preconditions,** checked from documentation and listing metadata before any price is read:
+- (a) Binance documentation identifies USTC as the same Terra token previously listed as UST.
+- (b) The USTCBUSD series starts at or after the USTUSDT series ends.
+- (c) BUSDUSDT and Binance.US USDTUSD cover the recovery window.
+
+If any precondition fails, the splice is not used and UST is recorded as not acceptable under R3. The decision is logged either way.
+
+**Data seen.** USTUSDT through 2022-05-13 00:49 had been measured (status DATA_VERIFIED, recovery coverage 0%). No USTC, BUSDUSDT-2022-05 or spliced-series price had been acquired or analysed. Listing metadata showing USTCBUSD files from 2022-05 had been seen. Execution waits for independent review of the Phase 0 audit.
