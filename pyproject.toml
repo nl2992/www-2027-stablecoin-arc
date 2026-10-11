@@ -5,15 +5,19 @@ build-backend = "hatchling.build"
 [project]
 name = "www-stablecoin-arc"
 version = "0.1.0"
-description = "C0 source and data-quality audit for stablecoin arbitrage restoration capacity"
+description = "Reproducible source audits and order-book validation for stablecoin arbitrage research"
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "pyarrow>=17,<25"]
+
+[project.scripts]
+www-c1-replay = "www_c1.cli:main"
+www-c1-coverage = "www_c1.coverage:main"
 
 [dependency-groups]
 dev = ["pytest>=8,<10"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/www_c0"]
+packages = ["src/www_c0", "src/www_c1"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

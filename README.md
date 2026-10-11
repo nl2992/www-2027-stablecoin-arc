@@ -25,3 +25,7 @@ uv run python -m www_c0.audit \
 Read [`docs/c0_review_packet.md`](docs/c0_review_packet.md) before proceeding to C1. C0 deliberately stops before capacity estimation.
 
 Reproducibility has three levels: (1) synthetic validation is fully repository-contained; (2) the measured panel report requires the external IAQF parquet and exact source revision; (3) CEX and Ethereum feasibility is documented from cited sources, while crisis-day L2 replay and historical contract-state validation remain unverified. The committed panel report preserves the original machine-specific input path as provenance, so that path will differ on another computer.
+
+## C1 order-book validation
+
+The C1 replay prototype is under `src/www_c1/`. Run `uv run pytest -q` for C0+C1 synthetic tests. The local first-of-month BTCUSD sample can be replayed with the command in [`docs/c1_orderbook_validation.md`](docs/c1_orderbook_validation.md); licensed source data are ignored by Git. Crisis-period Binance.US files for March 10–12 remain access-blocked without authenticated subscription access, so no crisis-day replay or capacity estimate is claimed. See [`docs/c1_review_packet.md`](docs/c1_review_packet.md).
