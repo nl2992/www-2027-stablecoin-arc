@@ -15,10 +15,18 @@ Code: `src/www_capacity/orderbook.py`. Tests: `tests/test_capacity.py`, which ha
 - latency, and book changes during execution;
 - queue position;
 - hidden or iceberg liquidity;
-- the negative-wedge direction (the mirrored loop);
 - maker rebates and volume-tiered fees;
 - withdrawal and transfer delays between venues;
 - redemption limits and banking hours (the primary market);
-- AMM swap math (Curve, Uniswap), gas, and MEV.
+- Uniswap v3 concentrated liquidity, gas, and MEV.
 
 The C1 replay engine supplies book states through `levels_from_book`. Because normalized feeds lack native sequence IDs, any capacity computed from them inherits the disclosed continuity limitation.
+
+## Added in iteration 8
+
+- **Negative-wedge loop** (`triangle_restoration_reverse`). The loop is USD → q (q/USD asks) → BTC (BTC/q asks) → USD (BTC/USD bids), sized in BTC. It has the same bisection, binding-constraint labels and USD inventory cap as the forward loop.
+- **AMM math** (`src/www_capacity/amm.py`), in integer arithmetic:
+  - Curve StableSwap `get_D` / `get_y` / `get_dy`. These follow the structure of the legacy 3pool contract: balances normalized by RATES, `Ann = A·N`, the fee taken on output, and `FEE_DENOMINATOR = 1e10`.
+  - The Uniswap v2 `getAmountOut` formula.
+
+  Tests cover the invariant, decimals, imbalance pricing, sensitivity to the amplification parameter, and one hand-computed v2 output. **These are not yet validated against block-pinned on-chain `get_dy` calls**; that requires an authorized archive endpoint (C5). Until then they are reference implementations used on synthetic states only.

@@ -145,24 +145,67 @@ def triangle_restoration(btc_usd_asks: Sequence[Level], btc_q_bids: Sequence[Lev
         if affordable < hi:
             hi, limited = affordable, "inventory"
 
+    return _restoration(lambda q: _loop_pnl(q, btc_usd_asks, btc_q_bids, q_usd_bids, f), hi, limited,
+                        initial_bps, tol_btc)
+
+
+def _restoration(pnl, hi: float, limited: str, initial_bps: float, tol: float) -> LoopResult:
+    """Shared bisection: largest quantity in [0, hi] at which the marginal loop unit still pays."""
+
     def marginal_positive(q: float) -> bool:
-        step = max(tol_btc, 1e-12)
-        a, ok_a = _loop_pnl(q, btc_usd_asks, btc_q_bids, q_usd_bids, f)
-        b, ok_b = _loop_pnl(q + step, btc_usd_asks, btc_q_bids, q_usd_bids, f)
+        step = max(tol, 1e-12)
+        a, ok_a = pnl(q)
+        b, ok_b = pnl(q + step)
         return ok_a and ok_b and b > a
 
-    if marginal_positive(hi - 2 * tol_btc):
+    if marginal_positive(hi - 2 * tol):
         q_star = hi
     else:
         lo, top_q = 0.0, hi
-        while top_q - lo > tol_btc:
+        while top_q - lo > tol:
             mid = (lo + top_q) / 2
             if marginal_positive(mid):
                 lo = mid
             else:
                 top_q = mid
         q_star = lo
-        _, still_fillable = _loop_pnl(q_star + 4 * tol_btc, btc_usd_asks, btc_q_bids, q_usd_bids, f)
+        _, still_fillable = pnl(q_star + 4 * tol)
         limited = "marginal_parity" if still_fillable else "depth"
-    profit, _ = _loop_pnl(q_star, btc_usd_asks, btc_q_bids, q_usd_bids, f)
+    profit, _ = pnl(q_star)
     return LoopResult(q_star, profit, limited, initial_bps)
+
+
+def _reverse_pnl(b: float, q_usd_asks, btc_q_asks, btc_usd_bids, f: float) -> tuple[float, bool, float]:
+    buy_btc = walk(btc_q_asks, b)
+    q_needed = buy_btc.quote_notional * (1 + f)
+    buy_q = walk(q_usd_asks, q_needed)
+    usd_cost = buy_q.quote_notional * (1 + f)
+    sell = walk(btc_usd_bids, b)
+    complete = buy_btc.complete and buy_q.complete and sell.complete
+    return sell.quote_notional * (1 - f) - usd_cost, complete, usd_cost
+
+
+def triangle_restoration_reverse(q_usd_asks: Sequence[Level], btc_q_asks: Sequence[Level],
+                                 btc_usd_bids: Sequence[Level], *, fee_bps: float = 0.0,
+                                 max_usd: float | None = None, tol_btc: float = 1e-9) -> LoopResult:
+    """Negative-wedge loop: USD -> q (q/USD asks) -> BTC (BTC/q asks) -> USD (BTC/USD bids), sized in BTC."""
+    f = fee_bps / 1e4
+    if not (q_usd_asks and btc_q_asks and btc_usd_bids):
+        raise ValueError("all three legs need at least one level")
+    top = btc_usd_bids[0][0] * (1 - f) / (btc_q_asks[0][0] * (1 + f) * q_usd_asks[0][0] * (1 + f))
+    initial_bps = 1e4 * (top - 1)
+    if initial_bps <= 0:
+        return LoopResult(0.0, 0.0, "marginal_parity", initial_bps)
+    hi, limited = min(sum(s for _, s in btc_q_asks), sum(s for _, s in btc_usd_bids)), "depth"
+    if max_usd is not None:
+        lo_b, hi_b = 0.0, hi
+        if _reverse_pnl(hi, q_usd_asks, btc_q_asks, btc_usd_bids, f)[2] > max_usd:
+            while hi_b - lo_b > tol_btc:  # USD cost is increasing in b
+                mid = (lo_b + hi_b) / 2
+                if _reverse_pnl(mid, q_usd_asks, btc_q_asks, btc_usd_bids, f)[2] <= max_usd:
+                    lo_b = mid
+                else:
+                    hi_b = mid
+            hi, limited = lo_b, "inventory"
+    return _restoration(lambda b: _reverse_pnl(b, q_usd_asks, btc_q_asks, btc_usd_bids, f)[:2], hi, limited,
+                        initial_bps, tol_btc)
