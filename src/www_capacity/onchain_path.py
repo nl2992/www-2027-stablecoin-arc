@@ -48,7 +48,8 @@ def read_state(call, pool: str, n: int, block: int, decimals: list[int], metapoo
     return PoolState(balances, rates, decimals, eth("A()"), eth("fee()"), usd)
 
 
-def sample_window(call, pool, n, s, cps, metapool, decimals, window, latest) -> list[dict[str, Any]]:
+def sample_window(call, pool, n, s, cps, metapool, decimals, window, latest, step_seconds: int = SIX_HOURS
+                  ) -> list[dict[str, Any]]:
     start = int(pd.Timestamp(window["start"], tz="UTC").timestamp())
     end = int((pd.Timestamp(window["end"], tz="UTC") + pd.Timedelta("1D")).timestamp())
     blk = block_at_or_before(call, start, latest)["number"] + 1
@@ -61,10 +62,12 @@ def sample_window(call, pool, n, s, cps, metapool, decimals, window, latest) -> 
         st = read_state(call, pool, n, blk, decimals, metapool)
         total_usd = sum(b / 10 ** d * u for b, d, u in zip(st.balances, decimals, st.usd_per_token))
         out.append({"block": blk, "timestamp_utc": pd.Timestamp(ts, unit="s", tz="UTC").isoformat(),
-                    "A": st.amp, "fee": st.fee, "share_of_stressed_coin":
+                    "A": st.amp, "fee": st.fee, "balances": [str(b) for b in st.balances],
+                    "rates": [str(r) for r in st.rates], "usd_per_token": list(st.usd_per_token),
+                    "share_of_stressed_coin":
                     (st.balances[s] / 10 ** decimals[s] * st.usd_per_token[s]) / total_usd,
                     "pool_usd": total_usd, "capacity": capacity_table(st, s, cps)})
-        blk += SIX_HOURS // (12 if blk >= MERGE_BLOCK else 13)  # ~6h: 1,800 post-Merge / ~1,660 pre-Merge
+        blk += step_seconds // (12 if blk >= MERGE_BLOCK else 13)  # 12 s slots post-Merge, ~13 s before
     return out
 
 
@@ -94,6 +97,8 @@ def run(call, registry) -> dict[str, Any]:
                     for c in coins]
         per_window = {name: sample_window(call, pool, n, s, cps, metapool, decimals, w, latest)
                       for name, w in windows.items()}
+        per_window["event_hourly"] = sample_window(call, pool, n, s, cps, metapool, decimals, windows["event"],
+                                                   latest, step_seconds=3600)
         summary = {name: summarize(v) for name, v in per_window.items()}
         ratios = {}
         for k in (per_window["event"][0]["capacity"].keys() if per_window["event"] else []):
@@ -110,7 +115,7 @@ def run(call, registry) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path("reports/c6/onchain_capacity.json"))
-    parser.add_argument("--budget", type=int, default=3000)
+    parser.add_argument("--budget", type=int, default=6000)
     parser.add_argument("--spacing", type=float, default=0.1)
     args = parser.parse_args()
     endpoint = endpoint_from_env()
