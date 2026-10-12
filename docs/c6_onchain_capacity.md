@@ -29,6 +29,11 @@ Only pools whose reproduced state was also validated against a real historical s
 - **Samples.** One block about every 6 hours, from the event's baseline start to its recovery end (R3 windows). Steps are 1,800 blocks after the Merge and 1,640 blocks before it. The actual timestamp of each sampled block is recorded.
 - **Per sample:** the block header, and A, fee, balances and virtual price, all read at that block. A and fee are re-read every time, because they can change through governance ramps.
 
+## Robustness added 2026-10-12 (before re-running)
+
+- **Hourly event window.** The event window is additionally sampled hourly, reported as `event_hourly`. The 6-hour series stays primary.
+- **Counterpart valuation.** Each sample's raw state is stored, so capacity can be re-solved offline with counterparts valued at observed exchange prices instead of par. The price used is the last traded Binance.US minute at or before the sample, within 60 minutes; if none exists, par is used and flagged. This is applied to the SVB pool, where DAI depegged. June 2023 (Binance.US USD impaired, A2) and UST keep par or virtual-price valuation and are noted as such. The par-valued figures remain primary.
+
 ## Reported summaries (descriptive)
 
 - Per window (baseline, event, recovery): median, minimum and 10th percentile of \(A_b(\delta)\) and \(R_b(\delta)\), plus the pool's share of \(s\).
