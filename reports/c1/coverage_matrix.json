@@ -1,0 +1,416 @@
+{
+  "cells": {
+    "BTCUSD": {
+      "2023-03-10": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/10/BTCUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-10T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-10&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusd%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-11": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/11/BTCUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-11T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-11&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusd%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-12": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/12/BTCUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-12T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-12&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusd%22%5D%7D%5D&offset=0"
+        }
+      }
+    },
+    "BTCUSDC": {
+      "2023-03-10": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2021-01-14T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/10/BTCUSDC.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-10T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-10&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusdc%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-11": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2021-01-14T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/11/BTCUSDC.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-11T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-11&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusdc%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-12": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2021-01-14T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/12/BTCUSDC.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-12T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-12&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusdc%22%5D%7D%5D&offset=0"
+        }
+      }
+    },
+    "BTCUSDT": {
+      "2023-03-10": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/10/BTCUSDT.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-10T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-10&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusdt%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-11": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/11/BTCUSDT.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-11T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-11&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusdt%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-12": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/12/BTCUSDT.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-12T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-12&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22btcusdt%22%5D%7D%5D&offset=0"
+        }
+      }
+    },
+    "USDCUSD": {
+      "2023-03-10": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2020-07-24T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/10/USDCUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-10T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-10&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdcusd%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-11": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2020-07-24T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/11/USDCUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-11T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-11&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdcusd%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-12": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2020-07-24T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/12/USDCUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-12T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-12&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdcusd%22%5D%7D%5D&offset=0"
+        }
+      }
+    },
+    "USDCUSDT": {
+      "2023-03-10": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2021-12-24T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/10/USDCUSDT.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-10T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-10&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdcusdt%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-11": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2021-12-24T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/11/USDCUSDT.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-11T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-11&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdcusdt%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-12": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2021-12-24T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/12/USDCUSDT.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-12T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-12&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdcusdt%22%5D%7D%5D&offset=0"
+        }
+      }
+    },
+    "USDTUSD": {
+      "2023-03-10": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/10/USDTUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-10T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-10&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdtusd%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-11": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/11/USDTUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-11T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-11&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdtusd%22%5D%7D%5D&offset=0"
+        }
+      },
+      "2023-03-12": {
+        "access_state": "ACCESS_BLOCKED",
+        "instrument_metadata": {
+          "available_since": "2019-09-25T00:00:00.000Z",
+          "available_to": "2026-10-11T00:00:00.000Z",
+          "date_within_advertised_range": true,
+          "listed": true,
+          "supports_incremental_book_L2": true
+        },
+        "interpretation": "A failed unauthenticated request does not establish that licensed historical data are absent.",
+        "status": "METADATA_ONLY",
+        "unauthenticated_csv_probe": {
+          "error": "Not Found",
+          "http_status": 404,
+          "url": "https://datasets.tardis.dev/v1/binance-us/incremental_book_L2/2023/03/12/USDTUSD.csv.gz"
+        },
+        "unauthenticated_replay_api_probe": {
+          "http_status": 401,
+          "response_excerpt": "{\n  \"code\": 10,\n  \"message\": \"For unauthorized requests, only historical market data for the first day of each month is available (data for '2023-03-12T00:00:00.000Z' has been requested).\"\n}",
+          "url": "https://api.tardis.dev/v1/data-feeds/binance-us?from=2023-03-12&filters=%5B%7B%22channel%22%3A%22depth%22%2C%22symbols%22%3A%5B%22usdtusd%22%5D%7D%5D&offset=0"
+        }
+      }
+    }
+  },
+  "exchange_metadata_http_status": 200,
+  "exchange_metadata_url": "https://api.tardis.dev/v1/exchanges/binance-us",
+  "retrieved_at_utc": "2026-10-11T05:10:05.112187+00:00",
+  "unauthenticated_access_only": true
+}

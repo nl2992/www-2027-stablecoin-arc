@@ -1,0 +1,29 @@
+provider: Tardis.dev
+exchange: binance-us
+channel: incremental_book_L2
+required_dates_utc:
+  - 2023-03-10
+  - 2023-03-11
+  - 2023-03-12
+symbols:
+  BTCUSD:
+    role: dollar BTC reference and USDC/USD conversion leg
+    advertised_available_since: 2019-09-25
+  BTCUSDC:
+    role: BTC quoted in USDC
+    advertised_available_since: 2021-01-14
+  USDCUSD:
+    role: direct USDC/USD conversion leg
+    advertised_available_since: 2020-07-24
+  BTCUSDT:
+    role: BTC quoted in USDT; supplemental stablecoin reference
+    advertised_available_since: 2019-09-25
+  USDCUSDT:
+    role: USDC/USDT cross conversion
+    advertised_available_since: 2021-12-24
+  USDTUSD:
+    role: direct USDT/USD conversion leg
+    advertised_available_since: 2019-09-25
+access:
+  purchased_or_subscribed: false
+  api_key_used: false
