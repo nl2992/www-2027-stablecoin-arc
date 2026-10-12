@@ -1,5 +1,5 @@
 {
- "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only. A6 screen: Binance.US USD-quoted stablecoin klines through 2023-05 (same authorized free source).",
+ "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only. A6 screen: Binance.US USD-quoted stablecoin klines through 2023-05 (same authorized free source). Rescue search 2026-10-12 (user: brute-force directions to save the paper): same free sources, Binance.US USD-rail episode 2023-01..2025-10 and Bitstamp external-USD reference for the impairment window.",
  "records": [
   {
    "venue": "bitstamp",
@@ -3779,11 +3779,3693 @@
    "for_events": [
     "A6 systematic in-sample screen"
    ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-01.zip",
+   "bytes": 962471,
+   "sha256": "1a0643db6b7392dcbce7396fb7078751fdc23cd3c53ea05685126ad5e2f7a4b9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-01.zip",
+   "bytes": 633986,
+   "sha256": "faaaca9314c37a08115a3b464be0667bf7f6a14adb6fbed8b9b8e4d73453ce40",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-01.zip",
+   "bytes": 1943277,
+   "sha256": "b9ecfab47365a48357f9355fd23de6f5e3b3d8cf6942b125d2d008a24918fc60",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-01.zip",
+   "bytes": 1812191,
+   "sha256": "c67bad5fccf1cc61f446f32be60d1e2e3b841383c0ceb485d3e8fecd5e3b535f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-02.zip",
+   "bytes": 922464,
+   "sha256": "dd7b025eebee9191c5937f65dcf6c26b1c596a617cb2dbee507f9a79c09cf66c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-02.zip",
+   "bytes": 443915,
+   "sha256": "7231e2f51fa69f6d275c588516c44a10b37d8ed7f355a04c22e48390eb0ecbbc",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-02.zip",
+   "bytes": 1909227,
+   "sha256": "5dfc52d12278e3babf5cf46a571a9b1f824b8b4113feebd8470cbd6fab0a9a59",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-02.zip",
+   "bytes": 1704496,
+   "sha256": "ce8986d838ee15aa823c32eee855ff79a41e4135fc2b1f92792ca0939dfda6c4",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-03.zip",
+   "bytes": 933636,
+   "sha256": "5b61034dcfae9765a4b541fa27947162a85be05e4dd9984f2d920eb8b299e98b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-03.zip",
+   "bytes": 569637,
+   "sha256": "e7fdf74fe25cb0a3e8aa8d5b0bfb816dc467f0af3124671bb7a2ebf72a2af2c5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-03.zip",
+   "bytes": 2140283,
+   "sha256": "88eac13512dfbb9437abfe45ba529a05927d7f2da0549652300dea813231852e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-03.zip",
+   "bytes": 1953945,
+   "sha256": "80c38dc6f17a720604c84efa6b69b2468311e8211990d3f510a626fed18ccabf",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-04.zip",
+   "bytes": 977929,
+   "sha256": "2bf4e22462fa531960ead77b0738eeff7f4c4d08fc1e14aafde521a6017e2493",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-04.zip",
+   "bytes": 585548,
+   "sha256": "f3ec7fe099557d5f185a9179a37555fbb6960343f639a8600ab0b7806774e397",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-04.zip",
+   "bytes": 2019143,
+   "sha256": "ce730d9d007a4958d1361db6e4d054c0f0d701eba0b84089689e4ada33b91020",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-04.zip",
+   "bytes": 1793367,
+   "sha256": "b0106f906f16ac31d95b7581d234fbac32450e097d88eb772677cb6149f0e20d",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-05.zip",
+   "bytes": 1017045,
+   "sha256": "363b199df87cbce8b8ec02626300c88e1badce06f23d1eccb90fb59e5a89ede6",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-05.zip",
+   "bytes": 671016,
+   "sha256": "c87ba0b3db95467b09653e372600a9da8b13af4f4daa3f865aaf6eba770ca075",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-05.zip",
+   "bytes": 2010190,
+   "sha256": "bf85b70b66cf0f4bbcd6d8e79c379fe92e584277eefeb34bf8b0bbd53c977019",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-05.zip",
+   "bytes": 1672732,
+   "sha256": "4952ef1b68766680d2dbd4a534c047363798f1ab07e29663ed6e2351ac51618a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-06.zip",
+   "bytes": 1090845,
+   "sha256": "bfd2e32451d7b7a0bd2ec65630a55b9995846303d011716c8da777a187b00e57",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-06.zip",
+   "bytes": 556400,
+   "sha256": "e5ea344a43412e55b97b8cc4fd1def0bcc7a02fc7e13fa7ac055d1f0f979e85b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-06.zip",
+   "bytes": 1707712,
+   "sha256": "f1b940c550736eb03ba31acaf529e313b1e3b3348bb0057daf16b8d35cdea383",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-06.zip",
+   "bytes": 1476789,
+   "sha256": "a899fe6c46fce29b6088fc89b8fc28935fca1090c3dd173fe34be99e23c7fae5",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-07.zip",
+   "bytes": 947612,
+   "sha256": "215960c11851313936c1c411016ee9666d3098368853899fe327a117d79c4281",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2023-07.zip",
+   "bytes": 208656,
+   "sha256": "37acc13817475b40db6e5f7fb97c0a56b2fa3ca790b23a71cbb4cbe731c6a57d",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2023-07.zip",
+   "bytes": 567246,
+   "sha256": "40d07a2891c90f46d3f0519421fc00a65a95f55bb27579d905f51375e8ff7af2",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-07.zip",
+   "bytes": 1451901,
+   "sha256": "ea8059e48d6e8497fdb7d2544f4b0e0b5e11f2949940e97227ecd2edb1018432",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-08.zip",
+   "bytes": 629695,
+   "sha256": "b798feba4f870d2dcc1ce75de4c52fa51dca9120213ed64c617642a055749089",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-08.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-08.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-08.zip",
+   "bytes": 1316430,
+   "sha256": "676f19a3f007f9ca50b5b28756528a3d8c7e12258533045a08d642e182c3dd60",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-09.zip",
+   "bytes": 512192,
+   "sha256": "19af543ad1a286ab597867507a3ea1ce20eac0f61f043314e8f9d64d17605215",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-09.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-09.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-09.zip",
+   "bytes": 1335038,
+   "sha256": "344ee01c81cf94b6fe72477918552fc4e8d0af18596e043a3b1d6eddb2aa2472",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-10.zip",
+   "bytes": 547014,
+   "sha256": "35beb9b45a80def1b088a8ca263c0338f8b715e095a171fc69112cc21e993d5e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-10.zip",
+   "bytes": 1487210,
+   "sha256": "eaf372ae4ca6916c50bf39199f161b5ca0bc108d02aada3a98b9ed92b6786fb8",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-11.zip",
+   "bytes": 597702,
+   "sha256": "849a94609b7f68154ee3966cb5916f8b89fbb40c87710386b1d55cf288ea8c6b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-11.zip",
+   "bytes": 1571118,
+   "sha256": "0574ba9cdb51325a7f12cf9b5849b0b629642108ed653ba970bc55ba1de65d7c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2023-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2023-12.zip",
+   "bytes": 643027,
+   "sha256": "8366370653f6cb993b9287a36b92147a450af62b83eab99bedde21001bfce05f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2023-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2023-12.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2023-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2023-12.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2023-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2023-12.zip",
+   "bytes": 1676264,
+   "sha256": "ca8c6e48bfa82198215bde9bacda54f0360939127c59a3c6ff89c28372bbf7a7",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-01.zip",
+   "bytes": 538789,
+   "sha256": "dc9c4974ccfa0e82ec00a8d61977fd6b33f76b7c0fdfbc2869bd715971cc8fa0",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-01.zip",
+   "bytes": 1603292,
+   "sha256": "361eda1cb1db425ae968a38878208b4dd6d0a44d93de78a77a53a67ad1c6e1ef",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-02.zip",
+   "bytes": 615669,
+   "sha256": "a9aa410b3a6a108dcaf2132de34f58beafc0c5e1f26e1b797636f0478e9e7b24",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-02.zip",
+   "bytes": 1213008,
+   "sha256": "2ab506d2642a6b7d6744b27b9f7d66b1ecf297a2e8e43aee8d0f380fc98e01e8",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-03.zip",
+   "bytes": 924711,
+   "sha256": "a5d80f9b8fac929bd13cfb197706c8a64b988744427e75bf403683fcc2014dbd",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-03.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-03.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-03.zip",
+   "bytes": 1550327,
+   "sha256": "21fdf2f9c5aa4ddb96c018f437917768862dc4f2addda48206e70f0ce76a160d",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-04.zip",
+   "bytes": 631190,
+   "sha256": "4b5cbe3e6c90e070d0b3408abf64c07cd9fdbb80f15001e5a89acab7a6f104d9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-04.zip",
+   "bytes": 1252378,
+   "sha256": "2e59fd1639daf09acf9dd58fc8b8c46ef7ff469a063833229f1ddf489780cb20",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-05.zip",
+   "bytes": 597782,
+   "sha256": "16250b7c81d521586b624fb0ca35ba661dac39e99927eacfa310b2434bc5d9ef",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-05.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-05.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-05.zip",
+   "bytes": 1172561,
+   "sha256": "cad19b87ca08e168027df757b9f8dbe36a781b0652ad648e6b481a4b79357540",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-06.zip",
+   "bytes": 546592,
+   "sha256": "d9215670f567520ca5c803a7aa67cfe477f9587eadc03b9e477a42d88dc84c4f",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-06.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-06.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-06.zip",
+   "bytes": 973096,
+   "sha256": "9941f0687bd6f49fd51e40b9ba927be0390269c66b669f2af62ed068fa6d6d8e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-07.zip",
+   "bytes": 586911,
+   "sha256": "15e6a7ef5c1d5473f33050c3b5e32503ca01d82133ae1f0e8cf8b0108edc0172",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-07.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-07.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-07.zip",
+   "bytes": 1123449,
+   "sha256": "6290c2fcf77d71374ce823bcb7902d062b27782b00960e8925b71ab8a9ca82e1",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-08.zip",
+   "bytes": 523597,
+   "sha256": "1a4ffcb6a8fd42c0c4007277c1fb891d97d2a6e1a6d01a2c57fb0553d50abb84",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-08.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-08.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-08.zip",
+   "bytes": 1130138,
+   "sha256": "0726b8f67ee7bc0dba5969b8ed21d4985d3153c0c0eef1a9ba81fdecb9b7e71a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-09.zip",
+   "bytes": 503967,
+   "sha256": "ddde63ab90e3cc515c6c84561f2c11493952255cf35a1429c0b5c2b52353b2ab",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-09.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-09.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-09.zip",
+   "bytes": 1014083,
+   "sha256": "d21013f44f2eb40dd6f3c53caf89ac40630035ff086262c25f181e20a3a5e0e9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-10.zip",
+   "bytes": 489650,
+   "sha256": "291ade22a81d7b66f34a4f1b95ed199761b6a17af584395accf1435dc7363266",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-10.zip",
+   "bytes": 981261,
+   "sha256": "bbc1aa07eb75a0dad84161f71a0f2d89bb27db3db2b1db5e149e2ad679756118",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-11.zip",
+   "bytes": 639162,
+   "sha256": "a0b6ad737030fa8a534f6a30f8237cde9447ef550a636be5681d512da59e1d12",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-11",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-11.zip",
+   "bytes": 1114899,
+   "sha256": "0de25b8b6881b70606866779cea664279695b69728c497b68040506021879ab1",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2024-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2024-12.zip",
+   "bytes": 548371,
+   "sha256": "949e0c55487831b102f4084666e517bc67ef96fc87dc6040c6dc61af8db9a592",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2024-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2024-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2024-12.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2024-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2024-12.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2024-12",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2024-12.zip",
+   "bytes": 1100533,
+   "sha256": "fafad51f19475174c1934f6de2498abffea20be749a12d4a44cb6c3fbea6a7b8",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-01.zip",
+   "bytes": 501773,
+   "sha256": "87d28cf75ac04b8fc47b2ef9179e64be6286d45c29c95659ba4663a1ea39a418",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-01",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-01.zip",
+   "bytes": 996610,
+   "sha256": "ab96e51732a0edb8b1fecfc9bac32b9d51d5f5480d87b1a5fe6492f7c3531e2c",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-02.zip",
+   "bytes": 492579,
+   "sha256": "8f954fae33c699c13c9c9e95dea21c4ddb3efb1401561c04887f686b8f47941b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-02.zip",
+   "bytes": 75717,
+   "sha256": "977f565826e8498d7b703641f943a0dfa849e66a8a646a650dbaa4a673a2a76e",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-02.zip",
+   "bytes": 121673,
+   "sha256": "71e43b4d92996c4e3db30935d20ab8d949f1d7da81c22e3268ed0580b5422754",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-02",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-02.zip",
+   "bytes": 840792,
+   "sha256": "4d49cc16fa40c46893762c4ce22ba744baf0e1fc986a4bcfda583129a1084407",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-03.zip",
+   "bytes": 676094,
+   "sha256": "428d109f47797966a71ffe410c6de48b8bbc58d76e98f9f5297e861d1b844d34",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-03.zip",
+   "bytes": 280642,
+   "sha256": "6f325c6379a8c13e165cde2e325676fab00c5da2bd5c112b518bf717032a1dfb",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-03.zip",
+   "bytes": 380945,
+   "sha256": "f9d65293cfbf57745ef5af9e5dc2217a7f8368bae0f27adb9fcbd5c37c135ca4",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-03",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-03.zip",
+   "bytes": 828462,
+   "sha256": "4b4afa3413ce6575f81a45bb16532437e1ee38684b89f78d81d2d14c8234fb20",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-04.zip",
+   "bytes": 568578,
+   "sha256": "3ecfe244c0cdd5286199f6e2a9c564f6538f15da7c8f7de79cd7c9c20de12652",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-04.zip",
+   "bytes": 264807,
+   "sha256": "ab9f40b61f59cfc1c8421739f7590f31ec121d223da9c517c03ca7ab6ca30d9a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-04.zip",
+   "bytes": 353596,
+   "sha256": "c2618daf43c1354156c27a08f6739bbcacf1a5506d7912b1e65b0ca7edec33fd",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-04",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-04.zip",
+   "bytes": 791178,
+   "sha256": "60b46af7243a976f0fa1b66281096b162d335dc2afda36827acb54633625ce16",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-05.zip",
+   "bytes": 680567,
+   "sha256": "156463c52d7a69d410b969fe1e738d8eb9b8e657fbfe1c70a5d19b3db35d8dc1",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-05.zip",
+   "bytes": 283536,
+   "sha256": "8316184245ea700f48d58c64644706f2b54027f0dc410ebd5a339d1f0b715d39",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-05.zip",
+   "bytes": 379020,
+   "sha256": "acd9049932f0553db8049eb0082c476e4a6c5d23facbf88c4d51719fb7ebe3cd",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-05",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-05.zip",
+   "bytes": 827518,
+   "sha256": "9da519f049b2c3e48a477c917121954e97617d9d85f6c696e0a296947c84b6da",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-06.zip",
+   "bytes": 726469,
+   "sha256": "c7bd7c5d6c03e230b37d0b348d318ebf936314f24ee5de2d457b367bc45cfb85",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-06.zip",
+   "bytes": 265209,
+   "sha256": "09b16ceb6eceee033fe3aa3d26c85726f756a967a1321d940537717f23670e45",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-06.zip",
+   "bytes": 351400,
+   "sha256": "c7911add97681c134b86127272368d9cbfe5dbbf37b252e5ee2faad11d6458ec",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-06",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-06.zip",
+   "bytes": 768644,
+   "sha256": "cbc87d65b3c49717b0e155baf11a90b624ad3dc45ffc9a00d6338635cf1363c6",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-07.zip",
+   "bytes": 891424,
+   "sha256": "4dd6e218f0e217dde054f34abdd50f3ebfcea33adf170b37e4adfda7c3a1efd9",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-07.zip",
+   "bytes": 286621,
+   "sha256": "4c5528846e574be1f78124d4c0f64b028830ef3e7cb70a2c59dc81b31d294fff",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-07.zip",
+   "bytes": 417733,
+   "sha256": "0034ca68aa902528932f01e5213d48e95f68daaad2c6d47b8bf552c0d16705f0",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-07",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-07.zip",
+   "bytes": 934695,
+   "sha256": "8f85dbd626de7fd288a79995a4c3db8e9f24fdba181b488f8f6162fa289414a1",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-08.zip",
+   "bytes": 919693,
+   "sha256": "d24e9c82c058b09b4d443f45920c517a0405e127a95b761b267956deda369979",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-08.zip",
+   "bytes": 291166,
+   "sha256": "429a6a8f70a302a43e1c1a25cd7460b7046c3c28489fa87621e58304b663af4b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-08.zip",
+   "bytes": 488137,
+   "sha256": "7458b610de1d96289eb1f3ed38423f21b661eed81de62a1a2c53c26a0fb9580b",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-08",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-08.zip",
+   "bytes": 841089,
+   "sha256": "a22effd6bb6c55687239933043ecf7ab6ffb171b2eaacce7c8509a4564cfa114",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-09.zip",
+   "bytes": 900114,
+   "sha256": "7e6b5b37d377723418f46ae63378abbde48a726ee99e6ea9cd1297037839158a",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-09.zip",
+   "bytes": 286895,
+   "sha256": "480e8b9e9e00b9a42d6c4401a6e8b556555f89c66de3186addd231ece682c2ce",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-09.zip",
+   "bytes": 532206,
+   "sha256": "e3c9b9a7eb343e99b497d2f1dee72d797432ea0b92702333a1dcc65c441b3864",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-09",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-09.zip",
+   "bytes": 758009,
+   "sha256": "3ea11e0749b7cd5f72da035c5e16318b21f73b120cbc0871f87f718aeeca74d0",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDTUSD",
+   "month": "2025-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDTUSD-1m-2025-10.zip",
+   "bytes": 978042,
+   "sha256": "db454c74dfd99efbc22cadd28e6b8672d918bd753357f89e027f71afd86a2da3",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDTUSD/1m/USDTUSD-1m-2025-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "USDCUSD",
+   "month": "2025-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/USDCUSD-1m-2025-10.zip",
+   "bytes": 322705,
+   "sha256": "98ca5823e8498a98bee3a9804c9bcd62eeecb0605286b3c5070f074c06fc00a7",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/USDCUSD/1m/USDCUSD-1m-2025-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSD",
+   "month": "2025-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSD-1m-2025-10.zip",
+   "bytes": 842539,
+   "sha256": "a70ec75e3db02583b80b891724a3fb59b901b2f0c920305ba670d2f7267646a3",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSD/1m/BTCUSD-1m-2025-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "binance-us",
+   "symbol": "BTCUSDT",
+   "month": "2025-10",
+   "url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance_us/BTCUSDT-1m-2025-10.zip",
+   "bytes": 874810,
+   "sha256": "72cb08775fbd113f16097440600e96114d2ca6dd6a670cd8b14b1d1b4fea86d8",
+   "source_url": "https://data.binance.us/public_data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2025-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-07.csv",
+   "bytes": 2053026,
+   "sha256": "93c01e8d872fcf70e22c551d279fa773f54747c03a59a42df968a45220c58668",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 14865,
+   "first_utc": "2023-07-01T00:00Z",
+   "last_utc": "2023-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-07.csv",
+   "bytes": 2006918,
+   "sha256": "81970a83a16ea3343a04cccc78e445c097b192c07cab249fd98b3d26072f465c",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 42438,
+   "first_utc": "2023-07-01T00:00Z",
+   "last_utc": "2023-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-08",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-08.csv",
+   "bytes": 2064943,
+   "sha256": "e9ef20fae9e965346bf4a9aff1384d4a7a6a16d85d9c4bf67c26f7d0b97a0e52",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 11418,
+   "first_utc": "2023-08-01T00:00Z",
+   "last_utc": "2023-08-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-08",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-08.csv",
+   "bytes": 2002830,
+   "sha256": "f7ad0dda8fb3691cf9a5b8f531a297268c2865be46eaf5b30ff41d9e7a4420d0",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 42184,
+   "first_utc": "2023-08-01T00:00Z",
+   "last_utc": "2023-08-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-09.csv",
+   "bytes": 2007915,
+   "sha256": "514728c592c20112acad36f519dd50dcb7e565f6c7889b5de53c071185510d29",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 12867,
+   "first_utc": "2023-09-01T00:00Z",
+   "last_utc": "2023-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-09.csv",
+   "bytes": 1942513,
+   "sha256": "fc1fc62644e98a86a482beba4bbd1bdf4a1553e6622032a4c30dca3d4bed8418",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 41197,
+   "first_utc": "2023-09-01T00:00Z",
+   "last_utc": "2023-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-10.csv",
+   "bytes": 2080517,
+   "sha256": "27d0eac23f1a40d739406a606d23ba3ef7e3d0fdb956e74cfb02ca536cc6e918",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 14332,
+   "first_utc": "2023-10-01T00:00Z",
+   "last_utc": "2023-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-10.csv",
+   "bytes": 2000277,
+   "sha256": "68ea49c4070e29657c617376f4272f9bb2408a44bcb0eff7bcc8db197c2e2527",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 42081,
+   "first_utc": "2023-10-01T00:00Z",
+   "last_utc": "2023-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-11.csv",
+   "bytes": 2065628,
+   "sha256": "a22daf45e8e03c6d461b29297d8ee90aacd7aa272ccf35d8e258f3e3995490c3",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 18895,
+   "first_utc": "2023-11-01T00:00Z",
+   "last_utc": "2023-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-11.csv",
+   "bytes": 1939455,
+   "sha256": "4feee4a7fe4d072b1653c1428b9a081b62a9a3ef58471e8af89d40907715f52a",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 40993,
+   "first_utc": "2023-11-01T00:00Z",
+   "last_utc": "2023-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-12",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-12.csv",
+   "bytes": 2016277,
+   "sha256": "54a320545c6701cb7b48c6310c3b329df1fdcf6de121a7ce60ceb79df58bdcf7",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43297,
+   "first_utc": "2023-12-01T00:00Z",
+   "last_utc": "2023-12-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-01",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-01.csv",
+   "bytes": 2030062,
+   "sha256": "025d67e41572713a673f6a2df058a7d4fe3f70d689cb8c39e827e31c4cadd57f",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43947,
+   "first_utc": "2024-01-01T00:00Z",
+   "last_utc": "2024-01-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-02.csv",
+   "bytes": 2010134,
+   "sha256": "46a8fa5400eed28bbf1a0c15951723678a9449d3e09fbbddac41f9b5e643336f",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 42,
+   "rows": 41760,
+   "traded_minutes": 21155,
+   "first_utc": "2024-02-01T00:00Z",
+   "last_utc": "2024-02-29T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-02.csv",
+   "bytes": 1905385,
+   "sha256": "28a85c5ef68dd60db540ed813fce93149017eddb4e56aa9af59d9ba7ad356f54",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 42,
+   "rows": 41760,
+   "traded_minutes": 41285,
+   "first_utc": "2024-02-01T00:00Z",
+   "last_utc": "2024-02-29T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-03.csv",
+   "bytes": 2223917,
+   "sha256": "6779c3f7ce09e8907a23033b3bffa5c98f02fe76df877a697dd135b30e5bcd4a",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 30188,
+   "first_utc": "2024-03-01T00:00Z",
+   "last_utc": "2024-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-03.csv",
+   "bytes": 2044136,
+   "sha256": "ecc780567996473619703f4213921a2807a449502d32c0e5752c653c95c4ad92",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 44413,
+   "first_utc": "2024-03-01T00:00Z",
+   "last_utc": "2024-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-04.csv",
+   "bytes": 2087424,
+   "sha256": "cee841f97b363d1c399d33765c3ed724cfb44eea0c45894d76f1124665324466",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 21973,
+   "first_utc": "2024-04-01T00:00Z",
+   "last_utc": "2024-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-04.csv",
+   "bytes": 1972867,
+   "sha256": "62b74bdf82cb30d92abfe456766ab9aeb5c8c969e2e0fe66011ea0d3a7712860",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 42673,
+   "first_utc": "2024-04-01T00:00Z",
+   "last_utc": "2024-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-05.csv",
+   "bytes": 2154605,
+   "sha256": "b1a7b21960a7494611d2a97664456e6b5dc3c2d64e42297d45ccbdd7173a77ac",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 23959,
+   "first_utc": "2024-05-01T00:00Z",
+   "last_utc": "2024-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-05.csv",
+   "bytes": 2031040,
+   "sha256": "5fbdef966d9cf83cb90a10fee3b22b0a9f6d608c0f3321c99626a97d2fd740fd",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43794,
+   "first_utc": "2024-05-01T00:00Z",
+   "last_utc": "2024-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-06.csv",
+   "bytes": 2096334,
+   "sha256": "715ec19d47752977ee492a1e9983b6bc38e2df6d9c289c43b7ed3895c6e36964",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 24721,
+   "first_utc": "2024-06-01T00:00Z",
+   "last_utc": "2024-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-06.csv",
+   "bytes": 1960772,
+   "sha256": "be0aa1841f5b6e89fd1f888887a3d7e20fd86f98459015b60fc5903a23dfd40b",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 42167,
+   "first_utc": "2024-06-01T00:00Z",
+   "last_utc": "2024-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-07.csv",
+   "bytes": 2148200,
+   "sha256": "d45135f2caed53aebb0c2c5b6a3b2c0bed9064bd77ae115c6cae595dc1142616",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 25085,
+   "first_utc": "2024-07-01T00:00Z",
+   "last_utc": "2024-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-07.csv",
+   "bytes": 2033959,
+   "sha256": "47afa8774376fb018f553ae8d018f7e87ca8e4bdb333f9db33ecdd23f87ca110",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43922,
+   "first_utc": "2024-07-01T00:00Z",
+   "last_utc": "2024-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-08",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-08.csv",
+   "bytes": 2123450,
+   "sha256": "5d44c06583ff36a273a71366f548afde12043ffaacad060c2a229ba84411328b",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 20306,
+   "first_utc": "2024-08-01T00:00Z",
+   "last_utc": "2024-08-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-08",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-08.csv",
+   "bytes": 2039590,
+   "sha256": "ac230558fb685550ba657c09bed03176628d4c6a15310715c7e414ff72dc6703",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43863,
+   "first_utc": "2024-08-01T00:00Z",
+   "last_utc": "2024-08-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-09.csv",
+   "bytes": 1992823,
+   "sha256": "18853bf63d39011d3289ebf8388fe72729bbb1bb6277e755f1cfce873e70c545",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 12625,
+   "first_utc": "2024-09-01T00:00Z",
+   "last_utc": "2024-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-09.csv",
+   "bytes": 1930177,
+   "sha256": "c978ef37a2b81b110985c63457e644eb2dc402d690fcce949ffc02d9d3ce2da1",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 38514,
+   "first_utc": "2024-09-01T00:00Z",
+   "last_utc": "2024-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-10.csv",
+   "bytes": 2099019,
+   "sha256": "b971b7343bdd71661a475b78b47df8ef8e9591ed50816d382822a3f91fe0ec1f",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 15083,
+   "first_utc": "2024-10-01T00:00Z",
+   "last_utc": "2024-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-10.csv",
+   "bytes": 2015178,
+   "sha256": "0d4bd976c0cb587a71fc4f6ed9db66256e46cdc43074e5b251d2807c8bb539d0",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 41772,
+   "first_utc": "2024-10-01T00:00Z",
+   "last_utc": "2024-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-11.csv",
+   "bytes": 2127136,
+   "sha256": "919eb3898309163a577b81cdf6cf399fadb722f6e0e287ccf73d2f102e46279b",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 25726,
+   "first_utc": "2024-11-01T00:00Z",
+   "last_utc": "2024-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-11.csv",
+   "bytes": 1969106,
+   "sha256": "407c2e939a1961b8df38b28e43ecbd48bf862d09f5f5e68423b0a9e4f3115f77",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 42079,
+   "first_utc": "2024-11-01T00:00Z",
+   "last_utc": "2024-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2024-12",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2024-12.csv",
+   "bytes": 2196236,
+   "sha256": "09399d0f9cd43fc698fb82372ee848ad1bcd62369c234279bb9861cd91cc18f3",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 26880,
+   "first_utc": "2024-12-01T00:00Z",
+   "last_utc": "2024-12-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2024-12",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2024-12.csv",
+   "bytes": 2057212,
+   "sha256": "ce8372256d0cf67bf2e07b4dbc18d64e4decc31e3f52547281fab1f0b88894cc",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 41046,
+   "first_utc": "2024-12-01T00:00Z",
+   "last_utc": "2024-12-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2025-01",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2025-01.csv",
+   "bytes": 2167524,
+   "sha256": "0cdd5977375bf67818b33b1a68bd05d3a6c54ffe2911aed6d6e6c6d9236e7d37",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 24521,
+   "first_utc": "2025-01-01T00:00Z",
+   "last_utc": "2025-01-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2025-01",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2025-01.csv",
+   "bytes": 2114497,
+   "sha256": "61e91519631afa52256046ec0fe1b2984436602c46e9b665a7931b2156df17b2",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 42920,
+   "first_utc": "2025-01-01T00:00Z",
+   "last_utc": "2025-01-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2025-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2025-02.csv",
+   "bytes": 1845649,
+   "sha256": "ada7efac02f298547feef830f553127fc93c51a453fe136998511e73afb9444b",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 39296,
+   "first_utc": "2025-02-01T00:00Z",
+   "last_utc": "2025-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2025-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2025-03.csv",
+   "bytes": 2027367,
+   "sha256": "bca2bccd76a5e4ca8efcbe3d644befae65060461d9d5d9260e5a74c6529fdb25",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43193,
+   "first_utc": "2025-03-01T00:00Z",
+   "last_utc": "2025-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2025-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "NOT_AVAILABLE",
+   "error": "TimeoutError: The read operation timed out",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCGBP",
+   "month": "2023-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcgbp/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCGBP-1m-2023-03.csv",
+   "bytes": 1829885,
+   "sha256": "e08f631d9c6613a2f8f8d77cdf4a576fc0be38758bd58ea219632bc7665b424e",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 25360,
+   "first_utc": "2023-03-01T00:00Z",
+   "last_utc": "2023-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "GBPUSD",
+   "month": "2023-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/gbpusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/GBPUSD-1m-2023-03.csv",
+   "bytes": 2000828,
+   "sha256": "495c92b1ae6451ba8c42e5735e850195b3ee3e46f4d7478fed45e0637e572236",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 2974,
+   "first_utc": "2023-03-01T00:00Z",
+   "last_utc": "2023-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCGBP",
+   "month": "2023-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcgbp/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCGBP-1m-2023-04.csv",
+   "bytes": 1735768,
+   "sha256": "3e76b45c4543146245b0efb7dedbc8cb1db93fc4fabf8c5caae318a1fe17c750",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 18906,
+   "first_utc": "2023-04-01T00:00Z",
+   "last_utc": "2023-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "GBPUSD",
+   "month": "2023-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/gbpusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/GBPUSD-1m-2023-04.csv",
+   "bytes": 1927419,
+   "sha256": "1b686972cbeda89130d3087491a59491489e72eaa9cff3e4f5f99953a6951427",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 1778,
+   "first_utc": "2023-04-01T00:00Z",
+   "last_utc": "2023-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCGBP",
+   "month": "2023-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcgbp/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCGBP-1m-2023-05.csv",
+   "bytes": 1772424,
+   "sha256": "35359471175e8a4f8b4a1bd7f373798ffdb11cdcf0b3976341665b05dd795f96",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 16831,
+   "first_utc": "2023-05-01T00:00Z",
+   "last_utc": "2023-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "GBPUSD",
+   "month": "2023-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/gbpusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/GBPUSD-1m-2023-05.csv",
+   "bytes": 2000483,
+   "sha256": "325725fd5fb4e0a6783e1f99cbfe6a712201983ee3e9122f7e7ec653415f219c",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 2851,
+   "first_utc": "2023-05-01T00:00Z",
+   "last_utc": "2023-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCGBP",
+   "month": "2023-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcgbp/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCGBP-1m-2023-06.csv",
+   "bytes": 1718050,
+   "sha256": "f75c432aa029787f1dd2de758b867c968f685b089a8cf184b0f0cc272648e241",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 17858,
+   "first_utc": "2023-06-01T00:00Z",
+   "last_utc": "2023-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "GBPUSD",
+   "month": "2023-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/gbpusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/GBPUSD-1m-2023-06.csv",
+   "bytes": 1947169,
+   "sha256": "b3575f14918fb84919cc78945718fac999788bba759f47ca6ae7b10f8bb295d9",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 4313,
+   "first_utc": "2023-06-01T00:00Z",
+   "last_utc": "2023-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCGBP",
+   "month": "2023-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcgbp/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCGBP-1m-2023-07.csv",
+   "bytes": 1766709,
+   "sha256": "9093e57bf2d1b4a700225cfcf1a9cf553136c318093fa620fbbc929ff2e28843",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 17192,
+   "first_utc": "2023-07-01T00:00Z",
+   "last_utc": "2023-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "GBPUSD",
+   "month": "2023-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/gbpusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/GBPUSD-1m-2023-07.csv",
+   "bytes": 2017943,
+   "sha256": "e082b174bb3c0c3522a7b64395ba5c014882a3e826707a516033cd3092b59f16",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 4975,
+   "first_utc": "2023-07-01T00:00Z",
+   "last_utc": "2023-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "GBPUSDT",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/GBPUSDT-1m-2023-03.zip",
+   "bytes": 990096,
+   "sha256": "b905651eb2d6dd093f1247e234c2af4261c8a5e002abdb6d7c30e22252c1b5a0",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCGBP",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCGBP-1m-2023-03.zip",
+   "bytes": 1768645,
+   "sha256": "59e82d1d9ca626f086298853c03a305e7ab06143e1478ef9d588124db6c77cd6",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "GBPUSDT",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/GBPUSDT-1m-2023-04.zip",
+   "bytes": 913342,
+   "sha256": "090f707a20485ad4d714add4826b2994eea8d19f445add7be21b2d900b9f3df5",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCGBP",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCGBP-1m-2023-04.zip",
+   "bytes": 1439224,
+   "sha256": "d8c7f7d0e1cc2302dd068a1be5a49a365b5d12efa1b0f1b7a885c274e1d589aa",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "GBPUSDT",
+   "month": "2023-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/GBPUSDT-1m-2023-05.zip",
+   "bytes": 871559,
+   "sha256": "2843df674e1f3e7a4b9484824c0c11b293584746f16ee0f6ce57bff0dcb839d1",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCGBP",
+   "month": "2023-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCGBP-1m-2023-05.zip",
+   "bytes": 1474876,
+   "sha256": "35c7a1211c23fcda6bc76d5aab99cadbce4b3b316b93a689b2e977413c5b70ab",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "GBPUSDT",
+   "month": "2023-06",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/GBPUSDT-1m-2023-06.zip",
+   "bytes": 657191,
+   "sha256": "2f3962b36f63aa80aaa7c733f05be6db29033ca863acbd23fe8fa3cf8daed80e",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCGBP",
+   "month": "2023-06",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-06.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCGBP-1m-2023-06.zip",
+   "bytes": 1070276,
+   "sha256": "13429ab570beddfedfc7c6132e1c0f3cfe8003c0fa60066b2fc4ee532c24959e",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-06.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "GBPUSDT",
+   "month": "2023-07",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/GBPUSDT-1m-2023-07.zip",
+   "bytes": 688343,
+   "sha256": "b12ca9597fbb5e5cbf1a817e7ac71e02009dee6c3746427bfc37c02970424b95",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/GBPUSDT/1m/GBPUSDT-1m-2023-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCGBP",
+   "month": "2023-07",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-07.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCGBP-1m-2023-07.zip",
+   "bytes": 1098938,
+   "sha256": "b00f3bd689e73ce1a4dbf6077904d8bf5a8ccd27ea21ca445803bf9158435205",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCGBP/1m/BTCGBP-1m-2023-07.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "EURUSDT",
+   "month": "2023-08",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/EURUSDT-1m-2023-08.zip",
+   "bytes": 1451752,
+   "sha256": "1d23cc7123905877b5f12d58ec7a40f2cc994aea48833e6bd6f695ed644983bc",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCEUR",
+   "month": "2023-08",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-08.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCEUR-1m-2023-08.zip",
+   "bytes": 1813679,
+   "sha256": "0b615441e861518507acca4e757f8bcacbe01ba32528e85800767c38c16026f6",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-08.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "EURUSDT",
+   "month": "2023-09",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/EURUSDT-1m-2023-09.zip",
+   "bytes": 1358448,
+   "sha256": "ce0e919e0a5a1f1dc6c50b7051642069958d36512c975db680907f566a9980d9",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCEUR",
+   "month": "2023-09",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-09.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCEUR-1m-2023-09.zip",
+   "bytes": 1742438,
+   "sha256": "3e22e9d1ce2467976c07b9d40c6fd6e545326d1ecb7b6dfaa4041714bd1d2584",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-09.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "EURUSDT",
+   "month": "2023-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/EURUSDT-1m-2023-10.zip",
+   "bytes": 1398379,
+   "sha256": "4d8719d331568d633092b08f1eb6f94266c7e974a7d56a7b2a0257794e7b84ec",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCEUR",
+   "month": "2023-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCEUR-1m-2023-10.zip",
+   "bytes": 1852389,
+   "sha256": "f147fc2a7755cabee391ca26c40c8b0fba4deb2d351c413ff71242266783322c",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "EURUSDT",
+   "month": "2023-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/EURUSDT-1m-2023-11.zip",
+   "bytes": 1384708,
+   "sha256": "a62bdbab82b2fae4a562f9b5b9685b1e9ec67c5470b60d2ec9448570a248fb92",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/EURUSDT/1m/EURUSDT-1m-2023-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCEUR",
+   "month": "2023-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCEUR-1m-2023-11.zip",
+   "bytes": 1827740,
+   "sha256": "d4a1f52f57d97db6e76679f3fc6d33ced71251333befb02686b13a90092d858a",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCEUR/1m/BTCEUR-1m-2023-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-03.csv",
+   "bytes": 2073141,
+   "sha256": "af041a162fee0006335c50fbe799ac7b2468f49ce9ff94bf3be6363722690e64",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 12495,
+   "first_utc": "2023-03-01T00:00Z",
+   "last_utc": "2023-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTUSD",
+   "month": "2023-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdtusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTUSD-1m-2023-04.csv",
+   "bytes": 2027862,
+   "sha256": "979a7e82d069363e5371344aa4e58887d70bfaa7b0a736abdbdfe0deb30eafcf",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 15971,
+   "first_utc": "2023-04-01T00:00Z",
+   "last_utc": "2023-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-05-BINANCE-GBP-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCEUR",
+   "month": "2023-08",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btceur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCEUR-1m-2023-08.csv",
+   "bytes": 1997753,
+   "sha256": "e97c031a7c81c18ca1ebe0e1784ae098554a770ac7a863085b083fb160423186",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 41877,
+   "first_utc": "2023-08-01T00:00Z",
+   "last_utc": "2023-08-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTEUR",
+   "month": "2023-08",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdteur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTEUR-1m-2023-08.csv",
+   "bytes": 2152630,
+   "sha256": "6489a7a8e6191d4016ade85380f47aa8ce92af9a1894f3ccf106efa0a3ce4dbc",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 21564,
+   "first_utc": "2023-08-01T00:00Z",
+   "last_utc": "2023-08-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCEUR",
+   "month": "2023-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btceur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCEUR-1m-2023-09.csv",
+   "bytes": 1927007,
+   "sha256": "ce92a56dcbb1108aa06b7ec9a7b4f709cb63e2a6c2e7662777a4eed865e6ff16",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 40535,
+   "first_utc": "2023-09-01T00:00Z",
+   "last_utc": "2023-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTEUR",
+   "month": "2023-09",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdteur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTEUR-1m-2023-09.csv",
+   "bytes": 2075390,
+   "sha256": "98b967145e1a65cab08abca2cca9994c6db0422866d4a10cc172695d4215d67a",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 19415,
+   "first_utc": "2023-09-01T00:00Z",
+   "last_utc": "2023-09-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCEUR",
+   "month": "2023-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btceur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCEUR-1m-2023-10.csv",
+   "bytes": 2004838,
+   "sha256": "ee8718e4a21e8c785a3833335daa3aeb4eb26b707502eba0e0b28ae90e37be8e",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 42384,
+   "first_utc": "2023-10-01T00:00Z",
+   "last_utc": "2023-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTEUR",
+   "month": "2023-10",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdteur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDTEUR-1m-2023-10.csv",
+   "bytes": 2143948,
+   "sha256": "27f7929e1d6c63a3f6c725cebc85e96718d2e4b951ddd0d13c5f0ad42efe9f2e",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 20347,
+   "first_utc": "2023-10-01T00:00Z",
+   "last_utc": "2023-10-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCEUR",
+   "month": "2023-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btceur/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCEUR-1m-2023-11.csv",
+   "bytes": 1947553,
+   "sha256": "a3a24710ac20e1426e7d672a5b246dc8aae68e526fb73d1ae5eeb99fe1030a2b",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 41349,
+   "first_utc": "2023-11-01T00:00Z",
+   "last_utc": "2023-11-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDTEUR",
+   "month": "2023-11",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdteur/?step=60&limit=1000&start=<paged>",
+   "status": "NOT_AVAILABLE",
+   "error": "TimeoutError: The read operation timed out",
+   "for_events": [
+    "X2023-09-BINANCE-EUR-RAIL"
+   ]
   }
  ],
  "summary": {
-  "VERIFIED": 205,
-  "NOT_AVAILABLE": 0,
+  "VERIFIED": 380,
+  "NOT_AVAILABLE": 38,
   "CHECKSUM_FAILED": 0
  }
 }
