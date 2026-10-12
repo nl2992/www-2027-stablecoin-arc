@@ -167,3 +167,11 @@ UST remains EXPLORATORY (user decision, 2026-10-11).
 - Restoration capacity rose in every case.
 
 **Scope.** On-chain only, par-relative upper bounds. The DAI counterpart is valued at par even though DAI depegged during SVB, which overstates absorption. These are associations, not causal effects, and not CEX–DEX capacity.
+
+## 14. C6 robustness (2026-10-12)
+
+The re-run made 3,664 read-only calls and stores raw state per sample. Hourly event-window medians agree with the 6-hour series (SVB 156.6 M vs 154.0 M; June 2023 49.7 M vs 42.5 M; UST 0).
+
+**Counterpart re-valuation for SVB** (`uv run python -m www_capacity.revalue`; `reports/c6/onchain_capacity_cex_valued.json`). With DAI and USDT valued at their last traded Binance.US prices, USDC→DAI absorption at 50 bps falls from 154.0 M (par) to **0** in the event window, while baseline is essentially unchanged (177.4 → 177.1 M). The par-valued SVB figure overstated capacity. Par fallbacks (no trade within 60 minutes) are counted per window in the report.
+
+**Figure:** `paper/figures/onchain_capacity_paths.pdf`. The repository is public, and `main` contains all work through PR #4.

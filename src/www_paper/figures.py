@@ -119,6 +119,37 @@ def anchor_series(csv_path: Path, out: Path) -> Path:
     return _save(fig, out)
 
 
+CAPACITY_JSON = ROOT / "reports/c6/onchain_capacity.json"
+CAPACITY_SERIES = {"E2022-05-UST-COLLAPSE": ("c1_50bps", "UST -> 3CRV (wormhole metapool)"),
+                   "E2023-03-USDC-SVB": ("c0_50bps", "USDC -> DAI (3pool)"),
+                   "N2023-06-USDT-3POOL": ("c0_50bps", "USDT -> DAI (3pool)")}
+
+
+def capacity_paths(path: Path, out: Path) -> Path:
+    """On-chain absorption capacity at 50 bps over each event's windows (6h samples + hourly event window)."""
+    _style()
+    data = json.loads(path.read_text())
+    results = [r for r in data["results"] if r["event_id"] in CAPACITY_SERIES]
+    fig, axes = plt.subplots(1, len(results), figsize=(7.0, 2.1), sharey=False)
+    for ax, res in zip(np.atleast_1d(axes), results):
+        key, label = CAPACITY_SERIES[res["event_id"]]
+        for window, style in (("control", ":"), ("baseline", "-"), ("event_hourly", "-"), ("recovery", "-")):
+            pts = res["samples"].get(window, [])
+            if not pts:
+                continue
+            t = pd.to_datetime([p["timestamp_utc"] for p in pts])
+            y = [p["capacity"][key]["absorption"] / 1e6 for p in pts]
+            ax.plot(t, y, style, linewidth=0.8, color="C1" if window == "event_hourly" else "C0")
+        ev = res["windows"]["event"]
+        ax.axvspan(pd.Timestamp(ev["start"], tz="UTC"), pd.Timestamp(ev["end"], tz="UTC") + pd.Timedelta("1D"),
+                   color="grey", alpha=0.15, linewidth=0)
+        ax.set_title(label, fontsize=7)
+        ax.tick_params(axis="x", labelrotation=45, labelsize=6)
+    np.atleast_1d(axes)[0].set_ylabel("absorption at 50 bps (M)")
+    fig.suptitle("On-chain only; par-valued counterparts; shaded: event window", fontsize=7)
+    return _save(fig, out)
+
+
 def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
     if iaqf_panel is not None:
         build_anchor_csv(iaqf_panel)
@@ -126,6 +157,7 @@ def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
         event_timeline(ROOT / "configs/event_registry.json", FIG_DIR / "event_timeline.pdf"),
         coverage_heatmap(ROOT / "reports/events/coverage_matrix.json", FIG_DIR / "coverage_heatmap.pdf"),
         anchor_series(ANCHOR_CSV, FIG_DIR / "anchor_series.pdf"),
+        *([capacity_paths(CAPACITY_JSON, FIG_DIR / "onchain_capacity_paths.pdf")] if CAPACITY_JSON.is_file() else []),
     ]
 
 
