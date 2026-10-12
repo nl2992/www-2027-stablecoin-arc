@@ -8,3 +8,8 @@ data/raw/
 .env
 .env.*
 !*.example
+.gate_identity
+paper/build/
+autoresearch/results.tsv
+autoresearch/run.log
+run.log
