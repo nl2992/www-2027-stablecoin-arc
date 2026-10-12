@@ -1,2 +1,27 @@
-# www-2027-stablecoin-arc
-WWW 2027 stablecoin arbitrage capacity research: C0 source audit
+# WWW 2027 stablecoin arbitrage capacity research
+
+This repository is the separate research workspace for the C0 source and feasibility audit.
+The current research question is whether executable restoration capacity helps explain the persistence of stablecoin price fragmentation during the March 2023 USDC crisis.
+
+## C0 findings
+
+- The IAQF checkout at revision `b484e8bc75429e293c87f10a8856a5ce196b9df8` contains a 30,240-row, 74-column Binance.US/Coinbase OHLCV panel for 2023-03-01 through 2023-03-21. Its `panel_1min.parquet` and `harmonized_raw_1min.parquet` are value-identical. Source data are referenced by path and hash in the audit report, not copied into this repository.
+- Upstream `generate_data.py` documents the construction path, but raw pulls are absent, so exact regeneration of the parquet is not currently reproducible. Other legacy scripts describe different, absent outputs; see [`docs/iaqf_audit.md`](docs/iaqf_audit.md).
+- Eight repository-contained synthetic quality tests pass with `uv run pytest`. They check timestamps, quote direction, parity arithmetic, activity age, and missing/invalid observations. They do not require the IAQF data or live services.
+- A Tardis normalized Binance.US BTCUSD L2 sample for 2023-03-01 is present locally under `data/external/`, subject to its source licence, and deliberately excluded from Git. It has 7,264,627 rows. It demonstrates that the sample format can be inspected; it does not verify crisis-day coverage, full book replay, or other instruments. See [`CEX_L2_SOURCE_AUDIT.md`](CEX_L2_SOURCE_AUDIT.md).
+- Historical Ethereum logs can support event extraction, but they do not alone establish arbitrary pool state or executable historical quotes. See [`docs/source_feasibility.md`](docs/source_feasibility.md).
+
+## Reproduce
+
+Install with `uv sync --group dev`, then run `uv run pytest`. To audit the original IAQF panel, provide your own IAQF checkout at the audited revision and run:
+
+```sh
+uv run python -m www_c0.audit \
+  --panel "/path/to/IAQF-2026-Submission/data/parquet/panel_1min.parquet" \
+  --output reports/c0/panel_quality.json \
+  --source-revision b484e8bc75429e293c87f10a8856a5ce196b9df8
+```
+
+Read [`docs/c0_review_packet.md`](docs/c0_review_packet.md) before proceeding to C1. C0 deliberately stops before capacity estimation.
+
+Reproducibility has three levels: (1) synthetic validation is fully repository-contained; (2) the measured panel report requires the external IAQF parquet and exact source revision; (3) CEX and Ethereum feasibility is documented from cited sources, while crisis-day L2 replay and historical contract-state validation remain unverified. The committed panel report preserves the original machine-specific input path as provenance, so that path will differ on another computer.

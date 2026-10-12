@@ -1,0 +1,157 @@
+{
+  "bytes": 9690047,
+  "columns": 74,
+  "expected_rows": 30240,
+  "first_timestamp": "2023-03-01T00:00:00+00:00",
+  "fx_corrected_usdc_wedge_bps": {
+    "finite_minutes": 30240,
+    "max": 199.22621713087452,
+    "median": -0.606261344930914,
+    "min": -460.5401757402028
+  },
+  "input": "/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/IAQF/IAQF-2026-Submission/data/parquet/panel_1min.parquet",
+  "last_timestamp": "2023-03-21T23:59:00+00:00",
+  "limitations": [
+    "A zero-volume candle with a close is not a contemporaneous executable quote.",
+    "The panel lacks bid/ask ladders, quote timestamps and source-row provenance.",
+    "Age since positive volume is a trade-activity proxy, not order-book staleness."
+  ],
+  "missing_expected_minutes": 0,
+  "non_minute_gaps": 0,
+  "pair_coverage": {
+    "bnus_btcbusd": {
+      "close_present_without_trade_minutes": 10236,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 31,
+      "minutes_over_stale_threshold_by_volume_proxy": 1015,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 20004,
+      "zero_volume_minutes": 10236
+    },
+    "bnus_btcusd": {
+      "close_present_without_trade_minutes": 72,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 2,
+      "minutes_over_stale_threshold_by_volume_proxy": 0,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 30168,
+      "zero_volume_minutes": 72
+    },
+    "bnus_btcusdc": {
+      "close_present_without_trade_minutes": 12971,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 54,
+      "minutes_over_stale_threshold_by_volume_proxy": 2500,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 17269,
+      "zero_volume_minutes": 12971
+    },
+    "bnus_btcusdt": {
+      "close_present_without_trade_minutes": 658,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 4,
+      "minutes_over_stale_threshold_by_volume_proxy": 0,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 29582,
+      "zero_volume_minutes": 658
+    },
+    "bnus_busdusdt": {
+      "close_present_without_trade_minutes": 28376,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 323,
+      "minutes_over_stale_threshold_by_volume_proxy": 23441,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 1864,
+      "zero_volume_minutes": 28376
+    },
+    "bnus_usdcusd": {
+      "close_present_without_trade_minutes": 19777,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 163,
+      "minutes_over_stale_threshold_by_volume_proxy": 8942,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 10463,
+      "zero_volume_minutes": 19777
+    },
+    "bnus_usdcusdt": {
+      "close_present_without_trade_minutes": 25056,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 215,
+      "minutes_over_stale_threshold_by_volume_proxy": 17751,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 5184,
+      "zero_volume_minutes": 25056
+    },
+    "bnus_usdtusd": {
+      "close_present_without_trade_minutes": 6033,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 19,
+      "minutes_over_stale_threshold_by_volume_proxy": 220,
+      "non_null_close": 30240,
+      "positive_close": 30240,
+      "positive_volume_minutes": 24207,
+      "zero_volume_minutes": 6033
+    },
+    "cb_btcusd": {
+      "close_present_without_trade_minutes": 0,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:59:00+00:00",
+      "max_age_since_positive_volume_minutes": 277,
+      "minutes_over_stale_threshold_by_volume_proxy": 272,
+      "non_null_close": 29950,
+      "positive_close": 29950,
+      "positive_volume_minutes": 29950,
+      "zero_volume_minutes": 0
+    },
+    "cb_btcusdt": {
+      "close_present_without_trade_minutes": 0,
+      "first_non_null": "2023-03-01T00:00:00+00:00",
+      "invalid_nonpositive_close": 0,
+      "last_non_null": "2023-03-21T23:58:00+00:00",
+      "max_age_since_positive_volume_minutes": 282,
+      "minutes_over_stale_threshold_by_volume_proxy": 325,
+      "non_null_close": 24478,
+      "positive_close": 24478,
+      "positive_volume_minutes": 24478,
+      "zero_volume_minutes": 0
+    }
+  },
+  "rows": 30240,
+  "sha256": "17704ff01a86c3c678c690aeb7b9a9f2a86702bd69bbe5cceaf359c68c6711b3",
+  "source_kind": "OHLCV candle panel, not historical L2",
+  "source_revision": "b484e8bc75429e293c87f10a8856a5ce196b9df8",
+  "status": "AUDITED",
+  "unexpected_minutes": 0,
+  "validation": {
+    "expected_grid_complete": true,
+    "invalid_nonpositive_close_count": 0,
+    "invalid_prices_pass": true,
+    "minute_aligned": true,
+    "timestamp_monotonic": true,
+    "timestamp_unique": true
+  }
+}
