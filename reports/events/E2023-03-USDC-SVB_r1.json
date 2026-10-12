@@ -1,0 +1,26 @@
+{
+  "breach_minutes": 2720,
+  "caveat": "Single venue last-trade closes; measures observed traded deviation, not executable quotes.",
+  "event_id": "E2023-03-USDC-SVB",
+  "extreme_deviation_bps": -1469.9302374066012,
+  "extreme_utc": "2023-03-11T07:55:00+00:00",
+  "first_breach_utc": "2023-03-11T02:08:00+00:00",
+  "input_sha256": "17704ff01a86c3c678c690aeb7b9a9f2a86702bd69bbe5cceaf359c68c6711b3",
+  "last_breach_utc": "2023-03-13T18:50:00+00:00",
+  "max_breach_minutes_in_window": 1379,
+  "min_minutes": 30,
+  "panel_first_utc": "2023-03-01T00:00:00+00:00",
+  "panel_last_utc": "2023-03-21T23:59:00+00:00",
+  "r1_pass": true,
+  "rules": {
+    "min_minutes": 30,
+    "observation": "minute closes with positive volume on the stablecoin leg",
+    "threshold_bps": 100.0,
+    "window": "24h"
+  },
+  "series": "bnus_usdcusd",
+  "severe_class": true,
+  "threshold_bps": 100.0,
+  "traded_minutes": 10463,
+  "window": "24h"
+}

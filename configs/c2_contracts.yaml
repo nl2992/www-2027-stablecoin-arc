@@ -1,7 +1,7 @@
 checkpoint: C2
 as_of: 2026-10-11
 chain_id: 1
-target_interval_utc: 2023-03-10/2023-03-12
+scope: multi-event (see event_ids in reports/c2/contract_registry.json)
 entries:
   - name: Curve Ethereum 3pool swap
     address: 0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7
@@ -27,3 +27,27 @@ entries:
     verification: SOURCE_DOCUMENTED
     deployment_status: UNVERIFIED_AT_TARGET_BLOCK
     notes: Repository documents USDC PSM address; March 2023 deployment, parameters, and active capacity remain unverified.
+  - name: Curve wormhole-UST/3CRV metapool
+    address: 0xCEAF7747579696A2F0bb206a14210e3c9e6fB269
+    source: https://jumpcrypto.com/writing/the-depegging-of-ust/
+    verification: SOURCE_DOCUMENTED
+    deployment_status: UNVERIFIED_AT_TARGET_BLOCK
+    notes: Named by Jump Crypto as the main DEX market for UST during 2022-05-07..09; state not RPC-verified.
+  - name: Curve legacy UST metapool (StableSwapUST.vy)
+    address: 0x890f4e345B1dAED0367A877a1612f86A1f86985f
+    source: https://curve.readthedocs.io/ref-addresses.html
+    verification: SOURCE_DOCUMENTED
+    deployment_status: UNVERIFIED_AT_TARGET_BLOCK
+    notes: Pre-Wormhole UST pool; relevance to May 2022 not established.
+  - name: Curve BUSD pool
+    address: 0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27
+    source: https://curve.readthedocs.io/ref-addresses.html
+    verification: SOURCE_DOCUMENTED
+    deployment_status: UNVERIFIED_AT_TARGET_BLOCK
+    notes: Candidate for the BUSD placebo window; activity not established.
+  - name: Curve USDe/USDC pool (aggregator-listed)
+    address: 0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72
+    source: https://dexpaprika.com/ethereum/pool/0x02950460e2b9529d0e00284a5fa2d7bdf3fa4d72
+    verification: UNVERIFIED
+    deployment_status: UNVERIFIED_AT_TARGET_BLOCK
+    notes: Third-party listing only; needs protocol or on-chain confirmation before use.

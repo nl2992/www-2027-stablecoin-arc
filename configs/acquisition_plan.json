@@ -1,0 +1,397 @@
+{
+  "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only. A6 screen: Binance.US USD-quoted stablecoin klines through 2023-05 (same authorized free source).",
+  "items": [
+    {
+      "venue": "binance",
+      "events": [
+        "E2022-05-UST-COLLAPSE"
+      ],
+      "months": [
+        "2022-04",
+        "2022-05"
+      ],
+      "symbols": [
+        "USTUSDT",
+        "BTCUST",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "P2023-02-BUSD-PAXOS-HALT"
+      ],
+      "months": [
+        "2023-01",
+        "2023-02"
+      ],
+      "symbols": [
+        "BUSDUSDT",
+        "BTCBUSD",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "E2024-01-TUSD"
+      ],
+      "months": [
+        "2023-12",
+        "2024-01"
+      ],
+      "symbols": [
+        "TUSDUSDT",
+        "BTCTUSD",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "E2025-04-FDUSD"
+      ],
+      "months": [
+        "2025-02",
+        "2025-03",
+        "2025-04"
+      ],
+      "symbols": [
+        "FDUSDUSDT",
+        "BTCFDUSD",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "E2025-10-USDE-BINANCE"
+      ],
+      "months": [
+        "2025-09",
+        "2025-10"
+      ],
+      "symbols": [
+        "USDEUSDT",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "USD reference leg for Binance events",
+        "E2022-05-USDT-TERRA-CONTAGION"
+      ],
+      "months": [
+        "2022-04",
+        "2022-05",
+        "2023-01",
+        "2023-02",
+        "2023-12",
+        "2024-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-09",
+        "2025-10"
+      ],
+      "symbols": [
+        "USDTUSD"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "E2022-11-USDT-FTX"
+      ],
+      "months": [
+        "2022-10",
+        "2022-11"
+      ],
+      "symbols": [
+        "USDTUSD",
+        "BTCUSD",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "N2023-06-USDT-3POOL"
+      ],
+      "months": [
+        "2023-05",
+        "2023-06"
+      ],
+      "symbols": [
+        "USDTUSD",
+        "BTCUSD",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "USD reference leg (robustness / A2-valid venue)",
+        "E2022-11-USDT-FTX",
+        "N2023-06-USDT-3POOL"
+      ],
+      "months": [
+        "2022-04",
+        "2022-05",
+        "2022-10",
+        "2022-11",
+        "2023-01",
+        "2023-02",
+        "2023-05",
+        "2023-06",
+        "2023-12",
+        "2024-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-09",
+        "2025-10"
+      ],
+      "symbols": [
+        "usdtusd"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "E2022-11-USDT-FTX",
+        "N2023-06-USDT-3POOL"
+      ],
+      "months": [
+        "2022-10",
+        "2022-11",
+        "2023-05",
+        "2023-06"
+      ],
+      "symbols": [
+        "btcusd",
+        "btcusdt"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "E2022-05-UST-COLLAPSE (A4 precondition sample)"
+      ],
+      "months": [
+        "2022-05"
+      ],
+      "symbols": [
+        "USTBUSD",
+        "USTCBUSD",
+        "BUSDUSDT"
+      ]
+    },
+    {
+      "venue": "tardis:binance-us",
+      "data_type": "incremental_book_L2",
+      "events": [
+        "normal-market L2 (anchor venue)"
+      ],
+      "months": [
+        "2023-03-01"
+      ],
+      "symbols": [
+        "USDCUSD"
+      ]
+    },
+    {
+      "venue": "tardis:binance",
+      "data_type": "incremental_book_L2",
+      "events": [
+        "normal-market L2 (TUSD event month)"
+      ],
+      "months": [
+        "2024-01-01"
+      ],
+      "symbols": [
+        "TUSDUSDT"
+      ]
+    },
+    {
+      "venue": "tardis:binance",
+      "data_type": "incremental_book_L2",
+      "events": [
+        "normal-market L2 (FDUSD event month)"
+      ],
+      "months": [
+        "2025-04-01"
+      ],
+      "symbols": [
+        "FDUSDUSDT"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "A6 systematic in-sample screen"
+      ],
+      "months": [
+        "2020-07",
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
+        "2021-05",
+        "2021-06",
+        "2021-07",
+        "2021-08",
+        "2021-09",
+        "2021-10",
+        "2021-11",
+        "2021-12",
+        "2022-01",
+        "2022-02",
+        "2022-03",
+        "2022-04",
+        "2022-05",
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05"
+      ],
+      "symbols": [
+        "USDCUSD"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "A6 systematic in-sample screen"
+      ],
+      "months": [
+        "2019-09",
+        "2019-10",
+        "2019-11",
+        "2019-12",
+        "2020-01",
+        "2020-02",
+        "2020-03",
+        "2020-04",
+        "2020-05",
+        "2020-06",
+        "2020-07",
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
+        "2021-05",
+        "2021-06",
+        "2021-07",
+        "2021-08",
+        "2021-09",
+        "2021-10",
+        "2021-11",
+        "2021-12",
+        "2022-01",
+        "2022-02",
+        "2022-03",
+        "2022-04",
+        "2022-05",
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05"
+      ],
+      "symbols": [
+        "USDTUSD"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "A6 systematic in-sample screen"
+      ],
+      "months": [
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
+        "2021-05",
+        "2021-06",
+        "2021-07",
+        "2021-08",
+        "2021-09",
+        "2021-10",
+        "2021-11",
+        "2021-12",
+        "2022-01",
+        "2022-02",
+        "2022-03",
+        "2022-04",
+        "2022-05",
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05"
+      ],
+      "symbols": [
+        "DAIUSD"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "A6 systematic in-sample screen"
+      ],
+      "months": [
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05"
+      ],
+      "symbols": [
+        "TUSDUSD"
+      ]
+    }
+  ]
+}

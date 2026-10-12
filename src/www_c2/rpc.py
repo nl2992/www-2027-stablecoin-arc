@@ -17,18 +17,25 @@ class RpcError(RuntimeError):
 def rpc_call(endpoint: str, method: str, params: list[Any], *, timeout: float = 15) -> Any:
     if not endpoint.startswith("https://"):
         raise ValueError("RPC endpoint must use HTTPS")
-    if method not in {"eth_chainId", "eth_blockNumber", "eth_getBlockByNumber", "eth_getCode", "eth_call"}:
+    if method not in {"eth_chainId", "eth_blockNumber", "eth_getBlockByNumber", "eth_getCode", "eth_call",
+                      "eth_getLogs", "eth_getTransactionReceipt"}:
         raise ValueError("only explicitly allowed read-only RPC methods are supported")
     body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode()
-    request = urllib.request.Request(endpoint, data=body, headers={"Content-Type": "application/json"}, method="POST")
+    headers = {"Content-Type": "application/json", "User-Agent": "www-stablecoin-research/0.1 (read-only)"}
+    request = urllib.request.Request(endpoint, data=body, headers=headers, method="POST")
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             payload = json.loads(response.read())
+    except urllib.error.HTTPError as exc:
+        detail = exc.read()[:200].decode("utf-8", "replace") if hasattr(exc, "read") else ""
+        detail = detail.replace(endpoint, "<redacted>")
+        raise RpcError(f"request failed (HTTP {exc.code}: {detail}); endpoint redacted") from exc
     except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
         raise RpcError(f"request failed ({type(exc).__name__}); endpoint redacted") from exc
     if "error" in payload:
         error = payload["error"]
-        raise RpcError(f"provider error code={error.get('code', 'unknown')}; endpoint redacted")
+        message = str(error.get("message", ""))[:200]
+        raise RpcError(f"provider error code={error.get('code', 'unknown')}: {message}; endpoint redacted")
     if "result" not in payload:
         raise RpcError("malformed JSON-RPC response; endpoint redacted")
     return payload["result"]

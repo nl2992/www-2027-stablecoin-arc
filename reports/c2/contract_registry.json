@@ -1,12 +1,186 @@
 {
-  "checkpoint": "C2",
-  "as_of": "2026-10-11",
-  "chain_id": 1,
-  "target_interval_utc": ["2023-03-10", "2023-03-12"],
-  "entries": [
-    {"name":"Curve Ethereum 3pool swap","chain_id":1,"address":"0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7","source":"https://curve.readthedocs.io/ref-addresses.html","deployment_status":"UNVERIFIED_AT_TARGET_BLOCK","verification":"SOURCE_DOCUMENTED","interface":"StableSwap3Pool.vy; ABI not yet pinned","historical_state":"UNVERIFIED"},
-    {"name":"Curve Ethereum 3pool LP token","chain_id":1,"address":"0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490","source":"https://curve.readthedocs.io/ref-addresses.html","deployment_status":"UNVERIFIED_AT_TARGET_BLOCK","verification":"SOURCE_DOCUMENTED","interface":"CurveTokenV2.vy; ABI not yet pinned","historical_state":"UNVERIFIED"},
-    {"name":"Uniswap v3 Ethereum factory","chain_id":1,"address":"0x1F98431c8aD98523631AE4a59f267346ea31F984","source":"https://developers.uniswap.org/docs/protocols/v3/deployments","deployment_status":"UNVERIFIED_AT_TARGET_BLOCK","verification":"SOURCE_DOCUMENTED","interface":"IUniswapV3Factory; ABI not yet pinned","historical_state":"UNVERIFIED; relevant pools not yet resolved"},
-    {"name":"Maker USDC PSM legacy candidate","chain_id":1,"address":"0x89B78CfA322F6C5dE0aBcEecab66Aee45393cC5A","source":"https://github.com/sky-ecosystem/dss-psm","deployment_status":"UNVERIFIED_AT_TARGET_BLOCK","verification":"SOURCE_DOCUMENTED","interface":"DssPsm; ABI and dependency addresses not yet pinned","historical_state":"UNVERIFIED; tin/tout/debt-ceiling history not reconstructed"}
-  ]
+ "checkpoint": "C2",
+ "as_of": "2026-10-11",
+ "chain_id": 1,
+ "entries": [
+  {
+   "name": "Curve Ethereum 3pool swap",
+   "chain_id": 1,
+   "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+   "source": "https://curve.readthedocs.io/ref-addresses.html",
+   "deployment_status": "HISTORICALLY_VERIFIED",
+   "verification": "LIVE_VERIFIED",
+   "interface": "StableSwap3Pool.vy; ABI signatures confirmed by exact get_dy reproduction",
+   "historical_state": "Read at event blocks via Alchemy archive (read-only); A, fee, coins, decimals, balances and get_dy reproduced offline exactly (reports/c2/archive_validation.json)",
+   "event_ids": [
+    "E2023-03-USDC-SVB",
+    "N2023-06-USDT-3POOL"
+   ],
+   "verified_at": [
+    {
+     "event_id": "E2023-03-USDC-SVB",
+     "block": 16794061,
+     "block_hash": "0x58a4b7c7fb0f7e0757de582730dbff58563cf1468dba52934d3ac53c097edc6a",
+     "code_keccak": "0x954a1e212c557c85043985931498ffa3e2fcbe7dfe9cd61513f36eb47d6f4dfc",
+     "code_bytes": 21199,
+     "get_dy_abs_diff_raw": 0
+    },
+    {
+     "event_id": "N2023-06-USDT-3POOL",
+     "block": 17481592,
+     "block_hash": "0x96a6550a01bf9fdae927c53400289fe5700e244d607dad42642b30aad2969097",
+     "code_keccak": "0x954a1e212c557c85043985931498ffa3e2fcbe7dfe9cd61513f36eb47d6f4dfc",
+     "code_bytes": 21199,
+     "get_dy_abs_diff_raw": 0
+    }
+   ],
+   "swap_validation": {
+    "tx": "0x94402246b88cd94e2de82c33dcc53c358d551311050d5b4f2c2f850146f37eae",
+    "block": 17481613,
+    "kind": "direct",
+    "abs_diff_raw": 0,
+    "matches": true,
+    "direct_check": null
+   }
+  },
+  {
+   "name": "Curve Ethereum 3pool LP token",
+   "chain_id": 1,
+   "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+   "source": "https://curve.readthedocs.io/ref-addresses.html",
+   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
+   "verification": "SOURCE_DOCUMENTED",
+   "interface": "CurveTokenV2.vy; ABI not yet pinned",
+   "historical_state": "UNVERIFIED",
+   "event_ids": [
+    "E2023-03-USDC-SVB",
+    "N2023-06-USDT-3POOL"
+   ]
+  },
+  {
+   "name": "Uniswap v3 Ethereum factory",
+   "chain_id": 1,
+   "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+   "source": "https://developers.uniswap.org/docs/protocols/v3/deployments",
+   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
+   "verification": "SOURCE_DOCUMENTED",
+   "interface": "IUniswapV3Factory; ABI not yet pinned",
+   "historical_state": "UNVERIFIED; relevant pools not yet resolved",
+   "event_ids": [
+    "E2023-03-USDC-SVB",
+    "E2025-10-USDE-BINANCE"
+   ]
+  },
+  {
+   "name": "Maker USDC PSM legacy candidate",
+   "chain_id": 1,
+   "address": "0x89B78CfA322F6C5dE0aBcEecab66Aee45393cC5A",
+   "source": "https://github.com/sky-ecosystem/dss-psm",
+   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
+   "verification": "SOURCE_DOCUMENTED",
+   "interface": "DssPsm; ABI and dependency addresses not yet pinned",
+   "historical_state": "UNVERIFIED; tin/tout/debt-ceiling history not reconstructed",
+   "event_ids": [
+    "E2023-03-USDC-SVB",
+    "E2023-03-DAI-SVB"
+   ]
+  },
+  {
+   "name": "Curve wormhole-UST/3CRV metapool",
+   "chain_id": 1,
+   "address": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+   "source": "https://jumpcrypto.com/writing/the-depegging-of-ust/",
+   "deployment_status": "HISTORICALLY_VERIFIED",
+   "verification": "LIVE_VERIFIED",
+   "interface": "Curve metapool (UST(Wormhole) vs 3CRV); ABI signatures confirmed by exact get_dy reproduction",
+   "historical_state": "Read at event blocks via Alchemy archive (read-only); A, fee, coins, decimals, balances and get_dy reproduced offline exactly (reports/c2/archive_validation.json)",
+   "event_ids": [
+    "E2022-05-UST-COLLAPSE"
+   ],
+   "verified_at": [
+    {
+     "event_id": "E2022-05-UST-COLLAPSE",
+     "block": 14726563,
+     "block_hash": "0x4fc4cb61192c5f992e3b2ad3991d75b5b958580622ee885a4368a2bb26ec9a92",
+     "code_keccak": "0xb03eac48901ed5f36399381b3bbbaa60db83ea38ea7b05acc2a46c42c9f6b6ce",
+     "code_bytes": 45,
+     "get_dy_abs_diff_raw": 0
+    }
+   ],
+   "notes": "EIP-1167 minimal proxy; implementation resolved and hashed at the event block (reports/c2/archive_checks.json).",
+   "swap_validation": {
+    "tx": "0xcc3be65348c69bb17f2d40bb0b8967d0ecce320900337272ad2ddba5f0b4e94d",
+    "block": 14726611,
+    "kind": "underlying",
+    "abs_diff_raw": 0,
+    "matches": true,
+    "direct_check": null
+   },
+   "proxy_implementation": {
+    "standard": "EIP-1167",
+    "implementation": "0x213be373fdff327658139c7df330817dad2d5bbe",
+    "implementation_code_bytes": 22255,
+    "implementation_code_keccak": "0x86092e83f01ab6d7a368475cdf5c75f0a18352f943cdc4de65248f10d4881267"
+   }
+  },
+  {
+   "name": "Curve legacy UST metapool (StableSwapUST.vy)",
+   "chain_id": 1,
+   "address": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+   "source": "https://curve.readthedocs.io/ref-addresses.html",
+   "deployment_status": "HISTORICALLY_VERIFIED",
+   "verification": "LIVE_VERIFIED",
+   "interface": "StableSwapUST.vy; ABI signatures confirmed by exact get_dy reproduction",
+   "historical_state": "Read at event blocks via Alchemy archive (read-only); A, fee, coins, decimals, balances and get_dy reproduced offline exactly (reports/c2/archive_validation.json)",
+   "event_ids": [
+    "E2022-05-UST-COLLAPSE"
+   ],
+   "verified_at": [
+    {
+     "event_id": "E2022-05-UST-COLLAPSE",
+     "block": 14726563,
+     "block_hash": "0x4fc4cb61192c5f992e3b2ad3991d75b5b958580622ee885a4368a2bb26ec9a92",
+     "code_keccak": "0x04fe4a36bda86015bb016299c3bc7e99e2fccc1508b95d6accfd829606543353",
+     "code_bytes": 22886,
+     "get_dy_abs_diff_raw": 0
+    }
+   ],
+   "swap_validation": {
+    "tx": "0x7c9c05653a81d462c21d27155c6011ec86ea2e47745126d1276f0b2f0bded7e8",
+    "block": 14727182,
+    "kind": "underlying",
+    "abs_diff_raw": 88707243175372867,
+    "matches": false,
+    "direct_check": "NO_CLEAN_SWAP_FOUND"
+   },
+   "notes": "Swap cross-check inconclusive: underlying swap differs by 0.08 bps from get_dy_underlying; no clean direct swap within ~4,000 blocks; excluded from capacity."
+  },
+  {
+   "name": "Curve BUSD pool",
+   "chain_id": 1,
+   "address": "0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27",
+   "source": "https://curve.readthedocs.io/ref-addresses.html",
+   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
+   "verification": "SOURCE_DOCUMENTED",
+   "interface": "Curve BUSD pool; ABI not yet pinned",
+   "historical_state": "UNVERIFIED; activity during the 2023-02 issuance halt not established",
+   "event_ids": [
+    "P2023-02-BUSD-PAXOS-HALT"
+   ]
+  },
+  {
+   "name": "Curve USDe/USDC pool (aggregator-listed)",
+   "chain_id": 1,
+   "address": "0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72",
+   "source": "https://dexpaprika.com/ethereum/pool/0x02950460e2b9529d0e00284a5fa2d7bdf3fa4d72",
+   "deployment_status": "UNVERIFIED_AT_TARGET_BLOCK",
+   "verification": "UNVERIFIED",
+   "interface": "Curve pool; implementation and ABI unknown",
+   "historical_state": "UNVERIFIED; only a third-party aggregator listing (reported creation 2024-05-15); needs protocol or on-chain confirmation",
+   "event_ids": [
+    "E2025-10-USDE-BINANCE"
+   ]
+  }
+ ],
+ "scope": "multi-event: each entry lists the registry events it is relevant to (event_ids); target blocks are per event and unresolved"
 }

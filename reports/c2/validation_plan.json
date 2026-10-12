@@ -1,0 +1,505 @@
+{
+ "network_calls_made": 0,
+ "items": [
+  {
+   "event_id": "E2023-03-USDC-SVB",
+   "contract": "Curve Ethereum 3pool swap",
+   "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+   "interface": "curve_stableswap_3",
+   "target_utc": "2023-03-10T00:00:00Z",
+   "target_unix": 1678406400,
+   "block": "TO_RESOLVE via block_at_or_before on an authorized archive endpoint",
+   "requests": [
+    {
+     "method": "eth_getCode",
+     "params": [
+      "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "<BLOCK_HEX>"
+     ],
+     "purpose": "bytecode identity at block"
+    },
+    {
+     "method": "eth_call",
+     "purpose": "amplification",
+     "signature": "A()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xf446c1d0"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "fee (1e10 units)",
+     "signature": "fee()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xddca3f43"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 2 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000002"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 2 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000002"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "quote 10**6 raw units of coin 0 -> coin 1 (1 token only if coin 0 has 6 decimals; read decimals from coins(i) before interpreting)",
+     "signature": "get_dy(int128,int128,uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+      },
+      "<BLOCK_HEX>"
+     ]
+    }
+   ]
+  },
+  {
+   "event_id": "N2023-06-USDT-3POOL",
+   "contract": "Curve Ethereum 3pool swap",
+   "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+   "interface": "curve_stableswap_3",
+   "target_utc": "2023-06-15T00:00:00Z",
+   "target_unix": 1686787200,
+   "block": "TO_RESOLVE via block_at_or_before on an authorized archive endpoint",
+   "requests": [
+    {
+     "method": "eth_getCode",
+     "params": [
+      "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+      "<BLOCK_HEX>"
+     ],
+     "purpose": "bytecode identity at block"
+    },
+    {
+     "method": "eth_call",
+     "purpose": "amplification",
+     "signature": "A()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xf446c1d0"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "fee (1e10 units)",
+     "signature": "fee()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xddca3f43"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 2 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000002"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 2 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000002"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "quote 10**6 raw units of coin 0 -> coin 1 (1 token only if coin 0 has 6 decimals; read decimals from coins(i) before interpreting)",
+     "signature": "get_dy(int128,int128,uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+       "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+      },
+      "<BLOCK_HEX>"
+     ]
+    }
+   ]
+  },
+  {
+   "event_id": "E2022-05-UST-COLLAPSE",
+   "contract": "Curve wormhole-UST/3CRV metapool",
+   "address": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+   "interface": "curve_metapool_2",
+   "target_utc": "2022-05-07T00:00:00Z",
+   "target_unix": 1651881600,
+   "block": "TO_RESOLVE via block_at_or_before on an authorized archive endpoint",
+   "requests": [
+    {
+     "method": "eth_getCode",
+     "params": [
+      "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+      "<BLOCK_HEX>"
+     ],
+     "purpose": "bytecode identity at block"
+    },
+    {
+     "method": "eth_call",
+     "purpose": "amplification",
+     "signature": "A()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0xf446c1d0"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "fee (1e10 units)",
+     "signature": "fee()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0xddca3f43"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "quote 10**6 raw units of coin 0 -> coin 1 (1 token only if coin 0 has 6 decimals; read decimals from coins(i) before interpreting)",
+     "signature": "get_dy(int128,int128,uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0xCEAF7747579696A2F0bb206a14210e3c9e6fB269",
+       "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+      },
+      "<BLOCK_HEX>"
+     ]
+    }
+   ]
+  },
+  {
+   "event_id": "E2022-05-UST-COLLAPSE",
+   "contract": "Curve legacy UST metapool (StableSwapUST.vy)",
+   "address": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+   "interface": "curve_metapool_2",
+   "target_utc": "2022-05-07T00:00:00Z",
+   "target_unix": 1651881600,
+   "block": "TO_RESOLVE via block_at_or_before on an authorized archive endpoint",
+   "requests": [
+    {
+     "method": "eth_getCode",
+     "params": [
+      "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+      "<BLOCK_HEX>"
+     ],
+     "purpose": "bytecode identity at block"
+    },
+    {
+     "method": "eth_call",
+     "purpose": "amplification",
+     "signature": "A()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0xf446c1d0"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "fee (1e10 units)",
+     "signature": "fee()",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0xddca3f43"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 0 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 address",
+     "signature": "coins(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0xc66106570000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "coin 1 balance",
+     "signature": "balances(uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0x4903b0d10000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "<BLOCK_HEX>"
+     ]
+    },
+    {
+     "method": "eth_call",
+     "purpose": "quote 10**6 raw units of coin 0 -> coin 1 (1 token only if coin 0 has 6 decimals; read decimals from coins(i) before interpreting)",
+     "signature": "get_dy(int128,int128,uint256)",
+     "abi_status": "ASSUMED",
+     "params": [
+      {
+       "to": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+       "data": "0x5e0d443f0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000f4240"
+      },
+      "<BLOCK_HEX>"
+     ]
+    }
+   ]
+  }
+ ],
+ "not_planned": [
+  "Curve Ethereum 3pool LP token",
+  "Uniswap v3 Ethereum factory",
+  "Maker USDC PSM legacy candidate",
+  "Curve BUSD pool",
+  "Curve USDe/USDC pool (aggregator-listed)"
+ ],
+ "note": "Requests are constructed offline; ABI signatures ASSUMED until checked against verified source."
+}

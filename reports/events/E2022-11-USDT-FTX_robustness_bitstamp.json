@@ -1,0 +1,360 @@
+{
+  "coverage_ok": true,
+  "event_id": "E2022-11-USDT-FTX",
+  "measured_utc": "2026-10-11T20:53Z",
+  "plan": {
+    "analysis_status": "CONFIRMATORY",
+    "confirmatory_eligible": true,
+    "covariates": {
+      "baseline": {
+        "btc_realized_vol_bps_per_hour": 41.361937641241404,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.2505952380952381
+      },
+      "control": {
+        "btc_realized_vol_bps_per_hour": 43.369247908866086,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.1
+      },
+      "event": {
+        "btc_realized_vol_bps_per_hour": 152.13735546221696,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.44277777777777777
+      },
+      "recovery": {
+        "btc_realized_vol_bps_per_hour": 61.14175994647317,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.5231150793650794
+      }
+    },
+    "coverage_gates": {
+      "baseline": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "control": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "event": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "recovery": {
+        "passes": true,
+        "present_share": 1.0
+      }
+    },
+    "dv1": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        3.5486910591919534,
+        13.015634461995447
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 8.70508782851309,
+      "p_value": 0.001,
+      "se": 2.4119591623013634
+    },
+    "dv1_reference_is_fallback": false,
+    "dv1_reference_window": "control",
+    "dv3": {
+      "censored": false,
+      "extreme_abs_bps": 79929.64459282023,
+      "extreme_utc": "2022-11-08T09:49:00+00:00",
+      "recovered_utc": "2022-11-08T09:55:00+00:00",
+      "recovery_minutes": 6.0
+    },
+    "dv4": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        4.286313345788884,
+        8.354235036652113
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 6.105679108561191,
+      "p_value": 0.001,
+      "se": 1.0590394222664348
+    },
+    "dv5": {
+      "h2_direction": true,
+      "half_life_D_minutes": 153.0452859065961,
+      "half_life_W_minutes": 17.708387682706196,
+      "ratio": 8.642530796638157
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          2.8983623217981984,
+          11.80867980231047
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 7.904319090097033,
+        "p_value": 0.001,
+        "se": 2.2966017697130683
+      },
+      "half_life_D_minutes": {
+        "15": 153.0452859065961,
+        "30": 239.07957068948295,
+        "60": 200.80645390155627
+      },
+      "r1_threshold_200": false,
+      "r1_threshold_50": true
+    },
+    "usd_rail": {
+      "applicable": true,
+      "impairments": [],
+      "span": [
+        "2022-10-04",
+        "2022-11-18"
+      ],
+      "valid": true,
+      "venue": "bitstamp"
+    },
+    "usdt_gate": {
+      "passes": true,
+      "reason": "USD-quoted series; gate not applicable"
+    }
+  },
+  "price_basis": "USD",
+  "provenance": {
+    "quote_usd": null,
+    "stable": {
+      "files": [
+        {
+          "file": "USDTUSD-1m-2022-04.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "52b2bdebe5491ebad2a59a9d322acedeea07df564be7800c05dd8009c432abe8"
+        },
+        {
+          "file": "USDTUSD-1m-2022-05.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "bc4752cb14fa0539ea95563f9abc6f8509b323b910bb45768ac60302fe114a06"
+        },
+        {
+          "file": "USDTUSD-1m-2022-10.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "abb7d14fc5a9f0e964c40482c137b9ececec815b7564bd04ddd7d0b74af0649f"
+        },
+        {
+          "file": "USDTUSD-1m-2022-11.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ed87711d6c5345634992b8c10481dc7b5d497172e7f442cc3c8d118c58019f69"
+        },
+        {
+          "file": "USDTUSD-1m-2023-01.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "1a0ed354f0855624c6884084670006b0bde324ce769fddb285561af50c9e1835"
+        },
+        {
+          "file": "USDTUSD-1m-2023-02.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "29a9651bff8524d0240b21ba2048c52d4587a1ea5b2ebcc03e8786227be37d01"
+        },
+        {
+          "file": "USDTUSD-1m-2023-05.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ba3165dd2c0b8d657b9c2d244ecf6c769f07b1f239690299397a7d1353a474a2"
+        },
+        {
+          "file": "USDTUSD-1m-2023-06.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "686ab3ca0a5f299d41d6fee7062d71c7bb6bce812e3c3bd2cf447c747c726c32"
+        },
+        {
+          "file": "USDTUSD-1m-2023-12.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "e0781e599d489fadd3266f2a603b6f699ced668040569e79031a0c03e554f670"
+        },
+        {
+          "file": "USDTUSD-1m-2024-01.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "7f490e0155b3e1cd2040f63cc975c933f786c2a39f777753b0299c1b22cd7391"
+        },
+        {
+          "file": "USDTUSD-1m-2025-02.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "245d99b177077e4b72230ad2571dbd17411416dbeed23283cc8cc0c0d59fc0e5"
+        },
+        {
+          "file": "USDTUSD-1m-2025-03.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "eedc2535d0827942fdd66ee689f7902b21734b65fde261dbe1446e5b44ab0e97"
+        },
+        {
+          "file": "USDTUSD-1m-2025-04.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "b68d075a2023803dd220947bf3fde381d3520c32ccefefe0f2d98534cff4774d"
+        },
+        {
+          "file": "USDTUSD-1m-2025-09.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "216f9fee8ae1f247abe1bef8889e1218cf7687ac8e9ece42814969d4a6ae6753"
+        },
+        {
+          "file": "USDTUSD-1m-2025-10.csv",
+          "hash_kind": "self-recorded at acquisition",
+          "sha256": "ac9cb0f06d0cf473f32d934757ea4a85d84e1557f6795c05133cb8438a9c985e"
+        }
+      ],
+      "gaps": {
+        "grid_minutes": 1886400,
+        "longest_missing_run_minutes": 527040,
+        "missing_minutes": 1232640,
+        "present_untraded_minutes": 499994,
+        "traded_minutes": 153766
+      },
+      "source": "bitstamp_public_ohlc"
+    },
+    "triangle": {
+      "legs": [
+        "BTCUSDT",
+        "USDTUSD",
+        "BTCUSD"
+      ],
+      "source": "bitstamp_public_ohlc"
+    }
+  },
+  "r1": {
+    "breach_minutes": 59,
+    "extreme_deviation_bps": 79929.64459282023,
+    "extreme_utc": "2022-11-08T09:49:00+00:00",
+    "first_breach_utc": "2022-11-08T09:42:00+00:00",
+    "judged_range_utc": [
+      "2022-11-06T00:00:00+00:00",
+      "2022-11-13T00:00:00+00:00"
+    ],
+    "last_breach_utc": "2022-11-10T13:38:00+00:00",
+    "max_breach_minutes_in_window": 57,
+    "min_minutes": 30,
+    "r1_pass": true,
+    "severe_class": true,
+    "threshold_bps": 100.0,
+    "traded_minutes": 3944,
+    "window": "24h"
+  },
+  "robustness_of": "E2022-11-USDT-FTX",
+  "rules": {
+    "R1_severe_class_bps": 500.0,
+    "R1_severity": {
+      "min_minutes": 30,
+      "observation": "minute closes with positive volume on the stablecoin leg",
+      "threshold_bps": 100.0,
+      "window": "24h"
+    },
+    "R2_cluster_gap_days": 14,
+    "R3_windows_days": {
+      "baseline": 7,
+      "baseline_gap": 1,
+      "control": 7,
+      "control_min_lead": 28,
+      "recovery": 7
+    },
+    "R4_min_distinct_publishers": 2,
+    "out_of_sample_start": "2024-01-01"
+  },
+  "series": "bitstamp_usdtusd",
+  "windows": {
+    "baseline": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2022-11-05",
+        "start": "2022-10-30"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 300,
+        "bins_15m": 384,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 228.1720499690721,
+        "max_abs_dev_bps": 12.492194004318982,
+        "mean_dev_bps": -0.6494921459817369,
+        "median_abs_dev_bps": 0.900040502430509,
+        "p95_abs_dev_bps": 2.400288046088476,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 2526
+      },
+      "expected_minutes": 10080
+    },
+    "control": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2022-10-10",
+        "start": "2022-10-04"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 64,
+        "bins_15m": 141,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 176.98373096777235,
+        "max_abs_dev_bps": 48.880340727758664,
+        "mean_dev_bps": 1.285672100685026,
+        "median_abs_dev_bps": 1.2999155073222544,
+        "p95_abs_dev_bps": 2.499687552074404,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 1008
+      },
+      "expected_minutes": 10080
+    },
+    "event": {
+      "coverage_complete": true,
+      "covered_minutes": 7200,
+      "dates": {
+        "end": "2022-11-11",
+        "start": "2022-11-07"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 336,
+        "bins_15m": 385,
+        "grid_minutes": 7200,
+        "half_life_to_parity_minutes_15m_bins": 153.0452859065961,
+        "max_abs_dev_bps": 79929.64459282023,
+        "mean_dev_bps": 36.07469427657812,
+        "median_abs_dev_bps": 10.005003335835344,
+        "p95_abs_dev_bps": 41.4507899374126,
+        "share_traded_minutes_ge_100bps": 0.0185069008782936,
+        "traded_minutes": 3188
+      },
+      "expected_minutes": 7200
+    },
+    "recovery": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2022-11-18",
+        "start": "2022-11-12"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 592,
+        "bins_15m": 626,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 569.8120483337397,
+        "max_abs_dev_bps": 73.26775386460855,
+        "mean_dev_bps": -11.727948852303538,
+        "median_abs_dev_bps": 11.206276687030758,
+        "p95_abs_dev_bps": 27.036515743148232,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 5273
+      },
+      "expected_minutes": 10080
+    }
+  }
+}

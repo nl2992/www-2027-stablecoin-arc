@@ -1,0 +1,260 @@
+{
+  "coverage_ok": true,
+  "event_id": "E2023-03-USDC-SVB",
+  "measured_utc": "2026-10-11T20:51Z",
+  "plan": {
+    "analysis_status": "EXPLORATORY",
+    "confirmatory_eligible": true,
+    "covariates": {
+      "baseline": {
+        "btc_realized_vol_bps_per_hour": 39.62133804973957,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.19305555555555556
+      },
+      "control": {
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": null
+      },
+      "event": {
+        "btc_realized_vol_bps_per_hour": 80.47327536390738,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.7921875
+      },
+      "recovery": {
+        "btc_realized_vol_bps_per_hour": 85.32578346360656,
+        "longest_missing_run_minutes": 0,
+        "missing_runs_over_15m": 0,
+        "traded_minute_share": 0.28660714285714284
+      }
+    },
+    "coverage_gates": {
+      "baseline": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "control": {
+        "passes": false,
+        "present_share": 0.0
+      },
+      "event": {
+        "passes": true,
+        "present_share": 1.0
+      },
+      "recovery": {
+        "passes": true,
+        "present_share": 1.0
+      }
+    },
+    "dv1": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        92.40986661913621,
+        335.60196492301867
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 208.1724325505496,
+      "p_value": 0.001,
+      "se": 74.08773770829045
+    },
+    "dv1_reference_is_fallback": true,
+    "dv1_reference_window": "baseline",
+    "dv3": {
+      "censored": false,
+      "extreme_abs_bps": 1469.9302374066012,
+      "extreme_utc": "2023-03-11T07:55:00+00:00",
+      "recovered_utc": "2023-03-14T04:19:00+00:00",
+      "recovery_minutes": 4104.0
+    },
+    "dv4": {
+      "bootstrap": {
+        "block": 60,
+        "draws": 1000,
+        "seed": 20230310
+      },
+      "ci95": [
+        4.588087933214968,
+        9.42536614119449
+      ],
+      "ci_excludes_zero": true,
+      "estimate": 6.527994775282764,
+      "p_value": 0.001,
+      "se": 1.3024328706239712
+    },
+    "dv5": {
+      "h2_direction": true,
+      "half_life_D_minutes": 1211.6890581083633,
+      "half_life_W_minutes": 12.775080907540033,
+      "ratio": 94.8478578631316
+    },
+    "robustness": {
+      "dv1_trimmed_6h": {
+        "bootstrap": {
+          "block": 60,
+          "draws": 1000,
+          "seed": 20230310
+        },
+        "ci95": [
+          113.6547310894475,
+          372.90384218225716
+        ],
+        "ci_excludes_zero": true,
+        "estimate": 286.59617995098324,
+        "p_value": 0.001,
+        "se": 62.24369850806256
+      },
+      "half_life_D_minutes": {
+        "15": 1211.6890581083633,
+        "30": 1114.3912317836853,
+        "60": 1273.9658935056211
+      },
+      "r1_threshold_200": true,
+      "r1_threshold_50": true
+    },
+    "usd_rail": {
+      "applicable": true,
+      "impairments": [],
+      "span": [
+        "2023-02-04",
+        "2023-03-20"
+      ],
+      "valid": true,
+      "venue": "binance-us"
+    },
+    "usdt_gate": {
+      "passes": true,
+      "reason": "USD-quoted series; gate not applicable"
+    }
+  },
+  "price_basis": "USD",
+  "provenance": {
+    "quote_usd": null,
+    "stable": {
+      "sha256": "17704ff01a86c3c678c690aeb7b9a9f2a86702bd69bbe5cceaf359c68c6711b3",
+      "source": "iaqf_panel"
+    },
+    "triangle": {
+      "source": "iaqf_panel",
+      "triangle": "usdc"
+    }
+  },
+  "r1": {
+    "breach_minutes": 2720,
+    "extreme_deviation_bps": -1469.9302374066012,
+    "extreme_utc": "2023-03-11T07:55:00+00:00",
+    "first_breach_utc": "2023-03-11T02:08:00+00:00",
+    "judged_range_utc": [
+      "2023-03-09T00:00:00+00:00",
+      "2023-03-15T00:00:00+00:00"
+    ],
+    "last_breach_utc": "2023-03-13T18:50:00+00:00",
+    "max_breach_minutes_in_window": 1379,
+    "min_minutes": 30,
+    "r1_pass": true,
+    "severe_class": true,
+    "threshold_bps": 100.0,
+    "traded_minutes": 5403,
+    "window": "24h"
+  },
+  "rules": {
+    "R1_severe_class_bps": 500.0,
+    "R1_severity": {
+      "min_minutes": 30,
+      "observation": "minute closes with positive volume on the stablecoin leg",
+      "threshold_bps": 100.0,
+      "window": "24h"
+    },
+    "R2_cluster_gap_days": 14,
+    "R3_windows_days": {
+      "baseline": 7,
+      "baseline_gap": 1,
+      "control": 7,
+      "control_min_lead": 28,
+      "recovery": 7
+    },
+    "R4_min_distinct_publishers": 2,
+    "out_of_sample_start": "2024-01-01"
+  },
+  "series": "bnus_usdcusd",
+  "windows": {
+    "baseline": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2023-03-08",
+        "start": "2023-03-02"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 156,
+        "bins_15m": 256,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 22.640244580045806,
+        "max_abs_dev_bps": 96.53257028138346,
+        "mean_dev_bps": -0.8371420134145895,
+        "median_abs_dev_bps": 1.0000500033334732,
+        "p95_abs_dev_bps": 3.0004500900199242,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 1946
+      },
+      "expected_minutes": 10080
+    },
+    "control": {
+      "coverage_complete": false,
+      "covered_minutes": 0,
+      "dates": {
+        "end": "2023-02-10",
+        "start": "2023-02-04"
+      },
+      "diagnostics": null,
+      "expected_minutes": 10080
+    },
+    "event": {
+      "coverage_complete": true,
+      "covered_minutes": 5760,
+      "dates": {
+        "end": "2023-03-13",
+        "start": "2023-03-10"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 373,
+        "bins_15m": 379,
+        "grid_minutes": 5760,
+        "half_life_to_parity_minutes_15m_bins": 1211.6890581083633,
+        "max_abs_dev_bps": 1469.9302374066012,
+        "mean_dev_bps": -285.41181585095154,
+        "median_abs_dev_bps": 209.17248255388307,
+        "p95_abs_dev_bps": 950.8020625026991,
+        "share_traded_minutes_ge_100bps": 0.5960990576375191,
+        "traded_minutes": 4563
+      },
+      "expected_minutes": 5760
+    },
+    "recovery": {
+      "coverage_complete": true,
+      "covered_minutes": 10080,
+      "dates": {
+        "end": "2023-03-20",
+        "start": "2023-03-14"
+      },
+      "diagnostics": {
+        "adjacent_bin_pairs_15m": 321,
+        "bins_15m": 440,
+        "grid_minutes": 10080,
+        "half_life_to_parity_minutes_15m_bins": 82.27151281040486,
+        "max_abs_dev_bps": 59.17473764037623,
+        "mean_dev_bps": -7.809861452846434,
+        "median_abs_dev_bps": 5.001250416822429,
+        "p95_abs_dev_bps": 26.63545292634856,
+        "share_traded_minutes_ge_100bps": 0.0,
+        "traded_minutes": 2889
+      },
+      "expected_minutes": 10080
+    }
+  }
+}

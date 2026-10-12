@@ -1,0 +1,13 @@
+{
+  "file": "docs/PRE_ANALYSIS_PLAN.md",
+  "sha256": "7021989bc113194f12180b8c632af81cec1b92466fca4d5f3cd150424eabb6d6",
+  "frozen_utc": "2026-10-11T12:45Z",
+  "measured_before_freeze": [
+    "E2023-03-USDC-SVB"
+  ],
+  "amendments_file": "docs/PRE_ANALYSIS_AMENDMENTS.md",
+  "exploratory_post_hoc": [
+    "E2022-05-UST-COLLAPSE"
+  ],
+  "exploratory_post_hoc_note": "Eligibility created by an amendment written after the event's own results were seen (A5); excluded from confirmatory counts."
+}

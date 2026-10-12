@@ -1,0 +1,314 @@
+% PROVISIONAL DRAFT (descriptive multi-event framing, user decision 2026-10-11) -- not for submission. Every empirical number is a \Num... macro generated from
+% committed reports (paper/generated/numbers.tex). Statements about unmeasured quantities depend on data or
+% authorization that does not exist yet; they must not be filled with unmeasured values.
+\documentclass[sigconf,review,anonymous]{acmart}
+\input{generated/numbers}
+
+\begin{document}
+
+\title{Dislocated Dollars, Aligned Quotes: A Pre-Registered Multi-Event Study of Stablecoin Fragmentation}
+
+\begin{abstract}
+Stablecoins are meant to trade at par across venues and quote currencies, yet stress episodes repeatedly produce
+prices that differ across markets for hours or days. We present a descriptive, pre-registered multi-event study of
+how such fragmentation arises and resolves. A sourced registry of \NumRegistryEntries{} candidate episodes from
+2020--2026, explicit severity, independence and coverage rules, matched control windows, placebo and
+expected-negative cases, a rule-based screen of venue data, and a post-2024 out-of-sample set yield
+\NumAcceptedClusters{} accepted independent episodes: the TerraUSD collapse (2022) and the USDC/SVB run (2023),
+both exploratory, and the TUSD (2024) and FDUSD (2025) dislocations, both out-of-sample. Across them we separate a
+stablecoin's own dollar price from the within-venue cross-quote wedge. The dollar price dislocated by hundreds to
+thousands of basis points while the wedge barely moved (median change \NumAnchorDvFour{}, \NumTusdDvFour{} and
+\NumFdusdDvFour{} bps for USDC, TUSD and FDUSD): cross-quote arbitrage kept relative prices aligned while the dollar
+value of the token did not hold. The episodes also split into market-wide and issuer-specific stress. Because no
+accepted episode is both confirmatory and in-sample, the pre-registered hypothesis tests are reported as
+insufficient, and all findings are descriptive. Executable restoration capacity is formalised and validated; on-chain
+absorption capacity, measured on swap-validated Curve pools, contracted in every stress episode examined, but exchange
+depth could not be measured, so no CEX--DEX capacity is reported.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Fiat-backed and synthetic stablecoins rely on arbitrage to hold the peg: when the secondary-market price
+falls below par, traders buy and redeem; when relative prices across quote currencies diverge, traders route
+across them. Both mechanisms need \emph{capacity}---the quantity that can actually be executed at a given cost
+within a given time. Prior work shows that arbitrage design matters for peg stability~\cite{lyons2023keeps},
+that primary-market access shapes crisis dynamics beyond what secondary prices reveal~\cite{watsky2024primary,du2025shadow},
+and that cross-exchange crypto price deviations can be large and persistent when arbitrage capital is
+constrained~\cite{makarov2020trading}.
+
+\paragraph{Why multiple events.} A single crisis cannot separate mechanisms: in March 2023, bank-reserve risk,
+weekend redemption closure and exchange-specific liquidity all moved together. We therefore pre-specify a
+multi-event design covering algorithmic collapses, bank-reserve runs, exchange-failure contagion, issuer
+solvency allegations and venue-infrastructure failures, with negative cases and placebo shocks evaluated
+under the same rules. This improves on a March 2023-only study in three ways: (i) heterogeneity across
+mechanisms becomes testable rather than assumed away; (ii) selection is rule-based and includes events
+expected \emph{not} to qualify; (iii) post-2024 events are held out, so conclusions drawn from the in-sample
+period face an honest test.
+
+\paragraph{Contributions.}
+(1) A pre-registered, machine-validated multi-event design: a sourced event registry with independence clustering,
+severity and coverage rules, placebo and negative cases, a rule-based screen, an out-of-sample set, and a frozen
+analysis plan with a public amendment log (\S\ref{sec:events}). (2) A measurement framework that separates peg
+dislocation, within-venue triangle wedges and cross-venue wedges, and distinguishes parity deviations from gross,
+executable and realised arbitrage (\S\ref{sec:framework}). (3) Descriptive cross-event evidence that the dollar price
+and the cross-quote wedge behave very differently in stress, and that episodes divide into market-wide and
+issuer-specific types (\S\ref{sec:multievent}). (4) Reproducible, offline-validated methods for executable
+restoration capacity on order books and AMM pools, with the data limits that currently prevent historical
+estimation stated explicitly.
+
+\paragraph{Scope.} The study is descriptive. It does not identify causal effects, and it does not claim that the
+findings generalise beyond the accepted episodes.
+
+\section{Related Work}
+\label{sec:related}
+\paragraph{Limits to arbitrage.} Classic theory explains why mispricing can persist when arbitrage is
+performed by specialized, capital-constrained agents~\cite{shleifer1997limits}; the survey
+of~\cite{gromb2010limits} organizes these frictions into fundamental and non-fundamental risk, short-selling
+costs, leverage and margin constraints, and equity-capital constraints. Our restoration-capacity measure is an
+execution-level counterpart: it asks how much quantity could actually be routed at a given cost, rather than
+assuming that any visible price gap is arbitraged.
+
+\paragraph{Crypto market segmentation.} Large, recurrent cross-exchange price deviations, with greater
+segmentation across than within countries, are documented by~\cite{makarov2020trading}. We study the
+stablecoin analogue, where the deviation is between quote currencies and between a token and its peg.
+
+\paragraph{Stablecoin pegs, redemption and runs.} Improved access to primary-market arbitrage roughly halved
+Tether's peg deviations in~\cite{lyons2023keeps}. \cite{ma2025runs} show that major issuers concentrate
+redemption in a few authorized arbitrageurs, trading off secondary-market price stability against run risk.
+\cite{anadu2023runs} document flight-to-safety flows across stablecoins in stress and a break-the-buck threshold
+near \$1. Federal Reserve staff analyses stress that secondary prices alone do not reveal primary-market
+conditions~\cite{watsky2024primary} and describe USDC's loss of peg when primary operations paused over the SVB
+weekend~\cite{du2025shadow}. The legal framing of stablecoin issuers as unregulated banks is developed
+by~\cite{zhang2023taming}. Relative to this literature we add (i) a pre-registered, multi-event, multi-mechanism
+event design and (ii) a separation of peg dislocation from cross-quote wedges that maps directly to the
+redemption versus secondary-market channels.
+
+\paragraph{AMM liquidity.} StableSwap~\cite{egorov2019stableswap} and concentrated
+liquidity~\cite{adams2021uniswapv3} determine on-chain execution costs for stablecoin swaps; \cite{lehar2025uniswap}
+compare Uniswap with a centralized limit order book and document the absence of long-lived arbitrage
+opportunities between them. Our on-chain capacity measures will use historically pinned pool states rather than
+current protocol parameters.
+
+\section{Measurement Framework}
+\label{sec:framework}
+For stablecoin $q$ with USD peg, let $S_t^{q}$ be its USD price on a venue. We distinguish:
+\begin{itemize}
+\item \textbf{Peg dislocation} $D_t^{q} = 10^4 \log S_t^{q}$ (bps).
+\item \textbf{Within-venue triangle wedge} $W_t^{q} = 10^4[\log P_t(\mathrm{BTC}/q) + \log S_t^{q} - \log P_t(\mathrm{BTC}/\mathrm{USD})]$,
+which is zero under frictionless cross-quote arbitrage on one venue regardless of $S_t^q$.
+\item \textbf{Cross-venue wedge}: the same construction with legs from different venues.
+\end{itemize}
+A nonzero $D$ or $W$ is a \emph{parity deviation}. It is a \emph{gross opportunity} only after quoted
+spreads, a \emph{executable opportunity} only after fees, depth, latency, settlement and inventory, and a
+\emph{realized trade} only when observed in trade data. Restoration capacity $K_t(\delta)$ is the
+largest quantity that can be executed around the loop at all-in cost at most $\delta$ within horizon $h$.
+Candle data identify parity deviations only; $K_t$ requires order-book or on-chain execution state.
+
+\section{Pre-Registered Questions}
+The frozen plan names three hypotheses, retained here as questions. \textbf{H1}: are fragmentation magnitude and
+persistence higher in stress windows than in matched controls? \textbf{H2}: are peg dislocations more persistent
+than within-venue wedges when redemption access is impaired? \textbf{H3}: conditional on stress, is lower executable
+restoration capacity associated with larger and more persistent wedges? The plan's confirmatory test for H1 requires
+accepted in-sample episodes measured after the plan was frozen; none exists, so H1 is reported as insufficient and
+the evidence is presented descriptively. H2's ratio statistic proves unstable and exceeds one even in the placebo
+(\S\ref{sec:multievent}). H3 requires historical execution state that is not available. Decision rules, dependent
+variables, multiplicity control and the out-of-sample protocol are fixed in a pre-analysis plan frozen by content
+hash before any non-anchor event was measured; amendments are logged with whether data had been seen.
+
+\section{Event Selection}
+\label{sec:events}
+Rules were fixed before measuring any non-anchor event (Table~\ref{tab:registry}). \emph{R1 (severity):} at least 30 traded minutes with
+$|D| \ge 100$ bps inside some 24-hour window; $\ge 500$ bps marks the severe class. \emph{R2 (independence):} one
+episode per primary trigger; contagion legs share their primary's cluster and never add episodes.
+\emph{R3 (windows):} 7-day baseline ending two days before the event, the event window, a 7-day recovery, and a
+7-day matched control ending 28 days before. \emph{R4 (sourcing):} at least two distinct publishers.
+Events from 2024 onward are out-of-sample.
+
+The registry holds \NumRegistryEntries{} entries in \NumRegistryClusters{} clusters:
+\NumDocumentedPrimaries{} source-documented primary candidates (including one placebo---the BUSD issuance
+halt~\cite{paxos2023busd}---and one expected negative case), \NumUnresolved{} unresolved candidates, and
+\NumAcceptedClusters{} accepted cluster so far. \input{generated/registry_table}
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/event_timeline.pdf}
+\caption{Registry events by reported window, status and role (generated from the registry). The dotted line marks the
+pre-registered out-of-sample boundary.}
+\label{fig:timeline}
+\end{figure*}
+Decisions across events are produced mechanically by applying the frozen plan to all measured events
+(Section~\ref{sec:multievent}); with the current evidence the in-sample H1 decision is ``insufficient events''. All registry primaries with available data have been measured (Table~\ref{tab:results}); the UST collapse is analysed in~\cite{jump2022ust}.
+
+\section{Data}
+\label{sec:data}
+\paragraph{Anchor.} A 30,240-minute Binance.US one-minute candle panel (2023-03-01 to 2023-03-21), hash-pinned and
+audited, provides USDC/USD, USDT/USD and the BTC legs of both triangles on a single venue.
+
+\paragraph{Multi-event candle sources.} For the remaining candidates, the only free public archives identified with
+complete windows are Binance.com monthly one-minute klines. They are listed (with byte sizes and ETags) for UST,
+TUSD, FDUSD, USDe and the BUSD placebo, together with the BTC/stablecoin legs needed for within-venue triangles,
+except that no BTC/USDe market is listed (Table~\ref{tab:coverage}, Figure~\ref{fig:coverage}). None has yet been
+downloaded. Archives are accepted only after checksum verification; timestamp units (milliseconds before 2025,
+microseconds after) are inferred per file, and missing minutes are kept missing rather than filled.
+
+\paragraph{Quote basis.} Binance.com quotes these stablecoins in USDT, so a raw series measures deviation from USDT,
+not from the dollar. Following the pre-analysis plan, such series enter confirmatory tests only after conversion with
+a USD reference leg on a USD venue and only in windows where USDT/USD itself stays within 10~bps of par. The
+designated reference is Binance.US USDT/USD history; Bitstamp's public USDT/USD market is a robustness alternative.
+Without the reference leg an event can be measured but not accepted. The within-venue triangle
+$W=\log P(\mathrm{BTC}/q)+\log P(q/\mathrm{USDT})-\log P(\mathrm{BTC}/\mathrm{USDT})$ is unaffected, because USDT
+cancels.
+
+\paragraph{Order books and on-chain state.} Order-book reconstruction is validated on one public normalized L2 sample
+(\NumSampleRows{} rows; BTCUSD, 2023-03-01)~\cite{tardis2026binanceus}; normalized feeds omit native exchange
+sequence identifiers~\cite{coinapi2026limitbook}, so continuity is disclosed as unverifiable. Event-specific Curve
+pools are source-documented (for May 2022, the wormhole-UST/3CRV pool analysed by~\cite{jump2022ust}). Using a free
+archive endpoint, the state of Curve's 3pool (March and June 2023) and of both UST metapools (May 2022) was read at the
+block preceding each event window, and every on-chain \texttt{get\_dy} quote was reproduced exactly by our offline
+StableSwap implementation; no capacity has yet been computed from these states. Candle closes are last trades, not quotes.
+
+\input{generated/coverage_table}
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figures/coverage_heatmap.pdf}
+\caption{Data coverage by event, venue/symbol and analysis window: observed locally, listed in a public archive
+(not downloaded), source unverified, or not listed.}
+\label{fig:coverage}
+\end{figure}
+
+\section{Anchor Event: USDC, March 2023 (exploratory)}
+\label{sec:anchor}
+\textbf{Peg dislocation.} On Binance.US, R1 is met with \NumAnchorBreachMinutes{} breaching minutes in the worst
+24-hour window and an extreme of \NumAnchorExtremeBps{} bps. The median $|D|$ was \NumAnchorBaselineMedAbs{} bps in
+the baseline, \NumAnchorEventMedAbs{} bps in the event window (\NumAnchorEventShareHundred\% of traded minutes
+beyond 100 bps) and \NumAnchorRecoveryMedAbs{} bps in recovery. On 15-minute medians the event-window half-life
+to par was about \NumAnchorEventHalfLife{} minutes.
+
+Under the pre-analysis-plan definitions (exploratory for this event), the event-minus-baseline change in median
+$|D|$ is \NumAnchorDvOne{} bps (95\% block-bootstrap CI [\NumAnchorDvOneLo, \NumAnchorDvOneHi]; the matched control
+window is not covered), and recovery---the trailing median $|D|$ falling below 25 bps after the extreme---took about
+\NumAnchorRecoveryHours{} hours. BTC realized volatility roughly doubled (\NumAnchorBtcVolBaseline{} to
+\NumAnchorBtcVolEvent{} bps per hour), an alternative explanation that any capacity interpretation must address.
+
+\textbf{Triangle wedge.} The median $|W^{\mathrm{USDC}}|$ rose from \NumUsdcMedAbsPre{} to \NumUsdcMedAbsCrisis{} bps
+(difference \NumUsdcDiffMedAbs{} bps, 95\% block-bootstrap CI [\NumUsdcDiffMedAbsLo, \NumUsdcDiffMedAbsHi]); its 95th
+percentile rose from \NumUsdcPNinetyFivePre{} to \NumUsdcPNinetyFiveCrisis{} bps, and \NumUsdcShareAboveTwentyFiveCrisis\% of
+jointly traded crisis minutes exceeded 25 bps (\NumUsdcShareAboveTwentyFivePre\% before). USDT wedges stayed small
+(crisis P95 \NumUsdtPNinetyFiveCrisis{} bps). Yet $W$ reverted fast: half-life \NumUsdcHalfLifeOneMinCrisis{} minutes on
+one-minute closes and \NumUsdcHalfLifeFifteenCrisis--\NumUsdcHalfLifeSixtyCrisis{} minutes on 15--60-minute medians. Using
+Coinbase BTC-USD as the dollar leg gives a crisis median of \NumUsdcCoinbaseMedAbsCrisis{} bps.
+
+\begin{figure*}[t]
+\includegraphics[width=\textwidth]{figures/anchor_series.pdf}
+\caption{Anchor event: 15-minute medians of USDC peg dislocation $D$ and the USDC triangle wedge $W$ on Binance.US
+(traded minutes only; dotted lines mark the reported event window).}
+\label{fig:anchor}
+\end{figure*}
+Under the plan definitions, the event-minus-baseline change in median $|W|$ is \NumAnchorDvFour{} bps (95\% CI
+[\NumAnchorDvFourLo, \NumAnchorDvFourHi]), and the half-life ratio of $D$ to $W$ on 15-minute medians is about
+\NumAnchorDvFive{} (DV5; H2 predicts a ratio above one). Being exploratory, these values do not enter the H2 count.
+
+\textbf{Interpretation.} Figure~\ref{fig:anchor} shows the separation directly. Cross-quote arbitrage kept relative prices close while USDC's dollar value stayed
+dislocated---consistent with H2 and with impaired redemption~\cite{du2025shadow}, but one event cannot
+establish it.
+
+\section{Multi-Event Results (descriptive)}
+\label{sec:multievent}
+Table~\ref{tab:results} reports every measured candidate. Status changes follow fixed rules and are logged.
+Two amendments govern the dollar leg. A2 (made after seeing data) removes eligibility when a venue's on-platform USD
+was not redeemable: Binance.US USD services were suspended from June 2023 to February 2025. On Binance.US, the June
+2023 USDT candidate shows a USDT \emph{premium} of \NumNegativeExtreme{} bps that tracks that impairment rather than
+the reported Curve imbalance. A3 (fixed before any Bitstamp data were analysed) designates Bitstamp as the dollar
+venue whenever A2 excludes Binance.US, and treats any other venue as robustness only. On Bitstamp's redeemable dollar
+the June 2023 candidate peaks at \NumNegativeExtremeBitstamp{} bps and fails R1, as its reported magnitude implied;
+TUSD qualifies.
+
+\input{generated/results_table}
+
+\paragraph{Accepted out-of-sample episodes.} TUSD (January 2024, reserve-attestation concerns) reached
+\NumTusdExtreme{} bps against USD (Bitstamp dollar leg), with median $|D|$ up \NumTusdDvOne{} bps on its control (95\% CI
+[\NumTusdDvOneLo, \NumTusdDvOneHi]) while its Binance triangle wedge was unchanged (\NumTusdDvFour{} bps). FDUSD (April 2025, issuer-solvency allegation) reached an extreme of
+\NumFdusdExtreme{} bps against USD; median $|D|$ rose by \NumFdusdDvOne{} bps relative to the matched control (95\% CI
+[\NumFdusdDvOneLo, \NumFdusdDvOneHi]) and recovered in about \NumFdusdRecoveryHours{} hours. The within-venue triangle
+wedge did not move (change \NumFdusdDvFour{} bps, CI [\NumFdusdDvFourLo, \NumFdusdDvFourHi]), and market-wide BTC
+volatility was lower than in the control window (\NumFdusdVolControl{} vs \NumFdusdVolEvent{} bps per hour). As in the
+anchor, cross-quote arbitrage on the venue kept relative prices aligned while the token's dollar value dislocated.
+
+\paragraph{Negative and placebo cases.} The BUSD issuance halt, a regulatory shock with guaranteed redemptions, fails
+R1 (median $|D|$ change \NumPlaceboDvOne{} bps), as does the FTX-period USDT candidate on Binance.US, whose reported
+dislocation occurred on other venues. USDe's Binance-only dislocation (extreme \NumUsdeExtreme{} bps) is measured but not
+accepted because USDT/USD itself moved by a median of \NumUsdeUsdtGate{} bps in the event window.
+
+\paragraph{UST and post-hoc eligibility.} Binance removed UST/USDT on 2022-05-13 and UST continued only against BUSD
+until the token was renamed USTC (USTC/BUSD from 2022-05-30). A pre-registered splice onto USTC/BUSD (A4) left the
+recovery window empty; a user-approved amendment written after inspecting coverage (A5) splices onto UST/BUSD instead.
+UST then qualifies, with an extreme of \NumUstExtreme{} bps and no recovery (Table~\ref{tab:results}), but because its
+event-window result was known before A5, it is treated as exploratory and excluded from confirmatory counts.
+
+\paragraph{A caution on H2.} The peg-to-wedge half-life ratio exceeds one in every event where it is defined,
+\emph{including the placebo} (\NumPlaceboDvFive), and it is numerically unstable when the wedge half-life is near zero
+(Table~\ref{tab:results}). A ratio above one is therefore not by itself evidence of stress-specific persistence;
+persistence comparisons must be made against each event's own control.
+
+\paragraph{Robustness.} Every event's R1 classification is unchanged at 50, 100 and 200~bps, and the trimmed-window
+DV1 keeps its sign (Table~\ref{tab:robustness}). Half-lives are fragile: undefined for UST, which never mean-reverts,
+near a unit root for TUSD, and increasing with bin width for FDUSD, so persistence is reported descriptively.
+
+\input{generated/robustness_table}
+
+\paragraph{Systematic in-sample screen.} To avoid relying only on news-selected events, a pre-registered screen (A6)
+applies R1 to every Binance.US USD-quoted stablecoin series (USDC, USDT, DAI, TUSD) through May 2023. It finds
+\NumScreenEpisodes{} detections in \NumScreenClusters{} clusters: \NumScreenMatched{} coincide with registry events
+(Black Thursday, Terra, SVB) and \NumScreenNew{} are new. One new cluster, the DAI premium of August--September 2020
+documented as yield-farming demand, is measured but fails coverage because the Binance.US pair was listed four days
+before it began; the other, a simultaneous premium of all four stablecoins against the venue's dollar in May 2023,
+has a single press source and is left unresolved. The screen therefore adds no confirmatory in-sample episode.
+
+\paragraph{Alternative explanations (associations only).} Table~\ref{tab:mechanism} reports the pre-listed covariates.
+The accepted episodes split by market-wide stress: SVB, UST and USDe coincided with BTC volatility two to four times
+its reference level, whereas TUSD and FDUSD occurred at or below reference volatility, consistent with issuer-specific
+rather than market-wide shocks. Extremes fell outside a generic US banking window in most events, but such hours make
+up about \NumClosedBaseRate\% of a week, so this is close to the base rate and is not evidence for a redemption-hours mechanism; the
+window is an assumption, not issuer-documented.
+
+\input{generated/mechanism_table}
+
+\paragraph{Data quality.} Bitstamp's USDT/USD history contains a corrupt print (2,959.99 on 2022-11-08 09:42 UTC,
+carried forward for several minutes). It affects only a robustness run (FTX on Bitstamp); no outlier filter was
+pre-specified, so none is applied, and that robustness result is not interpreted.
+
+\section{Executable Capacity: Method and Limits}
+We formalise two quantities that the framework keeps separate. \emph{Standardised restoration capacity}
+$K_t(\delta)$ is the largest quantity executable at all-in cost at most $\delta$ relative to a reference price, solved
+exactly level by level on an order book. \emph{Restoration quantity} is the size routed around a triangle loop until
+its marginal unit no longer pays after fees, in either direction, with depth and inventory limits reported as binding
+constraints. On-chain legs use integer StableSwap, Uniswap~v2 and single-range Uniswap~v3 swap arithmetic, and
+primary-market access is modelled by a timezone-aware redemption window. All components are validated against
+hand-computed synthetic cases.
+
+\paragraph{On-chain results (descriptive; on-chain only).} For pools whose reproduced state was also validated
+against a real historical swap, we sample state every six hours across each event's windows
+(Table~\ref{tab:onchain}). Absorption capacity fell in all three cases. It reached zero where the pool filled with the
+stressed coin (UST in May 2022; the USDC-to-USDT leg in March 2023), while restoration capacity---the stressed coin
+available to buyers---rose. In June 2023, 3pool absorption fell to about a third of its baseline as the pool
+became USDT-heavy, yet USDT's dollar price on a venue with redeemable dollars never met the severity rule: on-chain
+contraction alone did not produce an exchange-level dislocation. With three pools these are associations, and they
+measure on-chain capacity only.
+
+\input{generated/onchain_capacity_table}
+
+Historical estimation of exchange capacity is not possible with the data available to this study. Crisis-day
+exchange order books are offered only under paid licences, which were declined. Historical pool state is readable through a free archive key; pool states
+and quotes were reproduced exactly at event blocks and validated against real swaps. Crisis-day exchange depth remains
+unavailable, so the capacity reported above is on-chain only and does not represent comprehensive CEX--DEX
+restoration capacity. No exchange capacity figures are reported.
+
+\section{Limitations}
+Four accepted episodes (two exploratory, none confirmatory in-sample); one amendment made after seeing data; last-trade candles with asynchronous legs and bid-ask bounce; calendar regime labels;
+USDT-quoted archives require USD correction; no executable depth; normalized L2 lacks native sequence IDs.
+
+\section{Reproducibility}
+Code, registry, rules and reports are versioned; raw licensed data are referenced by hash. Every number in
+this draft is generated by \texttt{python -m www\_paper.macros} from committed JSON reports.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}

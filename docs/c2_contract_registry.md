@@ -12,3 +12,27 @@ The registry at `reports/c2/contract_registry.json` separates an address documen
 Addresses and present-day documentation do not establish historical state. Maker parameter proposals are not parameter changes until the corresponding on-chain executive action executes. Uniswap pools are unique instances; do not substitute a currently popular pool for one verified at the target date. The research boundary is registry discovery only: no historical swap simulation or capacity estimate in C2.
 
 Sources reviewed 2026-10-11: [Curve deployment addresses](https://curve.readthedocs.io/ref-addresses.html), [Uniswap v3 official deployments and factory resolution](https://developers.uniswap.org/docs/protocols/v3/deployments), and [Maker `dss-psm` contract reference](https://github.com/sky-ecosystem/dss-psm). The Maker source repository is protocol-maintained but the contract's historical deployment/state is explicitly not verified here.
+
+## Multi-event extension (2026-10-11)
+
+Each entry in `reports/c2/contract_registry.json` now lists the registry events it relates to (`event_ids`), and a test checks that every linked event exists. New candidates:
+
+| Candidate | Address | Evidence | Linked event |
+|---|---|---|---|
+| Curve wormhole-UST/3CRV metapool | `0xCEAF7747579696A2F0bb206a14210e3c9e6fB269` | Jump Crypto's UST depeg analysis names it, verbatim, as the pool studied for 2022-05-07..09 | E2022-05-UST-COLLAPSE |
+| Curve legacy UST metapool | `0x890f4e345B1dAED0367A877a1612f86A1f86985f` | Curve address docs (`StableSwapUST.vy`) | E2022-05-UST-COLLAPSE (relevance unverified) |
+| Curve BUSD pool | `0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27` | Curve address docs | P2023-02-BUSD-PAXOS-HALT |
+| Curve USDe/USDC pool | `0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72` | **Aggregator listing only**, so labelled `UNVERIFIED`; a test enforces this | E2025-10-USDE-BINANCE |
+
+The 3pool entries now also link to the June 2023 USDT negative case. None of these entries is verified at a target block. Using any of them for capacity requires an authorized archive endpoint, followed by block-pinned checks of code, coin order, decimals, A, fee and balances.
+
+## Block-pinned validation plan (offline; 0 network calls)
+
+`uv run python -m www_c2.validation_plan` writes `reports/c2/validation_plan.json`. For each `SOURCE_DOCUMENTED` pool with a known interface, and each linked event, it records:
+- the target timestamp (event start, 00:00 UTC);
+- how the target block is found: `block_at_or_before`, a binary search for the last block whose timestamp is at or before the target;
+- the exact read-only requests to send: `eth_getCode` for bytecode identity, then `eth_call` for `A()`, `fee()`, `coins(i)`, `balances(i)` and a `get_dy` quote.
+
+Calldata is built offline. The pure-Python Keccak-256 used for selectors is tested against standard vectors (the empty-string hash, `transfer(address,uint256)` → `0xa9059cbb`, `balanceOf(address)` → `0x70a08231`). The dry run rejects any method other than `eth_getCode` / `eth_call`, malformed calldata, and selector mismatches.
+
+**Planned:** 3pool (anchor and June 2023), wormhole-UST/3CRV and the legacy UST pool (May 2022). **Not planned:** the BUSD pool (interface not established), the USDe/USDC pool (`UNVERIFIED` source), the Uniswap factory, and the Maker PSM; each needs its own interface work. ABI signatures are marked `ASSUMED` and must be confirmed against verified source code before any result is used. Executing the plan requires an authorized archive endpoint via `www_c2.rpc`.

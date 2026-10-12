@@ -1,0 +1,410 @@
+[
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 passed but R3 window coverage incomplete",
+    "measured_utc": "2026-10-11T18:01Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:01Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:02Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:02Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T18:02Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:02Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:02Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 passed but R3 window coverage incomplete",
+    "measured_utc": "2026-10-11T18:04Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:04Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "USD leg venue impaired during the analysis span (amendment A2)",
+    "measured_utc": "2026-10-11T18:04Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:04Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T18:04Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:04Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "ACCEPTED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "USD leg venue impaired during the analysis span (amendment A2)",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 passed but R3 window coverage incomplete",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "USD leg venue impaired during the analysis span (amendment A2)",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "USD leg venue impaired during the analysis span (amendment A2)",
+    "measured_utc": "2026-10-11T18:05Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 passed but R3 window coverage incomplete",
+    "measured_utc": "2026-10-11T18:25Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:25Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:26Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:26Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T18:26Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:26Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:26Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 passed but R3 window coverage incomplete",
+    "measured_utc": "2026-10-11T18:30Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:30Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:30Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T18:31Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T18:31Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:31Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T18:31Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "A4 splice executed as registered; recovery window uncovered (USTC/BUSD opened 2022-05-30), R3 still fails",
+    "measured_utc": "2026-10-11T19:04Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_a4_splice.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T19:18Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T19:18Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T19:18Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T19:19Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T19:19Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T19:19Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T19:19Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2022-05-UST-COLLAPSE",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T20:51Z",
+    "report": "reports/events/E2022-05-UST-COLLAPSE_protocol.json"
+  },
+  {
+    "event_id": "P2023-02-BUSD-PAXOS-HALT",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T20:52Z",
+    "report": "reports/events/P2023-02-BUSD-PAXOS-HALT_protocol.json"
+  },
+  {
+    "event_id": "E2024-01-TUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T20:52Z",
+    "report": "reports/events/E2024-01-TUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-04-FDUSD",
+    "old_status": "ACCEPTED",
+    "new_status": "ACCEPTED",
+    "rule": "R1 passed on USD basis with baseline/event/recovery coverage",
+    "measured_utc": "2026-10-11T20:52Z",
+    "report": "reports/events/E2025-04-FDUSD_protocol.json"
+  },
+  {
+    "event_id": "E2025-10-USDE-BINANCE",
+    "old_status": "DATA_VERIFIED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 measured on a non-USD-verified basis; cannot be ACCEPTED",
+    "measured_utc": "2026-10-11T20:52Z",
+    "report": "reports/events/E2025-10-USDE-BINANCE_protocol.json"
+  },
+  {
+    "event_id": "E2022-11-USDT-FTX",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T20:53Z",
+    "report": "reports/events/E2022-11-USDT-FTX_protocol.json"
+  },
+  {
+    "event_id": "N2023-06-USDT-3POOL",
+    "old_status": "REJECTED",
+    "new_status": "REJECTED",
+    "rule": "R1 not met on USD basis",
+    "measured_utc": "2026-10-11T20:53Z",
+    "report": "reports/events/N2023-06-USDT-3POOL_protocol.json"
+  },
+  {
+    "event_id": "E2020-08-DAI-YIELD-PREMIUM",
+    "old_status": "SOURCE_DOCUMENTED",
+    "new_status": "DATA_VERIFIED",
+    "rule": "R1 passed but R3 window coverage incomplete",
+    "measured_utc": "2026-10-11T20:53Z",
+    "report": "reports/events/E2020-08-DAI-YIELD-PREMIUM_protocol.json"
+  }
+]

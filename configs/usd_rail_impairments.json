@@ -1,0 +1,13 @@
+{
+  "note": "Periods in which a venue's on-platform USD could not be deposited or withdrawn, so USD-quoted prices there are not prices in redeemable US dollars. Amendment A2 (docs/PRE_ANALYSIS_AMENDMENTS.md).",
+  "impairments": [
+    {"venue": "binance-us", "start_utc": "2023-06-09", "end_utc": "2025-02-19",
+     "description": "USD deposits suspended 2023-06-09; banking partners ceased USD payments 2023-06-13; USD pairs delisted; USD deposits/withdrawals restored 2025-02-19 with a phased rollout.",
+     "sources": [
+       "https://www.theblock.co/post/233917/binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-payments-next-week",
+       "https://www.aljazeera.com/economy/2023/6/9/crypto-giant-binances-us-arm-suspends-dollar-deposits",
+       "https://www.businesswire.com/news/home/20250218352407/en/Binance.US-Restores-USD-Deposits-Withdrawals-on-Platform",
+       "https://www.theblock.co/post/341730/binance-us-restores-fiat-deposits-withdrawals"
+     ]}
+  ]
+}

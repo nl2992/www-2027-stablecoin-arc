@@ -1,0 +1,173 @@
+{
+  "label": "NORMAL-MARKET first-of-month samples; not crisis-period depth",
+  "files": [
+    {
+      "file": "binance-us_incremental_book_L2_2023-03-01_USDCUSD.csv.gz",
+      "sha256": "04ea987b12e695de1f86b30c9ffb38a8a526cb5f337e04f6e843055b42b74da5",
+      "summary": {
+        "samples": 286,
+        "sample_minutes": 5,
+        "spread_bps": {
+          "median": 1.000050002500125,
+          "p10": 0.999950002499875,
+          "p90": 1.000050002500125
+        },
+        "bid_depth_quote_10bps": {
+          "median": 569038.41619,
+          "p10": 404240.478164,
+          "p90": 862853.726027
+        },
+        "ask_depth_quote_10bps": {
+          "median": 1535679.87429,
+          "p10": 1254679.340843,
+          "p90": 1845642.64283
+        },
+        "bid_depth_quote_50bps": {
+          "median": 662248.00191,
+          "p10": 483424.783714,
+          "p90": 944313.323807
+        },
+        "ask_depth_quote_50bps": {
+          "median": 1536180.5194350001,
+          "p10": 1254700.905843,
+          "p90": 1845642.64283
+        },
+        "bid_depth_quote_100bps": {
+          "median": 674850.710907,
+          "p10": 533184.789784,
+          "p90": 954213.323807
+        },
+        "ask_depth_quote_100bps": {
+          "median": 1544443.5440815,
+          "p10": 1264033.471014,
+          "p90": 1866491.1607010001
+        },
+        "crossed_samples": 0
+      },
+      "replay_counters": {
+        "message_groups": 3435,
+        "rows": 4885,
+        "multirow_message_groups": 677,
+        "snapshot_segments": 2,
+        "snapshot_rows": 505,
+        "complete_snapshot_segments": 2,
+        "update_rows": 4380,
+        "applied_updates": 4100,
+        "zero_amount_removals": 280,
+        "local_arrival_gaps_over_threshold": 554,
+        "maximum_local_arrival_gap_us": 1085417671,
+        "snapshot_resets": 1
+      }
+    },
+    {
+      "file": "binance_incremental_book_L2_2024-01-01_TUSDUSDT.csv.gz",
+      "sha256": "8b6af2111069bb13c6b8f7f19c1e3e3b7a3229e3c844a88b656f50146e952ce2",
+      "summary": {
+        "samples": 287,
+        "sample_minutes": 5,
+        "spread_bps": {
+          "median": 1.0020542111328223,
+          "p10": 1.0017530678687703,
+          "p90": 1.0028581457152885
+        },
+        "bid_depth_quote_10bps": {
+          "median": 1662892.1457,
+          "p10": 1133257.8997199999,
+          "p90": 2386337.6240200005
+        },
+        "ask_depth_quote_10bps": {
+          "median": 1672424.0762,
+          "p10": 762386.9940599999,
+          "p90": 2843130.5962199997
+        },
+        "bid_depth_quote_50bps": {
+          "median": 3421274.8099,
+          "p10": 2532545.74138,
+          "p90": 4511492.312
+        },
+        "ask_depth_quote_50bps": {
+          "median": 5201120.5494,
+          "p10": 3486241.543,
+          "p90": 5795523.7826
+        },
+        "bid_depth_quote_100bps": {
+          "median": 3677805.8561,
+          "p10": 2802485.53986,
+          "p90": 4780111.7921
+        },
+        "ask_depth_quote_100bps": {
+          "median": 5214099.6766,
+          "p10": 3499094.61504,
+          "p90": 5814141.9406
+        },
+        "crossed_samples": 0
+      },
+      "replay_counters": {
+        "message_groups": 102603,
+        "rows": 132977,
+        "multirow_message_groups": 21697,
+        "snapshot_segments": 1,
+        "snapshot_rows": 353,
+        "complete_snapshot_segments": 1,
+        "update_rows": 132624,
+        "applied_updates": 131748,
+        "zero_amount_removals": 876
+      }
+    },
+    {
+      "file": "binance_incremental_book_L2_2025-04-01_FDUSDUSDT.csv.gz",
+      "sha256": "409b80333b7cfa3c451f0ab73cca7d35531144bb04e81952c1fd8e98c0c4ce08",
+      "summary": {
+        "samples": 287,
+        "sample_minutes": 5,
+        "spread_bps": {
+          "median": 1.0016527269995492,
+          "p10": 1.001552406229656,
+          "p90": 1.0017530678687703
+        },
+        "bid_depth_quote_10bps": {
+          "median": 61849787.7747,
+          "p10": 41463798.86008,
+          "p90": 78087254.16954002
+        },
+        "ask_depth_quote_10bps": {
+          "median": 52155992.3337,
+          "p10": 40295630.53832,
+          "p90": 70518841.3882
+        },
+        "bid_depth_quote_50bps": {
+          "median": 62976156.8812,
+          "p10": 42088670.96378,
+          "p90": 79259344.17128001
+        },
+        "ask_depth_quote_50bps": {
+          "median": 64527503.9921,
+          "p10": 48407033.20764,
+          "p90": 79469990.19588
+        },
+        "bid_depth_quote_100bps": {
+          "median": 63719260.4434,
+          "p10": 42826316.52058,
+          "p90": 79997779.03818001
+        },
+        "ask_depth_quote_100bps": {
+          "median": 64684759.2491,
+          "p10": 48595886.65814,
+          "p90": 79624031.17408
+        },
+        "crossed_samples": 0
+      },
+      "replay_counters": {
+        "message_groups": 185554,
+        "rows": 286247,
+        "multirow_message_groups": 59795,
+        "snapshot_segments": 1,
+        "snapshot_rows": 536,
+        "complete_snapshot_segments": 1,
+        "update_rows": 285711,
+        "applied_updates": 283922,
+        "zero_amount_removals": 1789
+      }
+    }
+  ]
+}
