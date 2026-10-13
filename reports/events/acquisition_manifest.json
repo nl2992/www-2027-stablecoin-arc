@@ -7461,10 +7461,250 @@
    "for_events": [
     "X2023-09-BINANCE-EUR-RAIL"
    ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-02.csv",
+   "bytes": 1817496,
+   "sha256": "a81744e618052e7a941b074d0d4062ee74a0d07005f9f0a730ca9b600c7e79cd",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 39392,
+   "first_utc": "2023-02-01T00:00Z",
+   "last_utc": "2023-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-03-SVB-DECOMPOSITION"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2023-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2023-02.csv",
+   "bytes": 1759123,
+   "sha256": "076091ddd52d987cf53c6cf895daae0536226436db6aca9162cbe76faf049f80",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 3903,
+   "first_utc": "2023-02-01T00:00Z",
+   "last_utc": "2023-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-03-SVB-DECOMPOSITION"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-03.csv",
+   "bytes": 2022700,
+   "sha256": "9389b2b1211d26647b5495b0430aa6af50c8abae4a4bf81c6b2d4589176bacc9",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 43775,
+   "first_utc": "2023-03-01T00:00Z",
+   "last_utc": "2023-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-03-SVB-DECOMPOSITION"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2023-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2023-03.csv",
+   "bytes": 2008624,
+   "sha256": "cbec852cfe5ae8a59bdc7d709f8bd51063dba08c828c11233cc1b6afa31f968f",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 7578,
+   "first_utc": "2023-03-01T00:00Z",
+   "last_utc": "2023-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-03-SVB-DECOMPOSITION"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2023-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSD-1m-2023-04.csv",
+   "bytes": 1944797,
+   "sha256": "46bb858a83c53dd1c53f3f50cd2cb3594f83b0a16fa43dabf9b6c5d60f59d405",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 41628,
+   "first_utc": "2023-04-01T00:00Z",
+   "last_utc": "2023-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-03-SVB-DECOMPOSITION"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2023-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2023-04.csv",
+   "bytes": 1836879,
+   "sha256": "20e8c6e449f073f66325af20b9075c56ea9b427139a6ad73f355a76cfa67d0be",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 3672,
+   "first_utc": "2023-04-01T00:00Z",
+   "last_utc": "2023-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-03-SVB-DECOMPOSITION"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2023-05",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2023-05.csv",
+   "bytes": 1913291,
+   "sha256": "13d8aed3f95cf8792fc8d3c2fa04242aeff055a2c95f4eef3a24783972770122",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 3341,
+   "first_utc": "2023-05-01T00:00Z",
+   "last_utc": "2023-05-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2023-06",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2023-06.csv",
+   "bytes": 1829453,
+   "sha256": "6e346f325f3b4067bc009f78296480cff6f634cd8a4abe70d395f71ce836e312",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 3758,
+   "first_utc": "2023-06-01T00:00Z",
+   "last_utc": "2023-06-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2023-07",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2023-07.csv",
+   "bytes": 1803951,
+   "sha256": "749e1496c623d9549d88590ff235beeae019fd2a068f76981be5e204863bf52f",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 3499,
+   "first_utc": "2023-07-01T00:00Z",
+   "last_utc": "2023-07-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2025-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2025-02.csv",
+   "bytes": 1723257,
+   "sha256": "a153e6d8d2391b5314c9be4abdbd3c06d963500631eff0d48578b2a03db5cd48",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 7785,
+   "first_utc": "2025-02-01T00:00Z",
+   "last_utc": "2025-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2025-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2025-03.csv",
+   "bytes": 2028012,
+   "sha256": "f2cdf31fbf1ecd3e8c2465f3b63369395a41f85adb3de42557dfa6583ead5a4d",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 8445,
+   "first_utc": "2025-03-01T00:00Z",
+   "last_utc": "2025-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "USDCUSD",
+   "month": "2025-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/usdcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/USDCUSD-1m-2025-04.csv",
+   "bytes": 1823854,
+   "sha256": "e9796f4269f52c02e1eb9b53704e0bc4927a062447612762bb588b33c3f484bd",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 6407,
+   "first_utc": "2025-04-01T00:00Z",
+   "last_utc": "2025-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "X2023-06-BINANCEUS-DEBANKING"
+   ]
   }
  ],
  "summary": {
-  "VERIFIED": 380,
+  "VERIFIED": 392,
   "NOT_AVAILABLE": 38,
   "CHECKSUM_FAILED": 0
  }
