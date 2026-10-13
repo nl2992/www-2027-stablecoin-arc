@@ -86,11 +86,51 @@ def identification(pd_a: pd.Series, pd_b: pd.Series) -> dict[str, Any]:
     if len(h) < 24:
         return {"hours": int(len(h))}
     diff = h.iloc[:, 0] - h.iloc[:, 1]
+    d = h.diff().dropna()
+    scale = float(h.iloc[:, 0].abs().median())
     return {"hours": int(len(h)), "corr_hourly": float(h.corr().iloc[0, 1]), "median_gap_bps": float(diff.median()),
-            "median_abs_gap_bps": float(diff.abs().median())}
+            "median_abs_gap_bps": float(diff.abs().median()),
+            "gap_to_size": float(diff.abs().median() / scale) if scale > 0 else None,
+            "corr_hourly_changes": float(d.corr().iloc[0, 1]) if len(d) > 2 else None}
 
 
-def run(binance_us: Path, bitstamp: Path, manifest: Path) -> dict[str, Any]:
+def liquidity(frame: pd.DataFrame, phases: list[tuple[str, str, str, str]] = PHASES) -> list[dict[str, Any]]:
+    """Per phase: share of minutes with a trade, median hourly trade count and quote volume (venue USD)."""
+    hourly = frame[["trades", "quote_volume"]].resample("1h").sum()
+    rows = []
+    for name, start, end, _ in phases:
+        lo, hi = pd.Timestamp(start, tz="UTC"), pd.Timestamp(end, tz="UTC")
+        minutes = (hi - lo) / pd.Timedelta("1min")
+        f = frame[(frame.index >= lo) & (frame.index < hi)]
+        h = hourly[(hourly.index >= lo) & (hourly.index < hi)]
+        rows.append({"phase": name, "traded_minute_share": float((f["volume"] > 0).sum() / minutes),
+                     "median_hourly_trades": float(h["trades"].median()) if len(h) else None,
+                     "median_hourly_quote_volume": float(h["quote_volume"].median()) if len(h) else None})
+    return rows
+
+
+def shifted_phases(days: int) -> list[tuple[str, str, str, str]]:
+    """Move every internal boundary by ``days`` (outer window fixed)."""
+    bounds = [PHASES[0][1]] + [str((pd.Timestamp(p[1]) + pd.Timedelta(days=days)).date()) for p in PHASES[1:]] + [PHASES[-1][2]]
+    return [(p[0], bounds[i], bounds[i + 1], p[3]) for i, p in enumerate(PHASES)]
+
+
+def boundary_sensitivity(series: pd.Series, shifts: tuple[int, ...] = (-1, 0, 1)) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    for k in shifts:
+        for r in phase_table(series, shifted_phases(k)):
+            if r.get("minutes"):
+                out.setdefault(r["phase"], []).append(r["median_bps"])
+    return {ph: {"min": min(v), "max": max(v), "n_shifts": len(v)} for ph, v in out.items()}
+
+
+def raw_frame(directory: Path, symbol: str) -> pd.DataFrame:
+    """Raw klines with trade counts; call only after load_binance_months has verified the checksums."""
+    from www_events.binance_klines import read_kline_zip
+    return pd.concat([read_kline_zip(a).frame for a in sorted(directory.glob(f"{symbol}-1m-*.zip"))]).sort_index()
+
+
+def run(binance_us: Path, bitstamp: Path, manifest: Path, binance: Path | None = None) -> dict[str, Any]:
     def bus(sym: str) -> pd.Series:
         grid, _ = load_binance_months(binance_us, sym, "x")
         return traded_log_close(grid, "x")
@@ -107,6 +147,13 @@ def run(binance_us: Path, bitstamp: Path, manifest: Path) -> dict[str, Any]:
     tri = pd.concat([btc_v, bus("BTCUSDT"), usdt_v], axis=1, join="inner").dropna()
     triangle = 1e4 * (tri.iloc[:, 0] - tri.iloc[:, 1] - tri.iloc[:, 2])
     window = pd_usdt[(pd_usdt.index >= PHASES[0][1]) & (pd_usdt.index < PHASES[-1][2])]
+    extra: dict[str, Any] = {}
+    if binance is not None:  # second BTC reference: Binance.com BTC/USDT x Bitstamp USDT/USD (no new provider)
+        bn = traded_log_close(load_binance_months(binance, "BTCUSDT", "z")[0], "z")
+        ref = pd.concat([bn, bst("USDTUSD")], axis=1, join="inner").dropna().sum(axis=1)
+        extra["pd_btc_alt_reference"] = phase_table(dislocation(btc_v, ref))
+    extra["liquidity_usdtusd"] = liquidity(raw_frame(binance_us, "USDTUSD"))
+    extra["boundary_sensitivity_pd_usdt"] = boundary_sensitivity(window)
     return {
         "direction": "R2 platform-dollar dislocation (exploratory, post-search)",
         "definition": "PD_X = 1e4*(log P_BinanceUS(X/USD) - log P_Bitstamp(X/USD)), minutes traded on both venues",
@@ -121,8 +168,11 @@ def run(binance_us: Path, bitstamp: Path, manifest: Path) -> dict[str, Any]:
         "identification_usdt_vs_btc": {name: identification(pd_usdt[phase_of(pd_usdt.index) == name],
                                                             pd_btc[phase_of(pd_btc.index) == name])
                                        for name, *_ in PHASES},
+        **extra,
         "daily_median_pd_usdt": {str(k.date()): round(float(v), 2)
                                  for k, v in window.resample("D").median().dropna().items()},
+        "daily_median_pd_usdc": {str(k.date()): round(float(v), 2)
+                                 for k, v in pd_usdc.resample("D").median().dropna().items()},
         "daily_median_pd_btc": {str(k.date()): round(float(v), 2)
                                 for k, v in pd_btc.resample("D").median().dropna().items()},
     }
@@ -133,18 +183,22 @@ def main() -> None:
     parser.add_argument("--binance-us", type=Path, default=Path("data/raw/binance_us"))
     parser.add_argument("--bitstamp", type=Path, default=Path("data/raw/bitstamp"))
     parser.add_argument("--manifest", type=Path, default=Path("reports/events/acquisition_manifest.json"))
+    parser.add_argument("--binance", type=Path, default=Path("data/raw/binance"))
     parser.add_argument("--output", type=Path, default=Path("reports/rescue/platform_dollar.json"))
     args = parser.parse_args()
-    out = run(args.binance_us, args.bitstamp, args.manifest)
+    out = run(args.binance_us, args.bitstamp, args.manifest, args.binance)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(out, indent=1) + "\n")
-    for key in ("pd_usdt", "pd_btc", "pd_usdc", "within_venue_triangle"):
+    for key in ("pd_usdt", "pd_btc", "pd_usdc", "within_venue_triangle", "pd_btc_alt_reference"):
         for r in out[key]:
             print(key, r["phase"], r["minutes"], round(r.get("median_bps", float("nan")), 1), r.get("ci95_bps"))
     for k, v in out["identification_usdt_vs_btc"].items():
         print("ident btc", k, v)
     for k, v in out["identification_usdt_vs_usdc"].items():
         print("ident usdc", k, v)
+    for r in out["liquidity_usdtusd"]:
+        print("liq", r)
+    print("sens", out["boundary_sensitivity_pd_usdt"])
 
 
 if __name__ == "__main__":

@@ -68,7 +68,8 @@ Status: `[ ]` open, `[~]` in progress, `[x]` done (evidence required).
 - [x] **P1.** Rescue search R1–R6, logged in `docs/review/RESCUE_SEARCH.md` (PR #7).
 - [x] **P2.** Decomposition (`src/www_rescue/decompose.py`) and the Binance.US natural experiment, with USDT, BTC and USDC plus the triangle (`src/www_rescue/platform_dollar.py`). GBP and EUR cases in `src/www_rescue/fiat_rail.py`.
 - [x] **P3.** Paper rewritten around the new framing. Generated macros and tables: `www_paper.rescue_macros`. Figure: `which_dollar.pdf`. Token-side detail moved to the appendix. Gate passes: main body ends with references on page 5; 9 pages in total; page 1 mentions the Web.
-- [ ] **P4.** Simulated reviewers on the new draft (T15); decide whether to use the remaining ~3 body pages (for example an on-chain view, or more ledger cases if any exist in free data).
+- [x] **P4.** Simulated review rounds 1–2 (`docs/review/REVIEW_ROUND_1.md`, `REVIEW_ROUND_2.md`). Spare pages filled with the robustness checks, the monitor (Table and Figure 3) and the on-chain view. References now start on page 6; 12 pages in total; gate passes.
+- [ ] **P5.** N2 monitor threshold sensitivity; layout pass; `\acmConference` venue; abstract for 10-18 (T17).
 
 ## Next executable step
 
@@ -79,5 +80,6 @@ T5: verify the closest literature (CurveMetrics arXiv:2306.10612, Liu-Makarov-Sc
 | Date (ET) | Branch @ commit | Task | Outcome |
 |---|---|---|---|
 | 2026-10-12 15:40 | g0/www2027-goal | T1 | CFP verified; blocking anonymity issue B1 raised |
+| 2026-10-12 | g3/review-round1 | P4 | Review rounds 1–2; robustness, monitor, on-chain view; verdict GO-NARROW |
 | 2026-10-12 | g2/which-dollar | P1–P3 | Pivot: rescue search, decomposition, paper rewrite; 206 tests pass |
 | 2026-10-12 | g0/www2027-goal | T2, T3, T3b | Audit v1 (12 findings); gate passes (198 tests, 7 pages); autoresearch pattern adapted |

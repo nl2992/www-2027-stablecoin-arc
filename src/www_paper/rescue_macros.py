@@ -16,9 +16,11 @@ NUMBERS = GEN / "rescue_numbers.tex"
 PHASE_TABLE = GEN / "ledger_phase_table.tex"
 FIAT_TABLE = GEN / "fiat_rail_table.tex"
 DECOMP_TABLE = GEN / "decomposition_table.tex"
+MONITOR_TABLE = GEN / "monitor_table.tex"
 DECOMP = ROOT / "reports/rescue/decomposition.json"
 PLATFORM = ROOT / "reports/rescue/platform_dollar.json"
 FIAT = ROOT / "reports/rescue/fiat_rail.json"
+MONITOR = ROOT / "reports/rescue/monitor.json"
 LEDGER = ROOT / "docs/review/RESCUE_SEARCH.md"
 
 PHASE_LABEL = {"pre": "Before SEC complaint", "sec_complaint": "SEC complaint", "deposits_suspended": "Deposits suspended",
@@ -79,8 +81,44 @@ def numbers() -> str:
             m.append((f"NumFiat{fx.title()}{asset.title()}Post", _f(rows["post_4w"]), f"{fx}/pd_{asset}/post_4w"))
             m.append((f"NumFiat{fx.title()}{asset.title()}Change", _f(rows["post_4w"] - rows["pre"]), f"{fx}/pd_{asset}/post-pre"))
         m.append((f"NumFiat{fx.title()}Corr", f"{c['identification']['post_4w']['corr_hourly']:.2f}", f"{fx}/identification/post_4w"))
+    liq = {r["phase"]: r for r in plat["liquidity_usdtusd"]}
+    for ph, tag in (("pre", "Pre"), ("crypto_only_transition", "Trans")):
+        m += [(f"NumLiq{tag}Share", f"{100 * liq[ph]['traded_minute_share']:.0f}", f"liquidity_usdtusd/{ph}/traded_minute_share"),
+              (f"NumLiq{tag}Trades", f"{liq[ph]['median_hourly_trades']:,.0f}", f"liquidity_usdtusd/{ph}/median_hourly_trades"),
+              (f"NumLiq{tag}VolK", f"{liq[ph]['median_hourly_quote_volume'] / 1e3:,.0f}",
+               f"liquidity_usdtusd/{ph}/median_hourly_quote_volume (thousands)")]
+    alt = {r["phase"]: r for r in plat["pd_btc_alt_reference"]}
+    m.append(("NumPdBtcAltTrans", _f(alt["crypto_only_transition"]["median_bps"]), "pd_btc_alt_reference/crypto_only_transition"))
+    m.append(("NumPdBtcAltHalt", _f(alt["withdrawal_halt_window"]["median_bps"]), "pd_btc_alt_reference/withdrawal_halt_window"))
+    sens = plat["boundary_sensitivity_pd_usdt"]
+    m += [("NumSensTransLo", _f(abs(sens["crypto_only_transition"]["max"])), "boundary_sensitivity/transition/|max|"),
+          ("NumSensTransHi", _f(abs(sens["crypto_only_transition"]["min"])), "boundary_sensitivity/transition/|min|"),
+          ("NumSensHaltLo", _f(sens["withdrawal_halt_window"]["min"]), "boundary_sensitivity/halt/min"),
+          ("NumSensHaltHi", _f(sens["withdrawal_halt_window"]["max"]), "boundary_sensitivity/halt/max")]
+    ib = plat["identification_usdt_vs_btc"]
+    m += [("NumIdentChgTrans", f"{ib['crypto_only_transition']['corr_hourly_changes']:.2f}", "ident/transition/corr of changes"),
+          ("NumIdentChgHalt", f"{ib['withdrawal_halt_window']['corr_hourly_changes']:.2f}", "ident/halt/corr of changes"),
+          ("NumIdentChgDep", f"{ib['deposits_suspended']['corr_hourly_changes']:.2f}", "ident/deposits_suspended/corr of changes"),
+          ("NumIdentGapTrans", f"{100 * ib['crypto_only_transition']['gap_to_size']:.1f}", "ident/transition/gap_to_size (%)"),
+          ("NumIdentGapHalt", f"{100 * ib['withdrawal_halt_window']['gap_to_size']:.1f}", "ident/halt/gap_to_size (%)")]
+    mon = _load(MONITOR)
+    bp, cd = mon["by_period"], mon["calm_detail"]
+    pct = lambda v, d=1: f"{100 * v:.{d}f}"  # noqa: E731
+    m += [("NumMonHours", f"{mon['hours_evaluated']:,}", "monitor/hours_evaluated"),
+          ("NumMonMonths", str(len(mon["months_covered"])), "monitor/months_covered"),
+          ("NumMonRailLedger", pct(bp["binanceus_rail_cut"]["ledger_flag"]["flag_share"]), "monitor/rail/ledger"),
+          ("NumMonSvbUsdc", pct(bp["svb_run"]["token_flag_USDC"]["flag_share"]), "monitor/svb/token USDC"),
+          ("NumMonSvbUsdt", pct(bp["svb_run"]["token_flag_USDT"]["flag_share"]), "monitor/svb/token USDT"),
+          ("NumMonSvbLedger", pct(bp["svb_run"]["ledger_flag"]["flag_share"]), "monitor/svb/ledger"),
+          ("NumMonFtxLedger", pct(bp["ftx_collapse"]["ledger_flag"]["flag_share"]), "monitor/ftx/ledger"),
+          ("NumMonCalmHours", f"{bp['calm']['hours']:,}", "monitor/calm/hours"),
+          ("NumMonCalmLedger", pct(bp["calm"]["ledger_flag"]["flag_share"]), "monitor/calm/ledger"),
+          ("NumMonCalmOutside", pct(cd["ledger_flag_share_outside_unresolved_window"], 2), "monitor/calm outside unresolved"),
+          ("NumMonUnresolvedHours", str(cd["ledger_flag_hours_inside_unresolved_window"]), "monitor/calm inside unresolved"),
+          ("NumMonFalseHours", str(sum(cd["ledger_flag_hours_by_day"].values()) - cd["ledger_flag_hours_inside_unresolved_window"]),
+           "monitor/calm flags outside unresolved window")]
     signed = {name: value for name, value, _ in m}
-    for name in ("NumPdUsdtTrans", "NumPdBtcTrans", "NumPdUsdcTrans", "NumPdUsdtWorstDay", "NumFiatEurUsdtChange", "NumFiatEurBtcChange"):
+    for name in ("NumPdUsdtTrans", "NumPdBtcTrans", "NumPdUsdcTrans", "NumPdBtcAltTrans", "NumPdUsdtWorstDay", "NumFiatEurUsdtChange", "NumFiatEurBtcChange"):
         m.append((name + "Abs", signed[name].lstrip("-"), f"absolute value of {name}"))
     tried, discarded = directions_tried()
     m += [("NumDirectionsTried", str(tried), "RESCUE_SEARCH.md ledger rows"),
@@ -99,23 +137,47 @@ def _ci(r: dict[str, Any]) -> str:
 
 def phase_table() -> str:
     plat = _load(PLATFORM)
-    cols = [{r["phase"]: r for r in plat[k]} for k in ("pd_usdt", "pd_btc", "pd_usdc", "within_venue_triangle")]
+    cols = [{r["phase"]: r for r in plat[k]} for k in ("pd_usdt", "pd_btc", "pd_btc_alt_reference", "pd_usdc",
+                                                        "within_venue_triangle")]
+    liq = {r["phase"]: r for r in plat["liquidity_usdtusd"]}
     ident = plat["identification_usdt_vs_btc"]
     rows = []
     for ph in plat["phases"]:
         n = ph["phase"]
-        corr = ident[n].get("corr_hourly")
+        corr = ident[n].get("corr_hourly_changes")
         cells = " & ".join(_ci(c[n]) for c in cols[:2])
         rest = " & ".join(_f(c[n]["median_bps"]) if c[n].get("minutes") else "--" for c in cols[2:])
-        rows.append(f"{PHASE_LABEL[n]} & {ph['start']} & {cells} & {rest} & {'--' if corr is None else f'{corr:.2f}'} \\\\")
-    return ("% generated by www_paper.rescue_macros; do not edit\n\\begin{table*}[t]\n\\small\n"
-            "\\caption{Binance.US dollar versus Bitstamp dollar by documented rail phase. $PD_X$: median platform-dollar "
-            "dislocation of asset $X$ in bps (hour-block bootstrap 95\\% intervals for USDT and BTC); $W$: median "
-            "within-venue triangle; corr: hourly correlation of $PD_{\\mathrm{USDT}}$ and $PD_{\\mathrm{BTC}}$. Binance.US "
-            "BTC/USD and USDC/USD did not trade while the rail was impaired.}\n"
-            "\\label{tab:phases}\n\\begin{tabular}{@{}llrrrrr@{}}\n\\toprule\n"
-            "Phase & From & $PD_{\\mathrm{USDT}}$ & $PD_{\\mathrm{BTC}}$ & $PD_{\\mathrm{USDC}}$ & $W$ & corr \\\\\n\\midrule\n"
+        trades = liq[n]["median_hourly_trades"]
+        rows.append(f"{PHASE_LABEL[n]} & {ph['start']} & {cells} & {rest} & {'--' if corr is None else f'{corr:.2f}'} & "
+                    f"{'--' if trades is None else f'{trades:,.0f}'} \\\\")
+    return ("% generated by www_paper.rescue_macros; do not edit\n\\begin{table*}[t]\n\\footnotesize\n"
+            "\\caption{Binance.US dollar versus external dollars by documented rail phase. $PD_X$: median platform-dollar "
+            "dislocation of asset $X$ in bps against Bitstamp (hour-block bootstrap 95\\% intervals for USDT and BTC); "
+            "BTC$^\\ast$: against the second reference, Binance.com BTC/USDT $\\times$ Bitstamp USDT/USD; $W$: median "
+            "within-venue triangle; $\\rho_\\Delta$: correlation of hourly changes of $PD_{\\mathrm{USDT}}$ and "
+            "$PD_{\\mathrm{BTC}}$; trades: median trades per hour on Binance.US USDT/USD. BTC/USD and USDC/USD did not "
+            "trade on Binance.US while the rail was impaired.}\n"
+            "\\label{tab:phases}\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}llrrrrrrr@{}}\n\\toprule\n"
+            "Phase & From & $PD_{\\mathrm{USDT}}$ & $PD_{\\mathrm{BTC}}$ & $PD_{\\mathrm{BTC}^\\ast}$ & "
+            "$PD_{\\mathrm{USDC}}$ & $W$ & $\\rho_\\Delta$ & trades/h \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
+
+
+def monitor_table() -> str:
+    mon = _load(MONITOR)
+    names = {"calm": "Calm months", "ftx_collapse": "FTX collapse (2022-11)", "svb_run": "SVB run (2023-03)",
+             "binanceus_rail_cut": "Binance.US rail cut (2023-06/07)"}
+    rows = []
+    for key in ("calm", "ftx_collapse", "svb_run", "binanceus_rail_cut"):
+        r = mon["by_period"][key]
+        rows.append(f"{names[key]} & {r['hours']:,} & {100 * r['ledger_flag']['flag_share']:.1f} & "
+                    f"{100 * r['token_flag_USDT']['flag_share']:.1f} & {100 * r['token_flag_USDC']['flag_share']:.1f} \\\\")
+    return ("% generated by www_paper.rescue_macros; do not edit\n\\begin{table}[t]\n\\small\n"
+            "\\caption{Hourly monitor on Binance.US over every month with overlapping data: share of hours (\\%) flagged "
+            "as ledger failure ($|L|\\ge$ R1 threshold and USDT agreeing within a quarter) or token failure "
+            "($|T_q|\\ge$ R1 threshold).}\n\\label{tab:monitor}\n\\setlength{\\tabcolsep}{3pt}\n"
+            "\\begin{tabular}{@{}lrrrr@{}}\n\\toprule\nPeriod & Hours & Ledger & Token USDT & Token USDC \\\\\n\\midrule\n"
+            + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
 
 def fiat_table() -> str:
@@ -150,7 +212,7 @@ def decomposition_table() -> str:
 
 def main() -> None:
     for path, text in ((NUMBERS, numbers()), (PHASE_TABLE, phase_table()), (FIAT_TABLE, fiat_table()),
-                       (DECOMP_TABLE, decomposition_table())):
+                       (DECOMP_TABLE, decomposition_table()), (MONITOR_TABLE, monitor_table())):
         path.write_text(text)
         print(f"WROTE {path.relative_to(ROOT)}")
 
