@@ -46,5 +46,5 @@ def test_anchor_csv_holds_derived_15_minute_medians_only():
 
 def test_paper_includes_every_generated_figure():
     main = (ROOT / "paper/main.tex").read_text()
-    for name in ("event_timeline", "coverage_heatmap", "anchor_series"):
+    for name in ("event_timeline", "coverage_heatmap", "anchor_series", "which_dollar", "onchain_capacity_paths"):
         assert f"figures/{name}.pdf" in main

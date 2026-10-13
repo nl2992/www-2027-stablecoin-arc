@@ -9,6 +9,7 @@ from www_paper.macros import (
 
 ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
+RESCUE_OUTPUT = ROOT / "paper/generated/rescue_numbers.tex"
 
 
 def test_generated_numbers_are_current():
@@ -27,7 +28,7 @@ def test_registry_table_lists_every_event_and_marks_linked_legs():
 
 
 def test_every_number_macro_used_is_defined_and_no_literal_bps_values_slip_in():
-    defined = set(re.findall(r"\\newcommand\{\\(Num\w+)\}", OUTPUT.read_text()))
+    defined = set(re.findall(r"\\newcommand\{\\(Num\w+)\}", OUTPUT.read_text() + RESCUE_OUTPUT.read_text()))
     used = set(re.findall(r"\\(Num[A-Za-z]+)", MAIN))
     assert used <= defined, sorted(used - defined)
     body = MAIN.split("\\begin{document}", 1)[1]
@@ -107,3 +108,12 @@ def test_onchain_capacity_table_current_included_and_scoped():
     table = CAPACITY_TABLE_OUTPUT.read_text()
     assert table == build_capacity_table() and "\\input{generated/onchain_capacity_table}" in MAIN
     assert "ON-CHAIN ONLY" in table and "not CEX--DEX capacity" in table
+
+
+def test_rescue_numbers_and_tables_are_current():
+    from www_paper.rescue_macros import (DECOMP_TABLE, FIAT_TABLE, NUMBERS, PHASE_TABLE, decomposition_table,
+                                         fiat_table, numbers, phase_table)
+    assert NUMBERS.read_text() == numbers() and PHASE_TABLE.read_text() == phase_table()
+    assert DECOMP_TABLE.read_text() == decomposition_table() and "\\input{generated/decomposition_table}" in MAIN
+    assert FIAT_TABLE.read_text() == fiat_table()
+    assert "\\input{generated/ledger_phase_table}" in MAIN and "\\input{generated/fiat_rail_table}" in MAIN

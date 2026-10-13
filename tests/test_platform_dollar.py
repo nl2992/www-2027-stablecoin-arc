@@ -46,3 +46,18 @@ def test_block_bootstrap_needs_enough_hours():
     assert block_bootstrap_median(pd.Series(1.0, minutes("2023-06-01", 120))) is None
     ci = block_bootstrap_median(pd.Series(np.arange(24 * 60, dtype=float), minutes("2023-06-01", 24 * 60)))
     assert ci[0] < 720 < ci[1]
+
+
+def test_decomposition_attributes_token_and_ledger_failures():
+    from www_rescue.decompose import components, summarize
+    idx = minutes("2023-03-11", 6 * 60)
+    zero = pd.Series(0.0, idx)
+    # token failure: coin -1000 bps on venue and on reference; BTC equal on both venues
+    h = components(zero - 0.1, zero + np.log(20000), zero + np.log(20000), zero - 0.1)
+    s = summarize(h)
+    assert s["hours"] == 6 and abs(s["median_L"]) < 1e-9 and np.isclose(s["median_T"], -1000)
+    assert s["median_ledger_share"] == 0 and s["median_abs_T_minus_D_ref"] < 1e-9
+    # ledger failure: venue unit worth 5% more -> every venue price 5% lower; coin fine on reference
+    h = components(zero - 0.05, zero + np.log(20000) - 0.05, zero + np.log(20000), zero)
+    s = summarize(h)
+    assert np.isclose(s["median_L"], -500) and abs(s["median_T"]) < 1e-9 and np.isclose(s["median_ledger_share"], 1)

@@ -4,7 +4,7 @@ Exploratory, post-search direction (docs/review/RESCUE_SEARCH.md). Not part of t
 
 Platform-dollar dislocation of asset X:  PD_X = 1e4 * [log P_platform(X/USD) - log P_external(X/USD)].
 If the platform's USD ledger (not X) is what is mispriced, PD is the same for every X; we check this with two
-unrelated assets, USDT and BTC (identification check). External reference: Bitstamp, whose USD stayed redeemable.
+unrelated assets, USDT and BTC, and with USDC where it traded (identification check). External reference: Bitstamp, whose USD stayed redeemable.
 Phase boundaries are documented dates from configs/usd_rail_impairments.json and news sources listed in PHASES;
 they are fixed here before the phase statistics are computed (daily medians of PD_USDT were inspected first; disclosed).
 """
@@ -99,8 +99,13 @@ def run(binance_us: Path, bitstamp: Path, manifest: Path) -> dict[str, Any]:
         grid, _ = load_months(bitstamp, pair, "y", manifest)
         return traded_log_close(grid, "y")
 
-    pd_usdt = dislocation(bus("USDTUSD"), bst("USDTUSD"))
-    pd_btc = dislocation(bus("BTCUSD"), bst("BTCUSD"))
+    usdt_v, btc_v = bus("USDTUSD"), bus("BTCUSD")
+    pd_usdt = dislocation(usdt_v, bst("USDTUSD"))
+    pd_btc = dislocation(btc_v, bst("BTCUSD"))
+    pd_usdc = dislocation(bus("USDCUSD"), bst("USDCUSD"))
+    # within-venue triangle W = log BTC/USD - log BTC/USDT - log USDT/USD (all Binance.US; USD cancels)
+    tri = pd.concat([btc_v, bus("BTCUSDT"), usdt_v], axis=1, join="inner").dropna()
+    triangle = 1e4 * (tri.iloc[:, 0] - tri.iloc[:, 1] - tri.iloc[:, 2])
     window = pd_usdt[(pd_usdt.index >= PHASES[0][1]) & (pd_usdt.index < PHASES[-1][2])]
     return {
         "direction": "R2 platform-dollar dislocation (exploratory, post-search)",
@@ -108,6 +113,11 @@ def run(binance_us: Path, bitstamp: Path, manifest: Path) -> dict[str, Any]:
         "phases": [dict(zip(("phase", "start", "end", "trigger"), p)) for p in PHASES],
         "pd_usdt": phase_table(window),
         "pd_btc": phase_table(pd_btc),
+        "pd_usdc": phase_table(pd_usdc),
+        "within_venue_triangle": phase_table(triangle),
+        "identification_usdt_vs_usdc": {name: identification(pd_usdt[phase_of(pd_usdt.index) == name],
+                                                             pd_usdc[phase_of(pd_usdc.index) == name])
+                                        for name, *_ in PHASES},
         "identification_usdt_vs_btc": {name: identification(pd_usdt[phase_of(pd_usdt.index) == name],
                                                             pd_btc[phase_of(pd_btc.index) == name])
                                        for name, *_ in PHASES},
@@ -128,11 +138,13 @@ def main() -> None:
     out = run(args.binance_us, args.bitstamp, args.manifest)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(out, indent=1) + "\n")
-    for key in ("pd_usdt", "pd_btc"):
+    for key in ("pd_usdt", "pd_btc", "pd_usdc", "within_venue_triangle"):
         for r in out[key]:
             print(key, r["phase"], r["minutes"], round(r.get("median_bps", float("nan")), 1), r.get("ci95_bps"))
     for k, v in out["identification_usdt_vs_btc"].items():
-        print("ident", k, v)
+        print("ident btc", k, v)
+    for k, v in out["identification_usdt_vs_usdc"].items():
+        print("ident usdc", k, v)
 
 
 if __name__ == "__main__":

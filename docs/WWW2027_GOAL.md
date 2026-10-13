@@ -64,6 +64,12 @@ Status: `[ ]` open, `[~]` in progress, `[x]` done (evidence required).
 - [ ] **T16.** Fix blocking findings, then re-review.
 - [ ] **T17.** Abstract for human submission by 10-18. *Evidence:* `docs/review/ABSTRACT_SUBMISSION.md`.
 
+### Pivot (user decision 2026-10-12): "Which dollar broke?"
+- [x] **P1.** Rescue search R1–R6, logged in `docs/review/RESCUE_SEARCH.md` (PR #7).
+- [x] **P2.** Decomposition (`src/www_rescue/decompose.py`) and the Binance.US natural experiment, with USDT, BTC and USDC plus the triangle (`src/www_rescue/platform_dollar.py`). GBP and EUR cases in `src/www_rescue/fiat_rail.py`.
+- [x] **P3.** Paper rewritten around the new framing. Generated macros and tables: `www_paper.rescue_macros`. Figure: `which_dollar.pdf`. Token-side detail moved to the appendix. Gate passes: main body ends with references on page 5; 9 pages in total; page 1 mentions the Web.
+- [ ] **P4.** Simulated reviewers on the new draft (T15); decide whether to use the remaining ~3 body pages (for example an on-chain view, or more ledger cases if any exist in free data).
+
 ## Next executable step
 
 T5: verify the closest literature (CurveMetrics arXiv:2306.10612, Liu-Makarov-Schoar NBER w31160, non-atomic arbitrage arXiv:2401.01622) and write `docs/review/RELATED_WORK_MATRIX.md`; then T6: audit the degenerate DV5 values (F8). The user must decide B1 (anonymity).
@@ -73,4 +79,5 @@ T5: verify the closest literature (CurveMetrics arXiv:2306.10612, Liu-Makarov-Sc
 | Date (ET) | Branch @ commit | Task | Outcome |
 |---|---|---|---|
 | 2026-10-12 15:40 | g0/www2027-goal | T1 | CFP verified; blocking anonymity issue B1 raised |
+| 2026-10-12 | g2/which-dollar | P1–P3 | Pivot: rescue search, decomposition, paper rewrite; 206 tests pass |
 | 2026-10-12 | g0/www2027-goal | T2, T3, T3b | Audit v1 (12 findings); gate passes (198 tests, 7 pages); autoresearch pattern adapted |

@@ -150,6 +150,40 @@ def capacity_paths(path: Path, out: Path) -> Path:
     return _save(fig, out)
 
 
+DECOMP_JSON = ROOT / "reports/rescue/decomposition.json"
+PLATFORM_JSON = ROOT / "reports/rescue/platform_dollar.json"
+
+
+def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
+    """(a) token failure: USDC/SVB on Binance.US; (b) ledger failure: Binance.US USD, May-July 2023."""
+    _style()
+    d = json.loads(decomp.read_text())["windows"]["token_failure_svb"]["hourly"]
+    h = pd.DataFrame.from_dict(d, orient="index", columns=["D", "L", "T", "D_ref"])
+    h.index = pd.to_datetime(h.index)
+    p = json.loads(platform.read_text())
+    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 2.3), gridspec_kw={"width_ratios": [1, 1.4]})
+    a.plot(h.index, h["D"], linewidth=0.9, label="observed $D$ (USDC/USD$_{venue}$)")
+    a.plot(h.index, h["T"], linewidth=0.9, linestyle="--", label="token component $T$")
+    a.plot(h.index, h["L"], linewidth=0.9, label="ledger component $L$ (BTC)")
+    a.set_title("(a) Token failure: USDC, March 2023", fontsize=7)
+    a.set_ylabel("bps (hourly median)")
+    for name, key, style in (("USDT", "daily_median_pd_usdt", "-"), ("BTC", "daily_median_pd_btc", "--")):
+        s = pd.Series(p[key]).loc["2023-05-01":"2023-07-31"]
+        b.plot(pd.to_datetime(s.index), s.to_numpy(), style, linewidth=0.9, label=f"PD$_{{{name}}}$")
+    shade = {"sec_complaint": "#fdd49e", "deposits_suspended": "#fc8d59", "withdrawal_halt_window": "#d7301f",
+             "crypto_only_transition": "#9ecae1"}
+    for ph in p["phases"]:
+        if ph["phase"] in shade:
+            b.axvspan(pd.Timestamp(ph["start"]), pd.Timestamp(min(ph["end"], "2023-07-31")), color=shade[ph["phase"]],
+                      alpha=0.35, linewidth=0)
+    b.set_title("(b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)", fontsize=7)
+    for ax in (a, b):
+        ax.axhline(0, color="black", linewidth=0.5)
+        ax.tick_params(axis="x", labelrotation=30, labelsize=6)
+        ax.legend(fontsize=6, frameon=False, loc="lower left")
+    return _save(fig, out)
+
+
 def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
     if iaqf_panel is not None:
         build_anchor_csv(iaqf_panel)
@@ -158,6 +192,7 @@ def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
         coverage_heatmap(ROOT / "reports/events/coverage_matrix.json", FIG_DIR / "coverage_heatmap.pdf"),
         anchor_series(ANCHOR_CSV, FIG_DIR / "anchor_series.pdf"),
         *([capacity_paths(CAPACITY_JSON, FIG_DIR / "onchain_capacity_paths.pdf")] if CAPACITY_JSON.is_file() else []),
+        *([which_dollar(DECOMP_JSON, PLATFORM_JSON, FIG_DIR / "which_dollar.pdf")] if DECOMP_JSON.is_file() else []),
     ]
 
 
