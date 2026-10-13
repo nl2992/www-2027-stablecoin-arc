@@ -587,6 +587,25 @@
       "symbols": [
         "usdcusd"
       ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "X2023-06-BINANCEUS-DEBANKING",
+        "X2023-03-SVB-DECOMPOSITION"
+      ],
+      "months": [
+        "2022-10",
+        "2022-11",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07"
+      ],
+      "symbols": [
+        "BTCUSDT"
+      ]
     }
   ]
 }

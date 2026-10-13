@@ -17,6 +17,7 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
+import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
@@ -167,7 +168,8 @@ def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
     a.plot(h.index, h["L"], linewidth=0.9, label="ledger component $L$ (BTC)")
     a.set_title("(a) Token failure: USDC, March 2023", fontsize=7)
     a.set_ylabel("bps (hourly median)")
-    for name, key, style in (("USDT", "daily_median_pd_usdt", "-"), ("BTC", "daily_median_pd_btc", "--")):
+    for name, key, style in (("USDT", "daily_median_pd_usdt", "-"), ("BTC", "daily_median_pd_btc", "--"),
+                             ("USDC", "daily_median_pd_usdc", ":")):
         s = pd.Series(p[key]).loc["2023-05-01":"2023-07-31"]
         b.plot(pd.to_datetime(s.index), s.to_numpy(), style, linewidth=0.9, label=f"PD$_{{{name}}}$")
     shade = {"sec_complaint": "#fdd49e", "deposits_suspended": "#fc8d59", "withdrawal_halt_window": "#d7301f",
@@ -184,6 +186,35 @@ def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
     return _save(fig, out)
 
 
+MONITOR_JSON = ROOT / "reports/rescue/monitor.json"
+
+
+def monitor_timeline(path: Path, out: Path) -> Path:
+    """Hourly ledger component L and token component T_USDC over every covered month; ledger flags marked."""
+    _style()
+    m = json.loads(path.read_text())
+    h = pd.DataFrame.from_dict(m["hourly"], orient="index", columns=m["hourly_columns"])
+    h.index = pd.to_datetime(h.index)
+    segments = [("2022-10-01", "2022-12-01"), ("2023-02-01", "2023-08-01"), ("2025-02-01", "2025-04-01")]
+    widths = [(pd.Timestamp(b) - pd.Timestamp(a)).days for a, b in segments]
+    fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.0), sharey=True, gridspec_kw={"width_ratios": widths})
+    for ax, (a, b) in zip(axes, segments):
+        g = h[(h.index >= pd.Timestamp(a, tz="UTC")) & (h.index < pd.Timestamp(b, tz="UTC"))]
+        ax.plot(g.index, g["L"].astype(float), linewidth=0.6, label="ledger component $L$")
+        ax.plot(g.index, g["T_USDC"].astype(float), linewidth=0.6, label="token component $T_{USDC}$")
+        fl = g[g["ledger_flag"].astype(bool)]
+        ax.scatter(fl.index, np.full(len(fl), 450.0), s=2, color="C3", label="ledger flag")
+        ax.axhline(0, color="black", linewidth=0.4)
+        ax.xaxis.set_major_locator(mdates.MonthLocator())
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
+        ax.tick_params(axis="x", labelrotation=30, labelsize=6)
+    axes[0].set_ylabel("bps (hourly median)")
+    axes[0].set_ylim(-1500, 600)
+    axes[1].legend(fontsize=6, frameon=False, loc="lower left")
+    fig.suptitle("Hourly monitor on Binance.US (covered months only; y-axis clipped)", fontsize=7)
+    return _save(fig, out)
+
+
 def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
     if iaqf_panel is not None:
         build_anchor_csv(iaqf_panel)
@@ -193,6 +224,7 @@ def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
         anchor_series(ANCHOR_CSV, FIG_DIR / "anchor_series.pdf"),
         *([capacity_paths(CAPACITY_JSON, FIG_DIR / "onchain_capacity_paths.pdf")] if CAPACITY_JSON.is_file() else []),
         *([which_dollar(DECOMP_JSON, PLATFORM_JSON, FIG_DIR / "which_dollar.pdf")] if DECOMP_JSON.is_file() else []),
+        *([monitor_timeline(MONITOR_JSON, FIG_DIR / "monitor_timeline.pdf")] if MONITOR_JSON.is_file() else []),
     ]
 
 
