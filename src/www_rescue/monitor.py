@@ -31,13 +31,29 @@ PERIODS = [  # (label, start, end) -- documented events; everything else in cove
 ]
 
 
-def classify(hourly: pd.DataFrame) -> pd.DataFrame:
+SENSITIVITY_THRESHOLDS = (50.0, 100.0, 200.0)
+SENSITIVITY_AGREEMENT = (0.1, 0.25, 0.5)
+
+
+def classify(hourly: pd.DataFrame, threshold: float = THRESHOLD, agree: float = AGREE) -> pd.DataFrame:
     """hourly has columns L, PD_USDT and T_<coin>; adds boolean flag columns."""
     out = hourly.copy()
-    out["ledger_flag"] = (out["L"].abs() >= THRESHOLD) & ((out["PD_USDT"] - out["L"]).abs() <= AGREE * out["L"].abs())
+    out["ledger_flag"] = (out["L"].abs() >= threshold) & ((out["PD_USDT"] - out["L"]).abs() <= agree * out["L"].abs())
     for c in [c for c in out.columns if c.startswith("T_")]:
-        out[f"token_flag_{c[2:]}"] = out[c].abs() >= THRESHOLD
+        out[f"token_flag_{c[2:]}"] = out[c].abs() >= threshold
     return out
+
+
+def sensitivity(hourly: pd.DataFrame) -> list[dict[str, Any]]:
+    """Flag shares by period over the threshold x agreement grid (the headline rule is 100 bps, 0.25)."""
+    rows = []
+    for t in SENSITIVITY_THRESHOLDS:
+        for a in SENSITIVITY_AGREEMENT:
+            by = summarize(classify(hourly, t, a))
+            rows.append({"threshold_bps": t, "agreement": a,
+                         **{f"{p}_{k}": by[p][k]["flag_share"] for p in by
+                            for k in ("ledger_flag", "token_flag_USDT", "token_flag_USDC")}})
+    return rows
 
 
 def label(index: pd.DatetimeIndex) -> np.ndarray:
@@ -91,7 +107,7 @@ def run(binance_us: Path, bitstamp: Path, manifest: Path) -> dict[str, Any]:
                    "ledger_flag_share_outside_unresolved_window": float(calm["ledger_flag"][~inside].mean())}
     return {"rule": __doc__.strip().splitlines()[2:5], "threshold_bps": THRESHOLD, "agreement": AGREE,
             "periods": PERIODS, "months_covered": months, "hours_evaluated": int(len(flags)),
-            "by_period": summarize(flags), "calm_detail": calm_detail,
+            "by_period": summarize(flags), "calm_detail": calm_detail, "sensitivity": sensitivity(hourly),
             "hourly": {str(t): [None if np.isnan(v) else round(float(v), 1) for v in row] + [bool(lf)]
                        for t, row, lf in zip(flags.index, flags[["L", "T_USDT", "T_USDC"]].to_numpy(),
                                              flags["ledger_flag"])},
@@ -108,6 +124,9 @@ def main() -> None:
     out = run(args.binance_us, args.bitstamp, args.manifest)
     args.output.write_text(json.dumps(out, indent=1) + "\n")
     print(out["months_covered"], out["hours_evaluated"], out["calm_detail"])
+    for r in out["sensitivity"]:
+        print("sens", r["threshold_bps"], r["agreement"], {k: round(v, 3) for k, v in r.items()
+                                                          if k.endswith("ledger_flag") or k.endswith("USDC")})
     for p, r in out["by_period"].items():
         print(p, {k: (v if not isinstance(v, dict) else (v["hours_evaluated"], None if v["flag_share"] is None
                                                           else round(v["flag_share"], 3))) for k, v in r.items()})

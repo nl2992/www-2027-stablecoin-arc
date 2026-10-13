@@ -201,7 +201,7 @@ def monitor_timeline(path: Path, out: Path) -> Path:
     for ax, (a, b) in zip(axes, segments):
         g = h[(h.index >= pd.Timestamp(a, tz="UTC")) & (h.index < pd.Timestamp(b, tz="UTC"))]
         ax.plot(g.index, g["L"].astype(float), linewidth=0.6, label="ledger component $L$")
-        ax.plot(g.index, g["T_USDC"].astype(float), linewidth=0.6, label="token component $T_{USDC}$")
+        ax.plot(g.index, g["T_USDC"].astype(float), linewidth=0.6, linestyle="--", label="token component $T_{USDC}$")
         fl = g[g["ledger_flag"].astype(bool)]
         ax.scatter(fl.index, np.full(len(fl), 450.0), s=2, color="C3", label="ledger flag")
         ax.axhline(0, color="black", linewidth=0.4)

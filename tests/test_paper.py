@@ -115,5 +115,15 @@ def test_rescue_numbers_and_tables_are_current():
                                          fiat_table, numbers, phase_table)
     assert NUMBERS.read_text() == numbers() and PHASE_TABLE.read_text() == phase_table()
     assert DECOMP_TABLE.read_text() == decomposition_table() and "\\input{generated/decomposition_table}" in MAIN
+    from www_paper.rescue_macros import MONITOR_TABLE, SENS_TABLE, monitor_table, sensitivity_table
+    assert MONITOR_TABLE.read_text() == monitor_table() and SENS_TABLE.read_text() == sensitivity_table()
+    assert "\\input{generated/monitor_sensitivity_table}" in MAIN and "---" not in MAIN.split("\\begin{document}")[1]
     assert FIAT_TABLE.read_text() == fiat_table()
     assert "\\input{generated/ledger_phase_table}" in MAIN and "\\input{generated/fiat_rail_table}" in MAIN
+
+
+def test_submission_abstract_is_generated_from_the_paper():
+    from www_paper.abstract_text import OUTPUT, build
+    assert OUTPUT.read_text() == build(), "run `uv run python -m www_paper.abstract_text`"
+    text = OUTPUT.read_text()
+    assert "\\" not in text.split("**Abstract")[1] and "Num" not in text.split("**Abstract")[1]
