@@ -16,18 +16,19 @@ Crypto prices on the Web are quoted in two kinds of dollar: stablecoin tokens, a
 ledger that reach the banking system only through the platform's rails. When a dollar price moves away from par, users,
 price feeds and oracles need to know which of the two failed, and we know of no measure that separates them. This is
 hard because a ledger's value is never quoted directly, public prices are asynchronous last trades that thin out under
-stress, and any single asset may carry its own shock. We price the platform's dollar through an unpegged asset (BTC)
-against a venue whose rails stay open, which splits a dollar-quoted dislocation into a token and a ledger component. We
-accept the split only when unrelated assets agree and the venue's internal cross-rates hold. On Binance.US, the method
-attributes all but \NumDecSvbShare\% of the USDC dislocation in the March 2023 bank run to the token. After the
-exchange's banks withdrew in June 2023, it attributes \NumDecBnusShare\% of the dislocation to the platform's dollar,
-which traded at a discount while withdrawals were threatened and at a premium of several percent once only withdrawals
-remained open. The pattern holds in three assets, against a second reference and in an active market, and the gap
-closed when the rails returned. Run hourly over \NumMonMonths{} months, the method flags ledger failure in
-\NumMonRailLedger\% of rail-cut hours (in sample; \NumSensRailMin{} to \NumSensRailMax\% across \NumSensSettings{}
-threshold settings), in \NumMonCalmLedger\% of calm hours, and in no SVB or FTX hour under any setting. Sterling and euro
-rail cuts show only small effects. All findings are descriptive: the token-side multi-event study was pre-registered,
-and the ledger analysis came from a disclosed search.
+stress, and any single asset may carry its own shock. We price the platform's dollar through unpegged assets against
+venues whose rails stay open, which splits a dollar-quoted dislocation into a token and a ledger component, and we
+accept the split only when unrelated assets agree and the venue's internal cross-rates hold. We apply it to rail-cut
+episodes on three platforms: three Bitfinex windows from 2017 to 2019, Binance.US in 2023, and Binance's sterling and
+euro rails. On Bitfinex the platform's dollar fell by up to \NumPanSeventeenMax, \NumPanEighteenMax{} and
+\NumPanNineteenMax{} bps (daily medians), with BTC and ETH agreeing to within \NumPanGapMax{} bps and internal
+cross-rates holding to within \NumPanTriMax{} bps. Binance.US shows the same signature in three assets. On both
+platforms the dollar traded at a discount while exit was impaired and at a premium in a later phase (up to
+\NumPanSeventeenMinAbs{} bps on Bitfinex in 2017), and the gaps closed when the episodes ended. In the March 2023 USDC
+run, by contrast, the method attributes all but \NumDecSvbShare\% of the dislocation to the token, and an hourly
+monitor flags no SVB or FTX hour as a ledger failure. The sterling and euro cuts show only small effects. All findings
+are descriptive; the Bitfinex predictions were recorded before the minute data were downloaded, and we report where
+they failed.
 \end{abstract}
 
 \maketitle

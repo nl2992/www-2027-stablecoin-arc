@@ -42,3 +42,37 @@ Event dates and gate states must be confirmed against dated primary or press sou
 ## Output
 
 A panel table: one row per episode (L1 to L7, plus the token-side episodes SVB, TUSD, FDUSD and UST), each classified as token failure, ledger failure, both or neither by the same decomposition and checks.
+
+## Results (2026-10-18; `reports/rescue/ledger_panel.json`, data manifest `reports/events/acquisition_manifest_ledger.json`)
+
+The download covered 101 month files (Bitfinex, Bitstamp and Coinbase), all VERIFIED with self-recorded SHA-256. The phase boundaries in `src/www_rescue/ledger_panel.py` were fixed before any statistics were computed.
+
+### Fixed-phase medians, PD_BTC against Bitstamp (bps, hour-block 95% CI)
+
+| Episode | pre | stress phase(s) | later |
+|---|---|---|---|
+| 2017 wires | 4 [2, 5] | outbound blocked 80 [69, 88]; inbound refused 297 [272, 322] | −31 [−36, −26] |
+| 2018 deposits paused | 15 [14, 17] | 229 [221, 243] | 283 [276, 289] |
+| 2019 NYAG | 173 [166, 178] | 32 [25, 44] | 0 [−1, 1] |
+
+### Scored predictions
+
+| | 2017 | 2018 | 2019 |
+|---|---|---|---|
+| Q1 identification (as written) | **FAIL** | pass | pass |
+| Q2 triangle ≤ 10 bps | pass (max 8) | pass | pass |
+| Q3 discount sign in stress phases | pass | pass | pass |
+| Q4 reversion within the window | pass | **FAIL** (discount persisted) | pass |
+| Falsified | no | no | no |
+
+**Why Q1 failed for 2017.** As written, Q1 compares PD_BTC against Bitstamp with PD_ETH against Coinbase. In 2017 the two references themselves differed by tens of bps, and by up to about 190 bps in some weeks. Against the same reference (Coinbase), BTC and ETH agree: hourly corr 0.975, median gap 7.2 bps. That comparison was computed after the scored result and is reported as descriptive. The pre-registered verdict stays FAIL.
+
+### Descriptive path (computed after the scored results)
+
+- **2017:** the discount builds from mid-April to a daily peak of 844 bps (2017-04-23). It flips to a **premium** from late May (daily minimum −592 bps, 2017-05-28) and is back near zero by late July. This is the same discount-then-premium sequence as Binance.US in 2023.
+- **2018 to 2019:** one long discount. It starts in the week of 2018-10-07, peaks at 610 bps (2018-10-15), stays at 100 to 350 bps through December, is still about 260 bps in March 2019 and narrows to about 50 bps in mid-April. After the NYAG filing it jumps back to about 600 bps (peak 627 bps, 2019-05-02), then collapses to about zero within a week around 2019-05-10. January and February 2019 were not downloaded. The fixed 2019 phases split the episode in a way that hides this: the "pre" phase is itself impaired, and the NYAG phase mixes two weeks at 600 bps with three weeks near zero.
+- **Gate hypothesis:** the 2018 case had deposits closed and withdrawals officially open, which is Binance.US's premium configuration, yet it shows a discount. NYAG later alleged serious withdrawal problems in late 2018. The simple gate story is therefore not confirmed, and the paper must say so.
+
+### Independence
+
+The 2018 and 2019 windows are probably one episode (one Bitfinex banking crisis, October 2018 to May 2019). Counted conservatively, the panel has **three independent ledger-failure episodes on two platforms**: Bitfinex 2017, Bitfinex 2018–19 and Binance.US 2023. It also has two small-effect fiat cases (Binance GBP and EUR) and one unresolved case (Binance.US, May 2023).
