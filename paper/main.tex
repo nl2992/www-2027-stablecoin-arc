@@ -13,20 +13,21 @@
 
 \begin{abstract}
 Crypto prices on the Web are quoted in two kinds of dollar: stablecoin tokens, and balances in an exchange's internal
-ledger that reach the banking system only through the platform's rails. When a dollar price dislocates, either the
-token or the ledger has failed. The answer matters to users, price feeds and oracles, and we know of no measure
-that separates the two. The difficulty is that a ledger's value is never quoted directly, public prices are asynchronous
-last trades that thin out under stress, and any single asset may carry its own shock. We price the platform's dollar
-through an unpegged asset (BTC) against a venue whose rails stay open, which splits any dollar-quoted dislocation into a
-token and a ledger component, and we require unrelated assets to agree and the venue's internal cross-rates to hold. On
-Binance.US the method attributes all but \NumDecSvbShare\% of the USDC dislocation in the March 2023 bank run to the
-token, and \NumDecBnusShare\% of the June--July 2023 dislocation to the platform's dollar after its banks withdrew: that
-dollar traded at a discount while withdrawals were threatened and at a premium of several percent once deposits were
-shut but withdrawals stayed open, in three assets, under a second reference and in an active market, and the gap
+ledger that reach the banking system only through the platform's rails. When a dollar price moves away from par, users,
+price feeds and oracles need to know which of the two failed, and we know of no measure that separates them. This is
+hard because a ledger's value is never quoted directly, public prices are asynchronous last trades that thin out under
+stress, and any single asset may carry its own shock. We price the platform's dollar through an unpegged asset (BTC)
+against a venue whose rails stay open, which splits a dollar-quoted dislocation into a token and a ledger component. We
+accept the split only when unrelated assets agree and the venue's internal cross-rates hold. On Binance.US, the method
+attributes all but \NumDecSvbShare\% of the USDC dislocation in the March 2023 bank run to the token. After the
+exchange's banks withdrew in June 2023, it attributes \NumDecBnusShare\% of the dislocation to the platform's dollar,
+which traded at a discount while withdrawals were threatened and at a premium of several percent once only withdrawals
+remained open. The pattern holds in three assets, against a second reference and in an active market, and the gap
 closed when the rails returned. Run hourly over \NumMonMonths{} months, the method flags ledger failure in
-\NumMonRailLedger\% of rail-cut hours and in no SVB or FTX hour across \NumSensSettings{} threshold settings. Sterling and
-euro rail cuts show only small effects, a pre-registered multi-event study covers token failures, and all findings
-are descriptive; the ledger analysis came from a disclosed search.
+\NumMonRailLedger\% of rail-cut hours (in sample; \NumSensRailMin{} to \NumSensRailMax\% across \NumSensSettings{}
+threshold settings), in \NumMonCalmLedger\% of calm hours, and in no SVB or FTX hour under any setting. Sterling and euro
+rail cuts show only small effects. All findings are descriptive: the token-side multi-event study was pre-registered,
+and the ledger analysis came from a disclosed search.
 \end{abstract}
 
 \maketitle
