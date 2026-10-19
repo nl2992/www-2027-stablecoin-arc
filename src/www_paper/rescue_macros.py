@@ -271,7 +271,18 @@ def feed_macros() -> list[tuple[str, str, str]]:
             ("NumFeedNaiveMaxBfx", _f(max(v["naive_vw"]["max_abs_bps"] for k, v in f.items() if k.startswith("L")), 0),
              "feed_bias/max naive VW error, Bitfinex windows"),
             ("NumFeedNaiveMaxBnus", _f(f["BINANCEUS-2023"]["naive_vw"]["max_abs_bps"], 0), "feed_bias/max naive VW error, Binance.US"),
-            ("NumFeedEpisodes", str(len(f)), "feed_bias/episodes")]
+            ("NumFeedEpisodes", str(len(f)), "feed_bias/episodes")] + lead_macros(f["L2018-10-BITFINEX-FIAT"]["timeline"])
+
+
+def lead_macros(tl: dict[str, Any]) -> list[tuple[str, str, str]]:
+    """Bitfinex 2018: first flagged day against the first deposit-pause report and the NYAG disclosure."""
+    import pandas as pd
+    first = pd.Timestamp(tl["first_day_ge_6_flag_hours"])
+    dates = {d["event"][:9]: pd.Timestamp(d["date"]) for d in tl["disclosures"]}
+    pause = next(v for k, v in dates.items() if k.startswith("The Block"))
+    nyag = next(v for k, v in dates.items() if k.startswith("NYAG"))
+    return [("NumFeedLeadDays", str((pause - first).days), "feed_bias/2018 first flag day to first deposit-pause report (days)"),
+            ("NumFeedLeadMonths", f"{(nyag - first).days / 30.44:.1f}", "feed_bias/2018 first flag day to NYAG disclosure (months)")]
 
 
 def main() -> None:
