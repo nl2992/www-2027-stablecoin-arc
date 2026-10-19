@@ -80,3 +80,15 @@ def test_predictions_score_agreement_sign_triangle_and_reversion():
                  "Q3_discount_sign": True, "Q4_reversion": True, "falsified": False}
     ep["pd_eth"] = _rows({"pre": 4, "stress": -50, "later": 20})
     assert predictions({"E": ep})["E"]["falsified"] and not np.isnan(0.0)
+
+
+def test_feed_filter_zeroes_only_the_flagged_venue_hour():
+    from www_rescue.feed_bias import ledger_flags, weighted
+    idx = pd.date_range("2018-10-01", periods=3, freq="1h", tz="UTC")
+    frames = {"plat": pd.DataFrame({"p": [0.0, 0.06, 0.0], "v": [1.0, 1.0, 1.0]}, index=idx),
+              "ref": pd.DataFrame({"p": [0.0, 0.0, 0.0], "v": [1.0, 1.0, 1.0]}, index=idx)}
+    flags = ledger_flags(pd.Series([0.0, 600.0, 0.0], index=idx), pd.Series([0.0, 590.0, 0.0], index=idx))
+    assert list(flags) == [False, True, False]
+    naive = weighted(frames)
+    filtered = weighted(frames, pd.DataFrame({"plat": flags}))
+    assert np.isclose(naive.iloc[1], 0.03) and filtered.iloc[1] == 0.0 and filtered.notna().all()

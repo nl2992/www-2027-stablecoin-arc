@@ -132,7 +132,7 @@ def run(raw: Path, manifest: Path) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--raw", type=Path, default=Path("data/raw"))
-    parser.add_argument("--manifest", type=Path, default=Path("reports/events/acquisition_manifest_ledger.json"))
+    parser.add_argument("--manifest", type=Path, default=Path("reports/events/acquisition_manifest.json"))
     parser.add_argument("--out", type=Path, default=Path("reports/rescue/ledger_panel.json"))
     args = parser.parse_args()
     out = run(args.raw, args.manifest)

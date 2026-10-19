@@ -43,7 +43,7 @@ Event dates and gate states must be confirmed against dated primary or press sou
 
 A panel table: one row per episode (L1 to L7, plus the token-side episodes SVB, TUSD, FDUSD and UST), each classified as token failure, ledger failure, both or neither by the same decomposition and checks.
 
-## Results (2026-10-18; `reports/rescue/ledger_panel.json`, data manifest `reports/events/acquisition_manifest_ledger.json`)
+## Results (2026-10-18; `reports/rescue/ledger_panel.json`, data manifest `reports/events/acquisition_manifest.json`)
 
 The download covered 101 month files (Bitfinex, Bitstamp and Coinbase), all VERIFIED with self-recorded SHA-256. The phase boundaries in `src/www_rescue/ledger_panel.py` were fixed before any statistics were computed.
 

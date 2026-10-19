@@ -1,0 +1,392 @@
+{
+ "rule": {
+  "threshold_bps": 100.0,
+  "agreement": 0.25
+ },
+ "L2017-04-BITFINEX-WIRES": {
+  "venues": [
+   "bitfinex",
+   "bitstamp",
+   "coinbase"
+  ],
+  "clean_venues": [
+   "bitstamp",
+   "coinbase"
+  ],
+  "platform_volume_share_median": 0.4752421505738633,
+  "platform_volume_share_flagged_hours_median": 0.39593348958372243,
+  "naive_vw": {
+   "hours": 5088,
+   "median_abs_bps": 23.65192373410263,
+   "p95_abs_bps": 238.29088420255644,
+   "max_abs_bps": 633.9097613605027,
+   "hours_abs_ge_50": 1642,
+   "hours_abs_ge_100": 931
+  },
+  "naive_equal_weight": {
+   "hours": 5088,
+   "median_abs_bps": 17.813604475831468,
+   "p95_abs_bps": 193.78492000625377,
+   "max_abs_bps": 364.7559330777472,
+   "hours_abs_ge_50": 1453,
+   "hours_abs_ge_100": 819
+  },
+  "filtered_vw": {
+   "hours": 5088,
+   "median_abs_bps": 9.794831551652727,
+   "p95_abs_bps": 118.98672127284546,
+   "max_abs_bps": 633.9097613605027,
+   "hours_abs_ge_50": 730,
+   "hours_abs_ge_100": 327
+  },
+  "naive_vw_flagged_hours": {
+   "hours": 1012,
+   "median_abs_bps": 116.98976966874497,
+   "p95_abs_bps": 360.3685087935892,
+   "max_abs_bps": 597.2027424202686,
+   "hours_abs_ge_50": 912,
+   "hours_abs_ge_100": 604
+  },
+  "filtered_vw_flagged_hours": {
+   "hours": 1012,
+   "median_abs_bps": 0.0,
+   "p95_abs_bps": 0.0,
+   "max_abs_bps": 0.0,
+   "hours_abs_ge_50": 0,
+   "hours_abs_ge_100": 0
+  },
+  "timeline": {
+   "first_day_daily_pd_ge_100": "2017-04-02",
+   "first_day_ge_6_flag_hours": "2017-04-12",
+   "flag_runs_ge_6_hours_per_day": [
+    [
+     "2017-04-12",
+     "2017-04-15"
+    ],
+    [
+     "2017-04-17",
+     "2017-04-28"
+    ],
+    [
+     "2017-04-30",
+     "2017-04-30"
+    ],
+    [
+     "2017-05-02",
+     "2017-05-03"
+    ],
+    [
+     "2017-05-10",
+     "2017-05-10"
+    ],
+    [
+     "2017-05-12",
+     "2017-05-13"
+    ],
+    [
+     "2017-05-18",
+     "2017-05-18"
+    ],
+    [
+     "2017-05-26",
+     "2017-06-08"
+    ],
+    [
+     "2017-06-12",
+     "2017-06-18"
+    ],
+    [
+     "2017-06-24",
+     "2017-07-03"
+    ],
+    [
+     "2017-07-08",
+     "2017-07-08"
+    ],
+    [
+     "2017-07-10",
+     "2017-07-10"
+    ],
+    [
+     "2017-07-12",
+     "2017-07-13"
+    ]
+   ],
+   "flagged_hours": 1012,
+   "disclosures": [
+    {
+     "date": "2017-04-09",
+     "event": "press: Bitfinex has sued Wells Fargo over blocked outbound wires (suit filed the week before)"
+    },
+    {
+     "date": "2017-04-13",
+     "event": "Bitfinex blog: USD withdrawal delays"
+    },
+    {
+     "date": "2017-04-18",
+     "event": "Bitfinex: Taiwanese banks refuse all incoming wires"
+    }
+   ]
+  }
+ },
+ "L2018-10-BITFINEX-FIAT": {
+  "venues": [
+   "bitfinex",
+   "bitstamp",
+   "coinbase"
+  ],
+  "clean_venues": [
+   "bitstamp",
+   "coinbase"
+  ],
+  "platform_volume_share_median": 0.5215848986232537,
+  "platform_volume_share_flagged_hours_median": 0.511389236785327,
+  "naive_vw": {
+   "hours": 2928,
+   "median_abs_bps": 85.29369124443242,
+   "p95_abs_bps": 230.9972573909845,
+   "max_abs_bps": 661.083029925429,
+   "hours_abs_ge_50": 1824,
+   "hours_abs_ge_100": 1284
+  },
+  "naive_equal_weight": {
+   "hours": 2928,
+   "median_abs_bps": 59.11537988565918,
+   "p95_abs_bps": 130.04728036864233,
+   "max_abs_bps": 279.54772326598487,
+   "hours_abs_ge_50": 1589,
+   "hours_abs_ge_100": 708
+  },
+  "filtered_vw": {
+   "hours": 2928,
+   "median_abs_bps": 0.0,
+   "p95_abs_bps": 35.80880343327665,
+   "max_abs_bps": 290.9081218606602,
+   "hours_abs_ge_50": 49,
+   "hours_abs_ge_100": 5
+  },
+  "naive_vw_flagged_hours": {
+   "hours": 1895,
+   "median_abs_bps": 124.91545859393938,
+   "p95_abs_bps": 248.58932513294363,
+   "max_abs_bps": 661.083029925429,
+   "hours_abs_ge_50": 1775,
+   "hours_abs_ge_100": 1279
+  },
+  "filtered_vw_flagged_hours": {
+   "hours": 1895,
+   "median_abs_bps": 0.0,
+   "p95_abs_bps": 0.0,
+   "max_abs_bps": 0.0,
+   "hours_abs_ge_50": 0,
+   "hours_abs_ge_100": 0
+  },
+  "timeline": {
+   "first_day_daily_pd_ge_100": "2018-10-10",
+   "first_day_ge_6_flag_hours": "2018-10-08",
+   "flag_runs_ge_6_hours_per_day": [
+    [
+     "2018-10-08",
+     "2018-11-03"
+    ],
+    [
+     "2018-11-05",
+     "2018-12-31"
+    ]
+   ],
+   "flagged_hours": 1895,
+   "disclosures": [
+    {
+     "date": "2018-10-02",
+     "event": "Bloomberg: Noble Bank has lost Bitfinex and Tether as clients"
+    },
+    {
+     "date": "2018-10-07",
+     "event": "Bitfinex blog denies insolvency"
+    },
+    {
+     "date": "2018-10-11",
+     "event": "The Block: all Bitfinex fiat deposits paused (confirmed 10-12)"
+    },
+    {
+     "date": "2019-04-25",
+     "event": "NYAG filing: about $850M of Bitfinex funds lost or seized at Crypto Capital"
+    }
+   ]
+  }
+ },
+ "L2019-04-BITFINEX-NYAG": {
+  "venues": [
+   "bitfinex",
+   "bitstamp",
+   "coinbase"
+  ],
+  "clean_venues": [
+   "bitstamp",
+   "coinbase"
+  ],
+  "platform_volume_share_median": 0.3075278280499745,
+  "platform_volume_share_flagged_hours_median": 0.31607391119309197,
+  "naive_vw": {
+   "hours": 3672,
+   "median_abs_bps": 12.64390529049031,
+   "p95_abs_bps": 169.9281166650887,
+   "max_abs_bps": 470.610987623985,
+   "hours_abs_ge_50": 933,
+   "hours_abs_ge_100": 469
+  },
+  "naive_equal_weight": {
+   "hours": 3672,
+   "median_abs_bps": 14.044959169039473,
+   "p95_abs_bps": 188.30973292303543,
+   "max_abs_bps": 241.50938437236036,
+   "hours_abs_ge_50": 1125,
+   "hours_abs_ge_100": 326
+  },
+  "filtered_vw": {
+   "hours": 3672,
+   "median_abs_bps": 1.9817146365319616,
+   "p95_abs_bps": 24.02923891612295,
+   "max_abs_bps": 72.40508740844476,
+   "hours_abs_ge_50": 7,
+   "hours_abs_ge_100": 0
+  },
+  "naive_vw_flagged_hours": {
+   "hours": 1213,
+   "median_abs_bps": 80.6891080763883,
+   "p95_abs_bps": 260.97845391479154,
+   "max_abs_bps": 470.610987623985,
+   "hours_abs_ge_50": 926,
+   "hours_abs_ge_100": 469
+  },
+  "filtered_vw_flagged_hours": {
+   "hours": 1213,
+   "median_abs_bps": 0.0,
+   "p95_abs_bps": 0.0,
+   "max_abs_bps": 0.0,
+   "hours_abs_ge_50": 0,
+   "hours_abs_ge_100": 0
+  },
+  "timeline": {
+   "first_day_daily_pd_ge_100": "2019-03-01",
+   "first_day_ge_6_flag_hours": "2019-03-01",
+   "flag_runs_ge_6_hours_per_day": [
+    [
+     "2019-03-01",
+     "2019-04-02"
+    ],
+    [
+     "2019-04-06",
+     "2019-04-07"
+    ],
+    [
+     "2019-04-26",
+     "2019-05-10"
+    ],
+    [
+     "2019-05-13",
+     "2019-05-13"
+    ],
+    [
+     "2019-05-17",
+     "2019-05-17"
+    ]
+   ],
+   "flagged_hours": 1213,
+   "disclosures": [
+    {
+     "date": "2019-04-25",
+     "event": "NYAG filing against Bitfinex and Tether"
+    }
+   ]
+  }
+ },
+ "BINANCEUS-2023": {
+  "venues": [
+   "binance_us",
+   "bitstamp"
+  ],
+  "clean_venues": [
+   "bitstamp"
+  ],
+  "platform_volume_share_median": 0.23291284362793524,
+  "platform_volume_share_flagged_hours_median": 0.07338041774462462,
+  "naive_vw": {
+   "hours": 2207,
+   "median_abs_bps": 5.4684354281420156,
+   "p95_abs_bps": 114.38192431918453,
+   "max_abs_bps": 1365.7077383991023,
+   "hours_abs_ge_50": 280,
+   "hours_abs_ge_100": 142
+  },
+  "naive_equal_weight": {
+   "hours": 2207,
+   "median_abs_bps": 6.369849336920197,
+   "p95_abs_bps": 505.7432640166167,
+   "max_abs_bps": 1045.8922360438016,
+   "hours_abs_ge_50": 682,
+   "hours_abs_ge_100": 564
+  },
+  "filtered_vw": {
+   "hours": 2207,
+   "median_abs_bps": 0.0,
+   "p95_abs_bps": 20.27708693905869,
+   "max_abs_bps": 316.4209083736047,
+   "hours_abs_ge_50": 24,
+   "hours_abs_ge_100": 3
+  },
+  "naive_vw_flagged_hours": {
+   "hours": 677,
+   "median_abs_bps": 35.10836974333742,
+   "p95_abs_bps": 237.5995255892746,
+   "max_abs_bps": 1365.7077383991023,
+   "hours_abs_ge_50": 256,
+   "hours_abs_ge_100": 139
+  },
+  "filtered_vw_flagged_hours": {
+   "hours": 677,
+   "median_abs_bps": 0.0,
+   "p95_abs_bps": 0.0,
+   "max_abs_bps": 0.0,
+   "hours_abs_ge_50": 0,
+   "hours_abs_ge_100": 0
+  },
+  "timeline": {
+   "first_day_daily_pd_ge_100": "2023-05-08",
+   "first_day_ge_6_flag_hours": "2023-05-08",
+   "flag_runs_ge_6_hours_per_day": [
+    [
+     "2023-05-08",
+     "2023-05-09"
+    ],
+    [
+     "2023-06-07",
+     "2023-06-07"
+    ],
+    [
+     "2023-06-13",
+     "2023-06-16"
+    ],
+    [
+     "2023-06-21",
+     "2023-07-13"
+    ]
+   ],
+   "flagged_hours": 677,
+   "disclosures": [
+    {
+     "date": "2023-06-05",
+     "event": "SEC sues Binance and Binance.US"
+    },
+    {
+     "date": "2023-06-09",
+     "event": "Binance.US suspends USD deposits"
+    },
+    {
+     "date": "2023-06-13",
+     "event": "banking partners pause USD payments"
+    }
+   ]
+  }
+ }
+}
