@@ -12,23 +12,23 @@
 \title{Which Dollar Broke? Separating Token Failures from Platform-Ledger Failures in Web Dollar Markets}
 
 \begin{abstract}
-Crypto prices on the Web are quoted in two kinds of dollar: stablecoin tokens, and balances in an exchange's internal
-ledger that reach the banking system only through the platform's rails. Price feeds and oracles average these quotes
-as if every USD quote were in the same dollar, and we know of no measure that tells a token failure from a ledger failure.
-This is hard because a ledger's value is never quoted directly, public prices are asynchronous last trades that thin
-out under stress, and any single asset may carry its own shock. We price the platform's dollar through unpegged assets
-against venues whose rails stay open, which splits a dollar-quoted dislocation into a token and a ledger component, and
-we accept the split only when unrelated assets agree and the venue's internal cross-rates hold. We study rail-cut
-episodes on three platforms: three Bitfinex windows from 2017 to 2019, Binance.US in 2023, and Binance's sterling and
-euro rails. On Bitfinex and Binance.US the platform's dollar, not a token, moved: by up to \NumPanSeventeenMax{} bps on
-Bitfinex, with BTC and ETH agreeing to within \NumPanGapMax{} bps and internal cross-rates holding to within
-\NumPanTriMax{} bps. On both platforms it traded at a discount while exit was impaired and later at a premium. A
-volume-weighted BTC/USD index over these venues was off by at least 100 bps for \NumFeedNaiveHours{} hours; dropping the
-venue-hours our rule flags removes \NumFeedRemovedShare\% of them. On Bitfinex in 2018 the discount appeared
-\NumFeedLeadDays{} days before the deposit freeze was first reported and about \NumFeedLeadMonths{} months before
-regulators disclosed the loss behind it. In the March 2023 USDC run, by contrast, the method attributes all but
-\NumDecSvbShare\% of the dislocation to the token. The sterling and euro cuts show only small effects. All findings are
-descriptive.
+Web price feeds and on-chain oracles average quotes from exchanges as if every USD price were in the same dollar. Some
+quote stablecoin tokens; others quote balances in an exchange's internal ledger, which reach the banking system only
+through the platform's rails. When those rails fail, the platform's dollar drifts from bank money, and the feed
+reports a platform failure as a price move. Work on feed reliability covers manipulation, staleness and outliers, and
+work on cross-exchange gaps does not ask whose unit of account moved. We know of no measure that separates token
+failures from ledger failures. This is hard: a ledger's value is never quoted directly, public prices are asynchronous
+trades that thin out under stress, and any one asset may carry its own shock. We price the platform's dollar through
+unpegged assets against venues whose rails stay open, which splits a dollar-quoted dislocation into a token and a
+ledger component, accepted only when unrelated assets agree and internal cross-rates hold. Across rail-cut episodes on
+three platforms from 2017 to 2023, the platform's dollar, not a token, moved on Bitfinex and Binance.US. On Bitfinex
+it fell by up to \NumPanSeventeenMax{} bps, with BTC and ETH agreeing to within \NumPanGapMax{} bps. On both platforms
+it traded at a discount while exit was impaired and later at a premium. A volume-weighted BTC/USD index over these
+venues was off by at least 100 bps for \NumFeedNaiveHours{} hours; dropping the venue-hours our rule flags removes
+\NumFeedRemovedShare\% of them. On Bitfinex in 2018 the discount appeared \NumFeedLeadDays{} days before the deposit
+freeze was reported and about \NumFeedLeadMonths{} months before regulators disclosed the loss behind it. In the March
+2023 USDC run the method attributes all but \NumDecSvbShare\% of the dislocation to the token. All findings are
+descriptive and use only public data.
 \end{abstract}
 
 \maketitle
