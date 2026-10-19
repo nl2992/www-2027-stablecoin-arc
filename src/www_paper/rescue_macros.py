@@ -274,6 +274,10 @@ def feed_macros() -> list[tuple[str, str, str]]:
             ("NumFeedEpisodes", str(len(f)), "feed_bias/episodes")] + lead_macros(f["L2018-10-BITFINEX-FIAT"]["timeline"])
 
 
+# CoinMarketCap removed Bitfinex BTC prices from its weighted average (Finance Magnates, 2019-05-06).
+CMC_BITFINEX_EXCLUSION = __import__("pandas").Timestamp("2019-05-06")
+
+
 def lead_macros(tl: dict[str, Any]) -> list[tuple[str, str, str]]:
     """Bitfinex 2018: first flagged day against the first deposit-pause report and the NYAG disclosure."""
     import pandas as pd
@@ -282,7 +286,9 @@ def lead_macros(tl: dict[str, Any]) -> list[tuple[str, str, str]]:
     pause = next(v for k, v in dates.items() if k.startswith("The Block"))
     nyag = next(v for k, v in dates.items() if k.startswith("NYAG"))
     return [("NumFeedLeadDays", str((pause - first).days), "feed_bias/2018 first flag day to first deposit-pause report (days)"),
-            ("NumFeedLeadMonths", f"{(nyag - first).days / 30.44:.1f}", "feed_bias/2018 first flag day to NYAG disclosure (months)")]
+            ("NumFeedLeadMonths", f"{(nyag - first).days / 30.44:.1f}", "feed_bias/2018 first flag day to NYAG disclosure (months)"),
+            ("NumFeedCmcMonths", f"{(CMC_BITFINEX_EXCLUSION - first).days / 30.44:.0f}",
+             "feed_bias/2018 first flag day to CoinMarketCap dropping Bitfinex BTC from its average (months)")]
 
 
 def main() -> None:
