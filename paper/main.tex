@@ -12,23 +12,23 @@
 \title{Which Dollar Broke? Separating Token Failures from Platform-Ledger Failures in Web Dollar Markets}
 
 \begin{abstract}
-In October 2018 our monitor flagged Bitfinex's dollar as trading below bank money \NumFeedLeadDays{} days before its
-deposit freeze was reported and \NumFeedLeadMonths{} months before regulators disclosed the loss behind it. Web price
-feeds and oracles miss such signals because they average exchange prices as if all used the same dollar; CoinMarketCap
-dropped Bitfinex from its bitcoin average by hand only in May 2019, \NumFeedCmcMonths{} months later. Some exchanges
-quote stablecoins; others quote balances in their own ledger, convertible to bank money only through their banks. When
-that link breaks, the exchange's dollar drifts, and feeds read it as a price move or a stablecoin failure. We tell the
-two apart by pricing the exchange's own dollar with the law of one price across exchanges and triangular arbitrage
-within one. Because bitcoin has no peg, its price gap between the troubled exchange and one whose banking still works
-measures the ledger's loss of value, and the rest of a stablecoin's dislocation belongs to the token. We accept the
-split only when an unrelated asset shows the same gap, the implied token price matches its direct price elsewhere, and
-its internal cross-rates hold. In banking cut-offs on three exchanges from 2017 to 2023, the dollar broke on Bitfinex
-and Binance.US but barely moved on Binance's sterling and euro rails. On Bitfinex it fell by up to
-\NumPanSeventeenMax{} basis points, with bitcoin and ether agreeing to within \NumPanGapMax{} and cross-rates holding
-to within \NumPanTriMax. On both it moved from a discount to a premium before recovering. A multi-exchange bitcoin
-index was off by 100 basis points or more for \NumFeedNaiveHours{} hours, and dropping exchange-hours our monitor
-flags removes \NumFeedRemovedShare\% of them. In the March 2023 USD Coin run it instead blames the token for all but
-\NumDecSvbShare\%. All findings are descriptive.
+In October 2018 our monitor saw Bitfinex's dollar slip below bank money \NumFeedLeadDays{} days before its deposit
+freeze was reported and \NumFeedLeadMonths{} months before regulators disclosed the loss behind it. Web price feeds
+and oracles miss this because they average exchange prices as if all used the same dollar. CoinMarketCap dropped
+Bitfinex by hand only in May 2019, \NumFeedCmcMonths{} months later. Some exchanges quote in stablecoins, others in
+balances on their own ledger that reach bank money only through their banks. When that link breaks, the exchange's
+dollar drifts, and feeds read it as a price move or stablecoin failure. Telling the failures apart is hard because an
+exchange's dollar is never quoted directly and any one asset may carry its own shock. Building on the law of one price
+and triangular arbitrage, we use bitcoin, which has no peg: its price gap between the troubled exchange and one whose
+banking still works measures the ledger's loss of value, and the rest of a stablecoin's dislocation belongs to the
+token. We accept this split only when an unrelated asset shows the same gap, the implied token price matches its
+direct price elsewhere, and the exchange's internal cross-rates hold. In banking cut-offs at three exchanges, 2017 to
+2023, the exchange's dollar broke on Bitfinex and Binance.US but barely moved on Binance's sterling and euro rails. On
+Bitfinex it fell by up to \NumPanSeventeenMax{} basis points (bps), with bitcoin and ether agreeing to within
+\NumPanGapMax{} bps. On each exchange, one episode swung from discount to premium before recovering. A multi-exchange
+bitcoin index was off by at least 100 bps for \NumFeedNaiveHours{} hours, and dropping exchange-hours our monitor
+flagged removed \NumFeedRemovedShare\% of them. In the March 2023 USD Coin run the method instead attributed the
+dislocation to the token. All findings are descriptive.
 \end{abstract}
 
 \maketitle
