@@ -47,8 +47,11 @@ Figure~\ref{fig:which} shows that they are not.
 
 Existing work cannot separate the two. Studies of stablecoin pegs and runs treat a token's exchange price as the
 token's value~\cite{lyons2023keeps,ma2025runs,liu2023anatomy}, which is correct only if the exchange's dollar is
-itself worth a dollar. Studies of cross-exchange price gaps~\cite{makarov2020trading,choi2019kimchi} measure how far
-one asset's price differs between venues, but not whether the asset or the venue's unit of account moved. Reports
+itself worth a dollar. Studies of cross-exchange price gaps~\cite{makarov2020trading,choi2019kimchi,borri2023discounts}
+measure how far one asset's price differs between venues, and recent work links their persistence to exchange default
+risk~\cite{guo2025default}, but neither asks whether the asset or the venue's unit of account moved. Measurements of
+price oracles find deviations from market rates and operational anomalies~\cite{liu2020oracles}, but treat the
+sources' dollars as one. Reports
 of trapped platform money, such as the Mt.~Gox premium of 2013--14~\cite{financemagnates2014mtgox}, describe the
 phenomenon without a test that attributes it to the ledger.
 
