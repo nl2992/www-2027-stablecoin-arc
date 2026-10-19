@@ -12,17 +12,18 @@
 \title{Which Dollar Broke? Separating Token Failures from Platform-Ledger Failures in Web Dollar Markets}
 
 \begin{abstract}
-Web price feeds and on-chain oracles combine exchange quotes as if every USD price were in the same dollar, but an
-exchange's dollar is a balance in its own ledger that reaches the banking system only through the platform's rails.
-When those rails fail, a feed can report a platform failure as a market move, and existing work on feed reliability and
-cross-exchange price gaps does not separate a failing token from a failing platform ledger. The separation is hard
-because a ledger's value is never quoted directly, public prices thin out under stress, and any single asset may carry
-its own shock. We propose a decomposition that prices the platform's dollar through unpegged assets against venues
-whose rails stay open, and accepts the split only when unrelated assets and the venue's internal cross-rates agree.
-Across banking-rail episodes on three platforms between 2017 and 2023, with stablecoin runs as contrasts, the method
-attributes the largest dislocations to the platform's ledger rather than to tokens. A feed filter built on it removes
-\NumFeedRemovedShare\% of the hours in which a naive multi-exchange index was off by 100 bps or more, and in one episode
-the signal appeared months before the loss behind it was disclosed. The findings are descriptive and use public data.
+When a crypto exchange loses its banks, the dollars in its customers' accounts can stop being worth a dollar. Those
+balances are entries in the exchange's own ledger, and they reach bank money only through the platform's banking rails.
+Web price feeds and on-chain oracles still treat every exchange's USD as the same dollar, so they can report a platform
+failure as a market move or a stablecoin depeg. Existing work on feed reliability and cross-exchange price gaps does not
+tell the two apart, and doing so is hard: an exchange's dollar is never quoted on its own, public prices thin out under
+stress, and any single asset can carry its own shock. We propose a decomposition that prices the platform's dollar
+through unpegged assets such as BTC against venues whose rails stay open, and accepts the result only when unrelated
+assets and the venue's internal cross-rates agree. Across banking-rail episodes on three platforms between 2017 and
+2023, with stablecoin runs as contrasts, the method attributes the largest dislocations to the platform's ledger rather
+than to tokens. A filter built on it removes \NumFeedRemovedShare\% of the hours in which a naive multi-exchange index
+was off by 100 bps or more, and in one episode the signal appeared months before the loss behind it was disclosed. The
+findings are descriptive and rely only on public data.
 \end{abstract}
 
 \maketitle
