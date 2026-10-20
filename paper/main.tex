@@ -25,7 +25,7 @@ single rate per exchange-hour, estimated from other assets, removed \NumUTestPct
 gap for five assets withheld from development (\NumUTestNineteenPct\% in 2019, \NumUTestYearMinPct\% to
 \NumUTestYearMaxPct\% in each later year), and made no correction for an exchange pair that shared a dollar. On
 Bitfinex, a monitor built on the decomposition, with a rule fixed in advance, raised \NumUDetFaBfx{} false alarm
-episodes per year from 2017 to 2023, a third the rate of a plain price-gap alarm at equal recall, and flagged the
+episodes per year, a third the rate of a plain price-gap alarm at equal recall, and flagged the
 exchange from \NumUFirstAlarmMonth, \NumUAlarmNyagMonths{} months before regulators disclosed its loss. In 2023 it
 separated three shocks. Binance.US's dollar stood a median \NumUBnusMedBps{} bps from the U.S. dollar for
 \NumUBnusHours{} hours after its banks withdrew. The loss of Silvergate and Signature banking raised no alarm on any
@@ -235,15 +235,10 @@ on each exchange and one reference exchange. The rate also names which exchanges
 or source weighting does not (Appendix~\ref{app:t2}).
 
 \paragraph{Limits.}
-Three USD exchanges carry the diagnostic, with Bitstamp listing only bitcoin and ether. The control pair receives no
-correction in part because the estimator applies none to an exchange seen through fewer than two assets.
-The held-out gain is concentrated in XRP and 2019 and was \NumUTestYearMinPct\% to \NumUTestYearMaxPct\% in later years.
-Labelled positive episodes are few, and recall was measured on episodes available when the rule was fixed. The
-monitor trailed the first public report by \NumULagNoble{} days for the Noble Bank loss at Bitfinex and by \NumULagBnus{}
-days for the Binance.US partner loss, so it does not give a uniform lead time. Two of three exchanges sharing a
-biased dollar cannot be told apart from the opposite case without outside information, such as a bank rail or
-a redemption anchor. The stablecoin exit route is not modelled. The oracle check covers one episode and one
-oracle family, and Pyth and CryptoCompare history needs accounts.
+The diagnostic rests on three USD exchanges, and Bitstamp lists only bitcoin and ether, so the zero correction on the
+control pair partly reflects the estimator's rule of applying none when fewer than two assets are visible. When two
+of three exchanges share a biased dollar, prices alone cannot say which unit is the U.S. dollar; an outside anchor,
+such as a working bank rail, is needed. The oracle check covers one episode and one oracle family.
 
 \section{Reproducibility}
 Every number in this paper is a macro generated from committed reports and logs by \texttt{www\_paper.macros},

@@ -51,8 +51,8 @@ def build() -> str:
         "Double-blind: do not add names, affiliations or repository links.\n\n"
         f"**Title:** {title(tex)}\n\n"
         f"**Abstract ({words} words):**\n\n{abstract}\n\n"
-        "**Suggested keywords:** stablecoins; platform money; exchange ledgers; price feeds and oracles; "
-        "Web measurement; natural experiment; reproducibility\n"
+        "**Suggested keywords:** exchange dollars; unit of account; truth discovery; price feeds and oracles; "
+        "Web data quality; cryptocurrency markets; reproducibility\n"
     )
 
 
