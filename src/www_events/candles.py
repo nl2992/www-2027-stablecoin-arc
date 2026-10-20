@@ -29,6 +29,9 @@ from .bitstamp import COLUMNS, month_bounds
 BITFINEX = ("https://api-pub.bitfinex.com/v2/candles/trade:1m:t{pair}/hist"
             "?start={start}&end={end}&limit=10000&sort=1")
 COINBASE = "https://api.exchange.coinbase.com/products/{product}/candles?granularity=60&start={start}&end={end}"
+BITFINEX_1H = ("https://api-pub.bitfinex.com/v2/candles/trade:1h:t{pair}/hist"
+               "?start={start}&end={end}&limit=10000&sort=1")
+COINBASE_1H = "https://api.exchange.coinbase.com/products/{product}/candles?granularity=3600&start={start}&end={end}"
 USER_AGENT = "www-stablecoin-research/0.1"
 
 
@@ -85,6 +88,53 @@ def fetch_coinbase_month(product: str, month: str, *, get: Callable[[str], Any] 
         end = min(start + 300 * 60, hi) - 60  # Coinbase's end bound is inclusive
         iso = lambda s: pd.Timestamp(s, unit="s", tz="UTC").strftime("%Y-%m-%dT%H:%M:%SZ")  # noqa: E731
         bars = get(COINBASE.format(product=product.upper(), start=iso(start), end=iso(end)))
+        pages += 1
+        for t, low, h, o, c, v in bars:
+            if lo <= int(t) < hi:
+                rows[int(t)] = [o, h, low, c, v]
+        if pause:
+            time.sleep(pause)
+    return _frame(rows), pages
+
+
+def hourly_bounds(first_month: str, last_month: str) -> tuple[int, int]:
+    return month_bounds(first_month)[0], month_bounds(last_month)[1]
+
+
+def fetch_bitfinex_hourly(pair: str, first_month: str, last_month: str, *, get: Callable[[str], Any] = _get,
+                          pause: float = 1.5) -> tuple[pd.DataFrame, int]:
+    """All hourly bars with first_month start <= t < end of last_month (10,000 per page, ascending)."""
+    lo, hi = hourly_bounds(first_month, last_month)
+    rows: dict[int, list[float]] = {}
+    cursor, pages = lo, 0
+    while cursor < hi:
+        bars = get(BITFINEX_1H.format(pair=pair.upper(), start=cursor * 1000, end=hi * 1000 - 1))
+        pages += 1
+        if not bars:
+            break
+        for mts, o, c, h, low, v in bars:
+            t = int(mts) // 1000
+            if lo <= t < hi:
+                rows[t] = [o, h, low, c, v]
+        last = int(bars[-1][0]) // 1000
+        if last < cursor:
+            raise ValueError("provider returned bars out of order")
+        cursor = last + 3600
+        if pause:
+            time.sleep(pause)
+    return _frame(rows), pages
+
+
+def fetch_coinbase_hourly(product: str, first_month: str, last_month: str, *, get: Callable[[str], Any] = _get,
+                          pause: float = 0.3) -> tuple[pd.DataFrame, int]:
+    """All hourly bars in the range, requested in fixed 300-hour windows (Coinbase's end bound is inclusive)."""
+    lo, hi = hourly_bounds(first_month, last_month)
+    rows: dict[int, list[float]] = {}
+    pages = 0
+    iso = lambda s: pd.Timestamp(s, unit="s", tz="UTC").strftime("%Y-%m-%dT%H:%M:%SZ")  # noqa: E731
+    for start in range(lo, hi, 300 * 3600):
+        end = min(start + 300 * 3600, hi) - 3600
+        bars = get(COINBASE_1H.format(product=product.upper(), start=iso(start), end=iso(end)))
         pages += 1
         for t, low, h, o, c, v in bars:
             if lo <= int(t) < hi:

@@ -125,6 +125,50 @@ def acquire_candles(root: Path, venue: str, symbol: str, month: str) -> dict[str
     return record
 
 
+HOURLY_DIRS = {"bitfinex-1h": "data/raw/bitfinex_1h", "coinbase-1h": "data/raw/coinbase_1h"}
+HOURLY_NOTE = ("Public market-data endpoint downloaded with user authorization (decision D12, 2026-10-20); provider "
+               "terms of use apply; raw files are not redistributed in this repository.")
+
+
+def acquire_hourly(root: Path, venue: str, symbol: str, first: str = "2017-01", last: str = "2023-12",
+                   note: str | None = None) -> dict[str, Any]:
+    """Bitfinex or Coinbase public hourly candles for the whole range in one CSV, with a self-recorded SHA-256."""
+    from .bitstamp import save_month
+    from .candles import BITFINEX_1H, COINBASE_1H, fetch_bitfinex_hourly, fetch_coinbase_hourly
+    fetch, url = ((fetch_bitfinex_hourly, BITFINEX_1H.format(pair=symbol, start="<paged>", end="<range end>"))
+                  if venue == "bitfinex-1h" else
+                  (fetch_coinbase_hourly, COINBASE_1H.format(product=symbol, start="<paged>", end="<paged>")))
+    name = symbol.upper().replace("-", "").replace(":", "")
+    span = f"{first[:4]}-{last[:4]}"
+    path = root / HOURLY_DIRS[venue] / f"{name}-1h-{span}.csv"
+    record: dict[str, Any] = {"venue": venue, "symbol": name, "month": f"{first}..{last}", "url": url,
+                              "provider_symbol": symbol}
+    if note:
+        record["notes"] = note
+    try:
+        frame, pages = fetch(symbol, first, last)
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        record.update(status="NOT_AVAILABLE", error=f"{type(exc).__name__}: {exc}")
+        return record
+    if frame.empty:
+        record.update(status="NOT_AVAILABLE", error="no bars returned")
+        return record
+    digest = save_month(frame, path)
+    record.update(status="VERIFIED", file=str(path.relative_to(root)), bytes=path.stat().st_size, sha256=digest,
+                  hash_kind="self-recorded at acquisition (provider publishes no checksum)", pages=pages,
+                  rows=len(frame), traded_hours=int((frame["volume"] > 0).sum()),
+                  first_utc=pd_ts(frame["timestamp"].iloc[0]), last_utc=pd_ts(frame["timestamp"].iloc[-1]),
+                  terms_note=HOURLY_NOTE)
+    return record
+
+
+def merge_records(previous: list[dict[str, Any]], new: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep every previous record except those replaced by a new record with the same (venue, symbol, month)."""
+    key = lambda r: (r["venue"], r["symbol"], r["month"])  # noqa: E731
+    replaced = {key(r) for r in new}
+    return [r for r in previous if key(r) not in replaced] + new
+
+
 TARDIS = "https://datasets.tardis.dev/v1/{exchange}/{dtype}/{y}/{m}/{d}/{symbol}.csv.gz"
 TARDIS_MAX_BYTES = 300 * 1024 * 1024
 TARDIS_NOTE = ("Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded "
@@ -164,6 +208,22 @@ def acquire_tardis(root: Path, exchange: str, dtype: str, date: str, symbol: str
 def pd_ts(seconds: int) -> str:
     import datetime as _dt
     return _dt.datetime.fromtimestamp(int(seconds), _dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
+
+
+def main_hourly(root: Path, manifest: Path, plan: list[tuple[str, str, str | None]]) -> None:
+    """Fetch (venue, provider symbol, note) hourly items and merge them into the manifest without dropping records."""
+    path = root / manifest
+    data = json.loads(path.read_text())
+    new = []
+    for venue, symbol, note in plan:
+        rec = acquire_hourly(root, venue, symbol, note=note)
+        new.append(rec)
+        print(f"{rec['status']:14} {venue:12} {symbol:10} {rec.get('rows', '')} {rec.get('first_utc', '')} "
+              f"{rec.get('last_utc', '')} {rec.get('error', '')}", flush=True)
+    data["records"] = merge_records(data["records"], new)
+    data["summary"] = {s: sum(r["status"] == s for r in data["records"])
+                       for s in ("VERIFIED", "NOT_AVAILABLE", "CHECKSUM_FAILED")}
+    path.write_text(json.dumps(data, indent=1) + "\n")
 
 
 def main() -> None:

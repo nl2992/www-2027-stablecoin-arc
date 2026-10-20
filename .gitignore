@@ -13,3 +13,4 @@ paper/build/
 autoresearch/results.tsv
 autoresearch/run.log
 run.log
+data/derived/
