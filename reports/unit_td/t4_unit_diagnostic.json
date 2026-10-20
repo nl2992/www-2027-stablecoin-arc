@@ -1,0 +1,447 @@
+{
+ "study": "T4",
+ "dev_assets_only": true,
+ "numeraire": "coinbase",
+ "thresholds": {
+  "separate_share_min": 0.5,
+  "separate_gap_min_bps": 3.0,
+  "shared_share_max": 0.1,
+  "min_hours": 500
+ },
+ "rows": [
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2017,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 17539,
+   "explained_share": 0.7727239595460834,
+   "share_b1": 0.7868024680655976,
+   "share_b2": 0.7874159687614193,
+   "median_abs_gap_bps": 65.39472439320626,
+   "corr_btc_by_asset": {
+    "ETH": 0.988235686916468,
+    "LTC": 0.9387009477104497,
+    "BCH": NaN,
+    "ETC": NaN,
+    "XLM": NaN
+   },
+   "corr_btc_mean": 0.9634683173134588,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2018,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 29608,
+   "explained_share": 0.5043291939092216,
+   "share_b1": 0.5212824475942188,
+   "share_b2": 0.5275758404667692,
+   "median_abs_gap_bps": 24.947637036385473,
+   "corr_btc_by_asset": {
+    "ETH": 0.9979753272437714,
+    "LTC": 0.9965514089512616,
+    "BCH": 0.25357475631595994,
+    "ETC": 0.9948205053932146,
+    "XLM": NaN
+   },
+   "corr_btc_mean": 0.8107304994760519,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2019,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 41169,
+   "explained_share": 0.656487272080738,
+   "share_b1": 0.6763686342776802,
+   "share_b2": 0.6793523078775019,
+   "median_abs_gap_bps": 41.706431033343705,
+   "corr_btc_by_asset": {
+    "ETH": 0.9993506354059749,
+    "LTC": 0.9988593034586115,
+    "BCH": 0.9919911573149044,
+    "ETC": 0.42344642523082665,
+    "XLM": 0.9922586214878776
+   },
+   "corr_btc_mean": 0.8811812285796391,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2020,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 43308,
+   "explained_share": 0.026140488532357842,
+   "share_b1": 0.024947964764603925,
+   "share_b2": 0.0326112766430009,
+   "median_abs_gap_bps": 15.237613579597298,
+   "corr_btc_by_asset": {
+    "ETH": 0.9839420939597083,
+    "LTC": 0.8334052619916805,
+    "BCH": 0.6698106694533419,
+    "ETC": 0.12150738343554168,
+    "XLM": 0.6601987744985229
+   },
+   "corr_btc_mean": 0.6537728366677591,
+   "classification": "shared dollar",
+   "classification_b2": "shared dollar"
+  },
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2021,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 43703,
+   "explained_share": -0.0011720077227095338,
+   "share_b1": -0.001962932204279122,
+   "share_b2": -0.0005370068600747402,
+   "median_abs_gap_bps": 8.986072193719608,
+   "corr_btc_by_asset": {
+    "ETH": 0.9435050914589804,
+    "LTC": 0.8460092620184547,
+    "BCH": 0.6880391961766225,
+    "ETC": -0.15799527294350094,
+    "XLM": 0.5394644482773865
+   },
+   "corr_btc_mean": 0.5718045449975887,
+   "classification": "shared dollar",
+   "classification_b2": "shared dollar"
+  },
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2022,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 43754,
+   "explained_share": 0.1840504074515441,
+   "share_b1": 0.19172274260710775,
+   "share_b2": 0.19312205048919862,
+   "median_abs_gap_bps": 6.954769087488266,
+   "corr_btc_by_asset": {
+    "ETH": 0.978689660795921,
+    "LTC": 0.9686087793131571,
+    "BCH": 0.8768124425758425,
+    "ETC": 0.4017224759761348,
+    "XLM": 0.9081975962051639
+   },
+   "corr_btc_mean": 0.8268061909732438,
+   "classification": "mixed",
+   "classification_b2": "mixed"
+  },
+  {
+   "pair": "bitfinex-coinbase",
+   "year": 2023,
+   "assets": [
+    "ETH",
+    "LTC",
+    "BCH",
+    "ETC",
+    "XLM"
+   ],
+   "n_hours": 43362,
+   "explained_share": 0.363542066734996,
+   "share_b1": 0.3787030379306532,
+   "share_b2": 0.3782267219662072,
+   "median_abs_gap_bps": 8.542172748167154,
+   "corr_btc_by_asset": {
+    "ETH": 0.9912847887637424,
+    "LTC": 0.978642233416135,
+    "BCH": 0.9037929589132001,
+    "ETC": 0.8655222677630803,
+    "XLM": 0.9374549709148148
+   },
+   "corr_btc_mean": 0.9353394439541945,
+   "classification": "mixed",
+   "classification_b2": "mixed"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2017,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 2928,
+   "explained_share": -1.4199372754597315,
+   "share_b1": 0.8710860239376678,
+   "share_b2": 0.8710860239376678,
+   "median_abs_gap_bps": 30.17089182614008,
+   "corr_btc_by_asset": {
+    "ETH": 0.9932896485799875
+   },
+   "corr_btc_mean": 0.9932896485799875,
+   "classification": "shared dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2018,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8759,
+   "explained_share": 0.9349511759558752,
+   "share_b1": 0.982360813546694,
+   "share_b2": 0.982360813546694,
+   "median_abs_gap_bps": 19.220214593440588,
+   "corr_btc_by_asset": {
+    "ETH": 0.9986323787139213
+   },
+   "corr_btc_mean": 0.9986323787139213,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2019,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8751,
+   "explained_share": 0.9511910656980447,
+   "share_b1": 0.9917814293006777,
+   "share_b2": 0.9917814293006777,
+   "median_abs_gap_bps": 40.8619708280078,
+   "corr_btc_by_asset": {
+    "ETH": 0.9992008133988305
+   },
+   "corr_btc_mean": 0.9992008133988305,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2020,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8773,
+   "explained_share": 0.3861715732677026,
+   "share_b1": 0.6981663771128641,
+   "share_b2": 0.6981663771128641,
+   "median_abs_gap_bps": 12.071332055683115,
+   "corr_btc_by_asset": {
+    "ETH": 0.9752196045531847
+   },
+   "corr_btc_mean": 0.9752196045531847,
+   "classification": "mixed",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2021,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8745,
+   "explained_share": 0.32770764242432493,
+   "share_b1": 0.5130356834149778,
+   "share_b2": 0.5130356834149778,
+   "median_abs_gap_bps": 5.617977675855812,
+   "corr_btc_by_asset": {
+    "ETH": 0.9340899607751116
+   },
+   "corr_btc_mean": 0.9340899607751116,
+   "classification": "mixed",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2022,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8754,
+   "explained_share": 0.5638614322917666,
+   "share_b1": 0.7212638819961608,
+   "share_b2": 0.7212638819961608,
+   "median_abs_gap_bps": 5.110832517116748,
+   "corr_btc_by_asset": {
+    "ETH": 0.968554509172378
+   },
+   "corr_btc_mean": 0.968554509172378,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "bitfinex-bitstamp",
+   "year": 2023,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8757,
+   "explained_share": 0.7977756499161052,
+   "share_b1": 0.8402654154325104,
+   "share_b2": 0.8402654154325104,
+   "median_abs_gap_bps": 6.6777965753672675,
+   "corr_btc_by_asset": {
+    "ETH": 0.990706313320008
+   },
+   "corr_btc_mean": 0.990706313320008,
+   "classification": "separate dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2017,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 2925,
+   "explained_share": 0.0,
+   "share_b1": 0.882531652086118,
+   "share_b2": 0.882531652086118,
+   "median_abs_gap_bps": 32.64506963935432,
+   "corr_btc_by_asset": {
+    "ETH": 0.9811154370944039
+   },
+   "corr_btc_mean": 0.9811154370944039,
+   "classification": "shared dollar",
+   "classification_b2": "separate dollar"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2018,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8754,
+   "explained_share": 0.0,
+   "share_b1": 0.42656603676570404,
+   "share_b2": 0.42656603676570404,
+   "median_abs_gap_bps": 10.132935040854107,
+   "corr_btc_by_asset": {
+    "ETH": 0.937800053524925
+   },
+   "corr_btc_mean": 0.937800053524925,
+   "classification": "shared dollar",
+   "classification_b2": "mixed"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2019,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8757,
+   "explained_share": 0.0,
+   "share_b1": -0.2790907447289046,
+   "share_b2": -0.2790907447289046,
+   "median_abs_gap_bps": 5.913660728218417,
+   "corr_btc_by_asset": {
+    "ETH": 0.27776158755048935
+   },
+   "corr_btc_mean": 0.27776158755048935,
+   "classification": "shared dollar",
+   "classification_b2": "shared dollar"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2020,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8776,
+   "explained_share": 0.0,
+   "share_b1": -0.14098640773426196,
+   "share_b2": -0.14098640773426196,
+   "median_abs_gap_bps": 4.394703003902656,
+   "corr_btc_by_asset": {
+    "ETH": 0.20447914992791086
+   },
+   "corr_btc_mean": 0.20447914992791086,
+   "classification": "shared dollar",
+   "classification_b2": "shared dollar"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2021,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8759,
+   "explained_share": 0.0,
+   "share_b1": -0.000532782835721779,
+   "share_b2": -0.000532782835721779,
+   "median_abs_gap_bps": 3.298642638487337,
+   "corr_btc_by_asset": {
+    "ETH": 0.6335363715524948
+   },
+   "corr_btc_mean": 0.6335363715524948,
+   "classification": "shared dollar",
+   "classification_b2": "shared dollar"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2022,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8757,
+   "explained_share": 0.0,
+   "share_b1": 0.3096299027614611,
+   "share_b2": 0.3096299027614611,
+   "median_abs_gap_bps": 2.572129755220587,
+   "corr_btc_by_asset": {
+    "ETH": 0.6036131633114471
+   },
+   "corr_btc_mean": 0.6036131633114471,
+   "classification": "shared dollar",
+   "classification_b2": "mixed"
+  },
+  {
+   "pair": "coinbase-bitstamp",
+   "year": 2023,
+   "assets": [
+    "ETH"
+   ],
+   "n_hours": 8756,
+   "explained_share": 0.0,
+   "share_b1": 0.03736937290193498,
+   "share_b2": 0.03736937290193498,
+   "median_abs_gap_bps": 1.510952254912823,
+   "corr_btc_by_asset": {
+    "ETH": 0.6721869744066714
+   },
+   "corr_btc_mean": 0.6721869744066714,
+   "classification": "shared dollar",
+   "classification_b2": "shared dollar"
+  }
+ ]
+}
