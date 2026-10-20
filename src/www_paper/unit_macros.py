@@ -33,6 +33,9 @@ LOOP_TSV = ROOT / "autoresearch/results_unit_td_run1.tsv"
 DETECTOR = ROOT / "reports/rescue/detector_eval.json"
 PILOT = ROOT / "reports/audit/usdc_2023_pilot.json"
 T2 = ROOT / "reports/unit_td/t2_breakdown.json"
+DECOMP = ROOT / "reports/rescue/decomposition.json"
+LABELS = ROOT / "configs/fiat_rail_labels.json"
+LABEL_TABLE = GEN / "label_list_table.tex"
 
 PAIRS = (("bitfinex-bitstamp", "Bitfinex--Bitstamp"), ("bitfinex-coinbase", "Bitfinex--Coinbase"),
          ("coinbase-bitstamp", "Coinbase--Bitstamp"))
@@ -188,6 +191,16 @@ def numbers() -> str:
           ("NumUCbLastAlarm", last_cb.isoformat(), f"{dj} metrics/all/coinbase/detector/episodes last end date"),
           ("NumUMarAlarmDays", str(detector_days_in(MAR_2023)),
            f"{dj} metrics/all/*/detector/episodes: days inside 2023-03 over bitfinex, binance_us, coinbase")]
+    bus_pos = {p["id"]: p for p in det["metrics"]["all"]["binance_us"]["detector"]["positives"]}
+    bnus = _load(DECOMP)["windows"]["ledger_failure_binanceus"]["summary"]
+    labels = _load(LABELS)["episodes"]
+    m += [("NumULagNoble", str(pos["BFX-2018-03"]["lead_days"]), f"{dj} bitfinex positives BFX-2018-03 lead_days (alarm minus report)"),
+          ("NumULagBnus", str(bus_pos["BUS-2023-01"]["lead_days"]), f"{dj} binance_us positives BUS-2023-01 lead_days (alarm minus report)"),
+          ("NumUBnusMedBps", _num(abs(bnus["median_L"]), 0), "reports/rescue/decomposition.json windows/ledger_failure_binanceus/summary/median_L, absolute value"),
+          ("NumUBnusHours", str(bnus["hours"]), "reports/rescue/decomposition.json windows/ledger_failure_binanceus/summary/hours"),
+          ("NumULabels", str(len(labels)), "configs/fiat_rail_labels.json episodes"),
+          ("NumUCbFirstAlarm", min(e[0] for e in mc["detector"]["episodes"]), f"{dj} metrics/all/coinbase/detector/episodes first start date"),
+          ("NumUCbEpisodes", str(mc["detector"]["n_episodes"]), f"{dj} metrics/all/coinbase/detector/n_episodes")]
 
     cont = pilot["contamination"]
     pj2 = "reports/audit/usdc_2023_pilot.json"
@@ -350,10 +363,28 @@ def t2_table() -> str:
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
 
+TYPE_LABEL = {"deposit_pause": "deposit pause", "withdrawal_delay": "withdrawal delay",
+              "banking_partner_loss": "bank partner loss", "rail_shutdown": "rail shutdown", "restoration": "restoration",
+              "confounder": "confounder"}
+
+
+def label_table() -> str:
+    eps = sorted(_load(LABELS)["episodes"], key=lambda e: (e["venue"], e["first_public_report_date"], e["id"]))
+    rows = [f"{e['id']} & {e['venue']} & {TYPE_LABEL[e['type']]} & {e['first_public_report_date']} \\\\" for e in eps]
+    return (f"{HEADER}\n\\begin{{table}}[t]\n\\scriptsize\n"
+            "\\caption{Dated public events used as labels, compiled from public sources without reference to price data. "
+            "Report: date of the first public report. Confounders are events that are not rail impairments. "
+            "The label file lists sources and notes.}\n"
+            "\\label{tab:labels}\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}llll@{}}\n\\toprule\n"
+            "ID & Exchange & Type & Report \\\\\n\\midrule\n"
+            + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
+
+
 def main() -> None:
     GEN.mkdir(parents=True, exist_ok=True)
     for path, text in ((NUMBERS, numbers()), (DIAG_TABLE, diagnostic_table()), (HELDOUT_TABLE, heldout_table()),
-                       (DETECTOR_TABLE, detector_table()), (ORACLE_TABLE, oracle_table()), (T2_TABLE, t2_table())):
+                       (DETECTOR_TABLE, detector_table()), (ORACLE_TABLE, oracle_table()), (T2_TABLE, t2_table()),
+                       (LABEL_TABLE, label_table())):
         path.write_text(text)
         print(f"WROTE {path.relative_to(ROOT)}")
 

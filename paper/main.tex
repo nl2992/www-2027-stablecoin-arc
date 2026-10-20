@@ -1,395 +1,280 @@
-% DRAFT ("Which dollar broke?" framing, user decision 2026-10-12). Every empirical number is a \Num... macro generated
-% from committed reports (paper/generated/numbers.tex, paper/generated/rescue_numbers.tex). Do not type numbers by hand.
+% Every empirical number is a \Num... macro generated from committed reports and logs
+% (paper/generated/numbers.tex, rescue_numbers.tex, unit_numbers.tex). Do not type numbers by hand.
 \documentclass[sigconf,review,anonymous]{acmart}
 \usepackage{placeins}
 \input{generated/numbers}
 \input{generated/rescue_numbers}
+\input{generated/unit_numbers}
 
 \acmConference[WWW '27]{Proceedings of the ACM Web Conference 2027}{2027}{}
 
 \begin{document}
 
-\title{Which Dollar Broke? Separating Token Failures from Platform-Ledger Failures in Web Dollar Markets}
+\title{Which Dollar? Exchange Dollars as Exchange Rates in Web Crypto Prices}
 
 \begin{abstract}
-Crypto prices on the Web are quoted in dollars, but not every exchange's dollar is worth a dollar. Some exchanges
-quote in stablecoins, others in balances on their own ledger, redeemable only through their banks. When the banks
-leave, that dollar drifts. Feeds and oracles average exchange prices as if all were in one dollar and report the drift
-as a price move or stablecoin failure. Separating the two is hard because an exchange's dollar is never quoted
-directly and any one asset may carry its own shock. We build on the law of one price and triangular arbitrage. Bitcoin
-has no peg, so its price gap between the troubled exchange and one with working banks measures the ledger's loss, and
-the rest of a stablecoin's move is the token's. We accept the split only if an unrelated asset shows the same gap, the
-implied token price matches its price elsewhere, and cross-rates hold. In banking cut-offs at three exchanges, 2017 to
-2023, the exchange's dollar broke on Bitfinex and Binance.US but barely moved on Binance's sterling and euro rails,
-while in the March 2023 USD Coin run the method attributed the dislocation to the token. On Bitfinex the dollar fell
-by up to \NumPanSeventeenMax{} basis points (bps), with bitcoin and ether agreeing to within \NumPanGapMax{} bps, and
-on both exchanges one episode swung from discount to premium before recovering. A multi-exchange bitcoin index was off
-by at least 100 bps for \NumFeedNaiveHours{} hours; dropping exchange-hours our monitor flagged removed
-\NumFeedRemovedShare\% of them. In 2018 the monitor flagged Bitfinex \NumFeedLeadDays{} days before its deposit freeze
-was reported, \NumFeedLeadMonths{} months before regulators disclosed its loss and \NumFeedCmcMonths{} months before
-CoinMarketCap dropped it by hand. The results are descriptive and give price feeds a public, hourly test of whose
-dollar moved.
+Crypto prices on the web are quoted in dollars, but an exchange's ledger dollar is a claim on that exchange and can
+trade away from a redeemable U.S. dollar. Prior work attributes cross-exchange bitcoin premia to such frictions
+without separating them from asset-specific movements. We develop an hourly decomposition that does. A shift in an
+exchange's dollar moves every asset there equally, so agreement across unrelated assets identifies the exchange's
+dollar exchange rate, and triangular parity checks it. Applied to Bitfinex, Coinbase and Bitstamp from 2017 to 2023,
+the decomposition showed that Bitfinex's dollar carried its own exchange rate throughout, with daily bitcoin and ether
+gaps against Bitstamp correlated at \NumUBfxBstCorrMinExact{} or more in every year, while median bitcoin gaps between
+Coinbase and Bitstamp after 2018 were at most \NumUCbBstGapMax{} basis points (bps) and mostly asset-specific. A
+single rate per exchange-hour, estimated from other assets, removed \NumUTestPct\% of the mean-square cross-exchange
+gap for five assets withheld from development (\NumUTestNineteenPct\% in 2019, \NumUTestYearMinPct\% to
+\NumUTestYearMaxPct\% in each later year), and made no correction for an exchange pair that shared a dollar. On
+Bitfinex, a monitor built on the decomposition, with a rule fixed in advance, raised \NumUDetFaBfx{} false alarm
+episodes per year from 2017 to 2023, a third the rate of a plain price-gap alarm at equal recall, and flagged the
+exchange from \NumUFirstAlarmMonth, \NumUAlarmNyagMonths{} months before regulators disclosed its loss. In 2023 it
+separated three shocks. Binance.US's dollar stood a median \NumUBnusMedBps{} bps from the U.S. dollar for
+\NumUBnusHours{} hours after its banks withdrew. The loss of Silvergate and Signature banking raised no alarm on any
+monitored exchange. The USDC run moved the token, not an exchange dollar, and Chainlink's bitcoin and ether feeds did
+not inherit the token's depeg. Aggregators and oracles can thus state which dollar a price is in.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-The Web has acquired its own dollars. A stablecoin is a bearer token on a public blockchain that promises one US
-dollar; an exchange balance is an entry in a platform's private ledger that promises the same thing, redeemable only
-through that platform's banking partners. Price feeds, wallets and on-chain oracles quote almost every crypto asset in
-one of these two dollars. When a price ``in dollars'' moves away from par, users, platforms and regulators need to know
-\emph{which dollar broke}: did the token lose value against bank money, or did the platform's ledger lose its link to
-bank money? On one venue, Binance.US, both happened within four months. During the March 2023 run on USDC, its USDC/USD
-price fell by more than a thousand basis points; in June 2023, after the exchange lost its banking
-partners~\cite{theblock2023binanceus}, its USDT/USD price moved by several hundred basis points, and by
-\NumPdUsdtWorstDayAbs{} bps on its worst day. To a reader of either price series, both look like stablecoin depegs.
-Figure~\ref{fig:which} shows that they are not.
+Web price feeds quote crypto assets in ``USD''. On an exchange, that dollar is a balance in the exchange's own ledger.
+The exchange redeems it for bank dollars through its banking partners, and when those partners leave, the balance can
+trade away from a bank dollar. Aggregators, indexes and on-chain oracles combine prices from several exchanges as if
+all of them were quoted in the same dollar. Bitfinex is the clearest example: from 2018 to 2019 its bitcoin price
+stood apart from other exchanges' prices for months (Figure~\ref{fig:unit}), while its banking access was in doubt.
 
-Existing work cannot separate the two. Studies of stablecoin pegs and runs treat a token's exchange price as the
-token's value~\cite{lyons2023keeps,ma2025runs,liu2023anatomy}, which is correct only if the exchange's dollar is
-itself worth a dollar. Studies of cross-exchange price gaps~\cite{makarov2020trading,choi2019kimchi,borri2023discounts}
-measure how far one asset's price differs between venues, and recent work links their persistence to exchange default
-risk~\cite{guo2025default}, but neither asks whether the asset or the venue's unit of account moved. Measurements of
-price oracles find deviations from market rates and operational anomalies~\cite{liu2020oracles}, but treat the
-sources' dollars as one. Reports
-of trapped platform money, such as the Mt.~Gox premium of 2013--14~\cite{financemagnates2014mtgox}, describe the
-phenomenon without a test that attributes it to the ledger.
+An exchange's dollar is never quoted directly, and any single asset can move for its own reasons. A gap between two
+exchanges' bitcoin prices could be the exchange's dollar or bitcoin itself. We separate the two with a simple
+observation. A shift in an exchange's dollar moves every asset on that exchange by the same amount. Agreement of the
+gaps across unrelated assets therefore identifies an exchange-specific dollar exchange rate, and triangular parity
+(ETH/BTC on the same exchange) checks it.
 
-Our key idea is that a platform's dollar can be priced like any other asset. If every asset on a venue becomes
-dearer or cheaper by the same amount relative to venues whose rails are open, the venue's unit has moved; if only one
-token moves, and it moves everywhere, the token has failed. An asset with no peg, such as BTC, makes this measurable
-from public data alone.
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figures/unit_rate.pdf}
+\caption{Bitfinex against Bitstamp, 2017--2023. Left: daily median hourly gap for bitcoin and ether in basis points
+(bps); shading marks labelled Bitfinex banking episodes. Right: the two gaps against each other, by year; the dashed
+line is equality.}
+\label{fig:unit}
+\end{figure}
 
-Three properties of the problem make this harder than it sounds. First, a ledger's value is never quoted directly:
-it is visible only through prices denominated in it. Second, public price data are last trades on one-minute
-candles, asynchronous across venues and thinnest exactly when stress is greatest. Third, a single asset can have its
-own shock, so a gap in one price cannot be attributed to the unit, and crises worth studying are usually chosen
-after the fact, which invites selection.
+We make four contributions.
+\begin{enumerate}
+\item \emph{A decomposition.} An hourly model splits each exchange's USD price into an asset price, an exchange
+dollar rate and an asset-specific residual (\S\ref{sec:model}).
+\item \emph{Evidence on which exchanges have their own dollar.} Bitfinex's dollar carried its own rate in every year
+from 2017 to 2023. Coinbase and Bitstamp shared a dollar after 2018 (\S\ref{sec:diag}).
+\item \emph{A held-out benchmark.} One rate per exchange-hour, estimated from other assets, removed \NumUTestPct\% of
+the mean-square gap in five assets withheld from development (\S\ref{sec:heldout}).
+\item \emph{A monitor} with a fixed rule, its false-alarm rate against baselines, and an account of three shocks in
+2023: Binance.US, Silvergate and Signature, and USDC with the Chainlink check (\S\ref{sec:monitor}, \S\ref{sec:2023}).
+\end{enumerate}
 
-We address each in turn. We price the ledger through an unpegged asset against a reference venue whose rails stayed
-open, which gives a token component and a ledger component for any dollar-quoted dislocation (\S\ref{sec:framework}).
-We use only minutes traded on every leg, report hourly and phase medians with hour-block bootstrap intervals, and
-report liquidity alongside prices. We require unrelated assets to agree, the venue's internal cross-rates to hold, and
-the result to survive a second reference. For selection, the token side follows a pre-registered event protocol, and
-the ledger side discloses the search that produced it.
+\section{Related Work}
+\paragraph{Cross-exchange premia.} Makarov and Schoar~\cite{makarov2020trading} documented large, persistent price
+gaps across exchanges and a component common to gaps within a country. We identify an exchange-level component
+\emph{within} USD, per exchange and per hour. Flowerday et al.~\cite{flowerday2026bitcoin} studied bitcoin only, on
+four exchanges to mid-2021, found Bitfinex in most hours with a price dispersion, and discussed a discount on
+Bitfinex's dollar balances as one reading of the premium. They state that they do not structurally decompose it. We do, test the
+decomposition on assets withheld from development, and extend it to 2023. Other work documents bitcoin gaps and
+discounts across markets and links them to capital controls~\cite{choi2019kimchi,borri2023discounts} and to exchange
+default risk~\cite{guo2025default}.
 
-\paragraph{Contributions.}
-(1) A \emph{decomposition} of any dollar-quoted dislocation into token and platform-ledger components from public Web
-data, with identification, consistency and coherence checks (\S\ref{sec:framework}).
-(2) A documented \emph{natural experiment} in platform money: when Binance.US lost its banks in 2023, its dollar's
-price followed which rail was open, carried the same dislocation in three unrelated assets, survived liquidity,
-reference and boundary checks, and reverted on restoration (\S\ref{sec:ledger}). The method needs only an unpegged
-asset and an open-rail reference; the magnitude is one platform's, and two rail cuts on Binance.com show only small effects.
-(3) An hourly \emph{monitor} that price feeds and oracles could run, evaluated over every month with overlapping data
-and across threshold settings (\S\ref{sec:monitor}), and an on-chain view showing that decentralized pools register
-token flows but not ledger failures (\S\ref{sec:onchain}).
-(4) A \emph{pre-registered multi-event study} of the token side and an open pipeline in which every input is
-checksum- or hash-pinned and every number is generated from committed reports (\S\ref{sec:token}).
+\paragraph{Stablecoins.} Studies of pegs and runs treat a token's exchange price as the token's
+value~\cite{lyons2023keeps,ma2025runs,liu2023anatomy}. Griffin and Shams~\cite{griffin2020untethered} tied Tether
+issuance on Bitfinex to bitcoin prices. We separate a token move from an exchange-dollar move on the same exchange.
 
-\paragraph{Scope.} The study is descriptive. It identifies which layer failed in the measured episodes; it does not
-estimate causal effects or claim that the ledger-side magnitude generalises to other platforms.
+\paragraph{Truth discovery on the web.} TruthFinder~\cite{yin2008truth} and CRH~\cite{li2014resolving} estimate each
+source's reliability from conflicting claims, and Dong et al.~\cite{dong2009integrating} show that dependent sources
+must not count as independent votes. These methods model reliability per source. An exchange's dollar is a bias shared
+by all of a source's claims, which is a structured special case. Appendix~\ref{app:t2}
+compares them in a fusion test.
+
+\paragraph{Oracles and data quality.} Liu et al.~\cite{liu2021oracles} found that oracle prices deviate from exchange
+rates. Nadler et al.~\cite{nadler2026oracles} benchmarked Chainlink feeds against a single exchange, and Schwenkler et
+al.~\cite{schwenkler2026aggregate} audited crypto data vendors. Both take exchange prices as the benchmark; we ask which dollar that benchmark is in.
+
+\section{Decomposition}
+\label{sec:model}
+Let $p_{v,a,t}$ be the log USD price of asset $a$ on exchange $v$ in hour $t$, in basis points ($10^4$ times the log).
+We model
+\begin{equation}
+p_{v,a,t} = p^*_{a,t} + u_{v,t} + e_{v,a,t},
+\end{equation}
+where $p^*$ is the asset's value in a common dollar, $u_{v,t}$ is the exchange's dollar rate and $e$ is an
+asset-specific residual. The gap between exchanges $v$ and $r$ is
+$g_{a,t} = (u_{v,t}-u_{r,t}) + (e_{v,a,t}-e_{r,a,t})$. The first term is the same for every asset; the second is not.
+
+\paragraph{Identification.} Assets that share no peg (bitcoin, ether and altcoins) have unrelated residuals.
+When their gaps agree, the common part is $u_v-u_r$. Triangular parity checks it: the ETH/BTC price on one exchange is
+free of the exchange's dollar, so a shift in $u$ leaves it unchanged. For a stablecoin $q$, let $D_q$ be its USD price
+dislocation, $L$ the unit shift estimated from an unpegged asset, and $T_q=D_q-L$ the token component.
+
+\paragraph{Estimator.} For each exchange $v$ and hour $t$, the estimator takes the median across visible assets of the
+gap to the reference exchange, and shrinks it toward zero by the cross-asset dispersion, in the manner of James and
+Stein: it keeps the share of the squared median that the dispersion does not explain. It makes no correction when fewer
+than two assets are visible. It is causal, uses only that hour's prices, and names no exchange.
+
+\paragraph{Development loop.} We developed the estimator in a fixed harness. The harness scores the share of the
+held-out asset's mean-square gap that the correction removes, with the asset hidden from the estimate, and also scores
+a control pair. A bounded loop of \NumULoopIter{} iterations kept \NumULoopKept{} changes and discarded
+\NumULoopDiscarded{}. Temporal smoothing, Kalman filtering, reliability weighting and liquidity weighting did not
+help, because the unit moves from hour to hour. The estimator is therefore a cross-sectional one.
+
+\section{Data}
+\label{sec:data}
+We use public one-minute candles for BTC and ETH on Bitfinex, Coinbase and Bitstamp from 2017 to 2023, and hourly
+candles for nine further assets on Bitfinex and Coinbase (LTC, BCH, ETC, XLM, XRP, LINK, SOL, DOGE and ADA). For
+Binance.US we use candles from 2022 to 2025. The diagnostic uses the hourly median of traded-minute closes, and the
+benchmark uses the last traded close in each hour. All sources are free and unauthenticated, each acquisition is
+recorded with a hash in a manifest, and rebuild scripts regenerate the panels.
+
+\paragraph{Labels.} The monitor is scored against \NumULabels{} dated events (deposit pauses, withdrawal delays,
+bank-partner losses, rail shutdowns, restorations and confounders) for Bitfinex, Bitstamp, Coinbase, Kraken and
+Binance.US. They were compiled from public sources without reference to prices (Table~\ref{tab:labels}).
+
+\section{Results}
+\subsection{Which exchanges have their own dollar}
+\label{sec:diag}
+\input{generated/unit_diagnostic_table}
+Table~\ref{tab:unit_diag} reports, for each pair of exchanges and year, the correlation of daily bitcoin and ether
+gaps, the median bitcoin gap and the share of the hourly ether gap that the bitcoin gap accounts for.
+For Bitfinex against Bitstamp, the daily bitcoin and ether gaps were correlated at \NumUBfxBstCorrMinExact{} or more
+in every year, and the bitcoin gap accounted for between \NumUBfxBstShareMin{} and \NumUBfxBstShareMax{} of the ether
+gap. Bitfinex had its own dollar rate throughout, in calm years as well as in the banking episodes of 2017--2019.
+Bitfinex against Coinbase gave the same pattern.
+
+Coinbase and Bitstamp shared a common component in 2017 and, more weakly, in 2018. From 2019 to 2023 their median
+bitcoin gap was between \NumUCbBstGapMin{} and \NumUCbBstGapMax{} bps, the correlation of the daily gaps was at most
+\NumUCbBstCorrMax{}, and the bitcoin gap accounted for at most \NumUCbBstShareMax{} of the ether gap. These gaps were
+mostly asset-specific, so the two exchanges shared a dollar.
+
+\subsection{Held-out assets}
+\label{sec:heldout}
+\input{generated/heldout_table}
+\paragraph{Protocol.} The score is the share of the mean-square Bitfinex--Coinbase gap that the correction removes,
+$1-\sum(g-\hat u)^2/\sum g^2$, where $\hat u$ is estimated without the scored asset on either exchange. Five dev assets
+(ETH, LTC, BCH, ETC, XLM) were scored during development. The five test assets (XRP, LINK, SOL, DOGE, ADA) were never
+loaded during development and were scored once. Three checks passed: the estimator is causal, it is invariant to
+relabelling exchanges, and its source has no file access, dates or exchange names. The control pair is Coinbase and
+Bitstamp with ether withheld, a pair that shared a dollar after 2018.
+
+\paragraph{Results.} The correction removed \NumUTestPct\% of the mean-square gap on the test assets
+(Table~\ref{tab:heldout}), and \NumUDevPct\% on the dev assets. The pooled test figure is driven by XRP
+(\NumUTestXrpPct\%) and by 2019 (\NumUTestNineteenPct\%). The other four test assets lie between \NumUTestLinkPct\% and
+\NumUTestDogePct\%, and from 2020 to 2023 the yearly score was between \NumUTestYearMinPct\% and
+\NumUTestYearMaxPct\%. The estimator matches the plain cross-asset median ($b_2$: \NumUTestBaseTwo{} on the test
+assets, \NumUTestScore{} for the estimator). Its contribution is on the control pair. The estimator made no correction
+there (score \NumUControlScore{}), while $b_1$ and $b_2$ scored \NumUControlBaseOne{} by correcting a pair whose gaps
+are asset-specific.
+
+\subsection{Monitoring}
+\label{sec:monitor}
+\input{generated/detector_eval_table}
+The monitor flags an hour when the bitcoin gap to the reference is at least 100 bps and a second asset (ether or Tether)
+agrees with it to within a quarter of its size; consecutive flags merge into alarm episodes. The rule, thresholds and
+baselines were fixed before the evaluation (Table~\ref{tab:detector}). Baselines are a price-gap alarm on bitcoin
+alone, a trailing robust $z$-score of the gap, and the USDT premium.
+
+On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per exchange-year (\NumUDetFaBfxCount{} episodes),
+against \NumUBaseFaBfxTwo{} for the plain price-gap alarm (\NumUBaseFaBfxCount{}), at the same recall:
+\NumUDetCaught{} of \NumUDetCovered{} labelled episodes. The second-asset test keeps the gap alarm's recall and removes
+two thirds of its false alarms. The trailing $z$-score caught every episode but raised many more false alarms. On Binance.US
+the monitor caught all labelled episodes. On Coinbase it raised no alarm after \NumUCbLastAlarm{}; its
+\NumUCbEpisodes{} alarm episodes all fall in the 2017 bubble (Appendix~\ref{app:windows}).
+
+The monitor first flagged Bitfinex on \NumUFirstAlarmDate. Regulators disclosed the loss of its funds held at a payment
+processor on \NumUNyagDate, which is \NumUAlarmNyagMonths{} months later.
+
+\subsection{Three shocks in 2023}
+\label{sec:2023}
+\paragraph{Binance.US.} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
+partners stopped dollar payments~\cite{theblock2023binanceus}. In the window with deposits shut and withdrawals open, the median bitcoin gap to
+Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs traded: assets were
+cheaper in Binance.US's dollar, so that dollar traded at a premium. Bitcoin and Tether showed the same dislocation,
+with an hourly correlation of changes of \NumIdentChgTrans{}. The ledger component accounts for a median
+\NumDecBnusShare\% of the Tether dislocation and the token component is close to zero (Tables~\ref{tab:decomp} and~\ref{tab:phases}, Figure~\ref{fig:which}b). Figure~\ref{fig:monitor} shows the monitor's hourly output.
 
 \begin{figure*}[t]
 \includegraphics[width=\textwidth]{figures/which_dollar.pdf}
-\caption{Two failures on the same venue. (a) USDC during the March 2023 bank run: the observed dislocation $D$ is
-almost entirely token component $T$; the platform-ledger component $L$, priced through BTC, stays near zero.
-(b) Binance.US's dollar in 2023: daily median platform-dollar dislocation of USDT and BTC against Bitstamp; shading
-marks the SEC complaint, the deposit suspension, the withdrawal-halt window and the period with deposits shut but
-withdrawals open. Three unrelated assets (USDT, BTC, USDC) carry the same dislocation.}
+\caption{Two shocks on one exchange. (a) USDC in March 2023: the observed dislocation $D$ is almost entirely the token
+component $T$, while the ledger component $L$ priced through bitcoin stays near zero. (b) Binance.US's dollar in 2023:
+daily median dislocation of USDT and bitcoin against Bitstamp, with documented rail phases shaded. Three unrelated
+assets carry the same dislocation.}
 \label{fig:which}
 \end{figure*}
 
-\section{Related Work}
-\label{sec:related}
-\paragraph{Limits to arbitrage and segmentation.} Mispricing persists when arbitrage is costly or
-capital-constrained~\cite{shleifer1997limits,gromb2010limits}. Crypto prices differ persistently across exchanges,
-more across than within countries~\cite{makarov2020trading}; capital controls sustained a Korean premium of several
-percent~\cite{choi2019kimchi}. Non-atomic arbitrage links centralized and decentralized venues at scale and is
-concentrated in few agents~\cite{heimbach2024nonatomic}. These works study price gaps for one asset across venues; we
-attribute a gap to the token or to the venue's unit of account.
-
-\paragraph{Stablecoin pegs and runs.} Primary-market access roughly halved Tether's deviations~\cite{lyons2023keeps};
-issuers concentrate redemption in a few authorized arbitrageurs~\cite{ma2025runs}; flight-to-safety flows cross
-stablecoins in stress~\cite{anadu2023runs}; secondary prices alone do not show primary-market
-conditions~\cite{watsky2024primary}, as the SVB weekend showed~\cite{du2025shadow}. The Terra run was led by large,
-sophisticated holders~\cite{liu2023anatomy}; issuer design is also a legal question~\cite{zhang2023taming}.
-On-chain pool metrics can flag depegs early~\cite{cintra2023detecting}. All of this is the token side.
-
-\paragraph{Platform money.} When Mt.~Gox delayed fiat withdrawals in 2013--14, BTC traded at a large premium there
-as users bought crypto to leave~\cite{financemagnates2014mtgox}; this ``escape buying'' is widely reported but, to
-our knowledge, has not been measured with an identification check, nor has the reverse case of a ledger premium.
-
-\section{Decomposition Framework}
-\label{sec:framework}
-Let $P_v(X/F_v)$ be the price of asset $X$ on venue $v$ in that venue's ledger units of fiat $F$, and $P_r(X/F)$ its
-price on a reference venue $r$ whose rails are open. Write $\log P_v(X/F_v)=x - \ell_v$, where $x$ is the asset's
-value in bank money and $\ell_v$ the value of the venue's fiat ledger relative to bank money (log units). For a
-stablecoin $q$ with peg $F$:
-\begin{itemize}
-\item \textbf{Observed dislocation} $D_q = 10^4\log P_v(q/F_v)$ (bps).
-\item \textbf{Ledger component} $L = 10^4[\log P_v(\mathrm{BTC}/F_v)-\log P_r(\mathrm{BTC}/F)] = -10^4\,\ell_v$, the
-platform-dollar dislocation of an asset with no peg. More generally $PD_X$ denotes this quantity for asset $X$.
-\item \textbf{Token component} $T_q = D_q - L$, the token's price in external fiat implied through BTC.
-\end{itemize}
-Three checks make the attribution testable. \emph{Identification:} if the ledger has failed, $PD_X$ is the same for
-unrelated assets ($PD_{\mathrm{USDT}}\approx PD_{\mathrm{BTC}}$). \emph{Consistency:} $T_q$ must match the token's
-direct price on the reference venue, $D_q^{r}$. \emph{Internal coherence:} the within-venue triangle
-$W=\log P_v(\mathrm{BTC}/q)+\log P_v(q/F_v)-\log P_v(\mathrm{BTC}/F_v)$ must stay near zero, so that the venue's
-internal prices are not themselves the source. A token failure shows $|T_q|\gg|L|$; a ledger failure shows
-$|L|\gg|T_q|$ with $PD$ equal across assets. Candle closes are last trades, so all statistics use minutes traded on
-every leg involved and report hourly or phase medians.
-
-\section{Data and Protocol}
-\label{sec:data}
-\paragraph{Sources.} One-minute klines from the public Binance and Binance.US archives (checksum-verified on
-download) and one-minute OHLC from Bitstamp's public API (hash-recorded at acquisition); all acquisitions are listed
-in a committed manifest. No paid data, accounts or credentials are used. Bitstamp is the reference venue: its USD,
-GBP and EUR rails stayed open throughout the windows studied. Binance.US BTC/USD did not trade from mid-July 2023 until
-2025, so phase statistics needing BTC cover only the hours in which it traded.
-
-\paragraph{Token side: pre-registration.} Event rules, windows, dependent variables and decision rules were fixed in
-a pre-analysis plan frozen by content hash before any non-anchor event was measured; amendments are logged with
-whether data had been seen (Appendix~\ref{app:protocol}). \emph{R1:} at least 30 traded minutes with $|D|\ge 100$ bps
-in a 24-hour window. \emph{R2:} one episode per trigger. \emph{R3:} baseline, event, recovery and a matched control
-window. \emph{R4:} at least two independent sources. Events from 2024 onward are out-of-sample.
-
-\paragraph{Ledger side: a disclosed search.} The ledger analysis was not pre-registered. After the token-side study
-ended without a confirmatory in-sample episode, we searched \NumDirectionsTried{} candidate directions under fixed
-kill criteria (visible raw signal, novelty, Web relevance, free authorized data, a replication case); \NumDirectionsDiscarded{}
-were discarded, including a calendar effect of bank hours on calm-period deviations, which did not hold. The
-Binance.US phase boundaries are documented dates fixed before phase statistics were computed (daily medians had been
-inspected). Predictions for the two replication cases were recorded before their data were downloaded; the
-recorded rule tested levels rather than changes, a flaw we report rather than repair.
-
-\section{Ledger Failure: The Binance.US Dollar, 2023--2025}
-\label{sec:ledger}
-On 5 June 2023 the SEC sued Binance and Binance.US; on 9 June Binance.US suspended USD deposits and warned that its
-banking partners would stop USD payments from 13 June~\cite{theblock2023binanceus}; on 22 June it delisted most USD
-pairs and told users to convert dollars; USD rails were restored on 19 February 2025~\cite{businesswire2025binanceus}.
-Table~\ref{tab:phases} reports the platform-dollar dislocation by phase.
+\paragraph{Silvergate and Signature.} The closure of the two banks in March 2023 hit exchange banking rails. The
+monitor raised no alarm on Bitfinex, Coinbase or Binance.US in March 2023 (\NumUMarAlarmDays{} alarm days). A
+dislocation of the exchange dollar appeared only where rails closed with no substitute: Bitfinex in 2017--2018 and
+Binance.US from June 2023.
 
 \input{generated/ledger_phase_table}
 
-\paragraph{The ledger, not the tokens, moved.} Before the complaint, Binance.US prices sat a few basis points above
-Bitstamp's (USDT \NumPdUsdtPre, BTC \NumPdBtcPre{} bps). As exit was threatened the platform dollar fell to a discount:
-assets became dearer in it, by about \NumPdUsdtHalt{} bps (USDT) and \NumPdBtcHalt{} bps (BTC) in the withdrawal-halt
-window. Once deposits were shut but withdrawals stayed open, the sign reversed: the platform dollar traded at a
-premium: USDT was \NumPdUsdtTransAbs{} bps and BTC \NumPdBtcTransAbs{} bps cheaper in it than in bank dollars, and on the
-worst day the median USDT price was \NumPdUsdtWorstDayAbs{} bps below Bitstamp's.
-
-\paragraph{Three assets, one unit.} In every phase except the four days of the deposit suspension, the
-hourly correlation between $PD_{\mathrm{USDT}}$ and $PD_{\mathrm{BTC}}$ is at least \NumIdentCorrMin{}
-(\NumIdentCorrDep{} during the suspension): a stablecoin and a volatile asset with nothing in common but the unit
-they were priced in carried the same dislocation. A third asset, USDC, which traded against the platform dollar
-until late July 2023, shows the same pattern (\NumPdUsdcHalt{} bps in the withdrawal-halt window,
-\NumPdUsdcTrans{} bps with deposits shut; hourly correlation with USDT \NumIdentUsdcCorrTrans{} in that window). After restoration, the dislocation vanished (USDT
-\NumPdUsdtRestored, BTC \NumPdBtcRestored{} bps).
-
-\paragraph{Decomposition.} Over the \NumDecBnusHours{} hours of the deposits-shut window in which all legs traded, the
-median observed USDT dislocation was \NumDecBnusD{} bps, the ledger component \NumDecBnusL{} bps and the token
-component \NumDecBnusT{} bps, against a direct Bitstamp USDT price of \NumDecBnusDref{} bps (median absolute
-difference \NumDecBnusGap{} bps); the ledger accounts for a median \NumDecBnusShare\% of the dislocation
-(Table~\ref{tab:decomp}). Within the venue, the phase medians of the triangle $W$ never exceeded \NumTriMaxAbs{} bps in
-absolute value (Table~\ref{tab:phases}), so the venue's internal prices were coherent; it was the unit itself that was
-mispriced.
-
-\input{generated/decomposition_table}
-
-\paragraph{Not a thin-market or reference artifact.} Two checks address the obvious alternatives. \emph{Liquidity:}
-with deposits shut, USDT/USD still traded in \NumLiqTransShare\% of minutes, with a median \NumLiqTransTrades{} trades
-and \$\NumLiqTransVolK{}k of volume per hour (before the complaint: \NumLiqPreShare\%, \NumLiqPreTrades{} trades,
-\$\NumLiqPreVolK{}k); the premium was set in an active, if shrinking, market. \emph{Reference:} valuing BTC through
-Binance.com BTC/USDT and Bitstamp USDT/USD instead of Bitstamp BTC/USD gives \NumPdBtcAltHalt{} bps in the
-withdrawal-halt window and \NumPdBtcAltTrans{} bps with deposits shut (Table~\ref{tab:phases}, column BTC$^\ast$).
-
-\paragraph{Boundaries and identification.} \emph{Boundaries:} moving every phase boundary by one day either way keeps the deposits-shut median between
-\NumSensTransLo{} and \NumSensTransHi{} bps in magnitude and the withdrawal-halt median between \NumSensHaltLo{} and
-\NumSensHaltHi{} bps. Because levels that trend together correlate trivially, we also report the correlation of
-hourly \emph{changes} in $PD_{\mathrm{USDT}}$ and $PD_{\mathrm{BTC}}$: \NumIdentChgHalt{} in the withdrawal-halt
-window and \NumIdentChgTrans{} with deposits shut, where the median USDT--BTC gap is \NumIdentGapTrans\% of the
-dislocation's size. During the four days of the deposit suspension the two series agree less well (changes correlation
-\NumIdentChgDep), and we do not interpret that phase.
-
-\paragraph{A unit with no anchor.} For the eighteen months in which the platform dollar could
-neither enter nor leave, $PD_{\mathrm{USDT}}$ stayed at \NumPdUsdtImpaired{} bps: a closed unit priced only against
-USDT has no external anchor, and the small value reflects USDT/USD trading within the venue rather than a valuation.
-
-\paragraph{A one-way gate (hypothesis).} The sign pattern is what a one-way gate predicts. While withdrawals were at
-risk, holders sold platform dollars for assets they could carry out (a discount, as at Mt.~Gox). When deposits were
-shut but withdrawals still worked, platform dollars became the only route from crypto on the platform to a bank, and
-no new dollars could enter to arbitrage the premium. An alternative is delisting mechanics: users told to convert dollars
-sold them into a USDT book that had lost depth. Both accounts predict a premium on the platform dollar; the liquidity
-evidence above shows the market stayed active, but one platform cannot separate them, and the replication cases below
-closed both directions at once.
-
-\paragraph{Replication cases: sterling and euro on Binance.com.} Binance's payment partner stopped sterling transfers
-for all users on 22 May 2023~\cite{finder2023gbp} and euro transfers for its users on 25 September
-2023~\cite{theblock2023paysafe}. Table~\ref{tab:fiat} applies the same measures against Bitstamp. Both ledgers show
-the ledger signature, with USDT and BTC agreeing (hourly correlation \NumFiatGbpCorr{} and \NumFiatEurCorr{} after the
-cuts), but both already sat at a discount before the cut, and the cuts changed little: the sterling dislocation rose
-by \NumFiatGbpUsdtChange{} bps for USDT (\NumFiatGbpBtcChange{} for BTC), and the euro dislocation fell by
-\NumFiatEurUsdtChangeAbs{} bps. The pre-recorded rule, which tested the post-cut level, classifies both as supportive; on
-the more meaningful change, neither replicates the Binance.US magnitude. A plausible difference is that sterling and
-euro rails closed in both directions at once and on a schedule announced in advance, whereas Binance.US opened a
-one-way gate; we cannot test this.
-
-\input{generated/fiat_rail_table}
-
-\section{A Ledger-Failure Monitor for Web Price Feeds}
-\label{sec:monitor}
-A price feed or oracle built on a venue's dollar quotes inherits that venue's ledger: in July 2023, a feed reading
-Binance.US BTC/USD would have understated the dollar value of every asset by
-$|PD_{\mathrm{BTC}}|$, several percent, with no token at fault. The decomposition can run continuously. We evaluate a fixed hourly rule:
-flag a \emph{ledger failure} when $|L|$ reaches the R1 severity threshold (100 bps) and $PD_{\mathrm{USDT}}$ agrees
-with $L$ to within a quarter of its size, and a \emph{token failure} for coin $q$ when $|T_q|$ reaches the same
-threshold. Periods are labelled only from documented dates.
-
-\input{generated/monitor_table}
-\input{generated/monitor_sensitivity_table}
 \begin{figure*}[t]
 \includegraphics[width=\textwidth]{figures/monitor_timeline.pdf}
-\caption{The monitor over every covered month: hourly ledger component $L$ (platform dollar, via BTC) and token
-component $T_{\mathrm{USDC}}$ on Binance.US, with hours flagged as ledger failure marked at the top. SVB appears as a
-token failure (March 2023); the rail cut as a ledger failure (June--July 2023); the May 2023 flags are the unresolved
-venue episode discussed in the text. The y-axis is clipped.}
+\caption{The monitor on Binance.US over every covered month: hourly ledger component $L$ and the USDC token component,
+with hours flagged as ledger failures marked at the top. The y-axis is clipped.}
 \label{fig:monitor}
 \end{figure*}
 
-Over the \NumMonHours{} hours of the \NumMonMonths{} months in which Binance.US and Bitstamp quotes overlap
-(Table~\ref{tab:monitor}, Figure~\ref{fig:monitor}), the rule flags ledger failure in \NumMonRailLedger\% of rail-cut hours and in
-\NumMonSvbLedger\% of SVB and \NumMonFtxLedger\% of FTX hours; during SVB it flags USDC as a token failure in
-\NumMonSvbUsdc\% of hours and USDT, which traded at a flight-to-safety premium, in \NumMonSvbUsdt\%. In calm
-months it raises ledger flags in \NumMonCalmLedger\% of \NumMonCalmHours{} hours.
+\input{generated/decomposition_table}
 
-\paragraph{Calm-period flags.} Inspecting them after the fact,
-\NumMonUnresolvedHours{} of these hours fall on 7--9 May 2023, exactly the window of an unresolved venue episode that the
-token-side screen had found independently (all four stablecoins at a premium against the Binance.US dollar; one
-press source; Appendix~\ref{app:protocol}). The decomposition classifies that episode as a ledger event: USDT and BTC
-moved together against the platform's dollar. The remaining \NumMonFalseHours{} flagged hours
-(\NumMonCalmOutside\% of calm hours) occurred on a single day after the 2025 restoration. Splitting the calm flags this
-way was done after seeing them and is disclosed as such; the cause of the May 2023 episode is undocumented. The
-rail-cut detection rate is in-sample, because the rule was written after the Binance.US episode had been studied, so the
-informative numbers are the absence of ledger flags in the token failures and the calm-period rate.
+\paragraph{USDC and Chainlink.} In the March 2023 USDC run, the token component on Binance.US was
+\NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps (Table~\ref{tab:decomp}): the token moved, not the
+exchange dollar (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on Bitstamp, and was at least 100 bps below par
+in \NumUUsdcHoursGeHundred{} hours. If the Chainlink bitcoin and ether feeds had inherited the depeg, their error would
+regress on the depeg size with a slope near one. The slope was \NumUOracleSlopeBtc{} for bitcoin and
+\NumUOracleSlopeEth{} for ether, against \NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the
+USDC feed itself, which responded as expected (Table~\ref{tab:oracle}).
 
-\paragraph{Threshold sensitivity.} These conclusions do not depend on the two settings: across all \NumSensSettings{} combinations of a 50, 100 or 200~bps threshold and an agreement
-tolerance of a tenth, a quarter or a half (Table~\ref{tab:sensitivity}), the rule flags ledger failure in at most
-\NumSensTokenLedgerMax\% of SVB or FTX hours, in \NumSensRailMin--\NumSensRailMax\% of rail-cut hours and in
-\NumSensCalmMin--\NumSensCalmMax\% of calm hours, and flags USDC as a token failure in \NumSensSvbUsdcMin--\NumSensSvbUsdcMax\%
-of SVB hours.
-
-\section{What On-Chain Pools Saw}
-\label{sec:onchain}
-Decentralized exchanges sit outside any platform ledger, so they offer a second view. For three Curve pools whose
-reproduced historical state matched on-chain quotes exactly and was validated against real swaps, we measure how much
-of the stressed coin could be sold within 50~bps of par (absorption) or bought (restoration), sampled every six hours
-and hourly in event windows (Table~\ref{tab:onchain}). In the token failures, absorption collapsed as pools filled
-with the stressed coin (to zero for UST in May 2022 and for the USDC-to-USDT leg in March 2023), while restoration
-capacity rose. In mid-June 2023, during the Binance.US withdrawal-halt window, Curve's 3pool also became USDT-heavy and
-its USDT absorption fell to about a third, while USDT's token component on a venue with redeemable dollars never met the
-severity rule. Pools register token flows, not ledger failures; we draw no causal link between the two June events.
-Valuing counterparts at observed rather than par prices removes the event-window USDC-to-DAI absorption in March
-2023 entirely, because DAI itself depegged. These measures cover three pools and no exchange depth (Appendix~\ref{app:capacity}).
-
-\input{generated/onchain_capacity_table}
-
-\section{Token Failure: A Pre-Registered Multi-Event Study}
-\label{sec:token}
-The token side evaluates the decomposition on token failures selected by rule rather than by us. The registry
-holds \NumRegistryEntries{} sourced entries (Appendix~\ref{app:protocol}); \NumAcceptedClusters{} independent clusters
-are accepted: the TerraUSD collapse (2022) and the USDC/SVB run (2023), both exploratory, and
-TUSD (2024) and FDUSD (2025), both out-of-sample (Table~\ref{tab:results}).
-
-\paragraph{The token broke; the venue's quotes held.} During SVB on Binance.US, the decomposition attributes the
-dislocation to the token: over the \NumDecSvbHours{} hours of the reported window, median $D$ was \NumDecSvbD{} bps,
-the ledger component \NumDecSvbL{} bps, and the token component \NumDecSvbT{} bps, against a direct Bitstamp USDC price
-of \NumDecSvbDref{} bps (median ledger share \NumDecSvbShare\%). Under the plan definitions, median $|D|$ rose by
-\NumAnchorDvOne{} bps relative to baseline (95\% CI [\NumAnchorDvOneLo, \NumAnchorDvOneHi]), while the within-venue
-triangle wedge changed by \NumAnchorDvFour{} bps and reverted within minutes. In the out-of-sample episodes, TUSD
-reached \NumTusdExtreme{} bps against USD with median $|D|$ up \NumTusdDvOne{} bps on its control (95\% CI
-[\NumTusdDvOneLo, \NumTusdDvOneHi]) and an unchanged triangle (\NumTusdDvFour{} bps); FDUSD reached \NumFdusdExtreme{}
-bps, median $|D|$ up \NumFdusdDvOne{} bps (95\% CI [\NumFdusdDvOneLo, \NumFdusdDvOneHi]), triangle change
-\NumFdusdDvFour{} bps. UST qualifies only through a post-hoc splice amendment and is treated as exploratory
-(extreme \NumUstExtreme{} bps, no recovery).
-
-\paragraph{Negative and placebo cases.} The BUSD issuance halt (redemptions guaranteed~\cite{paxos2023busd}) fails R1
-(median $|D|$ change \NumPlaceboDvOne{} bps), as do the FTX-period USDT candidate and the June 2023 USDT candidate on a
-venue with redeemable dollars (peak \NumNegativeExtremeBitstamp{} bps). On Binance.US that June candidate peaks at
-\NumNegativeExtreme{} bps. This is not a token failure but the start of the ledger failure in \S\ref{sec:ledger}, which is
-how this study found it.
-
-\input{generated/results_table}
-
-\paragraph{What the token side can and cannot say.} No accepted episode is both in-sample and confirmatory, so the
-pre-registered hypothesis tests are reported as insufficient. The peg-to-wedge half-life ratio exceeds one even in the
-placebo (\NumPlaceboDvFive), so it is not evidence of stress-specific persistence. Accepted episodes split into
-market-wide stress (SVB, UST: BTC volatility two to four times its reference) and issuer-specific stress (TUSD, FDUSD:
-at or below reference). A systematic screen of every Binance.US stablecoin series through May 2023 found
-\NumScreenClusters{} clusters, \NumScreenMatched{} of them registry events, and no new confirmatory episode
-(Appendix~\ref{app:protocol}).
+\input{generated/oracle_pilot_table}
 
 \section{Discussion}
-\paragraph{For Web systems.} Price feeds and oracles that treat a quote currency as one dollar inherit both
-failures. The monitor needs one unpegged asset and one reference venue per fiat currency, and in our data it separated
-the two failure types with few false alarms; a deployed version would need more reference venues and a policy for
-venues whose unit has no external anchor. \emph{For users,} a platform balance is a claim whose value depends on the platform's rails;
-the Binance.US premium shows it can move in either direction. \emph{For measurement,} single-venue dollar prices
-should not be read as token prices without the ledger check.
+\paragraph{What price feeds should do.} A feed should label the unit of each exchange price and correct with the
+exchange's rate rather than drop the exchange. The rate is cheap to estimate: it needs a handful of unrelated assets
+on each exchange and one reference exchange. The rate also names which exchanges share a dollar, which a plain median
+or source weighting does not (Appendix~\ref{app:t2}).
 
-\paragraph{Limitations.} One strong ledger-failure case, one unexplained ledger episode, and two weak cases; the ledger side is post-search and
-exploratory; the one-way-gate account is a hypothesis. Candle data use last trades with asynchronous legs; the
-reference venue is a single exchange; Binance.US BTC/USD stopped trading during the impairment. Four accepted token
-episodes, none confirmatory in-sample. On-chain capacity measurements (Appendix~\ref{app:capacity}) cover three Curve
-pools and no exchange depth.
+\paragraph{Limits.}
+Three USD exchanges carry the diagnostic, with Bitstamp listing only bitcoin and ether. The control pair receives no
+correction in part because the estimator applies none to an exchange seen through fewer than two assets.
+The held-out gain is concentrated in XRP and 2019 and was \NumUTestYearMinPct\% to \NumUTestYearMaxPct\% in later years.
+Labelled positive episodes are few, and recall was measured on episodes available when the rule was fixed. The
+monitor trailed the first public report by \NumULagNoble{} days for the Noble Bank loss at Bitfinex and by \NumULagBnus{}
+days for the Binance.US partner loss, so it does not give a uniform lead time. Two of three exchanges sharing a
+biased dollar cannot be told apart from the opposite case without outside information, such as a bank rail or
+a redemption anchor. The stablecoin exit route is not modelled. The oracle check covers one episode and one
+oracle family, and Pyth and CryptoCompare history needs accounts.
 
 \section{Reproducibility}
-Code, registry, frozen plan, amendment log, acquisition manifest and every report are versioned; raw files are
-referenced by checksum or hash. Every number in this paper is generated by \texttt{www\_paper.macros} and
-\texttt{www\_paper.rescue\_macros} from committed reports, and a fixed submission gate re-runs the tests, builds the
-PDF and checks page limits. The search log, including discarded directions, is part of the artifact.
+Every number in this paper is a macro generated from committed reports and logs by \texttt{www\_paper.macros},
+\texttt{www\_paper.rescue\_macros} and \texttt{www\_paper.unit\_macros}, and tests fail if a macro is stale or a
+number is typed by hand. The held-out test split was scored once from a recorded log. Inputs are free public files
+recorded by hash, and a fixed gate rebuilds the PDF and checks page limits and anonymity.
 
 \FloatBarrier
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
 
 \appendix
-\section{Token-Side Protocol Details}
-\label{app:protocol}
-\paragraph{Registry and amendments.} Rules were fixed before measuring any non-anchor event; the registry holds
-\NumRegistryEntries{} entries in \NumRegistryClusters{} clusters (\NumDocumentedPrimaries{} source-documented primaries
-including one placebo and one expected negative, \NumUnresolved{} unresolved; Table~\ref{tab:registry}). Amendment A2 (after seeing data) removes a venue's eligibility while its on-platform USD
-was not redeemable, which excluded Binance.US from June 2023 to February 2025; A3 designates Bitstamp as the dollar
-venue in that case. A4 and A5 concern the UST splice; A6 adds the systematic screen. The UST analysis of~\cite{jump2022ust}
-documents the on-chain side of that collapse.
+\section{Fusion Under an Injected Unit Bias}
+\label{app:t2}
+\input{generated/t2_breakdown_table}
+Table~\ref{tab:t2} injects a constant or replayed unit bias on $k$ of three exchanges (BTC and ETH, calm window) and
+compares fusers. With $k=1$ the plain median, CRH-style source weighting and the default unit-aware median are
+unaffected on the grid, while the volume-weighted mean breaks down at 100~bps. With $k=2$ every fuser fails at the
+smallest bias, as it must: the two exchanges with the biased dollar form the majority, and nothing in prices says which
+dollar is the true one. A unit-aware fuser using a single asset's gap as the rate can be worse than the median when its
+reference is the biased exchange. Unit awareness adds information (which exchanges share a dollar), not accuracy.
 
-\input{generated/registry_table}
+\section{Alarm Windows in 2017}
+\label{app:windows}
+The \NumUCbEpisodes{} Coinbase alarm episodes fall between \NumUCbFirstAlarm{} and \NumUCbLastAlarm{}. In seven of
+them Coinbase prices stood above Bitstamp's; in the last they stood below. Bitfinex's \NumUDetFaBfxCount{} false alarms
+were a two-day episode in November 2017 and one-day episodes in 2019 and 2022. None of these windows is in the label
+set, so they count as false alarms. The 2017 alarms may reflect dollar funding frictions on US exchanges, such as
+purchase limits and deposit backlogs; we did not test this.
+Table~\ref{tab:labels} lists the labels.
 
-\paragraph{Anchor detail.} On Binance.US in March 2023, R1 is met with \NumAnchorBreachMinutes{} breaching minutes and an
-extreme of \NumAnchorExtremeBps{} bps; median $|D|$ was \NumAnchorBaselineMedAbs{} bps in the baseline and
-\NumAnchorEventMedAbs{} bps in the event window; recovery took about \NumAnchorRecoveryHours{} hours; BTC volatility rose
-from \NumAnchorBtcVolBaseline{} to \NumAnchorBtcVolEvent{} bps per hour. The USDC triangle wedge's crisis median was
-\NumUsdcMedAbsCrisis{} bps (pre-crisis \NumUsdcMedAbsPre) with a one-minute half-life of \NumUsdcHalfLifeOneMinCrisis{}
-minutes (hourly series in Figure~\ref{fig:which}a).
-
-
-\paragraph{Robustness, covariates and coverage.} R1 classifications are unchanged at 50, 100 and 200~bps
-(Table~\ref{tab:robustness}); half-lives are fragile and reported descriptively. Extremes fell outside a generic
-banking window in most events, but such hours are about \NumClosedBaseRate\% of a week, close to the base rate
-(Table~\ref{tab:mechanism}). Coverage by event and window is in Table~\ref{tab:coverage}; order-book reconstruction was validated on a public L2 sample (\NumSampleRows{}
-rows)~\cite{tardis2026binanceus}, whose normalized format omits native sequence identifiers~\cite{coinapi2026limitbook}.
-
-\input{generated/robustness_table}
-\input{generated/mechanism_table}
-\input{generated/coverage_table}
-
-\section{Executable Capacity: Method and Limits}
-\label{app:capacity}
-Restoration capacity $K_t(\delta)$ is the largest quantity executable at all-in cost at most $\delta$, solved exactly on
-order books and with integer StableSwap~\cite{egorov2019stableswap}, Uniswap~v2~\cite{lehar2025uniswap} and
-single-range v3~\cite{adams2021uniswapv3} arithmetic. For three Curve pools whose reproduced historical state matched
-on-chain quotes exactly and real swaps, on-chain absorption capacity fell in each event window, reaching zero where a
-pool filled with the stressed coin, while restoration capacity rose (Table~\ref{tab:onchain}). In June 2023 absorption fell to about a third with no token failure on a redeemable-dollar
-venue, so pool composition alone does not signal one. Crisis-day exchange order books are available only under paid
-licences, which were declined. No exchange capacity figures are reported.
-
+\input{generated/label_list_table}
 
 \end{document}

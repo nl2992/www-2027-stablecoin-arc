@@ -11,7 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MAIN = ROOT / "paper/main.tex"
-MACRO_FILES = [ROOT / "paper/generated/numbers.tex", ROOT / "paper/generated/rescue_numbers.tex"]
+MACRO_FILES = [ROOT / "paper/generated/numbers.tex", ROOT / "paper/generated/rescue_numbers.tex",
+               ROOT / "paper/generated/unit_numbers.tex"]
 OUTPUT = ROOT / "docs/review/ABSTRACT_SUBMISSION.md"
 
 
