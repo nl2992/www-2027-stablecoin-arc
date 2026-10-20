@@ -4,6 +4,8 @@
 - ``coverage_heatmap``: best data status per event x analysis window (reports/events/coverage_matrix.json)
 - ``anchor_series``: 15-minute medians of USDC peg dislocation and triangle wedge
   (reports/c3/anchor_15m_series.csv, itself derived from the audited IAQF panel)
+- ``unit_rate``: daily Bitfinex-vs-Bitstamp bitcoin and ether gaps with label windows, and their scatter
+  (reports/unit_td/probe.json, configs/fiat_rail_labels.json)
 
 Run ``uv run python -m www_paper.figures`` (add ``--iaqf-panel PATH`` to rebuild the anchor CSV).
 """
@@ -215,6 +217,64 @@ def monitor_timeline(path: Path, out: Path) -> Path:
     return _save(fig, out)
 
 
+PROBE_JSON = ROOT / "reports/unit_td/probe.json"
+FIAT_LABELS = ROOT / "configs/fiat_rail_labels.json"
+
+
+def bitfinex_label_windows(labels: Path) -> list[tuple[pd.Timestamp, pd.Timestamp]]:
+    """Union of the pre-specified truth windows of Bitfinex positive episodes (same rule as the detector evaluation)."""
+    from www_rescue.detector_eval import load_labels
+    spans = sorted((pd.Timestamp(e.window[0]), pd.Timestamp(e.window[1])) for e in load_labels(labels, "bitfinex") if e.positive)
+    merged: list[tuple[pd.Timestamp, pd.Timestamp]] = []
+    for a, b in spans:
+        if merged and a <= merged[-1][1]:
+            merged[-1] = (merged[-1][0], max(merged[-1][1], b))
+        else:
+            merged.append((a, b))
+    return merged
+
+
+def unit_rate(probe: Path, labels: Path, out: Path) -> Path:
+    """Left: daily Bitfinex-vs-Bitstamp bitcoin and ether gaps (symlog), label windows shaded. Right: bitcoin vs ether gap."""
+    _style()
+    plt.rcParams.update({"font.size": 6})
+    daily = json.loads(probe.read_text())["daily_gaps_bps"]["bitfinex-bitstamp"]
+    frame = pd.DataFrame({k: pd.Series(v) for k, v in daily.items()}).sort_index()
+    frame.index = pd.to_datetime(frame.index)
+    fig, (a, b) = plt.subplots(1, 2, figsize=(3.5, 1.9), gridspec_kw={"width_ratios": [1.5, 1], "wspace": 0.55})
+    for lo, hi in bitfinex_label_windows(labels):
+        a.axvspan(lo, hi, color="#bdbdbd", alpha=0.35, linewidth=0)
+    a.plot(frame.index, frame["BTC"], linewidth=0.5, color="C0", label="BTC")
+    a.plot(frame.index, frame["ETH"], linewidth=0.5, color="C1", alpha=0.8, label="ETH")
+    a.axhline(0, color="black", linewidth=0.4)
+    a.set_yscale("symlog", linthresh=10)
+    a.set_yticks([-1000, -100, -10, 0, 10, 100, 1000], ["$-$1000", "$-$100", "$-$10", "0", "10", "100", "1000"])
+    a.set_xlim(pd.Timestamp("2017-01-01"), pd.Timestamp("2024-01-01"))
+    a.xaxis.set_major_locator(mdates.YearLocator(2))
+    a.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+    a.set_ylabel("daily median gap (bps)")
+    a.set_title("Bitfinex vs Bitstamp", fontsize=6.5)
+    a.legend(fontsize=5.5, frameon=True, framealpha=0.85, edgecolor="none", loc="upper right", handlelength=1.2)
+    both = frame.dropna()
+    years = both.index.year.to_numpy()
+    points = b.scatter(both["BTC"], both["ETH"], c=years, cmap="viridis", s=2, linewidths=0, vmin=2016.5, vmax=2023.5)
+    lim = 300
+    b.plot([-lim, lim], [-lim, lim], color="black", linewidth=0.5, linestyle="--")
+    b.set_xscale("symlog", linthresh=10)
+    b.set_yscale("symlog", linthresh=10)
+    ticks, names = [-100, -10, 0, 10, 100], ["$-$100", "$-$10", "0", "10", "100"]
+    b.set_xticks([-100, 0, 100], ["$-$100", "0", "100"])
+    b.set_yticks(ticks, names)
+    b.set_xlim(-lim, lim)
+    b.set_ylim(-lim, lim)
+    b.set_xlabel("BTC gap (bps)")
+    b.set_ylabel("ETH gap (bps)")
+    b.set_title("Daily, by year", fontsize=6.5)
+    bar = fig.colorbar(points, ax=b, ticks=[2017, 2019, 2021, 2023], fraction=0.07, pad=0.04)
+    bar.ax.tick_params(labelsize=5.5)
+    return _save(fig, out)
+
+
 def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
     if iaqf_panel is not None:
         build_anchor_csv(iaqf_panel)
@@ -225,6 +285,7 @@ def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
         *([capacity_paths(CAPACITY_JSON, FIG_DIR / "onchain_capacity_paths.pdf")] if CAPACITY_JSON.is_file() else []),
         *([which_dollar(DECOMP_JSON, PLATFORM_JSON, FIG_DIR / "which_dollar.pdf")] if DECOMP_JSON.is_file() else []),
         *([monitor_timeline(MONITOR_JSON, FIG_DIR / "monitor_timeline.pdf")] if MONITOR_JSON.is_file() else []),
+        *([unit_rate(PROBE_JSON, FIAT_LABELS, FIG_DIR / "unit_rate.pdf")] if PROBE_JSON.is_file() else []),
     ]
 
 

@@ -10,6 +10,7 @@ from www_paper.macros import (
 ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
 RESCUE_OUTPUT = ROOT / "paper/generated/rescue_numbers.tex"
+UNIT_OUTPUT = ROOT / "paper/generated/unit_numbers.tex"
 
 
 def test_generated_numbers_are_current():
@@ -28,7 +29,7 @@ def test_registry_table_lists_every_event_and_marks_linked_legs():
 
 
 def test_every_number_macro_used_is_defined_and_no_literal_bps_values_slip_in():
-    defined = set(re.findall(r"\\newcommand\{\\(Num\w+)\}", OUTPUT.read_text() + RESCUE_OUTPUT.read_text()))
+    defined = set(re.findall(r"\\newcommand\{\\(Num\w+)\}", OUTPUT.read_text() + RESCUE_OUTPUT.read_text() + UNIT_OUTPUT.read_text()))
     used = set(re.findall(r"\\(Num[A-Za-z]+)", MAIN))
     assert used <= defined, sorted(used - defined)
     body = MAIN.split("\\begin{document}", 1)[1]
