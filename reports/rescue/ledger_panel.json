@@ -1,0 +1,1079 @@
+{
+ "episodes": {
+  "L2017-04-BITFINEX-WIRES": {
+   "gate": "exit impaired (outbound wires), then entry closed too (inbound wires refused from 2017-04-18)",
+   "pd_btc": [
+    {
+     "phase": "pre",
+     "start": "2017-02-01",
+     "end": "2017-04-01",
+     "trigger": "baseline",
+     "minutes": 64072,
+     "median_bps": 3.5935231099415432,
+     "ci95_bps": [
+      1.8757269122455789,
+      5.386221198071306
+     ],
+     "iqr_bps": [
+      -17.620134122546816,
+      27.812386390733135
+     ],
+     "share_abs_ge_50bps": 0.19069172181296043
+    },
+    {
+     "phase": "outbound_wires_blocked",
+     "start": "2017-04-01",
+     "end": "2017-04-18",
+     "trigger": "Wells Fargo blocks outbound wires from Bitfinex's Taiwanese banks; Bitfinex sues, first week of April",
+     "minutes": 18496,
+     "median_bps": 79.68300196766087,
+     "ci95_bps": [
+      68.9776695364892,
+      88.38284931814933
+     ],
+     "iqr_bps": [
+      32.0408797218863,
+      138.80016602795916
+     ],
+     "share_abs_ge_50bps": 0.6412737889273357
+    },
+    {
+     "phase": "inbound_wires_refused",
+     "start": "2017-04-18",
+     "end": "2017-06-01",
+     "trigger": "Taiwanese banks refuse all incoming wires (2017-04-18)",
+     "minutes": 55987,
+     "median_bps": 296.76489595045655,
+     "ci95_bps": [
+      271.90016534772707,
+      321.8837887203053
+     ],
+     "iqr_bps": [
+      69.00637536608744,
+      590.9869127151302
+     ],
+     "share_abs_ge_50bps": 0.9694571954203655
+    },
+    {
+     "phase": "later",
+     "start": "2017-06-01",
+     "end": "2017-09-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 126350,
+     "median_bps": -30.954492117478694,
+     "ci95_bps": [
+      -36.384504541014714,
+      -26.45160519300127
+     ],
+     "iqr_bps": [
+      -141.71835623093546,
+      4.137666187575828
+     ],
+     "share_abs_ge_50bps": 0.49346260387811636
+    }
+   ],
+   "pd_btc_coinbase": [
+    {
+     "phase": "pre",
+     "start": "2017-02-01",
+     "end": "2017-04-01",
+     "trigger": "baseline",
+     "minutes": 73477,
+     "median_bps": -21.54817320482394,
+     "ci95_bps": [
+      -23.305133278135216,
+      -19.834813317529456
+     ],
+     "iqr_bps": [
+      -46.39046027203442,
+      -0.9498931377383002
+     ],
+     "share_abs_ge_50bps": 0.2497244035548539
+    },
+    {
+     "phase": "outbound_wires_blocked",
+     "start": "2017-04-01",
+     "end": "2017-04-18",
+     "trigger": "Wells Fargo blocks outbound wires from Bitfinex's Taiwanese banks; Bitfinex sues, first week of April",
+     "minutes": 22905,
+     "median_bps": 43.16187455108533,
+     "ci95_bps": [
+      31.82726820379811,
+      51.99394767073428
+     ],
+     "iqr_bps": [
+      -6.358275599174235,
+      102.73540441878559
+     ],
+     "share_abs_ge_50bps": 0.5309757694826457
+    },
+    {
+     "phase": "inbound_wires_refused",
+     "start": "2017-04-18",
+     "end": "2017-06-01",
+     "trigger": "Taiwanese banks refuse all incoming wires (2017-04-18)",
+     "minutes": 60712,
+     "median_bps": 153.17716728311837,
+     "ci95_bps": [
+      133.7475993157753,
+      177.89960718289277
+     ],
+     "iqr_bps": [
+      -43.192244647143326,
+      512.6901727502564
+     ],
+     "share_abs_ge_50bps": 0.9023422058242193
+    },
+    {
+     "phase": "later",
+     "start": "2017-06-01",
+     "end": "2017-09-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 131163,
+     "median_bps": -40.78193864621937,
+     "ci95_bps": [
+      -45.03602708559984,
+      -36.86822788044086
+     ],
+     "iqr_bps": [
+      -139.3139308851188,
+      -5.563475925747241
+     ],
+     "share_abs_ge_50bps": 0.5016582420347202
+    }
+   ],
+   "pd_eth": [
+    {
+     "phase": "pre",
+     "start": "2017-02-01",
+     "end": "2017-04-01",
+     "trigger": "baseline",
+     "minutes": 37456,
+     "median_bps": -42.65831231709649,
+     "ci95_bps": [
+      -45.358288884655536,
+      -39.52567083545233
+     ],
+     "iqr_bps": [
+      -86.4465539034287,
+      -7.564586854998945
+     ],
+     "share_abs_ge_50bps": 0.4997864160615122
+    },
+    {
+     "phase": "outbound_wires_blocked",
+     "start": "2017-04-01",
+     "end": "2017-04-18",
+     "trigger": "Wells Fargo blocks outbound wires from Bitfinex's Taiwanese banks; Bitfinex sues, first week of April",
+     "minutes": 13545,
+     "median_bps": 23.668650102659505,
+     "ci95_bps": [
+      15.603670027624084,
+      32.551161162885144
+     ],
+     "iqr_bps": [
+      -24.05885717477574,
+      100.18201661111004
+     ],
+     "share_abs_ge_50bps": 0.5413067552602436
+    },
+    {
+     "phase": "inbound_wires_refused",
+     "start": "2017-04-18",
+     "end": "2017-06-01",
+     "trigger": "Taiwanese banks refuse all incoming wires (2017-04-18)",
+     "minutes": 44412,
+     "median_bps": 112.64112152173489,
+     "ci95_bps": [
+      90.11817439592119,
+      135.36322043888305
+     ],
+     "iqr_bps": [
+      -218.30043609212035,
+      427.3809678751306
+     ],
+     "share_abs_ge_50bps": 0.905250833108169
+    },
+    {
+     "phase": "later",
+     "start": "2017-06-01",
+     "end": "2017-09-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 127665,
+     "median_bps": -41.96544015028891,
+     "ci95_bps": [
+      -46.13119964222556,
+      -38.41742589248809
+     ],
+     "iqr_bps": [
+      -141.23307246243223,
+      -3.3150087322564303
+     ],
+     "share_abs_ge_50bps": 0.5220459797125289
+    }
+   ],
+   "triangle": [
+    {
+     "phase": "pre",
+     "start": "2017-02-01",
+     "end": "2017-04-01",
+     "trigger": "baseline",
+     "minutes": 24831,
+     "median_bps": -3.2974875631186507,
+     "ci95_bps": [
+      -4.381583257786037,
+      -2.1099574246939423
+     ],
+     "iqr_bps": [
+      -26.573525855522195,
+      21.147850227607456
+     ],
+     "share_abs_ge_50bps": 0.16302202891546858
+    },
+    {
+     "phase": "outbound_wires_blocked",
+     "start": "2017-04-01",
+     "end": "2017-04-18",
+     "trigger": "Wells Fargo blocks outbound wires from Bitfinex's Taiwanese banks; Bitfinex sues, first week of April",
+     "minutes": 8666,
+     "median_bps": 8.463492035086784,
+     "ci95_bps": [
+      6.720272104228431,
+      9.979638529329371
+     ],
+     "iqr_bps": [
+      -12.261717873576217,
+      26.79604327594842
+     ],
+     "share_abs_ge_50bps": 0.0983152550196169
+    },
+    {
+     "phase": "inbound_wires_refused",
+     "start": "2017-04-18",
+     "end": "2017-06-01",
+     "trigger": "Taiwanese banks refuse all incoming wires (2017-04-18)",
+     "minutes": 32959,
+     "median_bps": -0.170022473229281,
+     "ci95_bps": [
+      -1.2796696105970007,
+      0.9257142411566162
+     ],
+     "iqr_bps": [
+      -21.46428429842029,
+      21.59319384568814
+     ],
+     "share_abs_ge_50bps": 0.1236991413574441
+    },
+    {
+     "phase": "later",
+     "start": "2017-06-01",
+     "end": "2017-09-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 122164,
+     "median_bps": -1.9894656228069962,
+     "ci95_bps": [
+      -2.37989485993384,
+      -1.6282031367296226
+     ],
+     "iqr_bps": [
+      -14.818268404674928,
+      11.068428685099274
+     ],
+     "share_abs_ge_50bps": 0.027741396810844438
+    }
+   ],
+   "identification_btc_eth": {
+    "pre": {
+     "hours": 1391,
+     "corr_hourly": 0.3552830960963269,
+     "median_gap_bps": 53.611490869363,
+     "median_abs_gap_bps": 54.4891139375725,
+     "gap_to_size": 2.5792770209438434,
+     "corr_hourly_changes": 0.09475871589867342
+    },
+    "outbound_wires_blocked": {
+     "hours": 405,
+     "corr_hourly": 0.8384585071429762,
+     "median_gap_bps": 49.66577164361663,
+     "median_abs_gap_bps": 50.005241137567324,
+     "gap_to_size": 0.5827302462119847,
+     "corr_hourly_changes": 0.24047921482926587
+    },
+    "inbound_wires_refused": {
+     "hours": 1056,
+     "corr_hourly": 0.9381789070444724,
+     "median_gap_bps": 108.54819941422679,
+     "median_abs_gap_bps": 109.82289106911348,
+     "gap_to_size": 0.2558736750245303,
+     "corr_hourly_changes": 0.4712520855885394
+    },
+    "later": {
+     "hours": 2206,
+     "corr_hourly": 0.900259206888561,
+     "median_gap_bps": 6.956501792048112,
+     "median_abs_gap_bps": 25.135998389056454,
+     "gap_to_size": 0.5467621118373278,
+     "corr_hourly_changes": 0.4720593421411463
+    }
+   },
+   "references_btc": {
+    "pre": {
+     "hours": 1411,
+     "corr_hourly": 0.5362842281637036,
+     "median_gap_bps": 30.38504813240195,
+     "median_abs_gap_bps": 31.85380203106547,
+     "gap_to_size": 1.5078200703089233,
+     "corr_hourly_changes": 0.26652314953987416
+    },
+    "outbound_wires_blocked": {
+     "hours": 405,
+     "corr_hourly": 0.8497180012041197,
+     "median_gap_bps": 31.139944910107964,
+     "median_abs_gap_bps": 31.64050655995345,
+     "gap_to_size": 0.36871895342390026,
+     "corr_hourly_changes": 0.32768664799630765
+    },
+    "inbound_wires_refused": {
+     "hours": 1056,
+     "corr_hourly": 0.9593748003566728,
+     "median_gap_bps": 97.28395212989403,
+     "median_abs_gap_bps": 98.00782530591468,
+     "gap_to_size": 0.22834604150426852,
+     "corr_hourly_changes": 0.6558598898695635
+    },
+    "later": {
+     "hours": 2208,
+     "corr_hourly": 0.927028353823914,
+     "median_gap_bps": 4.7829372428997985,
+     "median_abs_gap_bps": 20.02975600377873,
+     "gap_to_size": 0.4342071988836533,
+     "corr_hourly_changes": 0.6563115021006183
+    }
+   },
+   "descriptive": {
+    "note": "daily path and same-reference agreement, computed after the fixed-phase results",
+    "max_daily_pd_btc": 843.5894482523665,
+    "max_daily_date": "2017-04-23",
+    "min_daily_pd_btc": -592.1879610624314,
+    "min_daily_date": "2017-05-28",
+    "days_pd_btc_ge_100": 42,
+    "days_pd_btc_le_minus_100": 39,
+    "btc_vs_eth_same_reference_coinbase": {
+     "hours": 5058,
+     "corr_hourly": 0.9754038223774845,
+     "median_gap_bps": 7.246125573237006,
+     "median_abs_gap_bps": 14.205591249534244,
+     "gap_to_size": 0.2744129389196654,
+     "corr_hourly_changes": 0.651809808325719
+    }
+   }
+  },
+  "L2018-10-BITFINEX-FIAT": {
+   "gate": "entry closed (fiat deposits paused), exit officially open; NYAG later alleged serious withdrawal problems in late 2018",
+   "pd_btc": [
+    {
+     "phase": "pre",
+     "start": "2018-09-01",
+     "end": "2018-10-11",
+     "trigger": "baseline",
+     "minutes": 51977,
+     "median_bps": 15.43609289772263,
+     "ci95_bps": [
+      14.422773912628806,
+      16.567748956605175
+     ],
+     "iqr_bps": [
+      6.302983242765237,
+      43.38868739006685
+     ],
+     "share_abs_ge_50bps": 0.2233487888873925
+    },
+    {
+     "phase": "deposits_paused",
+     "start": "2018-10-11",
+     "end": "2018-11-01",
+     "trigger": "all fiat deposits paused, reported 2018-10-11, confirmed 2018-10-12",
+     "minutes": 24093,
+     "median_bps": 229.4434025545833,
+     "ci95_bps": [
+      220.70549090249304,
+      242.55118170432866
+     ],
+     "iqr_bps": [
+      167.10712623966728,
+      295.8469468671865
+     ],
+     "share_abs_ge_50bps": 0.9999584941684306
+    },
+    {
+     "phase": "later",
+     "start": "2018-11-01",
+     "end": "2019-01-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 80215,
+     "median_bps": 283.4876652228857,
+     "ci95_bps": [
+      275.888408921924,
+      289.45809282036356
+     ],
+     "iqr_bps": [
+      188.7919009922534,
+      333.5554512274541
+     ],
+     "share_abs_ge_50bps": 0.9982422240229384
+    }
+   ],
+   "pd_btc_coinbase": [
+    {
+     "phase": "pre",
+     "start": "2018-09-01",
+     "end": "2018-10-11",
+     "trigger": "baseline",
+     "minutes": 57258,
+     "median_bps": 15.172197736719184,
+     "ci95_bps": [
+      14.024658091110531,
+      16.327454538671347
+     ],
+     "iqr_bps": [
+      6.098177711795216,
+      37.540711239376634
+     ],
+     "share_abs_ge_50bps": 0.2107653079045723
+    },
+    {
+     "phase": "deposits_paused",
+     "start": "2018-10-11",
+     "end": "2018-11-01",
+     "trigger": "all fiat deposits paused, reported 2018-10-11, confirmed 2018-10-12",
+     "minutes": 28814,
+     "median_bps": 226.85995358894928,
+     "ci95_bps": [
+      219.48201131691246,
+      244.19519650881983
+     ],
+     "iqr_bps": [
+      166.57101330394664,
+      289.5031217593091
+     ],
+     "share_abs_ge_50bps": 0.9999652946484348
+    },
+    {
+     "phase": "later",
+     "start": "2018-11-01",
+     "end": "2019-01-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 85969,
+     "median_bps": 279.19501268439006,
+     "ci95_bps": [
+      270.4838854978788,
+      286.8265561467815
+     ],
+     "iqr_bps": [
+      181.40115068623786,
+      331.71014618590175
+     ],
+     "share_abs_ge_50bps": 0.9973944096127674
+    }
+   ],
+   "pd_eth": [
+    {
+     "phase": "pre",
+     "start": "2018-09-01",
+     "end": "2018-10-11",
+     "trigger": "baseline",
+     "minutes": 54946,
+     "median_bps": 12.775805330424994,
+     "ci95_bps": [
+      11.56971909736404,
+      14.063713697679002
+     ],
+     "iqr_bps": [
+      1.849475795223654,
+      37.29219384092097
+     ],
+     "share_abs_ge_50bps": 0.20521967022167217
+    },
+    {
+     "phase": "deposits_paused",
+     "start": "2018-10-11",
+     "end": "2018-11-01",
+     "trigger": "all fiat deposits paused, reported 2018-10-11, confirmed 2018-10-12",
+     "minutes": 25884,
+     "median_bps": 236.04941105108247,
+     "ci95_bps": [
+      227.3103860540514,
+      246.99875163094953
+     ],
+     "iqr_bps": [
+      157.27240670701858,
+      294.78667740440835
+     ],
+     "share_abs_ge_50bps": 1.0
+    },
+    {
+     "phase": "later",
+     "start": "2018-11-01",
+     "end": "2019-01-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 81659,
+     "median_bps": 280.4537137868035,
+     "ci95_bps": [
+      273.6656340511341,
+      286.5714059395175
+     ],
+     "iqr_bps": [
+      184.52434388334103,
+      329.32500937874477
+     ],
+     "share_abs_ge_50bps": 0.9994489278585337
+    }
+   ],
+   "triangle": [
+    {
+     "phase": "pre",
+     "start": "2018-09-01",
+     "end": "2018-10-11",
+     "trigger": "baseline",
+     "minutes": 44822,
+     "median_bps": 0.04479357308628806,
+     "ci95_bps": [
+      -0.2612990732531184,
+      0.3669097137126709
+     ],
+     "iqr_bps": [
+      -5.9033411896836085,
+      5.908115974799788
+     ],
+     "share_abs_ge_50bps": 8.924189014323323e-05
+    },
+    {
+     "phase": "deposits_paused",
+     "start": "2018-10-11",
+     "end": "2018-11-01",
+     "trigger": "all fiat deposits paused, reported 2018-10-11, confirmed 2018-10-12",
+     "minutes": 18391,
+     "median_bps": 2.759317181695309,
+     "ci95_bps": [
+      2.1142879150086724,
+      3.319932531531844
+     ],
+     "iqr_bps": [
+      -2.601066928447082,
+      7.852597351218904
+     ],
+     "share_abs_ge_50bps": 0.0004893698004458703
+    },
+    {
+     "phase": "later",
+     "start": "2018-11-01",
+     "end": "2019-01-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 57416,
+     "median_bps": -0.263505409479059,
+     "ci95_bps": [
+      -0.6189401704845832,
+      0.07882948048942846
+     ],
+     "iqr_bps": [
+      -7.444385970318823,
+      6.6909445422047575
+     ],
+     "share_abs_ge_50bps": 0.0005747526821791835
+    }
+   ],
+   "identification_btc_eth": {
+    "pre": {
+     "hours": 959,
+     "corr_hourly": 0.9432916948167847,
+     "median_gap_bps": 1.9044282817048952,
+     "median_abs_gap_bps": 6.755177393404921,
+     "gap_to_size": 0.4566481895648021,
+     "corr_hourly_changes": 0.279185768360824
+    },
+    "deposits_paused": {
+     "hours": 504,
+     "corr_hourly": 0.9948877985033326,
+     "median_gap_bps": -2.3408189005014606,
+     "median_abs_gap_bps": 7.848267987844423,
+     "gap_to_size": 0.03489262520985815,
+     "corr_hourly_changes": 0.9119799190013514
+    },
+    "later": {
+     "hours": 1464,
+     "corr_hourly": 0.9923910720896457,
+     "median_gap_bps": 2.2124323849270837,
+     "median_abs_gap_bps": 7.0542823664609955,
+     "gap_to_size": 0.025470375006521544,
+     "corr_hourly_changes": 0.8330259186498931
+    }
+   },
+   "references_btc": {
+    "pre": {
+     "hours": 960,
+     "corr_hourly": 0.9870667089851681,
+     "median_gap_bps": 0.3735231976431663,
+     "median_abs_gap_bps": 2.8357183855431956,
+     "gap_to_size": 0.19167695481688607,
+     "corr_hourly_changes": 0.7189964393795223
+    },
+    "deposits_paused": {
+     "hours": 504,
+     "corr_hourly": 0.999442510242375,
+     "median_gap_bps": -0.10356526768173069,
+     "median_abs_gap_bps": 2.748396772678255,
+     "gap_to_size": 0.012219100910618277,
+     "corr_hourly_changes": 0.9817551005622449
+    },
+    "later": {
+     "hours": 1463,
+     "corr_hourly": 0.9990373760292821,
+     "median_gap_bps": 0.6884443705334888,
+     "median_abs_gap_bps": 2.4226481408095992,
+     "gap_to_size": 0.008753987918945307,
+     "corr_hourly_changes": 0.972213351349509
+    }
+   },
+   "descriptive": {
+    "note": "daily path and same-reference agreement, computed after the fixed-phase results",
+    "max_daily_pd_btc": 610.1004227758011,
+    "max_daily_date": "2018-10-15",
+    "min_daily_pd_btc": -3.3516232196983964,
+    "min_daily_date": "2018-09-15",
+    "days_pd_btc_ge_100": 79,
+    "days_pd_btc_le_minus_100": 0,
+    "btc_vs_eth_same_reference_coinbase": {
+     "hours": 2926,
+     "corr_hourly": 0.9966939413590092,
+     "median_gap_bps": 1.1166838398057664,
+     "median_abs_gap_bps": 6.588927878703458,
+     "gap_to_size": 0.03714896559581701,
+     "corr_hourly_changes": 0.8333934753974016
+    }
+   }
+  },
+  "L2019-04-BITFINEX-NYAG": {
+   "gate": "exit threatened (NYAG: Crypto Capital lost or seized about $850M of Bitfinex funds)",
+   "pd_btc": [
+    {
+     "phase": "pre",
+     "start": "2019-03-01",
+     "end": "2019-04-25",
+     "trigger": "baseline",
+     "minutes": 71312,
+     "median_bps": 173.32452045705438,
+     "ci95_bps": [
+      166.16629375412862,
+      178.00892205708396
+     ],
+     "iqr_bps": [
+      62.984594876258626,
+      252.46165647472284
+     ],
+     "share_abs_ge_50bps": 0.861439869867624
+    },
+    {
+     "phase": "nyag_filing",
+     "start": "2019-04-25",
+     "end": "2019-06-01",
+     "trigger": "NYAG court filing against Bitfinex and Tether (2019-04-25)",
+     "minutes": 52559,
+     "median_bps": 32.300600632506615,
+     "ci95_bps": [
+      25.139052786083305,
+      44.45087335687603
+     ],
+     "iqr_bps": [
+      -10.319117089672147,
+      537.5911111618769
+     ],
+     "share_abs_ge_50bps": 0.5228029452615156
+    },
+    {
+     "phase": "later",
+     "start": "2019-06-01",
+     "end": "2019-08-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 86415,
+     "median_bps": 0.10532912719796172,
+     "ci95_bps": [
+      -0.7664181930273628,
+      0.9916076052185473
+     ],
+     "iqr_bps": [
+      -11.674017378870971,
+      14.631861490155273
+     ],
+     "share_abs_ge_50bps": 0.07975467222125789
+    }
+   ],
+   "pd_btc_coinbase": [
+    {
+     "phase": "pre",
+     "start": "2019-03-01",
+     "end": "2019-04-25",
+     "trigger": "baseline",
+     "minutes": 75568,
+     "median_bps": 177.14088267238637,
+     "ci95_bps": [
+      171.89182918991676,
+      181.6300049615478
+     ],
+     "iqr_bps": [
+      63.672340449096865,
+      252.27386370632487
+     ],
+     "share_abs_ge_50bps": 0.8625741054414567
+    },
+    {
+     "phase": "nyag_filing",
+     "start": "2019-04-25",
+     "end": "2019-06-01",
+     "trigger": "NYAG court filing against Bitfinex and Tether (2019-04-25)",
+     "minutes": 52997,
+     "median_bps": 32.04771836889719,
+     "ci95_bps": [
+      24.329617689561545,
+      46.37078696556762
+     ],
+     "iqr_bps": [
+      -10.33172252908443,
+      537.6937024387196
+     ],
+     "share_abs_ge_50bps": 0.526482631092326
+    },
+    {
+     "phase": "later",
+     "start": "2019-06-01",
+     "end": "2019-08-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 86714,
+     "median_bps": 0.672952816636041,
+     "ci95_bps": [
+      -0.10877914064266746,
+      1.550057454671627
+     ],
+     "iqr_bps": [
+      -10.857530889265554,
+      14.290866306687633
+     ],
+     "share_abs_ge_50bps": 0.07445164563968909
+    }
+   ],
+   "pd_eth": [
+    {
+     "phase": "pre",
+     "start": "2019-03-01",
+     "end": "2019-04-25",
+     "trigger": "baseline",
+     "minutes": 66939,
+     "median_bps": 175.85917839406662,
+     "ci95_bps": [
+      168.9967535585293,
+      180.50108961549927
+     ],
+     "iqr_bps": [
+      60.57340906367781,
+      251.02611060936474
+     ],
+     "share_abs_ge_50bps": 0.836059696141263
+    },
+    {
+     "phase": "nyag_filing",
+     "start": "2019-04-25",
+     "end": "2019-06-01",
+     "trigger": "NYAG court filing against Bitfinex and Tether (2019-04-25)",
+     "minutes": 50771,
+     "median_bps": 31.377262305207765,
+     "ci95_bps": [
+      25.008393398521235,
+      42.27593149746522
+     ],
+     "iqr_bps": [
+      -9.18934262907456,
+      524.88912636655
+     ],
+     "share_abs_ge_50bps": 0.5172637923223887
+    },
+    {
+     "phase": "later",
+     "start": "2019-06-01",
+     "end": "2019-08-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 81146,
+     "median_bps": 1.3814064385453406,
+     "ci95_bps": [
+      0.41153533427540356,
+      2.4103414062532913
+     ],
+     "iqr_bps": [
+      -11.555974195118779,
+      16.656528208982557
+     ],
+     "share_abs_ge_50bps": 0.07916594779779657
+    }
+   ],
+   "triangle": [
+    {
+     "phase": "pre",
+     "start": "2019-03-01",
+     "end": "2019-04-25",
+     "trigger": "baseline",
+     "minutes": 32718,
+     "median_bps": 0.29219743482133964,
+     "ci95_bps": [
+      -0.05509595978048232,
+      0.6598496700453981
+     ],
+     "iqr_bps": [
+      -6.308256673661639,
+      6.659555806369788
+     ],
+     "share_abs_ge_50bps": 0.00018338529249954154
+    },
+    {
+     "phase": "nyag_filing",
+     "start": "2019-04-25",
+     "end": "2019-06-01",
+     "trigger": "NYAG court filing against Bitfinex and Tether (2019-04-25)",
+     "minutes": 33342,
+     "median_bps": 0.17254740828143156,
+     "ci95_bps": [
+      -0.3046256459837693,
+      0.597502879802203
+     ],
+     "iqr_bps": [
+      -7.155265057940952,
+      7.5520386578853405
+     ],
+     "share_abs_ge_50bps": 0.00017995321216483713
+    },
+    {
+     "phase": "later",
+     "start": "2019-06-01",
+     "end": "2019-08-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 49389,
+     "median_bps": -0.1830094777854896,
+     "ci95_bps": [
+      -0.4204457944112505,
+      0.0736731888917319
+     ],
+     "iqr_bps": [
+      -6.194640780758931,
+      5.848793907903271
+     ],
+     "share_abs_ge_50bps": 0.0002632165056996497
+    }
+   ],
+   "identification_btc_eth": {
+    "pre": {
+     "hours": 1320,
+     "corr_hourly": 0.9962806762897501,
+     "median_gap_bps": 0.9880437363407566,
+     "median_abs_gap_bps": 5.228872801399383,
+     "gap_to_size": 0.029206776622816306,
+     "corr_hourly_changes": 0.6808599208055847
+    },
+    "nyag_filing": {
+     "hours": 888,
+     "corr_hourly": 0.9993331875608512,
+     "median_gap_bps": -1.10214000311748,
+     "median_abs_gap_bps": 5.96148723178257,
+     "gap_to_size": 0.1078913687632089,
+     "corr_hourly_changes": 0.8750680333275237
+    },
+    "later": {
+     "hours": 1459,
+     "corr_hourly": 0.8605453016716487,
+     "median_gap_bps": -0.564993250780077,
+     "median_abs_gap_bps": 4.480743313282076,
+     "gap_to_size": 0.3998351173366979,
+     "corr_hourly_changes": 0.6194849242790954
+    }
+   },
+   "references_btc": {
+    "pre": {
+     "hours": 1319,
+     "corr_hourly": 0.9995371886807893,
+     "median_gap_bps": 0.9021915048279538,
+     "median_abs_gap_bps": 1.7557399073897528,
+     "gap_to_size": 0.009805442740921214,
+     "corr_hourly_changes": 0.9303283123256424
+    },
+    "nyag_filing": {
+     "hours": 888,
+     "corr_hourly": 0.9999230302662239,
+     "median_gap_bps": 0.9619098149471483,
+     "median_abs_gap_bps": 2.320418904431243,
+     "gap_to_size": 0.041995086455675124,
+     "corr_hourly_changes": 0.9791888301403702
+    },
+    "later": {
+     "hours": 1461,
+     "corr_hourly": 0.9887355826213994,
+     "median_gap_bps": -0.482875220946255,
+     "median_abs_gap_bps": 2.0431233373674473,
+     "gap_to_size": 0.18175883442654373,
+     "corr_hourly_changes": 0.9491468592664813
+    }
+   },
+   "descriptive": {
+    "note": "daily path and same-reference agreement, computed after the fixed-phase results",
+    "max_daily_pd_btc": 626.8876976739434,
+    "max_daily_date": "2019-05-02",
+    "min_daily_pd_btc": -56.68582889774676,
+    "min_daily_date": "2019-05-14",
+    "days_pd_btc_ge_100": 50,
+    "days_pd_btc_le_minus_100": 0,
+    "btc_vs_eth_same_reference_coinbase": {
+     "hours": 3666,
+     "corr_hourly": 0.9973530918721977,
+     "median_gap_bps": -0.4673441748215268,
+     "median_abs_gap_bps": 4.512777705203412,
+     "gap_to_size": 0.10519408174820781,
+     "corr_hourly_changes": 0.7012229031386092
+    }
+   },
+   "d_usdt": [
+    {
+     "phase": "pre",
+     "start": "2019-03-01",
+     "end": "2019-04-25",
+     "trigger": "baseline",
+     "minutes": 33413,
+     "median_bps": 149.87129808248238,
+     "ci95_bps": [
+      146.9154874298968,
+      153.8110203830239
+     ],
+     "iqr_bps": [
+      120.27380212718455,
+      202.92703267762394
+     ],
+     "share_abs_ge_50bps": 0.9725855206057522
+    },
+    {
+     "phase": "nyag_filing",
+     "start": "2019-04-25",
+     "end": "2019-06-01",
+     "trigger": "NYAG court filing against Bitfinex and Tether (2019-04-25)",
+     "minutes": 29185,
+     "median_bps": 40.916179032535574,
+     "ci95_bps": [
+      36.931718376176065,
+      45.89452333807224
+     ],
+     "iqr_bps": [
+      7.996801705642441,
+      214.67906615240975
+     ],
+     "share_abs_ge_50bps": 0.4624635943121467
+    },
+    {
+     "phase": "later",
+     "start": "2019-06-01",
+     "end": "2019-08-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 47177,
+     "median_bps": 9.995003330834232,
+     "ci95_bps": [
+      7.996801705642441,
+      10.993954433010643
+     ],
+     "iqr_bps": [
+      -11.006054440330038,
+      28.95803112025468
+     ],
+     "share_abs_ge_50bps": 0.08421476566971194
+    }
+   ],
+   "t_usdt": [
+    {
+     "phase": "pre",
+     "start": "2019-03-01",
+     "end": "2019-04-25",
+     "trigger": "baseline",
+     "minutes": 31263,
+     "median_bps": -0.9920275365750513,
+     "ci95_bps": [
+      -8.652132691507575,
+      9.990093296583655
+     ],
+     "iqr_bps": [
+      -40.64515838956078,
+      59.11240436238268
+     ],
+     "share_abs_ge_50bps": 0.4605124268304385
+    },
+    {
+     "phase": "nyag_filing",
+     "start": "2019-04-25",
+     "end": "2019-06-01",
+     "trigger": "NYAG court filing against Bitfinex and Tether (2019-04-25)",
+     "minutes": 28931,
+     "median_bps": 6.066226657482048,
+     "ci95_bps": [
+      1.9974345213348486,
+      10.15975382552371
+     ],
+     "iqr_bps": [
+      -96.62808269976114,
+      37.60804270983465
+     ],
+     "share_abs_ge_50bps": 0.4707752929383706
+    },
+    {
+     "phase": "later",
+     "start": "2019-06-01",
+     "end": "2019-08-01",
+     "trigger": "no documented restoration date; descriptive",
+     "minutes": 46861,
+     "median_bps": 9.652635150239554,
+     "ci95_bps": [
+      7.880520167125844,
+      11.419776044891377
+     ],
+     "iqr_bps": [
+      -21.246580713212843,
+      27.380975030109546
+     ],
+     "share_abs_ge_50bps": 0.16666311004886794
+    }
+   ]
+  }
+ },
+ "predictions": {
+  "L2017-04-BITFINEX-WIRES": {
+   "stress_phases": [
+    "outbound_wires_blocked",
+    "inbound_wires_refused"
+   ],
+   "Q1_identification": false,
+   "Q2_triangle": true,
+   "Q3_discount_sign": true,
+   "Q4_reversion": true,
+   "falsified": false
+  },
+  "L2018-10-BITFINEX-FIAT": {
+   "stress_phases": [
+    "deposits_paused"
+   ],
+   "Q1_identification": true,
+   "Q2_triangle": true,
+   "Q3_discount_sign": true,
+   "Q4_reversion": false,
+   "falsified": false
+  },
+  "L2019-04-BITFINEX-NYAG": {
+   "stress_phases": [
+    "nyag_filing"
+   ],
+   "Q1_identification": true,
+   "Q2_triangle": true,
+   "Q3_discount_sign": true,
+   "Q4_reversion": false,
+   "falsified": false
+  }
+ }
+}

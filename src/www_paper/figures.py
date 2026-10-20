@@ -17,6 +17,7 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
+import matplotlib.dates as mdates  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
@@ -119,6 +120,101 @@ def anchor_series(csv_path: Path, out: Path) -> Path:
     return _save(fig, out)
 
 
+CAPACITY_JSON = ROOT / "reports/c6/onchain_capacity.json"
+CAPACITY_SERIES = {"E2022-05-UST-COLLAPSE": ("c1_50bps", "UST -> 3CRV (wormhole metapool)"),
+                   "E2023-03-USDC-SVB": ("c0_50bps", "USDC -> DAI (3pool)"),
+                   "N2023-06-USDT-3POOL": ("c0_50bps", "USDT -> DAI (3pool)")}
+
+
+def capacity_paths(path: Path, out: Path) -> Path:
+    """On-chain absorption capacity at 50 bps over each event's windows (6h samples + hourly event window)."""
+    _style()
+    data = json.loads(path.read_text())
+    results = [r for r in data["results"] if r["event_id"] in CAPACITY_SERIES]
+    fig, axes = plt.subplots(1, len(results), figsize=(7.0, 2.1), sharey=False)
+    for ax, res in zip(np.atleast_1d(axes), results):
+        key, label = CAPACITY_SERIES[res["event_id"]]
+        for window, style in (("control", ":"), ("baseline", "-"), ("event_hourly", "-"), ("recovery", "-")):
+            pts = res["samples"].get(window, [])
+            if not pts:
+                continue
+            t = pd.to_datetime([p["timestamp_utc"] for p in pts])
+            y = [p["capacity"][key]["absorption"] / 1e6 for p in pts]
+            ax.plot(t, y, style, linewidth=0.8, color="C1" if window == "event_hourly" else "C0")
+        ev = res["windows"]["event"]
+        ax.axvspan(pd.Timestamp(ev["start"], tz="UTC"), pd.Timestamp(ev["end"], tz="UTC") + pd.Timedelta("1D"),
+                   color="grey", alpha=0.15, linewidth=0)
+        ax.set_title(label, fontsize=7)
+        ax.tick_params(axis="x", labelrotation=45, labelsize=6)
+    np.atleast_1d(axes)[0].set_ylabel("absorption at 50 bps (M)")
+    fig.suptitle("On-chain only; par-valued counterparts; shaded: event window", fontsize=7)
+    return _save(fig, out)
+
+
+DECOMP_JSON = ROOT / "reports/rescue/decomposition.json"
+PLATFORM_JSON = ROOT / "reports/rescue/platform_dollar.json"
+
+
+def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
+    """(a) token failure: USDC/SVB on Binance.US; (b) ledger failure: Binance.US USD, May-July 2023."""
+    _style()
+    d = json.loads(decomp.read_text())["windows"]["token_failure_svb"]["hourly"]
+    h = pd.DataFrame.from_dict(d, orient="index", columns=["D", "L", "T", "D_ref"])
+    h.index = pd.to_datetime(h.index)
+    p = json.loads(platform.read_text())
+    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 2.3), gridspec_kw={"width_ratios": [1, 1.4]})
+    a.plot(h.index, h["D"], linewidth=0.9, label="observed $D$ (USDC/USD$_{venue}$)")
+    a.plot(h.index, h["T"], linewidth=0.9, linestyle="--", label="token component $T$")
+    a.plot(h.index, h["L"], linewidth=0.9, label="ledger component $L$ (BTC)")
+    a.set_title("(a) Token failure: USDC, March 2023", fontsize=7)
+    a.set_ylabel("bps (hourly median)")
+    for name, key, style in (("USDT", "daily_median_pd_usdt", "-"), ("BTC", "daily_median_pd_btc", "--"),
+                             ("USDC", "daily_median_pd_usdc", ":")):
+        s = pd.Series(p[key]).loc["2023-05-01":"2023-07-31"]
+        b.plot(pd.to_datetime(s.index), s.to_numpy(), style, linewidth=0.9, label=f"PD$_{{{name}}}$")
+    shade = {"sec_complaint": "#fdd49e", "deposits_suspended": "#fc8d59", "withdrawal_halt_window": "#d7301f",
+             "crypto_only_transition": "#9ecae1"}
+    for ph in p["phases"]:
+        if ph["phase"] in shade:
+            b.axvspan(pd.Timestamp(ph["start"]), pd.Timestamp(min(ph["end"], "2023-07-31")), color=shade[ph["phase"]],
+                      alpha=0.35, linewidth=0)
+    b.set_title("(b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)", fontsize=7)
+    for ax in (a, b):
+        ax.axhline(0, color="black", linewidth=0.5)
+        ax.tick_params(axis="x", labelrotation=30, labelsize=6)
+        ax.legend(fontsize=6, frameon=False, loc="lower left")
+    return _save(fig, out)
+
+
+MONITOR_JSON = ROOT / "reports/rescue/monitor.json"
+
+
+def monitor_timeline(path: Path, out: Path) -> Path:
+    """Hourly ledger component L and token component T_USDC over every covered month; ledger flags marked."""
+    _style()
+    m = json.loads(path.read_text())
+    h = pd.DataFrame.from_dict(m["hourly"], orient="index", columns=m["hourly_columns"])
+    h.index = pd.to_datetime(h.index)
+    segments = [("2022-10-01", "2022-12-01"), ("2023-02-01", "2023-08-01"), ("2025-02-01", "2025-04-01")]
+    widths = [(pd.Timestamp(b) - pd.Timestamp(a)).days for a, b in segments]
+    fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.0), sharey=True, gridspec_kw={"width_ratios": widths})
+    for ax, (a, b) in zip(axes, segments):
+        g = h[(h.index >= pd.Timestamp(a, tz="UTC")) & (h.index < pd.Timestamp(b, tz="UTC"))]
+        ax.plot(g.index, g["L"].astype(float), linewidth=0.6, label="ledger component $L$")
+        ax.plot(g.index, g["T_USDC"].astype(float), linewidth=0.6, linestyle="--", label="token component $T_{USDC}$")
+        fl = g[g["ledger_flag"].astype(bool)]
+        ax.scatter(fl.index, np.full(len(fl), 450.0), s=2, color="C3", label="ledger flag")
+        ax.axhline(0, color="black", linewidth=0.4)
+        ax.xaxis.set_major_locator(mdates.MonthLocator())
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
+        ax.tick_params(axis="x", labelrotation=30, labelsize=6)
+    axes[0].set_ylabel("bps (hourly median)")
+    axes[0].set_ylim(-1500, 600)
+    axes[1].legend(fontsize=6, frameon=False, loc="lower left")
+    fig.suptitle("Hourly monitor on Binance.US (covered months only; y-axis clipped)", fontsize=7)
+    return _save(fig, out)
+
+
 def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
     if iaqf_panel is not None:
         build_anchor_csv(iaqf_panel)
@@ -126,6 +222,9 @@ def build_all(*, iaqf_panel: Path | None = None) -> list[Path]:
         event_timeline(ROOT / "configs/event_registry.json", FIG_DIR / "event_timeline.pdf"),
         coverage_heatmap(ROOT / "reports/events/coverage_matrix.json", FIG_DIR / "coverage_heatmap.pdf"),
         anchor_series(ANCHOR_CSV, FIG_DIR / "anchor_series.pdf"),
+        *([capacity_paths(CAPACITY_JSON, FIG_DIR / "onchain_capacity_paths.pdf")] if CAPACITY_JSON.is_file() else []),
+        *([which_dollar(DECOMP_JSON, PLATFORM_JSON, FIG_DIR / "which_dollar.pdf")] if DECOMP_JSON.is_file() else []),
+        *([monitor_timeline(MONITOR_JSON, FIG_DIR / "monitor_timeline.pdf")] if MONITOR_JSON.is_file() else []),
     ]
 
 

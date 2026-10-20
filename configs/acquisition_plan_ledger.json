@@ -1,0 +1,162 @@
+{
+ "authorized": "User authorization 2026-10-18: download Bitfinex, Bitstamp and Coinbase public 1-minute candles for the 2017, 2018 and 2019 Bitfinex windows (ledger-side multi-event panel); no paid or authenticated access.",
+ "items": [
+  {
+   "venue": "bitfinex",
+   "events": [
+    "L2017-04-BITFINEX-WIRES"
+   ],
+   "months": [
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08"
+   ],
+   "symbols": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC"
+   ]
+  },
+  {
+   "venue": "coinbase",
+   "events": [
+    "L2017-04-BITFINEX-WIRES"
+   ],
+   "months": [
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08"
+   ],
+   "symbols": [
+    "BTC-USD",
+    "ETH-USD"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "events": [
+    "L2017-04-BITFINEX-WIRES"
+   ],
+   "months": [
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08"
+   ],
+   "symbols": [
+    "btcusd"
+   ]
+  },
+  {
+   "venue": "bitfinex",
+   "events": [
+    "L2018-10-BITFINEX-FIAT"
+   ],
+   "months": [
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12"
+   ],
+   "symbols": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC"
+   ]
+  },
+  {
+   "venue": "coinbase",
+   "events": [
+    "L2018-10-BITFINEX-FIAT"
+   ],
+   "months": [
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12"
+   ],
+   "symbols": [
+    "BTC-USD",
+    "ETH-USD"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "events": [
+    "L2018-10-BITFINEX-FIAT"
+   ],
+   "months": [
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12"
+   ],
+   "symbols": [
+    "btcusd"
+   ]
+  },
+  {
+   "venue": "bitfinex",
+   "events": [
+    "L2019-04-BITFINEX-NYAG"
+   ],
+   "months": [
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07"
+   ],
+   "symbols": [
+    "BTCUSD",
+    "ETHUSD",
+    "ETHBTC",
+    "USTUSD"
+   ]
+  },
+  {
+   "venue": "coinbase",
+   "events": [
+    "L2019-04-BITFINEX-NYAG"
+   ],
+   "months": [
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07"
+   ],
+   "symbols": [
+    "BTC-USD",
+    "ETH-USD"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "events": [
+    "L2019-04-BITFINEX-NYAG"
+   ],
+   "months": [
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07"
+   ],
+   "symbols": [
+    "btcusd"
+   ]
+  }
+ ]
+}

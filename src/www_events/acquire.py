@@ -93,6 +93,82 @@ def acquire_bitstamp(root: Path, pair: str, month: str) -> dict[str, Any]:
     return record
 
 
+CANDLE_DIRS = {"bitfinex": "data/raw/bitfinex", "coinbase": "data/raw/coinbase"}
+CANDLE_NOTE = ("Public market-data endpoint downloaded with user authorization (2026-10-18); provider terms of use "
+               "apply; raw files are not redistributed in this repository.")
+
+
+def acquire_candles(root: Path, venue: str, symbol: str, month: str) -> dict[str, Any]:
+    """Bitfinex or Coinbase public 1-minute candles for one month, saved with a self-recorded SHA-256."""
+    from .bitstamp import save_month
+    from .candles import BITFINEX, COINBASE, fetch_bitfinex_month, fetch_coinbase_month
+    fetch, url = ((fetch_bitfinex_month, BITFINEX.format(pair=symbol.upper(), start="<paged>", end="<month end>"))
+                  if venue == "bitfinex" else
+                  (fetch_coinbase_month, COINBASE.format(product=symbol.upper(), start="<paged>", end="<paged>")))
+    name = symbol.upper().replace("-", "")
+    path = root / CANDLE_DIRS[venue] / f"{name}-1m-{month}.csv"
+    record: dict[str, Any] = {"venue": venue, "symbol": name, "month": month, "url": url}
+    try:
+        frame, pages = fetch(symbol, month)
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        record.update(status="NOT_AVAILABLE", error=f"{type(exc).__name__}: {exc}")
+        return record
+    if frame.empty:
+        record.update(status="NOT_AVAILABLE", error="no bars returned")
+        return record
+    digest = save_month(frame, path)
+    record.update(status="VERIFIED", file=str(path.relative_to(root)), bytes=path.stat().st_size, sha256=digest,
+                  hash_kind="self-recorded at acquisition (provider publishes no checksum)", pages=pages,
+                  rows=len(frame), traded_minutes=int((frame["volume"] > 0).sum()),
+                  first_utc=pd_ts(frame["timestamp"].iloc[0]), last_utc=pd_ts(frame["timestamp"].iloc[-1]),
+                  terms_note=CANDLE_NOTE)
+    return record
+
+
+HOURLY_DIRS = {"bitfinex-1h": "data/raw/bitfinex_1h", "coinbase-1h": "data/raw/coinbase_1h"}
+HOURLY_NOTE = ("Public market-data endpoint downloaded with user authorization (decision D12, 2026-10-20); provider "
+               "terms of use apply; raw files are not redistributed in this repository.")
+
+
+def acquire_hourly(root: Path, venue: str, symbol: str, first: str = "2017-01", last: str = "2023-12",
+                   note: str | None = None) -> dict[str, Any]:
+    """Bitfinex or Coinbase public hourly candles for the whole range in one CSV, with a self-recorded SHA-256."""
+    from .bitstamp import save_month
+    from .candles import BITFINEX_1H, COINBASE_1H, fetch_bitfinex_hourly, fetch_coinbase_hourly
+    fetch, url = ((fetch_bitfinex_hourly, BITFINEX_1H.format(pair=symbol, start="<paged>", end="<range end>"))
+                  if venue == "bitfinex-1h" else
+                  (fetch_coinbase_hourly, COINBASE_1H.format(product=symbol, start="<paged>", end="<paged>")))
+    name = symbol.upper().replace("-", "").replace(":", "")
+    span = f"{first[:4]}-{last[:4]}"
+    path = root / HOURLY_DIRS[venue] / f"{name}-1h-{span}.csv"
+    record: dict[str, Any] = {"venue": venue, "symbol": name, "month": f"{first}..{last}", "url": url,
+                              "provider_symbol": symbol}
+    if note:
+        record["notes"] = note
+    try:
+        frame, pages = fetch(symbol, first, last)
+    except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        record.update(status="NOT_AVAILABLE", error=f"{type(exc).__name__}: {exc}")
+        return record
+    if frame.empty:
+        record.update(status="NOT_AVAILABLE", error="no bars returned")
+        return record
+    digest = save_month(frame, path)
+    record.update(status="VERIFIED", file=str(path.relative_to(root)), bytes=path.stat().st_size, sha256=digest,
+                  hash_kind="self-recorded at acquisition (provider publishes no checksum)", pages=pages,
+                  rows=len(frame), traded_hours=int((frame["volume"] > 0).sum()),
+                  first_utc=pd_ts(frame["timestamp"].iloc[0]), last_utc=pd_ts(frame["timestamp"].iloc[-1]),
+                  terms_note=HOURLY_NOTE)
+    return record
+
+
+def merge_records(previous: list[dict[str, Any]], new: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep every previous record except those replaced by a new record with the same (venue, symbol, month)."""
+    key = lambda r: (r["venue"], r["symbol"], r["month"])  # noqa: E731
+    replaced = {key(r) for r in new}
+    return [r for r in previous if key(r) not in replaced] + new
+
+
 TARDIS = "https://datasets.tardis.dev/v1/{exchange}/{dtype}/{y}/{m}/{d}/{symbol}.csv.gz"
 TARDIS_MAX_BYTES = 300 * 1024 * 1024
 TARDIS_NOTE = ("Tardis free first-of-month sample (documented: 'available to download without API key'); downloaded "
@@ -134,6 +210,22 @@ def pd_ts(seconds: int) -> str:
     return _dt.datetime.fromtimestamp(int(seconds), _dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
 
 
+def main_hourly(root: Path, manifest: Path, plan: list[tuple[str, str, str | None]]) -> None:
+    """Fetch (venue, provider symbol, note) hourly items and merge them into the manifest without dropping records."""
+    path = root / manifest
+    data = json.loads(path.read_text())
+    new = []
+    for venue, symbol, note in plan:
+        rec = acquire_hourly(root, venue, symbol, note=note)
+        new.append(rec)
+        print(f"{rec['status']:14} {venue:12} {symbol:10} {rec.get('rows', '')} {rec.get('first_utc', '')} "
+              f"{rec.get('last_utc', '')} {rec.get('error', '')}", flush=True)
+    data["records"] = merge_records(data["records"], new)
+    data["summary"] = {s: sum(r["status"] == s for r in data["records"])
+                       for s in ("VERIFIED", "NOT_AVAILABLE", "CHECKSUM_FAILED")}
+    path.write_text(json.dumps(data, indent=1) + "\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
@@ -156,6 +248,10 @@ def main() -> None:
                     if ("bitstamp", symbol.upper(), month) in done:
                         continue  # never re-page an already verified month; keeps recorded hashes stable
                     rec = acquire_bitstamp(args.root, symbol, month)
+                elif item["venue"] in CANDLE_DIRS:
+                    if (item["venue"], symbol.upper().replace("-", ""), month) in done:
+                        continue
+                    rec = acquire_candles(args.root, item["venue"], symbol, month)
                 else:
                     rec = acquire(args.root, item["venue"], symbol, month)
                 rec["for_events"] = item["events"]

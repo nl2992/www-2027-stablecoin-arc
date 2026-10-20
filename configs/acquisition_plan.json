@@ -1,5 +1,5 @@
 {
-  "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only. A6 screen: Binance.US USD-quoted stablecoin klines through 2023-05 (same authorized free source).",
+  "authorized": "User authorization 2026-10-11: download Binance.com and Binance.US public kline files; no paid access. Bitstamp public OHLC authorized by user 2026-10-11. Reviewer decision 2026-10-11: bounded free Tardis first-of-month samples for normal-market comparison only. A6 screen: Binance.US USD-quoted stablecoin klines through 2023-05 (same authorized free source). Rescue search 2026-10-12 (user: brute-force directions to save the paper): same free sources, Binance.US USD-rail episode 2023-01..2025-10 and Bitstamp external-USD reference for the impairment window.",
   "items": [
     {
       "venue": "binance",
@@ -391,6 +391,220 @@
       ],
       "symbols": [
         "TUSDUSD"
+      ]
+    },
+    {
+      "venue": "binance-us",
+      "events": [
+        "X2023-06-BINANCEUS-DEBANKING"
+      ],
+      "months": [
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11",
+        "2023-12",
+        "2024-01",
+        "2024-02",
+        "2024-03",
+        "2024-04",
+        "2024-05",
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10"
+      ],
+      "symbols": [
+        "USDTUSD",
+        "USDCUSD",
+        "BTCUSD",
+        "BTCUSDT"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "X2023-06-BINANCEUS-DEBANKING"
+      ],
+      "months": [
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11",
+        "2023-12",
+        "2024-01",
+        "2024-02",
+        "2024-03",
+        "2024-04",
+        "2024-05",
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04"
+      ],
+      "symbols": [
+        "usdtusd",
+        "btcusd"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "X2023-05-BINANCE-GBP-RAIL"
+      ],
+      "months": [
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07"
+      ],
+      "symbols": [
+        "GBPUSDT",
+        "BTCGBP"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "X2023-09-BINANCE-EUR-RAIL"
+      ],
+      "months": [
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11"
+      ],
+      "symbols": [
+        "EURUSDT",
+        "BTCEUR"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "X2023-05-BINANCE-GBP-RAIL"
+      ],
+      "months": [
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07"
+      ],
+      "symbols": [
+        "btcgbp",
+        "gbpusd"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "X2023-05-BINANCE-GBP-RAIL"
+      ],
+      "months": [
+        "2023-03",
+        "2023-04"
+      ],
+      "symbols": [
+        "usdtusd"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "X2023-09-BINANCE-EUR-RAIL"
+      ],
+      "months": [
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11"
+      ],
+      "symbols": [
+        "btceur",
+        "usdteur"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "X2023-03-SVB-DECOMPOSITION"
+      ],
+      "months": [
+        "2023-02",
+        "2023-03",
+        "2023-04"
+      ],
+      "symbols": [
+        "btcusd",
+        "usdcusd"
+      ]
+    },
+    {
+      "venue": "bitstamp",
+      "events": [
+        "X2023-06-BINANCEUS-DEBANKING"
+      ],
+      "months": [
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2025-02",
+        "2025-03",
+        "2025-04"
+      ],
+      "symbols": [
+        "usdcusd"
+      ]
+    },
+    {
+      "venue": "binance",
+      "events": [
+        "X2023-06-BINANCEUS-DEBANKING",
+        "X2023-03-SVB-DECOMPOSITION"
+      ],
+      "months": [
+        "2022-10",
+        "2022-11",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07"
+      ],
+      "symbols": [
+        "BTCUSDT"
       ]
     }
   ]

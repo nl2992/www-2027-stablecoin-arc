@@ -1,0 +1,7492 @@
+{
+ "event_id": "E2023-03-USDC-SVB",
+ "valuation": "counterparts at last traded Binance.US USD close within 60 min; s at par",
+ "summary_50bps": {
+  "c0_50bps": {
+   "baseline": {
+    "samples": 28,
+    "absorption_median": 177115865.5920395,
+    "par_fallbacks": 18,
+    "par_valued_median": 177358770.2381345
+   },
+   "event": {
+    "samples": 16,
+    "absorption_median": 0.0,
+    "par_fallbacks": 3,
+    "par_valued_median": 154013478.805856
+   },
+   "recovery": {
+    "samples": 28,
+    "absorption_median": 173749787.2151115,
+    "par_fallbacks": 4,
+    "par_valued_median": 179399996.1782245
+   },
+   "control": {
+    "samples": 28,
+    "absorption_median": 189182671.498321,
+    "par_fallbacks": 16,
+    "par_valued_median": 191342505.0423785
+   },
+   "event_hourly": {
+    "samples": 95,
+    "absorption_median": 0.0,
+    "par_fallbacks": 19,
+    "par_valued_median": 156621278.652241
+   }
+  },
+  "c2_50bps": {
+   "baseline": {
+    "samples": 28,
+    "absorption_median": 157641126.5610325,
+    "par_fallbacks": 18,
+    "par_valued_median": 157542200.1082005
+   },
+   "event": {
+    "samples": 16,
+    "absorption_median": 0.0,
+    "par_fallbacks": 3,
+    "par_valued_median": 0.0
+   },
+   "recovery": {
+    "samples": 28,
+    "absorption_median": 21182434.8895,
+    "par_fallbacks": 4,
+    "par_valued_median": 13242370.674068999
+   },
+   "control": {
+    "samples": 28,
+    "absorption_median": 137938097.973131,
+    "par_fallbacks": 16,
+    "par_valued_median": 137119696.70561
+   },
+   "event_hourly": {
+    "samples": 95,
+    "absorption_median": 0.0,
+    "par_fallbacks": 19,
+    "par_valued_median": 0.0
+   }
+  }
+ },
+ "samples": {
+  "baseline": [
+   {
+    "timestamp_utc": "2023-03-02T00:00:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 133536068.332364,
+      "restoration": 159500626.312447
+     },
+     "c0_50bps": {
+      "absorption": 170897856.734809,
+      "restoration": 191848398.569177
+     },
+     "c0_100bps": {
+      "absorption": 176519764.181845,
+      "restoration": 196052718.427885
+     },
+     "c2_10bps": {
+      "absorption": 101431482.389766,
+      "restoration": 157319482.889456
+     },
+     "c2_50bps": {
+      "absorption": 134640878.793347,
+      "restoration": 192553153.135446
+     },
+     "c2_100bps": {
+      "absorption": 140275698.648558,
+      "restoration": 196473060.692686
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-02T06:05:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0003
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 134289254.632218,
+      "restoration": 159191425.300126
+     },
+     "c0_50bps": {
+      "absorption": 171726307.387633,
+      "restoration": 191776850.326423
+     },
+     "c0_100bps": {
+      "absorption": 177364639.990643,
+      "restoration": 196012762.819342
+     },
+     "c2_10bps": {
+      "absorption": 109306445.816535,
+      "restoration": 150660636.244442
+     },
+     "c2_50bps": {
+      "absorption": 139295439.661216,
+      "restoration": 192199163.780845
+     },
+     "c2_100bps": {
+      "absorption": 144776658.574883,
+      "restoration": 196337811.168961
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-02T12:09:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 138303145.222005,
+      "restoration": 151601291.515167
+     },
+     "c0_50bps": {
+      "absorption": 174642520.871365,
+      "restoration": 184974134.919263
+     },
+     "c0_100bps": {
+      "absorption": 180167364.434786,
+      "restoration": 189306882.283877
+     },
+     "c2_10bps": {
+      "absorption": 108371043.326576,
+      "restoration": 155754195.809736
+     },
+     "c2_50bps": {
+      "absorption": 147238395.878864,
+      "restoration": 185703455.912779
+     },
+     "c2_100bps": {
+      "absorption": 152978305.144393,
+      "restoration": 189664520.443876
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-02T18:16:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 138445208.40463,
+      "restoration": 155437475.903798
+     },
+     "c0_50bps": {
+      "absorption": 175306733.239413,
+      "restoration": 188732535.728027
+     },
+     "c0_100bps": {
+      "absorption": 180894778.174428,
+      "restoration": 193054169.781618
+     },
+     "c2_10bps": {
+      "absorption": 105744961.130115,
+      "restoration": 156880372.815697
+     },
+     "c2_50bps": {
+      "absorption": 141693888.17519,
+      "restoration": 189489394.465024
+     },
+     "c2_100bps": {
+      "absorption": 147407276.124537,
+      "restoration": 193463139.853469
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-03T00:20:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 149346676.721386,
+      "restoration": 157075987.680391
+     },
+     "c0_50bps": {
+      "absorption": 186498961.141588,
+      "restoration": 192150038.703515
+     },
+     "c0_100bps": {
+      "absorption": 192177296.143578,
+      "restoration": 196686377.593866
+     },
+     "c2_10bps": {
+      "absorption": 88951696.747697,
+      "restoration": 162914314.7028
+     },
+     "c2_50bps": {
+      "absorption": 127519836.097188,
+      "restoration": 193653187.33496
+     },
+     "c2_100bps": {
+      "absorption": 133545528.48589,
+      "restoration": 197460139.630118
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-03T06:25:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0004
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 156854897.327416,
+      "restoration": 166289229.608384
+     },
+     "c0_50bps": {
+      "absorption": 196701891.660037,
+      "restoration": 203718699.411074
+     },
+     "c0_100bps": {
+      "absorption": 202785141.367364,
+      "restoration": 208569798.936758
+     },
+     "c2_10bps": {
+      "absorption": 69369700.345798,
+      "restoration": 165804932.207636
+     },
+     "c2_50bps": {
+      "absorption": 103375702.558336,
+      "restoration": 206038326.763066
+     },
+     "c2_100bps": {
+      "absorption": 109707930.733742,
+      "restoration": 209853607.715576
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-03T12:30:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 157636709.066328,
+      "restoration": 149659889.920038
+     },
+     "c0_50bps": {
+      "absorption": 193655305.44572,
+      "restoration": 186133342.990611
+     },
+     "c0_100bps": {
+      "absorption": 199232968.41318,
+      "restoration": 190836497.465285
+     },
+     "c2_10bps": {
+      "absorption": 92121709.622066,
+      "restoration": 156076111.411477
+     },
+     "c2_50bps": {
+      "absorption": 129927444.183632,
+      "restoration": 187737701.825267
+     },
+     "c2_100bps": {
+      "absorption": 135877971.833938,
+      "restoration": 191660212.201102
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-03T18:34:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 153046722.402151,
+      "restoration": 149125528.384435
+     },
+     "c0_50bps": {
+      "absorption": 188889313.819953,
+      "restoration": 184782717.826351
+     },
+     "c0_100bps": {
+      "absorption": 194420710.501071,
+      "restoration": 189386061.752719
+     },
+     "c2_10bps": {
+      "absorption": 98575863.079259,
+      "restoration": 153761933.612766
+     },
+     "c2_50bps": {
+      "absorption": 135281564.355845,
+      "restoration": 186085019.048555
+     },
+     "c2_100bps": {
+      "absorption": 141095884.745899,
+      "restoration": 190062119.571588
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-04T00:41:11+00:00",
+    "valuation": [
+     0.9987,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 155565864.107753
+     },
+     "c0_50bps": {
+      "absorption": 175927804.604751,
+      "restoration": 168030190.252627
+     },
+     "c0_100bps": {
+      "absorption": 183480585.547138,
+      "restoration": 171234132.502563
+     },
+     "c2_10bps": {
+      "absorption": 123637034.444124,
+      "restoration": 136931852.067427
+     },
+     "c2_50bps": {
+      "absorption": 162756528.69526,
+      "restoration": 166721313.451163
+     },
+     "c2_100bps": {
+      "absorption": 168224967.476233,
+      "restoration": 170946462.016982
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-04T06:45:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 144683101.358459,
+      "restoration": 131826087.800381
+     },
+     "c0_50bps": {
+      "absorption": 178430476.210183,
+      "restoration": 166967453.683605
+     },
+     "c0_100bps": {
+      "absorption": 183678850.440758,
+      "restoration": 171525132.816666
+     },
+     "c2_10bps": {
+      "absorption": 133747106.96596,
+      "restoration": 129457455.514982
+     },
+     "c2_50bps": {
+      "absorption": 165090370.104447,
+      "restoration": 167130354.610382
+     },
+     "c2_100bps": {
+      "absorption": 170303896.850894,
+      "restoration": 171647504.733578
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-04T12:51:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 144333736.118428,
+      "restoration": 133153499.907624
+     },
+     "c0_50bps": {
+      "absorption": 178264148.415727,
+      "restoration": 168191736.77662
+     },
+     "c0_100bps": {
+      "absorption": 183532882.378934,
+      "restoration": 172736396.623041
+     },
+     "c2_10bps": {
+      "absorption": 136001482.291454,
+      "restoration": 125584155.333079
+     },
+     "c2_50bps": {
+      "absorption": 164570819.01778,
+      "restoration": 168184429.318567
+     },
+     "c2_100bps": {
+      "absorption": 169683599.778744,
+      "restoration": 172820550.154727
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-04T18:55:11+00:00",
+    "valuation": [
+     0.9993,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 70277147.201186,
+      "restoration": 154232720.234218
+     },
+     "c0_50bps": {
+      "absorption": 176596457.723021,
+      "restoration": 172586466.912303
+     },
+     "c0_100bps": {
+      "absorption": 183009638.102182,
+      "restoration": 176293153.440392
+     },
+     "c2_10bps": {
+      "absorption": 133927347.051462,
+      "restoration": 129393889.676406
+     },
+     "c2_50bps": {
+      "absorption": 163010155.764049,
+      "restoration": 171508468.797328
+     },
+     "c2_100bps": {
+      "absorption": 168189011.64198,
+      "restoration": 176097888.202312
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-05T00:59:23+00:00",
+    "valuation": [
+     0.9936,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 175419755.706054
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 177552422.675526
+     },
+     "c0_100bps": {
+      "absorption": 174543775.405931,
+      "restoration": 178757491.439547
+     },
+     "c2_10bps": {
+      "absorption": 130454164.888396,
+      "restoration": 135666039.591265
+     },
+     "c2_50bps": {
+      "absorption": 162739084.064223,
+      "restoration": 172675359.334742
+     },
+     "c2_100bps": {
+      "absorption": 168065580.867206,
+      "restoration": 177121261.264055
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-05T07:02:23+00:00",
+    "valuation": [
+     0.9996,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 117397962.437246,
+      "restoration": 149647330.529822
+     },
+     "c0_50bps": {
+      "absorption": 176531886.424366,
+      "restoration": 172902417.635565
+     },
+     "c0_100bps": {
+      "absorption": 182441972.606048,
+      "restoration": 176904621.871605
+     },
+     "c2_10bps": {
+      "absorption": 132809441.028014,
+      "restoration": 130471477.045704
+     },
+     "c2_50bps": {
+      "absorption": 161993930.404322,
+      "restoration": 172280028.941249
+     },
+     "c2_100bps": {
+      "absorption": 167181504.539419,
+      "restoration": 176837962.254943
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-05T13:07:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 141647232.426616,
+      "restoration": 139721430.283867
+     },
+     "c0_50bps": {
+      "absorption": 176486832.815574,
+      "restoration": 174109462.627162
+     },
+     "c0_100bps": {
+      "absorption": 181852183.385721,
+      "restoration": 178573128.325348
+     },
+     "c2_10bps": {
+      "absorption": 124290119.392282,
+      "restoration": 142095905.605144
+     },
+     "c2_50bps": {
+      "absorption": 160508478.678518,
+      "restoration": 174519903.380911
+     },
+     "c2_100bps": {
+      "absorption": 165990077.397562,
+      "restoration": 178774051.404779
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-05T19:12:11+00:00",
+    "valuation": [
+     1.0001,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 144994417.891411,
+      "restoration": 142186735.35834
+     },
+     "c0_50bps": {
+      "absorption": 177165574.949024,
+      "restoration": 180629303.732486
+     },
+     "c0_100bps": {
+      "absorption": 182516156.352588,
+      "restoration": 185195136.345999
+     },
+     "c2_10bps": {
+      "absorption": 125225491.702482,
+      "restoration": 140836362.830497
+     },
+     "c2_50bps": {
+      "absorption": 155887468.338019,
+      "restoration": 181025916.471867
+     },
+     "c2_100bps": {
+      "absorption": 161258544.424726,
+      "restoration": 185429446.116188
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-06T01:16:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 142422396.335124,
+      "restoration": 141027786.766574
+     },
+     "c0_50bps": {
+      "absorption": 177604691.925079,
+      "restoration": 175664439.830177
+     },
+     "c0_100bps": {
+      "absorption": 183020178.024243,
+      "restoration": 180161585.162265
+     },
+     "c2_10bps": {
+      "absorption": 129872374.425964,
+      "restoration": 139012677.960384
+     },
+     "c2_50bps": {
+      "absorption": 162649553.01004,
+      "restoration": 175877973.881858
+     },
+     "c2_100bps": {
+      "absorption": 168039872.086614,
+      "restoration": 180308053.073226
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-06T07:20:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 141514940.498095,
+      "restoration": 143465222.665945
+     },
+     "c0_50bps": {
+      "absorption": 177066156.235055,
+      "restoration": 177911358.875726
+     },
+     "c0_100bps": {
+      "absorption": 182522635.886463,
+      "restoration": 182385332.244872
+     },
+     "c2_10bps": {
+      "absorption": 124533896.026438,
+      "restoration": 145790956.047477
+     },
+     "c2_50bps": {
+      "absorption": 161446059.390834,
+      "restoration": 178314389.326445
+     },
+     "c2_100bps": {
+      "absorption": 167017357.507497,
+      "restoration": 182582683.189303
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-06T13:24:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 140310928.467218,
+      "restoration": 156423322.394806
+     },
+     "c0_50bps": {
+      "absorption": 177579807.211187,
+      "restoration": 190253756.349542
+     },
+     "c0_100bps": {
+      "absorption": 183234393.102649,
+      "restoration": 194646065.526305
+     },
+     "c2_10bps": {
+      "absorption": 106794183.663651,
+      "restoration": 161090869.844872
+     },
+     "c2_50bps": {
+      "absorption": 146928856.422713,
+      "restoration": 191075880.10777
+     },
+     "c2_100bps": {
+      "absorption": 152827813.764363,
+      "restoration": 195049337.861824
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-06T19:29:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 140539768.221308,
+      "restoration": 155418768.138744
+     },
+     "c0_50bps": {
+      "absorption": 177687760.586061,
+      "restoration": 189327953.677187
+     },
+     "c0_100bps": {
+      "absorption": 183329504.034101,
+      "restoration": 193730593.979787
+     },
+     "c2_10bps": {
+      "absorption": 113149055.129012,
+      "restoration": 155914363.33092
+     },
+     "c2_50bps": {
+      "absorption": 148904080.103745,
+      "restoration": 189938834.32758
+     },
+     "c2_100bps": {
+      "absorption": 154627538.747967,
+      "restoration": 194069313.263599
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-07T01:33:35+00:00",
+    "valuation": [
+     1.004,
+     1.0,
+     0.9998
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 177062799.671958,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 181782439.403482,
+      "restoration": 139020568.882988
+     },
+     "c0_100bps": {
+      "absorption": 184505531.48644,
+      "restoration": 175353621.181119
+     },
+     "c2_10bps": {
+      "absorption": 118415589.853769,
+      "restoration": 147652916.781484
+     },
+     "c2_50bps": {
+      "absorption": 164346345.862759,
+      "restoration": 174534389.740848
+     },
+     "c2_100bps": {
+      "absorption": 170113593.798726,
+      "restoration": 178631896.227148
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-07T07:38:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 140037929.362352,
+      "restoration": 150924703.136339
+     },
+     "c0_50bps": {
+      "absorption": 176376538.391324,
+      "restoration": 184685818.078072
+     },
+     "c0_100bps": {
+      "absorption": 181912669.260541,
+      "restoration": 189067845.697591
+     },
+     "c2_10bps": {
+      "absorption": 105915825.089559,
+      "restoration": 158232468.971345
+     },
+     "c2_50bps": {
+      "absorption": 149501595.34955,
+      "restoration": 185549596.144249
+     },
+     "c2_100bps": {
+      "absorption": 155395239.246348,
+      "restoration": 189454382.723027
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-07T13:42:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 141015845.621118,
+      "restoration": 147220198.552607
+     },
+     "c0_50bps": {
+      "absorption": 176746605.518425,
+      "restoration": 181145462.530615
+     },
+     "c0_100bps": {
+      "absorption": 182211385.530086,
+      "restoration": 185546343.85619
+     },
+     "c2_10bps": {
+      "absorption": 108241669.945318,
+      "restoration": 154380784.853251
+     },
+     "c2_50bps": {
+      "absorption": 150981622.495212,
+      "restoration": 181976047.279248
+     },
+     "c2_100bps": {
+      "absorption": 156789202.39409,
+      "restoration": 185916125.056735
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-07T19:47:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 141728482.026415,
+      "restoration": 148561992.022076
+     },
+     "c0_50bps": {
+      "absorption": 177626743.297186,
+      "restoration": 182549587.25645
+     },
+     "c0_100bps": {
+      "absorption": 183114558.764452,
+      "restoration": 186956910.25981
+     },
+     "c2_10bps": {
+      "absorption": 105561944.297368,
+      "restoration": 156153749.803751
+     },
+     "c2_50bps": {
+      "absorption": 148824540.126017,
+      "restoration": 183462248.846284
+     },
+     "c2_100bps": {
+      "absorption": 154682362.822819,
+      "restoration": 187367337.23363
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-08T01:50:59+00:00",
+    "valuation": [
+     1.0001,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 146279118.955188,
+      "restoration": 134156117.655555
+     },
+     "c0_50bps": {
+      "absorption": 177381298.468663,
+      "restoration": 173011469.738296
+     },
+     "c0_100bps": {
+      "absorption": 182594728.6279,
+      "restoration": 177623605.728675
+     },
+     "c2_10bps": {
+      "absorption": 123458835.09967,
+      "restoration": 141314140.402433
+     },
+     "c2_50bps": {
+      "absorption": 159597248.35974,
+      "restoration": 173646119.854863
+     },
+     "c2_100bps": {
+      "absorption": 165066329.933736,
+      "restoration": 177890449.241263
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-08T07:55:35+00:00",
+    "valuation": [
+     1.0001,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 146514309.990998,
+      "restoration": 133661561.484899
+     },
+     "c0_50bps": {
+      "absorption": 177543047.206117,
+      "restoration": 172562396.648736
+     },
+     "c0_100bps": {
+      "absorption": 182747507.215178,
+      "restoration": 177179274.826238
+     },
+     "c2_10bps": {
+      "absorption": 118887945.97317,
+      "restoration": 144350703.709998
+     },
+     "c2_50bps": {
+      "absorption": 159394784.784046,
+      "restoration": 173367754.816063
+     },
+     "c2_100bps": {
+      "absorption": 164995779.40981,
+      "restoration": 177490647.501026
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-08T13:59:47+00:00",
+    "valuation": [
+     0.998,
+     1.0,
+     0.9998
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 165570869.606009
+     },
+     "c0_50bps": {
+      "absorption": 170537178.16691,
+      "restoration": 174022891.117438
+     },
+     "c0_100bps": {
+      "absorption": 180506243.261286,
+      "restoration": 176683403.056673
+     },
+     "c2_10bps": {
+      "absorption": 113890889.703601,
+      "restoration": 145962273.723497
+     },
+     "c2_50bps": {
+      "absorption": 159483912.854027,
+      "restoration": 172215491.349164
+     },
+     "c2_100bps": {
+      "absorption": 165193963.526091,
+      "restoration": 176223214.540634
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-08T20:04:47+00:00",
+    "valuation": [
+     0.998,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 156250248.288555
+     },
+     "c0_50bps": {
+      "absorption": 170763933.667844,
+      "restoration": 164901966.765213
+     },
+     "c0_100bps": {
+      "absorption": 180469571.000191,
+      "restoration": 167625547.198572
+     },
+     "c2_10bps": {
+      "absorption": 131482359.192151,
+      "restoration": 131822793.168302
+     },
+     "c2_50bps": {
+      "absorption": 169387718.263815,
+      "restoration": 162631998.647152
+     },
+     "c2_100bps": {
+      "absorption": 174748750.518688,
+      "restoration": 166985153.445244
+     }
+    }
+   }
+  ],
+  "event": [
+   {
+    "timestamp_utc": "2023-03-10T00:00:11+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     0.9998
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 114752655.634762,
+      "restoration": 117560308.772039
+     },
+     "c0_50bps": {
+      "absorption": 152593254.383714,
+      "restoration": 148163720.30046
+     },
+     "c0_100bps": {
+      "absorption": 157959434.002797,
+      "restoration": 152557933.734108
+     },
+     "c2_10bps": {
+      "absorption": 166561812.622205,
+      "restoration": 114402056.534806
+     },
+     "c2_50bps": {
+      "absorption": 204350321.808228,
+      "restoration": 147093452.473711
+     },
+     "c2_100bps": {
+      "absorption": 209476089.225135,
+      "restoration": 151984774.965734
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T06:06:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 121104644.267239,
+      "restoration": 120590453.223146
+     },
+     "c0_50bps": {
+      "absorption": 155239212.954308,
+      "restoration": 154129717.009205
+     },
+     "c0_100bps": {
+      "absorption": 160495224.956995,
+      "restoration": 158564306.976668
+     },
+     "c2_10bps": {
+      "absorption": 168807331.894596,
+      "restoration": 109352343.871965
+     },
+     "c2_50bps": {
+      "absorption": 196579952.587314,
+      "restoration": 152897770.530284
+     },
+     "c2_100bps": {
+      "absorption": 201444349.711005,
+      "restoration": 158011505.97928
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T12:14:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 125665192.266985,
+      "restoration": 125568491.957486
+     },
+     "c0_50bps": {
+      "absorption": 159897586.436584,
+      "restoration": 159110397.882591
+     },
+     "c0_100bps": {
+      "absorption": 165162807.072371,
+      "restoration": 163521662.330793
+     },
+     "c2_10bps": {
+      "absorption": 152135524.310932,
+      "restoration": 125458826.887815
+     },
+     "c2_50bps": {
+      "absorption": 187982135.867937,
+      "restoration": 158590626.475922
+     },
+     "c2_100bps": {
+      "absorption": 193178915.747272,
+      "restoration": 163223898.088254
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T18:19:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 126833352.779951,
+      "restoration": 156648634.597069
+     },
+     "c0_50bps": {
+      "absorption": 163897432.872671,
+      "restoration": 188045702.699849
+     },
+     "c0_100bps": {
+      "absorption": 169453089.89568,
+      "restoration": 192138376.661543
+     },
+     "c2_10bps": {
+      "absorption": 100215902.249379,
+      "restoration": 162769024.899877
+     },
+     "c2_50bps": {
+      "absorption": 144015421.968646,
+      "restoration": 188727182.358564
+     },
+     "c2_100bps": {
+      "absorption": 149881334.470066,
+      "restoration": 192437680.596609
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T00:23:59+00:00",
+    "valuation": [
+     0.9948,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 203570870.300427
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 212608920.456659
+     },
+     "c0_100bps": {
+      "absorption": 192289227.308954,
+      "restoration": 217342153.716767
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 111840813.984373
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 219744444.401809
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 224276075.258774
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T06:28:47+00:00",
+    "valuation": [
+     0.9278,
+     1.0,
+     1.0028
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 231932662.055499
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 232106455.512309
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 232300093.597212
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 215794184.445203
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 231355213.292448
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 233319020.950819
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T12:32:23+00:00",
+    "valuation": [
+     0.9136,
+     1.0,
+     1.0055
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 326786684.248825
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 326834416.547785
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 326888577.316577
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 164442239.020972
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 314697935.235328
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 324105691.052246
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T18:37:35+00:00",
+    "valuation": [
+     0.9719,
+     1.0,
+     1.0094
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 322981618.758038
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 323310656.581813
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 323629096.554652
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 78055929.156141
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 154212903.30058
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 316103155.922858
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T00:42:11+00:00",
+    "valuation": [
+     0.9669,
+     1.0,
+     1.0077
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 194602025.252862
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 195208176.945878
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 195809310.824391
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 49919219.31684
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 125185654.050529
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 195649814.770498
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T06:48:23+00:00",
+    "valuation": [
+     0.9769,
+     1.0,
+     1.0086
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 191412789.381441
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 192740670.970015
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 193956662.44242
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 51926362.722211
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 112163257.741671
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 195292107.989708
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T12:52:11+00:00",
+    "valuation": [
+     0.9615,
+     1.0,
+     1.007
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 207148678.296672
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 207613169.229417
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 208087249.096033
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 65098009.816639
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 171244044.330174
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 208490571.335385
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T18:55:23+00:00",
+    "valuation": [
+     0.9768,
+     1.0,
+     1.0145
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 211453661.467255
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 212472171.882394
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 213405937.626493
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 21437012.960545
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 34185512.859621
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 79992345.346048
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T01:00:47+00:00",
+    "valuation": [
+     0.9973,
+     1.0,
+     1.0085
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 160284151.033856
+     },
+     "c0_50bps": {
+      "absorption": 142361337.478991,
+      "restoration": 175810255.045464
+     },
+     "c0_100bps": {
+      "absorption": 174936913.07531,
+      "restoration": 181756835.434499
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 11926607.324238
+     },
+     "c2_50bps": {
+      "absorption": 810708.982821,
+      "restoration": 43308492.755625
+     },
+     "c2_100bps": {
+      "absorption": 5445267.664427,
+      "restoration": 182994619.556723
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T07:03:59+00:00",
+    "valuation": [
+     0.9669,
+     1.0,
+     1.004
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 188740378.690254
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 189090069.786192
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 189436344.849211
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 50665191.622412
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 181927658.444141
+     },
+     "c2_100bps": {
+      "absorption": 2046575.48997,
+      "restoration": 189131321.587687
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T13:07:11+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 172665004.50052
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 175856491.43524
+     },
+     "c0_100bps": {
+      "absorption": 148569877.984919,
+      "restoration": 177858151.086872
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 100148119.294695
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 177416438.973745
+     },
+     "c2_100bps": {
+      "absorption": 9472754.260076,
+      "restoration": 180642720.335384
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T19:11:23+00:00",
+    "valuation": [
+     1.001,
+     1.0,
+     1.0034
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 138361323.928813,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 163249756.709536,
+      "restoration": 170670944.234106
+     },
+     "c0_100bps": {
+      "absorption": 169939526.417723,
+      "restoration": 180376547.576665
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 20830674.220709
+     },
+     "c2_50bps": {
+      "absorption": 13900956.0442,
+      "restoration": 178757920.686235
+     },
+     "c2_100bps": {
+      "absorption": 19899880.86493,
+      "restoration": 185493924.677019
+     }
+    }
+   }
+  ],
+  "recovery": [
+   {
+    "timestamp_utc": "2023-03-14T00:00:11+00:00",
+    "valuation": [
+     0.9922,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 171352881.637426
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 174109603.431818
+     },
+     "c0_100bps": {
+      "absorption": 152232549.929197,
+      "restoration": 175825256.236952
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 35892208.417998
+     },
+     "c2_50bps": {
+      "absorption": 10832798.180325,
+      "restoration": 172308171.60082
+     },
+     "c2_100bps": {
+      "absorption": 17690448.689545,
+      "restoration": 177460904.227595
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-14T06:05:11+00:00",
+    "valuation": [
+     0.9977,
+     1.0,
+     1.0044
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 161130252.428192
+     },
+     "c0_50bps": {
+      "absorption": 154181451.755562,
+      "restoration": 174092256.206165
+     },
+     "c0_100bps": {
+      "absorption": 173930226.300163,
+      "restoration": 178588435.343074
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 14274795.656501
+     },
+     "c2_50bps": {
+      "absorption": 10908176.659764,
+      "restoration": 168568151.132174
+     },
+     "c2_100bps": {
+      "absorption": 16480786.710907,
+      "restoration": 181878843.822921
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-14T12:09:23+00:00",
+    "valuation": [
+     0.9986,
+     1.0,
+     1.0044
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 151706658.448042
+     },
+     "c0_50bps": {
+      "absorption": 158285624.631404,
+      "restoration": 171011621.342379
+     },
+     "c0_100bps": {
+      "absorption": 171795448.876528,
+      "restoration": 176359356.571633
+     },
+     "c2_10bps": {
+      "absorption": 38806.568382,
+      "restoration": 13105617.369052
+     },
+     "c2_50bps": {
+      "absorption": 11387806.556571,
+      "restoration": 166727789.798825
+     },
+     "c2_100bps": {
+      "absorption": 16808515.15103,
+      "restoration": 180002724.57869
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-14T18:11:59+00:00",
+    "valuation": [
+     0.9966,
+     1.0,
+     1.0014
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 163769367.753374
+     },
+     "c0_50bps": {
+      "absorption": 144302445.207836,
+      "restoration": 171331855.504986
+     },
+     "c0_100bps": {
+      "absorption": 175599893.846351,
+      "restoration": 174487669.690851
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 114333376.568895
+     },
+     "c2_50bps": {
+      "absorption": 13294130.570443,
+      "restoration": 174521290.759871
+     },
+     "c2_100bps": {
+      "absorption": 21776129.984688,
+      "restoration": 177442683.741655
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-15T00:16:47+00:00",
+    "valuation": [
+     0.9991,
+     1.0,
+     1.0021
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 149054903.284638
+     },
+     "c0_50bps": {
+      "absorption": 164301278.441239,
+      "restoration": 172496918.844607
+     },
+     "c0_100bps": {
+      "absorption": 174614894.219595,
+      "restoration": 177894700.936096
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 58126520.89766
+     },
+     "c2_50bps": {
+      "absorption": 14766195.591716,
+      "restoration": 178070113.875104
+     },
+     "c2_100bps": {
+      "absorption": 22088971.66381,
+      "restoration": 181819663.7407
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-15T06:21:47+00:00",
+    "valuation": [
+     0.999,
+     1.0,
+     1.0046
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 153451558.013128
+     },
+     "c0_50bps": {
+      "absorption": 159956770.157013,
+      "restoration": 179526379.508401
+     },
+     "c0_100bps": {
+      "absorption": 173220831.777148,
+      "restoration": 185921886.679362
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 17659493.997139
+     },
+     "c2_50bps": {
+      "absorption": 8066853.079443,
+      "restoration": 175168690.041571
+     },
+     "c2_100bps": {
+      "absorption": 13971037.79312,
+      "restoration": 190366398.015747
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-15T12:28:11+00:00",
+    "valuation": [
+     0.9989,
+     1.0,
+     1.0051
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 152049228.502246
+     },
+     "c0_50bps": {
+      "absorption": 164120831.982328,
+      "restoration": 176096685.638945
+     },
+     "c0_100bps": {
+      "absorption": 177002020.585027,
+      "restoration": 182160923.492312
+     },
+     "c2_10bps": {
+      "absorption": 1547560.939128,
+      "restoration": 8861880.444279
+     },
+     "c2_50bps": {
+      "absorption": 11513978.966045,
+      "restoration": 156340869.002833
+     },
+     "c2_100bps": {
+      "absorption": 16639019.497039,
+      "restoration": 185880024.851111
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-15T18:31:59+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     1.0021
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 126017130.998474,
+      "restoration": 121333290.436717
+     },
+     "c0_50bps": {
+      "absorption": 174653619.057779,
+      "restoration": 162825243.964728
+     },
+     "c0_100bps": {
+      "absorption": 181724540.847815,
+      "restoration": 168969134.855518
+     },
+     "c2_10bps": {
+      "absorption": 5449043.163377,
+      "restoration": 37319427.984071
+     },
+     "c2_50bps": {
+      "absorption": 24149716.310504,
+      "restoration": 168455859.844685
+     },
+     "c2_100bps": {
+      "absorption": 30340932.690293,
+      "restoration": 172587348.657973
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-16T00:36:35+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     1.0039
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 120808745.387595,
+      "restoration": 122233559.0641
+     },
+     "c0_50bps": {
+      "absorption": 174741484.90216,
+      "restoration": 167319375.240051
+     },
+     "c0_100bps": {
+      "absorption": 182660557.664788,
+      "restoration": 174136533.541812
+     },
+     "c2_10bps": {
+      "absorption": 9173645.44142,
+      "restoration": 4907891.40019
+     },
+     "c2_50bps": {
+      "absorption": 20281031.318589,
+      "restoration": 167300217.351818
+     },
+     "c2_100bps": {
+      "absorption": 25305368.486735,
+      "restoration": 177824329.173606
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-16T06:39:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0035
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 129104519.524654,
+      "restoration": 116853835.891566
+     },
+     "c0_50bps": {
+      "absorption": 176834771.912243,
+      "restoration": 166514990.412738
+     },
+     "c0_100bps": {
+      "absorption": 184418268.317933,
+      "restoration": 173474325.498235
+     },
+     "c2_10bps": {
+      "absorption": 8598032.429453,
+      "restoration": 8531119.432737
+     },
+     "c2_50bps": {
+      "absorption": 20965462.161529,
+      "restoration": 169168674.468782
+     },
+     "c2_100bps": {
+      "absorption": 26260596.402469,
+      "restoration": 177314130.178461
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-16T12:45:59+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0032
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 169584408.250502
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 172021712.17959
+     },
+     "c0_100bps": {
+      "absorption": 162253551.04674,
+      "restoration": 173543955.161649
+     },
+     "c2_10bps": {
+      "absorption": 7855397.374299,
+      "restoration": 12245548.282704
+     },
+     "c2_50bps": {
+      "absorption": 21298634.183059,
+      "restoration": 167418223.490385
+     },
+     "c2_100bps": {
+      "absorption": 26799756.624046,
+      "restoration": 174330834.879398
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-16T18:49:59+00:00",
+    "valuation": [
+     0.9982,
+     1.0,
+     1.0015
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 148273790.643659
+     },
+     "c0_50bps": {
+      "absorption": 172845955.372444,
+      "restoration": 160949037.219189
+     },
+     "c0_100bps": {
+      "absorption": 184109957.193065,
+      "restoration": 164782973.476731
+     },
+     "c2_10bps": {
+      "absorption": 4321890.248002,
+      "restoration": 71796669.545007
+     },
+     "c2_50bps": {
+      "absorption": 27489883.815456,
+      "restoration": 163958899.994197
+     },
+     "c2_100bps": {
+      "absorption": 34050605.239738,
+      "restoration": 167383998.547641
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-17T00:52:47+00:00",
+    "valuation": [
+     0.9969,
+     1.0,
+     1.0007
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 179269028.271103
+     },
+     "c0_50bps": {
+      "absorption": 134714149.098571,
+      "restoration": 185664599.155703
+     },
+     "c0_100bps": {
+      "absorption": 158606839.525576,
+      "restoration": 188203644.858919
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 161034267.809195
+     },
+     "c2_50bps": {
+      "absorption": 25225142.950038,
+      "restoration": 187750507.016981
+     },
+     "c2_100bps": {
+      "absorption": 33409766.117185,
+      "restoration": 190137632.652326
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-17T06:55:59+00:00",
+    "valuation": [
+     0.9973,
+     1.0,
+     1.0016
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 186000912.270537
+     },
+     "c0_50bps": {
+      "absorption": 148736183.684803,
+      "restoration": 194464271.632684
+     },
+     "c0_100bps": {
+      "absorption": 169899754.841397,
+      "restoration": 197606358.054482
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 86216405.397203
+     },
+     "c2_50bps": {
+      "absorption": 23120815.04834,
+      "restoration": 196631957.700961
+     },
+     "c2_100bps": {
+      "absorption": 30657203.99106,
+      "restoration": 199967727.349551
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-17T13:00:59+00:00",
+    "valuation": [
+     0.9982,
+     1.0,
+     1.0011
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 170919663.441903
+     },
+     "c0_50bps": {
+      "absorption": 168080156.857294,
+      "restoration": 184482881.742261
+     },
+     "c0_100bps": {
+      "absorption": 181827430.907011,
+      "restoration": 188616851.069436
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 141955844.625814
+     },
+     "c2_50bps": {
+      "absorption": 20026945.791242,
+      "restoration": 188989955.226919
+     },
+     "c2_100bps": {
+      "absorption": 28695478.284794,
+      "restoration": 191840599.991962
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-17T19:05:47+00:00",
+    "valuation": [
+     1.0004,
+     1.0,
+     1.0015
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 159968195.119009,
+      "restoration": 89078032.115506
+     },
+     "c0_50bps": {
+      "absorption": 186846666.972864,
+      "restoration": 162355448.887971
+     },
+     "c0_100bps": {
+      "absorption": 192453332.103197,
+      "restoration": 168923696.419092
+     },
+     "c2_10bps": {
+      "absorption": 16903248.267595,
+      "restoration": 55689202.434604
+     },
+     "c2_50bps": {
+      "absorption": 38030080.932398,
+      "restoration": 168378001.25445
+     },
+     "c2_100bps": {
+      "absorption": 44052950.376069,
+      "restoration": 172154141.009258
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-18T01:10:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0022
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 140285310.843579,
+      "restoration": 122402096.776168
+     },
+     "c0_50bps": {
+      "absorption": 185976645.506825,
+      "restoration": 171045016.56893
+     },
+     "c0_100bps": {
+      "absorption": 193195626.984156,
+      "restoration": 177722749.915406
+     },
+     "c2_10bps": {
+      "absorption": 7672092.742864,
+      "restoration": 33013759.587754
+     },
+     "c2_50bps": {
+      "absorption": 26391021.649116,
+      "restoration": 176946705.928926
+     },
+     "c2_100bps": {
+      "absorption": 32738607.71458,
+      "restoration": 181544140.075793
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-18T07:14:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0027
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 134043885.64275,
+      "restoration": 129150989.198689
+     },
+     "c0_50bps": {
+      "absorption": 182369239.241037,
+      "restoration": 177698221.662201
+     },
+     "c0_100bps": {
+      "absorption": 189951261.235797,
+      "restoration": 184416415.192061
+     },
+     "c2_10bps": {
+      "absorption": 9613624.789529,
+      "restoration": 18461539.83769
+     },
+     "c2_50bps": {
+      "absorption": 25545414.533529,
+      "restoration": 182507326.366665
+     },
+     "c2_100bps": {
+      "absorption": 31525362.26461,
+      "restoration": 188162641.498515
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-18T13:18:59+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0021
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 183142745.436561
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 185463180.832071
+     },
+     "c0_100bps": {
+      "absorption": 164901994.419209,
+      "restoration": 186911808.490534
+     },
+     "c2_10bps": {
+      "absorption": 4998310.587344,
+      "restoration": 41365897.636441
+     },
+     "c2_50bps": {
+      "absorption": 25188399.649158,
+      "restoration": 183467841.139149
+     },
+     "c2_100bps": {
+      "absorption": 31862200.497616,
+      "restoration": 187797304.813798
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-18T19:22:35+00:00",
+    "valuation": [
+     1.0004,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 145564588.105033,
+      "restoration": 96951159.874422
+     },
+     "c0_50bps": {
+      "absorption": 182134116.384905,
+      "restoration": 179745187.284831
+     },
+     "c0_100bps": {
+      "absorption": 189627591.684989,
+      "restoration": 187939967.476209
+     },
+     "c2_10bps": {
+      "absorption": 3252064.914435,
+      "restoration": 23904809.238676
+     },
+     "c2_50bps": {
+      "absorption": 19782645.372344,
+      "restoration": 186642621.589628
+     },
+     "c2_100bps": {
+      "absorption": 26189975.034038,
+      "restoration": 192573201.264158
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-19T01:25:59+00:00",
+    "valuation": [
+     1.0002,
+     1.0,
+     1.0031
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 143251801.116779,
+      "restoration": 115217049.093179
+     },
+     "c0_50bps": {
+      "absorption": 184093133.064258,
+      "restoration": 177784734.82463
+     },
+     "c0_100bps": {
+      "absorption": 191510277.495913,
+      "restoration": 185164142.28889
+     },
+     "c2_10bps": {
+      "absorption": 10012631.962403,
+      "restoration": 12018487.394479
+     },
+     "c2_50bps": {
+      "absorption": 24284203.878389,
+      "restoration": 182240389.619964
+     },
+     "c2_100bps": {
+      "absorption": 30030070.404742,
+      "restoration": 189136369.147944
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-19T07:30:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0024
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 133158415.156844,
+      "restoration": 130970367.538447
+     },
+     "c0_50bps": {
+      "absorption": 183068787.734578,
+      "restoration": 180520883.047582
+     },
+     "c0_100bps": {
+      "absorption": 190902089.241577,
+      "restoration": 187413216.000997
+     },
+     "c2_10bps": {
+      "absorption": 4762209.214935,
+      "restoration": 32379828.557271
+     },
+     "c2_50bps": {
+      "absorption": 23458598.811211,
+      "restoration": 186590672.875477
+     },
+     "c2_100bps": {
+      "absorption": 30055369.435141,
+      "restoration": 191463293.012317
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-19T13:34:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.002
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 133595324.217932,
+      "restoration": 129354410.915156
+     },
+     "c0_50bps": {
+      "absorption": 184093982.763647,
+      "restoration": 179944655.7788
+     },
+     "c0_100bps": {
+      "absorption": 192046891.846918,
+      "restoration": 187007163.198823
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 56818742.971611
+     },
+     "c2_50bps": {
+      "absorption": 21066235.595941,
+      "restoration": 187306808.143139
+     },
+     "c2_100bps": {
+      "absorption": 28425334.78887,
+      "restoration": 191380601.993608
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-19T19:39:47+00:00",
+    "valuation": [
+     0.9994,
+     1.0,
+     1.003
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 73632090.01098,
+      "restoration": 150967435.402957
+     },
+     "c0_50bps": {
+      "absorption": 181868037.032238,
+      "restoration": 180253477.88289
+     },
+     "c0_100bps": {
+      "absorption": 191040972.430369,
+      "restoration": 186101016.952464
+     },
+     "c2_10bps": {
+      "absorption": 9725466.182839,
+      "restoration": 13743303.662213
+     },
+     "c2_50bps": {
+      "absorption": 24473110.122689,
+      "restoration": 182986080.612186
+     },
+     "c2_100bps": {
+      "absorption": 30311600.951216,
+      "restoration": 189542359.021723
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-20T01:44:11+00:00",
+    "valuation": [
+     0.9994,
+     1.0,
+     1.003
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 73833041.042801,
+      "restoration": 146154116.888406
+     },
+     "c0_50bps": {
+      "absorption": 179016648.513283,
+      "restoration": 175043596.008202
+     },
+     "c0_100bps": {
+      "absorption": 187961712.187224,
+      "restoration": 180810871.911294
+     },
+     "c2_10bps": {
+      "absorption": 9305192.377953,
+      "restoration": 13668476.075694
+     },
+     "c2_50bps": {
+      "absorption": 23751307.856343,
+      "restoration": 177796176.131467
+     },
+     "c2_100bps": {
+      "absorption": 29471141.104516,
+      "restoration": 184219575.239101
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-20T07:47:23+00:00",
+    "valuation": [
+     1.0003,
+     1.0,
+     1.0034
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 145198784.386926,
+      "restoration": 100706338.67017
+     },
+     "c0_50bps": {
+      "absorption": 182731603.991078,
+      "restoration": 172766030.475543
+     },
+     "c0_100bps": {
+      "absorption": 190026915.035816,
+      "restoration": 180577746.971237
+     },
+     "c2_10bps": {
+      "absorption": 8623266.862775,
+      "restoration": 10116418.39217
+     },
+     "c2_50bps": {
+      "absorption": 21815259.465766,
+      "restoration": 176844654.055877
+     },
+     "c2_100bps": {
+      "absorption": 27378809.57218,
+      "restoration": 184763010.887465
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-20T13:50:23+00:00",
+    "valuation": [
+     0.9987,
+     1.0,
+     1.0028
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 157495945.348927
+     },
+     "c0_50bps": {
+      "absorption": 176738364.311506,
+      "restoration": 176906160.817657
+     },
+     "c0_100bps": {
+      "absorption": 188522911.260963,
+      "restoration": 182040272.765855
+     },
+     "c2_10bps": {
+      "absorption": 2397965.935614,
+      "restoration": 26099336.640126
+     },
+     "c2_50bps": {
+      "absorption": 19217371.256877,
+      "restoration": 179977091.96307
+     },
+     "c2_100bps": {
+      "absorption": 25625397.600769,
+      "restoration": 185580337.370464
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-20T19:53:47+00:00",
+    "valuation": [
+     0.998,
+     1.0,
+     1.002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 167841299.714944
+     },
+     "c0_50bps": {
+      "absorption": 169714785.205197,
+      "restoration": 181773418.787341
+     },
+     "c0_100bps": {
+      "absorption": 185872392.195116,
+      "restoration": 186258787.340347
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 69311884.475798
+     },
+     "c2_50bps": {
+      "absorption": 14670005.931038,
+      "restoration": 186121323.483356
+     },
+     "c2_100bps": {
+      "absorption": 22661743.464,
+      "restoration": 189938323.833474
+     }
+    }
+   }
+  ],
+  "control": [
+   {
+    "timestamp_utc": "2023-02-04T00:00:11+00:00",
+    "valuation": [
+     0.9989,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 194680704.941567
+     },
+     "c0_50bps": {
+      "absorption": 188581125.178872,
+      "restoration": 209097387.284741
+     },
+     "c0_100bps": {
+      "absorption": 196869743.485794,
+      "restoration": 212549068.898258
+     },
+     "c2_10bps": {
+      "absorption": 96259428.024583,
+      "restoration": 172617335.079806
+     },
+     "c2_50bps": {
+      "absorption": 133580299.81621,
+      "restoration": 208739805.45811
+     },
+     "c2_100bps": {
+      "absorption": 139838181.569725,
+      "restoration": 212811737.087207
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-04T06:01:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 153787781.55287,
+      "restoration": 159102754.271586
+     },
+     "c0_50bps": {
+      "absorption": 191715359.82563,
+      "restoration": 195319900.664061
+     },
+     "c0_100bps": {
+      "absorption": 197523843.94241,
+      "restoration": 200004941.258634
+     },
+     "c2_10bps": {
+      "absorption": 104446742.538462,
+      "restoration": 162864518.909633
+     },
+     "c2_50bps": {
+      "absorption": 142667928.462991,
+      "restoration": 196494541.029008
+     },
+     "c2_100bps": {
+      "absorption": 148718837.737165,
+      "restoration": 200620078.311593
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-04T12:04:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 154996989.098402,
+      "restoration": 159048936.198383
+     },
+     "c0_50bps": {
+      "absorption": 192918122.169726,
+      "restoration": 195461906.475804
+     },
+     "c0_100bps": {
+      "absorption": 198731700.763887,
+      "restoration": 200170435.975609
+     },
+     "c2_10bps": {
+      "absorption": 106835425.475254,
+      "restoration": 158606233.207136
+     },
+     "c2_50bps": {
+      "absorption": 141600700.910084,
+      "restoration": 196539074.669817
+     },
+     "c2_100bps": {
+      "absorption": 147525826.241337,
+      "restoration": 200778895.434484
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-04T18:07:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0006
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 153172552.013292,
+      "restoration": 165524901.760285
+     },
+     "c0_50bps": {
+      "absorption": 192220454.641333,
+      "restoration": 201712537.157318
+     },
+     "c0_100bps": {
+      "absorption": 198168224.742872,
+      "restoration": 206397605.121271
+     },
+     "c2_10bps": {
+      "absorption": 112164114.454637,
+      "restoration": 132281482.400051
+     },
+     "c2_50bps": {
+      "absorption": 137741161.557908,
+      "restoration": 202201963.720792
+     },
+     "c2_100bps": {
+      "absorption": 143273178.886395,
+      "restoration": 206904888.927706
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-05T00:08:59+00:00",
+    "valuation": [
+     0.9996,
+     1.0,
+     1.0006
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 124789550.36814,
+      "restoration": 175708641.047442
+     },
+     "c0_50bps": {
+      "absorption": 191358721.47713,
+      "restoration": 200006180.888134
+     },
+     "c0_100bps": {
+      "absorption": 197893125.421952,
+      "restoration": 204181323.010287
+     },
+     "c2_10bps": {
+      "absorption": 114728155.262324,
+      "restoration": 128802661.917277
+     },
+     "c2_50bps": {
+      "absorption": 139911353.538938,
+      "restoration": 199716239.241414
+     },
+     "c2_100bps": {
+      "absorption": 145379237.279315,
+      "restoration": 204468091.393928
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-05T06:09:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0005
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 152132760.63381,
+      "restoration": 169720844.707316
+     },
+     "c0_50bps": {
+      "absorption": 191942603.424766,
+      "restoration": 205817938.618637
+     },
+     "c0_100bps": {
+      "absorption": 197982649.182712,
+      "restoration": 210495100.293734
+     },
+     "c2_10bps": {
+      "absorption": 104104973.634389,
+      "restoration": 150436697.445774
+     },
+     "c2_50bps": {
+      "absorption": 132615461.053467,
+      "restoration": 206683254.888182
+     },
+     "c2_100bps": {
+      "absorption": 138405971.495634,
+      "restoration": 211130345.67406
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-05T12:11:23+00:00",
+    "valuation": [
+     1.0012,
+     1.0,
+     1.0009
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 177433951.481389,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 193661085.497209,
+      "restoration": 213193048.082161
+     },
+     "c0_100bps": {
+      "absorption": 198497230.871972,
+      "restoration": 220198894.836699
+     },
+     "c2_10bps": {
+      "absorption": 98505031.352358,
+      "restoration": 94106124.700406
+     },
+     "c2_50bps": {
+      "absorption": 121457312.630955,
+      "restoration": 216717386.065857
+     },
+     "c2_100bps": {
+      "absorption": 127052343.43302,
+      "restoration": 221533239.379535
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-05T18:13:47+00:00",
+    "valuation": [
+     0.9614,
+     1.0,
+     1.0004
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 228642916.419833
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 228750203.449553
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 228859478.212587
+     },
+     "c2_10bps": {
+      "absorption": 76397330.953155,
+      "restoration": 179966739.003862
+     },
+     "c2_50bps": {
+      "absorption": 111704596.396152,
+      "restoration": 222161350.699697
+     },
+     "c2_100bps": {
+      "absorption": 118274634.107359,
+      "restoration": 226106657.517744
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-06T00:15:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0011
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 150418118.190249,
+      "restoration": 184632473.16705
+     },
+     "c0_50bps": {
+      "absorption": 193792513.016795,
+      "restoration": 221510782.028248
+     },
+     "c0_100bps": {
+      "absorption": 200298359.682555,
+      "restoration": 226311944.403697
+     },
+     "c2_10bps": {
+      "absorption": 89254841.747957,
+      "restoration": 50014947.695031
+     },
+     "c2_50bps": {
+      "absorption": 110787153.856893,
+      "restoration": 222234722.156664
+     },
+     "c2_100bps": {
+      "absorption": 116411593.914584,
+      "restoration": 227182250.966267
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-06T06:17:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "par_fallback"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 152999649.994681,
+      "restoration": 174828280.859257
+     },
+     "c0_50bps": {
+      "absorption": 193954502.465129,
+      "restoration": 211363406.076856
+     },
+     "c0_100bps": {
+      "absorption": 200150020.084928,
+      "restoration": 216102003.56334
+     },
+     "c2_10bps": {
+      "absorption": 71299372.958928,
+      "restoration": 186868608.630937
+     },
+     "c2_50bps": {
+      "absorption": 120089631.587989,
+      "restoration": 213532591.132959
+     },
+     "c2_100bps": {
+      "absorption": 126978529.443437,
+      "restoration": 217168390.819615
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-06T12:19:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0007
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 155556399.589112,
+      "restoration": 168431358.653838
+     },
+     "c0_50bps": {
+      "absorption": 195210105.404311,
+      "restoration": 205128925.762472
+     },
+     "c0_100bps": {
+      "absorption": 201248775.529324,
+      "restoration": 209879234.442121
+     },
+     "c2_10bps": {
+      "absorption": 102675953.986128,
+      "restoration": 125203301.819482
+     },
+     "c2_50bps": {
+      "absorption": 127551109.856959,
+      "restoration": 205897190.465943
+     },
+     "c2_100bps": {
+      "absorption": 133141545.59286,
+      "restoration": 210565352.315593
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-06T18:20:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 155651535.534099,
+      "restoration": 149745357.365858
+     },
+     "c0_50bps": {
+      "absorption": 192086441.871106,
+      "restoration": 186311757.833746
+     },
+     "c0_100bps": {
+      "absorption": 197717392.200971,
+      "restoration": 191036754.105698
+     },
+     "c2_10bps": {
+      "absorption": 109514631.053508,
+      "restoration": 156158694.028854
+     },
+     "c2_50bps": {
+      "absorption": 149764446.831953,
+      "restoration": 187430274.895341
+     },
+     "c2_100bps": {
+      "absorption": 155721105.861664,
+      "restoration": 191584791.95932
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-07T00:22:35+00:00",
+    "valuation": [
+     1.0002,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 162416444.653476,
+      "restoration": 138619959.488541
+     },
+     "c0_50bps": {
+      "absorption": 192003513.583184,
+      "restoration": 185514624.294876
+     },
+     "c0_100bps": {
+      "absorption": 197367062.241723,
+      "restoration": 190532047.513954
+     },
+     "c2_10bps": {
+      "absorption": 115344851.422036,
+      "restoration": 151467318.411369
+     },
+     "c2_50bps": {
+      "absorption": 151303823.747548,
+      "restoration": 186806651.123907
+     },
+     "c2_100bps": {
+      "absorption": 157090842.374784,
+      "restoration": 191110037.305306
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-07T06:24:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 155720455.211312,
+      "restoration": 144508934.564706
+     },
+     "c0_50bps": {
+      "absorption": 191300576.428205,
+      "restoration": 181104879.727354
+     },
+     "c0_100bps": {
+      "absorption": 196824412.060436,
+      "restoration": 185831858.513402
+     },
+     "c2_10bps": {
+      "absorption": 117512269.312095,
+      "restoration": 146284845.09758
+     },
+     "c2_50bps": {
+      "absorption": 152557969.730301,
+      "restoration": 181950602.399251
+     },
+     "c2_100bps": {
+      "absorption": 158229007.415561,
+      "restoration": 186286941.519731
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-07T12:27:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 151119459.619362,
+      "restoration": 160895326.768162
+     },
+     "c0_50bps": {
+      "absorption": 189224729.000603,
+      "restoration": 196572565.038836
+     },
+     "c0_100bps": {
+      "absorption": 195039588.587158,
+      "restoration": 201190504.705643
+     },
+     "c2_10bps": {
+      "absorption": 99504226.391426,
+      "restoration": 165145340.161154
+     },
+     "c2_50bps": {
+      "absorption": 138135034.388354,
+      "restoration": 197822868.986543
+     },
+     "c2_100bps": {
+      "absorption": 144216734.605254,
+      "restoration": 201842016.35413
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-07T18:30:35+00:00",
+    "valuation": [
+     1.0008,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 172348769.457847,
+      "restoration": 42300247.172238
+     },
+     "c0_50bps": {
+      "absorption": 190912378.843704,
+      "restoration": 188867766.296204
+     },
+     "c0_100bps": {
+      "absorption": 195669680.784599,
+      "restoration": 194872786.933942
+     },
+     "c2_10bps": {
+      "absorption": 111459771.57803,
+      "restoration": 153025216.533883
+     },
+     "c2_50bps": {
+      "absorption": 144985447.906387,
+      "restoration": 191509878.796211
+     },
+     "c2_100bps": {
+      "absorption": 150740448.199166,
+      "restoration": 195789451.887257
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-08T00:32:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 152878042.545036,
+      "restoration": 144501915.997213
+     },
+     "c0_50bps": {
+      "absorption": 188419584.183824,
+      "restoration": 180604861.779486
+     },
+     "c0_100bps": {
+      "absorption": 193924154.037977,
+      "restoration": 185272119.075942
+     },
+     "c2_10bps": {
+      "absorption": 122101710.722845,
+      "restoration": 140731101.012837
+     },
+     "c2_50bps": {
+      "absorption": 153523137.361561,
+      "restoration": 181176131.621209
+     },
+     "c2_100bps": {
+      "absorption": 159011198.116927,
+      "restoration": 185636180.654832
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-08T06:34:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 151830362.379707,
+      "restoration": 148831149.776861
+     },
+     "c0_50bps": {
+      "absorption": 187959340.626819,
+      "restoration": 184630907.048394
+     },
+     "c0_100bps": {
+      "absorption": 193529565.955537,
+      "restoration": 189259999.507977
+     },
+     "c2_10bps": {
+      "absorption": 103638764.287226,
+      "restoration": 158124430.209413
+     },
+     "c2_50bps": {
+      "absorption": 148241593.62591,
+      "restoration": 185835726.355204
+     },
+     "c2_100bps": {
+      "absorption": 154270806.358828,
+      "restoration": 189812857.16752
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-08T12:36:23+00:00",
+    "valuation": [
+     0.9994,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 95354662.537671,
+      "restoration": 170080247.571455
+     },
+     "c0_50bps": {
+      "absorption": 187556099.442679,
+      "restoration": 190327755.550364
+     },
+     "c0_100bps": {
+      "absorption": 194161184.313937,
+      "restoration": 194211279.215468
+     },
+     "c2_10bps": {
+      "absorption": 104488629.752513,
+      "restoration": 153306666.597646
+     },
+     "c2_50bps": {
+      "absorption": 138230104.666928,
+      "restoration": 190400872.491676
+     },
+     "c2_100bps": {
+      "absorption": 143987162.109218,
+      "restoration": 194547214.107053
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-08T18:42:23+00:00",
+    "valuation": [
+     0.9987,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 179429238.195023
+     },
+     "c0_50bps": {
+      "absorption": 188595253.10985,
+      "restoration": 192206482.963138
+     },
+     "c0_100bps": {
+      "absorption": 196814003.156676,
+      "restoration": 195487474.727287
+     },
+     "c2_10bps": {
+      "absorption": 90484803.457256,
+      "restoration": 163300865.513193
+     },
+     "c2_50bps": {
+      "absorption": 132964470.162267,
+      "restoration": 191896207.839921
+     },
+     "c2_100bps": {
+      "absorption": 139125063.894044,
+      "restoration": 195740289.496612
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-09T00:45:11+00:00",
+    "valuation": [
+     0.9992,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 39835703.542594,
+      "restoration": 174149541.677534
+     },
+     "c0_50bps": {
+      "absorption": 188476026.372139,
+      "restoration": 191673165.038838
+     },
+     "c0_100bps": {
+      "absorption": 195501159.139424,
+      "restoration": 195373888.95923
+     },
+     "c2_10bps": {
+      "absorption": 97028183.44875,
+      "restoration": 159497318.713346
+     },
+     "c2_50bps": {
+      "absorption": 134897347.289877,
+      "restoration": 191758514.493654
+     },
+     "c2_100bps": {
+      "absorption": 140867583.461102,
+      "restoration": 195734940.10889
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-09T06:46:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 151997114.068305,
+      "restoration": 148055197.559544
+     },
+     "c0_50bps": {
+      "absorption": 187852752.150345,
+      "restoration": 183736218.628637
+     },
+     "c0_100bps": {
+      "absorption": 193385623.429693,
+      "restoration": 188347030.240359
+     },
+     "c2_10bps": {
+      "absorption": 112492350.315277,
+      "restoration": 146063254.383827
+     },
+     "c2_50bps": {
+      "absorption": 144834280.905847,
+      "restoration": 184556262.513422
+     },
+     "c2_100bps": {
+      "absorption": 150416064.441655,
+      "restoration": 188829651.364082
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-09T12:49:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 149948790.047085,
+      "restoration": 147984140.665944
+     },
+     "c0_50bps": {
+      "absorption": 185848744.455086,
+      "restoration": 183393608.383542
+     },
+     "c0_100bps": {
+      "absorption": 191378856.148878,
+      "restoration": 187973460.801424
+     },
+     "c2_10bps": {
+      "absorption": 108269710.306313,
+      "restoration": 153771219.477298
+     },
+     "c2_50bps": {
+      "absorption": 147625840.766768,
+      "restoration": 184404046.073588
+     },
+     "c2_100bps": {
+      "absorption": 153450650.041878,
+      "restoration": 188468613.257813
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-09T18:51:59+00:00",
+    "valuation": [
+     1.0001,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 156810401.745464,
+      "restoration": 144600560.031609
+     },
+     "c0_50bps": {
+      "absorption": 189140613.996039,
+      "restoration": 184918221.935901
+     },
+     "c0_100bps": {
+      "absorption": 194563090.490302,
+      "restoration": 189680322.736426
+     },
+     "c2_10bps": {
+      "absorption": 100050385.177649,
+      "restoration": 156749907.246168
+     },
+     "c2_50bps": {
+      "absorption": 140526335.414426,
+      "restoration": 186406378.25295
+     },
+     "c2_100bps": {
+      "absorption": 146465039.840758,
+      "restoration": 190364402.155092
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-10T00:54:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0003
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 149699192.615098,
+      "restoration": 162937768.646596
+     },
+     "c0_50bps": {
+      "absorption": 188058295.647907,
+      "restoration": 198311497.086517
+     },
+     "c0_100bps": {
+      "absorption": 193895987.503741,
+      "restoration": 202891597.263691
+     },
+     "c2_10bps": {
+      "absorption": 98405339.649324,
+      "restoration": 158879316.101714
+     },
+     "c2_50bps": {
+      "absorption": 130953055.041652,
+      "restoration": 199451616.705067
+     },
+     "c2_100bps": {
+      "absorption": 136819492.847055,
+      "restoration": 203568042.465443
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-10T06:55:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0005
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 145440294.672591,
+      "restoration": 173893156.985997
+     },
+     "c0_50bps": {
+      "absorption": 185957943.577082,
+      "restoration": 208939290.29704
+     },
+     "c0_100bps": {
+      "absorption": 192053955.440729,
+      "restoration": 213491344.094986
+     },
+     "c2_10bps": {
+      "absorption": 89766950.549596,
+      "restoration": 158743622.234057
+     },
+     "c2_50bps": {
+      "absorption": 119381264.285293,
+      "restoration": 210149164.10056
+     },
+     "c2_100bps": {
+      "absorption": 125305357.649054,
+      "restoration": 214281441.271563
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-10T12:56:59+00:00",
+    "valuation": [
+     0.999,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 189625135.571686
+     },
+     "c0_50bps": {
+      "absorption": 185411359.003931,
+      "restoration": 204721227.11609
+     },
+     "c0_100bps": {
+      "absorption": 193283079.363247,
+      "restoration": 208197844.017087
+     },
+     "c2_10bps": {
+      "absorption": 81054887.091277,
+      "restoration": 171826540.417495
+     },
+     "c2_50bps": {
+      "absorption": 118865240.632649,
+      "restoration": 204920811.386127
+     },
+     "c2_100bps": {
+      "absorption": 125130253.191836,
+      "restoration": 208698649.410295
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-02-10T18:59:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 147197574.488628,
+      "restoration": 163724725.592908
+     },
+     "c0_50bps": {
+      "absorption": 185605461.76498,
+      "restoration": 198621507.259054
+     },
+     "c0_100bps": {
+      "absorption": 191434956.617453,
+      "restoration": 203142555.016154
+     },
+     "c2_10bps": {
+      "absorption": 79832198.595705,
+      "restoration": 173453582.377339
+     },
+     "c2_50bps": {
+      "absorption": 124442407.061142,
+      "restoration": 200360312.689787
+     },
+     "c2_100bps": {
+      "absorption": 130814065.232121,
+      "restoration": 203996693.629573
+     }
+    }
+   }
+  ],
+  "event_hourly": [
+   {
+    "timestamp_utc": "2023-03-10T00:00:11+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     0.9998
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 114752655.634762,
+      "restoration": 117560308.772039
+     },
+     "c0_50bps": {
+      "absorption": 152593254.383714,
+      "restoration": 148163720.30046
+     },
+     "c0_100bps": {
+      "absorption": 157959434.002797,
+      "restoration": 152557933.734108
+     },
+     "c2_10bps": {
+      "absorption": 166561812.622205,
+      "restoration": 114402056.534806
+     },
+     "c2_50bps": {
+      "absorption": 204350321.808228,
+      "restoration": 147093452.473711
+     },
+     "c2_100bps": {
+      "absorption": 209476089.225135,
+      "restoration": 151984774.965734
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T01:00:59+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 119090762.51278,
+      "restoration": 117322785.795713
+     },
+     "c0_50bps": {
+      "absorption": 156429219.328431,
+      "restoration": 148241816.262574
+     },
+     "c0_100bps": {
+      "absorption": 161742030.126373,
+      "restoration": 152665294.156461
+     },
+     "c2_10bps": {
+      "absorption": 167117025.075383,
+      "restoration": 111465322.835487
+     },
+     "c2_50bps": {
+      "absorption": 200665728.543511,
+      "restoration": 147169669.715602
+     },
+     "c2_100bps": {
+      "absorption": 205673557.541877,
+      "restoration": 152137031.155247
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T02:02:47+00:00",
+    "valuation": [
+     0.9959,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 149099843.497866
+     },
+     "c0_50bps": {
+      "absorption": 117850956.651849,
+      "restoration": 152987833.741257
+     },
+     "c0_100bps": {
+      "absorption": 156975060.607418,
+      "restoration": 154755638.301267
+     },
+     "c2_10bps": {
+      "absorption": 171148213.764483,
+      "restoration": 107886653.628742
+     },
+     "c2_50bps": {
+      "absorption": 201169800.994312,
+      "restoration": 147752057.236443
+     },
+     "c2_100bps": {
+      "absorption": 206071789.027769,
+      "restoration": 152864022.970655
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T03:03:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 121918729.137471,
+      "restoration": 114582864.111251
+     },
+     "c0_50bps": {
+      "absorption": 155470321.733247,
+      "restoration": 148804451.842739
+     },
+     "c0_100bps": {
+      "absorption": 160672813.618238,
+      "restoration": 153336717.488806
+     },
+     "c2_10bps": {
+      "absorption": 167439155.116912,
+      "restoration": 112179253.544215
+     },
+     "c2_50bps": {
+      "absorption": 201071317.259116,
+      "restoration": 147869462.611636
+     },
+     "c2_100bps": {
+      "absorption": 206088845.709815,
+      "restoration": 152833889.083736
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T04:04:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 121884209.038232,
+      "restoration": 114789782.011101
+     },
+     "c0_50bps": {
+      "absorption": 155446546.015878,
+      "restoration": 148976573.328962
+     },
+     "c0_100bps": {
+      "absorption": 160649360.452236,
+      "restoration": 153503789.201552
+     },
+     "c2_10bps": {
+      "absorption": 170940044.657732,
+      "restoration": 108026428.049563
+     },
+     "c2_50bps": {
+      "absorption": 200975385.855018,
+      "restoration": 147846215.691075
+     },
+     "c2_100bps": {
+      "absorption": 205877973.936645,
+      "restoration": 152952619.575867
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T05:05:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 123996946.251028,
+      "restoration": 115338365.545646
+     },
+     "c0_50bps": {
+      "absorption": 157409204.807978,
+      "restoration": 149645411.28922
+     },
+     "c0_100bps": {
+      "absorption": 162594641.55807,
+      "restoration": 154178742.88471
+     },
+     "c2_10bps": {
+      "absorption": 168302699.249215,
+      "restoration": 109248631.724232
+     },
+     "c2_50bps": {
+      "absorption": 198527529.56021,
+      "restoration": 148626716.764139
+     },
+     "c2_100bps": {
+      "absorption": 203442459.420864,
+      "restoration": 153681954.236308
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T06:06:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0001
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 121104644.267239,
+      "restoration": 120590453.223146
+     },
+     "c0_50bps": {
+      "absorption": 155239212.954308,
+      "restoration": 154129717.009205
+     },
+     "c0_100bps": {
+      "absorption": 160495224.956995,
+      "restoration": 158564306.976668
+     },
+     "c2_10bps": {
+      "absorption": 168807331.894596,
+      "restoration": 109352343.871965
+     },
+     "c2_50bps": {
+      "absorption": 196579952.587314,
+      "restoration": 152897770.530284
+     },
+     "c2_100bps": {
+      "absorption": 201444349.711005,
+      "restoration": 158011505.97928
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T07:07:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 123195005.752891,
+      "restoration": 121495749.87543
+     },
+     "c0_50bps": {
+      "absorption": 157183215.772975,
+      "restoration": 155094967.19342
+     },
+     "c0_100bps": {
+      "absorption": 162420824.203441,
+      "restoration": 159527178.471834
+     },
+     "c2_10bps": {
+      "absorption": 162083208.976683,
+      "restoration": 116166741.852634
+     },
+     "c2_50bps": {
+      "absorption": 193205744.360129,
+      "restoration": 154195914.223012
+     },
+     "c2_100bps": {
+      "absorption": 198200840.290765,
+      "restoration": 159088297.146513
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T08:08:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 123389289.332296,
+      "restoration": 121772731.65364
+     },
+     "c0_50bps": {
+      "absorption": 157394250.928332,
+      "restoration": 155372554.636504
+     },
+     "c0_100bps": {
+      "absorption": 162633856.651017,
+      "restoration": 159803856.120224
+     },
+     "c2_10bps": {
+      "absorption": 161703315.304762,
+      "restoration": 116523890.104152
+     },
+     "c2_50bps": {
+      "absorption": 192882542.324404,
+      "restoration": 154486728.752886
+     },
+     "c2_100bps": {
+      "absorption": 197883082.092104,
+      "restoration": 159371413.922515
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T09:10:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 122971078.889655,
+      "restoration": 124381411.04316
+     },
+     "c0_50bps": {
+      "absorption": 157299301.560172,
+      "restoration": 157758193.325954
+     },
+     "c0_100bps": {
+      "absorption": 162573262.133033,
+      "restoration": 162158705.262797
+     },
+     "c2_10bps": {
+      "absorption": 159887283.371326,
+      "restoration": 119326292.325295
+     },
+     "c2_50bps": {
+      "absorption": 191466908.884319,
+      "restoration": 156902358.816898
+     },
+     "c2_100bps": {
+      "absorption": 196508444.075315,
+      "restoration": 161740751.400061
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T10:12:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 124755859.514485,
+      "restoration": 124442075.370471
+     },
+     "c0_50bps": {
+      "absorption": 158981262.728058,
+      "restoration": 158019613.590987
+     },
+     "c0_100bps": {
+      "absorption": 164247176.054856,
+      "restoration": 162440795.311413
+     },
+     "c2_10bps": {
+      "absorption": 158632504.089166,
+      "restoration": 119810008.720481
+     },
+     "c2_50bps": {
+      "absorption": 190338529.259836,
+      "restoration": 157235429.749768
+     },
+     "c2_100bps": {
+      "absorption": 195391702.75864,
+      "restoration": 162057828.748932
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T11:13:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 126051075.268015,
+      "restoration": 124687844.574558
+     },
+     "c0_50bps": {
+      "absorption": 160145670.526407,
+      "restoration": 158317199.98026
+     },
+     "c0_100bps": {
+      "absorption": 165395886.348748,
+      "restoration": 162739342.037549
+     },
+     "c2_10bps": {
+      "absorption": 156501814.777871,
+      "restoration": 120529953.789477
+     },
+     "c2_50bps": {
+      "absorption": 188329446.810852,
+      "restoration": 157612832.571428
+     },
+     "c2_100bps": {
+      "absorption": 193388495.206464,
+      "restoration": 162395324.695296
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T12:14:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 125665192.266985,
+      "restoration": 125568491.957486
+     },
+     "c0_50bps": {
+      "absorption": 159897586.436584,
+      "restoration": 159110397.882591
+     },
+     "c0_100bps": {
+      "absorption": 165162807.072371,
+      "restoration": 163521662.330793
+     },
+     "c2_10bps": {
+      "absorption": 152135524.310932,
+      "restoration": 125458826.887815
+     },
+     "c2_50bps": {
+      "absorption": 187982135.867937,
+      "restoration": 158590626.475922
+     },
+     "c2_100bps": {
+      "absorption": 193178915.747272,
+      "restoration": 163223898.088254
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T13:15:47+00:00",
+    "valuation": [
+     1.0003,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 135095702.066105,
+      "restoration": 107901360.997257
+     },
+     "c0_50bps": {
+      "absorption": 160418524.614399,
+      "restoration": 157263656.787802
+     },
+     "c0_100bps": {
+      "absorption": 165300091.588734,
+      "restoration": 162116384.715837
+     },
+     "c2_10bps": {
+      "absorption": 157281674.563629,
+      "restoration": 119880428.911714
+     },
+     "c2_50bps": {
+      "absorption": 189008547.457108,
+      "restoration": 157101097.765133
+     },
+     "c2_100bps": {
+      "absorption": 194058532.660799,
+      "restoration": 161899771.911417
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T14:16:23+00:00",
+    "valuation": [
+     1.0006,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 143309267.9646,
+      "restoration": 78422814.811035
+     },
+     "c0_50bps": {
+      "absorption": 162884568.621442,
+      "restoration": 160177545.538417
+     },
+     "c0_100bps": {
+      "absorption": 167394111.178065,
+      "restoration": 165390562.105995
+     },
+     "c2_10bps": {
+      "absorption": 138520959.824746,
+      "restoration": 130179068.373324
+     },
+     "c2_50bps": {
+      "absorption": 175141832.243358,
+      "restoration": 161192221.489087
+     },
+     "c2_100bps": {
+      "absorption": 180360230.406936,
+      "restoration": 165548996.690088
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T15:17:23+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 123453859.417938,
+      "restoration": 134362421.749349
+     },
+     "c0_50bps": {
+      "absorption": 161609045.010442,
+      "restoration": 163730748.161813
+     },
+     "c0_100bps": {
+      "absorption": 166952020.671174,
+      "restoration": 167889656.791439
+     },
+     "c2_10bps": {
+      "absorption": 146459017.724339,
+      "restoration": 119162563.320491
+     },
+     "c2_50bps": {
+      "absorption": 173359547.653689,
+      "restoration": 162909605.279544
+     },
+     "c2_100bps": {
+      "absorption": 178252357.947752,
+      "restoration": 167616678.288516
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T16:18:11+00:00",
+    "valuation": [
+     1.0001,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 130997365.809406,
+      "restoration": 130071791.703758
+     },
+     "c0_50bps": {
+      "absorption": 161889812.633324,
+      "restoration": 166603431.378719
+     },
+     "c0_100bps": {
+      "absorption": 167014352.468417,
+      "restoration": 170977781.018008
+     },
+     "c2_10bps": {
+      "absorption": 131860257.814102,
+      "restoration": 136753143.133255
+     },
+     "c2_50bps": {
+      "absorption": 169695112.518128,
+      "restoration": 166739524.77373
+     },
+     "c2_100bps": {
+      "absorption": 175019442.072389,
+      "restoration": 170962931.839586
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T17:19:11+00:00",
+    "valuation": [
+     0.9896,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 174455185.595382
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 175409055.734754
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 176076138.264401
+     },
+     "c2_10bps": {
+      "absorption": 127922724.159169,
+      "restoration": 140316931.753392
+     },
+     "c2_50bps": {
+      "absorption": 166452383.654938,
+      "restoration": 169729274.065654
+     },
+     "c2_100bps": {
+      "absorption": 171837195.536213,
+      "restoration": 173878436.798175
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T18:19:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     0.9999
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 126833352.779951,
+      "restoration": 156648634.597069
+     },
+     "c0_50bps": {
+      "absorption": 163897432.872671,
+      "restoration": 188045702.699849
+     },
+     "c0_100bps": {
+      "absorption": 169453089.89568,
+      "restoration": 192138376.661543
+     },
+     "c2_10bps": {
+      "absorption": 100215902.249379,
+      "restoration": 162769024.899877
+     },
+     "c2_50bps": {
+      "absorption": 144015421.968646,
+      "restoration": 188727182.358564
+     },
+     "c2_100bps": {
+      "absorption": 149881334.470066,
+      "restoration": 192437680.596609
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T19:20:59+00:00",
+    "valuation": [
+     0.996,
+     1.0,
+     1.0
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 177813311.661227
+     },
+     "c0_50bps": {
+      "absorption": 152382243.092299,
+      "restoration": 181841697.623591
+     },
+     "c0_100bps": {
+      "absorption": 188418432.436253,
+      "restoration": 183644815.403314
+     },
+     "c2_10bps": {
+      "absorption": 93088286.70438,
+      "restoration": 150818661.777141
+     },
+     "c2_50bps": {
+      "absorption": 132606304.237009,
+      "restoration": 179236258.760561
+     },
+     "c2_100bps": {
+      "absorption": 138392325.767438,
+      "restoration": 183043311.903944
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T20:21:23+00:00",
+    "valuation": [
+     1.0007,
+     1.0,
+     1.0002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 166248951.958399,
+      "restoration": 79151472.810912
+     },
+     "c0_50bps": {
+      "absorption": 186091389.5349,
+      "restoration": 190202443.055207
+     },
+     "c0_100bps": {
+      "absorption": 190910252.922285,
+      "restoration": 195820027.547644
+     },
+     "c2_10bps": {
+      "absorption": 82832095.579864,
+      "restoration": 160413931.357812
+     },
+     "c2_50bps": {
+      "absorption": 118398803.149802,
+      "restoration": 193287785.879533
+     },
+     "c2_100bps": {
+      "absorption": 124332588.828625,
+      "restoration": 197028570.430536
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T21:21:47+00:00",
+    "valuation": [
+     0.9963,
+     1.0,
+     1.0005
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 205750871.062078
+     },
+     "c0_50bps": {
+      "absorption": 169405536.895498,
+      "restoration": 210706869.285291
+     },
+     "c0_100bps": {
+      "absorption": 201853016.355765,
+      "restoration": 212841354.665056
+     },
+     "c2_10bps": {
+      "absorption": 50719798.575795,
+      "restoration": 168018151.812728
+     },
+     "c2_50bps": {
+      "absorption": 85369836.916814,
+      "restoration": 209536525.87554
+     },
+     "c2_100bps": {
+      "absorption": 92088556.730028,
+      "restoration": 213182490.296286
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T22:22:35+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0031
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 154686107.878544,
+      "restoration": 159951168.072528
+     },
+     "c0_50bps": {
+      "absorption": 215992272.481563,
+      "restoration": 219109583.805247
+     },
+     "c0_100bps": {
+      "absorption": 225588922.532131,
+      "restoration": 227378853.617193
+     },
+     "c2_10bps": {
+      "absorption": 10839634.472947,
+      "restoration": 16130482.712479
+     },
+     "c2_50bps": {
+      "absorption": 28281782.565355,
+      "restoration": 223825141.187205
+     },
+     "c2_100bps": {
+      "absorption": 35294801.012478,
+      "restoration": 231971209.099537
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-10T23:22:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0032
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 132969916.059715,
+      "restoration": 145075865.615869
+     },
+     "c0_50bps": {
+      "absorption": 206040695.662171,
+      "restoration": 214102892.798408
+     },
+     "c0_100bps": {
+      "absorption": 217929647.868172,
+      "restoration": 224430342.071052
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 49082821.779813
+     },
+     "c2_50bps": {
+      "absorption": 7405049.036132,
+      "restoration": 224617074.396875
+     },
+     "c2_100bps": {
+      "absorption": 16571518.598043,
+      "restoration": 231601317.145036
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T00:23:59+00:00",
+    "valuation": [
+     0.9948,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 203570870.300427
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 212608920.456659
+     },
+     "c0_100bps": {
+      "absorption": 192289227.308954,
+      "restoration": 217342153.716767
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 111840813.984373
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 219744444.401809
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 224276075.258774
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T01:24:35+00:00",
+    "valuation": [
+     0.995,
+     1.0,
+     1.0058
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 198602578.292668
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 209359567.308738
+     },
+     "c0_100bps": {
+      "absorption": 183724571.272476,
+      "restoration": 214934222.221283
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 52546999.657454
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 194632494.057081
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 222223823.662827
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T02:25:23+00:00",
+    "valuation": [
+     0.9842,
+     1.0,
+     1.0084
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 214946421.899306
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 216948305.903441
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 218589063.088206
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 30955483.820433
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 80872046.793578
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 217642976.885198
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T03:25:59+00:00",
+    "valuation": [
+     0.9811,
+     1.0,
+     1.0057
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 218183133.605843
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 220007911.063929
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 221589827.211348
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 79979394.66503
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 210821985.983217
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 225477528.784287
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T04:26:35+00:00",
+    "valuation": [
+     0.9403,
+     1.0,
+     1.005
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 211377798.596076
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 211647945.891852
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 211942338.756993
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 121828071.233633
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 207061926.010527
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 212761811.178818
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T05:27:47+00:00",
+    "valuation": [
+     0.9426,
+     1.0,
+     1.0014
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 213668512.509985
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 213957022.621898
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 214269871.212643
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 207912819.481028
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 214544498.021807
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 216151807.072419
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T06:28:47+00:00",
+    "valuation": [
+     0.9278,
+     1.0,
+     1.0028
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 231932662.055499
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 232106455.512309
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 232300093.597212
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 215794184.445203
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 231355213.292448
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 233319020.950819
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T07:29:11+00:00",
+    "valuation": [
+     0.895,
+     1.0,
+     1.0054
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 259421197.218401
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 259500224.855438
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 259591313.222337
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 160320353.805171
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 254617916.022022
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 259192434.749831
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T08:30:11+00:00",
+    "valuation": [
+     0.9183,
+     1.0,
+     1.0065
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 322391089.465561
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 322457094.639776
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 322531619.934761
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 148265310.605607
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 305344853.465893
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 319981874.823301
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T09:30:35+00:00",
+    "valuation": [
+     0.9326,
+     1.0,
+     1.0053
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 334694465.780194
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 334773069.35263
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 334860155.125086
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 199043055.554733
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 324648205.806381
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 332272128.24225
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T10:31:23+00:00",
+    "valuation": [
+     0.9231,
+     1.0,
+     1.0053
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 339742763.39876
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 339797011.11269
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 339857955.676486
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 223820770.117388
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 328907115.641353
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 336480988.789144
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T11:31:59+00:00",
+    "valuation": [
+     0.9136,
+     1.0,
+     1.0061
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 340069686.461225
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 340110902.277423
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 340157711.497717
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 205797107.865429
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 325155319.699742
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 335890671.749069
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T12:32:23+00:00",
+    "valuation": [
+     0.9136,
+     1.0,
+     1.0055
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 326786684.248825
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 326834416.547785
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 326888577.316577
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 164442239.020972
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 314697935.235328
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 324105691.052246
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T13:32:59+00:00",
+    "valuation": [
+     0.9231,
+     1.0,
+     1.005
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 329123233.68766
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 329184423.792449
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 329253129.333223
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 204880500.323764
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 320328276.33307
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 326804213.980384
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T14:33:47+00:00",
+    "valuation": [
+     0.9231,
+     1.0,
+     1.005
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 322923662.785381
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 322990152.252725
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 323064799.496124
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 199009560.529909
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 314941580.497152
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 320996005.214102
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T15:34:35+00:00",
+    "valuation": [
+     0.9326,
+     1.0,
+     1.0068
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 326302197.318486
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 326383039.196599
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 326472591.470744
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 142166531.393544
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 302336616.086114
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 323235571.402044
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T16:35:59+00:00",
+    "valuation": [
+     0.9231,
+     1.0,
+     1.0092
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 329359142.348579
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 329417725.175862
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 329483505.863706
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 100962054.716078
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 197222331.45663
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 322519515.709905
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T17:36:47+00:00",
+    "valuation": [
+     0.9619,
+     1.0,
+     1.0088
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 325007204.634198
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 325205867.267935
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 325409420.539556
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 91292334.054104
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 189164106.446848
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 319385868.498504
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T18:37:35+00:00",
+    "valuation": [
+     0.9719,
+     1.0,
+     1.0094
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 322981618.758038
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 323310656.581813
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 323629096.554652
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 78055929.156141
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 154212903.30058
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 316103155.922858
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T19:38:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.009
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 301735706.347503
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 316130967.778417
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 320891286.993516
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 85059583.734291
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 174353152.736733
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 318187238.42947
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T20:38:59+00:00",
+    "valuation": [
+     0.982,
+     1.0,
+     1.009
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 316614613.652384
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 317115332.34409
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 317547133.528131
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 36082595.812891
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 88258117.394565
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 307823901.053094
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T21:40:11+00:00",
+    "valuation": [
+     0.987,
+     1.0,
+     1.0067
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 302345211.687928
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 303736661.932469
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 304831768.355034
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 89381664.205615
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 257033270.370601
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 304783307.004387
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T22:40:23+00:00",
+    "valuation": [
+     0.957,
+     1.0,
+     1.0064
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 300846480.092285
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 301041591.796858
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 301244869.283554
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 90755547.154491
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 266641895.405149
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 299430893.501235
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-11T23:40:59+00:00",
+    "valuation": [
+     0.957,
+     1.0,
+     1.0061
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 195311166.91023
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 195677323.416459
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 196057907.782794
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 65736019.649205
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 178597834.008105
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 196205781.777482
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T00:42:11+00:00",
+    "valuation": [
+     0.9669,
+     1.0,
+     1.0077
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 194602025.252862
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 195208176.945878
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 195809310.824391
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 49919219.31684
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 125185654.050529
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 195649814.770498
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T01:42:47+00:00",
+    "valuation": [
+     0.9769,
+     1.0,
+     1.008
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 193321374.440244
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 194285204.141697
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 195165984.342719
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 34009360.354223
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 89520391.086333
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 194347215.597659
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T02:44:23+00:00",
+    "valuation": [
+     0.9769,
+     1.0,
+     1.0081
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 193596244.343901
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 194704268.379432
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 195717658.523486
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 42743217.964697
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 104016766.978019
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 195956306.601194
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T03:45:11+00:00",
+    "valuation": [
+     0.987,
+     1.0,
+     1.0081
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 188872730.087933
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 191657540.296131
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 193801663.283254
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 38940662.232095
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 97038304.185893
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 195963819.097593
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T04:45:35+00:00",
+    "valuation": [
+     0.9769,
+     1.0,
+     1.0081
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 194816872.514846
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 195953075.94831
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 196992345.650483
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 44242784.750458
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 106955555.211284
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 197391338.357764
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T05:47:23+00:00",
+    "valuation": [
+     0.9669,
+     1.0,
+     1.0086
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 196685452.727651
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 197297189.989041
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 197903812.899724
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 42744748.898019
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 96178345.726548
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 196325926.805735
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T06:48:23+00:00",
+    "valuation": [
+     0.9769,
+     1.0,
+     1.0086
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 191412789.381441
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 192740670.970015
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 193956662.44242
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 51926362.722211
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 112163257.741671
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 195292107.989708
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T07:48:59+00:00",
+    "valuation": [
+     0.9669,
+     1.0,
+     1.0078
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 197113988.445964
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 197823244.346285
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 198527235.869857
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 63966569.056483
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 147950557.66613
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 199653509.599642
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T08:49:47+00:00",
+    "valuation": [
+     0.9521,
+     1.0,
+     1.0082
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 199094640.012704
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 199432212.957796
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 199789170.43915
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 56124250.228775
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 126507925.69475
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 198713873.800295
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T09:49:59+00:00",
+    "valuation": [
+     0.9619,
+     1.0,
+     1.0079
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 208056249.964655
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 208528660.53963
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 209009938.664887
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 55964067.908965
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 133610857.808626
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 208634538.617756
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T10:50:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0071
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 25525331.152816,
+      "restoration": 104289336.648967
+     },
+     "c0_50bps": {
+      "absorption": 125820527.749808,
+      "restoration": 179169212.954421
+     },
+     "c0_100bps": {
+      "absorption": 148578820.517451,
+      "restoration": 195970151.987911
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 60549540.259622
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 163106409.301283
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 211076563.495007
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T11:50:59+00:00",
+    "valuation": [
+     0.9619,
+     1.0,
+     1.0069
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 204305024.101916
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 204765383.584497
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 205234295.61715
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 62264577.493151
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 168560176.477348
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 205526712.929231
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T12:52:11+00:00",
+    "valuation": [
+     0.9615,
+     1.0,
+     1.007
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 207148678.296672
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 207613169.229417
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 208087249.096033
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 65098009.816639
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 171244044.330174
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 208490571.335385
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T13:52:35+00:00",
+    "valuation": [
+     0.982,
+     1.0,
+     1.0061
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 196525001.707873
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 198288799.818097
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 199798633.346264
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 71606675.097937
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 187819988.241374
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 203597109.936425
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T14:52:59+00:00",
+    "valuation": [
+     0.9619,
+     1.0,
+     1.011
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 201619200.772789
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 202099014.932967
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 202587780.396054
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 35649533.010585
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 63980799.889896
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 190677771.093848
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T15:53:47+00:00",
+    "valuation": [
+     0.9619,
+     1.0,
+     1.0113
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 203359508.195047
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 203839404.291887
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 204328279.786892
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 34964816.217538
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 61564955.529522
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 188288093.049651
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T16:54:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0103
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 23685814.387041,
+      "restoration": 100119726.152164
+     },
+     "c0_50bps": {
+      "absorption": 124533473.059662,
+      "restoration": 176358857.609534
+     },
+     "c0_100bps": {
+      "absorption": 148299253.355033,
+      "restoration": 194084315.622397
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 40997692.855346
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 76530127.966212
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 204083625.668417
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T17:54:47+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0103
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 5717485.0183,
+      "restoration": 123194629.724958
+     },
+     "c0_50bps": {
+      "absorption": 112412371.493812,
+      "restoration": 192340443.984259
+     },
+     "c0_100bps": {
+      "absorption": 136323971.540014,
+      "restoration": 207883238.304892
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 37010599.715512
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 70414664.673166
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 214086184.992402
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T18:55:23+00:00",
+    "valuation": [
+     0.9768,
+     1.0,
+     1.0145
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 211453661.467255
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 212472171.882394
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 213405937.626493
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 21437012.960545
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 34185512.859621
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 79992345.346048
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T19:56:11+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0158
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 7811877.307158,
+      "restoration": 117734971.968704
+     },
+     "c0_50bps": {
+      "absorption": 111946620.06679,
+      "restoration": 186722120.647953
+     },
+     "c0_100bps": {
+      "absorption": 135516818.55483,
+      "restoration": 202341623.31179
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 20402298.320585
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 31108793.916774
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 64302750.751364
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T20:56:11+00:00",
+    "valuation": [
+     0.9768,
+     1.0,
+     1.0119
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 208223741.353067
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 209223264.215827
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 210139479.809499
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 27496170.581941
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 48271791.688938
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 164822036.896845
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T21:56:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0097
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 22695660.108629,
+      "restoration": 112922570.083787
+     },
+     "c0_50bps": {
+      "absorption": 122144559.733874,
+      "restoration": 183360007.247093
+     },
+     "c0_100bps": {
+      "absorption": 143607837.718902,
+      "restoration": 198495137.766493
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 35120664.433992
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 71381977.002433
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 206603997.916883
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T22:57:47+00:00",
+    "valuation": [
+     0.9912,
+     1.0,
+     1.0086
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 183483844.397196
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 187126070.841119
+     },
+     "c0_100bps": {
+      "absorption": 89656186.392663,
+      "restoration": 189534141.240862
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 17651327.523255
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 51651077.498143
+     },
+     "c2_100bps": {
+      "absorption": 1517966.773314,
+      "restoration": 188625419.003039
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-12T23:59:11+00:00",
+    "valuation": [
+     0.995,
+     1.0,
+     1.0089
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 176510881.385555
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 184456422.649027
+     },
+     "c0_100bps": {
+      "absorption": 160521278.713823,
+      "restoration": 188545327.359631
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 14472734.257243
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 43986267.716332
+     },
+     "c2_100bps": {
+      "absorption": 3166956.1432,
+      "restoration": 187813604.837831
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T01:00:47+00:00",
+    "valuation": [
+     0.9973,
+     1.0,
+     1.0085
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 160284151.033856
+     },
+     "c0_50bps": {
+      "absorption": 142361337.478991,
+      "restoration": 175810255.045464
+     },
+     "c0_100bps": {
+      "absorption": 174936913.07531,
+      "restoration": 181756835.434499
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 11926607.324238
+     },
+     "c2_50bps": {
+      "absorption": 810708.982821,
+      "restoration": 43308492.755625
+     },
+     "c2_100bps": {
+      "absorption": 5445267.664427,
+      "restoration": 182994619.556723
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T02:00:59+00:00",
+    "valuation": [
+     0.9999,
+     1.0,
+     1.0072
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 90296350.62028,
+      "restoration": 104410367.282309
+     },
+     "c0_50bps": {
+      "absorption": 167434557.57629,
+      "restoration": 168468240.969831
+     },
+     "c0_100bps": {
+      "absorption": 180342348.183068,
+      "restoration": 179678946.663957
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 18457332.775996
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 75503281.541521
+     },
+     "c2_100bps": {
+      "absorption": 4203125.152382,
+      "restoration": 186234879.968079
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T03:01:47+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0046
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 176122672.677295
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 179923001.53672
+     },
+     "c0_100bps": {
+      "absorption": 145656246.023399,
+      "restoration": 182313069.092929
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 34308254.484321
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 173131944.838749
+     },
+     "c2_100bps": {
+      "absorption": 5499154.736444,
+      "restoration": 185192788.511491
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T04:02:47+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0022
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 176163004.229782
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 179947574.550341
+     },
+     "c0_100bps": {
+      "absorption": 147475912.465393,
+      "restoration": 182327087.53463
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 109883858.632848
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 182793037.124529
+     },
+     "c2_100bps": {
+      "absorption": 3254890.148683,
+      "restoration": 186080810.941494
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T05:03:11+00:00",
+    "valuation": [
+     0.99,
+     1.0,
+     1.003
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 180288296.166606
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 183105513.985533
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 185061595.701629
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 81635777.530671
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 184241020.010144
+     },
+     "c2_100bps": {
+      "absorption": 50121.533355,
+      "restoration": 188434519.405598
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T06:03:23+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 95181658.091185,
+      "restoration": 97665653.415796
+     },
+     "c0_50bps": {
+      "absorption": 165913804.854519,
+      "restoration": 166854525.739175
+     },
+     "c0_100bps": {
+      "absorption": 178498066.800912,
+      "restoration": 178366273.423181
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 87470033.265366
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 183941471.337603
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 187926141.288876
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T07:03:59+00:00",
+    "valuation": [
+     0.9669,
+     1.0,
+     1.004
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 188740378.690254
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 189090069.786192
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 189436344.849211
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 50665191.622412
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 181927658.444141
+     },
+     "c2_100bps": {
+      "absorption": 2046575.48997,
+      "restoration": 189131321.587687
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T08:03:59+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0044
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 178817467.808666
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 182815017.023648
+     },
+     "c0_100bps": {
+      "absorption": 136379405.792004,
+      "restoration": 185334022.841138
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 44458215.27139
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 179492401.351787
+     },
+     "c2_100bps": {
+      "absorption": 2005697.38631,
+      "restoration": 188814543.124224
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T09:04:23+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 178226822.351756
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 182098070.283976
+     },
+     "c0_100bps": {
+      "absorption": 138124828.993777,
+      "restoration": 184535701.453309
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 80654487.316171
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 184224560.825797
+     },
+     "c2_100bps": {
+      "absorption": 1595403.364019,
+      "restoration": 188352267.257904
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T10:05:11+00:00",
+    "valuation": [
+     0.9845,
+     1.0,
+     1.0032
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 187307198.631923
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 188709619.277615
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 189849952.074072
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 77806147.9043
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 187457863.440698
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 191962213.762431
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T11:05:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.0022
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 89215947.134685,
+      "restoration": 101282546.595148
+     },
+     "c0_50bps": {
+      "absorption": 162465700.19711,
+      "restoration": 170216866.120227
+     },
+     "c0_100bps": {
+      "absorption": 175552679.064714,
+      "restoration": 181831497.100533
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 130252224.264829
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 188824277.97806
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 191770766.811962
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T12:06:23+00:00",
+    "valuation": [
+     0.987,
+     1.0,
+     1.0026
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 183770634.47256
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 185597863.303897
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 186997315.993802
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 99174556.728568
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 186085452.269751
+     },
+     "c2_100bps": {
+      "absorption": 0.0,
+      "restoration": 189636109.72103
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T13:07:11+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 172665004.50052
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 175856491.43524
+     },
+     "c0_100bps": {
+      "absorption": 148569877.984919,
+      "restoration": 177858151.086872
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 100148119.294695
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 177416438.973745
+     },
+     "c2_100bps": {
+      "absorption": 9472754.260076,
+      "restoration": 180642720.335384
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T14:07:59+00:00",
+    "valuation": [
+     1.0024,
+     1.0,
+     1.0028
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 166352528.241739,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 178859936.186791,
+      "restoration": 149855481.552678
+     },
+     "c0_100bps": {
+      "absorption": 183968367.626611,
+      "restoration": 169217162.94997
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 39466713.959003
+     },
+     "c2_50bps": {
+      "absorption": 10470002.5665,
+      "restoration": 172067936.007304
+     },
+     "c2_100bps": {
+      "absorption": 17535695.611716,
+      "restoration": 177023607.543063
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T15:08:47+00:00",
+    "valuation": [
+     0.987,
+     1.0,
+     1.0009
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 179540832.392703
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 181024619.801548
+     },
+     "c0_100bps": {
+      "absorption": 0.0,
+      "restoration": 182158790.715789
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 163762629.381098
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 181952443.466738
+     },
+     "c2_100bps": {
+      "absorption": 6927032.390566,
+      "restoration": 184133420.014909
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T16:09:35+00:00",
+    "valuation": [
+     0.9972,
+     1.0,
+     1.0006
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 162055953.022618
+     },
+     "c0_50bps": {
+      "absorption": 146778446.167244,
+      "restoration": 173943820.722968
+     },
+     "c0_100bps": {
+      "absorption": 174425840.190817,
+      "restoration": 178504401.383843
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 168158578.889683
+     },
+     "c2_50bps": {
+      "absorption": 0.0,
+      "restoration": 181691276.867405
+     },
+     "c2_100bps": {
+      "absorption": 7307188.380258,
+      "restoration": 183691057.698557
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T17:10:47+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.0035
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 165392256.656959
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 168468537.905226
+     },
+     "c0_100bps": {
+      "absorption": 158544163.409825,
+      "restoration": 170394983.053583
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 29894374.568149
+     },
+     "c2_50bps": {
+      "absorption": 7716265.25233,
+      "restoration": 165373550.347483
+     },
+     "c2_100bps": {
+      "absorption": 14449772.247147,
+      "restoration": 172320638.140844
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T18:10:59+00:00",
+    "valuation": [
+     1.0024,
+     1.0,
+     1.0023
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 148886227.225556,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 161962584.844998,
+      "restoration": 165659771.214287
+     },
+     "c0_100bps": {
+      "absorption": 167192065.813319,
+      "restoration": 182838143.037508
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 58064249.784087
+     },
+     "c2_50bps": {
+      "absorption": 10524838.722678,
+      "restoration": 186017805.641042
+     },
+     "c2_100bps": {
+      "absorption": 18168277.555476,
+      "restoration": 189809225.217771
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T19:11:23+00:00",
+    "valuation": [
+     1.001,
+     1.0,
+     1.0034
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 138361323.928813,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 163249756.709536,
+      "restoration": 170670944.234106
+     },
+     "c0_100bps": {
+      "absorption": 169939526.417723,
+      "restoration": 180376547.576665
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 20830674.220709
+     },
+     "c2_50bps": {
+      "absorption": 13900956.0442,
+      "restoration": 178757920.686235
+     },
+     "c2_100bps": {
+      "absorption": 19899880.86493,
+      "restoration": 185493924.677019
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T20:11:59+00:00",
+    "valuation": [
+     1.001,
+     1.0,
+     1.0028
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 144301270.794425,
+      "restoration": 0.0
+     },
+     "c0_50bps": {
+      "absorption": 169251499.779029,
+      "restoration": 163521565.26053
+     },
+     "c0_100bps": {
+      "absorption": 176023412.030277,
+      "restoration": 174001973.314629
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 39990126.977361
+     },
+     "c2_50bps": {
+      "absorption": 10052341.393216,
+      "restoration": 175152385.856017
+     },
+     "c2_100bps": {
+      "absorption": 17105117.725796,
+      "restoration": 179965419.710623
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T21:12:35+00:00",
+    "valuation": [
+     0.9977,
+     1.0,
+     1.0029
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 156838584.924274
+     },
+     "c0_50bps": {
+      "absorption": 156332989.373319,
+      "restoration": 169819159.382666
+     },
+     "c0_100bps": {
+      "absorption": 175503983.563771,
+      "restoration": 174316625.874845
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 40733452.859741
+     },
+     "c2_50bps": {
+      "absorption": 8341338.684723,
+      "restoration": 173246483.086608
+     },
+     "c2_100bps": {
+      "absorption": 15543542.394266,
+      "restoration": 178247773.400312
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T22:12:59+00:00",
+    "valuation": [
+     1.0,
+     1.0,
+     1.003
+    ],
+    "flags": {
+     "0": "par_fallback",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 116234591.450012,
+      "restoration": 110499339.434411
+     },
+     "c0_50bps": {
+      "absorption": 169880046.87655,
+      "restoration": 164753625.257285
+     },
+     "c0_100bps": {
+      "absorption": 178581176.466394,
+      "restoration": 172692264.909768
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 36754696.651596
+     },
+     "c2_50bps": {
+      "absorption": 9141891.993649,
+      "restoration": 172746849.491694
+     },
+     "c2_100bps": {
+      "absorption": 16125832.96901,
+      "restoration": 178044213.203115
+     }
+    }
+   },
+   {
+    "timestamp_utc": "2023-03-13T23:13:47+00:00",
+    "valuation": [
+     0.9921,
+     1.0,
+     1.002
+    ],
+    "flags": {
+     "0": "observed",
+     "2": "observed"
+    },
+    "capacity": {
+     "c0_10bps": {
+      "absorption": 0.0,
+      "restoration": 169731462.297878
+     },
+     "c0_50bps": {
+      "absorption": 0.0,
+      "restoration": 172424279.33381
+     },
+     "c0_100bps": {
+      "absorption": 151944527.320297,
+      "restoration": 174109217.285575
+     },
+     "c2_10bps": {
+      "absorption": 0.0,
+      "restoration": 75222380.058175
+     },
+     "c2_50bps": {
+      "absorption": 9120731.439574,
+      "restoration": 172496144.434802
+     },
+     "c2_100bps": {
+      "absorption": 17283618.647627,
+      "restoration": 175979694.614408
+     }
+    }
+   }
+  ]
+ }
+}
