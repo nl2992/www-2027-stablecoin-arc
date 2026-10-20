@@ -123,7 +123,7 @@ def test_truth_window_and_venue_normalisation(tmp_path):
     p = write_labels(tmp_path)
     got = {e.id: e for e in de.load_labels(p, "Binance_US")}
     assert set(got) == {"A", "B", "C"}  # three spellings of one venue; Bitfinex entries excluded
-    assert got["A"].window == (D("2023-05-10"), D("2023-09-07"))  # report - 30 d .. report + 90 d (no end documented)
+    assert got["A"].window == (D("2023-05-06"), D("2023-09-07"))  # D1: min(report, start) - 30 d .. report + 90 d
     assert got["B"].window == (D("2023-05-14"), D("2023-08-01"))  # documented impairment_end
     assert got["A"].positive and got["B"].positive and not got["C"].positive
     assert got["C"].window == (D("2023-03-10"), D("2023-03-12"))
@@ -300,3 +300,41 @@ def test_build_venues_tolerates_missing_files(tmp_path):
     data, meta = de.build_venues(tmp_path, manifest)
     assert set(data) == {"bitfinex", "binance_us", "coinbase"} and all(len(d.L) == 0 for d in data.values())
     assert meta["binance_us_months_on_disk"] == [] and "bitfinex:BTCUSD" in meta["missing_months"]
+
+
+# ---------------------------------------------------------------- amendment D1
+
+def test_d1_retrospective_window_starts_at_impairment():
+    assert de.truth_window(D("2019-04-30"), D("2018-12-31"), D("2018-05-01")) == (D("2018-04-01"), D("2018-12-31"))
+    assert de.truth_window(D("2019-04-30"), D("2018-01-01")) == (D("2019-03-31"), D("2019-07-29"))  # never empty
+
+
+def test_d1_labels_reference_excluded_quality_and_retrospective(tmp_path):
+    eps = [
+        {"id": "A", "venue": "Bitfinex", "type": "withdrawal_delay", "first_public_report_date": "2019-04-30",
+         "impairment_start": "2018-05-01", "impairment_end": "2018-12-31", "evidence_quality": "major_outlet"},
+        {"id": "B", "venue": "Bitstamp", "type": "rail_shutdown", "first_public_report_date": "2023-03-02",
+         "impairment_start": "2023-03-02", "impairment_end": None, "evidence_quality": "secondary"},
+        {"id": "CB-2019-01", "venue": "Coinbase", "type": "banking_partner_loss",
+         "first_public_report_date": "2019-08-14", "impairment_start": None, "impairment_end": None,
+         "evidence_quality": "major_outlet"},
+    ]
+    path = tmp_path / "labels.json"
+    path.write_text(json.dumps({"episodes": eps}))
+    bfx = de.load_labels(path, "bitfinex", also=("bitstamp",))
+    assert {e.id for e in bfx} == {"A", "B"}
+    a = next(e for e in bfx if e.id == "A")
+    assert a.extra["retrospective"] and a.window == (D("2018-04-01"), D("2018-12-31"))
+    assert {e.id for e in de.load_labels(path, "bitfinex", also=("bitstamp",), min_quality=de.HIGH_QUALITY)} == {"A"}
+    assert de.load_labels(path, "coinbase") == []
+
+
+def test_d1_retrospective_caught_has_no_lead_claim():
+    flags = flag_series("2018-04-01", 24 * 280, on=[("2018-06-10", 8)])
+    p = Episode("A", "bitfinex", "withdrawal_delay", D("2019-04-30"),
+                de.truth_window(D("2019-04-30"), D("2018-12-31"), D("2018-05-01")), True, {"retrospective": True})
+    ev = de.evaluate(flags, [p], [])
+    r = ev["positives"][0]
+    assert r["caught"] and r["retrospective"] and r["lead_days"] == (D("2018-06-10") - D("2019-04-30")).days
+    scored = de.score_predictions({"all": {"bitfinex": {"detector": ev}}, "unseen": {}})
+    assert scored["P3"]["status"] == "UNDEFINED" and scored["P3"]["violations"] == []

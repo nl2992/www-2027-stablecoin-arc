@@ -70,3 +70,19 @@ These checks are reported and not used to choose the headline.
 - This is not a causal claim about why rails failed.
 - These are not trading returns.
 - The detector is a monitor for which unit of account moved. Its index-error benefit over a plain cross-venue median is small when three or more venues are available (`docs/review/INDEX_REPAIR.md`).
+
+## 9. Amendment D1 (2026-10-19, before any run on real data)
+
+The label registry (`configs/fiat_rail_labels.json`, 33 episodes, `docs/review/FIAT_RAIL_LABELS.md`) arrived after sections 1–8 were committed. Applying section 3 to it literally exposed three problems. All three were fixed before the evaluation code had touched real data:
+
+1. **Retrospective disclosures.** Some impairments were reported long after they began. For example, BFX-2018-02's 2018 withdrawal delays were reported in April 2019. Section 3 gives those episodes an empty window.
+   - The window now runs from min(report, impairment_start) − 30 days to impairment_end, or to report + 90 days if no end is documented. It never ends before it starts.
+   - A positive is *retrospective* if it was reported more than 30 days after it started. For these, no lead time is claimed and P3 skips them. The time from the first alarm in the window to the report is shown instead.
+2. **Reference-side impairments.** A gap against Bitstamp cannot say whose dollar moved. Bitstamp's own labels (BST-2020-01, BST-2023-01) therefore count as positives for every venue monitored against it.
+3. **Non-USD rails.** CB-2019-01 concerns the GBP rail and is excluded, because the monitored quantity is the USD ledger.
+
+Added robustness: the detector scored against positives whose evidence quality is `primary_statement` or `major_outlet` only.
+
+**Label caveats carried into the paper** (from the label note):
+- The search for 2017–2022 Coinbase and Bitstamp events was shallow.
+- Several 2018 Bitfinex entries rest on retrospective or secondary sources.

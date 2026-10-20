@@ -39,6 +39,7 @@ P3_MAX_LEAD = 7
 P4_MAX_ALARM_SHARE = 0.01
 P1_MAX_PER_YEAR = 1.0
 VENUES = ("bitfinex", "binance_us", "coinbase")
+REFERENCE_LABELS = {"bitfinex": ("bitstamp",), "binance_us": ("bitstamp",), "coinbase": ("bitstamp",)}  # D1
 METHODS = ("detector", "b1", "b2", "b3")
 SEEN_BITFINEX = ({f"2017-{m:02d}" for m in range(2, 9)} | {f"2018-{m:02d}" for m in range(9, 13)}
                  | {f"2019-{m:02d}" for m in range(3, 8)})
@@ -135,28 +136,43 @@ def _d(x: Any) -> date | None:
     return date.fromisoformat(str(x)[:10]) if x not in (None, "") else None
 
 
-def truth_window(report: date, impairment_end: date | None) -> tuple[date, date]:
-    """Positives: [report - 30 d, impairment_end if documented, else report + 90 d]."""
-    return report - timedelta(days=PRE_DAYS), impairment_end or report + timedelta(days=POST_DAYS_DEFAULT)
+def truth_window(report: date, impairment_end: date | None, impairment_start: date | None = None) -> tuple[date, date]:
+    """Positives: [min(report, impairment_start) - 30 d, impairment_end if documented, else report + 90 d].
+
+    Amendment D1 (pre-data): a retrospectively disclosed impairment (start well before the report) gets a window
+    that starts at the impairment; a window that would end before it starts ends at report + 90 d instead.
+    """
+    lo = min(report, impairment_start or report) - timedelta(days=PRE_DAYS)
+    hi = impairment_end or report + timedelta(days=POST_DAYS_DEFAULT)
+    return lo, (hi if hi >= lo else report + timedelta(days=POST_DAYS_DEFAULT))
 
 
-def load_labels(path: Path, venue: str) -> list[Episode]:
+EXCLUDED_LABELS = {"CB-2019-01": "GBP rail; the monitored quantity is the USD ledger (amendment D1)"}
+HIGH_QUALITY = ("primary_statement", "major_outlet")
+
+
+def load_labels(path: Path, venue: str, also: tuple[str, ...] = (), min_quality: tuple[str, ...] | None = None) -> list[Episode]:
     """Positive and confounder episodes at ``venue`` (venue names compared after normalisation).
 
     Confounder windows are narrow (impairment_start or report date .. impairment_end or report date, no padding),
     so that fewer false alarms are explained away.
     """
     want = norm_venue(venue)
+    venues = {want, *(norm_venue(a) for a in also)}  # D1: a pair gap cannot say which side's dollar moved
     out = []
     for e in json.loads(Path(path).read_text())["episodes"]:
-        if norm_venue(e["venue"]) != want:
+        if norm_venue(e["venue"]) not in venues or e["id"] in EXCLUDED_LABELS:
+            continue
+        if min_quality is not None and e.get("evidence_quality") not in min_quality:
             continue
         typ = e["type"]
         start, end, report = _d(e.get("impairment_start")), _d(e.get("impairment_end")), _d(e.get("first_public_report_date"))
         if typ in POSITIVE_TYPES:
             if report is None:
                 continue
-            out.append(Episode(e["id"], want, typ, report, truth_window(report, end), True))
+            retro = start is not None and report > start + timedelta(days=LEAD_WINDOW_DAYS)
+            out.append(Episode(e["id"], want, typ, report, truth_window(report, end, start), True,
+                               {"retrospective": retro, "label_venue": norm_venue(e["venue"])}))
         elif typ == "confounder":
             lo = start or report
             if lo is None:
@@ -211,10 +227,12 @@ def evaluate(flags: pd.Series | None, positives: list[Episode], confounders: lis
         lo, hi = _num(p.window[0]), _num(p.window[1])
         covered = (sum(1 for d in range(lo, hi + 1) if d in eval_days) / (hi - lo + 1)) >= COVERAGE_MIN
         caught = covered and any(_overlap(p.window, e) for e in eps)
-        w = (p.report - timedelta(days=LEAD_WINDOW_DAYS), p.report + timedelta(days=LEAD_WINDOW_DAYS))
+        retro = bool(p.extra.get("retrospective"))
+        w = p.window if retro else (p.report - timedelta(days=LEAD_WINDOW_DAYS), p.report + timedelta(days=LEAD_WINDOW_DAYS))
         first = next((d for d in days if w[0] <= d <= w[1]), None)
         recs.append({"id": p.id, "type": p.type, "report": str(p.report), "window": [str(p.window[0]), str(p.window[1])],
-                     "covered": bool(covered), "caught": bool(caught),
+                     "covered": bool(covered), "caught": bool(caught), "retrospective": retro,
+                     "label_venue": p.extra.get("label_venue"),
                      "first_alarm_day": None if first is None else str(first),
                      "lead_days": None if first is None else (first - p.report).days})
     covered_n = sum(r["covered"] for r in recs)
@@ -315,7 +333,7 @@ def score_predictions(results: dict[str, dict[str, dict[str, dict[str, Any] | No
     for v, m in results.get("all", {}).items():
         d = m.get("detector")
         for r in (d["positives"] if d else []):
-            if r["caught"]:
+            if r["caught"] and not r.get("retrospective"):  # D1: no lead-time claim for retrospective disclosures
                 leads.append({"venue": v, "id": r["id"], "lead_days": r["lead_days"]})
                 if r["lead_days"] is None or r["lead_days"] > P3_MAX_LEAD:
                     p3_fail.append(r["id"])
@@ -525,8 +543,14 @@ def build_venues(raw: Path, manifest: Path) -> tuple[dict[str, VenueData], dict[
 
 def run(raw: Path, manifest: Path, labels: Path) -> dict[str, Any]:
     data, meta = build_venues(raw, manifest)
-    lab = {v: load_labels(labels, v) for v in data}
+    lab = {v: load_labels(labels, v, also=REFERENCE_LABELS[v]) for v in data}
     out = report(data, lab)
+    hq = {v: load_labels(labels, v, also=REFERENCE_LABELS[v], min_quality=HIGH_QUALITY) for v in data}
+    hq_split = {v: _split(hq[v]) for v in data}
+    out["robustness"]["high_quality_labels"] = {
+        v: _brief(evaluate(method_flags(vd, "detector"), *hq_split[v])) for v, vd in data.items()}
+    out["amendment"] = "D1 (pre-data, docs/review/DETECTOR_PREREG.md section 9)"
+    out["excluded_labels"] = EXCLUDED_LABELS
     out["data"] = meta
     return out
 

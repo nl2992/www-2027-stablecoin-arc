@@ -1,0 +1,608 @@
+{
+  "compiled": "2026-10-20T02:24:42Z",
+  "method": "Compiled from dated public sources only (exchange/bank statements as quoted by outlets, court/regulatory filings, and news from CoinDesk, The Block, Bloomberg, Reuters/Kitco, WSJ-via-ForkLog, Cointelegraph, Finance Magnates and others). Compiled blind to price data: no files under data/, reports/rescue/*.json or configs/usd_rail_impairments.json were opened, so labels are independent of any detector output. Dates are UTC calendar dates; where a source gave only a local time or a conflicting date this is stated in notes. Many pages could not be fetched (403 / timeout); entries relying only on search-result summaries say so in notes. Coverage is not exhaustive: absence of an entry is NOT proof of no event.",
+  "scope": {
+    "venues": [
+      "Bitfinex",
+      "Bitstamp",
+      "Coinbase (incl. Coinbase Pro/GDAX)",
+      "Kraken",
+      "Binance.US"
+    ],
+    "window": "2017-01-01 to 2023-12-31; Binance.US 2022-10-01 to 2025-03-31"
+  },
+  "types": [
+    "deposit_pause",
+    "withdrawal_delay",
+    "banking_partner_loss",
+    "rail_shutdown",
+    "restoration",
+    "confounder"
+  ],
+  "evidence_quality_scale": [
+    "primary_statement",
+    "major_outlet",
+    "secondary",
+    "rumor"
+  ],
+  "episodes": [
+    {
+      "id": "BFX-2017-01",
+      "venue": "Bitfinex",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2017-04-09",
+      "first_report_source_url": "https://siliconangle.com/2017/04/09/bitcoin-exchange-bitfinex-sues-wells-fargo-suspended-wire-transfers/",
+      "impairment_start": "2017-03-31",
+      "impairment_end": null,
+      "source_urls": [
+        "https://siliconangle.com/2017/04/09/bitcoin-exchange-bitfinex-sues-wells-fargo-suspended-wire-transfers/",
+        "https://coindesk.com/markets/2017/04/11/bitfinex-sues-wells-fargo-over-bank-transfer-freeze/",
+        "https://ag.ny.gov/sites/default/files/2021.02.17_-_settlement_agreement_-_execution_version.b-t_signed-c2_oag_signed.pdf"
+      ],
+      "description": "Wells Fargo (correspondent for Bitfinex's four Taiwan banks) stopped processing outbound USD wires; Bitfinex reported USD withdrawal delays and sued Wells Fargo (suit later dropped).",
+      "evidence_quality": "major_outlet",
+      "notes": "First report date is the earliest source I could verify (SiliconANGLE, updated 2017-04-09; CoinDesk 2017-04-11 says suit filed 'late last week'); a Bitfinex announcement a few days earlier is likely but not verified. Start date: NYAG settlement says 'late March 2017'; one compiled timeline says 2017-03-31 (secondary). Outbound wires only per the complaint; no documented end date."
+    },
+    {
+      "id": "BFX-2017-02",
+      "venue": "Bitfinex",
+      "type": "deposit_pause",
+      "first_public_report_date": "2017-04-18",
+      "first_report_source_url": "https://www.financemagnates.com/cryptocurrency/exchange/bitcoin-exchange-bitfinex-blocked-accepting-wire-deposits/",
+      "impairment_start": "2017-04-18",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.financemagnates.com/cryptocurrency/exchange/bitcoin-exchange-bitfinex-blocked-accepting-wire-deposits/",
+        "https://cointelegraph.com/news/okcoin-follows-bitfinex-freezes-inbound-wire-transfers"
+      ],
+      "description": "Bitfinex said its Taiwan banks would refuse all incoming wires in every fiat currency from 2017-04-18 and told customers to stop sending wires until further notice (OKCoin paused USD deposits the same day).",
+      "evidence_quality": "major_outlet",
+      "notes": "Bitfinex's own notice is quoted by the outlets, not retrieved directly. No restoration date documented; Bitfinex moved to Crypto Capital for retail fiat flows afterwards (see BFX-2018-01)."
+    },
+    {
+      "id": "BFX-2018-01",
+      "venue": "Bitfinex",
+      "type": "withdrawal_delay",
+      "first_public_report_date": "2018-02-20",
+      "first_report_source_url": "https://www.theblock.co/amp/post/22413/the-bitfinex-ieo-how-did-we-get-here",
+      "impairment_start": "2018-01-10",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/amp/post/22413/the-bitfinex-ieo-how-did-we-get-here",
+        "https://www.theblock.co/post/21444/no-bitfinexs-seized-850-million-is-not-likely-to-be-unfrozen-within-weeks"
+      ],
+      "description": "Bitfinex posted a notice (r/bitfinex) about delayed fiat deposits and withdrawals executed 2018-01-10 to 2018-02-05, blaming a backlog; Crypto Capital was by then the main fiat processor.",
+      "evidence_quality": "secondary",
+      "notes": "Notice text and 2018-02-20 date come from a compiled timeline in The Block (2019 article), not the original post, which I did not retrieve. Start date is the earliest affected-transaction date cited."
+    },
+    {
+      "id": "BFX-2018-02",
+      "venue": "Bitfinex",
+      "type": "withdrawal_delay",
+      "first_public_report_date": "2019-04-30",
+      "first_report_source_url": "https://www.theblock.co/post/21444/no-bitfinexs-seized-850-million-is-not-likely-to-be-unfrozen-within-weeks",
+      "impairment_start": "2018-05-01",
+      "impairment_end": "2018-12-31",
+      "source_urls": [
+        "https://www.theblock.co/post/21444/no-bitfinexs-seized-850-million-is-not-likely-to-be-unfrozen-within-weeks",
+        "https://www.theblock.co/post/20978/ny-attorney-general-sues-bitfinex-and-tether"
+      ],
+      "description": "Severe fiat deposit/withdrawal delays by May 2018 (some customers never paid, some refunded after about six months) as Crypto Capital's accounts were closed/frozen; Crypto Capital voted to dissolve 2018-06-13.",
+      "evidence_quality": "major_outlet",
+      "notes": "First report date is the earliest retrospective source I verified (The Block 2019-04-30); contemporaneous customer reports from May-June 2018 very likely exist but were not located, so the true first public report is probably earlier. Start 'by May 2018' is approximate; end date is a placeholder for 'through year-end', merging into BFX-2018-04."
+    },
+    {
+      "id": "BFX-2018-03",
+      "venue": "Bitfinex",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2018-09-30",
+      "first_report_source_url": "https://cointelegraph.com/magazine/bitfinex-the-rumors-of-insolvency-banking-partners-escape-and-the-suspension-of-fiat-deposits",
+      "impairment_start": "2018-09-30",
+      "impairment_end": null,
+      "source_urls": [
+        "https://cointelegraph.com/magazine/bitfinex-the-rumors-of-insolvency-banking-partners-escape-and-the-suspension-of-fiat-deposits",
+        "https://thepaypers.com/payments/news/bitfinex-is-now-banking-with-hsbc",
+        "https://en.wikipedia.org/wiki/Bitfinex"
+      ],
+      "description": "Reports (Bloomberg, relayed by Cointelegraph) that Puerto Rico's Noble Bank, allegedly servicing Bitfinex/Tether, was in financial distress and seeking a buyer; Bitfinex later reported banking via HSBC.",
+      "evidence_quality": "secondary",
+      "notes": "Noble Bank trouble first reported 2018-09-30 per Cointelegraph magazine (published 2018-10-20); I did not retrieve the Bloomberg original. Wikipedia (secondary) says the Noble relationship was terminated in September 2018; I found no source confirming Noble closed Bitfinex's account. Bitfinex said the reports did not affect operations."
+    },
+    {
+      "id": "BFX-2018-04",
+      "venue": "Bitfinex",
+      "type": "deposit_pause",
+      "first_public_report_date": "2018-10-11",
+      "first_report_source_url": "https://bitcoinist.com/bitfinex-reportedly-halts-fiat-deposits/amp/",
+      "impairment_start": "2018-10-11",
+      "impairment_end": "2018-10-16",
+      "source_urls": [
+        "https://bitcoinist.com/bitfinex-reportedly-halts-fiat-deposits/amp/",
+        "https://forklog.com/news/bitkoin-birzha-bitfinex-podtverdila-informatsiyu-o-priostanovke-fiatnyh-depozitov",
+        "https://cointelegraph.com/magazine/bitfinex-the-rumors-of-insolvency-banking-partners-escape-and-the-suspension-of-fiat-deposits"
+      ],
+      "description": "Bitfinex paused fiat (USD, EUR, JPY, GBP) wire deposits; comms director Kasper Rasmussen confirmed on 2018-10-12 that deposits were temporarily paused for about a week; withdrawals continued. Bitfinex announced an 'improved' deposit system on 2018-10-16.",
+      "evidence_quality": "major_outlet",
+      "notes": "First report is from customer screenshots circulated 2018-10-11 (Bitcoinist, dated by embedded tweet), confirmed 2018-10-12. End date is the 2018-10-16 announcement, not a verified restart time; Bitfinex's own Oct-15 release says deposits were paused 'for certain user groups'. Coindesk 2018-10-16 article could not be fetched (timeout) but its headline/summary was seen in search."
+    },
+    {
+      "id": "BFX-2018-05",
+      "venue": "Bitfinex",
+      "type": "restoration",
+      "first_public_report_date": "2018-10-16",
+      "first_report_source_url": "https://coindesk-coindesk-prod.cdn.arcpublishing.com/markets/2018/10/16/crypto-exchange-bitfinex-restarts-fiat-deposits-claiming-improved-process/",
+      "impairment_start": "2018-10-16",
+      "impairment_end": null,
+      "source_urls": [
+        "https://coindesk-coindesk-prod.cdn.arcpublishing.com/markets/2018/10/16/crypto-exchange-bitfinex-restarts-fiat-deposits-claiming-improved-process/",
+        "https://cointelegraph.com/magazine/bitfinex-the-rumors-of-insolvency-banking-partners-escape-and-the-suspension-of-fiat-deposits"
+      ],
+      "description": "Bitfinex restarted USD fiat deposits for KYC-verified users via a 'new, improved' system, with deposits processed in roughly six to ten days.",
+      "evidence_quality": "major_outlet",
+      "notes": "Restoration was partial (KYC-verified users, slow processing); Crypto Capital-routed flows were still failing in Nov-Dec 2018 (see BFX-2018-06)."
+    },
+    {
+      "id": "BFX-2018-06",
+      "venue": "Bitfinex",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2019-04-25",
+      "first_report_source_url": "https://www.theblock.co/post/20978/ny-attorney-general-sues-bitfinex-and-tether",
+      "impairment_start": "2018-12-01",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/20978/ny-attorney-general-sues-bitfinex-and-tether",
+        "https://www.theblock.co/post/21444/no-bitfinexs-seized-850-million-is-not-likely-to-be-unfrozen-within-weeks",
+        "https://www.theblock.co/news/business/2019-10-20-bitfinex-files-discovery-application-in-attempt-to-regain-access-to-880-million-from-crypto-capital-others-43903"
+      ],
+      "description": "Crypto Capital, Bitfinex's main retail fiat processor, could no longer process any fiat deposits/withdrawals by Dec 2018; about $851m of Bitfinex/Tether funds were reported lost, or seized per Bitfinex. Disclosed by the NYAG complaint (dated 2019-04-24, reported 2019-04-25).",
+      "evidence_quality": "major_outlet",
+      "notes": "Rail failure itself was concealed ('small backlog' per chat logs) so the first PUBLIC report is the NYAG action. Start 2018-12 is from chat logs reported by The Block; NYAG links withdrawal struggles to Oct 2018. Loss vs seizure disputed. No documented end; Bitfinex sought discovery to recover funds in Oct 2019."
+    },
+    {
+      "id": "BFX-2019-01",
+      "venue": "Bitfinex",
+      "type": "confounder",
+      "first_public_report_date": "2019-04-25",
+      "first_report_source_url": "https://www.theblock.co/post/20978/ny-attorney-general-sues-bitfinex-and-tether",
+      "impairment_start": "2019-04-25",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/20978/ny-attorney-general-sues-bitfinex-and-tether",
+        "https://www.fxstreet.com/cryptocurrencies/news/bitfinex-betrayed-customers-trust-traders-withdrew-nearly-600-m-in-five-days-201905010631"
+      ],
+      "description": "NYAG lawsuit and preliminary injunction (2019-04-25) against Bitfinex/Tether over concealed Crypto Capital loss; net outflows of about $585m in five days. Same cluster as BFX-2018-06; treat as a regulatory/confidence shock.",
+      "evidence_quality": "major_outlet",
+      "notes": "Listed separately so a detector alarm on 2019-04-25 to 05-01 can be classified as the NYAG disclosure shock versus the underlying rail failure."
+    },
+    {
+      "id": "BFX-2018-07",
+      "venue": "Bitfinex",
+      "type": "confounder",
+      "first_public_report_date": "2018-06-05",
+      "first_report_source_url": "https://www.cnbc.com/2018/06/05/cryptocurrency-exchange-bitfinex-briefly-halts-trading-after-cyber-attack.html",
+      "impairment_start": "2018-06-05",
+      "impairment_end": "2018-06-05",
+      "source_urls": [
+        "https://www.cnbc.com/2018/06/05/cryptocurrency-exchange-bitfinex-briefly-halts-trading-after-cyber-attack.html",
+        "https://www.bloomberg.com/news/articles/2018-06-05/crypto-exchange-bitfinex-suspects-it-s-being-attacked-again"
+      ],
+      "description": "Bitfinex trading halted by an infrastructure-provider outage and a DDoS attack; trading resumed about 11am ET same day; no fund impact.",
+      "evidence_quality": "major_outlet",
+      "notes": "Search summary of CNBC; page itself not fetched."
+    },
+    {
+      "id": "BFX-2021-01",
+      "venue": "Bitfinex",
+      "type": "confounder",
+      "first_public_report_date": "2021-02-23",
+      "first_report_source_url": "https://www.theblock.co/post/95207/bitfinex-tether-new-york-ag-settlement-lawsuit",
+      "impairment_start": "2021-02-23",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/95207/bitfinex-tether-new-york-ag-settlement-lawsuit",
+        "https://www.cnbc.com/amp/2021/02/23/tether-bitfinex-reach-settlement-with-new-york-attorney-general.html"
+      ],
+      "description": "NYAG settlement with Bitfinex/Tether: $18.5m penalty, quarterly Tether reserve reports; no fiat-rail impact.",
+      "evidence_quality": "major_outlet",
+      "notes": "Regulatory resolution of the 2019 case; no new impairment."
+    },
+    {
+      "id": "BFX-2022-01",
+      "venue": "Bitfinex",
+      "type": "confounder",
+      "first_public_report_date": "2022-02-08",
+      "first_report_source_url": "https://fintelegram.com/u-s-justice-department-announced-two-arrests-in-the-bitfinex-crypto-hack/",
+      "impairment_start": "2022-02-08",
+      "impairment_end": null,
+      "source_urls": [
+        "https://fintelegram.com/u-s-justice-department-announced-two-arrests-in-the-bitfinex-crypto-hack/",
+        "https://www.asiafinancial.com/us-charges-couple-over-4-5bn-hong-kong-crypto-heist"
+      ],
+      "description": "US DOJ arrests Lichtenstein and Morgan and seizes about 94,000 BTC tied to the 2016 Bitfinex hack; no fiat-rail impact.",
+      "evidence_quality": "secondary",
+      "notes": "Date taken from the secondary reports (arrest announced 2022-02-08); no primary DOJ page retrieved."
+    },
+    {
+      "id": "BST-2020-01",
+      "venue": "Bitstamp",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2020-11-17",
+      "first_report_source_url": "https://www.theblock.co/post/84885/bitstamp-subpoena-citibank-bofa-court",
+      "impairment_start": null,
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/84885/bitstamp-subpoena-citibank-bofa-court",
+        "https://forklog.com/en/bitstamp-subpoenas-citibank-and-bank-of-america-over-2-7-million-in-frozen-funds/"
+      ],
+      "description": "Court filings show a dispute with former payment processor CNG Processing (US accounts at Citibank/BofA delayed and limited; about $2.7m of deposit and client funds allegedly frozen). Some outlets reported fiat withdrawal glitches; Bitstamp said it was processing fiat withdrawals.",
+      "evidence_quality": "secondary",
+      "notes": "Fiat impact on customers is NOT confirmed (Bitstamp denied it; Bitstamp said it had not used CNG for over a year). Impairment window unknown. Low-confidence rail label; consider excluding from positives."
+    },
+    {
+      "id": "BST-2023-01",
+      "venue": "Bitstamp",
+      "type": "rail_shutdown",
+      "first_public_report_date": "2023-03-02",
+      "first_report_source_url": "https://cryptoslate.com/gemini-crypto-com-bitstamp-microstrategy-distance-themselves-from-silvergate/",
+      "impairment_start": "2023-03-02",
+      "impairment_end": null,
+      "source_urls": [
+        "https://cryptoslate.com/gemini-crypto-com-bitstamp-microstrategy-distance-themselves-from-silvergate/",
+        "https://www.odaily.news/en/post/5185468",
+        "https://www.businesswire.com/news/home/20230308005795/en/Silvergate-Capital-Corporation-Announces-Intent-to-Wind-Down-Operations-and-Voluntarily-Liquidate-Silvergate-Bank"
+      ],
+      "description": "Bitstamp temporarily ended Silvergate Exchange Network service and USD wire support via Silvergate; said customer funds were safe, it had 17 banking partners and alternative rails in place (Signature Signet used for instant USD).",
+      "evidence_quality": "secondary",
+      "notes": "Bitstamp's own blog post not retrieved. CryptoSlate dates it 2023-03-02; Odaily dates it 2023-03-03. No source found on what happened to Bitstamp's Signet USD rail after Signature closed on 2023-03-12 and no restoration date found."
+    },
+    {
+      "id": "CB-2019-01",
+      "venue": "Coinbase",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2019-08-14",
+      "first_report_source_url": "https://www.financemagnates.com/cryptocurrency/news/coinbase-looses-banking-access-from-barclays-in-the-uk/",
+      "impairment_start": null,
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.financemagnates.com/cryptocurrency/news/coinbase-looses-banking-access-from-barclays-in-the-uk/",
+        "https://thepaypers.com/news/barclays-no-longer-works-with-crypto-exchange-coinbase--780208",
+        "https://cointelegraph.com/news/coinbase-and-barclays-part-ways-will-uk-users-be-affected"
+      ],
+      "description": "Barclays ended its UK banking relationship with Coinbase (CoinDesk report); GBP Faster Payments access lost so UK fiat deposits/withdrawals took days; ClearBank expected to restore by end of Q3 2019.",
+      "evidence_quality": "major_outlet",
+      "notes": "GBP rail, not USD: likely outside a USD-ledger test; keep as a venue-level fiat-rail event. Start date not documented; restoration only expected, not confirmed. Original CoinDesk article not retrieved."
+    },
+    {
+      "id": "CB-2022-01",
+      "venue": "Coinbase",
+      "type": "withdrawal_delay",
+      "first_public_report_date": "2022-10-02",
+      "first_report_source_url": "https://www.bloomberg.com/news/articles/2022-10-02/coinbase-investigating-problem-with-payments-from-us-banks",
+      "impairment_start": "2022-10-02",
+      "impairment_end": "2022-10-02",
+      "source_urls": [
+        "https://www.bloomberg.com/news/articles/2022-10-02/coinbase-investigating-problem-with-payments-from-us-banks",
+        "https://www.blockworks.com/news/coinbase-says-funds-are-safe-after-6-hour-bank-outage",
+        "https://www.benzinga.com/markets/cryptocurrency/22/10/29110900/coinbase-unable-to-process-us-bank-transactions-implementing-fix"
+      ],
+      "description": "Technical ACH problem blocked US bank-account payments/withdrawals on Coinbase for about six hours (6:57 to 12:41 ET); Coinbase said funds were safe.",
+      "evidence_quality": "major_outlet",
+      "notes": "Times are from a search-result summary of the CoinDesk/Blockworks reports (those pages could not be fetched). Technical outage, not a banking-partner loss; best treated as a short rail glitch / near-confounder."
+    },
+    {
+      "id": "CB-2023-01",
+      "venue": "Coinbase",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2023-03-02",
+      "first_report_source_url": "https://fortune.com/crypto/2023/03/02/coinbase-ends-relationship-with-silvergate-as-the-crypto-bank-faces-federal-investigations-and-viability-concerns",
+      "impairment_start": "2023-03-02",
+      "impairment_end": null,
+      "source_urls": [
+        "https://fortune.com/crypto/2023/03/02/coinbase-ends-relationship-with-silvergate-as-the-crypto-bank-faces-federal-investigations-and-viability-concerns",
+        "https://www.bloomberg.com/news/articles/2023-03-02/coinbase-galaxy-paxos-stop-accepting-transfers-via-silvergate"
+      ],
+      "description": "Coinbase stopped accepting or initiating payments to/from Silvergate and moved to other banks (including Signature); said client funds remained safe and accessible, with de minimis corporate exposure.",
+      "evidence_quality": "major_outlet",
+      "notes": "No customer-facing USD impairment reported by Coinbase; label is partner loss, not a confirmed user-facing suspension."
+    },
+    {
+      "id": "CB-2023-02",
+      "venue": "Coinbase",
+      "type": "rail_shutdown",
+      "first_public_report_date": "2023-03-20",
+      "first_report_source_url": "https://cryptoslate.com/coinbase-drops-support-for-signatures-still-active-signet-payment-network/",
+      "impairment_start": "2023-03-20",
+      "impairment_end": null,
+      "source_urls": [
+        "https://cryptoslate.com/coinbase-drops-support-for-signatures-still-active-signet-payment-network/",
+        "https://www.fxstreet.com/cryptocurrencies/news/coinbase-pauses-support-for-signature-banks-signet-report-202303202248",
+        "https://it.finance.yahoo.com/news/coinbase-no-longer-supporting-signature-201529562.html",
+        "https://www.pymnts.com/?p=1480482"
+      ],
+      "description": "Coinbase paused support for Signature Bank's Signet from 2023-03-20 until further notice (WSJ-reported, spokesperson-confirmed); USD deposits/withdrawals lost 24/7 instant rail and were limited to banking hours; USDC conversions stayed 24/7. Signature had been closed 2023-03-12.",
+      "evidence_quality": "major_outlet",
+      "notes": "No restoration date found. Signet itself kept operating under FDIC receivership; the pause was Coinbase's choice. Coinbase had about $240m at Signature, expected to be fully recovered (FXStreet, secondary)."
+    },
+    {
+      "id": "CB-2023-03",
+      "venue": "Coinbase",
+      "type": "confounder",
+      "first_public_report_date": "2023-03-10",
+      "first_report_source_url": "https://www.theblock.co/post/218979/coinbase-halts-conversion-feature-between-u-s-dollars-and-usdc",
+      "impairment_start": "2023-03-10",
+      "impairment_end": "2023-03-13",
+      "source_urls": [
+        "https://www.theblock.co/post/218979/coinbase-halts-conversion-feature-between-u-s-dollars-and-usdc",
+        "https://web3isgoinggreat.com/single/coinbase-pauses-redemptions-of-usdc-for-dollars"
+      ],
+      "description": "Coinbase paused USDC:USD conversions over the weekend while banks were closed after Circle disclosed $3.3bn SVB exposure; USDC fell as low as about $0.88 on 2023-03-11.",
+      "evidence_quality": "major_outlet",
+      "notes": "Affects USDC redeemability, not Coinbase's USD ledger balances, but is the cleanest confounder for any USD/USDC basis signal in the SVB/Signature window. End 2023-03-13 is the planned Monday restart; actual restart not verified."
+    },
+    {
+      "id": "CB-2023-04",
+      "venue": "Coinbase",
+      "type": "confounder",
+      "first_public_report_date": "2023-03-22",
+      "first_report_source_url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978823000051/coin-20230322.htm",
+      "impairment_start": "2023-03-22",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1679788/000167978823000051/coin-20230322.htm",
+        "https://nortonrosefulbright.com/en-gb/knowledge/publications/09f5b7c1/us-sec-targets-coinbase-signaling-stricter-enforcement-against-crypto-exchanges"
+      ],
+      "description": "Coinbase disclosed an SEC Wells notice (8-K, 2023-03-22); services operated as usual; shares fell about 13% after hours.",
+      "evidence_quality": "primary_statement",
+      "notes": "Regulatory action without fiat impact."
+    },
+    {
+      "id": "CB-2023-05",
+      "venue": "Coinbase",
+      "type": "confounder",
+      "first_public_report_date": "2023-06-06",
+      "first_report_source_url": "https://www.theblock.co/post/233274/coinbase-stock-sec-lawsuit",
+      "impairment_start": "2023-06-06",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/233274/coinbase-stock-sec-lawsuit",
+        "https://www.bloomberg.com/news/articles/2023-06-06/coinbase-sued-by-sec-for-breaking-us-securities-rules"
+      ],
+      "description": "SEC sues Coinbase (unregistered exchange/broker/clearing agency); stock fell about 15% pre-market; USD services unaffected.",
+      "evidence_quality": "major_outlet",
+      "notes": "Regulatory action without fiat impact, one day after the SEC suit against Binance/Binance.US."
+    },
+    {
+      "id": "CB-2023-06",
+      "venue": "Coinbase",
+      "type": "confounder",
+      "first_public_report_date": "2023-07-13",
+      "first_report_source_url": "https://coindesk-coindesk-prod.cdn.arcpublishing.com/business/2023/07/13/brian-armstrong-asks-twitter-followers-if-their-bofa-accounts-were-closed-because-of-coinbase-transactions/",
+      "impairment_start": "2023-07-13",
+      "impairment_end": null,
+      "source_urls": [
+        "https://coindesk-coindesk-prod.cdn.arcpublishing.com/business/2023/07/13/brian-armstrong-asks-twitter-followers-if-their-bofa-accounts-were-closed-because-of-coinbase-transactions/",
+        "https://benzinga.com/z/33213504",
+        "https://crypto.news/bank-of-america-not-randomly-closing-accounts-of-coinbase-clients/"
+      ],
+      "description": "Rumours that Bank of America closed personal accounts of Coinbase users; Armstrong polled followers (about 9% yes); no exchange-level USD rail impact.",
+      "evidence_quality": "rumor",
+      "notes": "Individual-account debanking, not a Coinbase rail event; recorded only so alarms in July 2023 can be classified."
+    },
+    {
+      "id": "KR-2018-01",
+      "venue": "Kraken",
+      "type": "confounder",
+      "first_public_report_date": "2018-01-14",
+      "first_report_source_url": "https://fortune.com/crypto/2018/01/14/kraken-bitcoin-exchange-reopens",
+      "impairment_start": "2018-01-11",
+      "impairment_end": "2018-01-13",
+      "source_urls": [
+        "https://fortune.com/crypto/2018/01/14/kraken-bitcoin-exchange-reopens",
+        "https://aphnetworks.com/news/18555-kraken-cryptocurrency-exchange-finally-back-online"
+      ],
+      "description": "Planned two-hour maintenance turned into about a two-day outage after a trading-engine overhaul failed; all trading and withdrawals were suspended; funds intact.",
+      "evidence_quality": "major_outlet",
+      "notes": "Start/end days taken from summaries (outage began 'last Thursday' = 2018-01-11, ended 2018-01-13); not checked against Kraken's own post."
+    },
+    {
+      "id": "KR-2020-01",
+      "venue": "Kraken",
+      "type": "withdrawal_delay",
+      "first_public_report_date": "2020-06-25",
+      "first_report_source_url": "https://www.financemagnates.com/cryptocurrency/exchange/kraken-experiences-domestic-usd-funding-delays/",
+      "impairment_start": "2020-06-25",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.financemagnates.com/cryptocurrency/exchange/kraken-experiences-domestic-usd-funding-delays/",
+        "https://forklog.com/?p=103604"
+      ],
+      "description": "Delays at Kraken's wire processor for domestic US USD deposits via Evolve Bank (status page 2020-06-29 23:24 UTC); deposits stuck 'Confirming' for extra business days; Kraken added an MVB USD funding option around 2020-07-07.",
+      "evidence_quality": "secondary",
+      "notes": "First-report date is a user tweet (2020-06-25) cited by Finance Magnates; Kraken's status-page notice (primary) is 2020-06-29, FM article 2020-06-30. Deposit-side delay only. No resolution date; the MVB announcement is a workaround, not an end."
+    },
+    {
+      "id": "KR-2023-01",
+      "venue": "Kraken",
+      "type": "deposit_pause",
+      "first_public_report_date": "2023-03-01",
+      "first_report_source_url": "https://unchainedcrypto.com/kraken-ends-non-corporate-transactions-with-signature-bank-report/",
+      "impairment_start": "2023-03-15",
+      "impairment_end": null,
+      "source_urls": [
+        "https://unchainedcrypto.com/kraken-ends-non-corporate-transactions-with-signature-bank-report/",
+        "https://seekingalpha.com/news/3942831-crypto-exchange-kraken-stops-using-signature-bank-for-some-transactions-report",
+        "https://www.blockworks.com/news/kraken-signature-bank-transfer-limitations",
+        "https://www.kitco.com/news/off-the-wire/2023-03-12/kraken-says-signature-and-signet-deposits-and-withdrawals-being"
+      ],
+      "description": "Per a Bloomberg report of a Kraken email, non-corporate clients would lose USD deposits/withdrawals through Signature Bank; on 2023-03-12 (Signature closed) Kraken said Signature/Signet deposits and withdrawals were processing as usual.",
+      "evidence_quality": "major_outlet",
+      "notes": "Bloomberg original not retrieved (date 2023-03-01 inferred from Unchained's 'Wednesday report'). Start 2023-03-15 comes only from a search snippet of Blockworks (deposits ending 15 March), which returned 403; low confidence. Whether the restriction ever took effect after Signature's closure is unclear."
+    },
+    {
+      "id": "KR-2023-02",
+      "venue": "Kraken",
+      "type": "rail_shutdown",
+      "first_public_report_date": "2023-03-22",
+      "first_report_source_url": "https://www.financemagnates.com/cryptocurrency/news/kraken-to-suspend-ach-deposits-and-withdrawals/",
+      "impairment_start": "2023-03-27",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.financemagnates.com/cryptocurrency/news/kraken-to-suspend-ach-deposits-and-withdrawals/",
+        "https://www.coindesk.com/business/2023/03/22/kraken-suspends-ach-withdrawals-amid-silvergate-shutdown",
+        "https://www.diariobitcoin.com/exchanges/kraken-suspendera-temporalmente-transacciones-fiat-instantaneas-para-clientes-en-ee-uu/",
+        "https://www.businesswire.com/news/home/20230308005795/en/Silvergate-Capital-Corporation-Announces-Intent-to-Wind-Down-Operations-and-Voluntarily-Liquidate-Silvergate-Bank"
+      ],
+      "description": "Kraken emailed customers on 2023-03-22 that ACH deposits (Plaid) and ACH withdrawals via Silvergate would end 2023-03-27 after Silvergate's SEN shutdown; Fedwire via MVB Bank and ACH instant purchases remained.",
+      "evidence_quality": "major_outlet",
+      "notes": "First public report is the CoinDesk article of 2023-03-22/23 (CoinDesk fetch not attempted; Finance Magnates 2023-03-23 fetched). No restoration date found; Kraken's support page now lists ACH via Plaid but the return date is not documented."
+    },
+    {
+      "id": "KR-2023-03",
+      "venue": "Kraken",
+      "type": "confounder",
+      "first_public_report_date": "2023-02-09",
+      "first_report_source_url": "https://www.theblock.co/post/210332/kraken-settles-sec-charges-over-its-staking-program",
+      "impairment_start": "2023-02-09",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/210332/kraken-settles-sec-charges-over-its-staking-program",
+        "https://cointelegraph.com/news/kraken-reaches-30m-settlement-with-sec-over-staking"
+      ],
+      "description": "SEC settlement: $30m and Kraken ends US staking-as-a-service; no fiat impact.",
+      "evidence_quality": "major_outlet",
+      "notes": "Regulatory action without fiat impact."
+    },
+    {
+      "id": "BUS-2023-01",
+      "venue": "Binance.US",
+      "type": "banking_partner_loss",
+      "first_public_report_date": "2023-04-09",
+      "first_report_source_url": "https://forklog.com/en/wsj-binance-us-seeks-a-new-banking-partner-in-the-united-states/amp",
+      "impairment_start": "2023-03-12",
+      "impairment_end": null,
+      "source_urls": [
+        "https://forklog.com/en/wsj-binance-us-seeks-a-new-banking-partner-in-the-united-states/amp",
+        "https://www.bloomberg.com/news/articles/2023-06-08/binance-money-trail-reveals-70-billion-flows-to-silvergate-signature"
+      ],
+      "description": "WSJ (via ForkLog): Binance.US lost Signature and Silvergate as dollar banks, was routing fiat through intermediaries including Prime Trust, and failed to land Cross River and Customers Bancorp.",
+      "evidence_quality": "secondary",
+      "notes": "WSJ original not retrieved; ForkLog date 2023-04-09 may lag WSJ by a day. Start set to the Signature closure date as the likely trigger; Binance.US's own timing of its exposure not documented. No USD service interruption was reported for Binance.US at this point."
+    },
+    {
+      "id": "BUS-2023-02",
+      "venue": "Binance.US",
+      "type": "deposit_pause",
+      "first_public_report_date": "2023-06-09",
+      "first_report_source_url": "https://www.theblock.co/post/233917/binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-payments-next-week",
+      "impairment_start": "2023-06-08",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/post/233917/binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-payments-next-week",
+        "https://unchainedcrypto.com/binance-us-banking-partners-cut-dollar-payment-rails/",
+        "https://blockworks.co/news/binance-us-halt-usd-withdrawals"
+      ],
+      "description": "Binance.US suspended USD deposits and warned banking partners would pause fiat withdrawals as early as 2023-06-13, citing the SEC lawsuit; users told to withdraw USD by 2023-06-13 and balances may be converted to stablecoins after 06-15.",
+      "evidence_quality": "major_outlet",
+      "notes": "The Block published 2023-06-08 23:28 EDT = 2023-06-09 UTC. Start 2023-06-08 is local-time (Unchained and The Block say Thursday 8 June; ForkLog says June 9). End: see BUS-2025-01."
+    },
+    {
+      "id": "BUS-2023-03",
+      "venue": "Binance.US",
+      "type": "withdrawal_delay",
+      "first_public_report_date": "2023-06-09",
+      "first_report_source_url": "https://www.theblock.co/post/233917/binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-payments-next-week",
+      "impairment_start": "2023-06-09",
+      "impairment_end": "2023-06-22",
+      "source_urls": [
+        "https://www.theblock.co/post/233917/binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-payments-next-week",
+        "https://cryptoslate.com/binance-us-resolves-delayed-usd-withdrawals-expects-banking-partners-to-halt-option-again/",
+        "https://www.fxstreet.com/cryptocurrencies/news/binanceus-warns-customers-of-further-limitations-as-the-courts-13-day-timeline-closes-in-202306230200"
+      ],
+      "description": "ACH USD withdrawals warned to take several days; delays built up and on 2023-06-22 Binance.US said it had cleared nearly all delayed USD withdrawals but expected banking partners to discontinue the service soon.",
+      "evidence_quality": "major_outlet",
+      "notes": "The anticipated 2023-06-13 bank cutoff did not happen on schedule per CryptoSlate (one FXStreet piece says banks left on 06-13; sources conflict). End date is the 'mostly resolved' email, not a clean restoration."
+    },
+    {
+      "id": "BUS-2023-04",
+      "venue": "Binance.US",
+      "type": "rail_shutdown",
+      "first_public_report_date": "2023-06-22",
+      "first_report_source_url": "https://cryptoslate.com/binance-us-resolves-delayed-usd-withdrawals-expects-banking-partners-to-halt-option-again/",
+      "impairment_start": "2023-07-13",
+      "impairment_end": "2025-02-18",
+      "source_urls": [
+        "https://cryptoslate.com/binance-us-resolves-delayed-usd-withdrawals-expects-banking-partners-to-halt-option-again/",
+        "https://forklog.com/en/binance-us-unfreezes-withdrawals-for-the-near-future/",
+        "https://support.binance.us/en/articles/9843567-binance-us-will-remove-select-usd-advanced-trading-pairs",
+        "https://www.theblock.co/amp/post/341730/binance-us-restores-fiat-deposits-withdrawals"
+      ],
+      "description": "Binance.US ran crypto-only with no USD fiat deposits or withdrawals (USD pairs removed, most delisted by 2023-07-13) until fiat was restored in February 2025.",
+      "evidence_quality": "major_outlet",
+      "notes": "Exact date USD withdrawals ended is not established: The Block says fiat services were suspended in June 2023 and crypto-only from July 2023; the support article gives 2023-07-13 for removal of USD pairs. Start 2023-07-13 is therefore approximate (could be late June). End 2025-02-18 = day before restoration announcement."
+    },
+    {
+      "id": "BUS-2025-01",
+      "venue": "Binance.US",
+      "type": "restoration",
+      "first_public_report_date": "2025-02-19",
+      "first_report_source_url": "https://www.theblock.co/amp/post/341730/binance-us-restores-fiat-deposits-withdrawals",
+      "impairment_start": "2025-02-19",
+      "impairment_end": null,
+      "source_urls": [
+        "https://www.theblock.co/amp/post/341730/binance-us-restores-fiat-deposits-withdrawals",
+        "https://cointelegraph.com/news/binance-us-resumes-usd-bank-deposits-and-withdrawals",
+        "https://www.pymnts.com/cryptocurrency/2025/binance-us-restores-usd-services-after-19-month-drought/"
+      ],
+      "description": "Binance.US restored USD ACH deposits and withdrawals for the first time since June 2023 (rolled out gradually; initially about 10 assets tradable against USD).",
+      "evidence_quality": "major_outlet",
+      "notes": "Announced 2025-02-19 08:45 EST (The Block); the rollout to all eligible users was gradual over following days."
+    },
+    {
+      "id": "BUS-2023-05",
+      "venue": "Binance.US",
+      "type": "confounder",
+      "first_public_report_date": "2023-06-05",
+      "first_report_source_url": "https://forklog.com/en/binance-us-unfreezes-withdrawals-for-the-near-future/",
+      "impairment_start": "2023-06-05",
+      "impairment_end": null,
+      "source_urls": [
+        "https://forklog.com/en/binance-us-unfreezes-withdrawals-for-the-near-future/",
+        "https://www.cnbc.com/2023/06/08/banks-to-cut-off-binance-access-to-us-banking-system-exchange-says.html"
+      ],
+      "description": "SEC sues Binance, Binance.US and Changpeng Zhao (2023-06-05); on 2023-06-06 the SEC sought to freeze Binance.US assets, a compromise was approved by 2023-06-17. Direct cause of BUS-2023-02 to -04.",
+      "evidence_quality": "secondary",
+      "notes": "Cause rather than independent confounder; use to separate 'SEC headline' from 'rail loss' in the first week of June. Suit date from ForkLog summary (2023-06-23); SEC primary document not retrieved. The 2025-02-13 court stay (60 days) is a minor related regulatory step."
+    }
+  ],
+  "context_events": [
+    {
+      "id": "CTX-2023-01",
+      "event": "Silvergate announces end of Silvergate Exchange Network (SEN) (2023-03-03) and wind-down/voluntary liquidation of the bank (2023-03-08)",
+      "date": "2023-03-08",
+      "urls": [
+        "https://www.businesswire.com/news/home/20230308005795/en/Silvergate-Capital-Corporation-Announces-Intent-to-Wind-Down-Operations-and-Voluntarily-Liquidate-Silvergate-Bank",
+        "https://unchainedcrypto.com/silvergate-shuts-down-crypto-payments-network/"
+      ],
+      "evidence_quality": "primary_statement"
+    },
+    {
+      "id": "CTX-2023-02",
+      "event": "NYDFS takes possession of Signature Bank; FDIC named receiver; Signet unit left outside the Flagstar sale announced 2023-03-19/20",
+      "date": "2023-03-12",
+      "urls": [
+        "https://mondovisione.com/media-and-resources/news/superintendent-adrienne-a-harris-announces-new-york-department-of-financial-ser-2023313/",
+        "https://www.spglobal.com/market-intelligence/en/news-insights/articles/2023/3/new-york-takes-possession-of-signature-bank-appoints-fdic-as-receiver-74733050"
+      ],
+      "evidence_quality": "primary_statement"
+    },
+    {
+      "id": "CTX-2023-03",
+      "event": "Binance (global, not Binance.US) suspends USD bank transfers from 2023-02-08 after Signature capped payments; out of scope as a venue, noted as context",
+      "date": "2023-02-06",
+      "urls": [
+        "https://www.cnbc.com/2023/02/06/binance-will-suspend-us-dollar-transfers.html"
+      ],
+      "evidence_quality": "major_outlet"
+    }
+  ]
+}
