@@ -1,0 +1,8002 @@
+{
+ "rule": {
+  "threshold_bps": 100.0,
+  "agreement": 0.25,
+  "min_hours": 6,
+  "merge_gap_days": 3
+ },
+ "labels": {
+  "bitfinex": [
+   {
+    "id": "BFX-2017-01",
+    "type": "banking_partner_loss",
+    "report": "2017-04-09",
+    "window": [
+     "2017-03-01",
+     "2017-07-08"
+    ]
+   },
+   {
+    "id": "BFX-2017-02",
+    "type": "deposit_pause",
+    "report": "2017-04-18",
+    "window": [
+     "2017-03-19",
+     "2017-07-17"
+    ]
+   },
+   {
+    "id": "BFX-2018-01",
+    "type": "withdrawal_delay",
+    "report": "2018-02-20",
+    "window": [
+     "2017-12-11",
+     "2018-05-21"
+    ]
+   },
+   {
+    "id": "BFX-2018-02",
+    "type": "withdrawal_delay",
+    "report": "2019-04-30",
+    "window": [
+     "2018-04-01",
+     "2018-12-31"
+    ]
+   },
+   {
+    "id": "BFX-2018-03",
+    "type": "banking_partner_loss",
+    "report": "2018-09-30",
+    "window": [
+     "2018-08-31",
+     "2018-12-29"
+    ]
+   },
+   {
+    "id": "BFX-2018-04",
+    "type": "deposit_pause",
+    "report": "2018-10-11",
+    "window": [
+     "2018-09-11",
+     "2018-10-16"
+    ]
+   },
+   {
+    "id": "BFX-2018-06",
+    "type": "banking_partner_loss",
+    "report": "2019-04-25",
+    "window": [
+     "2018-11-01",
+     "2019-07-24"
+    ]
+   },
+   {
+    "id": "BFX-2019-01",
+    "type": "confounder",
+    "report": "2019-04-25",
+    "window": [
+     "2019-04-25",
+     "2019-04-25"
+    ]
+   },
+   {
+    "id": "BFX-2018-07",
+    "type": "confounder",
+    "report": "2018-06-05",
+    "window": [
+     "2018-06-05",
+     "2018-06-05"
+    ]
+   },
+   {
+    "id": "BFX-2021-01",
+    "type": "confounder",
+    "report": "2021-02-23",
+    "window": [
+     "2021-02-23",
+     "2021-02-23"
+    ]
+   },
+   {
+    "id": "BFX-2022-01",
+    "type": "confounder",
+    "report": "2022-02-08",
+    "window": [
+     "2022-02-08",
+     "2022-02-08"
+    ]
+   },
+   {
+    "id": "BST-2020-01",
+    "type": "banking_partner_loss",
+    "report": "2020-11-17",
+    "window": [
+     "2020-10-18",
+     "2021-02-15"
+    ]
+   },
+   {
+    "id": "BST-2023-01",
+    "type": "rail_shutdown",
+    "report": "2023-03-02",
+    "window": [
+     "2023-01-31",
+     "2023-05-31"
+    ]
+   }
+  ],
+  "binance_us": [
+   {
+    "id": "BST-2020-01",
+    "type": "banking_partner_loss",
+    "report": "2020-11-17",
+    "window": [
+     "2020-10-18",
+     "2021-02-15"
+    ]
+   },
+   {
+    "id": "BST-2023-01",
+    "type": "rail_shutdown",
+    "report": "2023-03-02",
+    "window": [
+     "2023-01-31",
+     "2023-05-31"
+    ]
+   },
+   {
+    "id": "BUS-2023-01",
+    "type": "banking_partner_loss",
+    "report": "2023-04-09",
+    "window": [
+     "2023-02-10",
+     "2023-07-08"
+    ]
+   },
+   {
+    "id": "BUS-2023-02",
+    "type": "deposit_pause",
+    "report": "2023-06-09",
+    "window": [
+     "2023-05-09",
+     "2023-09-07"
+    ]
+   },
+   {
+    "id": "BUS-2023-03",
+    "type": "withdrawal_delay",
+    "report": "2023-06-09",
+    "window": [
+     "2023-05-10",
+     "2023-06-22"
+    ]
+   },
+   {
+    "id": "BUS-2023-04",
+    "type": "rail_shutdown",
+    "report": "2023-06-22",
+    "window": [
+     "2023-05-23",
+     "2025-02-18"
+    ]
+   },
+   {
+    "id": "BUS-2023-05",
+    "type": "confounder",
+    "report": "2023-06-05",
+    "window": [
+     "2023-06-05",
+     "2023-06-05"
+    ]
+   }
+  ],
+  "coinbase": [
+   {
+    "id": "BST-2020-01",
+    "type": "banking_partner_loss",
+    "report": "2020-11-17",
+    "window": [
+     "2020-10-18",
+     "2021-02-15"
+    ]
+   },
+   {
+    "id": "BST-2023-01",
+    "type": "rail_shutdown",
+    "report": "2023-03-02",
+    "window": [
+     "2023-01-31",
+     "2023-05-31"
+    ]
+   },
+   {
+    "id": "CB-2022-01",
+    "type": "withdrawal_delay",
+    "report": "2022-10-02",
+    "window": [
+     "2022-09-02",
+     "2022-10-02"
+    ]
+   },
+   {
+    "id": "CB-2023-01",
+    "type": "banking_partner_loss",
+    "report": "2023-03-02",
+    "window": [
+     "2023-01-31",
+     "2023-05-31"
+    ]
+   },
+   {
+    "id": "CB-2023-02",
+    "type": "rail_shutdown",
+    "report": "2023-03-20",
+    "window": [
+     "2023-02-18",
+     "2023-06-18"
+    ]
+   },
+   {
+    "id": "CB-2023-03",
+    "type": "confounder",
+    "report": "2023-03-10",
+    "window": [
+     "2023-03-10",
+     "2023-03-13"
+    ]
+   },
+   {
+    "id": "CB-2023-04",
+    "type": "confounder",
+    "report": "2023-03-22",
+    "window": [
+     "2023-03-22",
+     "2023-03-22"
+    ]
+   },
+   {
+    "id": "CB-2023-05",
+    "type": "confounder",
+    "report": "2023-06-06",
+    "window": [
+     "2023-06-06",
+     "2023-06-06"
+    ]
+   },
+   {
+    "id": "CB-2023-06",
+    "type": "confounder",
+    "report": "2023-07-13",
+    "window": [
+     "2023-07-13",
+     "2023-07-13"
+    ]
+   }
+  ]
+ },
+ "metrics": {
+  "all": {
+   "bitfinex": {
+    "detector": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "venue_years": 6.979580196212639,
+     "flagged_hours": 5713,
+     "alarm_days": 267,
+     "alarm_day_share": 0.10446009389671361,
+     "episodes": [
+      [
+       "2017-04-12",
+       "2017-05-03"
+      ],
+      [
+       "2017-05-10",
+       "2017-05-19"
+      ],
+      [
+       "2017-05-26",
+       "2017-06-18"
+      ],
+      [
+       "2017-06-24",
+       "2017-07-13"
+      ],
+      [
+       "2017-11-13",
+       "2017-11-14"
+      ],
+      [
+       "2017-12-25",
+       "2017-12-25"
+      ],
+      [
+       "2018-01-16",
+       "2018-01-19"
+      ],
+      [
+       "2018-01-31",
+       "2018-02-02"
+      ],
+      [
+       "2018-10-08",
+       "2019-04-07"
+      ],
+      [
+       "2019-04-26",
+       "2019-05-17"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2022-05-12",
+       "2022-05-12"
+      ]
+     ],
+     "n_episodes": 12,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-04-12",
+       "lead_days": 3
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-04-12",
+       "lead_days": -6
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-12-25",
+       "lead_days": -57
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -204
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": 8
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -3
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-11-01",
+       "lead_days": -175
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarms": {
+      "n": 3,
+      "confounder": 0,
+      "unexplained": 3,
+      "episodes": [
+       {
+        "start": "2017-11-13",
+        "end": "2017-11-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-05-12",
+        "end": "2022-05-12",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 0.42982527826357,
+       "confounder": 0.0,
+       "unexplained": 0.42982527826357
+      }
+     },
+     "n_episodes_true": 9,
+     "episode_precision": 0.75,
+     "episode_f1": 0.7636363636363638,
+     "hour_precision": 0.9901977945037633,
+     "hour_recall": 0.24282096407262738
+    },
+    "b1": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "venue_years": 6.994638375541866,
+     "flagged_hours": 7048,
+     "alarm_days": 330,
+     "alarm_day_share": 0.12910798122065728,
+     "episodes": [
+      [
+       "2017-01-05",
+       "2017-01-05"
+      ],
+      [
+       "2017-03-26",
+       "2017-03-26"
+      ],
+      [
+       "2017-04-01",
+       "2017-04-03"
+      ],
+      [
+       "2017-04-11",
+       "2017-07-14"
+      ],
+      [
+       "2017-07-30",
+       "2017-07-30"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-05"
+      ],
+      [
+       "2017-11-12",
+       "2017-11-14"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-07",
+       "2017-12-13"
+      ],
+      [
+       "2017-12-19",
+       "2017-12-31"
+      ],
+      [
+       "2018-01-16",
+       "2018-01-19"
+      ],
+      [
+       "2018-01-28",
+       "2018-02-02"
+      ],
+      [
+       "2018-10-08",
+       "2019-04-07"
+      ],
+      [
+       "2019-04-26",
+       "2019-05-17"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ],
+      [
+       "2022-05-12",
+       "2022-05-12"
+      ]
+     ],
+     "n_episodes": 18,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -14
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -23
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-12-11",
+       "lead_days": -71
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -204
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": 8
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -3
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-11-01",
+       "lead_days": -175
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarms": {
+      "n": 9,
+      "confounder": 0,
+      "unexplained": 9,
+      "episodes": [
+       {
+        "start": "2017-01-05",
+        "end": "2017-01-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-07-30",
+        "end": "2017-07-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-12",
+        "end": "2017-11-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-05-12",
+        "end": "2022-05-12",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.28669982875316,
+       "confounder": 0.0,
+       "unexplained": 1.28669982875316
+      }
+     },
+     "n_episodes_true": 9,
+     "episode_precision": 0.5,
+     "episode_f1": 0.6086956521739131,
+     "hour_precision": 0.9656640181611805,
+     "hour_recall": 0.29186500278742655
+    },
+    "b2": {
+     "evaluated_hours": 60955,
+     "evaluated_days": 2541,
+     "venue_years": 6.953570613734885,
+     "flagged_hours": 2453,
+     "alarm_days": 140,
+     "alarm_day_share": 0.05509641873278237,
+     "episodes": [
+      [
+       "2017-02-11",
+       "2017-02-11"
+      ],
+      [
+       "2017-03-26",
+       "2017-03-26"
+      ],
+      [
+       "2017-04-02",
+       "2017-04-03"
+      ],
+      [
+       "2017-04-14",
+       "2017-04-27"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-05"
+      ],
+      [
+       "2017-11-12",
+       "2017-11-14"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-27"
+      ],
+      [
+       "2017-12-07",
+       "2017-12-11"
+      ],
+      [
+       "2017-12-22",
+       "2017-12-25"
+      ],
+      [
+       "2018-01-16",
+       "2018-01-16"
+      ],
+      [
+       "2018-01-28",
+       "2018-02-02"
+      ],
+      [
+       "2018-05-03",
+       "2018-05-06"
+      ],
+      [
+       "2018-06-23",
+       "2018-06-24"
+      ],
+      [
+       "2018-09-06",
+       "2018-09-06"
+      ],
+      [
+       "2018-09-30",
+       "2018-10-18"
+      ],
+      [
+       "2018-11-14",
+       "2018-11-14"
+      ],
+      [
+       "2019-03-21",
+       "2019-03-28"
+      ],
+      [
+       "2019-04-02",
+       "2019-04-04"
+      ],
+      [
+       "2019-04-26",
+       "2019-05-09"
+      ],
+      [
+       "2019-06-23",
+       "2019-06-23"
+      ],
+      [
+       "2019-08-08",
+       "2019-08-09"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2020-01-07",
+       "2020-01-08"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ],
+      [
+       "2020-08-01",
+       "2020-08-07"
+      ],
+      [
+       "2020-11-26",
+       "2020-11-27"
+      ],
+      [
+       "2021-05-17",
+       "2021-05-17"
+      ],
+      [
+       "2021-06-20",
+       "2021-06-22"
+      ],
+      [
+       "2021-06-27",
+       "2021-06-30"
+      ],
+      [
+       "2021-10-13",
+       "2021-10-13"
+      ],
+      [
+       "2022-01-22",
+       "2022-01-22"
+      ],
+      [
+       "2022-02-24",
+       "2022-02-24"
+      ],
+      [
+       "2022-05-08",
+       "2022-05-14"
+      ],
+      [
+       "2022-06-13",
+       "2022-06-17"
+      ],
+      [
+       "2022-11-09",
+       "2022-11-15"
+      ],
+      [
+       "2023-03-11",
+       "2023-03-22"
+      ],
+      [
+       "2023-06-15",
+       "2023-06-15"
+      ]
+     ],
+     "n_episodes": 38,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -14
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -23
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-12-11",
+       "lead_days": -71
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-05-03",
+       "lead_days": -362
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-09-06",
+       "lead_days": -24
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-09-30",
+       "lead_days": -11
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-11-14",
+       "lead_days": -162
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2020-11-26",
+       "lead_days": 9
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      }
+     ],
+     "covered_positives": 9,
+     "caught": 9,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 20,
+      "confounder": 0,
+      "unexplained": 20,
+      "episodes": [
+       {
+        "start": "2017-02-11",
+        "end": "2017-02-11",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-12",
+        "end": "2017-11-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-27",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-08-08",
+        "end": "2019-08-09",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-01-07",
+        "end": "2020-01-08",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-08-01",
+        "end": "2020-08-07",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-05-17",
+        "end": "2021-05-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-06-20",
+        "end": "2021-06-22",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-06-27",
+        "end": "2021-06-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-10-13",
+        "end": "2021-10-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-01-22",
+        "end": "2022-01-22",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-02-24",
+        "end": "2022-02-24",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-05-08",
+        "end": "2022-05-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-06-13",
+        "end": "2022-06-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-11-09",
+        "end": "2022-11-15",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-06-15",
+        "end": "2023-06-15",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 2.876220162414896,
+       "confounder": 0.0,
+       "unexplained": 2.876220162414896
+      }
+     },
+     "n_episodes_true": 18,
+     "episode_precision": 0.47368421052631576,
+     "episode_f1": 0.6428571428571429,
+     "hour_precision": 0.7211577660008154,
+     "hour_recall": 0.07586088597281188
+    },
+    "b3": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "venue_years": 5.086698608259184,
+     "flagged_hours": 3585,
+     "alarm_days": 160,
+     "alarm_day_share": 0.08597528210639441,
+     "episodes": [
+      [
+       "2018-12-02",
+       "2018-12-02"
+      ],
+      [
+       "2018-12-07",
+       "2019-05-10"
+      ],
+      [
+       "2019-05-27",
+       "2019-05-27"
+      ],
+      [
+       "2019-06-27",
+       "2019-06-28"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ]
+     ],
+     "n_episodes": 6,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-12-02",
+       "lead_days": -149
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-12-02",
+       "lead_days": -144
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 3,
+     "caught": 1,
+     "recall": 0.3333333333333333,
+     "false_alarms": {
+      "n": 2,
+      "confounder": 0,
+      "unexplained": 2,
+      "episodes": [
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 0.3931823278762054,
+       "confounder": 0.0,
+       "unexplained": 0.3931823278762054
+      }
+     },
+     "n_episodes_true": 4,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.4444444444444444,
+     "hour_precision": 0.995258019525802,
+     "hour_recall": 0.3093731032688806
+    }
+   },
+   "binance_us": {
+    "detector": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "venue_years": 0.7623773671001597,
+     "flagged_hours": 685,
+     "alarm_days": 31,
+     "alarm_day_share": 0.10437710437710437,
+     "episodes": [
+      [
+       "2023-05-08",
+       "2023-05-09"
+      ],
+      [
+       "2023-06-07",
+       "2023-06-07"
+      ],
+      [
+       "2023-06-13",
+       "2023-06-16"
+      ],
+      [
+       "2023-06-21",
+       "2023-07-13"
+      ],
+      [
+       "2025-03-27",
+       "2025-03-27"
+      ]
+     ],
+     "n_episodes": 5,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-05-08",
+       "lead_days": 29
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -15
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 1,
+      "confounder": 0,
+      "unexplained": 1,
+      "episodes": [
+       {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.3116863683974262,
+       "confounder": 0.0,
+       "unexplained": 1.3116863683974262
+      }
+     },
+     "n_episodes_true": 4,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "hour_precision": 0.9897810218978103,
+     "hour_recall": 0.17465224111282843
+    },
+    "b1": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "venue_years": 0.796600501939311,
+     "flagged_hours": 698,
+     "alarm_days": 31,
+     "alarm_day_share": 0.10437710437710437,
+     "episodes": [
+      [
+       "2023-05-08",
+       "2023-05-09"
+      ],
+      [
+       "2023-06-07",
+       "2023-06-07"
+      ],
+      [
+       "2023-06-13",
+       "2023-06-16"
+      ],
+      [
+       "2023-06-21",
+       "2023-07-13"
+      ],
+      [
+       "2025-03-27",
+       "2025-03-27"
+      ]
+     ],
+     "n_episodes": 5,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-05-08",
+       "lead_days": 29
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -15
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 1,
+      "confounder": 0,
+      "unexplained": 1,
+      "episodes": [
+       {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.2553343835027926,
+       "confounder": 0.0,
+       "unexplained": 1.2553343835027926
+      }
+     },
+     "n_episodes_true": 4,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "hour_precision": 0.9799426934097422,
+     "hour_recall": 0.17395727365208546
+    },
+    "b2": {
+     "evaluated_hours": 5903,
+     "evaluated_days": 251,
+     "venue_years": 0.6733972165183664,
+     "flagged_hours": 880,
+     "alarm_days": 46,
+     "alarm_day_share": 0.18326693227091634,
+     "episodes": [
+      [
+       "2022-11-09",
+       "2022-11-21"
+      ],
+      [
+       "2023-03-11",
+       "2023-03-28"
+      ],
+      [
+       "2023-04-21",
+       "2023-04-22"
+      ],
+      [
+       "2023-05-02",
+       "2023-05-09"
+      ],
+      [
+       "2023-06-07",
+       "2023-06-16"
+      ],
+      [
+       "2023-06-21",
+       "2023-07-01"
+      ],
+      [
+       "2025-03-27",
+       "2025-03-27"
+      ]
+     ],
+     "n_episodes": 7,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": -29
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -15
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 2,
+      "confounder": 0,
+      "unexplained": 2,
+      "episodes": [
+       {
+        "start": "2022-11-09",
+        "end": "2022-11-21",
+        "class": "unexplained"
+       },
+       {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 2.9700152464848384,
+       "confounder": 0.0,
+       "unexplained": 2.9700152464848384
+      }
+     },
+     "n_episodes_true": 5,
+     "episode_precision": 0.7142857142857143,
+     "episode_f1": 0.8333333333333333,
+     "hour_precision": 0.8386363636363636,
+     "hour_recall": 0.18769074262461852
+    },
+    "b3": null
+   },
+   "coinbase": {
+    "detector": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "venue_years": 6.327059091946156,
+     "flagged_hours": 474,
+     "alarm_days": 29,
+     "alarm_day_share": 0.012537829658452227,
+     "episodes": [
+      [
+       "2017-09-02",
+       "2017-09-10"
+      ],
+      [
+       "2017-09-16",
+       "2017-09-17"
+      ],
+      [
+       "2017-11-02",
+       "2017-11-02"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-07",
+       "2017-12-17"
+      ],
+      [
+       "2017-12-23",
+       "2017-12-25"
+      ],
+      [
+       "2017-12-30",
+       "2017-12-30"
+      ],
+      [
+       "2018-01-28",
+       "2018-01-29"
+      ]
+     ],
+     "n_episodes": 8,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarms": {
+      "n": 8,
+      "confounder": 0,
+      "unexplained": 8,
+      "episodes": [
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-10",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-16",
+        "end": "2017-09-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-02",
+        "end": "2017-11-02",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-07",
+        "end": "2017-12-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-23",
+        "end": "2017-12-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-30",
+        "end": "2017-12-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-01-28",
+        "end": "2018-01-29",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.2644105079061716,
+       "confounder": 0.0,
+       "unexplained": 1.2644105079061716
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": 0.0
+    },
+    "b1": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "venue_years": 6.992128678986996,
+     "flagged_hours": 1576,
+     "alarm_days": 95,
+     "alarm_day_share": 0.03716744913928013,
+     "episodes": [
+      [
+       "2017-01-05",
+       "2017-01-16"
+      ],
+      [
+       "2017-02-12",
+       "2017-02-13"
+      ],
+      [
+       "2017-03-04",
+       "2017-03-04"
+      ],
+      [
+       "2017-03-11",
+       "2017-03-12"
+      ],
+      [
+       "2017-03-26",
+       "2017-03-26"
+      ],
+      [
+       "2017-03-31",
+       "2017-04-03"
+      ],
+      [
+       "2017-04-14",
+       "2017-04-17"
+      ],
+      [
+       "2017-04-23",
+       "2017-06-01"
+      ],
+      [
+       "2017-06-11",
+       "2017-06-14"
+      ],
+      [
+       "2017-06-21",
+       "2017-06-21"
+      ],
+      [
+       "2017-06-26",
+       "2017-06-26"
+      ],
+      [
+       "2017-08-01",
+       "2017-08-01"
+      ],
+      [
+       "2017-08-12",
+       "2017-08-12"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-10"
+      ],
+      [
+       "2017-09-16",
+       "2017-09-17"
+      ],
+      [
+       "2017-11-02",
+       "2017-11-02"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-06",
+       "2017-12-30"
+      ],
+      [
+       "2018-01-28",
+       "2018-01-29"
+      ]
+     ],
+     "n_episodes": 20,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarms": {
+      "n": 20,
+      "confounder": 0,
+      "unexplained": 20,
+      "episodes": [
+       {
+        "start": "2017-01-05",
+        "end": "2017-01-16",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-02-12",
+        "end": "2017-02-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-04",
+        "end": "2017-03-04",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-11",
+        "end": "2017-03-12",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-26",
+        "end": "2017-03-26",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-31",
+        "end": "2017-04-03",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-04-14",
+        "end": "2017-04-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-04-23",
+        "end": "2017-06-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-06-11",
+        "end": "2017-06-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-06-21",
+        "end": "2017-06-21",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-06-26",
+        "end": "2017-06-26",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-01",
+        "end": "2017-08-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-12",
+        "end": "2017-08-12",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-10",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-16",
+        "end": "2017-09-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-02",
+        "end": "2017-11-02",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-06",
+        "end": "2017-12-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-01-28",
+        "end": "2018-01-29",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 2.8603592579903085,
+       "confounder": 0.0,
+       "unexplained": 2.8603592579903085
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": 0.0
+    },
+    "b2": {
+     "evaluated_hours": 60933,
+     "evaluated_days": 2541,
+     "venue_years": 6.951060917180014,
+     "flagged_hours": 1208,
+     "alarm_days": 61,
+     "alarm_day_share": 0.024006296733569462,
+     "episodes": [
+      [
+       "2017-04-03",
+       "2017-04-03"
+      ],
+      [
+       "2017-05-01",
+       "2017-05-01"
+      ],
+      [
+       "2017-08-01",
+       "2017-08-01"
+      ],
+      [
+       "2017-08-12",
+       "2017-08-12"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-10"
+      ],
+      [
+       "2017-09-16",
+       "2017-09-17"
+      ],
+      [
+       "2017-11-02",
+       "2017-11-02"
+      ],
+      [
+       "2017-11-25",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-06",
+       "2017-12-14"
+      ],
+      [
+       "2018-01-28",
+       "2018-01-29"
+      ],
+      [
+       "2018-05-03",
+       "2018-05-03"
+      ],
+      [
+       "2019-06-16",
+       "2019-06-16"
+      ],
+      [
+       "2019-11-06",
+       "2019-11-07"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ],
+      [
+       "2021-05-19",
+       "2021-05-19"
+      ],
+      [
+       "2021-12-04",
+       "2021-12-05"
+      ],
+      [
+       "2022-11-09",
+       "2022-11-18"
+      ],
+      [
+       "2022-11-23",
+       "2022-11-23"
+      ],
+      [
+       "2023-03-11",
+       "2023-03-15"
+      ],
+      [
+       "2023-03-20",
+       "2023-03-22"
+      ],
+      [
+       "2023-06-20",
+       "2023-06-20"
+      ],
+      [
+       "2023-08-08",
+       "2023-08-08"
+      ],
+      [
+       "2023-12-20",
+       "2023-12-20"
+      ],
+      [
+       "2023-12-25",
+       "2023-12-25"
+      ],
+      [
+       "2023-12-30",
+       "2023-12-30"
+      ]
+     ],
+     "n_episodes": 26,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": -9
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 3,
+     "recall": 0.6,
+     "false_alarms": {
+      "n": 24,
+      "confounder": 0,
+      "unexplained": 24,
+      "episodes": [
+       {
+        "start": "2017-04-03",
+        "end": "2017-04-03",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-05-01",
+        "end": "2017-05-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-01",
+        "end": "2017-08-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-12",
+        "end": "2017-08-12",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-10",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-16",
+        "end": "2017-09-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-02",
+        "end": "2017-11-02",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-25",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-06",
+        "end": "2017-12-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-01-28",
+        "end": "2018-01-29",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-05-03",
+        "end": "2018-05-03",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-06-16",
+        "end": "2019-06-16",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-06",
+        "end": "2019-11-07",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-05-19",
+        "end": "2021-05-19",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-12-04",
+        "end": "2021-12-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-11-09",
+        "end": "2022-11-18",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-11-23",
+        "end": "2022-11-23",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-06-20",
+        "end": "2023-06-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-08-08",
+        "end": "2023-08-08",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-12-20",
+        "end": "2023-12-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-12-25",
+        "end": "2023-12-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-12-30",
+        "end": "2023-12-30",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 3.452710353995372,
+       "confounder": 0.0,
+       "unexplained": 3.452710353995372
+      }
+     },
+     "n_episodes_true": 2,
+     "episode_precision": 0.07692307692307693,
+     "episode_f1": 0.13636363636363635,
+     "hour_precision": 0.13741721854304637,
+     "hour_recall": 0.023785642642212352
+    },
+    "b3": null
+   }
+  },
+  "seen": {
+   "bitfinex": {
+    "detector": {
+     "evaluated_hours": 11652,
+     "evaluated_days": 487,
+     "venue_years": 1.3292265571526352,
+     "flagged_hours": 4130,
+     "alarm_days": 196,
+     "alarm_day_share": 0.4024640657084189,
+     "episodes": [
+      [
+       "2017-04-12",
+       "2017-05-03"
+      ],
+      [
+       "2017-05-10",
+       "2017-05-19"
+      ],
+      [
+       "2017-05-26",
+       "2017-06-18"
+      ],
+      [
+       "2017-06-24",
+       "2017-07-13"
+      ],
+      [
+       "2018-10-08",
+       "2018-12-31"
+      ],
+      [
+       "2019-03-01",
+       "2019-04-07"
+      ],
+      [
+       "2019-04-26",
+       "2019-05-17"
+      ]
+     ],
+     "n_episodes": 7,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-04-12",
+       "lead_days": 3
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-04-12",
+       "lead_days": -6
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -204
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": 8
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -3
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-11-01",
+       "lead_days": -175
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 5,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": 0.0,
+       "confounder": 0.0,
+       "unexplained": 0.0
+      }
+     },
+     "n_episodes_true": 7,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "hour_precision": 0.9997578692493947,
+     "hour_recall": 0.42322673226732266
+    },
+    "b1": {
+     "evaluated_hours": 11686,
+     "evaluated_days": 487,
+     "venue_years": 1.3331051791010724,
+     "flagged_hours": 5055,
+     "alarm_days": 232,
+     "alarm_day_share": 0.47638603696098564,
+     "episodes": [
+      [
+       "2017-03-26",
+       "2017-03-26"
+      ],
+      [
+       "2017-04-01",
+       "2017-04-03"
+      ],
+      [
+       "2017-04-11",
+       "2017-07-14"
+      ],
+      [
+       "2017-07-30",
+       "2017-07-30"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2018-10-08",
+       "2018-12-31"
+      ],
+      [
+       "2019-03-01",
+       "2019-04-07"
+      ],
+      [
+       "2019-04-26",
+       "2019-05-17"
+      ]
+     ],
+     "n_episodes": 8,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -14
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -23
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -204
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": 8
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-10-08",
+       "lead_days": -3
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-11-01",
+       "lead_days": -175
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 5,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 2,
+      "confounder": 0,
+      "unexplained": 2,
+      "episodes": [
+       {
+        "start": "2017-07-30",
+        "end": "2017-07-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.5002567174396713,
+       "confounder": 0.0,
+       "unexplained": 1.5002567174396713
+      }
+     },
+     "n_episodes_true": 6,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "hour_precision": 0.9922848664688427,
+     "hour_recall": 0.5136186770428015
+    },
+    "b2": {
+     "evaluated_hours": 11686,
+     "evaluated_days": 487,
+     "venue_years": 1.3331051791010724,
+     "flagged_hours": 1327,
+     "alarm_days": 66,
+     "alarm_day_share": 0.13552361396303902,
+     "episodes": [
+      [
+       "2017-02-11",
+       "2017-02-11"
+      ],
+      [
+       "2017-03-26",
+       "2017-03-26"
+      ],
+      [
+       "2017-04-02",
+       "2017-04-03"
+      ],
+      [
+       "2017-04-14",
+       "2017-04-27"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2018-09-06",
+       "2018-09-06"
+      ],
+      [
+       "2018-09-30",
+       "2018-10-18"
+      ],
+      [
+       "2018-11-14",
+       "2018-11-14"
+      ],
+      [
+       "2019-03-21",
+       "2019-03-28"
+      ],
+      [
+       "2019-04-02",
+       "2019-04-04"
+      ],
+      [
+       "2019-04-26",
+       "2019-05-09"
+      ],
+      [
+       "2019-06-23",
+       "2019-06-23"
+      ]
+     ],
+     "n_episodes": 12,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -14
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-03-26",
+       "lead_days": -23
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-09-06",
+       "lead_days": -236
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-09-06",
+       "lead_days": -24
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-09-30",
+       "lead_days": -11
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-11-14",
+       "lead_days": -162
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 5,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 2,
+      "confounder": 0,
+      "unexplained": 2,
+      "episodes": [
+       {
+        "start": "2017-02-11",
+        "end": "2017-02-11",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.5002567174396713,
+       "confounder": 0.0,
+       "unexplained": 1.5002567174396713
+      }
+     },
+     "n_episodes_true": 10,
+     "episode_precision": 0.8333333333333334,
+     "episode_f1": 0.9090909090909091,
+     "hour_precision": 0.9683496608892238,
+     "hour_recall": 0.13157894736842105
+    },
+    "b3": {
+     "evaluated_hours": 4491,
+     "evaluated_days": 188,
+     "venue_years": 0.5123203285420944,
+     "flagged_hours": 2200,
+     "alarm_days": 99,
+     "alarm_day_share": 0.526595744680851,
+     "episodes": [
+      [
+       "2018-12-02",
+       "2018-12-02"
+      ],
+      [
+       "2018-12-07",
+       "2018-12-31"
+      ],
+      [
+       "2019-03-01",
+       "2019-05-10"
+      ],
+      [
+       "2019-05-27",
+       "2019-05-27"
+      ],
+      [
+       "2019-06-27",
+       "2019-06-28"
+      ]
+     ],
+     "n_episodes": 5,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-12-02",
+       "lead_days": -149
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-12-02",
+       "lead_days": -144
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 1,
+     "caught": 1,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": 0.0,
+       "confounder": 0.0,
+       "unexplained": 0.0
+      }
+     },
+     "n_episodes_true": 5,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "hour_precision": 1.0,
+     "hour_recall": 0.5089058524173028
+    }
+   },
+   "binance_us": {
+    "detector": {
+     "evaluated_hours": 5894,
+     "evaluated_days": 256,
+     "venue_years": 0.6723705224731918,
+     "flagged_hours": 678,
+     "alarm_days": 30,
+     "alarm_day_share": 0.1171875,
+     "episodes": [
+      [
+       "2023-05-08",
+       "2023-05-09"
+      ],
+      [
+       "2023-06-07",
+       "2023-06-07"
+      ],
+      [
+       "2023-06-13",
+       "2023-06-16"
+      ],
+      [
+       "2023-06-21",
+       "2023-07-13"
+      ]
+     ],
+     "n_episodes": 4,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-05-08",
+       "lead_days": 29
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -15
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": 0.0,
+       "confounder": 0.0,
+       "unexplained": 0.0
+      }
+     },
+     "n_episodes_true": 4,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "hour_precision": 1.0,
+     "hour_recall": 0.17465224111282843
+    },
+    "b1": {
+     "evaluated_hours": 6116,
+     "evaluated_days": 256,
+     "venue_years": 0.6976956422541638,
+     "flagged_hours": 684,
+     "alarm_days": 30,
+     "alarm_day_share": 0.1171875,
+     "episodes": [
+      [
+       "2023-05-08",
+       "2023-05-09"
+      ],
+      [
+       "2023-06-07",
+       "2023-06-07"
+      ],
+      [
+       "2023-06-13",
+       "2023-06-16"
+      ],
+      [
+       "2023-06-21",
+       "2023-07-13"
+      ]
+     ],
+     "n_episodes": 4,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-05-08",
+       "lead_days": 29
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -15
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": 0.0,
+       "confounder": 0.0,
+       "unexplained": 0.0
+      }
+     },
+     "n_episodes_true": 4,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "hour_precision": 1.0,
+     "hour_recall": 0.17395727365208546
+    },
+    "b2": {
+     "evaluated_hours": 5396,
+     "evaluated_days": 226,
+     "venue_years": 0.6155601186402008,
+     "flagged_hours": 863,
+     "alarm_days": 45,
+     "alarm_day_share": 0.19911504424778761,
+     "episodes": [
+      [
+       "2022-11-09",
+       "2022-11-21"
+      ],
+      [
+       "2023-03-11",
+       "2023-03-28"
+      ],
+      [
+       "2023-04-21",
+       "2023-04-22"
+      ],
+      [
+       "2023-05-02",
+       "2023-05-09"
+      ],
+      [
+       "2023-06-07",
+       "2023-06-16"
+      ],
+      [
+       "2023-06-21",
+       "2023-07-01"
+      ]
+     ],
+     "n_episodes": 6,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": -29
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -2
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": "2023-06-07",
+       "lead_days": -15
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 1,
+      "confounder": 0,
+      "unexplained": 1,
+      "episodes": [
+       {
+        "start": "2022-11-09",
+        "end": "2022-11-21",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.6245366938472943,
+       "confounder": 0.0,
+       "unexplained": 1.6245366938472943
+      }
+     },
+     "n_episodes_true": 5,
+     "episode_precision": 0.8333333333333334,
+     "episode_f1": 0.9090909090909091,
+     "hour_precision": 0.8551564310544612,
+     "hour_recall": 0.18769074262461852
+    },
+    "b3": null
+   },
+   "coinbase": {
+    "detector": {
+     "evaluated_hours": 0,
+     "evaluated_days": 0,
+     "venue_years": 0.0,
+     "flagged_hours": 0,
+     "alarm_days": 0,
+     "alarm_day_share": null,
+     "episodes": [],
+     "n_episodes": 0,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 0,
+     "caught": 0,
+     "recall": null,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": null,
+       "confounder": null,
+       "unexplained": null
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": null,
+     "episode_f1": 0.0,
+     "hour_precision": null,
+     "hour_recall": null
+    },
+    "b1": {
+     "evaluated_hours": 0,
+     "evaluated_days": 0,
+     "venue_years": 0.0,
+     "flagged_hours": 0,
+     "alarm_days": 0,
+     "alarm_day_share": null,
+     "episodes": [],
+     "n_episodes": 0,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 0,
+     "caught": 0,
+     "recall": null,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": null,
+       "confounder": null,
+       "unexplained": null
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": null,
+     "episode_f1": 0.0,
+     "hour_precision": null,
+     "hour_recall": null
+    },
+    "b2": {
+     "evaluated_hours": 0,
+     "evaluated_days": 0,
+     "venue_years": 0.0,
+     "flagged_hours": 0,
+     "alarm_days": 0,
+     "alarm_day_share": null,
+     "episodes": [],
+     "n_episodes": 0,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 0,
+     "caught": 0,
+     "recall": null,
+     "false_alarms": {
+      "n": 0,
+      "confounder": 0,
+      "unexplained": 0,
+      "episodes": [],
+      "per_venue_year": {
+       "total": null,
+       "confounder": null,
+       "unexplained": null
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": null,
+     "episode_f1": 0.0,
+     "hour_precision": null,
+     "hour_recall": null
+    },
+    "b3": null
+   }
+  },
+  "unseen": {
+   "bitfinex": {
+    "detector": {
+     "evaluated_hours": 49531,
+     "evaluated_days": 2069,
+     "venue_years": 5.650353639060005,
+     "flagged_hours": 1583,
+     "alarm_days": 71,
+     "alarm_day_share": 0.03431609473175447,
+     "episodes": [
+      [
+       "2017-11-13",
+       "2017-11-14"
+      ],
+      [
+       "2017-12-25",
+       "2017-12-25"
+      ],
+      [
+       "2018-01-16",
+       "2018-01-19"
+      ],
+      [
+       "2018-01-31",
+       "2018-02-02"
+      ],
+      [
+       "2019-01-01",
+       "2019-02-28"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2022-05-12",
+       "2022-05-12"
+      ]
+     ],
+     "n_episodes": 7,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-12-25",
+       "lead_days": -57
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2019-01-01",
+       "lead_days": -114
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 1,
+     "recall": 0.25,
+     "false_alarms": {
+      "n": 3,
+      "confounder": 0,
+      "unexplained": 3,
+      "episodes": [
+       {
+        "start": "2017-11-13",
+        "end": "2017-11-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-05-12",
+        "end": "2022-05-12",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 0.5309402192566272,
+       "confounder": 0.0,
+       "unexplained": 0.5309402192566272
+      }
+     },
+     "n_episodes_true": 4,
+     "episode_precision": 0.5714285714285714,
+     "episode_f1": 0.34782608695652173,
+     "hour_precision": 0.965255843335439,
+     "hour_recall": 0.11284247839893656
+    },
+    "b1": {
+     "evaluated_hours": 49629,
+     "evaluated_days": 2069,
+     "venue_years": 5.661533196440794,
+     "flagged_hours": 1993,
+     "alarm_days": 98,
+     "alarm_day_share": 0.04736587723537941,
+     "episodes": [
+      [
+       "2017-01-05",
+       "2017-01-05"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-05"
+      ],
+      [
+       "2017-11-12",
+       "2017-11-14"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-07",
+       "2017-12-13"
+      ],
+      [
+       "2017-12-19",
+       "2017-12-31"
+      ],
+      [
+       "2018-01-16",
+       "2018-01-19"
+      ],
+      [
+       "2018-01-28",
+       "2018-02-02"
+      ],
+      [
+       "2019-01-01",
+       "2019-02-28"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ],
+      [
+       "2022-05-12",
+       "2022-05-12"
+      ]
+     ],
+     "n_episodes": 12,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-12-11",
+       "lead_days": -71
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2019-01-01",
+       "lead_days": -114
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 1,
+     "recall": 0.25,
+     "false_alarms": {
+      "n": 7,
+      "confounder": 0,
+      "unexplained": 7,
+      "episodes": [
+       {
+        "start": "2017-01-05",
+        "end": "2017-01-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-12",
+        "end": "2017-11-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-05-12",
+        "end": "2022-05-12",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.2364141933143928,
+       "confounder": 0.0,
+       "unexplained": 1.2364141933143928
+      }
+     },
+     "n_episodes_true": 5,
+     "episode_precision": 0.4166666666666667,
+     "episode_f1": 0.3125,
+     "hour_precision": 0.8981435022579026,
+     "hour_recall": 0.13207407953958533
+    },
+    "b2": {
+     "evaluated_hours": 49269,
+     "evaluated_days": 2054,
+     "venue_years": 5.620465434633813,
+     "flagged_hours": 1126,
+     "alarm_days": 74,
+     "alarm_day_share": 0.03602726387536514,
+     "episodes": [
+      [
+       "2017-09-02",
+       "2017-09-05"
+      ],
+      [
+       "2017-11-12",
+       "2017-11-14"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-27"
+      ],
+      [
+       "2017-12-07",
+       "2017-12-11"
+      ],
+      [
+       "2017-12-22",
+       "2017-12-25"
+      ],
+      [
+       "2018-01-16",
+       "2018-01-16"
+      ],
+      [
+       "2018-01-28",
+       "2018-02-02"
+      ],
+      [
+       "2018-05-03",
+       "2018-05-06"
+      ],
+      [
+       "2018-06-23",
+       "2018-06-24"
+      ],
+      [
+       "2019-08-08",
+       "2019-08-09"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2020-01-07",
+       "2020-01-08"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ],
+      [
+       "2020-08-01",
+       "2020-08-07"
+      ],
+      [
+       "2020-11-26",
+       "2020-11-27"
+      ],
+      [
+       "2021-05-17",
+       "2021-05-17"
+      ],
+      [
+       "2021-06-20",
+       "2021-06-22"
+      ],
+      [
+       "2021-06-27",
+       "2021-06-30"
+      ],
+      [
+       "2021-10-13",
+       "2021-10-13"
+      ],
+      [
+       "2022-01-22",
+       "2022-01-22"
+      ],
+      [
+       "2022-02-24",
+       "2022-02-24"
+      ],
+      [
+       "2022-05-08",
+       "2022-05-14"
+      ],
+      [
+       "2022-06-13",
+       "2022-06-17"
+      ],
+      [
+       "2022-11-09",
+       "2022-11-15"
+      ],
+      [
+       "2023-03-11",
+       "2023-03-22"
+      ],
+      [
+       "2023-06-15",
+       "2023-06-15"
+      ]
+     ],
+     "n_episodes": 26,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2017-12-11",
+       "lead_days": -71
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2018-05-03",
+       "lead_days": -362
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2020-11-26",
+       "lead_days": 9
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      }
+     ],
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarms": {
+      "n": 18,
+      "confounder": 0,
+      "unexplained": 18,
+      "episodes": [
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-12",
+        "end": "2017-11-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-27",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-08-08",
+        "end": "2019-08-09",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-01-07",
+        "end": "2020-01-08",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-08-01",
+        "end": "2020-08-07",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-05-17",
+        "end": "2021-05-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-06-20",
+        "end": "2021-06-22",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-06-27",
+        "end": "2021-06-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-10-13",
+        "end": "2021-10-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-01-22",
+        "end": "2022-01-22",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-02-24",
+        "end": "2022-02-24",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-05-08",
+        "end": "2022-05-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-06-13",
+        "end": "2022-06-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-11-09",
+        "end": "2022-11-15",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-06-15",
+        "end": "2023-06-15",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 3.20258174511356,
+       "confounder": 0.0,
+       "unexplained": 3.20258174511356
+      }
+     },
+     "n_episodes_true": 8,
+     "episode_precision": 0.3076923076923077,
+     "episode_f1": 0.47058823529411764,
+     "hour_precision": 0.42984014209591476,
+     "hour_recall": 0.03571165055707223
+    },
+    "b3": {
+     "evaluated_hours": 40099,
+     "evaluated_days": 1673,
+     "venue_years": 4.574378279717089,
+     "flagged_hours": 1385,
+     "alarm_days": 61,
+     "alarm_day_share": 0.03646144650328751,
+     "episodes": [
+      [
+       "2019-01-01",
+       "2019-02-28"
+      ],
+      [
+       "2019-11-25",
+       "2019-11-25"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ]
+     ],
+     "n_episodes": 3,
+     "positives": [
+      {
+       "id": "BFX-2017-01",
+       "type": "banking_partner_loss",
+       "report": "2017-04-09",
+       "window": [
+        "2017-03-01",
+        "2017-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2017-02",
+       "type": "deposit_pause",
+       "report": "2017-04-18",
+       "window": [
+        "2017-03-19",
+        "2017-07-17"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-01",
+       "type": "withdrawal_delay",
+       "report": "2018-02-20",
+       "window": [
+        "2017-12-11",
+        "2018-05-21"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-02",
+       "type": "withdrawal_delay",
+       "report": "2019-04-30",
+       "window": [
+        "2018-04-01",
+        "2018-12-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-03",
+       "type": "banking_partner_loss",
+       "report": "2018-09-30",
+       "window": [
+        "2018-08-31",
+        "2018-12-29"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-04",
+       "type": "deposit_pause",
+       "report": "2018-10-11",
+       "window": [
+        "2018-09-11",
+        "2018-10-16"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitfinex",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BFX-2018-06",
+       "type": "banking_partner_loss",
+       "report": "2019-04-25",
+       "window": [
+        "2018-11-01",
+        "2019-07-24"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": true,
+       "label_venue": "bitfinex",
+       "first_alarm_day": "2019-01-01",
+       "lead_days": -114
+      },
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 2,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarms": {
+      "n": 2,
+      "confounder": 0,
+      "unexplained": 2,
+      "episodes": [
+       {
+        "start": "2019-11-25",
+        "end": "2019-11-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 0.4372178857328113,
+       "confounder": 0.0,
+       "unexplained": 0.4372178857328113
+      }
+     },
+     "n_episodes_true": 1,
+     "episode_precision": 0.3333333333333333,
+     "episode_f1": 0.0,
+     "hour_precision": 0.9877256317689531,
+     "hour_recall": 0.1897364771151179
+    }
+   },
+   "binance_us": {
+    "detector": {
+     "evaluated_hours": 789,
+     "evaluated_days": 41,
+     "venue_years": 0.09000684462696783,
+     "flagged_hours": 7,
+     "alarm_days": 1,
+     "alarm_day_share": 0.024390243902439025,
+     "episodes": [
+      [
+       "2025-03-27",
+       "2025-03-27"
+      ]
+     ],
+     "n_episodes": 1,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 0,
+     "caught": 0,
+     "recall": null,
+     "false_alarms": {
+      "n": 1,
+      "confounder": 0,
+      "unexplained": 1,
+      "episodes": [
+       {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 11.110266159695819,
+       "confounder": 0.0,
+       "unexplained": 11.110266159695819
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": null
+    },
+    "b1": {
+     "evaluated_hours": 867,
+     "evaluated_days": 41,
+     "venue_years": 0.09890485968514716,
+     "flagged_hours": 14,
+     "alarm_days": 1,
+     "alarm_day_share": 0.024390243902439025,
+     "episodes": [
+      [
+       "2025-03-27",
+       "2025-03-27"
+      ]
+     ],
+     "n_episodes": 1,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 0,
+     "caught": 0,
+     "recall": null,
+     "false_alarms": {
+      "n": 1,
+      "confounder": 0,
+      "unexplained": 1,
+      "episodes": [
+       {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 10.110726643598616,
+       "confounder": 0.0,
+       "unexplained": 10.110726643598616
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": null
+    },
+    "b2": {
+     "evaluated_hours": 507,
+     "evaluated_days": 25,
+     "venue_years": 0.05783709787816564,
+     "flagged_hours": 17,
+     "alarm_days": 1,
+     "alarm_day_share": 0.04,
+     "episodes": [
+      [
+       "2025-03-27",
+       "2025-03-27"
+      ]
+     ],
+     "n_episodes": 1,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-04-09",
+       "window": [
+        "2023-02-10",
+        "2023-07-08"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-02",
+       "type": "deposit_pause",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-09",
+        "2023-09-07"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-03",
+       "type": "withdrawal_delay",
+       "report": "2023-06-09",
+       "window": [
+        "2023-05-10",
+        "2023-06-22"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BUS-2023-04",
+       "type": "rail_shutdown",
+       "report": "2023-06-22",
+       "window": [
+        "2023-05-23",
+        "2025-02-18"
+       ],
+       "covered": false,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "binance_us",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 0,
+     "caught": 0,
+     "recall": null,
+     "false_alarms": {
+      "n": 1,
+      "confounder": 0,
+      "unexplained": 1,
+      "episodes": [
+       {
+        "start": "2025-03-27",
+        "end": "2025-03-27",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 17.289940828402365,
+       "confounder": 0.0,
+       "unexplained": 17.289940828402365
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": null
+    },
+    "b3": null
+   },
+   "coinbase": {
+    "detector": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "venue_years": 6.327059091946156,
+     "flagged_hours": 474,
+     "alarm_days": 29,
+     "alarm_day_share": 0.012537829658452227,
+     "episodes": [
+      [
+       "2017-09-02",
+       "2017-09-10"
+      ],
+      [
+       "2017-09-16",
+       "2017-09-17"
+      ],
+      [
+       "2017-11-02",
+       "2017-11-02"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-07",
+       "2017-12-17"
+      ],
+      [
+       "2017-12-23",
+       "2017-12-25"
+      ],
+      [
+       "2017-12-30",
+       "2017-12-30"
+      ],
+      [
+       "2018-01-28",
+       "2018-01-29"
+      ]
+     ],
+     "n_episodes": 8,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarms": {
+      "n": 8,
+      "confounder": 0,
+      "unexplained": 8,
+      "episodes": [
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-10",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-16",
+        "end": "2017-09-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-02",
+        "end": "2017-11-02",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-07",
+        "end": "2017-12-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-23",
+        "end": "2017-12-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-30",
+        "end": "2017-12-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-01-28",
+        "end": "2018-01-29",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 1.2644105079061716,
+       "confounder": 0.0,
+       "unexplained": 1.2644105079061716
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": 0.0
+    },
+    "b1": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "venue_years": 6.992128678986996,
+     "flagged_hours": 1576,
+     "alarm_days": 95,
+     "alarm_day_share": 0.03716744913928013,
+     "episodes": [
+      [
+       "2017-01-05",
+       "2017-01-16"
+      ],
+      [
+       "2017-02-12",
+       "2017-02-13"
+      ],
+      [
+       "2017-03-04",
+       "2017-03-04"
+      ],
+      [
+       "2017-03-11",
+       "2017-03-12"
+      ],
+      [
+       "2017-03-26",
+       "2017-03-26"
+      ],
+      [
+       "2017-03-31",
+       "2017-04-03"
+      ],
+      [
+       "2017-04-14",
+       "2017-04-17"
+      ],
+      [
+       "2017-04-23",
+       "2017-06-01"
+      ],
+      [
+       "2017-06-11",
+       "2017-06-14"
+      ],
+      [
+       "2017-06-21",
+       "2017-06-21"
+      ],
+      [
+       "2017-06-26",
+       "2017-06-26"
+      ],
+      [
+       "2017-08-01",
+       "2017-08-01"
+      ],
+      [
+       "2017-08-12",
+       "2017-08-12"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-10"
+      ],
+      [
+       "2017-09-16",
+       "2017-09-17"
+      ],
+      [
+       "2017-11-02",
+       "2017-11-02"
+      ],
+      [
+       "2017-11-26",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-06",
+       "2017-12-30"
+      ],
+      [
+       "2018-01-28",
+       "2018-01-29"
+      ]
+     ],
+     "n_episodes": 20,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarms": {
+      "n": 20,
+      "confounder": 0,
+      "unexplained": 20,
+      "episodes": [
+       {
+        "start": "2017-01-05",
+        "end": "2017-01-16",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-02-12",
+        "end": "2017-02-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-04",
+        "end": "2017-03-04",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-11",
+        "end": "2017-03-12",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-26",
+        "end": "2017-03-26",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-03-31",
+        "end": "2017-04-03",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-04-14",
+        "end": "2017-04-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-04-23",
+        "end": "2017-06-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-06-11",
+        "end": "2017-06-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-06-21",
+        "end": "2017-06-21",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-06-26",
+        "end": "2017-06-26",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-01",
+        "end": "2017-08-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-12",
+        "end": "2017-08-12",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-10",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-16",
+        "end": "2017-09-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-02",
+        "end": "2017-11-02",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-26",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-06",
+        "end": "2017-12-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-01-28",
+        "end": "2018-01-29",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 2.8603592579903085,
+       "confounder": 0.0,
+       "unexplained": 2.8603592579903085
+      }
+     },
+     "n_episodes_true": 0,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "hour_precision": 0.0,
+     "hour_recall": 0.0
+    },
+    "b2": {
+     "evaluated_hours": 60933,
+     "evaluated_days": 2541,
+     "venue_years": 6.951060917180014,
+     "flagged_hours": 1208,
+     "alarm_days": 61,
+     "alarm_day_share": 0.024006296733569462,
+     "episodes": [
+      [
+       "2017-04-03",
+       "2017-04-03"
+      ],
+      [
+       "2017-05-01",
+       "2017-05-01"
+      ],
+      [
+       "2017-08-01",
+       "2017-08-01"
+      ],
+      [
+       "2017-08-12",
+       "2017-08-12"
+      ],
+      [
+       "2017-08-19",
+       "2017-08-20"
+      ],
+      [
+       "2017-09-02",
+       "2017-09-10"
+      ],
+      [
+       "2017-09-16",
+       "2017-09-17"
+      ],
+      [
+       "2017-11-02",
+       "2017-11-02"
+      ],
+      [
+       "2017-11-25",
+       "2017-11-30"
+      ],
+      [
+       "2017-12-06",
+       "2017-12-14"
+      ],
+      [
+       "2018-01-28",
+       "2018-01-29"
+      ],
+      [
+       "2018-05-03",
+       "2018-05-03"
+      ],
+      [
+       "2019-06-16",
+       "2019-06-16"
+      ],
+      [
+       "2019-11-06",
+       "2019-11-07"
+      ],
+      [
+       "2020-03-13",
+       "2020-03-13"
+      ],
+      [
+       "2021-05-19",
+       "2021-05-19"
+      ],
+      [
+       "2021-12-04",
+       "2021-12-05"
+      ],
+      [
+       "2022-11-09",
+       "2022-11-18"
+      ],
+      [
+       "2022-11-23",
+       "2022-11-23"
+      ],
+      [
+       "2023-03-11",
+       "2023-03-15"
+      ],
+      [
+       "2023-03-20",
+       "2023-03-22"
+      ],
+      [
+       "2023-06-20",
+       "2023-06-20"
+      ],
+      [
+       "2023-08-08",
+       "2023-08-08"
+      ],
+      [
+       "2023-12-20",
+       "2023-12-20"
+      ],
+      [
+       "2023-12-25",
+       "2023-12-25"
+      ],
+      [
+       "2023-12-30",
+       "2023-12-30"
+      ]
+     ],
+     "n_episodes": 26,
+     "positives": [
+      {
+       "id": "BST-2020-01",
+       "type": "banking_partner_loss",
+       "report": "2020-11-17",
+       "window": [
+        "2020-10-18",
+        "2021-02-15"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "BST-2023-01",
+       "type": "rail_shutdown",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "bitstamp",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      },
+      {
+       "id": "CB-2022-01",
+       "type": "withdrawal_delay",
+       "report": "2022-10-02",
+       "window": [
+        "2022-09-02",
+        "2022-10-02"
+       ],
+       "covered": true,
+       "caught": false,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": null,
+       "lead_days": null
+      },
+      {
+       "id": "CB-2023-01",
+       "type": "banking_partner_loss",
+       "report": "2023-03-02",
+       "window": [
+        "2023-01-31",
+        "2023-05-31"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": 9
+      },
+      {
+       "id": "CB-2023-02",
+       "type": "rail_shutdown",
+       "report": "2023-03-20",
+       "window": [
+        "2023-02-18",
+        "2023-06-18"
+       ],
+       "covered": true,
+       "caught": true,
+       "retrospective": false,
+       "label_venue": "coinbase",
+       "first_alarm_day": "2023-03-11",
+       "lead_days": -9
+      }
+     ],
+     "covered_positives": 5,
+     "caught": 3,
+     "recall": 0.6,
+     "false_alarms": {
+      "n": 24,
+      "confounder": 0,
+      "unexplained": 24,
+      "episodes": [
+       {
+        "start": "2017-04-03",
+        "end": "2017-04-03",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-05-01",
+        "end": "2017-05-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-01",
+        "end": "2017-08-01",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-12",
+        "end": "2017-08-12",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-08-19",
+        "end": "2017-08-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-02",
+        "end": "2017-09-10",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-09-16",
+        "end": "2017-09-17",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-02",
+        "end": "2017-11-02",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-11-25",
+        "end": "2017-11-30",
+        "class": "unexplained"
+       },
+       {
+        "start": "2017-12-06",
+        "end": "2017-12-14",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-01-28",
+        "end": "2018-01-29",
+        "class": "unexplained"
+       },
+       {
+        "start": "2018-05-03",
+        "end": "2018-05-03",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-06-16",
+        "end": "2019-06-16",
+        "class": "unexplained"
+       },
+       {
+        "start": "2019-11-06",
+        "end": "2019-11-07",
+        "class": "unexplained"
+       },
+       {
+        "start": "2020-03-13",
+        "end": "2020-03-13",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-05-19",
+        "end": "2021-05-19",
+        "class": "unexplained"
+       },
+       {
+        "start": "2021-12-04",
+        "end": "2021-12-05",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-11-09",
+        "end": "2022-11-18",
+        "class": "unexplained"
+       },
+       {
+        "start": "2022-11-23",
+        "end": "2022-11-23",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-06-20",
+        "end": "2023-06-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-08-08",
+        "end": "2023-08-08",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-12-20",
+        "end": "2023-12-20",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-12-25",
+        "end": "2023-12-25",
+        "class": "unexplained"
+       },
+       {
+        "start": "2023-12-30",
+        "end": "2023-12-30",
+        "class": "unexplained"
+       }
+      ],
+      "per_venue_year": {
+       "total": 3.452710353995372,
+       "confounder": 0.0,
+       "unexplained": 3.452710353995372
+      }
+     },
+     "n_episodes_true": 2,
+     "episode_precision": 0.07692307692307693,
+     "episode_f1": 0.13636363636363635,
+     "hour_precision": 0.13741721854304637,
+     "hour_recall": 0.023785642642212352
+    },
+    "b3": null
+   }
+  }
+ },
+ "predictions": {
+  "P1": {
+   "status": "FAIL",
+   "venues": {
+    "bitfinex": {
+     "unexplained_per_venue_year": 0.5309402192566272,
+     "status": "PASS"
+    },
+    "coinbase": {
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "status": "FAIL"
+    }
+   }
+  },
+  "P2": {
+   "status": "PASS",
+   "venues": {
+    "bitfinex": {
+     "detector_false_alarms": 3,
+     "b1_false_alarms": 9,
+     "detector_recall": 0.7777777777777778,
+     "b1_recall": 0.7777777777777778,
+     "status": "PASS"
+    },
+    "binance_us": {
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 1,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "status": "PASS"
+    },
+    "coinbase": {
+     "detector_false_alarms": 8,
+     "b1_false_alarms": 20,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "status": "PASS"
+    }
+   }
+  },
+  "P3": {
+   "status": "FAIL",
+   "caught_leads": [
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2017-01",
+     "lead_days": 3
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2017-02",
+     "lead_days": -6
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-03",
+     "lead_days": 8
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-04",
+     "lead_days": -3
+    },
+    {
+     "venue": "binance_us",
+     "id": "BST-2023-01",
+     "lead_days": null
+    },
+    {
+     "venue": "binance_us",
+     "id": "BUS-2023-01",
+     "lead_days": 29
+    },
+    {
+     "venue": "binance_us",
+     "id": "BUS-2023-02",
+     "lead_days": -2
+    },
+    {
+     "venue": "binance_us",
+     "id": "BUS-2023-03",
+     "lead_days": -2
+    }
+   ],
+   "violations": [
+    "BFX-2018-03",
+    "BST-2023-01",
+    "BUS-2023-01"
+   ]
+  },
+  "P4": {
+   "status": "FAIL",
+   "alarm_days": 29,
+   "covered_days": 2313,
+   "alarm_day_share": 0.012537829658452227,
+   "recall": 0.0,
+   "recall_note": null
+  },
+  "falsified": false,
+  "falsification": {
+   "P1_fails_at_both_venues": false,
+   "P2_fails": false
+  }
+ },
+ "robustness": {
+  "grid": {
+   "bitfinex": [
+    {
+     "threshold": 50.0,
+     "agreement": 0.1,
+     "evaluated_hours": 61183,
+     "n_episodes": 18,
+     "alarm_days": 308,
+     "covered_positives": 9,
+     "caught": 8,
+     "recall": 0.8888888888888888,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "unexplained_per_venue_year": 0.85965055652714,
+     "episode_f1": 0.761904761904762
+    },
+    {
+     "threshold": 50.0,
+     "agreement": 0.25,
+     "evaluated_hours": 61183,
+     "n_episodes": 21,
+     "alarm_days": 368,
+     "covered_positives": 9,
+     "caught": 8,
+     "recall": 0.8888888888888888,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "unexplained_per_venue_year": 1.2894758347907098,
+     "episode_f1": 0.6956521739130435
+    },
+    {
+     "threshold": 50.0,
+     "agreement": 0.5,
+     "evaluated_hours": 61183,
+     "n_episodes": 22,
+     "alarm_days": 403,
+     "covered_positives": 9,
+     "caught": 8,
+     "recall": 0.8888888888888888,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "unexplained_per_venue_year": 1.4327509275452333,
+     "episode_f1": 0.676056338028169
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.1,
+     "evaluated_hours": 61183,
+     "n_episodes": 14,
+     "alarm_days": 235,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "unexplained_per_venue_year": 0.28655018550904665,
+     "episode_f1": 0.8155339805825242
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.25,
+     "evaluated_hours": 61183,
+     "n_episodes": 12,
+     "alarm_days": 267,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 3,
+     "unexplained": 3,
+     "unexplained_per_venue_year": 0.42982527826357,
+     "episode_f1": 0.7636363636363638
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.5,
+     "evaluated_hours": 61183,
+     "n_episodes": 11,
+     "alarm_days": 289,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 4,
+     "unexplained": 4,
+     "unexplained_per_venue_year": 0.5731003710180933,
+     "episode_f1": 0.7000000000000001
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.1,
+     "evaluated_hours": 61183,
+     "n_episodes": 13,
+     "alarm_days": 183,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 0.8750000000000001
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.25,
+     "evaluated_hours": 61183,
+     "n_episodes": 12,
+     "alarm_days": 206,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 0.8750000000000001
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.5,
+     "evaluated_hours": 61183,
+     "n_episodes": 12,
+     "alarm_days": 219,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 0.8750000000000001
+    }
+   ],
+   "binance_us": [
+    {
+     "threshold": 50.0,
+     "agreement": 0.1,
+     "evaluated_hours": 6683,
+     "n_episodes": 4,
+     "alarm_days": 35,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.8571428571428571
+    },
+    {
+     "threshold": 50.0,
+     "agreement": 0.25,
+     "evaluated_hours": 6683,
+     "n_episodes": 4,
+     "alarm_days": 36,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.8571428571428571
+    },
+    {
+     "threshold": 50.0,
+     "agreement": 0.5,
+     "evaluated_hours": 6683,
+     "n_episodes": 3,
+     "alarm_days": 38,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.8
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.1,
+     "evaluated_hours": 6683,
+     "n_episodes": 5,
+     "alarm_days": 30,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.888888888888889
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.25,
+     "evaluated_hours": 6683,
+     "n_episodes": 5,
+     "alarm_days": 31,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.888888888888889
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.5,
+     "evaluated_hours": 6683,
+     "n_episodes": 5,
+     "alarm_days": 31,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.888888888888889
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.1,
+     "evaluated_hours": 6683,
+     "n_episodes": 2,
+     "alarm_days": 24,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 1.0
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.25,
+     "evaluated_hours": 6683,
+     "n_episodes": 3,
+     "alarm_days": 25,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 1.0
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.5,
+     "evaluated_hours": 6683,
+     "n_episodes": 3,
+     "alarm_days": 25,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 1.0
+    }
+   ],
+   "coinbase": [
+    {
+     "threshold": 50.0,
+     "agreement": 0.1,
+     "evaluated_hours": 55463,
+     "n_episodes": 9,
+     "alarm_days": 29,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "unexplained_per_venue_year": 1.422461821394443,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 50.0,
+     "agreement": 0.25,
+     "evaluated_hours": 55463,
+     "n_episodes": 8,
+     "alarm_days": 43,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 50.0,
+     "agreement": 0.5,
+     "evaluated_hours": 55463,
+     "n_episodes": 10,
+     "alarm_days": 51,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "unexplained_per_venue_year": 1.5805131348827146,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.1,
+     "evaluated_hours": 55463,
+     "n_episodes": 7,
+     "alarm_days": 22,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.25,
+     "evaluated_hours": 55463,
+     "n_episodes": 8,
+     "alarm_days": 29,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 100.0,
+     "agreement": 0.5,
+     "evaluated_hours": 55463,
+     "n_episodes": 6,
+     "alarm_days": 33,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "unexplained_per_venue_year": 0.9483078809296287,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.1,
+     "evaluated_hours": 55463,
+     "n_episodes": 8,
+     "alarm_days": 13,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.25,
+     "evaluated_hours": 55463,
+     "n_episodes": 7,
+     "alarm_days": 19,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_f1": 0.0
+    },
+    {
+     "threshold": 200.0,
+     "agreement": 0.5,
+     "evaluated_hours": 55463,
+     "n_episodes": 7,
+     "alarm_days": 20,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_f1": 0.0
+    }
+   ]
+  },
+  "min_hours": {
+   "bitfinex": {
+    "3": {
+     "evaluated_hours": 61183,
+     "n_episodes": 13,
+     "alarm_days": 289,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 4,
+     "unexplained": 4,
+     "unexplained_per_venue_year": 0.5731003710180933,
+     "episode_f1": 0.7325581395348836
+    },
+    "12": {
+     "evaluated_hours": 61183,
+     "n_episodes": 12,
+     "alarm_days": 238,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 0.14327509275452333,
+     "episode_f1": 0.8415300546448087
+    }
+   },
+   "binance_us": {
+    "3": {
+     "evaluated_hours": 6683,
+     "n_episodes": 5,
+     "alarm_days": 33,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_f1": 0.888888888888889
+    },
+    "12": {
+     "evaluated_hours": 6683,
+     "n_episodes": 4,
+     "alarm_days": 28,
+     "covered_positives": 4,
+     "caught": 4,
+     "recall": 1.0,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_f1": 1.0
+    }
+   },
+   "coinbase": {
+    "3": {
+     "evaluated_hours": 55463,
+     "n_episodes": 6,
+     "alarm_days": 37,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "unexplained_per_venue_year": 0.9483078809296287,
+     "episode_f1": 0.0
+    },
+    "12": {
+     "evaluated_hours": 55463,
+     "n_episodes": 8,
+     "alarm_days": 19,
+     "covered_positives": 5,
+     "caught": 0,
+     "recall": 0.0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_f1": 0.0
+    }
+   }
+  },
+  "alt_reference": {
+   "bitfinex": {
+    "coinbase_reference": {
+     "evaluated_hours": 61171,
+     "n_episodes": 19,
+     "alarm_days": 335,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 11,
+     "unexplained": 11,
+     "unexplained_per_venue_year": 1.5763351915123178,
+     "episode_f1": 0.5463414634146342
+    },
+    "bitstamp_reference": {
+     "evaluated_hours": 61183,
+     "n_episodes": 12,
+     "alarm_days": 267,
+     "covered_positives": 9,
+     "caught": 7,
+     "recall": 0.7777777777777778,
+     "false_alarm_episodes": 3,
+     "unexplained": 3,
+     "unexplained_per_venue_year": 0.42982527826357,
+     "episode_f1": 0.7636363636363638
+    }
+   }
+  },
+  "loeo": {
+   "episodes": [
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2017-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.5,
+     "train_f1": 0.5857988165680473,
+     "caught": true,
+     "lead_days": 5,
+     "headline_caught": true,
+     "headline_lead_days": 3
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2017-02",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.5750798722044728,
+     "caught": true,
+     "lead_days": -3,
+     "headline_caught": true,
+     "headline_lead_days": -6
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6091370558375635,
+     "caught": true,
+     "lead_days": -57,
+     "headline_caught": true,
+     "headline_lead_days": -57
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-02",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.5925925925925926,
+     "caught": true,
+     "lead_days": -198,
+     "headline_caught": true,
+     "headline_lead_days": -204
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-03",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6101694915254238,
+     "caught": true,
+     "lead_days": 14,
+     "headline_caught": true,
+     "headline_lead_days": 8
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-04",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.631578947368421,
+     "caught": true,
+     "lead_days": 3,
+     "headline_caught": true,
+     "headline_lead_days": -3
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BFX-2018-06",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6091370558375635,
+     "caught": true,
+     "lead_days": -163,
+     "headline_caught": true,
+     "headline_lead_days": -175
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BST-2020-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6639839034205232,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "bitfinex",
+     "id": "BST-2023-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6639839034205232,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "binance_us",
+     "id": "BST-2023-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.5925925925925926,
+     "caught": true,
+     "lead_days": null,
+     "headline_caught": true,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "binance_us",
+     "id": "BUS-2023-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.5652173913043479,
+     "caught": true,
+     "lead_days": 29,
+     "headline_caught": true,
+     "headline_lead_days": 29
+    },
+    {
+     "venue": "binance_us",
+     "id": "BUS-2023-02",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6030927835051547,
+     "caught": true,
+     "lead_days": -2,
+     "headline_caught": true,
+     "headline_lead_days": -2
+    },
+    {
+     "venue": "binance_us",
+     "id": "BUS-2023-03",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6101694915254238,
+     "caught": true,
+     "lead_days": -2,
+     "headline_caught": true,
+     "headline_lead_days": -2
+    },
+    {
+     "venue": "coinbase",
+     "id": "BST-2020-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6639839034205232,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "coinbase",
+     "id": "BST-2023-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.7066381156316917,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "coinbase",
+     "id": "CB-2022-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.6639839034205232,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "coinbase",
+     "id": "CB-2023-01",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.7066381156316917,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    },
+    {
+     "venue": "coinbase",
+     "id": "CB-2023-02",
+     "chosen_threshold": 200.0,
+     "chosen_agreement": 0.25,
+     "train_f1": 0.7066381156316917,
+     "caught": false,
+     "lead_days": null,
+     "headline_caught": false,
+     "headline_lead_days": null
+    }
+   ],
+   "n": 18,
+   "loeo_recall": 0.6111111111111112,
+   "headline_recall": 0.6111111111111112
+  },
+  "high_quality_labels": {
+   "bitfinex": {
+    "evaluated_hours": 61183,
+    "n_episodes": 12,
+    "alarm_days": 267,
+    "covered_positives": 5,
+    "caught": 5,
+    "recall": 1.0,
+    "false_alarm_episodes": 6,
+    "unexplained": 6,
+    "unexplained_per_venue_year": 0.85965055652714,
+    "episode_f1": 0.6666666666666666
+   },
+   "binance_us": {
+    "evaluated_hours": 6683,
+    "n_episodes": 5,
+    "alarm_days": 31,
+    "covered_positives": 2,
+    "caught": 2,
+    "recall": 1.0,
+    "false_alarm_episodes": 1,
+    "unexplained": 1,
+    "unexplained_per_venue_year": 1.3116863683974262,
+    "episode_f1": 0.888888888888889
+   },
+   "coinbase": {
+    "evaluated_hours": 55463,
+    "n_episodes": 8,
+    "alarm_days": 29,
+    "covered_positives": 3,
+    "caught": 0,
+    "recall": 0.0,
+    "false_alarm_episodes": 8,
+    "unexplained": 8,
+    "unexplained_per_venue_year": 1.2644105079061716,
+    "episode_f1": 0.0
+   }
+  }
+ },
+ "alarm_episodes": {
+  "bitfinex": {
+   "detector": [
+    [
+     "2017-04-12",
+     "2017-05-03"
+    ],
+    [
+     "2017-05-10",
+     "2017-05-19"
+    ],
+    [
+     "2017-05-26",
+     "2017-06-18"
+    ],
+    [
+     "2017-06-24",
+     "2017-07-13"
+    ],
+    [
+     "2017-11-13",
+     "2017-11-14"
+    ],
+    [
+     "2017-12-25",
+     "2017-12-25"
+    ],
+    [
+     "2018-01-16",
+     "2018-01-19"
+    ],
+    [
+     "2018-01-31",
+     "2018-02-02"
+    ],
+    [
+     "2018-10-08",
+     "2019-04-07"
+    ],
+    [
+     "2019-04-26",
+     "2019-05-17"
+    ],
+    [
+     "2019-11-25",
+     "2019-11-25"
+    ],
+    [
+     "2022-05-12",
+     "2022-05-12"
+    ]
+   ],
+   "b1": [
+    [
+     "2017-01-05",
+     "2017-01-05"
+    ],
+    [
+     "2017-03-26",
+     "2017-03-26"
+    ],
+    [
+     "2017-04-01",
+     "2017-04-03"
+    ],
+    [
+     "2017-04-11",
+     "2017-07-14"
+    ],
+    [
+     "2017-07-30",
+     "2017-07-30"
+    ],
+    [
+     "2017-08-19",
+     "2017-08-20"
+    ],
+    [
+     "2017-09-02",
+     "2017-09-05"
+    ],
+    [
+     "2017-11-12",
+     "2017-11-14"
+    ],
+    [
+     "2017-11-26",
+     "2017-11-30"
+    ],
+    [
+     "2017-12-07",
+     "2017-12-13"
+    ],
+    [
+     "2017-12-19",
+     "2017-12-31"
+    ],
+    [
+     "2018-01-16",
+     "2018-01-19"
+    ],
+    [
+     "2018-01-28",
+     "2018-02-02"
+    ],
+    [
+     "2018-10-08",
+     "2019-04-07"
+    ],
+    [
+     "2019-04-26",
+     "2019-05-17"
+    ],
+    [
+     "2019-11-25",
+     "2019-11-25"
+    ],
+    [
+     "2020-03-13",
+     "2020-03-13"
+    ],
+    [
+     "2022-05-12",
+     "2022-05-12"
+    ]
+   ],
+   "b2": [
+    [
+     "2017-02-11",
+     "2017-02-11"
+    ],
+    [
+     "2017-03-26",
+     "2017-03-26"
+    ],
+    [
+     "2017-04-02",
+     "2017-04-03"
+    ],
+    [
+     "2017-04-14",
+     "2017-04-27"
+    ],
+    [
+     "2017-08-19",
+     "2017-08-20"
+    ],
+    [
+     "2017-09-02",
+     "2017-09-05"
+    ],
+    [
+     "2017-11-12",
+     "2017-11-14"
+    ],
+    [
+     "2017-11-26",
+     "2017-11-27"
+    ],
+    [
+     "2017-12-07",
+     "2017-12-11"
+    ],
+    [
+     "2017-12-22",
+     "2017-12-25"
+    ],
+    [
+     "2018-01-16",
+     "2018-01-16"
+    ],
+    [
+     "2018-01-28",
+     "2018-02-02"
+    ],
+    [
+     "2018-05-03",
+     "2018-05-06"
+    ],
+    [
+     "2018-06-23",
+     "2018-06-24"
+    ],
+    [
+     "2018-09-06",
+     "2018-09-06"
+    ],
+    [
+     "2018-09-30",
+     "2018-10-18"
+    ],
+    [
+     "2018-11-14",
+     "2018-11-14"
+    ],
+    [
+     "2019-03-21",
+     "2019-03-28"
+    ],
+    [
+     "2019-04-02",
+     "2019-04-04"
+    ],
+    [
+     "2019-04-26",
+     "2019-05-09"
+    ],
+    [
+     "2019-06-23",
+     "2019-06-23"
+    ],
+    [
+     "2019-08-08",
+     "2019-08-09"
+    ],
+    [
+     "2019-11-25",
+     "2019-11-25"
+    ],
+    [
+     "2020-01-07",
+     "2020-01-08"
+    ],
+    [
+     "2020-03-13",
+     "2020-03-13"
+    ],
+    [
+     "2020-08-01",
+     "2020-08-07"
+    ],
+    [
+     "2020-11-26",
+     "2020-11-27"
+    ],
+    [
+     "2021-05-17",
+     "2021-05-17"
+    ],
+    [
+     "2021-06-20",
+     "2021-06-22"
+    ],
+    [
+     "2021-06-27",
+     "2021-06-30"
+    ],
+    [
+     "2021-10-13",
+     "2021-10-13"
+    ],
+    [
+     "2022-01-22",
+     "2022-01-22"
+    ],
+    [
+     "2022-02-24",
+     "2022-02-24"
+    ],
+    [
+     "2022-05-08",
+     "2022-05-14"
+    ],
+    [
+     "2022-06-13",
+     "2022-06-17"
+    ],
+    [
+     "2022-11-09",
+     "2022-11-15"
+    ],
+    [
+     "2023-03-11",
+     "2023-03-22"
+    ],
+    [
+     "2023-06-15",
+     "2023-06-15"
+    ]
+   ],
+   "b3": [
+    [
+     "2018-12-02",
+     "2018-12-02"
+    ],
+    [
+     "2018-12-07",
+     "2019-05-10"
+    ],
+    [
+     "2019-05-27",
+     "2019-05-27"
+    ],
+    [
+     "2019-06-27",
+     "2019-06-28"
+    ],
+    [
+     "2019-11-25",
+     "2019-11-25"
+    ],
+    [
+     "2020-03-13",
+     "2020-03-13"
+    ]
+   ]
+  },
+  "binance_us": {
+   "detector": [
+    [
+     "2023-05-08",
+     "2023-05-09"
+    ],
+    [
+     "2023-06-07",
+     "2023-06-07"
+    ],
+    [
+     "2023-06-13",
+     "2023-06-16"
+    ],
+    [
+     "2023-06-21",
+     "2023-07-13"
+    ],
+    [
+     "2025-03-27",
+     "2025-03-27"
+    ]
+   ],
+   "b1": [
+    [
+     "2023-05-08",
+     "2023-05-09"
+    ],
+    [
+     "2023-06-07",
+     "2023-06-07"
+    ],
+    [
+     "2023-06-13",
+     "2023-06-16"
+    ],
+    [
+     "2023-06-21",
+     "2023-07-13"
+    ],
+    [
+     "2025-03-27",
+     "2025-03-27"
+    ]
+   ],
+   "b2": [
+    [
+     "2022-11-09",
+     "2022-11-21"
+    ],
+    [
+     "2023-03-11",
+     "2023-03-28"
+    ],
+    [
+     "2023-04-21",
+     "2023-04-22"
+    ],
+    [
+     "2023-05-02",
+     "2023-05-09"
+    ],
+    [
+     "2023-06-07",
+     "2023-06-16"
+    ],
+    [
+     "2023-06-21",
+     "2023-07-01"
+    ],
+    [
+     "2025-03-27",
+     "2025-03-27"
+    ]
+   ],
+   "b3": null
+  },
+  "coinbase": {
+   "detector": [
+    [
+     "2017-09-02",
+     "2017-09-10"
+    ],
+    [
+     "2017-09-16",
+     "2017-09-17"
+    ],
+    [
+     "2017-11-02",
+     "2017-11-02"
+    ],
+    [
+     "2017-11-26",
+     "2017-11-30"
+    ],
+    [
+     "2017-12-07",
+     "2017-12-17"
+    ],
+    [
+     "2017-12-23",
+     "2017-12-25"
+    ],
+    [
+     "2017-12-30",
+     "2017-12-30"
+    ],
+    [
+     "2018-01-28",
+     "2018-01-29"
+    ]
+   ],
+   "b1": [
+    [
+     "2017-01-05",
+     "2017-01-16"
+    ],
+    [
+     "2017-02-12",
+     "2017-02-13"
+    ],
+    [
+     "2017-03-04",
+     "2017-03-04"
+    ],
+    [
+     "2017-03-11",
+     "2017-03-12"
+    ],
+    [
+     "2017-03-26",
+     "2017-03-26"
+    ],
+    [
+     "2017-03-31",
+     "2017-04-03"
+    ],
+    [
+     "2017-04-14",
+     "2017-04-17"
+    ],
+    [
+     "2017-04-23",
+     "2017-06-01"
+    ],
+    [
+     "2017-06-11",
+     "2017-06-14"
+    ],
+    [
+     "2017-06-21",
+     "2017-06-21"
+    ],
+    [
+     "2017-06-26",
+     "2017-06-26"
+    ],
+    [
+     "2017-08-01",
+     "2017-08-01"
+    ],
+    [
+     "2017-08-12",
+     "2017-08-12"
+    ],
+    [
+     "2017-08-19",
+     "2017-08-20"
+    ],
+    [
+     "2017-09-02",
+     "2017-09-10"
+    ],
+    [
+     "2017-09-16",
+     "2017-09-17"
+    ],
+    [
+     "2017-11-02",
+     "2017-11-02"
+    ],
+    [
+     "2017-11-26",
+     "2017-11-30"
+    ],
+    [
+     "2017-12-06",
+     "2017-12-30"
+    ],
+    [
+     "2018-01-28",
+     "2018-01-29"
+    ]
+   ],
+   "b2": [
+    [
+     "2017-04-03",
+     "2017-04-03"
+    ],
+    [
+     "2017-05-01",
+     "2017-05-01"
+    ],
+    [
+     "2017-08-01",
+     "2017-08-01"
+    ],
+    [
+     "2017-08-12",
+     "2017-08-12"
+    ],
+    [
+     "2017-08-19",
+     "2017-08-20"
+    ],
+    [
+     "2017-09-02",
+     "2017-09-10"
+    ],
+    [
+     "2017-09-16",
+     "2017-09-17"
+    ],
+    [
+     "2017-11-02",
+     "2017-11-02"
+    ],
+    [
+     "2017-11-25",
+     "2017-11-30"
+    ],
+    [
+     "2017-12-06",
+     "2017-12-14"
+    ],
+    [
+     "2018-01-28",
+     "2018-01-29"
+    ],
+    [
+     "2018-05-03",
+     "2018-05-03"
+    ],
+    [
+     "2019-06-16",
+     "2019-06-16"
+    ],
+    [
+     "2019-11-06",
+     "2019-11-07"
+    ],
+    [
+     "2020-03-13",
+     "2020-03-13"
+    ],
+    [
+     "2021-05-19",
+     "2021-05-19"
+    ],
+    [
+     "2021-12-04",
+     "2021-12-05"
+    ],
+    [
+     "2022-11-09",
+     "2022-11-18"
+    ],
+    [
+     "2022-11-23",
+     "2022-11-23"
+    ],
+    [
+     "2023-03-11",
+     "2023-03-15"
+    ],
+    [
+     "2023-03-20",
+     "2023-03-22"
+    ],
+    [
+     "2023-06-20",
+     "2023-06-20"
+    ],
+    [
+     "2023-08-08",
+     "2023-08-08"
+    ],
+    [
+     "2023-12-20",
+     "2023-12-20"
+    ],
+    [
+     "2023-12-25",
+     "2023-12-25"
+    ],
+    [
+     "2023-12-30",
+     "2023-12-30"
+    ]
+   ],
+   "b3": null
+  }
+ },
+ "amendment": "D1 (pre-data, docs/review/DETECTOR_PREREG.md section 9)",
+ "excluded_labels": {
+  "CB-2019-01": "GBP rail; the monitored quantity is the USD ledger (amendment D1)"
+ },
+ "data": {
+  "months_requested": [
+   "2017-01",
+   "2023-12"
+  ],
+  "binance_us_months_on_disk": [
+   "2022-10",
+   "2022-11",
+   "2023-01",
+   "2023-02",
+   "2023-03",
+   "2023-04",
+   "2023-05",
+   "2023-06",
+   "2023-07",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ],
+  "missing_months": {
+   "bitstamp:BTCUSD": [
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10"
+   ],
+   "bitstamp:ETHUSD": [
+    "2017-01",
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08"
+   ],
+   "bitstamp:USDTUSD": [
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08"
+   ]
+  },
+  "hours": {
+   "bitfinex": {
+    "L": 61315,
+    "S": 61193
+   },
+   "binance_us": {
+    "L": 6983,
+    "S": 9550
+   },
+   "coinbase": {
+    "L": 61293,
+    "S": 55483
+   }
+  }
+ }
+}

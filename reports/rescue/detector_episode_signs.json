@@ -1,0 +1,158 @@
+{
+ "bitfinex": [
+  {
+   "start": "2017-04-12",
+   "end": "2017-05-03",
+   "median_L_flagged_bps": 640.0,
+   "flagged_hours": 364
+  },
+  {
+   "start": "2017-05-10",
+   "end": "2017-05-19",
+   "median_L_flagged_bps": 262.0,
+   "flagged_hours": 76
+  },
+  {
+   "start": "2017-05-26",
+   "end": "2017-06-18",
+   "median_L_flagged_bps": -333.0,
+   "flagged_hours": 333
+  },
+  {
+   "start": "2017-06-24",
+   "end": "2017-07-13",
+   "median_L_flagged_bps": -210.0,
+   "flagged_hours": 230
+  },
+  {
+   "start": "2017-11-13",
+   "end": "2017-11-14",
+   "median_L_flagged_bps": -151.0,
+   "flagged_hours": 19
+  },
+  {
+   "start": "2017-12-25",
+   "end": "2017-12-25",
+   "median_L_flagged_bps": -458.0,
+   "flagged_hours": 7
+  },
+  {
+   "start": "2018-01-16",
+   "end": "2018-01-19",
+   "median_L_flagged_bps": -235.0,
+   "flagged_hours": 46
+  },
+  {
+   "start": "2018-01-31",
+   "end": "2018-02-02",
+   "median_L_flagged_bps": 229.0,
+   "flagged_hours": 35
+  },
+  {
+   "start": "2018-10-08",
+   "end": "2019-04-07",
+   "median_L_flagged_bps": 255.0,
+   "flagged_hours": 4126
+  },
+  {
+   "start": "2019-04-26",
+   "end": "2019-05-17",
+   "median_L_flagged_bps": 564.0,
+   "flagged_hours": 385
+  },
+  {
+   "start": "2019-11-25",
+   "end": "2019-11-25",
+   "median_L_flagged_bps": 125.0,
+   "flagged_hours": 11
+  },
+  {
+   "start": "2022-05-12",
+   "end": "2022-05-12",
+   "median_L_flagged_bps": 155.0,
+   "flagged_hours": 6
+  }
+ ],
+ "binance_us": [
+  {
+   "start": "2023-05-08",
+   "end": "2023-05-09",
+   "median_L_flagged_bps": 197.0,
+   "flagged_hours": 39
+  },
+  {
+   "start": "2023-06-07",
+   "end": "2023-06-07",
+   "median_L_flagged_bps": 211.0,
+   "flagged_hours": 21
+  },
+  {
+   "start": "2023-06-13",
+   "end": "2023-06-16",
+   "median_L_flagged_bps": 152.0,
+   "flagged_hours": 75
+  },
+  {
+   "start": "2023-06-21",
+   "end": "2023-07-13",
+   "median_L_flagged_bps": -552.0,
+   "flagged_hours": 532
+  },
+  {
+   "start": "2025-03-27",
+   "end": "2025-03-27",
+   "median_L_flagged_bps": -214.0,
+   "flagged_hours": 7
+  }
+ ],
+ "coinbase": [
+  {
+   "start": "2017-09-02",
+   "end": "2017-09-10",
+   "median_L_flagged_bps": 206.0,
+   "flagged_hours": 97
+  },
+  {
+   "start": "2017-09-16",
+   "end": "2017-09-17",
+   "median_L_flagged_bps": 179.0,
+   "flagged_hours": 29
+  },
+  {
+   "start": "2017-11-02",
+   "end": "2017-11-02",
+   "median_L_flagged_bps": 154.0,
+   "flagged_hours": 8
+  },
+  {
+   "start": "2017-11-26",
+   "end": "2017-11-30",
+   "median_L_flagged_bps": 163.0,
+   "flagged_hours": 55
+  },
+  {
+   "start": "2017-12-07",
+   "end": "2017-12-17",
+   "median_L_flagged_bps": 364.0,
+   "flagged_hours": 141
+  },
+  {
+   "start": "2017-12-23",
+   "end": "2017-12-25",
+   "median_L_flagged_bps": 257.0,
+   "flagged_hours": 58
+  },
+  {
+   "start": "2017-12-30",
+   "end": "2017-12-30",
+   "median_L_flagged_bps": 296.0,
+   "flagged_hours": 19
+  },
+  {
+   "start": "2018-01-28",
+   "end": "2018-01-29",
+   "median_L_flagged_bps": -195.0,
+   "flagged_hours": 35
+  }
+ ]
+}
