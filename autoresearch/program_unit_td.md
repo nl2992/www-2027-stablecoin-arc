@@ -49,6 +49,7 @@ The estimator must satisfy three rules:
   - `causal_ok`: outputs on random truncations match.
   - `perm_ok`: relabelling the venues permutes the outputs and nothing else.
   - `coverage_ok`: at least 99% of evaluable hours are scored.
+  - `static_ok`: `estimator.py` has no file or OS access, no dynamic imports, no hard-coded dates and no venue names.
 - Also printed: per-year scores, `runtime_s` and the baselines (b0 no correction, b1 same-hour BTC gap, b2 same-hour median of visible-asset gaps).
 
 ## Keep / discard
