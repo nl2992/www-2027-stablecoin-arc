@@ -38,5 +38,6 @@ def estimate_units(panel: dict[str, pd.DataFrame], numeraire_venue: str) -> pd.D
         var = gaps.var(axis=1, ddof=1, skipna=True)
         # James-Stein-style shrinkage toward 0: keep the share of loc^2 not explained by cross-asset noise
         keep = (1.0 - var / (n * loc**2 + 1e-12)).clip(lower=0.0, upper=1.0).fillna(0.0)
-        out[venue] = (loc * keep).where(loc.notna())
+        est = (loc * keep).where(loc.notna())
+        out[venue] = est.ewm(halflife=2.0, ignore_na=True).mean().where(est.notna())
     return out
