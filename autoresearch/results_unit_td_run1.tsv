@@ -1,0 +1,13 @@
+commit	dev_score	control_score	checks	status	description
+f8b35bd	0.435474	0.000000	True	keep	James-Stein shrinkage of median gap by cross-asset dispersion (first keep; control passes)
+27748e2	0.429777	0.000000	True	discard	Causal EWMA halflife 2h on shrunk estimate (fast-moving unit; smoothing lags)
+68479eb	0.442327	-0.104272	True	discard	MAD dispersion in shrinkage (single-asset venue got no shrinkage -> control fails)
+d560100	0.441962	0.000000	True	keep	MAD dispersion shrinkage + zero correction when <2 assets
+82c1342	0.441959	0.000000	True	discard	Reliability-weighted mean (inverse past deviation) instead of median; neutral
+dc8766a	0.441878	0.000000	True	discard	Local-level Kalman (dispersion-based R, causal Q); neutral, temporal smoothing does not help
+4564d8a	0.404509	0.000000	True	discard	Liquidity-weighted median (thin-side volume / own 1-week mean); jumpy weighted median hurts, esp 2020-22
+f318539	0.439405	0.000000	True	discard	Stablecoin-feed rolling regression fallback when evidence weak; slightly worse
+724455b	0.444783	0.000000	True	keep	Halve shrinkage noise term (0.5 x MAD-var/n); beats b2 0.4438
+2d5a97c	0.444410	0.000000	True	discard	Causal EWMA smoothing of shrinkage gate (halflife 6h); neutral
+e3f950a	0.445194	0.000000	True	discard	Quarter shrinkage noise term; +0.0004 below threshold
+e08498f	0.445290	0.000000	True	discard	Trimmed mean location (drop extremes if >=4 assets); +0.0005 below threshold
