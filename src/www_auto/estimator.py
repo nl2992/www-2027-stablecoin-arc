@@ -39,6 +39,6 @@ def estimate_units(panel: dict[str, pd.DataFrame], numeraire_venue: str) -> pd.D
         var = (1.4826 * dev) ** 2 * n / (n - 1).clip(lower=1)
         var = var.where(n >= 2)
         # James-Stein-style shrinkage toward 0: keep the share of loc^2 not explained by cross-asset noise
-        keep = (1.0 - var / (n * loc**2 + 1e-12)).clip(lower=0.0, upper=1.0).fillna(0.0)
+        keep = (1.0 - 0.5 * var / (n * loc**2 + 1e-12)).clip(lower=0.0, upper=1.0).fillna(0.0)
         out[venue] = (loc * keep).where(loc.notna())
     return out
