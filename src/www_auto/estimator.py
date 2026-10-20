@@ -35,7 +35,8 @@ def estimate_units(panel: dict[str, pd.DataFrame], numeraire_venue: str) -> pd.D
         gaps = 1e4 * (frame[shared].reindex(index) - base[shared].reindex(index))
         loc = gaps.median(axis=1, skipna=True)
         n = gaps.notna().sum(axis=1)
-        var = gaps.var(axis=1, ddof=1, skipna=True)
+        dev = gaps.sub(loc, axis=0).abs().median(axis=1, skipna=True)
+        var = (1.4826 * dev) ** 2 * n / (n - 1).clip(lower=1)
         # James-Stein-style shrinkage toward 0: keep the share of loc^2 not explained by cross-asset noise
         keep = (1.0 - var / (n * loc**2 + 1e-12)).clip(lower=0.0, upper=1.0).fillna(0.0)
         out[venue] = (loc * keep).where(loc.notna())
