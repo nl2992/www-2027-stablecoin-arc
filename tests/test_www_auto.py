@@ -51,8 +51,10 @@ def test_planted_unit_is_recovered():
 
 def test_planted_unit_recovered_in_control_pair_too():
     raw, _, _ = synthetic(unit_bst=True)
-    # control pair coinbase vs bitstamp: bitstamp only has BTC and ETH, so BTC's gap carries the unit
-    assert run(raw, estimate_units)["control"]["score"] > 0.99
+    # control pair coinbase vs bitstamp: bitstamp only has BTC and ETH, so BTC's gap carries the unit.
+    # Uses the plain median-gap estimator: the loop-edited estimator shrinks to 0 when a venue has one visible asset.
+    from www_auto.studies import b2_median_gap
+    assert run(raw, b2_median_gap)["control"]["score"] > 0.99
 
 
 def test_zero_unit_scores_about_zero_and_control_not_negative_for_no_op():
