@@ -13,9 +13,11 @@ WINDOW = 72
 MIN_HIST = 24
 OFF_WIN = 24
 OFF_MIN = 6
+VAR_FLOOR = 0.3
 
 
-def _crh_weights(x: np.ndarray, max_iter: int = 100, tol: float = 1e-9) -> np.ndarray:
+def _crh_weights(x: np.ndarray, max_iter: int = 20, tol: float = 1e-9) -> np.ndarray:
+    """Inverse-variance reliability weights from claims vs the weighted-mean truth (variance floored)."""
     m = np.isfinite(x)
     k = x.shape[1]
     w = np.ones(k)
@@ -26,12 +28,13 @@ def _crh_weights(x: np.ndarray, max_iter: int = 100, tol: float = 1e-9) -> np.nd
     x0 = np.where(m, x, 0.0)
     for _ in range(max_iter):
         truth = (x0 * w).sum(axis=1) / (m * w).sum(axis=1)
-        loss = (m * (x0 - truth[:, None]) ** 2).sum(axis=0)
-        total = loss.sum()
-        if total <= 1e-18:
+        var = (m * (x0 - truth[:, None]) ** 2).sum(axis=0) / np.maximum(m.sum(axis=0), 1)
+        ok = m.sum(axis=0) > 0
+        if not ok.any() or var[ok].mean() <= 1e-12:
             return np.ones(k)
-        loss = np.maximum(loss, 1e-12 * total)
-        new = -np.log(loss / loss.sum())
+        var = np.maximum(var, VAR_FLOOR * var[ok].mean())
+        new = 1.0 / var
+        new = new / new[ok].mean()
         if np.abs(new - w).max() < tol:
             return new
         w = new
