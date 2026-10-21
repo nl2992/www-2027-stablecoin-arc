@@ -17,6 +17,7 @@ Each decision lists its evidence and who made it. Scope decisions need independe
 | D11 | 2026-10-19 | Free Bitfinex, Coinbase and Bitstamp public 1-minute candles, 2017-01 to 2023-12, authorized for continuous detector evaluation; probe (no download) of older trade archives for Mt.Gox/BTC-e, files to be approved separately | User instruction; `configs/acquisition_plan_continuous.json` | Authorized |
 | D12 | 2026-10-20 | Free Bitfinex and Coinbase public HOURLY candles, 2017-01 to 2023-12, for LTC, BCH, ETC, XRP, XLM, LINK, SOL, DOGE, ADA (held-out assets for the unit-aware benchmark; about 18 series, under 20 MB) | User instruction | Authorized |
 | D13 | 2026-10-20 | One-episode oracle audit pilot (USDC, March 2023): read-only Ethereum calls via the user's existing Alchemy key (`WWW_ETH_RPC_URL` in `.env`, never printed) for Chainlink feed history, plus public Pyth Benchmarks and CryptoCompare hourly history (no account creation) | User instruction | Authorized |
+| D14 | 2026-10-20 | Free Bitstamp public HOURLY candles, 2017-01 to 2023-12, for LTC, XRP, XLM, LINK, BCH vs USD (multi-asset shared-dollar control; about 5 series, under 10 MB) | User instruction | Authorized |
 
 ## Scope: CEX–DEX restoration capacity vs on-chain-only fallback
 
