@@ -31,7 +31,7 @@ def test_generated_tables_not_in_the_paper_are_still_current():
 
 def test_paper_includes_the_unit_tables_and_figure():
     for name in ("unit_diagnostic_table", "heldout_table", "detector_eval_table", "oracle_pilot_table", "t2_breakdown_table",
-                 "label_list_table", "decomposition_table"):
+                 "label_list_table", "anchor_table", "ledger_phase_table"):
         assert f"\\input{{generated/{name}}}" in MAIN, name
     assert "figures/unit_rate.pdf" in MAIN and "\\input{generated/unit_numbers}" in MAIN
 
@@ -82,7 +82,7 @@ def test_rescue_numbers_and_tables_are_current():
     from www_paper.rescue_macros import (DECOMP_TABLE, FIAT_TABLE, NUMBERS, PHASE_TABLE, decomposition_table,
                                          fiat_table, numbers, phase_table)
     assert NUMBERS.read_text() == numbers() and PHASE_TABLE.read_text() == phase_table()
-    assert DECOMP_TABLE.read_text() == decomposition_table() and "\\input{generated/decomposition_table}" in MAIN
+    assert DECOMP_TABLE.read_text() == decomposition_table()  # still generated; no longer in the manuscript
     from www_paper.rescue_macros import MONITOR_TABLE, SENS_TABLE, monitor_table, sensitivity_table
     assert MONITOR_TABLE.read_text() == monitor_table() and SENS_TABLE.read_text() == sensitivity_table()
     assert FIAT_TABLE.read_text() == fiat_table()

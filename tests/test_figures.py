@@ -47,6 +47,7 @@ def test_anchor_csv_holds_derived_15_minute_medians_only():
 def test_paper_includes_every_generated_figure():
     main = (ROOT / "paper/main.tex").read_text()
     # event_timeline, coverage_heatmap, anchor_series and onchain_capacity_paths duplicate generated tables or Figure 1;
-    # they are kept as generated artifacts only (12-page limit)
-    for name in ("which_dollar", "monitor_timeline"):
+    # they are kept as generated artifacts only (12-page limit); monitor_timeline duplicates Figure 2b and was dropped
+    # from the manuscript after review, but is still generated (and checked for freshness above)
+    for name in ("which_dollar",):
         assert f"figures/{name}.pdf" in main

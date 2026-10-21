@@ -10,43 +10,46 @@
 
 \begin{document}
 
-\title{Which Dollar? Exchange Dollars as Exchange Rates in Web Crypto Prices}
+\title{Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion}
 
 \begin{abstract}
-Crypto prices on the web are quoted in dollars, but an exchange's ledger dollar is a claim on that exchange and can
-trade away from a redeemable U.S. dollar. Prior work attributes cross-exchange bitcoin premia to such frictions
-without separating them from asset-specific movements. We develop an hourly decomposition that does. A shift in an
-exchange's dollar moves every asset there equally, so agreement across unrelated assets identifies the exchange's
-dollar exchange rate, and triangular parity checks it. Applied to Bitfinex, Coinbase and Bitstamp from 2017 to 2023,
-the decomposition showed that Bitfinex's dollar carried its own exchange rate throughout, with daily bitcoin and ether
-gaps against Bitstamp correlated at \NumUBfxBstCorrMinExact{} or more in every year, while median bitcoin gaps between
-Coinbase and Bitstamp after 2018 were at most \NumUCbBstGapMax{} basis points (bps) and mostly asset-specific. A
-single rate per exchange-hour, estimated from other assets, removed \NumUTestPct\% of the mean-square cross-exchange
-gap for five assets withheld from development (\NumUTestNineteenPct\% in 2019, \NumUTestYearMinPct\% to
-\NumUTestYearMaxPct\% in each later year), and made no correction for an exchange pair that shared a dollar. On
-Bitfinex, a monitor built on the decomposition, with a rule fixed in advance, raised \NumUDetFaBfx{} false alarm
-episodes per year, a third the rate of a plain price-gap alarm at equal recall, and flagged the
-exchange from \NumUFirstAlarmMonth, \NumUAlarmNyagMonths{} months before regulators disclosed its loss. In 2023 it
-separated three shocks. Binance.US's dollar stood a median \NumUBnusMedBps{} bps from the U.S. dollar for
-\NumUBnusHours{} hours after its banks withdrew. The loss of Silvergate and Signature banking raised no alarm on any
-monitored exchange. The USDC run moved the token, not an exchange dollar, and Chainlink's bitcoin and ether feeds did
-not inherit the token's depeg. Aggregators and oracles can thus state which dollar a price is in.
+Web services that fuse prices from many sources assume that the sources quote in one unit. The assumption fails when
+a source's unit is a claim on the source itself, such as a balance on a platform's ledger, whose value can drift from
+the unit it is named after. Fusion then reports the drift as a price change, and reliability weights and robust
+aggregation cannot tell the two apart. A source's unit is never quoted, and any item can move for its own reasons. We
+model each source's prices as true prices plus a unit offset shared by all its items. Agreement across unrelated items
+identifies the offset, and a unit anchor, an item whose value is fixed in the true unit, separates a unit shift from
+demand for the items. We test the approach on cryptocurrency exchanges, whose dollar balances are ledger claims, with
+public hourly prices from 2017 to 2023. On assets withheld from development, one offset per source-hour removed
+\NumUTestPct\% of the mean-square cross-source price gap, and \NumUTestYearMinPct\% to \NumUTestYearMaxPct\% in each year from 2020,
+and it applied no correction between sources that shared a unit. The anchor, the stablecoin USDT, followed the offset
+one for one on Binance.US in 2023 (slope \NumUAnchorBnusSlope) and carried \NumUAnchorStressSlopePct\% of it on
+Bitfinex in 2018 and 2019 (95\% interval \NumUAnchorStressSlopeLoPct\% to \NumUAnchorStressSlopeHiPct\%), which demand
+alone would not produce. A monitor built on the offsets raised a third of the false alarms of a plain price-gap rule at
+equal recall, and in 2023 it separated an exchange's dollar failure from a stablecoin run. Price feeds can state which
+unit each price is in.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-Web price feeds quote crypto assets in ``USD''. On an exchange, that dollar is a balance in the exchange's own ledger.
-The exchange redeems it for bank dollars through its banking partners, and when those partners leave, the balance can
-trade away from a bank dollar. Aggregators, indexes and on-chain oracles combine prices from several exchanges as if
-all of them were quoted in the same dollar. Bitfinex is the clearest example: from 2018 to 2019 its bitcoin price
-stood apart from other exchanges' prices for months (Figure~\ref{fig:unit}), while its banking access was in doubt.
+Web services fuse prices or values from many sources: aggregators, indexes, oracles, marketplaces and comparison
+sites. They assume that all sources quote in one unit. Some do not. A platform's ledger balance, a platform credit, a
+price on a multi-currency marketplace and a loyalty point can all carry the same name as a common unit, such as
+``dollar'', without the same backing. When the backing of one source weakens, every price on that source moves
+together. Fusion reads this as a change in value, and it reports a unit drift as a price change.
 
-An exchange's dollar is never quoted directly, and any single asset can move for its own reasons. A gap between two
-exchanges' bitcoin prices could be the exchange's dollar or bitcoin itself. We separate the two with a simple
-observation. A shift in an exchange's dollar moves every asset on that exchange by the same amount. Agreement of the
-gaps across unrelated assets therefore identifies an exchange-specific dollar exchange rate, and triangular parity
-(ETH/BTC on the same exchange) checks it.
+Crypto exchanges are a good test domain. An exchange quotes assets in ``USD'', but that dollar is a balance in its own
+ledger, redeemed through banking partners. When the partners leave, the balance can trade away from a bank dollar.
+Prices are public and hourly, and the failures are dated. Bitfinex is the clearest case: from 2018 to 2019 its bitcoin
+price stood apart from other exchanges' prices for months (Figure~\ref{fig:unit}), while its banking access was in
+doubt.
+
+A source's unit is never quoted, and any single item can move for its own reasons. We separate the two with a simple
+observation. A shift in a source's unit moves every item on that source by the same amount. Agreement of the gaps
+across unrelated items therefore identifies a source-specific unit offset. Agreement alone cannot tell a unit shift
+from demand that hits all of a source's items, so we add a unit anchor: an item whose true price is fixed in the true
+unit. Its price on the source measures the unit directly.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figures/unit_rate.pdf}
@@ -58,66 +61,81 @@ line is equality.}
 
 We make four contributions.
 \begin{enumerate}
-\item \emph{A decomposition.} An hourly model splits each exchange's USD price into an asset price, an exchange
-dollar rate and an asset-specific residual (\S\ref{sec:model}).
-\item \emph{Evidence on which exchanges have their own dollar.} Bitfinex's dollar carried its own rate in every year
-from 2017 to 2023. Coinbase and Bitstamp shared a dollar after 2018 (\S\ref{sec:diag}).
-\item \emph{A held-out benchmark.} One rate per exchange-hour, estimated from other assets, removed \NumUTestPct\% of
-the mean-square gap in five assets withheld from development (\S\ref{sec:heldout}).
+\item \emph{A source-unit model.} Each source's prices equal true prices plus a unit offset and an item-specific
+residual. The offset is identified by cross-item agreement and by a unit anchor (\S\ref{sec:model}).
+\item \emph{A held-out evaluation protocol.} It uses leave-one-item-out scoring, locked test items, a control pair of
+sources that share a unit, and causal and permutation-style checks (\S\ref{sec:heldout}, \S\ref{sec:anchor}).
+\item \emph{Empirical findings} on three exchanges from 2017 to 2023. Bitfinex carried its own dollar throughout. The
+offset removed \NumUTestPct\% of the mean-square gap on withheld assets. The anchor shows that the offset is a unit
+shift on Binance.US and mostly a unit shift on Bitfinex (\S\ref{sec:diag}--\S\ref{sec:anchor}).
 \item \emph{A monitor} with a fixed rule, its false-alarm rate against baselines, and an account of three shocks in
-2023: Binance.US, Silvergate and Signature, and USDC with the Chainlink check (\S\ref{sec:monitor}, \S\ref{sec:2023}).
+2023 (\S\ref{sec:monitor}, \S\ref{sec:2023}).
 \end{enumerate}
 
 \section{Related Work}
-\paragraph{Cross-exchange premia.} Makarov and Schoar~\cite{makarov2020trading} documented large, persistent price
-gaps across exchanges and a component common to gaps within a country. We identify an exchange-level component
-\emph{within} USD, per exchange and per hour. Flowerday et al.~\cite{flowerday2026bitcoin} studied bitcoin only, on
-four exchanges to mid-2021, found Bitfinex in most hours with a price dispersion, and discussed a discount on
-Bitfinex's dollar balances as one reading of the premium. They state that they do not structurally decompose it. We do, test the
-decomposition on assets withheld from development, and extend it to 2023. Other work documents bitcoin gaps and
-discounts across markets and links them to capital controls~\cite{choi2019kimchi,borri2023discounts} and to exchange
-default risk~\cite{guo2025default}.
-
-\paragraph{Stablecoins.} Studies of pegs and runs treat a token's exchange price as the token's
-value~\cite{lyons2023keeps,ma2025runs,liu2023anatomy}. Griffin and Shams~\cite{griffin2020untethered} tied Tether
-issuance on Bitfinex to bitcoin prices. We separate a token move from an exchange-dollar move on the same exchange.
-
-\paragraph{Truth discovery on the web.} TruthFinder~\cite{yin2008truth} and CRH~\cite{li2014resolving} estimate each
-source's reliability from conflicting claims, and Dong et al.~\cite{dong2009integrating} show that dependent sources
-must not count as independent votes. These methods model reliability per source. An exchange's dollar is a bias shared
-by all of a source's claims, which is a structured special case. Appendix~\ref{app:t2}
-compares them in a fusion test.
+\paragraph{Truth discovery and data fusion.} TruthFinder~\cite{yin2008truth} and CRH~\cite{li2014resolving} estimate
+each source's reliability from conflicting claims, and Dong et al.~\cite{dong2009integrating} show that dependent
+sources must not count as independent votes. These methods treat a source's error as reliability or noise. A unit
+offset is a different kind of error: it is shared by all of a source's claims, it can be large and persistent, and a
+reliable source can have it. The additive model resembles median polish and a two-way fixed-effects decomposition.
+The additive form is not new. What we add is the identification of the unit component by an anchor, and held-out
+validation of the estimate. Appendix~\ref{app:t2} compares fusers under an injected unit bias.
 
 \paragraph{Oracles and data quality.} Liu et al.~\cite{liu2021oracles} found that oracle prices deviate from exchange
 rates. Nadler et al.~\cite{nadler2026oracles} benchmarked Chainlink feeds against a single exchange, and Schwenkler et
-al.~\cite{schwenkler2026aggregate} audited crypto data vendors. Both take exchange prices as the benchmark; we ask which dollar that benchmark is in.
+al.~\cite{schwenkler2026aggregate} audited crypto data vendors. Both take exchange prices as the benchmark. We ask
+which unit that benchmark is in.
 
-\section{Decomposition}
+\paragraph{Cross-exchange premia and stablecoins.} Makarov and Schoar~\cite{makarov2020trading} documented large,
+persistent price gaps across exchanges and a component common to gaps within a country. We identify an
+exchange-level component \emph{within} USD, per exchange and hour. Flowerday et al.~\cite{flowerday2026bitcoin}
+studied bitcoin on four exchanges to mid-2021 and discussed a discount on Bitfinex's dollar balances as one reading
+of the premium. They do not decompose it structurally. We do, test the decomposition on assets withheld from
+development, test it against an anchor, and extend it to 2023. Other work links bitcoin gaps to capital
+controls~\cite{choi2019kimchi,borri2023discounts} and to exchange default risk~\cite{guo2025default}. Studies of pegs
+and runs treat a token's exchange price as the token's value~\cite{lyons2023keeps,ma2025runs,liu2023anatomy}, and
+Griffin and Shams~\cite{griffin2020untethered} tied Tether issuance on Bitfinex to bitcoin prices. We separate a token
+move from a unit move on the same exchange.
+
+\section{Model}
 \label{sec:model}
-Let $p_{v,a,t}$ be the log USD price of asset $a$ on exchange $v$ in hour $t$, in basis points ($10^4$ times the log).
-We model
+Let $p_{s,a,t}$ be the log price of item $a$ on source $s$ in hour $t$, in basis points ($10^4$ times the log). We
+model
 \begin{equation}
-p_{v,a,t} = p^*_{a,t} + u_{v,t} + e_{v,a,t},
+p_{s,a,t} = p^*_{a,t} + u_{s,t} + e_{s,a,t},
 \end{equation}
-where $p^*$ is the asset's value in a common dollar, $u_{v,t}$ is the exchange's dollar rate and $e$ is an
-asset-specific residual. The gap between exchanges $v$ and $r$ is
-$g_{a,t} = (u_{v,t}-u_{r,t}) + (e_{v,a,t}-e_{r,a,t})$. The first term is the same for every asset; the second is not.
+where $p^*$ is the item's value in a common unit, $u_{s,t}$ is the source's unit offset and $e$ is an item-specific
+residual. The gap between sources $s$ and $r$ is $g_{a,t} = (u_{s,t}-u_{r,t}) + (e_{s,a,t}-e_{r,a,t})$. The first
+term is the same for every item; the second is not. In crypto, $s$ is an exchange, $a$ is an asset, $p$ is its USD
+price and $u_{s,t}$ is the exchange's dollar exchange rate.
 
-\paragraph{Identification.} Assets that share no peg (bitcoin, ether and altcoins) have unrelated residuals.
-When their gaps agree, the common part is $u_v-u_r$. Triangular parity checks it: the ETH/BTC price on one exchange is
-free of the exchange's dollar, so a shift in $u$ leaves it unchanged. For a stablecoin $q$, let $D_q$ be its USD price
-dislocation, $L$ the unit shift estimated from an unpegged asset, and $T_q=D_q-L$ the token component.
+\paragraph{Identification by agreement.} Items with unrelated residuals (bitcoin, ether and altcoins) have gaps that
+agree only through the common offset. When their gaps agree, the common part is $u_s-u_r$. Triangular parity checks it:
+the price of one item in terms of another on the same source is free of the unit, so a shift in $u$ leaves it unchanged.
 
-\paragraph{Estimator.} For each exchange $v$ and hour $t$, the estimator takes the median across visible assets of the
-gap to the reference exchange, and shrinks it toward zero by the cross-asset dispersion, in the manner of James and
-Stein: it keeps the share of the squared median that the dispersion does not explain. It makes no correction when fewer
-than two assets are visible. It is causal, uses only that hour's prices, and names no exchange.
+\paragraph{Estimator.} For source $s$ and hour $t$, let $g_a$ be the gap to the reference source for the $n$ items
+visible on both, $m$ their median and $\hat\sigma^2 = (1.4826\,\mathrm{MAD})^2\, n/(n-1)$, with MAD the median
+absolute deviation of the gaps around $m$. The estimate is
+\begin{equation}
+\hat u_{s,t} = m \cdot \min\!\Big\{1,\ \max\!\Big\{0,\ 1 - \frac{\hat\sigma^2/2}{n\,m^2}\Big\}\Big\},
+\end{equation}
+and $\hat u_{s,t}=0$ when $n<2$. It keeps the share of the squared median that the cross-item dispersion does not
+explain, in the manner of James and Stein. It is causal, uses only that hour's prices, and names no source.
 
-\paragraph{Development loop.} We developed the estimator in a fixed harness. The harness scores the share of the
-held-out asset's mean-square gap that the correction removes, with the asset hidden from the estimate, and also scores
-a control pair. A bounded loop of \NumULoopIter{} iterations kept \NumULoopKept{} changes and discarded
-\NumULoopDiscarded{}. Temporal smoothing, Kalman filtering, reliability weighting and liquidity weighting did not
-help, because the unit moves from hour to hour. The estimator is therefore a cross-sectional one.
+\paragraph{Unit anchor.} A unit anchor $k$ is an item whose true price is fixed in the true unit, so $p^*_k=0$ and its
+price on source $s$ is $u_{s,t}+e_{s,k,t}$. Let $L$ be the offset estimated from the other items, and $D$ the
+anchor's price on $s$. Under a pure unit shift, $D$ moves one for one with $L$. Under demand for the source's items,
+which moves the items and not the anchor, $D$ does not move with $L$. The test is the slope of $D$ on $L$, which is 1
+under a pure unit shift and 0 under source-wide item demand. The residual $T=D-L$ is the part of the anchor's move
+that the offset does not explain. In crypto the anchor is the dollar stablecoin USDT: its price on an exchange is
+$D$, and an exchange-wide crypto boom does not move it. The same split applies to any stablecoin $q$, with
+$T_q=D_q-L$ its token component.
+
+\paragraph{Development loop.} We developed the estimator in a fixed harness that scores the share of a held-out
+item's mean-square gap that the correction removes, with the item hidden from the estimate, and also scores a control
+pair. A bounded loop of \NumULoopIter{} iterations kept \NumULoopKept{} changes and discarded \NumULoopDiscarded{}.
+Temporal smoothing, Kalman filtering, reliability weighting and liquidity weighting did not help, because the unit
+moves from hour to hour. The estimator is therefore cross-sectional.
 
 \section{Data}
 \label{sec:data}
@@ -146,6 +164,36 @@ Coinbase and Bitstamp shared a common component in 2017 and, more weakly, in 201
 bitcoin gap was between \NumUCbBstGapMin{} and \NumUCbBstGapMax{} bps, the correlation of the daily gaps was at most
 \NumUCbBstCorrMax{}, and the bitcoin gap accounted for at most \NumUCbBstShareMax{} of the ether gap. These gaps were
 mostly asset-specific, so the two exchanges shared a dollar.
+
+\subsection{Is the offset a unit or demand?}
+\label{sec:anchor}
+\input{generated/anchor_table}
+A gap that agrees across assets could be the exchange's dollar, or demand for crypto on that exchange, such as
+margin or stablecoin-funded buying. The anchor separates the two (\S\ref{sec:model}). Table~\ref{tab:anchor} reports
+the slope of the anchor's daily gap on the offset, the median gaps, and the share of hours in which the anchor
+explains the offset to within a quarter of its size.
+
+On Binance.US in 2023, USDT followed the offset one for one. In the June and July window the median offset was
+\NumUAnchorBnusL{} bps and the median USDT dislocation \NumUAnchorBnusD{} bps. The slope was \NumUAnchorBnusSlope{}
+and the residual \NumUAnchorBnusT{} bps. On Binance.US the offset was a unit shift.
+
+On Bitfinex, USDT/USD began trading on 2018-11-27, so the test covers the stress window from that date to
+2019-05-31. The slope was \NumUAnchorStressSlope{} (95\% block-bootstrap interval \NumUAnchorStressSlopeLo{} to
+\NumUAnchorStressSlopeHi{}). The daily correlation of the anchor and the offset was \NumUAnchorStressDailyCorr{}, and
+\NumUAnchorBfxDailyCorr{} in 2019. In the large-gap hours the median offset was \NumUAnchorStressL{} bps and the
+anchor moved \NumUAnchorStressD{} bps. The anchor therefore carried about \NumUAnchorStressSlopePct\% of the offset.
+A demand-only explanation predicts a slope of 0 and is rejected. The slope is below 1, so a minority demand component
+or a USDT-specific component remains. The offset on Bitfinex was mostly a unit shift.
+
+Two further checks bound the demand reading. First, we looked at hours in which the bitcoin and ether gaps agreed but
+the anchor did not follow. They were \NumUAnchorDemandShare\% of the \NumUAnchorDemandHours{} agreeing hours since the
+market opened. These are the hours a demand story would have to explain. Second, we ran the reverse placebo on rails
+that were open. Coinbase had no USDT market, so we took the Coinbase--Bitstamp bitcoin gap and Bitstamp's USDT price.
+In the \NumUAnchorPlaceboHours{} hours with a large gap, USDT did not follow (median gap \NumUAnchorPlaceboL{} bps,
+median USDT dislocation \NumUAnchorPlaceboD{} bps). After excluding the months of USDT's own token events, the slope
+was \NumUAnchorPlaceboSlope{} with an interval from \NumUAnchorPlaceboSlopeLo{} to \NumUAnchorPlaceboSlopeHi{}, which
+includes 0. With only \NumUAnchorPlaceboHours{} large-gap hours the placebo is directional evidence, not a precise
+estimate.
 
 \subsection{Held-out assets}
 \label{sec:heldout}
@@ -187,11 +235,11 @@ processor on \NumUNyagDate, which is \NumUAlarmNyagMonths{} months later.
 \subsection{Three shocks in 2023}
 \label{sec:2023}
 \paragraph{Binance.US.} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
-partners stopped dollar payments~\cite{theblock2023binanceus}. In the window with deposits shut and withdrawals open, the median bitcoin gap to
-Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs traded: assets were
-cheaper in Binance.US's dollar, so that dollar traded at a premium. Bitcoin and Tether showed the same dislocation,
-with an hourly correlation of changes of \NumIdentChgTrans{}. The ledger component accounts for a median
-\NumDecBnusShare\% of the Tether dislocation and the token component is close to zero (Tables~\ref{tab:decomp} and~\ref{tab:phases}, Figure~\ref{fig:which}b). Figure~\ref{fig:monitor} shows the monitor's hourly output.
+partners stopped dollar payments~\cite{theblock2023binanceus}. In the window with deposits shut and withdrawals open,
+the median bitcoin gap to Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs
+traded: assets were cheaper in Binance.US's dollar, so that dollar traded at a premium. Bitcoin and Tether showed the
+same dislocation, with an hourly correlation of changes of \NumIdentChgTrans{}. The ledger component accounted for a
+median \NumDecBnusShare\% of the Tether dislocation (Table~\ref{tab:phases}, Figure~\ref{fig:which}b).
 
 \begin{figure*}[t]
 \includegraphics[width=\textwidth]{figures/which_dollar.pdf}
@@ -202,43 +250,35 @@ assets carry the same dislocation.}
 \label{fig:which}
 \end{figure*}
 
-\paragraph{Silvergate and Signature.} The closure of the two banks in March 2023 hit exchange banking rails. The
-monitor raised no alarm on Bitfinex, Coinbase or Binance.US in March 2023 (\NumUMarAlarmDays{} alarm days). A
-dislocation of the exchange dollar appeared only where rails closed with no substitute: Bitfinex in 2017--2018 and
-Binance.US from June 2023.
-
 \input{generated/ledger_phase_table}
 
-\begin{figure*}[t]
-\includegraphics[width=\textwidth]{figures/monitor_timeline.pdf}
-\caption{The monitor on Binance.US over every covered month: hourly ledger component $L$ and the USDC token component,
-with hours flagged as ledger failures marked at the top. The y-axis is clipped.}
-\label{fig:monitor}
-\end{figure*}
-
-\input{generated/decomposition_table}
-
-\paragraph{USDC and Chainlink.} In the March 2023 USDC run, the token component on Binance.US was
-\NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps (Table~\ref{tab:decomp}): the token moved, not the
-exchange dollar (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on Bitstamp, and was at least 100 bps below par
-in \NumUUsdcHoursGeHundred{} hours. If the Chainlink bitcoin and ether feeds had inherited the depeg, their error would
-regress on the depeg size with a slope near one. The slope was \NumUOracleSlopeBtc{} for bitcoin and
-\NumUOracleSlopeEth{} for ether, against \NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the
-USDC feed itself, which responded as expected (Table~\ref{tab:oracle}).
+\paragraph{Silvergate, Signature and USDC.} The closure of Silvergate and Signature in March 2023 raised no alarm on
+Bitfinex, Coinbase or Binance.US (\NumUMarAlarmDays{} alarm days). A dislocation of the exchange dollar appeared only
+where rails closed with no substitute: Bitfinex in 2017--2018 and Binance.US from June 2023. In the March 2023 USDC
+run, the token component on Binance.US was \NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps: the token
+moved, not the exchange dollar (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on
+Bitstamp, and was at least 100 bps below par in \NumUUsdcHoursGeHundred{} hours. If the Chainlink bitcoin and ether
+feeds had inherited the depeg, their error would regress on the depeg size with a slope equal to the share of the
+feed's sources quoted in USDC. The slope was \NumUOracleSlopeBtc{} for bitcoin and \NumUOracleSlopeEth{} for ether,
+against \NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the USDC feed itself, which
+responded as expected (Table~\ref{tab:oracle}).
 
 \input{generated/oracle_pilot_table}
 
 \section{Discussion}
-\paragraph{What price feeds should do.} A feed should label the unit of each exchange price and correct with the
-exchange's rate rather than drop the exchange. The rate is cheap to estimate: it needs a handful of unrelated assets
-on each exchange and one reference exchange. The rate also names which exchanges share a dollar, which a plain median
-or source weighting does not (Appendix~\ref{app:t2}).
+\paragraph{What price feeds should do.} A feed should label the unit of each source's price. Correcting with the
+source's offset preserves the source's volume and names the unit, instead of dropping the source. The offset is cheap
+to estimate: it needs a handful of unrelated items on each source and one reference source. It also names which
+sources share a unit, which a plain median or source weighting does not (Appendix~\ref{app:t2}). The same approach
+applies to platform credits, multi-currency marketplaces and loyalty points, wherever an anchor item with a known
+value exists.
 
-\paragraph{Limits.}
-The diagnostic rests on three USD exchanges, and Bitstamp lists only bitcoin and ether, so the zero correction on the
-control pair partly reflects the estimator's rule of applying none when fewer than two assets are visible. When two
-of three exchanges share a biased dollar, prices alone cannot say which unit is the U.S. dollar; an outside anchor,
-such as a working bank rail, is needed. The oracle check covers one episode and one oracle family.
+\paragraph{Limits.} The diagnostic rests on three USD exchanges, and Bitstamp lists only bitcoin and ether, so the
+zero correction on the control pair partly reflects the rule of applying none when fewer than two items are visible.
+When two of three exchanges share a biased unit, prices alone cannot say which unit is the true one; an outside anchor
+is needed. The anchor test needs an item fixed in the true unit. USDT is such an item only up to its own redemption
+risk. It also existed on Bitfinex only from 2018-11-27, and the Bitfinex slope is below 1. The oracle check covers one
+episode and one oracle family.
 
 \section{Reproducibility}
 Every number in this paper is a macro generated from committed reports and logs by \texttt{www\_paper.macros},
