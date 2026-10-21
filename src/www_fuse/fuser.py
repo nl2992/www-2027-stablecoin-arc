@@ -9,7 +9,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-WINDOW = 168
+WINDOW = 72
 MIN_HIST = 24
 
 
