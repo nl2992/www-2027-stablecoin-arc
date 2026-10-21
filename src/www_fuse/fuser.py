@@ -11,6 +11,8 @@ import pandas as pd
 
 WINDOW = 72
 MIN_HIST = 24
+OFF_WIN = 24
+OFF_MIN = 6
 
 
 def _crh_weights(x: np.ndarray, max_iter: int = 100, tol: float = 1e-9) -> np.ndarray:
@@ -46,6 +48,27 @@ def _blocks(index: pd.DatetimeIndex):
         yield int(s), int(e), int(lo)
 
 
+def _offsets(A: dict[str, np.ndarray], cols: list[str], skip: str, index: pd.DatetimeIndex) -> np.ndarray:
+    """Per-source unit offset (hours x sources, log units): trailing median of the cross-asset median gap against the
+    cross-source median, using every asset except ``skip``."""
+    gaps = []
+    for c in cols:
+        if c == skip or c == "USDT":
+            continue
+        x = A[c]
+        if (np.isfinite(x).sum(axis=1) >= 3).sum() == 0:
+            continue
+        with np.errstate(all="ignore"):
+            med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+        gaps.append(x - med[:, None])
+    if not gaps:
+        return np.zeros_like(A[skip])
+    with np.errstate(all="ignore"):
+        raw = np.nanmedian(np.stack(gaps), axis=0)
+    off = pd.DataFrame(raw, index=index).rolling(OFF_WIN, min_periods=OFF_MIN).median().to_numpy()
+    return np.nan_to_num(off)
+
+
 def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
     """Fused log USD price per hour for each item (hours x items; NaN where no source quotes the item)."""
     names = sorted(panel)
@@ -56,10 +79,11 @@ def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
     P = {a: np.column_stack([panel[n][a].reindex(index).to_numpy(float) if a in panel[n].columns else np.full(T, np.nan)
                              for n in names]) for a in items}
     out = {a: np.full(T, np.nan) for a in items}
+    Pc = {a: P[a] - _offsets(A, cols, a, index) for a in items}
     for s, e, lo in _blocks(index):
         w = np.ones(S)
         if s > lo:
-            x = np.vstack([1e4 * P[a][lo:s] for a in items])
+            x = np.vstack([1e4 * Pc[a][lo:s] for a in items])
             multi = np.isfinite(x).sum(axis=1) >= 2
             if multi.any():
                 w = _crh_weights(x)
@@ -67,7 +91,7 @@ def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
                 if few.any():
                     w = np.where(few, w[~few].mean() if (~few).any() else 1.0, w)
         for a in items:
-            blk = P[a][s:e]
+            blk = Pc[a][s:e]
             m = np.isfinite(blk)
             den = (m * w).sum(axis=1)
             out[a][s:e] = np.where(den > 0, (np.where(m, blk, 0.0) * w).sum(axis=1) / np.where(den > 0, den, 1.0), np.nan)
