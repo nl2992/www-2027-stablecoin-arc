@@ -78,6 +78,9 @@ def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
     T, S = len(index), len(names)
     P = {a: np.column_stack([panel[n][a].reindex(index).to_numpy(float) if a in panel[n].columns else np.full(T, np.nan)
                              for n in names]) for a in items}
+    cols = sorted({c for n in names for c in panel[n].columns if not c.endswith("_vol")})
+    A = {a: P[a] if a in P else np.column_stack([panel[n][a].reindex(index).to_numpy(float) if a in panel[n].columns
+                                                   else np.full(T, np.nan) for n in names]) for a in cols}
     out = {a: np.full(T, np.nan) for a in items}
     Pc = {a: P[a] - _offsets(A, cols, a, index) for a in items}
     for s, e, lo in _blocks(index):
