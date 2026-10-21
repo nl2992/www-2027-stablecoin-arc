@@ -13,6 +13,7 @@ WINDOW = 72
 MIN_HIST = 24
 OFF_WIN = 8
 OFF_MIN = 6
+LONG_WINDOW = 720
 SHRINK = 1.0
 VAR_FLOOR = 0.3
 
@@ -92,7 +93,9 @@ def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
                                                    else np.full(T, np.nan) for n in names]) for a in cols}
     out = {a: np.full(T, np.nan) for a in items}
     Pc = {a: P[a] - _offsets(A, cols, a, index) for a in items}
-    for s, e, lo in _blocks(index):
+    ts = index.asi8
+
+    def weights(lo: int, s: int) -> np.ndarray:
         w = np.ones(S)
         if s > lo:
             x = np.vstack([1e4 * Pc[a][lo:s] for a in items])
@@ -102,6 +105,11 @@ def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
                 few = np.isfinite(x[multi]).sum(axis=0) < MIN_HIST
                 if few.any():
                     w = np.where(few, w[~few].mean() if (~few).any() else 1.0, w)
+        return w
+
+    for s, e, lo in _blocks(index):
+        lo2 = int(np.searchsorted(ts, ts[s] - LONG_WINDOW * 3_600_000_000_000, side="left"))
+        w = np.sqrt(weights(lo, s) * weights(lo2, s))
         for a in items:
             blk = Pc[a][s:e]
             m = np.isfinite(blk)
