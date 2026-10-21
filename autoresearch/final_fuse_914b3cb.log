@@ -1,0 +1,438 @@
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:67: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(np.where((np.isfinite(x).sum(axis=1) >= 3)[:, None], x, np.nan), axis=1)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:73: RuntimeWarning: All-NaN slice encountered
+  raw = np.nanmedian(g, axis=0)
+/Users/nigelli/Desktop/Academic/Columbia MAFN/20_Competitions/WWW Paper/src/www_fuse/fuser.py:74: RuntimeWarning: All-NaN slice encountered
+  disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
+mode: final
+seed: 20261021
+test_score: 1.062935
+causal_ok: True
+perm_ok: True
+static_ok: True
+static_hits: []
+coverage_ok: True
+calm_ok: True
+all_checks: True
+runtime_s: 13.6
+causal_max_diff_bps: 0
+perm_max_diff_bps: 1.3e-09
+hours_T1: BTC=5832 ETH=5832
+mae_T1_fuser: 6.7919
+rel_e_T1_fuser: 0.931282
+p95_T1_fuser: 18.4186
+n25_T1_fuser: 206
+n50_T1_fuser: 15
+cov_T1_fuser: 1.0000
+mae_T1_median: 7.2931
+rel_e_T1_median: 1.000000
+p95_T1_median: 20.4770
+n25_T1_median: 298
+n50_T1_median: 21
+cov_T1_median: 1.0000
+mae_T1_vwap: 110.8307
+rel_e_T1_vwap: 15.196725
+p95_T1_vwap: 246.7868
+n25_T1_vwap: 10003
+n50_T1_vwap: 8547
+cov_T1_vwap: 1.0000
+mae_T1_trimmed: 7.2931
+rel_e_T1_trimmed: 1.000000
+p95_T1_trimmed: 20.4770
+n25_T1_trimmed: 298
+n50_T1_trimmed: 21
+cov_T1_trimmed: 1.0000
+mae_T1_drop_deviant: 6.4907
+rel_e_T1_drop_deviant: 0.889981
+p95_T1_drop_deviant: 17.9269
+n25_T1_drop_deviant: 208
+n50_T1_drop_deviant: 14
+cov_T1_drop_deviant: 1.0000
+mae_T1_crh: 6.4161
+rel_e_T1_crh: 0.879748
+p95_T1_crh: 17.5805
+n25_T1_crh: 193
+n50_T1_crh: 15
+cov_T1_crh: 1.0000
+mae_T1_gtm: 71.1688
+rel_e_T1_gtm: 9.758426
+p95_T1_gtm: 152.8543
+n25_T1_gtm: 9290
+n50_T1_gtm: 7922
+cov_T1_gtm: 1.0000
+mae_T1_unit_aware: 7.4658
+rel_e_T1_unit_aware: 1.023681
+p95_T1_unit_aware: 20.6287
+n25_T1_unit_aware: 313
+n50_T1_unit_aware: 23
+cov_T1_unit_aware: 1.0000
+mae_T1_oracle: 6.4251
+rel_e_T1_oracle: 0.880994
+p95_T1_oracle: 17.6245
+n25_T1_oracle: 193
+n50_T1_oracle: 15
+cov_T1_oracle: 1.0000
+hours_T2: BTC=2207 ETH=2207
+mae_T2_fuser: 4.4390
+rel_e_T2_fuser: 1.504231
+p95_T2_fuser: 15.2087
+n25_T2_fuser: 87
+n50_T2_fuser: 1
+cov_T2_fuser: 1.0000
+mae_T2_median: 2.9510
+rel_e_T2_median: 1.000000
+p95_T2_median: 7.4313
+n25_T2_median: 1
+n50_T2_median: 0
+cov_T2_median: 1.0000
+mae_T2_vwap: 4.0924
+rel_e_T2_vwap: 1.386786
+p95_T2_vwap: 10.9461
+n25_T2_vwap: 74
+n50_T2_vwap: 31
+cov_T2_vwap: 1.0000
+mae_T2_trimmed: 2.9510
+rel_e_T2_trimmed: 1.000000
+p95_T2_trimmed: 7.4313
+n25_T2_trimmed: 1
+n50_T2_trimmed: 0
+cov_T2_trimmed: 1.0000
+mae_T2_drop_deviant: 2.7626
+rel_e_T2_drop_deviant: 0.936152
+p95_T2_drop_deviant: 7.1892
+n25_T2_drop_deviant: 1
+n50_T2_drop_deviant: 0
+cov_T2_drop_deviant: 1.0000
+mae_T2_crh: 3.5386
+rel_e_T2_crh: 1.199124
+p95_T2_crh: 8.1912
+n25_T2_crh: 1
+n50_T2_crh: 0
+cov_T2_crh: 1.0000
+mae_T2_gtm: 17.6553
+rel_e_T2_gtm: 5.982834
+p95_T2_gtm: 141.7919
+n25_T2_gtm: 364
+n50_T2_gtm: 342
+cov_T2_gtm: 1.0000
+mae_T2_unit_aware: 3.0260
+rel_e_T2_unit_aware: 1.025425
+p95_T2_unit_aware: 8.2988
+n25_T2_unit_aware: 2
+n50_T2_unit_aware: 0
+cov_T2_unit_aware: 1.0000
+mae_T2_oracle: 2.3318
+rel_e_T2_oracle: 0.790189
+p95_T2_oracle: 6.3289
+n25_T2_oracle: 1
+n50_T2_oracle: 0
+cov_T2_oracle: 1.0000
+hours_T3: BTC=720 ETH=720
+mae_T3_fuser: 3.1682
+rel_e_T3_fuser: 0.945275
+p95_T3_fuser: 8.5235
+n25_T3_fuser: 2
+n50_T3_fuser: 0
+cov_T3_fuser: 1.0000
+mae_T3_median: 3.3516
+rel_e_T3_median: 1.000000
+p95_T3_median: 9.3622
+n25_T3_median: 4
+n50_T3_median: 0
+cov_T3_median: 1.0000
+mae_T3_vwap: 3.2149
+rel_e_T3_vwap: 0.959227
+p95_T3_vwap: 8.7195
+n25_T3_vwap: 1
+n50_T3_vwap: 0
+cov_T3_vwap: 1.0000
+mae_T3_trimmed: 3.3516
+rel_e_T3_trimmed: 1.000000
+p95_T3_trimmed: 9.3622
+n25_T3_trimmed: 4
+n50_T3_trimmed: 0
+cov_T3_trimmed: 1.0000
+mae_T3_drop_deviant: 3.3778
+rel_e_T3_drop_deviant: 1.007822
+p95_T3_drop_deviant: 9.4408
+n25_T3_drop_deviant: 7
+n50_T3_drop_deviant: 1
+cov_T3_drop_deviant: 1.0000
+mae_T3_crh: 3.0946
+rel_e_T3_crh: 0.923318
+p95_T3_crh: 8.2316
+n25_T3_crh: 1
+n50_T3_crh: 0
+cov_T3_crh: 1.0000
+mae_T3_gtm: 3.1143
+rel_e_T3_gtm: 0.929200
+p95_T3_gtm: 8.3255
+n25_T3_gtm: 0
+n50_T3_gtm: 0
+cov_T3_gtm: 1.0000
+mae_T3_unit_aware: 3.7489
+rel_e_T3_unit_aware: 1.118541
+p95_T3_unit_aware: 10.0568
+n25_T3_unit_aware: 0
+n50_T3_unit_aware: 0
+cov_T3_unit_aware: 1.0000
+mae_T3_oracle: 3.0868
+rel_e_T3_oracle: 0.920986
+p95_T3_oracle: 8.4277
+n25_T3_oracle: 1
+n50_T3_oracle: 0
+cov_T3_oracle: 1.0000
+hours_T4: BTC=312 ETH=312
+mae_T4_fuser: 3.3080
+rel_e_T4_fuser: 0.965467
+p95_T4_fuser: 10.5699
+n25_T4_fuser: 3
+n50_T4_fuser: 0
+cov_T4_fuser: 1.0000
+mae_T4_median: 3.4263
+rel_e_T4_median: 1.000000
+p95_T4_median: 9.6660
+n25_T4_median: 2
+n50_T4_median: 0
+cov_T4_median: 1.0000
+mae_T4_vwap: 4.3206
+rel_e_T4_vwap: 1.261005
+p95_T4_vwap: 13.3399
+n25_T4_vwap: 7
+n50_T4_vwap: 0
+cov_T4_vwap: 1.0000
+mae_T4_trimmed: 3.4263
+rel_e_T4_trimmed: 1.000000
+p95_T4_trimmed: 9.6660
+n25_T4_trimmed: 2
+n50_T4_trimmed: 0
+cov_T4_trimmed: 1.0000
+mae_T4_drop_deviant: 3.8580
+rel_e_T4_drop_deviant: 1.125989
+p95_T4_drop_deviant: 11.5924
+n25_T4_drop_deviant: 3
+n50_T4_drop_deviant: 0
+cov_T4_drop_deviant: 1.0000
+mae_T4_crh: 3.5577
+rel_e_T4_crh: 1.038345
+p95_T4_crh: 10.9541
+n25_T4_crh: 3
+n50_T4_crh: 0
+cov_T4_crh: 1.0000
+mae_T4_gtm: 3.5235
+rel_e_T4_gtm: 1.028355
+p95_T4_gtm: 10.2968
+n25_T4_gtm: 3
+n50_T4_gtm: 0
+cov_T4_gtm: 1.0000
+mae_T4_unit_aware: 4.2080
+rel_e_T4_unit_aware: 1.228140
+p95_T4_unit_aware: 13.0310
+n25_T4_unit_aware: 4
+n50_T4_unit_aware: 0
+cov_T4_unit_aware: 1.0000
+mae_T4_oracle: 3.6791
+rel_e_T4_oracle: 1.073787
+p95_T4_oracle: 11.5587
+n25_T4_oracle: 2
+n50_T4_oracle: 0
+cov_T4_oracle: 1.0000
+hours_T5: BTC=14280 ETH=14280
+mae_T5_fuser: 2.8007
+rel_e_T5_fuser: 0.968421
+p95_T5_fuser: 7.6949
+n25_T5_fuser: 37
+n50_T5_fuser: 13
+cov_T5_fuser: 1.0000
+mae_T5_median: 2.8920
+rel_e_T5_median: 1.000000
+p95_T5_median: 7.9392
+n25_T5_median: 23
+n50_T5_median: 8
+cov_T5_median: 1.0000
+mae_T5_vwap: 3.0112
+rel_e_T5_vwap: 1.041230
+p95_T5_vwap: 8.2303
+n25_T5_vwap: 40
+n50_T5_vwap: 12
+cov_T5_vwap: 1.0000
+mae_T5_trimmed: 2.8920
+rel_e_T5_trimmed: 1.000000
+p95_T5_trimmed: 7.9392
+n25_T5_trimmed: 23
+n50_T5_trimmed: 8
+cov_T5_trimmed: 1.0000
+mae_T5_drop_deviant: 2.9904
+rel_e_T5_drop_deviant: 1.034028
+p95_T5_drop_deviant: 8.2547
+n25_T5_drop_deviant: 24
+n50_T5_drop_deviant: 9
+cov_T5_drop_deviant: 1.0000
+mae_T5_crh: 2.8695
+rel_e_T5_crh: 0.992217
+p95_T5_crh: 7.7430
+n25_T5_crh: 43
+n50_T5_crh: 14
+cov_T5_crh: 1.0000
+mae_T5_gtm: 2.9386
+rel_e_T5_gtm: 1.016110
+p95_T5_gtm: 8.0420
+n25_T5_gtm: 27
+n50_T5_gtm: 10
+cov_T5_gtm: 1.0000
+mae_T5_unit_aware: 3.3857
+rel_e_T5_unit_aware: 1.170701
+p95_T5_unit_aware: 9.3548
+n25_T5_unit_aware: 45
+n50_T5_unit_aware: 9
+cov_T5_unit_aware: 1.0000
+mae_T5_oracle: 2.7720
+rel_e_T5_oracle: 0.958499
+p95_T5_oracle: 7.6347
+n25_T5_oracle: 27
+n50_T5_oracle: 9
+cov_T5_oracle: 1.0000

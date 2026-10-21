@@ -1,0 +1,25 @@
+commit	dev_score	rel_D1	rel_D2	rel_D3	all_checks	status	description
+c54764c	0.936889	0.868188	0.950297	0.992183	True	keep	Trailing-30d CRH weighted mean reimplemented in fuser (matches baseline exactly)
+e0f95fd	0.970825	0.863781	0.956976	1.091719	False	discard	CRH weights fit on all assets (altcoins+USDT) hurt D3
+2e5f430	0.934970	0.866493	0.944943	0.993474	True	discard	CRH window 168h (gain 0.002 < 0.005)
+800f301	0.927198	0.846796	0.941401	0.993398	True	keep	CRH window 72h
+eb9a70a	0.936036	0.856811	0.944881	1.006416	True	discard	CRH window 24h (D3 worse)
+7b058ce	0.913665	0.807649	0.943028	0.990319	True	keep	Unit-corrected CRH: trailing 24h median cross-asset gap offsets removed (target excluded), CRH 72h weights on corrected
+caeae0b	0.915696	0.807523	0.948075	0.991490	True	discard	offset window 72h
+5f4edb5	0.912310	0.798811	0.942815	0.995304	True	discard	offset window 8h (gain 0.0014)
+c68deba	0.912548	0.807676	0.938765	0.991202	True	discard	Shrink offsets by gap/(gap+dispersion) (gain 0.001)
+9429733	0.912805	0.810417	0.941123	0.986874	True	discard	Inverse-variance weights (floor 0.3) instead of -log CRH (gain 0.0009)
+b8a13c6	0.905991	0.803599	0.925901	0.988471	True	keep	Combination: inverse-variance weights + dispersion-shrunk offsets + 8h offset window
+719240e	0.929449	0.811130	0.951722	1.025496	False	discard	variance floor 0.1 (over-trusts one source)
+b0d21a1	0.913104	0.809572	0.943869	0.985869	True	discard	variance floor 0.6
+5184f7a	0.907659	0.811006	0.928014	0.983956	True	discard	Huber 10bps on corrected quotes
+4808df0	0.907324	0.804866	0.932153	0.984953	True	discard	Refit weights every 6h
+7c3a090	0.934648	0.807550	0.977563	1.018830	True	discard	weights fit incl corrected altcoins (alt noise hurts calm)
+0bacaa6	0.909454	0.814313	0.927075	0.986975	True	discard	downweight sources by 1/(1+(offset/10bps)^2)
+3e17715	0.910761	0.812312	0.923025	0.996945	True	discard	volume-share^0.5 weight factor
+914b3cb	0.900961	0.795772	0.922673	0.984439	True	keep	Geometric blend of 72h and 720h inverse-variance weights (gain 0.00503)
+d31f7fa	0.900356	0.793902	0.923179	0.983987	True	discard	long window 336h (gain 0.0006)
+8fa19b7	0.900173	0.795706	0.922724	0.982090	True	discard	average 8h and 72h offsets (gain 0.0008)
+d81f304	0.902104	0.805439	0.923913	0.976961	True	discard	mean-absolute-residual reliability
+35f8ba0	0.910048	0.800185	0.930109	0.999848	True	discard	weights sharpened (power 1.5)
+84e76e5	0.901336	0.800357	0.925034	0.978618	True	discard	weights softened (power 0.7)
