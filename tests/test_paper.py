@@ -11,6 +11,7 @@ ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
 RESCUE_OUTPUT = ROOT / "paper/generated/rescue_numbers.tex"
 UNIT_OUTPUT = ROOT / "paper/generated/unit_numbers.tex"
+EXTRA_OUTPUTS = [ROOT / f"paper/generated/{n}_numbers.tex" for n in ("posthoc", "sweep", "noise")]
 
 
 def test_generated_numbers_are_current():
@@ -30,14 +31,15 @@ def test_generated_tables_not_in_the_paper_are_still_current():
 
 
 def test_paper_includes_the_unit_tables_and_figure():
-    for name in ("unit_diagnostic_table", "heldout_table", "detector_eval_table", "oracle_pilot_table", "t2_breakdown_table",
+    for name in ("unit_diagnostic_table", "heldout_ci_table", "detector_eval_table", "monitor_sweep_table", "noise_table", "oracle_pilot_table", "t2_breakdown_table",
                  "label_list_table", "anchor_table", "ledger_phase_table"):
         assert f"\\input{{generated/{name}}}" in MAIN, name
-    assert "figures/unit_rate.pdf" in MAIN and "\\input{generated/unit_numbers}" in MAIN
+    assert "figures/unit_rate.pdf" in MAIN and "figures/monitor_sweep.pdf" in MAIN and "\\input{generated/unit_numbers}" in MAIN
 
 
 def test_every_number_macro_used_is_defined_and_no_literal_bps_values_slip_in():
-    defined = set(re.findall(r"\\newcommand\{\\(Num\w+)\}", OUTPUT.read_text() + RESCUE_OUTPUT.read_text() + UNIT_OUTPUT.read_text()))
+    defined = set(re.findall(r"\\newcommand\{\\(Num\w+)\}", OUTPUT.read_text() + RESCUE_OUTPUT.read_text() + UNIT_OUTPUT.read_text()
+                                                                        + "".join(p.read_text() for p in EXTRA_OUTPUTS)))
     used = set(re.findall(r"\\(Num[A-Za-z]+)", MAIN))
     assert used <= defined, sorted(used - defined)
     body = MAIN.split("\\begin{document}", 1)[1]

@@ -1,10 +1,14 @@
 % Every empirical number is a \Num... macro generated from committed reports and logs
-% (paper/generated/numbers.tex, rescue_numbers.tex, unit_numbers.tex). Do not type numbers by hand.
+% (paper/generated/numbers.tex, rescue_numbers.tex, unit_numbers.tex, posthoc_numbers.tex, sweep_numbers.tex,
+% noise_numbers.tex). Do not type numbers by hand.
 \documentclass[sigconf,review,anonymous]{acmart}
 \usepackage{placeins}
 \input{generated/numbers}
 \input{generated/rescue_numbers}
 \input{generated/unit_numbers}
+\input{generated/posthoc_numbers}
+\input{generated/sweep_numbers}
+\input{generated/noise_numbers}
 
 \acmConference[WWW '27]{Proceedings of the ACM Web Conference 2027}{2027}{}
 
@@ -22,7 +26,8 @@ identifies the offset, and a unit anchor, an item whose value is fixed in the tr
 demand for the items. We test the approach on cryptocurrency exchanges, whose dollar balances are ledger claims, with
 public hourly prices from 2017 to 2023. On assets withheld from development, one offset per source-hour removed
 \NumUTestPct\% of the mean-square cross-source price gap, and \NumUTestYearMinPct\% to \NumUTestYearMaxPct\% in each year from 2020,
-and it applied no correction between sources that shared a unit. The anchor, the stablecoin USDT, followed the offset
+and its mean correction between two sources that shared a unit was \NumPCtrlCbBstPooledAbsEst{} bps, against
+\NumPCtrlBfxBstPooledAbsEst{} bps between two that did not. The anchor, the stablecoin USDT, followed the offset
 one for one on Binance.US in 2023 (slope \NumUAnchorBnusSlope) and carried \NumUAnchorStressSlopePct\% of it on
 Bitfinex in 2018 and 2019 (95\% interval \NumUAnchorStressSlopeLoPct\% to \NumUAnchorStressSlopeHiPct\%), which demand
 alone would not produce. A monitor built on the offsets raised less than half the false alarms of a plain price-gap rule at
@@ -141,9 +146,13 @@ moves from hour to hour. The estimator is therefore cross-sectional.
 \label{sec:data}
 We use public one-minute candles for BTC and ETH on Bitfinex, Coinbase and Bitstamp from 2017 to 2023, and hourly
 candles for nine further assets on Bitfinex and Coinbase (LTC, BCH, ETC, XLM, XRP, LINK, SOL, DOGE and ADA). For
-Binance.US we use candles from 2022 to 2025. The diagnostic uses the hourly median of traded-minute closes, and the
-benchmark uses the last traded close in each hour. All sources are free and unauthenticated, each acquisition is
-recorded with a hash in a manifest, and rebuild scripts regenerate the panels.
+Bitstamp we also use hourly candles for six assets (ETH, LTC, BCH, XLM, LINK and XRP) from 2019 to 2023, which
+supply the controls in \S\ref{sec:heldout}. For Binance.US we use candles from 2022 to 2025. The diagnostic uses the
+hourly median of traded-minute closes, and the benchmark uses the last traded close in each hour. All sources are free
+and unauthenticated, each acquisition is recorded with a hash in a manifest, and rebuild scripts regenerate the panels.
+Taker fee schedules, used only to size the noise bands in \S\ref{sec:noise}, come from secondary sources:
+\NumNFeeSecondary{} schedule entries rest on dated news articles, \NumNFeeInferred{} are inferred from them and
+\NumNFeeUnverified{} are unverified, and none is checked against an archived venue fee page.
 
 \paragraph{Labels.} The monitor is scored against \NumULabels{} dated events (deposit pauses, withdrawal delays,
 bank-partner losses, rail shutdowns, restorations and confounders) for Bitfinex, Bitstamp, Coinbase, Kraken and
@@ -197,22 +206,57 @@ estimate.
 
 \subsection{Held-out assets}
 \label{sec:heldout}
-\input{generated/heldout_table}
+\input{generated/heldout_ci_table}
 \paragraph{Protocol.} The score is the share of the mean-square Bitfinex--Coinbase gap that the correction removes,
 $1-\sum(g-\hat u)^2/\sum g^2$, where $\hat u$ is estimated without the scored asset on either exchange. Five dev assets
 (ETH, LTC, BCH, ETC, XLM) were scored during development. The five test assets (XRP, LINK, SOL, DOGE, ADA) were never
 loaded during development and were scored once. Three checks passed: the estimator is causal, it is invariant to
-relabelling exchanges, and its source has no file access, dates or exchange names. The control pair is Coinbase and
-Bitstamp with ether withheld, a pair that shared a dollar after 2018.
+relabelling exchanges, and its source has no file access, dates or exchange names. Intervals are 95\% block-bootstrap
+intervals over ISO weeks (\NumPBootDraws{} draws), computed afterwards from the frozen estimator. Two controls
+pool the withheld assets ETH, LTC, BCH, XLM, LINK and XRP over 2019--2023. Coinbase--Bitstamp shared a dollar.
+Bitfinex--Bitstamp did not.
 
-\paragraph{Results.} The correction removed \NumUTestPct\% of the mean-square gap on the test assets
-(Table~\ref{tab:heldout}), and \NumUDevPct\% on the dev assets. The pooled test figure is driven by XRP
+\paragraph{Results.} On the test assets the correction removed \NumUTestPct\% of the mean-square gap, a pooled score of
+\NumPTestPooledEst{} with 95\% interval \NumPTestPooledEstLo{} to \NumPTestPooledEstHi{}, and \NumUDevPct\% on the dev
+assets (Table~\ref{tab:heldout-ci}, which gives the interval for each asset). The pooled test figure is driven by XRP
 (\NumUTestXrpPct\%) and by 2019 (\NumUTestNineteenPct\%). The other four test assets lie between \NumUTestLinkPct\% and
 \NumUTestDogePct\%, and from 2020 to 2023 the yearly score was between \NumUTestYearMinPct\% and
-\NumUTestYearMaxPct\%. The estimator matches the plain cross-asset median ($b_2$: \NumUTestBaseTwo{} on the test
-assets, \NumUTestScore{} for the estimator). Its contribution is on the control pair. The estimator made no correction
-there (score \NumUControlScore{}), while $b_1$ and $b_2$ scored \NumUControlBaseOne{} by correcting a pair whose gaps
-are asset-specific.
+\NumUTestYearMaxPct\%. The estimator is indistinguishable from the plain cross-asset median $b_2$: the pooled test
+difference was \NumPTestPooledDiff{} (interval \NumPTestPooledDiffLo{} to \NumPTestPooledDiffHi{}). The contribution is
+therefore the unit model and its validation, not a better estimator. A median suffices.
+
+\paragraph{Controls.} On Coinbase--Bitstamp, the pair with a shared dollar, the pooled score was
+\NumPCtrlCbBstPooledEst{} (interval \NumPCtrlCbBstPooledEstLo{} to \NumPCtrlCbBstPooledEstHi{}) and the mean absolute
+correction was \NumPCtrlCbBstPooledAbsEst{} bps; the plain median $b_2$ applied \NumPCtrlCbBstPooledAbsBTwo{} bps. On
+Bitfinex--Bitstamp, a pair with separate dollars, the pooled score was \NumPCtrlBfxBstPooledEst{} (interval
+\NumPCtrlBfxBstPooledEstLo{} to \NumPCtrlBfxBstPooledEstHi{}) and the mean absolute correction was
+\NumPCtrlBfxBstPooledAbsEst{} bps. ETH alone scored \NumPCtrlCbBstETHEst{} on the shared-dollar control.
+
+\subsection{Size and timing of the calm-year offsets}
+\label{sec:noise}
+\input{generated/noise_table}
+The calm-year offsets are systematic but too small to trade. For this section calm years are 2020 to 2023. The
+round-trip band of a pair is the sum of its two venues' base-tier taker fees, from \NumNBandMin{} to \NumNBandMax{} bps
+across pair-years. The median absolute hourly bitcoin gap between Bitfinex and Bitstamp was between
+\NumNBfxBstGapBtcMin{} and \NumNBfxBstGapBtcMax{} bps, inside the band, and the gap exceeded the band in at most
+\NumNCalmAboveBandMaxPct\% of hours for any pair (Table~\ref{tab:noise}). Halving every band
+(\NumNHalfBandMin{} bps at the narrowest) leaves the median gap inside it. These offsets are not arbitrage
+opportunities.
+
+They are persistent and shared across assets. The first-order autocorrelation of the daily Bitfinex gap was between
+\NumNBfxBstAcOneMin{} and \NumNBfxBstAcOneMax{} against Bitstamp and between \NumNBfxCbAcOneMin{} and
+\NumNBfxCbAcOneMax{} against Coinbase. The share of the daily ether and bitcoin gaps that was common to both was
+between \NumNBfxBstCommonDailyMin{} and \NumNBfxBstCommonDailyMax{} against Bitstamp. The conclusion does not depend on
+the timing convention. For Bitfinex--Bitstamp the hourly explained share was between \NumNBfxBstExplMedMin{} and
+\NumNBfxBstExplMedMax{} with hourly medians, between \NumNBfxBstExplLastMin{} and \NumNBfxBstExplLastMax{} with last
+closes, and between \NumNBfxBstExplSyncMin{} and \NumNBfxBstExplSyncMax{} in hours where all legs traded in the final
+minute. In all \NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the cross-correlation peaked at zero minutes.
+
+The Coinbase--Bitstamp gaps behaved like noise. The median absolute bitcoin gap was between \NumNCbBstGapBtcMin{} and
+\NumNCbBstGapBtcMax{} bps, a few ticks (the largest calm-year tick was \NumNTickBtcCalmMax{} bps), and the daily
+autocorrelation was between \NumNCbBstAcOneMin{} and \NumNCbBstAcOneMax{}. The bitcoin gap explained at most
+\NumNCbBstExplMedMax{} of the ether gap, and less when only synchronous hours were used. A price feed that fuses
+these sources still cares about a persistent bias of a few basis points, even though no one can trade it away.
 
 \subsection{Monitoring}
 \label{sec:monitor}
@@ -225,12 +269,36 @@ alone, a trailing robust $z$-score of the gap, and the USDT premium.
 On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per exchange-year (\NumUDetFaBfxCount{} episodes),
 against \NumUBaseFaBfxTwo{} for the plain price-gap alarm (\NumUBaseFaBfxCount{}), at the same recall:
 \NumUDetCaught{} of \NumUDetCovered{} labelled episodes. The second-asset test keeps the gap alarm's recall and removes
-two thirds of its false alarms. The trailing $z$-score caught every episode but raised many more false alarms. On Binance.US
+two thirds of its false alarms. At its fixed setting the trailing $z$-score caught every Bitfinex episode and raised
+\NumSBTwoRateBfx{} false alarm episodes per exchange-year. On Binance.US
 the monitor caught all labelled episodes. On Coinbase it raised no alarm after \NumUCbLastAlarm{}; its
 \NumUCbEpisodes{} alarm episodes all fall in the 2017 bubble (Appendix~\ref{app:windows}).
 
-The monitor first flagged Bitfinex on \NumUFirstAlarmDate. Regulators disclosed the loss of its funds held at a payment
-processor on \NumUNyagDate, which is \NumUAlarmNyagMonths{} months later.
+\paragraph{Operating curves.} One threshold is one operating point, so we swept each rule's threshold and report, for
+each recall level, the fewest false alarms per venue-year that reach it (Table~\ref{tab:sweep}, Figure~\ref{fig:sweep}).
+The denominator of a false-alarm rate is the evaluated venue-hours divided by 8,766 hours per year. For the monitor
+it was \NumSHoursDetBfx{} hours, or \NumSYearsDetBfx{} years, on Bitfinex. At matched recall of at least 0.85,
+which allows one of the \NumSDetCoveredBfx{} Bitfinex positives to be missed, the monitor had the fewest
+false alarms of the price-threshold rules: \NumSDetAtEightyFiveBfx{} per venue-year, against \NumSBOneAtEightyFiveBfx{} for
+the gap-only rule and \NumSTwoAtEightyFiveBfx{} for the matched two-asset rule. It matched or beat the two-asset rule at
+\NumSDomOkTwoBfx{} of 7 thresholds on Bitfinex and \NumSDomOkTwoPool{} of 7 pooled over exchanges. The robust $z$-score
+reached full recall with fewer false alarms, \NumSBTwoAtFullBfx{} per venue-year against \NumSDetAtFullBfx{} for the
+monitor, so it is the better rule at the high-recall end and complements the monitor at the low-alarm end.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figures/monitor_sweep.pdf}
+\caption{Monitor operating curves: false alarms per venue-year against recall as each rule's threshold varies.}
+\label{fig:sweep}
+\end{figure}
+
+\input{generated/monitor_sweep_table}
+
+\paragraph{The 2018 timeline.} Bitfinex's daily bitcoin gap to the reference first exceeded 100 bps on
+\NumSFirstDayAbove{}. The first run above that level lasted \NumSFirstRunDays{} days, and the gap was above it on
+\NumSDaysAboveToNyag{} of the \NumSCalendarDaysToNyag{} days from that date to \NumSNyagDate, when regulators disclosed
+the loss of funds held at a payment processor. The premium itself was public. Reports of the banking-partner problem are
+dated \NumSNobleDate{} and of a deposit pause \NumSDepositPauseDate{}. The prices therefore measured the impairment for
+about \NumSMonthsToNyag{} months before the loss was disclosed. This is not a lead over the market.
 
 \subsection{Three shocks in 2023}
 \label{sec:2023}
@@ -273,16 +341,15 @@ sources share a unit, which a plain median or source weighting does not (Appendi
 applies to platform credits, multi-currency marketplaces and loyalty points, wherever an anchor item with a known
 value exists.
 
-\paragraph{Limits.} The diagnostic rests on three USD exchanges, and Bitstamp lists only bitcoin and ether, so the
-zero correction on the control pair partly reflects the rule of applying none when fewer than two items are visible.
-When two of three exchanges share a biased unit, prices alone cannot say which unit is the true one; an outside anchor
+\paragraph{Limits.} The diagnostic rests on three USD exchanges. The estimator ties the plain median, so the evidence is for the unit model
+and not for a better estimator. The calm-year offsets sit inside fee bands that come from secondary sources, and the
+monitor is scored on a handful of labelled events. When two of three exchanges share a biased unit, prices alone cannot say which unit is the true one; an outside anchor
 is needed. The anchor test needs an item fixed in the true unit. USDT is such an item only up to its own redemption
 risk. It also existed on Bitfinex only from 2018-11-27, and the Bitfinex slope is below 1. The oracle check covers one
 episode and one oracle family.
 
 \section{Reproducibility}
-Every number in this paper is a macro generated from committed reports and logs by \texttt{www\_paper.macros},
-\texttt{www\_paper.rescue\_macros} and \texttt{www\_paper.unit\_macros}, and tests fail if a macro is stale or a
+Every number in this paper is a macro generated from committed reports and logs by the macro modules of \texttt{www\_paper} (\texttt{macros}, \texttt{rescue\_macros}, \texttt{unit\_macros}, \texttt{posthoc\_macros}, \texttt{sweep\_macros} and \texttt{noise\_macros}), and tests fail if a macro is stale or a
 number is typed by hand. The held-out test split was scored once from a recorded log. Inputs are free public files
 recorded by hash, and a fixed gate rebuilds the PDF and checks page limits and anonymity.
 

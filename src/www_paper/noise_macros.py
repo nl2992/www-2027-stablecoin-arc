@@ -71,6 +71,7 @@ def macros() -> list[tuple[str, str, str]]:
     bands = [b["pairs"][k][str(y)]["band_bps"] for k, _, _ in PAIRS for y in YEARS]
     out.append(("NumNBandMin", _num(min(bands), 0), f"{SRC} pairs/*/*/band_bps min over pair-years (sum of two base-tier taker fees)"))
     out.append(("NumNBandMax", _num(max(bands), 0), f"{SRC} pairs/*/*/band_bps max over pair-years"))
+    out.append(("NumNHalfBandMin", _num(min(bands) / 2, 0), f"{SRC} pairs/*/*/band_bps min over pair-years, halved (fee-schedule sensitivity)"))
     for key, _, tag in PAIRS:
         rng(f"NumN{tag}ShareBtcPct", key, lambda r: 100 * r["share_above_band_btc"], "share_above_band_btc, percent", 2)
         rng(f"NumN{tag}AcOne", key, lambda r: r["daily_ac"]["1"], "daily_ac/1", 2)
