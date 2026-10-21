@@ -11,8 +11,9 @@ import pandas as pd
 
 WINDOW = 72
 MIN_HIST = 24
-OFF_WIN = 24
+OFF_WIN = 8
 OFF_MIN = 6
+SHRINK = 1.0
 VAR_FLOOR = 0.3
 
 
@@ -67,9 +68,14 @@ def _offsets(A: dict[str, np.ndarray], cols: list[str], skip: str, index: pd.Dat
     if not gaps:
         return np.zeros_like(A[skip])
     with np.errstate(all="ignore"):
-        raw = np.nanmedian(np.stack(gaps), axis=0)
+        g = np.stack(gaps)
+        raw = np.nanmedian(g, axis=0)
+        disp = np.nanmedian(np.abs(g - raw[None]), axis=0)
     off = pd.DataFrame(raw, index=index).rolling(OFF_WIN, min_periods=OFF_MIN).median().to_numpy()
-    return np.nan_to_num(off)
+    dsp = pd.DataFrame(disp, index=index).rolling(OFF_WIN, min_periods=OFF_MIN).median().to_numpy()
+    with np.errstate(all="ignore"):
+        shrink = np.abs(off) / (np.abs(off) + SHRINK * dsp)
+    return np.nan_to_num(off * shrink)
 
 
 def fuse(panel: dict[str, pd.DataFrame], items: list[str]) -> pd.DataFrame:
