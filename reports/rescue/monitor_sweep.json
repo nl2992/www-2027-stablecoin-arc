@@ -1,0 +1,4905 @@
+{
+ "design": {
+  "thresholds_bps": [
+   25.0,
+   50.0,
+   75.0,
+   100.0,
+   150.0,
+   200.0,
+   300.0
+  ],
+  "detector_agreements": [
+   0.25,
+   0.1,
+   0.5
+  ],
+  "b2_k": [
+   3.0,
+   4.0,
+   5.0,
+   6.0
+  ],
+  "recall_levels": [
+   0.6,
+   0.7,
+   0.85,
+   1.0
+  ],
+  "scope": "all months, all venues (detector_eval scope 'all')",
+  "headline_point": {
+   "threshold": 100.0,
+   "agreement": 0.25,
+   "k": 4.0
+  },
+  "label_amendment": "D1",
+  "second_asset": "the detector's own second-asset gap per venue: Bitfinex ETH vs Coinbase ETH, Coinbase ETH vs Bitstamp ETH, Binance.US USDT/USD vs Bitstamp USDT/USD",
+  "b2_note": "B2 has no bps threshold; its curve is indexed by k",
+  "b3_note": "B3 exists for Bitfinex only (USTUSD from 2018-11); pooled B3 is the Bitfinex point alone",
+  "pooled": "sum of counts over the venues where the method exists"
+ },
+ "sweep": {
+  "detector_a0.25": {
+   "25": {
+    "param": {
+     "threshold_bps": 25.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 48,
+     "alarm_days": 532,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 24,
+     "unexplained": 24,
+     "venue_years": 6.979580196212639,
+     "recall": 1.0,
+     "fa_per_venue_year": 3.43860222610856,
+     "unexplained_per_venue_year": 3.43860222610856,
+     "episode_precision": 0.5,
+     "episode_f1": 0.6666666666666666,
+     "alarm_day_share": 0.2081377151799687
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 42,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.1414141414141414
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 10,
+     "alarm_days": 61,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.5805131348827146,
+     "unexplained_per_venue_year": 1.5805131348827146,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.02637267617812365
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 61,
+     "alarm_days": 635,
+     "covered_positives": 18,
+     "caught": 13,
+     "false_alarm_episodes": 35,
+     "unexplained": 35,
+     "venue_years": 14.069016655258954,
+     "recall": 0.7222222222222222,
+     "fa_per_venue_year": 2.4877360555911427,
+     "unexplained_per_venue_year": 2.4877360555911427,
+     "episode_precision": 0.4262295081967213,
+     "episode_f1": 0.5360824742268041,
+     "alarm_day_share": 0.12291908633372048
+    }
+   },
+   "50": {
+    "param": {
+     "threshold_bps": 50.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 21,
+     "alarm_days": 368,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 1.2894758347907098,
+     "unexplained_per_venue_year": 1.2894758347907098,
+     "episode_precision": 0.5714285714285714,
+     "episode_f1": 0.6956521739130435,
+     "alarm_day_share": 0.14397496087636932
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 36,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.12121212121212122
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 8,
+     "alarm_days": 43,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2644105079061716,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.018590575010808474
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 33,
+     "alarm_days": 447,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 18,
+     "unexplained": 18,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 1.2794071143040162,
+     "unexplained_per_venue_year": 1.2794071143040162,
+     "episode_precision": 0.45454545454545453,
+     "episode_f1": 0.5405405405405405,
+     "alarm_day_share": 0.08652729384436701
+    }
+   },
+   "75": {
+    "param": {
+     "threshold_bps": 75.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 18,
+     "alarm_days": 290,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 0.85965055652714,
+     "unexplained_per_venue_year": 0.85965055652714,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.761904761904762,
+     "alarm_day_share": 0.1134585289514867
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 32,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10774410774410774
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 6,
+     "alarm_days": 35,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.9483078809296287,
+     "unexplained_per_venue_year": 0.9483078809296287,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.015131863380890618
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 29,
+     "alarm_days": 357,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 13,
+     "unexplained": 13,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 0.9240162492195673,
+     "unexplained_per_venue_year": 0.9240162492195673,
+     "episode_precision": 0.5517241379310345,
+     "episode_f1": 0.6037735849056604,
+     "alarm_day_share": 0.06910569105691057
+    }
+   },
+   "100": {
+    "param": {
+     "threshold_bps": 100.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 267,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 3,
+     "unexplained": 3,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.42982527826357,
+     "unexplained_per_venue_year": 0.42982527826357,
+     "episode_precision": 0.75,
+     "episode_f1": 0.7636363636363638,
+     "alarm_day_share": 0.10446009389671361
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 31,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10437710437710437
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 8,
+     "alarm_days": 29,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2644105079061716,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.012537829658452227
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 25,
+     "alarm_days": 327,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 12,
+     "unexplained": 12,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.8529380762026775,
+     "unexplained_per_venue_year": 0.8529380762026775,
+     "episode_precision": 0.52,
+     "episode_f1": 0.5618860510805501,
+     "alarm_day_share": 0.06329849012775841
+    }
+   },
+   "150": {
+    "param": {
+     "threshold_bps": 150.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 236,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.14327509275452333,
+     "unexplained_per_venue_year": 0.14327509275452333,
+     "episode_precision": 0.9166666666666666,
+     "episode_f1": 0.8415300546448087,
+     "alarm_day_share": 0.09233176838810642
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 30,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10101010101010101
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 8,
+     "alarm_days": 28,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2644105079061716,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.012105490704712495
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 25,
+     "alarm_days": 294,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.7107817301688979,
+     "unexplained_per_venue_year": 0.7107817301688979,
+     "episode_precision": 0.6,
+     "episode_f1": 0.6055045871559633,
+     "alarm_day_share": 0.056910569105691054
+    }
+   },
+   "200": {
+    "param": {
+     "threshold_bps": 200.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 206,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.08059467918622848
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 25,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "alarm_day_share": 0.08417508417508418
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 19,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.008214440121054907
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 22,
+     "alarm_days": 250,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.4975472111182285,
+     "unexplained_per_venue_year": 0.4975472111182285,
+     "episode_precision": 0.6818181818181818,
+     "episode_f1": 0.6445312500000001,
+     "alarm_day_share": 0.04839334107626791
+    }
+   },
+   "300": {
+    "param": {
+     "threshold_bps": 300.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 90,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.035211267605633804
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 2,
+     "alarm_days": 22,
+     "covered_positives": 4,
+     "caught": 3,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 0.75,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.07407407407407407
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 5,
+     "alarm_days": 11,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 5,
+     "unexplained": 5,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.7902565674413573,
+     "unexplained_per_venue_year": 0.7902565674413573,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.004755728491137051
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 19,
+     "alarm_days": 123,
+     "covered_positives": 18,
+     "caught": 10,
+     "false_alarm_episodes": 5,
+     "unexplained": 5,
+     "venue_years": 14.069016655258954,
+     "recall": 0.5555555555555556,
+     "fa_per_venue_year": 0.35539086508444895,
+     "unexplained_per_venue_year": 0.35539086508444895,
+     "episode_precision": 0.7368421052631579,
+     "episode_f1": 0.6334841628959277,
+     "alarm_day_share": 0.023809523809523808
+    }
+   }
+  },
+  "detector_a0.1": {
+   "25": {
+    "param": {
+     "threshold_bps": 25.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 41,
+     "alarm_days": 408,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 20,
+     "unexplained": 20,
+     "venue_years": 6.979580196212639,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.8655018550904665,
+     "unexplained_per_venue_year": 2.8655018550904665,
+     "episode_precision": 0.5121951219512195,
+     "episode_f1": 0.6774193548387097,
+     "alarm_day_share": 0.1596244131455399
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 38,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.12794612794612795
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 12,
+     "alarm_days": 32,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 12,
+     "unexplained": 12,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.8966157618592574,
+     "unexplained_per_venue_year": 1.8966157618592574,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.013834846519671422
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 57,
+     "alarm_days": 478,
+     "covered_positives": 18,
+     "caught": 13,
+     "false_alarm_episodes": 33,
+     "unexplained": 33,
+     "venue_years": 14.069016655258954,
+     "recall": 0.7222222222222222,
+     "fa_per_venue_year": 2.345579709557363,
+     "unexplained_per_venue_year": 2.345579709557363,
+     "episode_precision": 0.42105263157894735,
+     "episode_f1": 0.5319693094629155,
+     "alarm_day_share": 0.09252806813782423
+    }
+   },
+   "50": {
+    "param": {
+     "threshold_bps": 50.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 18,
+     "alarm_days": 308,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 0.85965055652714,
+     "unexplained_per_venue_year": 0.85965055652714,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.761904761904762,
+     "alarm_day_share": 0.12050078247261346
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 35,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.11784511784511785
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 9,
+     "alarm_days": 29,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.422461821394443,
+     "unexplained_per_venue_year": 1.422461821394443,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.012537829658452227
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 31,
+     "alarm_days": 372,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 16,
+     "unexplained": 16,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 1.1372507682702366,
+     "unexplained_per_venue_year": 1.1372507682702366,
+     "episode_precision": 0.4838709677419355,
+     "episode_f1": 0.5607476635514019,
+     "alarm_day_share": 0.07200929152148665
+    }
+   },
+   "75": {
+    "param": {
+     "threshold_bps": 75.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 17,
+     "alarm_days": 248,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 3,
+     "unexplained": 3,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 0.42982527826357,
+     "unexplained_per_venue_year": 0.42982527826357,
+     "episode_precision": 0.8235294117647058,
+     "episode_f1": 0.8549618320610687,
+     "alarm_day_share": 0.09702660406885759
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 32,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10774410774410774
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 24,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.010376134889753566
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 29,
+     "alarm_days": 304,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 11,
+     "unexplained": 11,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 0.7818599031857877,
+     "unexplained_per_venue_year": 0.7818599031857877,
+     "episode_precision": 0.6206896551724138,
+     "episode_f1": 0.6428571428571429,
+     "alarm_day_share": 0.05884630274874177
+    }
+   },
+   "100": {
+    "param": {
+     "threshold_bps": 100.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 14,
+     "alarm_days": 235,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.28655018550904665,
+     "unexplained_per_venue_year": 0.28655018550904665,
+     "episode_precision": 0.8571428571428571,
+     "episode_f1": 0.8155339805825242,
+     "alarm_day_share": 0.09194053208137715
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 30,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10101010101010101
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 22,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.009511456982274102
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 26,
+     "alarm_days": 287,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.7107817301688979,
+     "unexplained_per_venue_year": 0.7107817301688979,
+     "episode_precision": 0.6153846153846154,
+     "episode_f1": 0.613240418118467,
+     "alarm_day_share": 0.05555555555555555
+    }
+   },
+   "150": {
+    "param": {
+     "threshold_bps": 150.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 210,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.08215962441314555
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 27,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.09090909090909091
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 18,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.007782101167315175
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 24,
+     "alarm_days": 255,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.5686253841351183,
+     "unexplained_per_venue_year": 0.5686253841351183,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.6376811594202899,
+     "alarm_day_share": 0.04936120789779326
+    }
+   },
+   "200": {
+    "param": {
+     "threshold_bps": 200.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 13,
+     "alarm_days": 183,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.0715962441314554
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 2,
+     "alarm_days": 24,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "alarm_day_share": 0.08080808080808081
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 8,
+     "alarm_days": 13,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2644105079061716,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.005620406398616515
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 23,
+     "alarm_days": 220,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.5686253841351183,
+     "unexplained_per_venue_year": 0.5686253841351183,
+     "episode_precision": 0.6521739130434783,
+     "episode_f1": 0.6309751434034417,
+     "alarm_day_share": 0.04258614014711576
+    }
+   },
+   "300": {
+    "param": {
+     "threshold_bps": 300.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 76,
+     "covered_positives": 9,
+     "caught": 6,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.0297339593114241
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 1,
+     "alarm_days": 21,
+     "covered_positives": 4,
+     "caught": 2,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 0.5,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.6666666666666666,
+     "alarm_day_share": 0.0707070707070707
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 4,
+     "alarm_days": 7,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 4,
+     "unexplained": 4,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.6322052539530858,
+     "unexplained_per_venue_year": 0.6322052539530858,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.0030263726761781237
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 17,
+     "alarm_days": 104,
+     "covered_positives": 18,
+     "caught": 8,
+     "false_alarm_episodes": 4,
+     "unexplained": 4,
+     "venue_years": 14.069016655258954,
+     "recall": 0.4444444444444444,
+     "fa_per_venue_year": 0.28431269206755916,
+     "unexplained_per_venue_year": 0.28431269206755916,
+     "episode_precision": 0.7647058823529411,
+     "episode_f1": 0.5621621621621621,
+     "alarm_day_share": 0.02013162988772745
+    }
+   }
+  },
+  "detector_a0.5": {
+   "25": {
+    "param": {
+     "threshold_bps": 25.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 51,
+     "alarm_days": 607,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 27,
+     "unexplained": 27,
+     "venue_years": 6.979580196212639,
+     "recall": 1.0,
+     "fa_per_venue_year": 3.86842750437213,
+     "unexplained_per_venue_year": 3.86842750437213,
+     "episode_precision": 0.47058823529411764,
+     "episode_f1": 0.6399999999999999,
+     "alarm_day_share": 0.23748043818466355
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 43,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.1447811447811448
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 10,
+     "alarm_days": 86,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.5805131348827146,
+     "unexplained_per_venue_year": 1.5805131348827146,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.03718115002161695
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 64,
+     "alarm_days": 736,
+     "covered_positives": 18,
+     "caught": 13,
+     "false_alarm_episodes": 38,
+     "unexplained": 38,
+     "venue_years": 14.069016655258954,
+     "recall": 0.7222222222222222,
+     "fa_per_venue_year": 2.700970574641812,
+     "unexplained_per_venue_year": 2.700970574641812,
+     "episode_precision": 0.40625,
+     "episode_f1": 0.52,
+     "alarm_day_share": 0.14246999612853273
+    }
+   },
+   "50": {
+    "param": {
+     "threshold_bps": 50.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 22,
+     "alarm_days": 403,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 1.4327509275452333,
+     "unexplained_per_venue_year": 1.4327509275452333,
+     "episode_precision": 0.5454545454545454,
+     "episode_f1": 0.676056338028169,
+     "alarm_day_share": 0.15766823161189358
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 38,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.12794612794612795
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 10,
+     "alarm_days": 51,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.5805131348827146,
+     "unexplained_per_venue_year": 1.5805131348827146,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.02204928664072633
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 35,
+     "alarm_days": 492,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 21,
+     "unexplained": 21,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 1.4926416333546855,
+     "unexplained_per_venue_year": 1.4926416333546855,
+     "episode_precision": 0.4,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.09523809523809523
+    }
+   },
+   "75": {
+    "param": {
+     "threshold_bps": 75.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 16,
+     "alarm_days": 314,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 0.85965055652714,
+     "unexplained_per_venue_year": 0.85965055652714,
+     "episode_precision": 0.625,
+     "episode_f1": 0.7339449541284404,
+     "alarm_day_share": 0.12284820031298904
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 34,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.11447811447811448
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 6,
+     "alarm_days": 38,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.9483078809296287,
+     "unexplained_per_venue_year": 0.9483078809296287,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.016428880242109815
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 26,
+     "alarm_days": 386,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 13,
+     "unexplained": 13,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 0.9240162492195673,
+     "unexplained_per_venue_year": 0.9240162492195673,
+     "episode_precision": 0.5,
+     "episode_f1": 0.5714285714285715,
+     "alarm_day_share": 0.07471931862175765
+    }
+   },
+   "100": {
+    "param": {
+     "threshold_bps": 100.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 11,
+     "alarm_days": 289,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 4,
+     "unexplained": 4,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.5731003710180933,
+     "unexplained_per_venue_year": 0.5731003710180933,
+     "episode_precision": 0.6363636363636364,
+     "episode_f1": 0.7000000000000001,
+     "alarm_day_share": 0.11306729264475743
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 31,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10437710437710437
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 6,
+     "alarm_days": 33,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.9483078809296287,
+     "unexplained_per_venue_year": 0.9483078809296287,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.014267185473411154
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 22,
+     "alarm_days": 353,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 11,
+     "unexplained": 11,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.7818599031857877,
+     "unexplained_per_venue_year": 0.7818599031857877,
+     "episode_precision": 0.5,
+     "episode_f1": 0.55,
+     "alarm_day_share": 0.06833139759969029
+    }
+   },
+   "150": {
+    "param": {
+     "threshold_bps": 150.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 11,
+     "alarm_days": 252,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.14327509275452333,
+     "unexplained_per_venue_year": 0.14327509275452333,
+     "episode_precision": 0.9090909090909091,
+     "episode_f1": 0.8383233532934132,
+     "alarm_day_share": 0.09859154929577464
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 30,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10101010101010101
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 8,
+     "alarm_days": 29,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2644105079061716,
+     "unexplained_per_venue_year": 1.2644105079061716,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.012537829658452227
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 24,
+     "alarm_days": 311,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.7107817301688979,
+     "unexplained_per_venue_year": 0.7107817301688979,
+     "episode_precision": 0.5833333333333334,
+     "episode_f1": 0.5968992248062015,
+     "alarm_day_share": 0.060201316298877275
+    }
+   },
+   "200": {
+    "param": {
+     "threshold_bps": 200.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 219,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.08568075117370892
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 25,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "alarm_day_share": 0.08417508417508418
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 20,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.00864677907479464
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 22,
+     "alarm_days": 264,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.4975472111182285,
+     "unexplained_per_venue_year": 0.4975472111182285,
+     "episode_precision": 0.6818181818181818,
+     "episode_f1": 0.6445312500000001,
+     "alarm_day_share": 0.05110336817653891
+    }
+   },
+   "300": {
+    "param": {
+     "threshold_bps": 300.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 101,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.03951486697965571
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 2,
+     "alarm_days": 22,
+     "covered_positives": 4,
+     "caught": 3,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 0.75,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.07407407407407407
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 5,
+     "alarm_days": 13,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 5,
+     "unexplained": 5,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.7902565674413573,
+     "unexplained_per_venue_year": 0.7902565674413573,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.005620406398616515
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 19,
+     "alarm_days": 136,
+     "covered_positives": 18,
+     "caught": 10,
+     "false_alarm_episodes": 5,
+     "unexplained": 5,
+     "venue_years": 14.069016655258954,
+     "recall": 0.5555555555555556,
+     "fa_per_venue_year": 0.35539086508444895,
+     "unexplained_per_venue_year": 0.35539086508444895,
+     "episode_precision": 0.7368421052631579,
+     "episode_f1": 0.6334841628959277,
+     "alarm_day_share": 0.02632597754548974
+    }
+   }
+  },
+  "b1": {
+   "25": {
+    "param": {
+     "threshold_bps": 25.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 43,
+     "alarm_days": 778,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 22,
+     "unexplained": 22,
+     "venue_years": 6.994638375541866,
+     "recall": 1.0,
+     "fa_per_venue_year": 3.14526624806328,
+     "unexplained_per_venue_year": 3.14526624806328,
+     "episode_precision": 0.4883720930232558,
+     "episode_f1": 0.65625,
+     "alarm_day_share": 0.30438184663536777
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 44,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 0.796600501939311,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.510668767005585,
+     "unexplained_per_venue_year": 2.510668767005585,
+     "episode_precision": 0.5,
+     "episode_f1": 0.6666666666666666,
+     "alarm_day_share": 0.14814814814814814
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 9,
+     "alarm_days": 315,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2871616660956389,
+     "unexplained_per_venue_year": 1.2871616660956389,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.12323943661971831
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 56,
+     "alarm_days": 1137,
+     "covered_positives": 18,
+     "caught": 13,
+     "false_alarm_episodes": 33,
+     "unexplained": 33,
+     "venue_years": 14.783367556468173,
+     "recall": 0.7222222222222222,
+     "fa_per_venue_year": 2.232238349885409,
+     "unexplained_per_venue_year": 2.232238349885409,
+     "episode_precision": 0.4107142857142857,
+     "episode_f1": 0.5236427320490368,
+     "alarm_day_share": 0.21020521353300056
+    }
+   },
+   "50": {
+    "param": {
+     "threshold_bps": 50.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 34,
+     "alarm_days": 485,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 20,
+     "unexplained": 20,
+     "venue_years": 6.994638375541866,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 2.8593329527847997,
+     "unexplained_per_venue_year": 2.8593329527847997,
+     "episode_precision": 0.4117647058823529,
+     "episode_f1": 0.5628140703517588,
+     "alarm_day_share": 0.18974960876369326
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 38,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.796600501939311,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.2553343835027926,
+     "unexplained_per_venue_year": 1.2553343835027926,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.12794612794612795
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 23,
+     "alarm_days": 184,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 23,
+     "unexplained": 23,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 3.289413146688855,
+     "unexplained_per_venue_year": 3.289413146688855,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.07198748043818466
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 60,
+     "alarm_days": 707,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 44,
+     "unexplained": 44,
+     "venue_years": 14.783367556468173,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 2.9763177998472115,
+     "unexplained_per_venue_year": 2.9763177998472115,
+     "episode_precision": 0.26666666666666666,
+     "episode_f1": 0.3809523809523809,
+     "alarm_day_share": 0.1307080791273803
+    }
+   },
+   "75": {
+    "param": {
+     "threshold_bps": 75.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 24,
+     "alarm_days": 374,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 13,
+     "unexplained": 13,
+     "venue_years": 6.994638375541866,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 1.85856641931012,
+     "unexplained_per_venue_year": 1.85856641931012,
+     "episode_precision": 0.4583333333333333,
+     "episode_f1": 0.604810996563574,
+     "alarm_day_share": 0.14632237871674492
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 34,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.796600501939311,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.2553343835027926,
+     "unexplained_per_venue_year": 1.2553343835027926,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.11447811447811448
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 20,
+     "alarm_days": 117,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 20,
+     "unexplained": 20,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 2.8603592579903085,
+     "unexplained_per_venue_year": 2.8603592579903085,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.045774647887323945
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 48,
+     "alarm_days": 525,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 34,
+     "unexplained": 34,
+     "venue_years": 14.783367556468173,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 2.2998819362455727,
+     "unexplained_per_venue_year": 2.2998819362455727,
+     "episode_precision": 0.2916666666666667,
+     "episode_f1": 0.4057971014492754,
+     "alarm_day_share": 0.09706045479755962
+    }
+   },
+   "100": {
+    "param": {
+     "threshold_bps": 100.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 18,
+     "alarm_days": 330,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.994638375541866,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 1.28669982875316,
+     "unexplained_per_venue_year": 1.28669982875316,
+     "episode_precision": 0.5,
+     "episode_f1": 0.6086956521739131,
+     "alarm_day_share": 0.12910798122065728
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 31,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.796600501939311,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.2553343835027926,
+     "unexplained_per_venue_year": 1.2553343835027926,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10437710437710437
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 20,
+     "alarm_days": 95,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 20,
+     "unexplained": 20,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 2.8603592579903085,
+     "unexplained_per_venue_year": 2.8603592579903085,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.03716744913928013
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 43,
+     "alarm_days": 456,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 30,
+     "unexplained": 30,
+     "venue_years": 14.783367556468173,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 2.0293075908049167,
+     "unexplained_per_venue_year": 2.0293075908049167,
+     "episode_precision": 0.3023255813953488,
+     "episode_f1": 0.40452616690240456,
+     "alarm_day_share": 0.08430393788130892
+    }
+   },
+   "150": {
+    "param": {
+     "threshold_bps": 150.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 14,
+     "alarm_days": 271,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 3,
+     "unexplained": 3,
+     "venue_years": 6.994638375541866,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.42889994291772,
+     "unexplained_per_venue_year": 0.42889994291772,
+     "episode_precision": 0.7857142857142857,
+     "episode_f1": 0.7817258883248731,
+     "alarm_day_share": 0.10602503912363068
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 30,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.796600501939311,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.2553343835027926,
+     "unexplained_per_venue_year": 1.2553343835027926,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10101010101010101
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 15,
+     "alarm_days": 59,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 15,
+     "unexplained": 15,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 2.1452694434927313,
+     "unexplained_per_venue_year": 2.1452694434927313,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.023082942097026604
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 34,
+     "alarm_days": 360,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 19,
+     "unexplained": 19,
+     "venue_years": 14.783367556468173,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 1.285228140843114,
+     "unexplained_per_venue_year": 1.285228140843114,
+     "episode_precision": 0.4411764705882353,
+     "episode_f1": 0.5124223602484472,
+     "alarm_day_share": 0.06655574043261231
+    }
+   },
+   "200": {
+    "param": {
+     "threshold_bps": 200.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 15,
+     "alarm_days": 230,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 6.994638375541866,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.28593329527848,
+     "unexplained_per_venue_year": 0.28593329527848,
+     "episode_precision": 0.8666666666666667,
+     "episode_f1": 0.81981981981982,
+     "alarm_day_share": 0.08998435054773082
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 25,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.796600501939311,
+     "recall": 1.0,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "alarm_day_share": 0.08417508417508418
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 11,
+     "alarm_days": 36,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 11,
+     "unexplained": 11,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.5731975918946697,
+     "unexplained_per_venue_year": 1.5731975918946697,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.014084507042253521
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 29,
+     "alarm_days": 291,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 13,
+     "unexplained": 13,
+     "venue_years": 14.783367556468173,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.8793666226821306,
+     "unexplained_per_venue_year": 0.8793666226821306,
+     "episode_precision": 0.5517241379310345,
+     "episode_f1": 0.5799011532125206,
+     "alarm_day_share": 0.05379922351636162
+    }
+   },
+   "300": {
+    "param": {
+     "threshold_bps": 300.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61315,
+     "evaluated_days": 2556,
+     "n_episodes": 13,
+     "alarm_days": 107,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.994638375541866,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.0418622848200313
+    },
+    "binance_us": {
+     "evaluated_hours": 6983,
+     "evaluated_days": 297,
+     "n_episodes": 2,
+     "alarm_days": 22,
+     "covered_positives": 4,
+     "caught": 3,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.796600501939311,
+     "recall": 0.75,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.07407407407407407
+    },
+    "coinbase": {
+     "evaluated_hours": 61293,
+     "evaluated_days": 2556,
+     "n_episodes": 9,
+     "alarm_days": 20,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.992128678986996,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.2871616660956389,
+     "unexplained_per_venue_year": 1.2871616660956389,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.00782472613458529
+    },
+    "pooled": {
+     "evaluated_hours": 129591,
+     "evaluated_days": 5409,
+     "n_episodes": 24,
+     "alarm_days": 149,
+     "covered_positives": 18,
+     "caught": 10,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 14.783367556468173,
+     "recall": 0.5555555555555556,
+     "fa_per_venue_year": 0.6087922772414751,
+     "unexplained_per_venue_year": 0.6087922772414751,
+     "episode_precision": 0.625,
+     "episode_f1": 0.5882352941176471,
+     "alarm_day_share": 0.027546681456831208
+    }
+   }
+  },
+  "two_asset": {
+   "25": {
+    "param": {
+     "threshold_bps": 25.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 52,
+     "alarm_days": 644,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 31,
+     "unexplained": 31,
+     "venue_years": 6.979580196212639,
+     "recall": 1.0,
+     "fa_per_venue_year": 4.441527875390223,
+     "unexplained_per_venue_year": 4.441527875390223,
+     "episode_precision": 0.40384615384615385,
+     "episode_f1": 0.5753424657534247,
+     "alarm_day_share": 0.2519561815336463
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 43,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.1447811447811448
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 10,
+     "alarm_days": 86,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.5805131348827146,
+     "unexplained_per_venue_year": 1.5805131348827146,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.03718115002161695
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 65,
+     "alarm_days": 773,
+     "covered_positives": 18,
+     "caught": 13,
+     "false_alarm_episodes": 42,
+     "unexplained": 42,
+     "venue_years": 14.069016655258954,
+     "recall": 0.7222222222222222,
+     "fa_per_venue_year": 2.985283266709371,
+     "unexplained_per_venue_year": 2.985283266709371,
+     "episode_precision": 0.35384615384615387,
+     "episode_f1": 0.4749801429706117,
+     "alarm_day_share": 0.14963221060782037
+    }
+   },
+   "50": {
+    "param": {
+     "threshold_bps": 50.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 24,
+     "alarm_days": 422,
+     "covered_positives": 9,
+     "caught": 8,
+     "false_alarm_episodes": 13,
+     "unexplained": 13,
+     "venue_years": 6.979580196212639,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 1.8625762058088031,
+     "unexplained_per_venue_year": 1.8625762058088031,
+     "episode_precision": 0.4583333333333333,
+     "episode_f1": 0.604810996563574,
+     "alarm_day_share": 0.1651017214397496
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 4,
+     "alarm_days": 35,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.75,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.11784511784511785
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 9,
+     "alarm_days": 53,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.422461821394443,
+     "unexplained_per_venue_year": 1.422461821394443,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.02291396454820579
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 37,
+     "alarm_days": 510,
+     "covered_positives": 18,
+     "caught": 12,
+     "false_alarm_episodes": 23,
+     "unexplained": 23,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6666666666666666,
+     "fa_per_venue_year": 1.634797979388465,
+     "unexplained_per_venue_year": 1.634797979388465,
+     "episode_precision": 0.3783783783783784,
+     "episode_f1": 0.48275862068965514,
+     "alarm_day_share": 0.09872241579558652
+    }
+   },
+   "75": {
+    "param": {
+     "threshold_bps": 75.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 16,
+     "alarm_days": 322,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 9,
+     "unexplained": 9,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 1.2894758347907098,
+     "unexplained_per_venue_year": 1.2894758347907098,
+     "episode_precision": 0.4375,
+     "episode_f1": 0.56,
+     "alarm_day_share": 0.12597809076682315
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 32,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10774410774410774
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 6,
+     "alarm_days": 38,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.9483078809296287,
+     "unexplained_per_venue_year": 0.9483078809296287,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.016428880242109815
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 27,
+     "alarm_days": 392,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 16,
+     "unexplained": 16,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 1.1372507682702366,
+     "unexplained_per_venue_year": 1.1372507682702366,
+     "episode_precision": 0.4074074074074074,
+     "episode_f1": 0.4888888888888889,
+     "alarm_day_share": 0.07588075880758807
+    }
+   },
+   "100": {
+    "param": {
+     "threshold_bps": 100.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 13,
+     "alarm_days": 302,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 1.0029256492816632,
+     "unexplained_per_venue_year": 1.0029256492816632,
+     "episode_precision": 0.46153846153846156,
+     "episode_f1": 0.5793103448275861,
+     "alarm_day_share": 0.11815336463223787
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 31,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.10437710437710437
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 34,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.014699524427150886
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 25,
+     "alarm_days": 367,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 15,
+     "unexplained": 15,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 1.0661725952533467,
+     "unexplained_per_venue_year": 1.0661725952533467,
+     "episode_precision": 0.4,
+     "episode_f1": 0.4835164835164836,
+     "alarm_day_share": 0.07104142469996129
+    }
+   },
+   "150": {
+    "param": {
+     "threshold_bps": 150.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 254,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.28655018550904665,
+     "unexplained_per_venue_year": 0.28655018550904665,
+     "episode_precision": 0.8333333333333334,
+     "episode_f1": 0.8045977011494253,
+     "alarm_day_share": 0.09937402190923318
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 5,
+     "alarm_days": 28,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.3116863683974262,
+     "unexplained_per_venue_year": 1.3116863683974262,
+     "episode_precision": 0.8,
+     "episode_f1": 0.888888888888889,
+     "alarm_day_share": 0.09427609427609428
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 29,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.012537829658452227
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 24,
+     "alarm_days": 311,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.7107817301688979,
+     "unexplained_per_venue_year": 0.7107817301688979,
+     "episode_precision": 0.5833333333333334,
+     "episode_f1": 0.5968992248062015,
+     "alarm_day_share": 0.060201316298877275
+    }
+   },
+   "200": {
+    "param": {
+     "threshold_bps": 200.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 15,
+     "alarm_days": 216,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 1,
+     "unexplained": 1,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.14327509275452333,
+     "unexplained_per_venue_year": 0.14327509275452333,
+     "episode_precision": 0.9333333333333333,
+     "episode_f1": 0.8484848484848485,
+     "alarm_day_share": 0.08450704225352113
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 3,
+     "alarm_days": 25,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 1.0,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 1.0,
+     "alarm_day_share": 0.08417508417508418
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 7,
+     "alarm_days": 20,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 7,
+     "unexplained": 7,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 1.1063591944179,
+     "unexplained_per_venue_year": 1.1063591944179,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.00864677907479464
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 25,
+     "alarm_days": 261,
+     "covered_positives": 18,
+     "caught": 11,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 14.069016655258954,
+     "recall": 0.6111111111111112,
+     "fa_per_venue_year": 0.5686253841351183,
+     "unexplained_per_venue_year": 0.5686253841351183,
+     "episode_precision": 0.68,
+     "episode_f1": 0.6437177280550774,
+     "alarm_day_share": 0.050522648083623695
+    }
+   },
+   "300": {
+    "param": {
+     "threshold_bps": 300.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 61183,
+     "evaluated_days": 2556,
+     "n_episodes": 12,
+     "alarm_days": 95,
+     "covered_positives": 9,
+     "caught": 7,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 6.979580196212639,
+     "recall": 0.7777777777777778,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8750000000000001,
+     "alarm_day_share": 0.03716744913928013
+    },
+    "binance_us": {
+     "evaluated_hours": 6683,
+     "evaluated_days": 297,
+     "n_episodes": 2,
+     "alarm_days": 22,
+     "covered_positives": 4,
+     "caught": 3,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 0.7623773671001597,
+     "recall": 0.75,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.8571428571428571,
+     "alarm_day_share": 0.07407407407407407
+    },
+    "coinbase": {
+     "evaluated_hours": 55463,
+     "evaluated_days": 2313,
+     "n_episodes": 5,
+     "alarm_days": 12,
+     "covered_positives": 5,
+     "caught": 0,
+     "false_alarm_episodes": 5,
+     "unexplained": 5,
+     "venue_years": 6.327059091946156,
+     "recall": 0.0,
+     "fa_per_venue_year": 0.7902565674413573,
+     "unexplained_per_venue_year": 0.7902565674413573,
+     "episode_precision": 0.0,
+     "episode_f1": 0.0,
+     "alarm_day_share": 0.005188067444876783
+    },
+    "pooled": {
+     "evaluated_hours": 123329,
+     "evaluated_days": 5166,
+     "n_episodes": 19,
+     "alarm_days": 129,
+     "covered_positives": 18,
+     "caught": 10,
+     "false_alarm_episodes": 5,
+     "unexplained": 5,
+     "venue_years": 14.069016655258954,
+     "recall": 0.5555555555555556,
+     "fa_per_venue_year": 0.35539086508444895,
+     "unexplained_per_venue_year": 0.35539086508444895,
+     "episode_precision": 0.7368421052631579,
+     "episode_f1": 0.6334841628959277,
+     "alarm_day_share": 0.02497096399535424
+    }
+   }
+  },
+  "b2": {
+   "3": {
+    "param": {
+     "k": 3.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 60955,
+     "evaluated_days": 2541,
+     "n_episodes": 49,
+     "alarm_days": 211,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 25,
+     "unexplained": 25,
+     "venue_years": 6.953570613734885,
+     "recall": 1.0,
+     "fa_per_venue_year": 3.59527520301862,
+     "unexplained_per_venue_year": 3.59527520301862,
+     "episode_precision": 0.4897959183673469,
+     "episode_f1": 0.6575342465753424,
+     "alarm_day_share": 0.08303817394726486
+    },
+    "binance_us": {
+     "evaluated_hours": 5903,
+     "evaluated_days": 251,
+     "n_episodes": 7,
+     "alarm_days": 66,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 0.6733972165183664,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.9700152464848384,
+     "unexplained_per_venue_year": 2.9700152464848384,
+     "episode_precision": 0.7142857142857143,
+     "episode_f1": 0.8333333333333333,
+     "alarm_day_share": 0.26294820717131473
+    },
+    "coinbase": {
+     "evaluated_hours": 60933,
+     "evaluated_days": 2541,
+     "n_episodes": 42,
+     "alarm_days": 106,
+     "covered_positives": 5,
+     "caught": 3,
+     "false_alarm_episodes": 39,
+     "unexplained": 39,
+     "venue_years": 6.951060917180014,
+     "recall": 0.6,
+     "fa_per_venue_year": 5.610654325242479,
+     "unexplained_per_venue_year": 5.610654325242479,
+     "episode_precision": 0.07142857142857142,
+     "episode_f1": 0.1276595744680851,
+     "alarm_day_share": 0.04171585989767808
+    },
+    "pooled": {
+     "evaluated_hours": 127791,
+     "evaluated_days": 5333,
+     "n_episodes": 98,
+     "alarm_days": 383,
+     "covered_positives": 18,
+     "caught": 16,
+     "false_alarm_episodes": 66,
+     "unexplained": 66,
+     "venue_years": 14.578028747433265,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 4.527361081766322,
+     "unexplained_per_venue_year": 4.527361081766322,
+     "episode_precision": 0.32653061224489793,
+     "episode_f1": 0.47761194029850745,
+     "alarm_day_share": 0.07181698856178512
+    }
+   },
+   "4": {
+    "param": {
+     "k": 4.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 60955,
+     "evaluated_days": 2541,
+     "n_episodes": 38,
+     "alarm_days": 140,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 20,
+     "unexplained": 20,
+     "venue_years": 6.953570613734885,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.876220162414896,
+     "unexplained_per_venue_year": 2.876220162414896,
+     "episode_precision": 0.47368421052631576,
+     "episode_f1": 0.6428571428571429,
+     "alarm_day_share": 0.05509641873278237
+    },
+    "binance_us": {
+     "evaluated_hours": 5903,
+     "evaluated_days": 251,
+     "n_episodes": 7,
+     "alarm_days": 46,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 0.6733972165183664,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.9700152464848384,
+     "unexplained_per_venue_year": 2.9700152464848384,
+     "episode_precision": 0.7142857142857143,
+     "episode_f1": 0.8333333333333333,
+     "alarm_day_share": 0.18326693227091634
+    },
+    "coinbase": {
+     "evaluated_hours": 60933,
+     "evaluated_days": 2541,
+     "n_episodes": 26,
+     "alarm_days": 61,
+     "covered_positives": 5,
+     "caught": 3,
+     "false_alarm_episodes": 24,
+     "unexplained": 24,
+     "venue_years": 6.951060917180014,
+     "recall": 0.6,
+     "fa_per_venue_year": 3.452710353995372,
+     "unexplained_per_venue_year": 3.452710353995372,
+     "episode_precision": 0.07692307692307693,
+     "episode_f1": 0.13636363636363635,
+     "alarm_day_share": 0.024006296733569462
+    },
+    "pooled": {
+     "evaluated_hours": 127791,
+     "evaluated_days": 5333,
+     "n_episodes": 71,
+     "alarm_days": 247,
+     "covered_positives": 18,
+     "caught": 16,
+     "false_alarm_episodes": 46,
+     "unexplained": 46,
+     "venue_years": 14.578028747433265,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 3.1554334812310727,
+     "unexplained_per_venue_year": 3.1554334812310727,
+     "episode_precision": 0.352112676056338,
+     "episode_f1": 0.5044136191677175,
+     "alarm_day_share": 0.046315394712169514
+    }
+   },
+   "5": {
+    "param": {
+     "k": 5.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 60955,
+     "evaluated_days": 2541,
+     "n_episodes": 24,
+     "alarm_days": 92,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 12,
+     "unexplained": 12,
+     "venue_years": 6.953570613734885,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.7257320974489376,
+     "unexplained_per_venue_year": 1.7257320974489376,
+     "episode_precision": 0.5,
+     "episode_f1": 0.6666666666666666,
+     "alarm_day_share": 0.03620621802439984
+    },
+    "binance_us": {
+     "evaluated_hours": 5903,
+     "evaluated_days": 251,
+     "n_episodes": 7,
+     "alarm_days": 41,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 0.6733972165183664,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.9700152464848384,
+     "unexplained_per_venue_year": 2.9700152464848384,
+     "episode_precision": 0.7142857142857143,
+     "episode_f1": 0.8333333333333333,
+     "alarm_day_share": 0.16334661354581673
+    },
+    "coinbase": {
+     "evaluated_hours": 60933,
+     "evaluated_days": 2541,
+     "n_episodes": 17,
+     "alarm_days": 43,
+     "covered_positives": 5,
+     "caught": 3,
+     "false_alarm_episodes": 15,
+     "unexplained": 15,
+     "venue_years": 6.951060917180014,
+     "recall": 0.6,
+     "fa_per_venue_year": 2.1579439712471076,
+     "unexplained_per_venue_year": 2.1579439712471076,
+     "episode_precision": 0.11764705882352941,
+     "episode_f1": 0.19672131147540983,
+     "alarm_day_share": 0.016922471467926012
+    },
+    "pooled": {
+     "evaluated_hours": 127791,
+     "evaluated_days": 5333,
+     "n_episodes": 48,
+     "alarm_days": 176,
+     "covered_positives": 18,
+     "caught": 16,
+     "false_alarm_episodes": 29,
+     "unexplained": 29,
+     "venue_years": 14.578028747433265,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 1.9892950207761109,
+     "unexplained_per_venue_year": 1.9892950207761109,
+     "episode_precision": 0.3958333333333333,
+     "episode_f1": 0.5477477477477477,
+     "alarm_day_share": 0.03300206262891431
+    }
+   },
+   "6": {
+    "param": {
+     "k": 6.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 60955,
+     "evaluated_days": 2541,
+     "n_episodes": 18,
+     "alarm_days": 61,
+     "covered_positives": 9,
+     "caught": 9,
+     "false_alarm_episodes": 8,
+     "unexplained": 8,
+     "venue_years": 6.953570613734885,
+     "recall": 1.0,
+     "fa_per_venue_year": 1.1504880649659583,
+     "unexplained_per_venue_year": 1.1504880649659583,
+     "episode_precision": 0.5555555555555556,
+     "episode_f1": 0.7142857142857143,
+     "alarm_day_share": 0.024006296733569462
+    },
+    "binance_us": {
+     "evaluated_hours": 5903,
+     "evaluated_days": 251,
+     "n_episodes": 6,
+     "alarm_days": 32,
+     "covered_positives": 4,
+     "caught": 4,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 0.6733972165183664,
+     "recall": 1.0,
+     "fa_per_venue_year": 2.9700152464848384,
+     "unexplained_per_venue_year": 2.9700152464848384,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.8,
+     "alarm_day_share": 0.12749003984063745
+    },
+    "coinbase": {
+     "evaluated_hours": 60933,
+     "evaluated_days": 2541,
+     "n_episodes": 12,
+     "alarm_days": 33,
+     "covered_positives": 5,
+     "caught": 3,
+     "false_alarm_episodes": 10,
+     "unexplained": 10,
+     "venue_years": 6.951060917180014,
+     "recall": 0.6,
+     "fa_per_venue_year": 1.4386293141647384,
+     "unexplained_per_venue_year": 1.4386293141647384,
+     "episode_precision": 0.16666666666666666,
+     "episode_f1": 0.2608695652173913,
+     "alarm_day_share": 0.012987012987012988
+    },
+    "pooled": {
+     "evaluated_hours": 127791,
+     "evaluated_days": 5333,
+     "n_episodes": 36,
+     "alarm_days": 126,
+     "covered_positives": 18,
+     "caught": 16,
+     "false_alarm_episodes": 20,
+     "unexplained": 20,
+     "venue_years": 14.578028747433265,
+     "recall": 0.8888888888888888,
+     "fa_per_venue_year": 1.371927600535249,
+     "unexplained_per_venue_year": 1.371927600535249,
+     "episode_precision": 0.4444444444444444,
+     "episode_f1": 0.5925925925925926,
+     "alarm_day_share": 0.023626476654790923
+    }
+   }
+  },
+  "b3": {
+   "25": {
+    "param": {
+     "threshold_bps": 25.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 25,
+     "alarm_days": 394,
+     "covered_positives": 3,
+     "caught": 3,
+     "false_alarm_episodes": 17,
+     "unexplained": 17,
+     "venue_years": 5.086698608259184,
+     "recall": 1.0,
+     "fa_per_venue_year": 3.342049786947746,
+     "unexplained_per_venue_year": 3.342049786947746,
+     "episode_precision": 0.32,
+     "episode_f1": 0.48484848484848486,
+     "alarm_day_share": 0.21171413218699625
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 25,
+     "alarm_days": 394,
+     "covered_positives": 3,
+     "caught": 3,
+     "false_alarm_episodes": 17,
+     "unexplained": 17,
+     "venue_years": 5.086698608259184,
+     "recall": 1.0,
+     "fa_per_venue_year": 3.342049786947746,
+     "unexplained_per_venue_year": 3.342049786947746,
+     "episode_precision": 0.32,
+     "episode_f1": 0.48484848484848486,
+     "alarm_day_share": 0.21171413218699625
+    }
+   },
+   "50": {
+    "param": {
+     "threshold_bps": 50.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 8,
+     "alarm_days": 202,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 1.179546983628616,
+     "unexplained_per_venue_year": 1.179546983628616,
+     "episode_precision": 0.25,
+     "episode_f1": 0.28571428571428575,
+     "alarm_day_share": 0.10854379365932294
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 8,
+     "alarm_days": 202,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 6,
+     "unexplained": 6,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 1.179546983628616,
+     "unexplained_per_venue_year": 1.179546983628616,
+     "episode_precision": 0.25,
+     "episode_f1": 0.28571428571428575,
+     "alarm_day_share": 0.10854379365932294
+    }
+   },
+   "75": {
+    "param": {
+     "threshold_bps": 75.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 6,
+     "alarm_days": 170,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.3931823278762054,
+     "unexplained_per_venue_year": 0.3931823278762054,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.4444444444444444,
+     "alarm_day_share": 0.09134873723804406
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 6,
+     "alarm_days": 170,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.3931823278762054,
+     "unexplained_per_venue_year": 0.3931823278762054,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.4444444444444444,
+     "alarm_day_share": 0.09134873723804406
+    }
+   },
+   "100": {
+    "param": {
+     "threshold_bps": 100.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 6,
+     "alarm_days": 160,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.3931823278762054,
+     "unexplained_per_venue_year": 0.3931823278762054,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.4444444444444444,
+     "alarm_day_share": 0.08597528210639441
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 6,
+     "alarm_days": 160,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 2,
+     "unexplained": 2,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.3931823278762054,
+     "unexplained_per_venue_year": 0.3931823278762054,
+     "episode_precision": 0.6666666666666666,
+     "episode_f1": 0.4444444444444444,
+     "alarm_day_share": 0.08597528210639441
+    }
+   },
+   "150": {
+    "param": {
+     "threshold_bps": 150.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 5,
+     "alarm_days": 123,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.0660934981192907
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 5,
+     "alarm_days": 123,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.0660934981192907
+    }
+   },
+   "200": {
+    "param": {
+     "threshold_bps": 200.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 4,
+     "alarm_days": 89,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.04782375067168189
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 4,
+     "alarm_days": 89,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.04782375067168189
+    }
+   },
+   "300": {
+    "param": {
+     "threshold_bps": 300.0
+    },
+    "bitfinex": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 2,
+     "alarm_days": 42,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.022568511552928532
+    },
+    "binance_us": null,
+    "coinbase": null,
+    "pooled": {
+     "evaluated_hours": 44590,
+     "evaluated_days": 1861,
+     "n_episodes": 2,
+     "alarm_days": 42,
+     "covered_positives": 3,
+     "caught": 1,
+     "false_alarm_episodes": 0,
+     "unexplained": 0,
+     "venue_years": 5.086698608259184,
+     "recall": 0.3333333333333333,
+     "fa_per_venue_year": 0.0,
+     "unexplained_per_venue_year": 0.0,
+     "episode_precision": 1.0,
+     "episode_f1": 0.5,
+     "alarm_day_share": 0.022568511552928532
+    }
+   }
+  }
+ },
+ "curves": {
+  "detector_a0.25": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 0.7777777777777778,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 0.8888888888888888,
+      "fa_per_venue_year": 0.85965055652714,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 3.43860222610856,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.85965055652714,
+     "1": 3.43860222610856
+    }
+   },
+   "binance_us": {
+    "frontier": [
+     {
+      "recall": 0.75,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.0,
+     "1": 0.0
+    }
+   },
+   "coinbase": {
+    "frontier": [],
+    "max_recall": 0.0,
+    "at_recall": {
+     "0.6": null,
+     "0.7": null,
+     "0.85": null,
+     "1": null
+    }
+   },
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.5555555555555556,
+      "fa_per_venue_year": 0.35539086508444895,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.6111111111111112,
+      "fa_per_venue_year": 0.4975472111182285,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 0.6666666666666666,
+      "fa_per_venue_year": 0.9240162492195673,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 0.7222222222222222,
+      "fa_per_venue_year": 2.4877360555911427,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 0.7222222222222222,
+    "at_recall": {
+     "0.6": 0.4975472111182285,
+     "0.7": 2.4877360555911427,
+     "0.85": null,
+     "1": null
+    }
+   }
+  },
+  "detector_a0.1": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 0.6666666666666666,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=150"
+     },
+     {
+      "recall": 0.7777777777777778,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=150"
+     },
+     {
+      "recall": 0.8888888888888888,
+      "fa_per_venue_year": 0.42982527826357,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 2.8655018550904665,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.42982527826357,
+     "1": 2.8655018550904665
+    }
+   },
+   "binance_us": {
+    "frontier": [
+     {
+      "recall": 0.5,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.0,
+     "1": 0.0
+    }
+   },
+   "coinbase": {
+    "frontier": [],
+    "max_recall": 0.0,
+    "at_recall": {
+     "0.6": null,
+     "0.7": null,
+     "0.85": null,
+     "1": null
+    }
+   },
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.4444444444444444,
+      "fa_per_venue_year": 0.28431269206755916,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.6111111111111112,
+      "fa_per_venue_year": 0.5686253841351183,
+      "at": "threshold_bps=150"
+     },
+     {
+      "recall": 0.6666666666666666,
+      "fa_per_venue_year": 0.7818599031857877,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 0.7222222222222222,
+      "fa_per_venue_year": 2.345579709557363,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 0.7222222222222222,
+    "at_recall": {
+     "0.6": 0.5686253841351183,
+     "0.7": 2.345579709557363,
+     "0.85": null,
+     "1": null
+    }
+   }
+  },
+  "detector_a0.5": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 0.7777777777777778,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 0.8888888888888888,
+      "fa_per_venue_year": 0.85965055652714,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 3.86842750437213,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.85965055652714,
+     "1": 3.86842750437213
+    }
+   },
+   "binance_us": {
+    "frontier": [
+     {
+      "recall": 0.75,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.0,
+     "1": 0.0
+    }
+   },
+   "coinbase": {
+    "frontier": [],
+    "max_recall": 0.0,
+    "at_recall": {
+     "0.6": null,
+     "0.7": null,
+     "0.85": null,
+     "1": null
+    }
+   },
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.5555555555555556,
+      "fa_per_venue_year": 0.35539086508444895,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.6111111111111112,
+      "fa_per_venue_year": 0.4975472111182285,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 0.6666666666666666,
+      "fa_per_venue_year": 0.9240162492195673,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 0.7222222222222222,
+      "fa_per_venue_year": 2.700970574641812,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 0.7222222222222222,
+    "at_recall": {
+     "0.6": 0.4975472111182285,
+     "0.7": 2.700970574641812,
+     "0.85": null,
+     "1": null
+    }
+   }
+  },
+  "b1": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 0.7777777777777778,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.8888888888888888,
+      "fa_per_venue_year": 1.85856641931012,
+      "at": "threshold_bps=75"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 3.14526624806328,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 1.85856641931012,
+     "1": 3.14526624806328
+    }
+   },
+   "binance_us": {
+    "frontier": [
+     {
+      "recall": 0.75,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.0,
+     "1": 0.0
+    }
+   },
+   "coinbase": {
+    "frontier": [],
+    "max_recall": 0.0,
+    "at_recall": {
+     "0.6": null,
+     "0.7": null,
+     "0.85": null,
+     "1": null
+    }
+   },
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.5555555555555556,
+      "fa_per_venue_year": 0.6087922772414751,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.6111111111111112,
+      "fa_per_venue_year": 0.8793666226821306,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 0.6666666666666666,
+      "fa_per_venue_year": 2.232238349885409,
+      "at": "threshold_bps=25"
+     },
+     {
+      "recall": 0.7222222222222222,
+      "fa_per_venue_year": 2.232238349885409,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 0.7222222222222222,
+    "at_recall": {
+     "0.6": 0.8793666226821306,
+     "0.7": 2.232238349885409,
+     "0.85": null,
+     "1": null
+    }
+   }
+  },
+  "two_asset": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 0.7777777777777778,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.8888888888888888,
+      "fa_per_venue_year": 1.8625762058088031,
+      "at": "threshold_bps=50"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 4.441527875390223,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 1.8625762058088031,
+     "1": 4.441527875390223
+    }
+   },
+   "binance_us": {
+    "frontier": [
+     {
+      "recall": 0.75,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=200"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 0.0,
+     "0.7": 0.0,
+     "0.85": 0.0,
+     "1": 0.0
+    }
+   },
+   "coinbase": {
+    "frontier": [],
+    "max_recall": 0.0,
+    "at_recall": {
+     "0.6": null,
+     "0.7": null,
+     "0.85": null,
+     "1": null
+    }
+   },
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.5555555555555556,
+      "fa_per_venue_year": 0.35539086508444895,
+      "at": "threshold_bps=300"
+     },
+     {
+      "recall": 0.6111111111111112,
+      "fa_per_venue_year": 0.5686253841351183,
+      "at": "threshold_bps=200"
+     },
+     {
+      "recall": 0.6666666666666666,
+      "fa_per_venue_year": 1.634797979388465,
+      "at": "threshold_bps=50"
+     },
+     {
+      "recall": 0.7222222222222222,
+      "fa_per_venue_year": 2.985283266709371,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 0.7222222222222222,
+    "at_recall": {
+     "0.6": 0.5686253841351183,
+     "0.7": 2.985283266709371,
+     "0.85": null,
+     "1": null
+    }
+   }
+  },
+  "b2": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 1.1504880649659583,
+      "at": "k=6"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 1.1504880649659583,
+     "0.7": 1.1504880649659583,
+     "0.85": 1.1504880649659583,
+     "1": 1.1504880649659583
+    }
+   },
+   "binance_us": {
+    "frontier": [
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 2.9700152464848384,
+      "at": "k=3"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 2.9700152464848384,
+     "0.7": 2.9700152464848384,
+     "0.85": 2.9700152464848384,
+     "1": 2.9700152464848384
+    }
+   },
+   "coinbase": {
+    "frontier": [
+     {
+      "recall": 0.6,
+      "fa_per_venue_year": 1.4386293141647384,
+      "at": "k=6"
+     }
+    ],
+    "max_recall": 0.6,
+    "at_recall": {
+     "0.6": 1.4386293141647384,
+     "0.7": null,
+     "0.85": null,
+     "1": null
+    }
+   },
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.8888888888888888,
+      "fa_per_venue_year": 1.371927600535249,
+      "at": "k=6"
+     }
+    ],
+    "max_recall": 0.8888888888888888,
+    "at_recall": {
+     "0.6": 1.371927600535249,
+     "0.7": 1.371927600535249,
+     "0.85": 1.371927600535249,
+     "1": null
+    }
+   }
+  },
+  "b3": {
+   "bitfinex": {
+    "frontier": [
+     {
+      "recall": 0.3333333333333333,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=150"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 3.342049786947746,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 3.342049786947746,
+     "0.7": 3.342049786947746,
+     "0.85": 3.342049786947746,
+     "1": 3.342049786947746
+    }
+   },
+   "binance_us": null,
+   "coinbase": null,
+   "pooled": {
+    "frontier": [
+     {
+      "recall": 0.3333333333333333,
+      "fa_per_venue_year": 0.0,
+      "at": "threshold_bps=150"
+     },
+     {
+      "recall": 1.0,
+      "fa_per_venue_year": 3.342049786947746,
+      "at": "threshold_bps=25"
+     }
+    ],
+    "max_recall": 1.0,
+    "at_recall": {
+     "0.6": 3.342049786947746,
+     "0.7": 3.342049786947746,
+     "0.85": 3.342049786947746,
+     "1": 3.342049786947746
+    }
+   }
+  }
+ },
+ "dominance": {
+  "bitfinex": {
+   "b1": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 24,
+     "b1_false_alarms": 22,
+     "relation": "dominated"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 0.8888888888888888,
+     "b1_recall": 0.8888888888888888,
+     "detector_false_alarms": 9,
+     "b1_false_alarms": 20,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 0.8888888888888888,
+     "b1_recall": 0.8888888888888888,
+     "detector_false_alarms": 6,
+     "b1_false_alarms": 13,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 0.7777777777777778,
+     "b1_recall": 0.7777777777777778,
+     "detector_false_alarms": 3,
+     "b1_false_alarms": 9,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 0.7777777777777778,
+     "b1_recall": 0.7777777777777778,
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 3,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 0.7777777777777778,
+     "b1_recall": 0.7777777777777778,
+     "detector_false_alarms": 0,
+     "b1_false_alarms": 2,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.7777777777777778,
+     "b1_recall": 0.7777777777777778,
+     "detector_false_alarms": 0,
+     "b1_false_alarms": 0,
+     "relation": "identical"
+    }
+   ],
+   "two_asset": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 24,
+     "two_asset_false_alarms": 31,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 0.8888888888888888,
+     "two_asset_recall": 0.8888888888888888,
+     "detector_false_alarms": 9,
+     "two_asset_false_alarms": 13,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 0.8888888888888888,
+     "two_asset_recall": 0.7777777777777778,
+     "detector_false_alarms": 6,
+     "two_asset_false_alarms": 9,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 0.7777777777777778,
+     "two_asset_recall": 0.7777777777777778,
+     "detector_false_alarms": 3,
+     "two_asset_false_alarms": 7,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 0.7777777777777778,
+     "two_asset_recall": 0.7777777777777778,
+     "detector_false_alarms": 1,
+     "two_asset_false_alarms": 2,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 0.7777777777777778,
+     "two_asset_recall": 0.7777777777777778,
+     "detector_false_alarms": 0,
+     "two_asset_false_alarms": 1,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.7777777777777778,
+     "two_asset_recall": 0.7777777777777778,
+     "detector_false_alarms": 0,
+     "two_asset_false_alarms": 0,
+     "relation": "identical"
+    }
+   ]
+  },
+  "binance_us": {
+   "b1": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 2,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 1,
+     "b1_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 1.0,
+     "b1_recall": 1.0,
+     "detector_false_alarms": 0,
+     "b1_false_alarms": 0,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.75,
+     "b1_recall": 0.75,
+     "detector_false_alarms": 0,
+     "b1_false_alarms": 0,
+     "relation": "identical"
+    }
+   ],
+   "two_asset": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 1,
+     "two_asset_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 1,
+     "two_asset_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 1,
+     "two_asset_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 1,
+     "two_asset_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 1,
+     "two_asset_false_alarms": 1,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 1.0,
+     "two_asset_recall": 1.0,
+     "detector_false_alarms": 0,
+     "two_asset_false_alarms": 0,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.75,
+     "two_asset_recall": 0.75,
+     "detector_false_alarms": 0,
+     "two_asset_false_alarms": 0,
+     "relation": "identical"
+    }
+   ]
+  },
+  "coinbase": {
+   "b1": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 10,
+     "b1_false_alarms": 9,
+     "relation": "dominated"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 8,
+     "b1_false_alarms": 23,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 6,
+     "b1_false_alarms": 20,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 8,
+     "b1_false_alarms": 20,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 8,
+     "b1_false_alarms": 15,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 7,
+     "b1_false_alarms": 11,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.0,
+     "b1_recall": 0.0,
+     "detector_false_alarms": 5,
+     "b1_false_alarms": 9,
+     "relation": "dominates"
+    }
+   ],
+   "two_asset": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 10,
+     "two_asset_false_alarms": 10,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 8,
+     "two_asset_false_alarms": 9,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 6,
+     "two_asset_false_alarms": 6,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 8,
+     "two_asset_false_alarms": 7,
+     "relation": "dominated"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 8,
+     "two_asset_false_alarms": 7,
+     "relation": "dominated"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 7,
+     "two_asset_false_alarms": 7,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.0,
+     "two_asset_recall": 0.0,
+     "detector_false_alarms": 5,
+     "two_asset_false_alarms": 5,
+     "relation": "identical"
+    }
+   ]
+  },
+  "pooled": {
+   "b1": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 0.7222222222222222,
+     "b1_recall": 0.7222222222222222,
+     "detector_false_alarms": 35,
+     "b1_false_alarms": 33,
+     "relation": "dominated"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 0.6666666666666666,
+     "b1_recall": 0.6666666666666666,
+     "detector_false_alarms": 18,
+     "b1_false_alarms": 44,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 0.6666666666666666,
+     "b1_recall": 0.6666666666666666,
+     "detector_false_alarms": 13,
+     "b1_false_alarms": 34,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 0.6111111111111112,
+     "b1_recall": 0.6111111111111112,
+     "detector_false_alarms": 12,
+     "b1_false_alarms": 30,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 0.6111111111111112,
+     "b1_recall": 0.6111111111111112,
+     "detector_false_alarms": 10,
+     "b1_false_alarms": 19,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 0.6111111111111112,
+     "b1_recall": 0.6111111111111112,
+     "detector_false_alarms": 7,
+     "b1_false_alarms": 13,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.5555555555555556,
+     "b1_recall": 0.5555555555555556,
+     "detector_false_alarms": 5,
+     "b1_false_alarms": 9,
+     "relation": "dominates"
+    }
+   ],
+   "two_asset": [
+    {
+     "threshold_bps": 25.0,
+     "detector_recall": 0.7222222222222222,
+     "two_asset_recall": 0.7222222222222222,
+     "detector_false_alarms": 35,
+     "two_asset_false_alarms": 42,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 50.0,
+     "detector_recall": 0.6666666666666666,
+     "two_asset_recall": 0.6666666666666666,
+     "detector_false_alarms": 18,
+     "two_asset_false_alarms": 23,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 75.0,
+     "detector_recall": 0.6666666666666666,
+     "two_asset_recall": 0.6111111111111112,
+     "detector_false_alarms": 13,
+     "two_asset_false_alarms": 16,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 100.0,
+     "detector_recall": 0.6111111111111112,
+     "two_asset_recall": 0.6111111111111112,
+     "detector_false_alarms": 12,
+     "two_asset_false_alarms": 15,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 150.0,
+     "detector_recall": 0.6111111111111112,
+     "two_asset_recall": 0.6111111111111112,
+     "detector_false_alarms": 10,
+     "two_asset_false_alarms": 10,
+     "relation": "identical"
+    },
+    {
+     "threshold_bps": 200.0,
+     "detector_recall": 0.6111111111111112,
+     "two_asset_recall": 0.6111111111111112,
+     "detector_false_alarms": 7,
+     "two_asset_false_alarms": 8,
+     "relation": "dominates"
+    },
+    {
+     "threshold_bps": 300.0,
+     "detector_recall": 0.5555555555555556,
+     "two_asset_recall": 0.5555555555555556,
+     "detector_false_alarms": 5,
+     "two_asset_false_alarms": 5,
+     "relation": "identical"
+    }
+   ]
+  }
+ },
+ "exposure": {
+  "headline_point": {
+   "threshold_bps": 100.0,
+   "agreement": 0.25,
+   "b2_k": 4.0
+  },
+  "per_venue_method": {
+   "bitfinex": {
+    "detector": {
+     "evaluated_hours": 61183,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.979580196212639,
+     "venue_years_at_8760": 6.9843607305936075,
+     "false_alarm_episodes": 3,
+     "fa_per_venue_year": 0.42982527826357,
+     "fa_per_venue_year_at_8760": 0.4295310788944641,
+     "covered_positives": 9,
+     "caught": 7
+    },
+    "b1": {
+     "evaluated_hours": 61315,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.994638375541866,
+     "venue_years_at_8760": 6.9994292237442925,
+     "false_alarm_episodes": 9,
+     "fa_per_venue_year": 1.28669982875316,
+     "fa_per_venue_year_at_8760": 1.2858191307184212,
+     "covered_positives": 9,
+     "caught": 7
+    },
+    "two_asset": {
+     "evaluated_hours": 61183,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.979580196212639,
+     "venue_years_at_8760": 6.9843607305936075,
+     "false_alarm_episodes": 7,
+     "fa_per_venue_year": 1.0029256492816632,
+     "fa_per_venue_year_at_8760": 1.002239184087083,
+     "covered_positives": 9,
+     "caught": 7
+    },
+    "b2": {
+     "evaluated_hours": 60955,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.953570613734885,
+     "venue_years_at_8760": 6.958333333333333,
+     "false_alarm_episodes": 20,
+     "fa_per_venue_year": 2.876220162414896,
+     "fa_per_venue_year_at_8760": 2.874251497005988,
+     "covered_positives": 9,
+     "caught": 9
+    },
+    "b3": {
+     "evaluated_hours": 44590,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 5.086698608259184,
+     "venue_years_at_8760": 5.090182648401827,
+     "false_alarm_episodes": 2,
+     "fa_per_venue_year": 0.3931823278762054,
+     "fa_per_venue_year_at_8760": 0.3929132092397398,
+     "covered_positives": 3,
+     "caught": 1
+    }
+   },
+   "binance_us": {
+    "detector": {
+     "evaluated_hours": 6683,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 0.7623773671001597,
+     "venue_years_at_8760": 0.7628995433789955,
+     "false_alarm_episodes": 1,
+     "fa_per_venue_year": 1.3116863683974262,
+     "fa_per_venue_year_at_8760": 1.3107885680083795,
+     "covered_positives": 4,
+     "caught": 4
+    },
+    "b1": {
+     "evaluated_hours": 6983,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 0.796600501939311,
+     "venue_years_at_8760": 0.7971461187214612,
+     "false_alarm_episodes": 1,
+     "fa_per_venue_year": 1.2553343835027926,
+     "fa_per_venue_year_at_8760": 1.2544751539452956,
+     "covered_positives": 4,
+     "caught": 4
+    },
+    "two_asset": {
+     "evaluated_hours": 6683,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 0.7623773671001597,
+     "venue_years_at_8760": 0.7628995433789955,
+     "false_alarm_episodes": 1,
+     "fa_per_venue_year": 1.3116863683974262,
+     "fa_per_venue_year_at_8760": 1.3107885680083795,
+     "covered_positives": 4,
+     "caught": 4
+    },
+    "b2": {
+     "evaluated_hours": 5903,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 0.6733972165183664,
+     "venue_years_at_8760": 0.6738584474885845,
+     "false_alarm_episodes": 2,
+     "fa_per_venue_year": 2.9700152464848384,
+     "fa_per_venue_year_at_8760": 2.9679823818397426,
+     "covered_positives": 4,
+     "caught": 4
+    },
+    "b3": null
+   },
+   "coinbase": {
+    "detector": {
+     "evaluated_hours": 55463,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.327059091946156,
+     "venue_years_at_8760": 6.331392694063927,
+     "false_alarm_episodes": 8,
+     "fa_per_venue_year": 1.2644105079061716,
+     "fa_per_venue_year_at_8760": 1.2635450660800893,
+     "covered_positives": 5,
+     "caught": 0
+    },
+    "b1": {
+     "evaluated_hours": 61293,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.992128678986996,
+     "venue_years_at_8760": 6.9969178082191785,
+     "false_alarm_episodes": 20,
+     "fa_per_venue_year": 2.8603592579903085,
+     "fa_per_venue_year_at_8760": 2.8584014487788165,
+     "covered_positives": 5,
+     "caught": 0
+    },
+    "two_asset": {
+     "evaluated_hours": 55463,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.327059091946156,
+     "venue_years_at_8760": 6.331392694063927,
+     "false_alarm_episodes": 7,
+     "fa_per_venue_year": 1.1063591944179,
+     "fa_per_venue_year_at_8760": 1.1056019328200781,
+     "covered_positives": 5,
+     "caught": 0
+    },
+    "b2": {
+     "evaluated_hours": 60933,
+     "hours_per_year_divisor": 8766.0,
+     "venue_years": 6.951060917180014,
+     "venue_years_at_8760": 6.955821917808219,
+     "false_alarm_episodes": 24,
+     "fa_per_venue_year": 3.452710353995372,
+     "fa_per_venue_year_at_8760": 3.450347102555266,
+     "covered_positives": 5,
+     "caught": 3
+    },
+    "b3": null
+   }
+  },
+  "pooled_detector_denominator": {
+   "covered_entries": 18,
+   "unique_covered_labels": 15,
+   "unique_caught_at_any_venue": 11,
+   "labels_counted_at_several_venues": [
+    "BST-2020-01",
+    "BST-2023-01"
+   ]
+  },
+  "binance_us_note": "Binance.US: detector and B1 both have 1 false-alarm episode(s); the rates 1.31 vs 1.26 differ only because the detector is evaluated on 6,683 hours (BTC and the second-asset gap both present) and B1 on 6,983 hours (BTC gap present).",
+  "recall_denominators": {
+   "bitfinex": {
+    "positives_in_scope": 9,
+    "own_venue_positives": 7,
+    "reference_side_bitstamp_positives": 2,
+    "covered_by_method_at_headline": {
+     "detector": 9,
+     "b1": 9,
+     "two_asset": 9,
+     "b2": 9,
+     "b3": 3
+    },
+    "positives": [
+     {
+      "id": "BFX-2017-01",
+      "type": "banking_partner_loss",
+      "label_venue": "bitfinex",
+      "window": [
+       "2017-03-01",
+       "2017-07-08"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BFX-2017-02",
+      "type": "deposit_pause",
+      "label_venue": "bitfinex",
+      "window": [
+       "2017-03-19",
+       "2017-07-17"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BFX-2018-01",
+      "type": "withdrawal_delay",
+      "label_venue": "bitfinex",
+      "window": [
+       "2017-12-11",
+       "2018-05-21"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BFX-2018-02",
+      "type": "withdrawal_delay",
+      "label_venue": "bitfinex",
+      "window": [
+       "2018-04-01",
+       "2018-12-31"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BFX-2018-03",
+      "type": "banking_partner_loss",
+      "label_venue": "bitfinex",
+      "window": [
+       "2018-08-31",
+       "2018-12-29"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BFX-2018-04",
+      "type": "deposit_pause",
+      "label_venue": "bitfinex",
+      "window": [
+       "2018-09-11",
+       "2018-10-16"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BFX-2018-06",
+      "type": "banking_partner_loss",
+      "label_venue": "bitfinex",
+      "window": [
+       "2018-11-01",
+       "2019-07-24"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BST-2020-01",
+      "type": "banking_partner_loss",
+      "label_venue": "bitstamp",
+      "window": [
+       "2020-10-18",
+       "2021-02-15"
+      ],
+      "covered": true,
+      "caught": false
+     },
+     {
+      "id": "BST-2023-01",
+      "type": "rail_shutdown",
+      "label_venue": "bitstamp",
+      "window": [
+       "2023-01-31",
+       "2023-05-31"
+      ],
+      "covered": true,
+      "caught": false
+     }
+    ]
+   },
+   "binance_us": {
+    "positives_in_scope": 6,
+    "own_venue_positives": 4,
+    "reference_side_bitstamp_positives": 2,
+    "covered_by_method_at_headline": {
+     "detector": 4,
+     "b1": 4,
+     "two_asset": 4,
+     "b2": 4,
+     "b3": null
+    },
+    "positives": [
+     {
+      "id": "BST-2020-01",
+      "type": "banking_partner_loss",
+      "label_venue": "bitstamp",
+      "window": [
+       "2020-10-18",
+       "2021-02-15"
+      ],
+      "covered": false,
+      "caught": false
+     },
+     {
+      "id": "BST-2023-01",
+      "type": "rail_shutdown",
+      "label_venue": "bitstamp",
+      "window": [
+       "2023-01-31",
+       "2023-05-31"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BUS-2023-01",
+      "type": "banking_partner_loss",
+      "label_venue": "binance_us",
+      "window": [
+       "2023-02-10",
+       "2023-07-08"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BUS-2023-02",
+      "type": "deposit_pause",
+      "label_venue": "binance_us",
+      "window": [
+       "2023-05-09",
+       "2023-09-07"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BUS-2023-03",
+      "type": "withdrawal_delay",
+      "label_venue": "binance_us",
+      "window": [
+       "2023-05-10",
+       "2023-06-22"
+      ],
+      "covered": true,
+      "caught": true
+     },
+     {
+      "id": "BUS-2023-04",
+      "type": "rail_shutdown",
+      "label_venue": "binance_us",
+      "window": [
+       "2023-05-23",
+       "2025-02-18"
+      ],
+      "covered": false,
+      "caught": false
+     }
+    ]
+   },
+   "coinbase": {
+    "positives_in_scope": 5,
+    "own_venue_positives": 3,
+    "reference_side_bitstamp_positives": 2,
+    "covered_by_method_at_headline": {
+     "detector": 5,
+     "b1": 5,
+     "two_asset": 5,
+     "b2": 5,
+     "b3": null
+    },
+    "positives": [
+     {
+      "id": "BST-2020-01",
+      "type": "banking_partner_loss",
+      "label_venue": "bitstamp",
+      "window": [
+       "2020-10-18",
+       "2021-02-15"
+      ],
+      "covered": true,
+      "caught": false
+     },
+     {
+      "id": "BST-2023-01",
+      "type": "rail_shutdown",
+      "label_venue": "bitstamp",
+      "window": [
+       "2023-01-31",
+       "2023-05-31"
+      ],
+      "covered": true,
+      "caught": false
+     },
+     {
+      "id": "CB-2022-01",
+      "type": "withdrawal_delay",
+      "label_venue": "coinbase",
+      "window": [
+       "2022-09-02",
+       "2022-10-02"
+      ],
+      "covered": true,
+      "caught": false
+     },
+     {
+      "id": "CB-2023-01",
+      "type": "banking_partner_loss",
+      "label_venue": "coinbase",
+      "window": [
+       "2023-01-31",
+       "2023-05-31"
+      ],
+      "covered": true,
+      "caught": false
+     },
+     {
+      "id": "CB-2023-02",
+      "type": "rail_shutdown",
+      "label_venue": "coinbase",
+      "window": [
+       "2023-02-18",
+       "2023-06-18"
+      ],
+      "covered": true,
+      "caught": false
+     }
+    ]
+   }
+  },
+  "recall_note": "A positive is covered when at least half of its truth-window days have evaluated hours. Under D1 reference-side Bitstamp labels (BST-*) are positives at every venue measured against Bitstamp, so the pooled covered count adds each such label once per venue where it is covered. B2 loses its first 30 days of each series to the trailing window, which can change coverage.",
+  "false_alarm_denominator": "evaluated venue-hours / HOURS_PER_YEAR; the module divisor is 24 x 365.25 = 8,766, and the _at_8760 columns repeat the rate with 8,760.",
+  "label_file_positive_counts": {
+   "positives_by_label_venue": {
+    "binance_us": 4,
+    "bitfinex": 7,
+    "bitstamp": 2,
+    "coinbase": 3,
+    "kraken": 3
+   },
+   "excluded": {
+    "CB-2019-01": "GBP rail; the monitored quantity is the USD ledger (amendment D1)"
+   }
+  }
+ },
+ "timeline": {
+  "daily_btc_gap_source": "reports/unit_td/probe.json daily_gaps_bps/bitfinex-bitstamp/BTC (Bitfinex minus Bitstamp, bps)",
+  "first_day_above_100bps_2018H2": "2018-10-10",
+  "first_day_gap_bps": 128.639,
+  "runs_above_100bps_2018H2": [
+   {
+    "start": "2018-10-10",
+    "end": "2018-10-31",
+    "days": 22,
+    "max_abs_bps": 603.391
+   },
+   {
+    "start": "2018-11-02",
+    "end": "2018-11-02",
+    "days": 1,
+    "max_abs_bps": 111.269
+   },
+   {
+    "start": "2018-11-07",
+    "end": "2018-12-31",
+    "days": 55,
+    "max_abs_bps": 421.582
+   }
+  ],
+  "first_run_days": 22,
+  "runs_above_100bps_first_day_to_day_before_nyag": [
+   {
+    "start": "2018-10-10",
+    "end": "2018-10-31",
+    "days": 22,
+    "max_abs_bps": 603.391
+   },
+   {
+    "start": "2018-11-02",
+    "end": "2018-11-02",
+    "days": 1,
+    "max_abs_bps": 111.269
+   },
+   {
+    "start": "2018-11-07",
+    "end": "2019-04-02",
+    "days": 147,
+    "max_abs_bps": 421.582
+   },
+   {
+    "start": "2019-04-06",
+    "end": "2019-04-07",
+    "days": 2,
+    "max_abs_bps": 104.736
+   }
+  ],
+  "days_above_100bps_first_day_to_day_before_nyag": 172,
+  "calendar_days_first_day_to_nyag": 197,
+  "months_first_day_to_nyag": 6.471747700394218,
+  "hourly_daily_median_runs_above_100bps_2018H2": [
+   {
+    "start": "2018-10-10",
+    "end": "2018-10-31",
+    "days": 22,
+    "max_abs_bps": 607.1362610411591
+   },
+   {
+    "start": "2018-11-02",
+    "end": "2018-11-02",
+    "days": 1,
+    "max_abs_bps": 109.99032455387692
+   },
+   {
+    "start": "2018-11-06",
+    "end": "2018-12-31",
+    "days": 56,
+    "max_abs_bps": 423.94112694519754
+   }
+  ],
+  "first_alarm_day_2018H2_by_method_at_100bps": {
+   "detector": "2018-10-08",
+   "b1": "2018-10-08",
+   "two_asset": "2018-10-08",
+   "b2": "2018-09-06"
+  },
+  "label_dates": {
+   "first_public_reports_bitfinex_positives": [
+    {
+     "id": "BFX-2017-01",
+     "type": "banking_partner_loss",
+     "first_public_report_date": "2017-04-09",
+     "impairment_start": "2017-03-31",
+     "evidence_quality": "major_outlet"
+    },
+    {
+     "id": "BFX-2017-02",
+     "type": "deposit_pause",
+     "first_public_report_date": "2017-04-18",
+     "impairment_start": "2017-04-18",
+     "evidence_quality": "major_outlet"
+    },
+    {
+     "id": "BFX-2018-01",
+     "type": "withdrawal_delay",
+     "first_public_report_date": "2018-02-20",
+     "impairment_start": "2018-01-10",
+     "evidence_quality": "secondary"
+    },
+    {
+     "id": "BFX-2018-02",
+     "type": "withdrawal_delay",
+     "first_public_report_date": "2019-04-30",
+     "impairment_start": "2018-05-01",
+     "evidence_quality": "major_outlet"
+    },
+    {
+     "id": "BFX-2018-03",
+     "type": "banking_partner_loss",
+     "first_public_report_date": "2018-09-30",
+     "impairment_start": "2018-09-30",
+     "evidence_quality": "secondary"
+    },
+    {
+     "id": "BFX-2018-04",
+     "type": "deposit_pause",
+     "first_public_report_date": "2018-10-11",
+     "impairment_start": "2018-10-11",
+     "evidence_quality": "major_outlet"
+    },
+    {
+     "id": "BFX-2018-06",
+     "type": "banking_partner_loss",
+     "first_public_report_date": "2019-04-25",
+     "impairment_start": "2018-12-01",
+     "evidence_quality": "major_outlet"
+    }
+   ],
+   "first_public_deposit_pause_report": {
+    "id": "BFX-2018-04",
+    "type": "deposit_pause",
+    "first_public_report_date": "2018-10-11",
+    "impairment_start": "2018-10-11",
+    "evidence_quality": "major_outlet"
+   },
+   "first_public_banking_partner_report_2018": {
+    "id": "BFX-2018-03",
+    "type": "banking_partner_loss",
+    "first_public_report_date": "2018-09-30",
+    "impairment_start": "2018-09-30",
+    "evidence_quality": "secondary"
+   },
+   "nyag_disclosure": {
+    "id": "BFX-2018-06",
+    "type": "banking_partner_loss",
+    "first_public_report_date": "2019-04-25",
+    "impairment_start": "2018-12-01",
+    "evidence_quality": "major_outlet"
+   }
+  },
+  "framing": "The price measured the impairment continuously from 2018-10-10 (first day the daily Bitfinex-Bitstamp BTC gap exceeded 100 bps in 2018-H2), while the documented disclosure of the loss came on 2019-04-25 (NYAG complaint). The Noble Bank and deposit-pause reports (2018-09-30, 2018-10-11) were public earlier and are labels, not prices."
+ },
+ "data": {
+  "months_requested": [
+   "2017-01",
+   "2023-12"
+  ],
+  "binance_us_months_on_disk": [
+   "2022-10",
+   "2022-11",
+   "2023-01",
+   "2023-02",
+   "2023-03",
+   "2023-04",
+   "2023-05",
+   "2023-06",
+   "2023-07",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ],
+  "missing_months": {
+   "bitstamp:BTCUSD": [
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10"
+   ],
+   "bitstamp:ETHUSD": [
+    "2017-01",
+    "2017-02",
+    "2017-03",
+    "2017-04",
+    "2017-05",
+    "2017-06",
+    "2017-07",
+    "2017-08"
+   ],
+   "bitstamp:USDTUSD": [
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08"
+   ]
+  },
+  "hours": {
+   "bitfinex": {
+    "L": 61315,
+    "S": 61193
+   },
+   "binance_us": {
+    "L": 6983,
+    "S": 9550
+   },
+   "coinbase": {
+    "L": 61293,
+    "S": 55483
+   }
+  }
+ }
+}
