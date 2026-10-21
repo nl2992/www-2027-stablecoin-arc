@@ -6,6 +6,7 @@ oracle_pilot_table.tex and t2_breakdown_table.tex. Sources:
   reports/unit_td/dev_724455b.txt       (``uv run python -m www_auto.record_dev``; dev mode only)
   autoresearch/final_test_724455b.log   (the single locked test run; parsed, never re-run)
   autoresearch/results_unit_td_run1.tsv (loop log)
+  reports/unit_td/anchor.json           (``uv run python -m www_auto.anchor``; stablecoin anchor test, macros NumUAnchor*)
   reports/rescue/detector_eval.json, reports/audit/usdc_2023_pilot.json, reports/unit_td/t2_breakdown.json
 Run: ``uv run python -m www_paper.unit_macros``.
 """
@@ -36,6 +37,8 @@ T2 = ROOT / "reports/unit_td/t2_breakdown.json"
 DECOMP = ROOT / "reports/rescue/decomposition.json"
 LABELS = ROOT / "configs/fiat_rail_labels.json"
 LABEL_TABLE = GEN / "label_list_table.tex"
+ANCHOR = ROOT / "reports/unit_td/anchor.json"
+ANCHOR_TABLE = GEN / "anchor_table.tex"
 
 PAIRS = (("bitfinex-bitstamp", "Bitfinex--Bitstamp"), ("bitfinex-coinbase", "Bitfinex--Coinbase"),
          ("coinbase-bitstamp", "Coinbase--Bitstamp"))
@@ -211,9 +214,88 @@ def numbers() -> str:
     m += [("NumUUsdcPeakBps", _num(cb_["D_max_bps"], 0), f"{pj2} contamination/BTC/USD/core_window_hourly/D_max_bps"),
           ("NumUUsdcHoursGeHundred", str(cb_["hours_with_D_ge_100bps"]),
            f"{pj2} contamination/BTC/USD/core_window_hourly/hours_with_D_ge_100bps")]
+    m += anchor_macros()
     lines = [HEADER]
     lines += [f"\\newcommand{{\\{name}}}{{{value}}} % {src}" for name, value, src in m]
     return "\n".join(lines) + "\n"
+
+
+# ---------------------------------------------------------------- stablecoin anchor test
+
+STRESS_KEY = "stress_2018-11-27_2019-05-31"
+
+
+def anchor_macros() -> list[tuple[str, str, str]]:
+    a = _load(ANCHOR)
+    aj = "reports/unit_td/anchor.json"
+    bfx, bn, pl = a["bitfinex"]["slices"], a["binance_us"]["slices"], a["placebo"]["thr20_2022-04_2023"]
+    st, y19, jj = bfx[STRESS_KEY], bfx["2019"], bn["jun_jul_2023"]
+    dem = a["bitfinex"]["demand_alternative"]["all_usdt_hours_2018-11-27_on"]
+    dst = a["bitfinex"]["demand_alternative"][STRESS_KEY]
+    pk = f"{aj} placebo/thr20_2022-04_2023"
+    return [
+        ("NumUAnchorStressHours", _num(st["hours_big"], 0), f"{aj} bitfinex/slices/{STRESS_KEY}/hours_big (hours with |L| >= 50 bps)"),
+        ("NumUAnchorStressL", _num(st["median_L"], 0), f"{aj} bitfinex/slices/{STRESS_KEY}/median_L"),
+        ("NumUAnchorStressD", _num(st["median_D"], 0), f"{aj} bitfinex/slices/{STRESS_KEY}/median_D"),
+        ("NumUAnchorStressT", _num(st["median_T"], 0), f"{aj} bitfinex/slices/{STRESS_KEY}/median_T"),
+        ("NumUAnchorStressShare", _pct(st["share_abs_T_le_quarter_L"]), f"{aj} bitfinex/slices/{STRESS_KEY}/share_abs_T_le_quarter_L (percent)"),
+        ("NumUAnchorStressSlope", f"{st['daily_slope']:.2f}", f"{aj} bitfinex/slices/{STRESS_KEY}/daily_slope"),
+        ("NumUAnchorStressSlopeLo", f"{st['daily_slope_ci95'][0]:.2f}", f"{aj} bitfinex/slices/{STRESS_KEY}/daily_slope_ci95[0]"),
+        ("NumUAnchorStressSlopeHi", f"{st['daily_slope_ci95'][1]:.2f}", f"{aj} bitfinex/slices/{STRESS_KEY}/daily_slope_ci95[1]"),
+        ("NumUAnchorBfxDailyCorr", f"{y19['daily_corr']:.2f}", f"{aj} bitfinex/slices/2019/daily_corr"),
+        ("NumUAnchorBfxSlope", f"{y19['daily_slope']:.2f}", f"{aj} bitfinex/slices/2019/daily_slope"),
+        ("NumUAnchorBfxSlopeLo", f"{y19['daily_slope_ci95'][0]:.2f}", f"{aj} bitfinex/slices/2019/daily_slope_ci95[0]"),
+        ("NumUAnchorBfxSlopeHi", f"{y19['daily_slope_ci95'][1]:.2f}", f"{aj} bitfinex/slices/2019/daily_slope_ci95[1]"),
+        ("NumUAnchorBnusL", _num(jj["median_L"], 0), f"{aj} binance_us/slices/jun_jul_2023/median_L (hours with |L| >= 50 bps)"),
+        ("NumUAnchorBnusD", _num(jj["median_D"], 0), f"{aj} binance_us/slices/jun_jul_2023/median_D"),
+        ("NumUAnchorBnusT", _num(jj["median_T"], 1), f"{aj} binance_us/slices/jun_jul_2023/median_T"),
+        ("NumUAnchorBnusSlope", f"{jj['daily_slope']:.2f}", f"{aj} binance_us/slices/jun_jul_2023/daily_slope"),
+        ("NumUAnchorDemandShare", _pct(dem["share_not_following"]),
+         f"{aj} bitfinex/demand_alternative/all_usdt_hours_2018-11-27_on/share_not_following (percent; BTC and ETH gaps agree, |T| > 0.5|L|)"),
+        ("NumUAnchorDemandHours", _num(dem["hours_agree"], 0), f"{aj} bitfinex/demand_alternative/all_usdt_hours_2018-11-27_on/hours_agree"),
+        ("NumUAnchorDemandStressShare", _pct(dst["share_not_following"]),
+         f"{aj} bitfinex/demand_alternative/{STRESS_KEY}/share_not_following (percent)"),
+        ("NumUAnchorPlaceboHours", _num(pl["hours_big"], 0), f"{pk}/hours_big (Coinbase--Bitstamp |gap| >= 20 bps, 2022-04 to 2023-12)"),
+        ("NumUAnchorPlaceboDays", _num(pl["days_big"], 0), f"{pk}/days_big"),
+        ("NumUAnchorPlaceboL", _num(pl["median_L"], 0), f"{pk}/median_L"),
+        ("NumUAnchorPlaceboD", _num(pl["median_D"], 0), f"{pk}/median_D (Bitstamp USDT/USD)"),
+        ("NumUAnchorPlaceboT", _num(pl["median_T"], 0), f"{pk}/median_T"),
+        ("NumUAnchorPlaceboSlope", f"{pl['all_hours_excl_token_events']['daily_slope']:.2f}",
+         f"{pk}/all_hours_excl_token_events/daily_slope (daily Bitstamp USDT/USD on the gap, 2022-05 and 2023-03 excluded)"),
+        ("NumUAnchorPlaceboSlopeAll", f"{pl['all_hours']['daily_slope']:.2f}", f"{pk}/all_hours/daily_slope (all days; driven by USDT token events)"),
+        ("NumUAnchorPlaceboShare", _pct(pl["share_abs_T_le_quarter_L"]), f"{pk}/share_abs_T_le_quarter_L (percent)"),
+    ]
+
+
+def _anchor_row(label: str, s: dict[str, Any]) -> str:
+    ci = s.get("daily_slope_ci95")
+    slope = "--" if "daily_slope" not in s else f"{_num(s['daily_slope'], 2)} [{_num(ci[0], 2)}, {_num(ci[1], 2)}]" if ci else _num(s["daily_slope"], 2)
+    if not s.get("hours_big"):
+        return f"{label} & 0 & -- & -- & -- & {slope} & -- \\\\"
+    return (f"{label} & {_num(s['hours_big'], 0)} & {_num(s['median_L'], 0)} & {_num(s['median_D'], 0)} & {_num(s['median_T'], 0)} & "
+            f"{slope} & {_pct(s['share_abs_T_le_quarter_L'])}\\% \\\\")
+
+
+def anchor_table() -> str:
+    a = _load(ANCHOR)
+    bfx, bn = a["bitfinex"]["slices"], a["binance_us"]["slices"]
+    pl = a["placebo"]["thr20_2022-04_2023"]
+    pa = pl["all_hours_excl_token_events"]  # without USDT's own token events (Terra 2022-05, SVB 2023-03)
+    placebo = {**pl, "daily_slope": pa["daily_slope"], "daily_slope_ci95": pa["daily_slope_ci95"]}
+    rows = [_anchor_row("Bitfinex stress, 2018-11-27 to 2019-05-31", bfx[STRESS_KEY])]
+    rows += [_anchor_row(f"Bitfinex {y}", bfx[str(y)]) for y in range(2018, 2024)]
+    rows += ["\\midrule", _anchor_row("Binance.US, June--July 2023", bn["jun_jul_2023"]),
+             _anchor_row("Binance.US, all of 2023", bn["year_2023"]), "\\midrule",
+             _anchor_row("Placebo: Coinbase--Bitstamp, Bitstamp USDT", placebo)]
+    return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
+            "\\caption{Stablecoin anchor test. $L$: hourly bitcoin gap of the venue against the open-rail reference (Bitstamp), bps; "
+            "$D$: $10^4\\log$ of the venue's USDT/USD price; $T=D-L$. Hours, medians and the share with $|T|\\le 0.25|L|$ use hours "
+            "with $|L|\\ge 50$ bps (placebo: $|L|\\ge 20$ bps between Coinbase and Bitstamp, with $D$ the Bitstamp USDT/USD price, "
+            "2022-04 to 2023-12; its slope excludes May 2022 and March 2023, the months of USDT's own token events). Slope: OLS slope of daily-median $D$ on daily-median $L$ with a 95\\% block-bootstrap interval "
+            "(weeks, 1,000 draws). A shift in the venue's dollar gives slope 1 and $T=0$; crypto-only demand gives slope 0.}\n"
+            "\\label{tab:anchor}\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}lrrrrrr@{}}\n\\toprule\n"
+            "Slice & Hours & Median $L$ & Median $D$ & Median $T$ & Slope [95\\% CI] & $|T|\\le 0.25|L|$ \\\\\n\\midrule\n"
+            + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
 
 
 # ---------------------------------------------------------------- tables
@@ -384,7 +466,7 @@ def main() -> None:
     GEN.mkdir(parents=True, exist_ok=True)
     for path, text in ((NUMBERS, numbers()), (DIAG_TABLE, diagnostic_table()), (HELDOUT_TABLE, heldout_table()),
                        (DETECTOR_TABLE, detector_table()), (ORACLE_TABLE, oracle_table()), (T2_TABLE, t2_table()),
-                       (LABEL_TABLE, label_table())):
+                       (LABEL_TABLE, label_table()), (ANCHOR_TABLE, anchor_table())):
         path.write_text(text)
         print(f"WROTE {path.relative_to(ROOT)}")
 

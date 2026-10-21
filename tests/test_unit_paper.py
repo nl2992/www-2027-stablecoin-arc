@@ -13,7 +13,7 @@ from www_paper.figures import FIAT_LABELS, PROBE_JSON, unit_rate
 ROOT = Path(__file__).parents[1]
 GENERATED = [(U.NUMBERS, U.numbers), (U.DIAG_TABLE, U.diagnostic_table), (U.HELDOUT_TABLE, U.heldout_table),
              (U.DETECTOR_TABLE, U.detector_table), (U.ORACLE_TABLE, U.oracle_table), (U.T2_TABLE, U.t2_table),
-             (U.LABEL_TABLE, U.label_table)]
+             (U.LABEL_TABLE, U.label_table), (U.ANCHOR_TABLE, U.anchor_table)]
 
 
 def digest(path):

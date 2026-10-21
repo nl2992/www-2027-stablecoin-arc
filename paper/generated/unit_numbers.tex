@@ -70,3 +70,30 @@
 \newcommand{\NumUOracleSlopeUsdc}{0.140} % reports/audit/usdc_2023_pilot.json contamination/USDC/USD (feed itself)/core_window_hourly/levels/slope
 \newcommand{\NumUUsdcPeakBps}{1,477} % reports/audit/usdc_2023_pilot.json contamination/BTC/USD/core_window_hourly/D_max_bps
 \newcommand{\NumUUsdcHoursGeHundred}{46} % reports/audit/usdc_2023_pilot.json contamination/BTC/USD/core_window_hourly/hours_with_D_ge_100bps
+\newcommand{\NumUAnchorStressHours}{3,848} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/hours_big (hours with |L| >= 50 bps)
+\newcommand{\NumUAnchorStressL}{256} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/median_L
+\newcommand{\NumUAnchorStressD}{199} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/median_D
+\newcommand{\NumUAnchorStressT}{\ensuremath{-}39} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/median_T
+\newcommand{\NumUAnchorStressShare}{50} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/share_abs_T_le_quarter_L (percent)
+\newcommand{\NumUAnchorStressSlope}{0.71} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/daily_slope
+\newcommand{\NumUAnchorStressSlopeLo}{0.56} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/daily_slope_ci95[0]
+\newcommand{\NumUAnchorStressSlopeHi}{0.88} % reports/unit_td/anchor.json bitfinex/slices/stress_2018-11-27_2019-05-31/daily_slope_ci95[1]
+\newcommand{\NumUAnchorBfxDailyCorr}{0.92} % reports/unit_td/anchor.json bitfinex/slices/2019/daily_corr
+\newcommand{\NumUAnchorBfxSlope}{0.77} % reports/unit_td/anchor.json bitfinex/slices/2019/daily_slope
+\newcommand{\NumUAnchorBfxSlopeLo}{0.66} % reports/unit_td/anchor.json bitfinex/slices/2019/daily_slope_ci95[0]
+\newcommand{\NumUAnchorBfxSlopeHi}{0.91} % reports/unit_td/anchor.json bitfinex/slices/2019/daily_slope_ci95[1]
+\newcommand{\NumUAnchorBnusL}{\ensuremath{-}413} % reports/unit_td/anchor.json binance_us/slices/jun_jul_2023/median_L (hours with |L| >= 50 bps)
+\newcommand{\NumUAnchorBnusD}{\ensuremath{-}411} % reports/unit_td/anchor.json binance_us/slices/jun_jul_2023/median_D
+\newcommand{\NumUAnchorBnusT}{\ensuremath{-}3.5} % reports/unit_td/anchor.json binance_us/slices/jun_jul_2023/median_T
+\newcommand{\NumUAnchorBnusSlope}{1.00} % reports/unit_td/anchor.json binance_us/slices/jun_jul_2023/daily_slope
+\newcommand{\NumUAnchorDemandShare}{21} % reports/unit_td/anchor.json bitfinex/demand_alternative/all_usdt_hours_2018-11-27_on/share_not_following (percent; BTC and ETH gaps agree, |T| > 0.5|L|)
+\newcommand{\NumUAnchorDemandHours}{4,633} % reports/unit_td/anchor.json bitfinex/demand_alternative/all_usdt_hours_2018-11-27_on/hours_agree
+\newcommand{\NumUAnchorDemandStressShare}{19} % reports/unit_td/anchor.json bitfinex/demand_alternative/stress_2018-11-27_2019-05-31/share_not_following (percent)
+\newcommand{\NumUAnchorPlaceboHours}{15} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/hours_big (Coinbase--Bitstamp |gap| >= 20 bps, 2022-04 to 2023-12)
+\newcommand{\NumUAnchorPlaceboDays}{8} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/days_big
+\newcommand{\NumUAnchorPlaceboL}{\ensuremath{-}21} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/median_L
+\newcommand{\NumUAnchorPlaceboD}{\ensuremath{-}12} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/median_D (Bitstamp USDT/USD)
+\newcommand{\NumUAnchorPlaceboT}{10} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/median_T
+\newcommand{\NumUAnchorPlaceboSlope}{0.50} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/all_hours_excl_token_events/daily_slope (daily Bitstamp USDT/USD on the gap, 2022-05 and 2023-03 excluded)
+\newcommand{\NumUAnchorPlaceboSlopeAll}{4.04} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/all_hours/daily_slope (all days; driven by USDT token events)
+\newcommand{\NumUAnchorPlaceboShare}{0} % reports/unit_td/anchor.json placebo/thr20_2022-04_2023/share_abs_T_le_quarter_L (percent)
