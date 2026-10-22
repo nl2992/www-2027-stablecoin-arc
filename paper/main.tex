@@ -13,6 +13,8 @@
 \input{generated/td_numbers}
 \input{generated/bench_numbers}
 \input{generated/theory_numbers}
+\input{generated/robust_anchor_numbers}
+\input{generated/kimchi_numbers}
 
 \acmConference[WWW '27]{Proceedings of the ACM Web Conference 2027}{2027}{}
 
@@ -257,7 +259,12 @@ the bitcoin quote error, rules out measurement error in $L$ as the source of the
 \NumKStressDayIvAdjWkLo{} to \NumKStressDayIvAdjWkHi{}). Bitfinex's bitcoin premium was therefore mostly a discount on
 the exchange dollar. Tether's own discount entered only the anchor, which is why the raw slope fell short of one. The
 HAC interval of the GMM estimate is narrower than the block-bootstrap interval and excludes one; we treat the bootstrap
-interval as the headline because the offset is persistent, and read the estimate as close to, not equal to, one. By year, the
+interval as the headline because the offset is persistent, and read the estimate as close to, not equal to, one. Across \NumRACells{} specifications fixed in advance (five windows,
+four instrument sets, three reference venues, two versions of $X$ and three block lengths), the GMM estimate ranged
+from \NumRAGmmMin{} to \NumRAGmmMax{} (median \NumRAGmmMed{}); every bootstrap interval excluded zero, and the window
+mattered most (the full grid is in the artifact). Kraken's USDT price itself fell as Bitfinex's offset widened
+(slope \NumRAAThreeSlope{}): Tether's own discount co-moved with Bitfinex's trouble, which is the contamination that
+netting removes and the model allows. By year, the
 adjusted slope was \NumKYTwoZeroOneEightDaySlopeAdj{} in 2018 (the raw slope there, \NumKYTwoZeroOneEightDaySlopeD{}, is
 above one on \NumKYTwoZeroOneEightDayN{} days) and \NumKYTwoZeroOneNineDaySlopeAdj{} in 2019. In the calm years it was
 lower (\NumKYTwoZeroTwoOneDaySlopeAdj{} in 2021 to \NumKYTwoZeroTwoThreeDaySlopeAdj{} in 2023), where gaps are a few
@@ -346,7 +353,7 @@ calm placebo X4 (\NumBStableXFourFuser{}), which failed the method's own check.
 
 The scope condition is therefore narrow and positive. Unit-aware fusion won when a large group of sources shared a unit
 and that unit moved by more than venue noise, as in the March 2023 USDC run. Where the shift touched a minority of sources,
-a median already absorbs it (Appendix~\ref{app:t2}), and correcting adds noise: the extra error in X4, where nothing
+a median already absorbs it (an injected-bias test in the artifact shows this), and correcting adds noise: the extra error in X4, where nothing
 needed correcting, is the price. Two sources are a different case. With Bitfinex and one open venue the median, CRH and GTM
 coincide and cannot say which dollar is off; the unit-aware fuser cut the median error in Bitfinex's 2018--19 stress from
 \NumTAllBothStressBfxTwentyEighteenNineteenMedianMed{} to \NumTAllBothStressBfxTwentyEighteenNineteenUnitAwareMed{} bps, about
@@ -438,6 +445,13 @@ estimated offset. Where only two sources quote, a median cannot say which unit i
 approach applies to platform credits, multi-currency marketplaces and loyalty points, wherever an anchor item with a known
 value exists; we have tested it only on crypto exchanges.
 
+\paragraph{A second application.} The same model applies to Korean exchanges, whose won prices carry the ``Kimchi''
+premium. In a pre-registered study, bitcoin, ether and XRP gaps on Upbit moved together in every window: the smallest
+pairwise correlation was \NumKREOneMinCorr{} in December 2017 to January 2018, when the bitcoin premium was
+\NumKREOneBtcPremPct\%, and \NumKRETwoMinCorr{} in spring 2021. USDT/KRW, the anchor, existed only from December 2023;
+in that window the anchored slope was \NumKRAnchMeanIv{} (interval \NumKRAnchMeanIvLo{} to \NumKRAnchMeanIvHi{}),
+mostly a won-unit wedge with some residual, on \NumKRAnchMeanN{} hours.
+
 \paragraph{Limits.} The diagnostic rests on three USD exchanges and the benchmark on three locked tests with few
 episodes each, so the scope condition is a pattern in a small sample, not an estimate. The estimator ties the plain
 median, so the evidence is for the unit model and not for a better estimator. The held-out score in calm years is a third
@@ -461,16 +475,6 @@ page limits and anonymity.
 \bibliography{references}
 
 \appendix
-\section{Fusion Under an Injected Unit Bias}
-\label{app:t2}
-\input{generated/t2_breakdown_table}
-Table~\ref{tab:t2} injects a constant or replayed unit bias on $k$ of three exchanges (BTC and ETH, calm window) and
-compares fusers. With $k=1$ the plain median, CRH-style source weighting and the default unit-aware median are
-unaffected on the grid, while the volume-weighted mean breaks down at 100~bps. With $k=2$ every fuser fails at the
-smallest bias, as it must: the two exchanges with the biased dollar form the majority, and nothing in prices says which
-dollar is the true one. A unit-aware fuser using a single asset's gap as the rate can be worse than the median when its
-reference is the biased exchange. Unit awareness adds information (which exchanges share a dollar), not accuracy.
-
 \section{Truth Discovery on Real Data}
 \label{app:td}
 \input{generated/td_realdata_table}
