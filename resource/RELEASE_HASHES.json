@@ -1,0 +1,20 @@
+{
+ "files": {
+  "anchor_usdt.csv": "f5a9e1067eb9c71aa1caefdbeaa80fdf4b1ababe95731522cc6c6a450726d0a8",
+  "anchor_usdt.parquet": "f2bc240c0137bf5379dec0d925d2219f05c260c19afb6032e4414d0e8a4b31f4",
+  "benchmark_results.csv": "6c9efb6b3f5020dbfb7f29bc5906589e500d9c911241d387c4778416285dcc6c",
+  "benchmark_results.parquet": "5d73914ae9186770aa91f398deb26576d813e2b25cd44baa99d50c41daadf58f",
+  "benchmark_splits.csv": "46d0175a876af2d5a45258363f18634085469fbc6eb51f2e90780d0a47d67247",
+  "benchmark_splits.parquet": "cca416edecb258429df1744554aa805b63442ef53d3c44f1c49612fe29f72917",
+  "benchmarks.json": "1168c216acfc87b248feeccd736fd71f19df7f5f1cdf5ea9bc5e9dcd23d8727e",
+  "fiat_rail_labels.csv": "b91b39e7305508595b6f6eb9a8120b35670620a86499358599efe2ed12706c08",
+  "fiat_rail_labels.parquet": "54edb88cd314f40177019984a529474232d92e024b0855b92cfa444f2729d9c8",
+  "provenance.json": "b45b3b24573c3a9b4b95596e36a61d3d1d1be870e2f5232c06c289000f53d5a2",
+  "schema.json": "56f984f9af62cebcc35c664b9ba504976e42161833e53650d8beb147f4592d13",
+  "unit_offsets_pairs.csv": "b207f223b7f66ced077eae4effd7f58946dbf2076bb5d4f7c8b2ecc19a6285e3",
+  "unit_offsets_pairs.parquet": "438f73abe77a01428ffdc0d830e681dd11e27653bca9de85839bd20652f08213",
+  "unit_offsets_stablecoin.csv": "50b4e7f7aa71d4c64c15c300033486d12c9597dc08b65e43f91353ee66bff8db",
+  "unit_offsets_stablecoin.parquet": "64cdb8c708ca05ab05c12617f634c204138fa141f3e770f2d4d8d310ceff3838"
+ },
+ "release_version": "1.0"
+}
