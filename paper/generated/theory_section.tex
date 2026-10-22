@@ -1,0 +1,49 @@
+% Theory of the anchored test. Needs generated/theory_numbers.tex (\NumG... macros); table: generated/theory_table.tex.
+% Uses the acmart `proposition' and `proof' environments.
+\subsection{Identification and inference for the anchored test}
+\label{sec:anchored-theory}
+\paragraph{Setup.} Take source $s$ against reference $r$ in hour $t$, in bps, with $u_{r,t}$ absorbed. Items other than the
+anchor share the offset $c_t=u_t+\delta_t$, where $u_t$ is the unit offset and $\delta_t$ is source-wide item demand, which
+enters every non-anchor item and not the anchor. The cross-item offset is $L_t=c_t+\varepsilon_t$. The anchor $k$ has true
+price $p^*_k\equiv 0$ up to its own deviation $x_t$, so its observed price is $D_t=u_t+x_t+\eta_t$. We measure $x_t$ on an
+independent venue, $X_t=x_t+\xi_t$, and use $Y_t=D_t-X_t=u_t+\eta_t-\xi_t$ (we write $\eta_t$ for $\eta_t-\xi_t$ below).
+The unit share of the offset is $\lambda=\mathrm{Cov}(u,c)/\mathrm{Var}(c)$: $\lambda=1$ under a pure unit shift
+($\delta\equiv0$) and $\lambda=0$ under pure demand ($u\equiv0$).
+\emph{A1} (additivity): the model above, with unit loading on $c$ for every non-anchor item.
+\emph{A2}: the reference venue's unit is stable over the window ($u_r$ is constant).
+\emph{A3}: $X$ measures $x$ on a venue whose error $\xi$ is independent of $(u,\delta,\varepsilon,\eta)$; $x$ may co-move with $c$.
+\emph{A4}: a second item's offset $Z_t=\gamma c_t+\nu_t$, $\gamma\neq0$, with $\nu$ independent of $(c,\eta,\varepsilon)$ and
+$\mathrm{Cov}(\eta,c)=\mathrm{Cov}(\varepsilon,\eta)=0$ (relevance and exclusion).
+
+\begin{proposition}
+Under A1--A4, $\beta=\mathrm{Cov}(D-X,Z)/\mathrm{Cov}(L,Z)=\lambda$. The OLS slope of $D-X$ on $L$ is
+$\lambda\,\mathrm{Var}(c)/(\mathrm{Var}(c)+\mathrm{Var}(\varepsilon))$, attenuated by the noise in $L$. Without the netting, the IV slope of $D$ on $L$ is
+$\lambda+\mathrm{Cov}(x,c)/\mathrm{Var}(c)$.
+\end{proposition}
+\begin{proof}
+$\mathrm{Cov}(Y,Z)=\gamma\,\mathrm{Cov}(u+\eta,c)=\gamma\,\mathrm{Cov}(u,c)$ and $\mathrm{Cov}(L,Z)=\gamma\,\mathrm{Var}(c)$ by A4; the ratio is $\lambda$. The
+OLS slope is $\mathrm{Cov}(u,c)/\mathrm{Var}(L)$ with $\mathrm{Var}(L)=\mathrm{Var}(c)+\mathrm{Var}(\varepsilon)$. Without $X$, $\mathrm{Cov}(D,Z)$ gains $\gamma\,\mathrm{Cov}(x,c)$.
+\end{proof}
+
+\paragraph{Over-identification.} With anchors $k=1..K$ and instruments $j=1..m$, the moments
+$E[z_j(Y_k-\mu_k-\lambda L)]=0$, $z=(1,Z_1,..,Z_m)$, identify one $\lambda$. Two-step GMM with a Bartlett HAC weight gives
+Hansen's $J\sim\chi^2_{Km-1}$ under the null. $J$ rejects a contaminated instrument or anchor-specific depegs with different
+loadings on $c$; it has no power against a depeg that loads on $c$ equally in every anchor, so the netting by $X$ is what
+removes that bias, not the test.
+
+\paragraph{Inference.} Hourly offsets are persistent ($\hat\rho_c=\NumGCalRhoC{}$ on the stress window), so we use HAC standard errors
+with Andrews' bandwidth (the fixed Newey--West rule is a check) and a moving-block bootstrap with block length
+$b=\lceil(2\rho^2/(1-\rho^2)^2)^{1/3}n^{1/3}\rceil$, $\rho$ the lag-one autocorrelation of the IV score.
+
+\paragraph{Evidence.} Table~\ref{tab:theory} gives \NumGSimReps{} simulated windows of \NumGSimHours{} hours per scenario,
+calibrated to the stress window. IV is unbiased in a pure shift (bias \NumGSOneBiasIv{}), a mixture (\NumGSThreeBiasIv{}), a netted depeg
+(\NumGSFiveBiasIv{}) and, with noise in $L$ as large as its signal, \NumGSSixBiasIv{}, where OLS is biased by
+\NumGSSixBiasOls{}. Leaving the depeg in gives a bias of \NumGSFourBiasIv{}, the gap between the data's \NumGBfxNaiveLam{} and \NumGBfxPrimaryLam{}.
+HAC intervals cover at \NumGSOneCover{} in a pure shift but at \NumGSThreeCover{} in the mixture, where the realised unit
+share varies by window; the block bootstrap is no better there (\NumGSThreeCoverBoot{}). $J$ has size \NumGSOneJRej{} but
+rejects at only \NumGSFourJRej{} when every anchor's depeg loads alike and at \NumGSSevenJRej{} when loadings differ.
+On the Bitfinex stress window, $\hat\lambda=\NumGBfxPrimaryLam{}$ (HAC 95\% interval \NumGBfxPrimaryLo{} to \NumGBfxPrimaryHi{};
+block bootstrap \NumGBfxBootLo{} to \NumGBfxBootHi{}), $J=\NumGBfxPrimaryJ{}$ ($p=\NumGBfxPrimaryJP{}$); $\lambda=0$ is rejected
+($p$ \NumGBfxPrimaryPZero{}), and so is $\lambda=1$ ($p$ \NumGBfxPrimaryPOne{}). Without the netting the
+estimate is \NumGBfxNaiveLam{}. Binance.US 2023 gives \NumGBusUsdtLam{} (\NumGBusUsdtLo{} to \NumGBusUsdtHi{}; $p=\NumGBusUsdtPOne{}$ for $\lambda=1$). Adding
+USDC netted with Bitstamp's USDC price, $J=\NumGBusTwoJ{}$ ($p$ \NumGBusTwoJP{}) rejects the over-identifying restrictions.

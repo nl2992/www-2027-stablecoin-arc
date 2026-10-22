@@ -1,0 +1,19 @@
+{
+ "source": "reports/unit_td/anchor_external.json definitions, series re-read from the held data",
+ "hours": 4434,
+ "sigma_c": 145.19344323644575,
+ "rho_c": 0.9949900367042648,
+ "lambda_hat_netted_ols": 0.96874638387311,
+ "sigma_eta": 13.806365007277003,
+ "rho_eta": 0.6545038286889215,
+ "phi_x_on_L": -0.25602279567610187,
+ "sigma_w": 70.02283885260084,
+ "rho_w": 0.9904907639573646,
+ "sd_E_minus_L": 11.54449659774954,
+ "rho_E_minus_L": 0.43174116429544346,
+ "sigma_eps": 8.163191829653725,
+ "rho_eps": 0.43174116429544346,
+ "sigma_ext": 6.0,
+ "rho_ext": 0.3,
+ "sigma_ext_note": "assumed: Kraken 1-minute-median vs 60-minute close differ by 2.0 bps (median) and 14.1 bps (p95) in anchor_external.json (crosscheck_60min_usdt_stress)"
+}
