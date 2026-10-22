@@ -1,0 +1,114 @@
+% Every empirical number is a \Num... macro from ../paper/generated. Do not type numbers by hand.
+\documentclass[preprint,10pt]{elsarticle}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref}
+\def\UrlBreaks{\do\/\do\-\do\.\do\_}
+\usepackage{adjustbox}
+\let\realtabular\tabular \let\endrealtabular\endtabular
+\AtBeginEnvironment{table*}{\renewenvironment{tabular}[1]{\begin{adjustbox}{max width=\textwidth}\realtabular{#1}}{\endrealtabular\end{adjustbox}}}
+\sloppy
+\input{../paper/generated/anchor_ext_numbers}
+\input{../paper/generated/unit_numbers}
+\input{../paper/generated/noise_numbers}
+\input{../paper/generated/posthoc_numbers}
+\input{../paper/generated/robust_numbers}
+
+\begin{document}
+\begin{frontmatter}
+\title{Two Discounts in One Premium: Bitfinex's Dollar and Tether}
+
+\begin{abstract}
+Bitfinex's bitcoin premium in 2018--19 mixed two discounts: one on Bitfinex's ledger dollar and one on Tether itself. Netting Tether's own external price, from Kraken, out of Bitfinex's USDT/USD price made it track Bitfinex's bitcoin gap one for one (slope \NumKStressDaySlopeAdj{}, up from \NumKStressDaySlopeD{}). Binance.US in 2023 was a pure ledger-dollar shift. Gaps shared across assets persisted in calm years, inside the fee band, and a single rate removed much of the gap on held-out assets.
+\end{abstract}
+
+\begin{keyword}
+cryptocurrency \sep exchange premium \sep stablecoin \sep Tether \sep law of one price
+\JEL G12 \sep G15
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+Bitcoin traded at a large premium on Bitfinex in 2018 and 2019. In the hours with a gap of at least 50 bps, the median gap to Bitstamp was \NumKStressMedL{} bps. The usual reading is a limit to arbitrage. Banking trouble kept dollars from reaching Bitfinex, and the gap persisted.
+
+That reading hides a second question. What is a dollar on Bitfinex? Bitfinex quotes in USD, but a USD balance there is a claim on the exchange. It is not a bank deposit. A shortfall in that claim moves every asset quoted in it. Tether (USDT) is a second claim. It is issued by a firm linked to Bitfinex, and its own price can leave par. A gap in bitcoin could then reflect the exchange dollar, Tether, or both.
+
+This letter separates the two. The exchange dollar moves all assets together, so gaps in bitcoin and ether share a common component. USDT is an anchor: if Bitfinex's dollar is at a discount, USDT/USD quoted on Bitfinex should move with the bitcoin gap. It did so only in part (slope \NumKStressDaySlopeD{}). The shortfall is the identification problem. Tether has its own discount outside Bitfinex. We observe it on Kraken. Netting Kraken's USDT/USD price out of Bitfinex's raised the slope to \NumKStressDaySlopeAdj{}, with a 95\% interval of \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}.
+
+The result changes what the premium measures. Part of it priced Bitfinex's ledger dollar. Part priced Tether. The two have different remedies and different risks. A trader who sold bitcoin on Bitfinex and bought it elsewhere would have faced the first. A holder of USDT would have faced the second.
+
+We relate to four literatures. Makarov and Schoar \citep{makarov2020trading} documented large, persistent gaps across exchanges and a component shared within a region. Griffin and Shams \citep{griffin2020untethered} linked Tether issuance on Bitfinex to bitcoin prices. Lyons and Viswanath-Natraj \citep{lyons2023keeps} studied what holds stablecoins to par. Flowerday et al. \citep{flowerday2026bitcoin} studied bitcoin on four exchanges to mid-2021 and discussed a discount on Bitfinex's dollar as one reading of the premium. They state that they do not decompose it. We do, and we test the split against an external price. Our contribution is the identification, not a new estimator.
+
+\section{Data and design}
+We use public candles for bitcoin and ether on Bitfinex, Coinbase and Bitstamp from 2017 to 2023, and hourly candles for nine further assets on Bitfinex and Coinbase. USDT/USD prices come from Bitfinex, Kraken and Binance.US. Binance.US candles cover 2022 to 2025. Bitstamp is the open-rail reference, and all hourly prices are medians of traded-minute closes.
+
+Let $L$ be the Bitfinex--Bitstamp bitcoin gap, in basis points of log price. Let $D$ be $10^4$ times the log of Bitfinex's USDT/USD price. If the gap in $L$ is a pure shift in Bitfinex's dollar, USDT moves with it: $D=L$, and the slope of $D$ on $L$ is one. If crypto demand lifts bitcoin but leaves USDT alone, the slope is zero. If Tether has its own discount $X$ that does not depend on Bitfinex, then $D=L+X$ plus noise. Let $X$ be $10^4$ times the log of Kraken's USDT/USD price. Then the slope of $D-X$ on $L$ is the clean test of the ledger-dollar shift. The residual $T=D-L$ is the part of USDT's move that the bitcoin gap does not explain.
+
+We estimate slopes by OLS on daily medians. Intervals are block bootstraps over weeks and months (1,000 draws). As a robustness check we instrument $L$ with the Bitfinex--Coinbase ether gap, which shares the ledger dollar but not the bitcoin quote error. Kraken's USDT market traded in \NumKCovSharePct\% of the hours of the stress window (\NumKCovTraded{} of \NumKCovHours{}), and the longest untraded run was \NumKCovLongestGap{} hour. Kraken's own bitcoin price stayed close to Bitstamp's, with a median absolute gap of \NumKStressKrakenBtcGapMedAbs{} bps in the stress window. We therefore take its USDT price as outside Bitfinex's ledger.
+
+\section{Results}
+\subsection{Two discounts on Bitfinex}
+\input{../paper/generated/anchor_ext_table}
+Bitfinex listed USDT/USD on 2018-11-27. The stress window runs from that date to 2019-05-31. Table~\ref{tab:anchor-ext} gives the results. The slope of $D$ on $L$ was \NumKStressDaySlopeD{}. A pure ledger-dollar shift predicts one, and demand alone predicts zero, so the first test pointed to a mix.
+
+The mix was Tether's own discount. In the large-gap hours, USDT traded at a median of \NumKStressMedX{} bps on Kraken. On Bitfinex the part of USDT that the bitcoin gap did not explain, $T$, had a median of \NumKStressMedT{} bps. The two series moved together, with an hourly correlation of \NumKStressCorrTX{}. The median difference $T-X$ was \NumKStressMedTmX{} bps.
+
+Once $X$ was netted out, the slope of $D-X$ on $L$ was \NumKStressDaySlopeAdj{}. The 95\% interval was \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{} over months and \NumKStressDaySlopeAdjWkLo{} to \NumKStressDaySlopeAdjWkHi{} over weeks. Hourly data gave the same estimate (\NumKStressHrSlopeAdj{}, from \NumKStressHrN{} hours). The instrumented slope was \NumKStressDayIvAdj{}. Bitfinex's bitcoin premium therefore had two parts. One was a discount on the exchange dollar. The other was Tether's own discount, which shows up as the gap between the raw slope and one.
+
+The year rows of Table~\ref{tab:anchor-ext} show how far the result extends. The adjusted slope was \NumKYTwoZeroOneEightDaySlopeAdj{} in 2018 and \NumKYTwoZeroOneNineDaySlopeAdj{} in 2019. It was lower in the calm years, from \NumKYTwoZeroTwoOneDaySlopeAdj{} in 2021 to \NumKYTwoZeroTwoThreeDaySlopeAdj{} in 2023, where gaps are a few basis points and the estimate is noisier. We do not read those years as shifts in the dollar.
+
+\subsection{A pure ledger-dollar shift}
+\input{../paper/generated/anchor_table}
+Binance.US in 2023 is the other pole. Its banking partners stopped dollar payments in June \citep{theblock2023binanceus}. In June and July 2023 the median bitcoin gap was \NumUAnchorBnusL{} bps in the large-gap hours, and the median USDT dislocation was \NumUAnchorBnusD{} bps. The slope was \NumUAnchorBnusSlope{} (Table~\ref{tab:anchor}). The residual $T$ was \NumUAnchorBnusT{} bps. Tether did not carry a discount of its own. Binance.US's dollar moved, and everything quoted in it moved with it.
+
+We also ran a placebo on open rails. Coinbase has no USDT market, so we took the Coinbase--Bitstamp bitcoin gap and Bitstamp's USDT price. These two exchanges share a dollar. In the \NumUAnchorPlaceboHours{} hours with a gap of at least 20 bps, the median gap was \NumUAnchorPlaceboL{} bps and the USDT dislocation was \NumUAnchorPlaceboD{} bps. USDT did not follow. After removing the months of Tether's own token events, the slope was \NumUAnchorPlaceboSlope{}, with an interval from \NumUAnchorPlaceboSlopeLo{} to \NumUAnchorPlaceboSlopeHi{}. With so few hours the placebo is directional evidence only.
+
+\subsection{A common component across assets}
+\input{../paper/generated/unit_diagnostic_table}
+The anchor reading requires that the gap be a feature of the exchange and not of bitcoin. Table~\ref{tab:unit_diag} tests this. For Bitfinex against Bitstamp, the daily bitcoin and ether gaps had a correlation of at least \NumUBfxBstCorrMinExact{} in every year, and the bitcoin gap accounted for between \NumUBfxBstShareMin{} and \NumUBfxBstShareMax{} of the hourly ether gap. Coinbase and Bitstamp, two exchanges on open rails, showed no such pattern from 2019. Their median bitcoin gap was between \NumUCbBstGapMin{} and \NumUCbBstGapMax{} bps, and the bitcoin gap accounted for at most \NumUCbBstShareMax{} of the ether gap.
+
+In the calm years, 2020 to 2023, the Bitfinex gap was small but systematic. Its median absolute bitcoin gap against Bitstamp was between \NumNBfxBstGapBtcMin{} and \NumNBfxBstGapBtcMax{} bps. The first-order autocorrelation of the daily gap was between \NumNBfxBstAcOneMin{} and \NumNBfxBstAcOneMax{}, and the share of the daily bitcoin and ether gaps that was common to both was between \NumNBfxBstCommonDailyMin{} and \NumNBfxBstCommonDailyMax{}. The round-trip fee band, the sum of two base-tier taker fees, was \NumNBandMin{} to \NumNBandMax{} bps. The gap exceeded the band in at most \NumNCalmAboveBandMaxPct\% of hours. It persisted, and it was not an arbitrage opportunity. Fee schedules come from secondary sources, so we also halved the band; the median gap stayed inside it. In all \NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the cross-correlation peaked at zero minutes, so the common component was not a timing artifact.
+
+\subsection{Held-out assets and the shared-dollar control}
+\begin{table}[t]
+\footnotesize
+\caption{Share of the mean-square Bitfinex--Coinbase gap removed by one rate per hour, estimated without the scored asset. Test assets are XRP, LINK, SOL, DOGE and ADA, never used in development. Intervals are 95\% block bootstraps. The controls pool ETH, LTC, BCH, XLM, LINK and XRP over 2019--2023; a pair with a shared dollar should gain little.}
+\label{tab:heldout}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Slice & Share removed & 95\% CI \\
+\midrule
+Test assets, pooled & \NumPTestPooledEst{} & [\NumPTestPooledEstLo, \NumPTestPooledEstHi] \\
+Test assets, 2017--2019 & \NumRPeriodOneTestEst{} & [\NumRPeriodOneTestEstMonthLo, \NumRPeriodOneTestEstMonthHi] \\
+Test assets, 2020--2023 & \NumRPeriodTwoTestEst{} & [\NumRPeriodTwoTestEstMonthLo, \NumRPeriodTwoTestEstMonthHi] \\
+Test assets, 2020 & \NumPTestYearTwentyTwentyEst{} & \\
+Test assets, 2021 & \NumPTestYearTwentyTwentyOneEst{} & \\
+Test assets, 2022 & \NumPTestYearTwentyTwentyTwoEst{} & \\
+Test assets, 2023 & \NumPTestYearTwentyTwentyThreeEst{} & \\
+\midrule
+Control: Coinbase--Bitstamp (shared dollar) & \NumPCtrlCbBstPooledEst{} & [\NumPCtrlCbBstPooledEstLo, \NumPCtrlCbBstPooledEstHi] \\
+Control: Bitfinex--Bitstamp (separate dollars) & \NumPCtrlBfxBstPooledEst{} & [\NumPCtrlBfxBstPooledEstLo, \NumPCtrlBfxBstPooledEstHi] \\
+\bottomrule
+\end{tabular}
+\end{table}
+A common exchange rate should predict the gap of an asset that the estimate leaves out. For each hour we estimated one rate for the exchange from the gaps of the other assets, with the scored asset left out on both exchanges, and used it to correct the held-out asset's gap. The five test assets were scored once, after the rule was fixed (Table~\ref{tab:heldout}).
+
+One rate removed \NumUTestPct\% of the mean-square gap on the test assets, and \NumUTestYearMinPct\% to \NumUTestYearMaxPct\% in each calm year from 2020. In 2017--2019, the stress years, it removed \NumRPeriodOneTestEst{}. The pooled number is lifted by XRP (\NumUTestXrpPct\%) and by 2019 (\NumUTestNineteenPct\%). The other four assets lie between \NumUTestLinkPct\% and \NumUTestDogePct\%. A plain cross-asset median did as well: the pooled difference was \NumPTestPooledDiff{} (interval \NumPTestPooledDiffLo{} to \NumPTestPooledDiffHi{}). Nothing here depends on a clever estimator.
+
+The shared-dollar control behaved as it should. For Coinbase and Bitstamp the pooled share removed was \NumPCtrlCbBstPooledEst{}, and the mean absolute correction was \NumPCtrlCbBstPooledAbsEst{} bps. For Bitfinex against Bitstamp, a pair with separate dollars, the share removed was \NumPCtrlBfxBstPooledEst{} and the mean absolute correction was \NumPCtrlBfxBstPooledAbsEst{} bps.
+
+\section{Discussion and limitations}
+The premium on Bitfinex was not one thing. In the stress window, the median bitcoin gap was \NumKStressMedL{} bps. The USDT quote on Bitfinex moved by a median of \NumUAnchorStressD{} bps. Tether's own price on Kraken was at \NumKStressMedX{} bps. A reader who tracked only USDT/USD on Bitfinex would have attributed too little of the gap to the exchange dollar. A reader who ignored USDT would have attributed all of it to bitcoin.
+
+For Makarov and Schoar \citep{makarov2020trading}, the gap is a limit to arbitrage and a regional component. Our result adds that on Bitfinex the arbitrage constraint was a claim on the exchange, and that the claim can be tested with a stablecoin whose price is observed elsewhere. Against Griffin and Shams \citep{griffin2020untethered}, we do not test manipulation; we show that Tether's price on Bitfinex carried both a ledger-dollar and a token component. For Lyons and Viswanath-Natraj \citep{lyons2023keeps}, the Kraken price is the external token price. Flowerday et al. \citep{flowerday2026bitcoin} raised the ledger-dollar reading but did not decompose the premium; Table~\ref{tab:anchor-ext} does.
+
+\paragraph{Limitations.} First, Kraken's USDT price is a proxy for Tether's external value, and Kraken has its own rails and fees. The residual $T-X$ was \NumKStressMedTmX{} bps in the stress window, and it was larger in some calm years. Second, USDT began trading on Bitfinex on 2018-11-27, so we have no anchor for the earlier banking episodes. Third, the 2018 slope of $D$ on $L$ is above one (Table~\ref{tab:anchor}) on a short sample, and we do not interpret it. Fourth, the placebo has few large-gap hours. Fifth, the held-out score was high in 2017--2019 and lower in calm years, when the gap is small and asset-specific noise is a larger share of it. Sixth, fee schedules rest on secondary sources. The decomposition is statistical, and it does not show what caused the discount on Bitfinex's dollar.
+
+\section{Conclusion}
+Bitfinex's 2018--19 bitcoin premium was a discount on its ledger dollar plus Tether's own discount. Netting Tether's external price out of Bitfinex's USDT price made it track the bitcoin gap one for one (\NumKStressDaySlopeAdj{}). Binance.US in 2023 shifted only the ledger dollar (slope \NumUAnchorBnusSlope{}). Price comparisons across exchanges should say which dollar and which stablecoin they use.
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{../paper/references}
+\end{document}
