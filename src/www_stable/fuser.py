@@ -12,6 +12,9 @@ import pandas as pd
 HOLD = 24
 SMOOTH = 3
 W_ROOT = 2.0
+REL_WIN = 72
+REL_C = 0.0003
+REL_ON = 1
 
 
 def _nanmed(x: np.ndarray) -> np.ndarray:
@@ -27,7 +30,7 @@ def _parse(col: str):
 def _wmed(x: np.ndarray, w: np.ndarray) -> np.ndarray:
     """Row-wise weighted median of x (NaN ignored); w is one weight per column."""
     ok = np.isfinite(x)
-    ww = np.where(ok, w[None, :], 0.0)
+    ww = np.where(ok, w if w.ndim == 2 else w[None, :], 0.0)
     order = np.argsort(np.where(ok, x, np.inf), axis=1)
     xs = np.take_along_axis(np.where(ok, x, 0.0), order, 1)
     cw = np.cumsum(np.take_along_axis(ww, order, 1), axis=1)
@@ -88,5 +91,12 @@ def fuse(markets: dict[str, pd.DataFrame], meta: dict[str, dict[str, str]], side
     for m in names:
         r = vals[meta[m]["unit"]]
         cols.append(markets[m]["BTC"].to_numpy(float) + np.where(np.isfinite(r), r, 0.0))
+    X = np.column_stack(cols)
     w = np.array([W_ROOT if meta[m]["unit"] == root else 1.0 for m in names])
-    return pd.Series(_wmed(np.column_stack(cols), w), index=idx)
+    f = _wmed(X, w)
+    if REL_ON:
+        dev = pd.DataFrame(np.abs(X - f[:, None])).rolling(REL_WIN, min_periods=6).mean().shift(1).to_numpy()
+        dev = np.where(np.isfinite(dev), dev, np.nanmean(dev, axis=1, keepdims=True) if False else REL_C * 3)
+        W = w[None, :] / (dev + REL_C)
+        f = _wmed(X, W)
+    return pd.Series(f, index=idx)
