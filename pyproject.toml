@@ -19,7 +19,7 @@ www-c3-fragmentation = "www_c3.cli:main"
 dev = ["pytest>=8,<10"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/www_c0", "src/www_c1", "src/www_c2", "src/www_c3", "src/www_events", "src/www_paper", "src/www_capacity", "src/www_rescue", "src/www_auto", "src/www_fuse", "src/www_audit"]
+packages = ["src/www_c0", "src/www_c1", "src/www_c2", "src/www_c3", "src/www_events", "src/www_paper", "src/www_capacity", "src/www_rescue", "src/www_auto", "src/www_fuse", "src/www_stable", "src/www_audit"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

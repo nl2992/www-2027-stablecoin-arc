@@ -10,7 +10,22 @@ import pytest
 from www_fuse import baselines as B
 from www_fuse import harness as H
 from www_fuse import panel as P
-from www_fuse.fuser import fuse as median_fuse
+
+
+
+def median_fuse(panel, items):
+    """The round-2 starting fuser (plain cross-source median, commit 4acee7e). The tracked fuser.py is now the loop's best
+    candidate, so these harness tests carry their own copy."""
+    index = None
+    for frame in panel.values():
+        index = frame.index if index is None else index.union(frame.index)
+    out = pd.DataFrame(np.nan, index=index, columns=list(items))
+    for item in items:
+        cols = [frame[item].reindex(index) for frame in panel.values() if item in frame.columns]
+        if cols:
+            out[item] = pd.concat(cols, axis=1).median(axis=1, skipna=True)
+    return out
+
 
 INDEX = pd.date_range("2020-01-01", "2020-07-05 23:00", freq="h", tz="UTC", name="timestamp_utc")
 EPISODES = (
