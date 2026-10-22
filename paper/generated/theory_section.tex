@@ -4,33 +4,63 @@
 \label{sec:anchored-theory}
 \paragraph{Setup.} Take source $s$ against reference $r$ in hour $t$, in bps, with $u_{r,t}$ absorbed. Items other than the
 anchor share the offset $c_t=u_t+\delta_t$, where $u_t$ is the unit offset and $\delta_t$ is source-wide item demand, which
-enters every non-anchor item and not the anchor. The cross-item offset is $L_t=c_t+\varepsilon_t$. The anchor $k$ has true
-price $p^*_k\equiv 0$ up to its own deviation $x_t$, so its observed price is $D_t=u_t+x_t+\eta_t$. We measure $x_t$ on an
-independent venue, $X_t=x_t+\xi_t$, and use $Y_t=D_t-X_t=u_t+\eta_t-\xi_t$ (we write $\eta_t$ for $\eta_t-\xi_t$ below).
-The unit share of the offset's time variation is $\lambda=\mathrm{Cov}(u,c)/\mathrm{Var}(c)=1-\mathrm{Cov}(\delta,c)/\mathrm{Var}(c)$:
+enters every non-anchor item and not the anchor. The cross-item offset of Eq.~\eqref{eq:median} is $L_t=c_t+\varepsilon_t$.
+The anchor $D_t$ (Eq.~\eqref{eq:anchor}) and its netted form $Y_t$ (Eq.~\eqref{eq:netted}) are as in \S\ref{sec:model}. The estimand is the unit share of the offset's
+time variation,
+\begin{equation}
+\lambda=\frac{\mathrm{Cov}(u,c)}{\mathrm{Var}(c)}=1-\frac{\mathrm{Cov}(\delta,c)}{\mathrm{Var}(c)}.
+\label{eq:lambda}
+\end{equation}
 $\lambda=1$ under a pure unit shift ($\delta\equiv0$), whenever demand is uncorrelated with the offset, and $\lambda=0$ under pure
 demand ($u\equiv0$). The moments leave intercepts free, so a persistent level premium from demand is not identified, and if
 demand co-moves with the unit ($\delta=\kappa u$), $\lambda=1/(1+\kappa)$: $\lambda$ is a covariance share, not an additive share
 of the premium.
 \emph{A1} (additivity): the model above, with unit loading on $c$ for every non-anchor item (not tested asset by asset), and $\varepsilon$ independent of $(u,\delta,\eta)$.
 \emph{A2}: the reference venue's unit is stable over the window ($u_r$ is constant).
-\emph{A3}: $X$ measures $x$ on a venue whose error $\xi$ is independent of $(u,\delta,\varepsilon,\eta)$; $x$ may co-move with $c$.
+\emph{A3}: $X$ measures $x$ on a venue whose error $\xi$ is independent of $(u,\delta,\varepsilon,\eta)$; $x$ may co-move with $c$ (we write $\eta$ for $\eta-\xi$ below).
 \emph{A4}: a second item's offset $Z_t=\gamma c_t+\nu_t$, $\gamma\neq0$, with $\nu$ independent of $(u,\delta,\eta,\varepsilon)$ and
 $\mathrm{Cov}(\eta,c)=\mathrm{Cov}(\varepsilon,\eta)=0$ (relevance and exclusion); these are assumptions we cannot test.
 
 \begin{proposition}
-Under A1--A4, $\beta=\mathrm{Cov}(D-X,Z)/\mathrm{Cov}(L,Z)=\lambda$. The OLS slope of $D-X$ on $L$ is
-$\lambda\,\mathrm{Var}(c)/(\mathrm{Var}(c)+\mathrm{Var}(\varepsilon))$, attenuated by the noise in $L$. Without the netting, the IV slope of $D$ on $L$ is
-$\lambda+\mathrm{Cov}(x,c)/\mathrm{Var}(c)$.
+Under A1--A4, the instrumental-variable (IV) ratio identifies the unit share,
+\begin{equation}
+\beta=\frac{\mathrm{Cov}(D-X,\,Z)}{\mathrm{Cov}(L,\,Z)}=\lambda .
+\label{eq:iv}
+\end{equation}
+The OLS slope of $D-X$ on $L$ is $\lambda\,\mathrm{Var}(c)/(\mathrm{Var}(c)+\mathrm{Var}(\varepsilon))$, attenuated by the noise in $L$.
+Without the netting, the IV slope of $D$ on $L$ is
+\begin{equation}
+\beta_{\mathrm{raw}}=\lambda+\frac{\mathrm{Cov}(x,c)}{\mathrm{Var}(c)} .
+\label{eq:bias}
+\end{equation}
 \end{proposition}
 \begin{proof}
 $\mathrm{Cov}(Y,Z)=\gamma\,\mathrm{Cov}(u+\eta,c)=\gamma\,\mathrm{Cov}(u,c)$ and $\mathrm{Cov}(L,Z)=\gamma\,\mathrm{Var}(c)$ by A4; the ratio is $\lambda$. The
 OLS slope is $\mathrm{Cov}(u,c)/\mathrm{Var}(L)$ with $\mathrm{Var}(L)=\mathrm{Var}(c)+\mathrm{Var}(\varepsilon)$. Without $X$, $\mathrm{Cov}(D,Z)$ gains $\gamma\,\mathrm{Cov}(x,c)$.
 \end{proof}
+\emph{Intuition:} $Z$ moves with the offset but not with the anchor's own noise, so the ratio isolates how much of the
+anchor's co-movement with the offset runs through $u$. The bias term $\mathrm{Cov}(x,c)/\mathrm{Var}(c)$ in
+Eq.~\eqref{eq:bias} is the token's own co-movement with the offset; $D-X$ contains $u$ but, up to the independent
+error $\xi$, not $x$, so that term drops out of Eq.~\eqref{eq:iv}.
 
-\paragraph{Over-identification.} With anchors $k=1..K$ and instruments $j=1..m$, the moments
-$E[z_j(Y_k-\mu_k-\lambda L)]=0$, $z=(1,Z_1,..,Z_m)$, identify one $\lambda$. Two-step GMM with a Bartlett HAC weight gives
-Hansen's $J\sim\chi^2_{Km-1}$ under the null. $J$ rejects a contaminated instrument or anchor-specific depegs with different
+\paragraph{Reading $\hat\lambda$.} On the Bitfinex stress window $\hat\lambda=\NumGBfxPrimaryLam{}$. In words: when the
+offset moved, the netted anchor moved almost one for one, so most of the offset's time variation was a unit shift and
+the remainder was demand or an anchor-specific component. It does not say that the offset's \emph{level} on any date
+was that share unit and the rest demand (intercepts are free), it does not split each hour, and, because $\lambda=1$ is
+rejected, it does not say the shift was purely unit.
+
+\paragraph{Over-identification.} With anchors $k=1,\dots,K$ and instruments $j=1,\dots,m$, take $z=(1,Z_1,\dots,Z_m)$ and the moments
+\begin{equation}
+E\big[z_j\,(Y_k-\mu_k-\lambda L)\big]=0,\qquad j=0,\dots,m,\ k=1,\dots,K,
+\label{eq:moments}
+\end{equation}
+which are $K(m+1)$ conditions for $K+1$ parameters ($\lambda$ and the intercepts $\mu_k$). Two-step GMM with a Bartlett HAC weight $\hat S^{-1}$ gives Hansen's statistic
+\begin{equation}
+J=n\,\bar g(\hat\lambda)'\,\hat S^{-1}\,\bar g(\hat\lambda)\ \sim\ \chi^2_{Km-1},
+\label{eq:J}
+\end{equation}
+with $\bar g$ the sample moments. For the headline, $K=1$ and $m=4$, so $J$ has \NumGBfxPrimaryJDf{} degrees of freedom. \emph{Intuition:} if one $\lambda$ explains every
+moment, the leftover moments are small; $J$ measures how large they are. $J$ rejects a contaminated instrument or anchor-specific depegs with different
 loadings on $c$; it has no power against a depeg that loads on $c$ equally in every anchor, so the netting by $X$ is what
 removes that bias, not the test.
 
@@ -51,11 +81,9 @@ Intervals for this one estimate: hourly GMM, HAC \NumGBfxPrimaryLo{} to \NumGBfx
 (block \NumGBfxBootBlock{} hours), \NumGBfxBootLo{} to \NumGBfxBootHi{}; daily OLS slope of \S\ref{sec:anchor}, week blocks
 \NumKStressDaySlopeAdjWkLo{} to \NumKStressDaySlopeAdjWkHi{} and month blocks \NumKStressDaySlopeAdjMoLo{} to
 \NumKStressDaySlopeAdjMoHi{}. The hourly intervals are narrower than the daily ones, not wider; because HAC and the hourly
-bootstrap undercover when the offset is persistent, the headline elsewhere is the month-block interval. Without the netting the estimate is \NumGBfxNaiveLam{}. Binance.US 2023 ($K=1$, $m=2$, \NumGBusUsdtN{} hours)
-gives \NumGBusUsdtLam{} (HAC \NumGBusUsdtLo{} to \NumGBusUsdtHi{}; $p=\NumGBusUsdtPOne{}$ for $\lambda=1$). Only a HAC interval is available for it,
-and it is probably too narrow. The slope near one is close to mechanical once deposits closed, and the netting changes
-nothing there (two anchors, February to July: \NumGBusTwoLam{} netted, \NumGBusTwoRawLam{} not netted) because Kraken's USDT was
-at par. Adding USDC netted with Bitstamp's USDC price fails the over-identification test: $J=\NumGBusTwoJ{}$ ($p$ \NumGBusTwoJP{};
-not netted, $J=\NumGBusTwoRawJ{}$, $p=\NumGBusTwoRawJP{}$). Bitstamp's USDC price was itself depegged in March 2023, which
-contaminates this netting. So the single-anchor test was consistent with a unit shift and the two-anchor test rejected; we
-report every $J$ and did not fix in advance which results count.
+bootstrap undercover when the offset is persistent, the headline elsewhere is the month-block interval. Without the netting the estimate is \NumGBfxNaiveLam{}.
+Binance.US 2023 ($K=1$, $m=2$, \NumGBusUsdtN{} hours) gives \NumGBusUsdtLam{} (HAC \NumGBusUsdtLo{} to \NumGBusUsdtHi{};
+$p=\NumGBusUsdtPOne{}$ for $\lambda=1$), a HAC interval that is probably too narrow, and the netting changes nothing there
+(two anchors, February to July: \NumGBusTwoLam{} netted, \NumGBusTwoRawLam{} not). Adding USDC netted with Bitstamp's
+depegged USDC price fails the over-identification test ($J=\NumGBusTwoJ{}$, $p$ \NumGBusTwoJP{}; not netted, $J=\NumGBusTwoRawJ{}$,
+$p=\NumGBusTwoRawJP{}$). We report every $J$ and did not fix in advance which results count.

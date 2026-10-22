@@ -47,6 +47,8 @@ def test_every_number_macro_used_is_defined_and_no_literal_bps_values_slip_in():
     # Numbers attached to bps or % must come from macros. Only pre-specified design constants
     # (rule thresholds and the confidence level) may appear as literals.
     design_constants = {"100 bps", "25 bps", "500 bps", "95\\%"}
+    # An explicitly marked illustrative block (toy numbers, never results) is exempt.
+    body = re.sub(r"% BEGIN ILLUSTRATIVE.*?% END ILLUSTRATIVE", "", body, flags=re.S)
     literals = set(re.findall(r"\b\d+(?:\.\d+)?\s*(?:bps|\\%)", body))
     assert literals <= design_constants, sorted(literals - design_constants)
 
