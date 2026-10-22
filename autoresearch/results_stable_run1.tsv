@@ -1,0 +1,16 @@
+iter	commit	dev_score	S1	S2	S3	checks	status	idea
+1	665db4f	0.724829	0.6522	0.4809	1.0414	False	discard(placebo)	B2-style conversion via structurally found dollar unit
+2	-	0.759	0.735	0.545	0.997	True	discard	soft-threshold shrink of rates 5bp (3bp: 0.734; worse)
+3	6191e76	0.720480	0.6556	0.4926	1.0133	True	keep	3h rolling median of unit values (6h .737, 12h .749)
+4	d42dd55	0.689672	0.6533	0.4540	0.9618	True	keep	weighted median, root-unit markets weight 2 (1.5: .702, 3: .711)
+5	-	0.7163	0.6449	0.4719	1.0322	False	discard	reliability weights replacing root weight (dropped root prior)
+6	ef44c09	0.684363	0.6296	0.4552	0.9684	True	keep	reliability (72h MAD after correction, c=3bp) times root weight 2; plateau across c,win
+7	54e20ff	0.665654	0.6342	0.4131	0.9497	True	keep	weighted mean of markets within 20bp of weighted median (10bp .671, 30bp .671, 100bp .689)
+8	-	0.664604	0.6136	0.4211	0.9591	True	discard	per-market trailing median bias removal (win 24/72/336, k .5/1): <0.001 gain
+9	-	0.665654	0.6342	0.4131	0.9497	True	discard	drop non-dollar markets with no rate: no change
+10	-	0.668	0.6348	0.4135	0.9558	True	discard	SMOOTH 2/4/5 variants: flat
+11	ca38772	0.659802	0.6343	0.4188	0.9264	True	keep	unit value snaps to 48h median when within 5bp (slow 12:.663, 96:.662, 168:.661)
+12	-	0.6598	-	-	-	False	discard	volume weighting (p .25-1): no gain (and my normaliser was non-causal)
+13	-	0.6624	0.6405	0.4192	0.9304	True	discard	second-item (ETH) residual offset correction, k .3/.6/1: worse
+14	-	0.6612	0.6275	0.4274	0.9286	True	discard	W_ROOT 1.5/3/5 retune: flat/worse
+15	-	0.656780	0.6231	0.4281	0.9192	True	discard	Gaussian instead of hard 20bp trim (gain 0.003 < 0.005)
