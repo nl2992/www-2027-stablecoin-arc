@@ -11,7 +11,11 @@ import pytest
 from www_stable import baselines as B
 from www_stable import harness as H
 from www_stable import panel as P
-from www_stable.fuser import fuse as median_fuse
+
+
+def median_fuse(markets, meta, side):
+    """The round-3 starting fuser (naive median, commit f9ef57d). The tracked fuser.py is now the loop's best fuser."""
+    return pd.concat([markets[m]["BTC"] for m in sorted(markets)], axis=1).median(axis=1)
 
 INDEX = pd.date_range("2020-01-01", "2020-07-05 23:00", freq="h", tz="UTC", name="timestamp_utc")
 EPISODES = (
