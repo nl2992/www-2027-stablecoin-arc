@@ -1,14 +1,75 @@
 """STABLE fuser: the only file the autoresearch loop edits (numpy and pandas only; no harness imports).
 
 Causal (row t uses rows at or before t only), label-agnostic (market, unit and venue labels are anonymous and re-drawn on
-every call) and unaware of any reference price. Starting point: the naive median over all markets (baseline B0).
+every call) and unaware of any reference price.
 """
 
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
+
+HOLD = 24
+
+
+def _nanmed(x: np.ndarray) -> np.ndarray:
+    return pd.DataFrame(x).median(axis=1).to_numpy()
+
+
+def _parse(col: str):
+    pair, venue = col.split("@", 1)
+    a, b = pair.split("/", 1)
+    return a, b, venue
+
+
+def dollar_unit(meta, side):
+    """Unit that is only ever a quote in the side rates (never a base); ties/none -> unit with most markets."""
+    bases, quotes = {}, {}
+    for c in side.columns:
+        a, b, v = _parse(c)
+        bases[a] = bases.get(a, 0) + 1
+        quotes[b] = quotes.get(b, 0) + 1
+    cand = [u for u in quotes if u not in bases]
+    count = {}
+    for m in meta.values():
+        count[m["unit"]] = count.get(m["unit"], 0) + 1
+    pool = cand if cand else list(count)
+    return max(sorted(pool), key=lambda u: (quotes.get(u, 0), count.get(u, 0)))
+
+
+def unit_values(units, root, side, n):
+    """Log value of each unit in the root unit via shortest paths over side rates (NaN when unknown)."""
+    edges = {}
+    for c in side.columns:
+        a, b, v = _parse(c)
+        x = pd.Series(side[c].to_numpy(float)).ffill(limit=HOLD).to_numpy()
+        edges.setdefault((a, b), []).append(x)
+        edges.setdefault((b, a), []).append(-x)
+    val = {root: np.zeros(n)}
+    frontier = {root}
+    while frontier:
+        new = {}
+        for (a, b), xs in edges.items():
+            if a in val or b not in frontier:
+                continue
+            new.setdefault(a, []).extend(x + val[b] for x in xs)
+        frontier = set()
+        for a, xs in new.items():
+            val[a] = _nanmed(np.column_stack(xs))
+            frontier.add(a)
+    return {u: val.get(u, np.full(n, np.nan)) for u in units}
 
 
 def fuse(markets: dict[str, pd.DataFrame], meta: dict[str, dict[str, str]], side: pd.DataFrame) -> pd.Series:
     """Fused log BTC/USD per hour: ``markets[m]['BTC']`` is the log price in the market's own quote unit."""
-    return pd.concat([markets[m]["BTC"] for m in sorted(markets)], axis=1).median(axis=1)
+    names = sorted(markets)
+    idx = markets[names[0]].index
+    n = len(idx)
+    units = sorted({meta[m]["unit"] for m in names})
+    root = dollar_unit(meta, side)
+    vals = unit_values(units, root, side, n)
+    cols = []
+    for m in names:
+        r = vals[meta[m]["unit"]]
+        cols.append(markets[m]["BTC"].to_numpy(float) + np.where(np.isfinite(r), r, 0.0))
+    return pd.Series(_nanmed(np.column_stack(cols)), index=idx)
