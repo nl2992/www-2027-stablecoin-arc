@@ -15,8 +15,9 @@
 \input{generated/theory_numbers}
 \input{generated/robust_anchor_numbers}
 \input{generated/kimchi_numbers}
+\input{generated/q1_numbers}
 
-\acmConference[WWW '27]{Proceedings of the ACM Web Conference 2027}{2027}{}
+\acmConference[WWW '27]{The ACM Web Conference 2027}{2027}{}
 
 \begin{document}
 
@@ -28,18 +29,18 @@ with the same unit name share one backing. Often they do not: a platform's ledge
 unit, the dollar, without its backing, and fusion reads a shift in that backing as a change in value. We model each
 source's values as true values plus a source-unit offset shared by all its items. Agreement across unrelated items
 identifies the offset, and a unit anchor, an item fixed in the true unit, separates a unit shift from demand. We
-formalise the test with an identification result, a GMM over-identification test and a calibrated simulation of size and
-power. On cryptocurrency exchanges, whose dollars are ledger claims, it gives a direct test of a reading that Flowerday
-et al. (2026) could not test with their data. Netting Tether's external price from Kraken out of Bitfinex's USDT/USD price
-makes it track Bitfinex's offset with slope close to one (\NumKStressDaySlopeAdj{}, 95\% interval
-\NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}, up from \NumKStressDaySlopeD{}). Bitfinex's 2018 to 2019
-premium was thus mostly a ledger-dollar discount; Tether's own discount had depressed the raw anchor. Binance.US's 2023
-offset passed the same test (slope \NumUAnchorBnusSlope{}). On assets withheld from development, one offset per source-hour
-removed \NumRPeriodOneTestEst{} of the mean-square gap from 2017 to 2019 and \NumRPeriodTwoTestEst{} from 2020 to
-2023. Across three locked fusion tests, a plain
-median was hard to beat. Unit-aware fusion won when a large group of sources shared a unit that moved by more than venue
-noise (the USDC 2023 test, error \NumBStableXOneFuser{} of the median's) and not otherwise. Aggregators should correct
-when a shared unit can move and otherwise keep the median.
+formalise the test with an identification result, a GMM over-identification test and a simulation of size and
+power. On cryptocurrency exchanges, whose
+dollars are ledger claims, it tests a reading that Flowerday et al. (2026) say cannot be tested directly with their data.
+In the anchored window from 2018-11-27 to 2019-05-31, netting Tether's external price from Kraken out of Bitfinex's
+USDT/USD price makes it track Bitfinex's offset with slope close to one (\NumKStressDaySlopeAdj{}, 95\% month-block
+bootstrap interval \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}, up from \NumKStressDaySlopeD{}): the
+offset's variation was mostly a ledger-dollar shift. Binance.US's 2023 slope was near one (\NumUAnchorBnusSlope{}), which is close
+to mechanical once deposits closed; its two-anchor test rejected. On assets withheld from development, one offset per
+source-hour removed \NumRPeriodOneTestEst{} of the mean-square gap from 2017 to 2019 and \NumRPeriodTwoTestEst{} from 2020
+to 2023 (pooled; median over assets \NumRMedTestEstAssetMedian{}). Across three locked fusion tests a plain median was hard to beat; unit-aware fusion won once (USDC 2023, error
+\NumBStableXOneFuser{} of the median's). In a pre-registered follow-up on untouched events (three USDT events) where most
+volume shared a stablecoin unit that moved, a frozen unit-aware fuser beat the median, unit conversion and CRH.
 \end{abstract}
 
 \maketitle
@@ -51,16 +52,15 @@ price on a multi-currency marketplace and a loyalty point can all carry the same
 ``dollar'', without the same backing. When the backing of one source weakens, every price on that source moves
 together. Fusion reads this as a change in value, and it reports a unit drift as a price change.
 
-This is hard for two reasons. A source's unit is never quoted, so it cannot be read off. And any single item can move
-for its own reasons, so a gap on one item says little. Source-reliability weights treat a source's error as noise that
-differs by claim, and robust aggregation tolerates a minority of bad sources; neither is built for an error that all of
-one source's claims share.
+This is hard for two reasons. A source's unit is never quoted, so it cannot be read off, and any single item can move
+for its own reasons. Source-reliability weights treat a source's error as noise that differs by claim, and robust
+aggregation tolerates a minority of bad sources; neither is built for an error that all of one source's claims share.
 
 Crypto exchanges are a good test domain. An exchange quotes assets in ``USD'', but that dollar is a balance in its own
-ledger, redeemed through banking partners. When the partners leave, the balance can trade away from a bank dollar.
-Prices are public and hourly, and the failures are dated. Bitfinex is the clearest case: from 2018 to 2019 its bitcoin
-price stood apart from other exchanges' prices for months (Figure~\ref{fig:unit}), while its banking access was in
-doubt. Whether that premium priced the exchange's dollar or the coin has been argued but not tested.
+ledger, redeemed through banking partners, and when the partners leave it can trade away from a bank dollar. Prices are
+public and hourly, and the failures are dated. Bitfinex is the clearest case: from 2018 to 2019 its bitcoin price stood
+apart from other exchanges' prices for months (Figure~\ref{fig:unit}), while its banking access was in doubt. Whether that
+premium priced the exchange's dollar or the coin has been argued but not tested.
 
 Our idea is that a shift in a source's unit moves every item on that source by the same amount. Agreement of the gaps
 across unrelated items therefore identifies a source-specific offset. Agreement alone cannot tell a unit shift from
@@ -79,14 +79,14 @@ We make four contributions.
 \begin{enumerate}
 \item \emph{An identification test.} Each source's prices equal true prices plus a unit offset and an item residual. The
 offset is identified by cross-item agreement and a unit anchor corrected for the anchor's external price
-(\S\ref{sec:model}). It gives a direct test of the reading that Bitfinex's premium priced its dollar, and separates that
+(\S\ref{sec:model}). It gives a test of the reading that Bitfinex's premium priced its dollar, and separates that
 dollar from Tether's own discount, which contaminates the raw anchor (\S\ref{sec:anchor}).
 \item \emph{Held-out validation.} Scores on withheld assets are reported per year, per asset and per asset-by-time cell,
 with longer bootstrap blocks and shared-dollar controls, not only pooled (\S\ref{sec:heldout}).
 \item \emph{A fusion benchmark and a scope condition.} Three locked tests, with truth-discovery baselines, show that a
 plain median is hard to beat and say when unit awareness pays (\S\ref{sec:bench}).
-\item \emph{A monitor} with a fixed rule, scored against baselines, and an account of three shocks in 2023
-(\S\ref{sec:monitor}, \S\ref{sec:2023}).
+\item \emph{A monitor} with a fixed rule, scored against baselines on a small label set, and an account of the 2023
+episodes (\S\ref{sec:monitor}, \S\ref{sec:2023}).
 \end{enumerate}
 
 \section{Related Work}
@@ -107,13 +107,11 @@ which unit that benchmark is in.
 persistent price gaps across exchanges and a component common to gaps within a country. We identify an
 exchange-level component \emph{within} USD, per exchange and hour. The closest work is Flowerday et
 al.~\cite{flowerday2026bitcoin}, who studied bitcoin on four exchanges to mid-2021. They read Bitfinex's premium as
-possibly a discount on its dollar balances, so that a quote there ``embeds'' a discount on the fiat side, but say that
-the channel ``cannot be tested directly'' and that they do not decompose the premium. We test it. Netting out an
-external Tether price splits the premium into a ledger-dollar part and a Tether part. Lyons and
-Viswanath-Natraj~\cite{lyons2023keeps} study the October 2018 attack on Tether, with a falling Tether price and wider
-spreads that they link to Bitfinex suspending dollar convertibility. That is the Tether part alone; it does not touch
-the bitcoin premium. Other work links bitcoin gaps to capital controls~\cite{choi2019kimchi,borri2023discounts} and to
-exchange default risk~\cite{guo2025default}. Studies of pegs and runs treat a token's exchange price as the token's
+possibly a discount on its dollar balances, but say that the channel ``cannot be tested directly'' with their data and
+that they do not decompose the premium. We test it: netting out an external Tether price splits the premium into a
+ledger-dollar part and a Tether part. Lyons and Viswanath-Natraj~\cite{lyons2023keeps} study the October 2018 attack on
+Tether, which is the Tether part alone. Other work links bitcoin gaps to capital controls~\cite{choi2019kimchi,borri2023discounts}
+and to exchange default risk~\cite{guo2025default}; studies of pegs and runs treat a token's exchange price as the token's
 value~\cite{ma2025runs,liu2023anatomy}, and Griffin and Shams~\cite{griffin2020untethered} tied Tether issuance on
 Bitfinex to bitcoin prices. We separate a token move from a unit move on the same exchange.
 
@@ -142,13 +140,13 @@ the price of one item in terms of another on the same source is free of the unit
 visible on both, $m$ their median and $\hat\sigma^2 = (1.4826\,\mathrm{MAD})^2\, n/(n-1)$, with MAD the median
 absolute deviation of the gaps around $m$. The estimate is
 \begin{equation}
-\hat u_{s,t} = m \cdot \min\!\Big\{1,\ \max\!\Big\{0,\ 1 - \frac{c\,\hat\sigma^2/n}{m^2}\Big\}\Big\},\qquad c=\tfrac12,
+\hat u_{s,t} = m \cdot \min\!\Big\{1,\ \max\!\Big\{0,\ 1 - \frac{c\,\hat\sigma^2/n}{m^2}\Big\}\Big\},\qquad c=1/2,
 \end{equation}
 and $\hat u_{s,t}=0$ when $n<2$. The factor is a plug-in, positive-part shrinkage of the James--Stein kind: it removes
 from $m^2$ an estimate $c\,\hat\sigma^2/n$ of the noise in the median, so a median that the cross-item dispersion cannot
 distinguish from zero is set to zero. We claim no optimality, since in one dimension such shrinkage does not dominate the
 unshrunk estimate. The constant $c$ was fixed on development assets; re-picking it on 2017--2019 data gave
-\NumRHonestChosen{} with the same scores (\S\ref{sec:heldout}). The estimator adds nothing measurable to the plain
+\NumRHonestChosen{} with nearly the same scores (\S\ref{sec:heldout}). The estimator adds little to the plain
 median, which we report plainly.
 
 \paragraph{Unit anchor and the external-price correction.} A unit anchor $k$ is an item whose true price is fixed in the
@@ -169,9 +167,11 @@ same split applies to any stablecoin $q$, with $T_q=D_q-L$ its token component.
 
 \paragraph{Development loop.} We developed the estimator in a fixed harness that scores the share of a held-out
 item's mean-square gap that the correction removes, with the item hidden from the estimate, and also scores a control
-pair. A bounded loop of \NumULoopIter{} iterations kept \NumULoopKept{} changes and discarded \NumULoopDiscarded{}.
-Temporal smoothing, Kalman filtering, reliability weighting and liquidity weighting did not help, because the unit
-moves from hour to hour. The estimator is therefore cross-sectional.
+pair. A bounded loop of \NumULoopIter{} iterations, each editing only the estimator and scored on development assets, kept
+\NumULoopKept{} changes and discarded \NumULoopDiscarded{}.
+Temporal smoothing, Kalman filtering, reliability weighting and liquidity weighting did not help on the harness score.
+The hourly estimate is noisy although the offset itself persists (\S\ref{sec:anchored-theory}), and we did not diagnose why
+smoothing failed. The estimator is therefore cross-sectional.
 
 \input{generated/theory_section}
 
@@ -185,16 +185,22 @@ frozen and scored once. Post hoc: computed after related results were seen, and 
 \toprule
 Status & Items \\
 \midrule
-Pre-registered & The monitor rule, thresholds, baselines and the label list, before the 2017--2023 prices were downloaded (the
-rule was fitted on Binance.US in 2022--23, and Bitfinex's event windows had been seen). The episodes, splits, score and keep
-rule of the fusion tests FUSE and STABLE, before any result of each round. \\
+Pre-registered & The monitor rule, thresholds, baselines and the label list were written before the 2017--2023 prices were
+downloaded, but the rule was fitted on Binance.US in 2022--23 and Bitfinex's event windows had been seen. The monitor is
+therefore pre-registered only for venue-months it had not been fitted or checked on (Coinbase); its Binance.US and Bitfinex
+results are development results. The episodes, splits, score and keep rule of the fusion tests FUSE and STABLE, before any
+result of each round, and the Q1 test (frozen round-3 fuser, untouched majority-unit events, gate and endpoints fixed before
+its data). The Upbit/Kimchi study (hypotheses, windows, FX netting and anchor test), before any of its prices
+were downloaded (\S\ref{sec:discussion}). \\
 Developed on dev data & The estimator (\NumULoopIter{} runs, \NumULoopKept{} kept), the FUSE fuser (\NumBFuseLoopRuns{} runs,
 \NumBFuseLoopKept{} kept) and the STABLE fuser (\NumBStableLoopRuns{} runs, \NumBStableLoopKept{} kept), each on development
 assets or episodes only. \\
-Locked test, scored once & Withheld assets XRP, LINK, SOL, DOGE and ADA; FUSE episodes T1--T5; STABLE episodes X1--X4.
-The estimator, the FUSE fuser and the STABLE fuser were frozen first. \\
+Locked test, scored once & Withheld assets XRP, LINK, SOL, DOGE and ADA; FUSE episodes T1--T5; STABLE episodes X1--X4; Q1 events Q-E2 to Q-E4.
+The estimator, the FUSE fuser and the STABLE fuser were frozen first. T1, the Bitfinex stress, is the episode that
+motivated the project, so it was known before scoring. \\
 Post hoc & The anchor tests and the placebo (the external-price correction was specified after the raw slope of
-\NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
+\NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); the \NumRACells{}-specification
+grid (specified before it was run, but after the headline slope was seen); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
 GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks and the oracle pilot. \\
 \bottomrule
 \end{tabular}
@@ -207,16 +213,19 @@ candles for nine further assets on Bitfinex and Coinbase (LTC, BCH, ETC, XLM, XR
 Bitstamp we also use hourly candles for six assets (ETH, LTC, BCH, XLM, LINK and XRP) from 2019 to 2023, which
 supply the controls in \S\ref{sec:heldout}. For Binance.US we use candles from 2022 to 2025. USDT/USD prices on
 Kraken come from its public OHLCVT archive; its market traded in \NumKCovSharePct\% of the hours of the Bitfinex stress
-window (\NumKCovTraded{} of \NumKCovHours{}), and Kraken's own bitcoin price stayed close to Bitstamp's (median absolute
-gap \NumKStressKrakenBtcGapMedAbs{} bps), so we take it as outside Bitfinex's ledger. All sources are free
+window (\NumKCovTraded{} of \NumKCovHours{} hours), and Kraken's own bitcoin price stayed close to Bitstamp's (median absolute
+gap \NumKStressKrakenBtcGapMedAbs{} bps), so we take it as outside Bitfinex's ledger for bitcoin. That it is also outside
+it for Tether is an assumption (A3 below). All sources are free
 and unauthenticated, each acquisition is recorded with a hash in a manifest, and rebuild scripts regenerate the panels.
-Taker fee schedules, used only to size the noise bands in \S\ref{sec:noise}, come from secondary sources:
-\NumNFeeSecondary{} schedule entries rest on dated news articles, \NumNFeeInferred{} are inferred from them and
-\NumNFeeUnverified{} are unverified.
+Taker fee schedules, used only to size the bands in \S\ref{sec:noise}, come from secondary sources (\NumNFeeSecondary{}
+entries rest on dated news, \NumNFeeInferred{} are inferred and \NumNFeeUnverified{} are unverified).
+
+The fusion tests of \S\ref{sec:bench} use the same public candle sources, with markets quoted in several stablecoin units
+around the FTX, SVB, TUSD, FDUSD and 2024--25 episodes listed in Table~\ref{tab:bench}.
 
 \paragraph{Labels.} The monitor is scored against \NumULabels{} dated events (deposit pauses, withdrawal delays,
 bank-partner losses, rail shutdowns, restorations and confounders) for Bitfinex, Bitstamp, Coinbase, Kraken and
-Binance.US. They were compiled from public sources without reference to prices; the dated list ships with the artifact.
+Binance.US. They were compiled from public sources without reference to prices; the dated list is summarised here and not reproduced for length.
 
 \section{Results}
 \subsection{Which exchanges have their own dollar}
@@ -251,46 +260,62 @@ demand-only reading. The USDT-specific component is visible. In the large-gap ho
 bps, and USDT traded at a median of \NumKStressMedX{} bps on Kraken. The two series moved together (hourly correlation of
 $T$ and $X$ \NumKStressCorrTX{}), and the median difference $T-X$ was \NumKStressMedTmX{} bps.
 
-Netting the external price out raised the slope to \NumKStressDaySlopeAdj{}, with 95\% block-bootstrap intervals of
-\NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{} over months and \NumKStressDaySlopeAdjWkLo{} to
-\NumKStressDaySlopeAdjWkHi{} over weeks. Hourly data gave the same estimate (\NumKStressHrSlopeAdj{}, from
+Netting the external price out raised the slope to \NumKStressDaySlopeAdj{}, with a 95\% month-block bootstrap interval
+of \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}. This is the interval we use for the headline everywhere;
+the week-block, HAC and hourly bootstrap intervals for the same estimate are reported once, in \S\ref{sec:anchored-theory}.
+With about six month-blocks it is itself imprecise. Hourly data gave the same estimate (\NumKStressHrSlopeAdj{}, from
 \NumKStressHrN{} hours). Instrumenting $L$ with the Bitfinex--Coinbase ether gap, which shares the ledger dollar but not
-the bitcoin quote error, rules out measurement error in $L$ as the source of the shortfall (\NumKStressDayIvAdj{}, interval
-\NumKStressDayIvAdjWkLo{} to \NumKStressDayIvAdjWkHi{}). Bitfinex's bitcoin premium was therefore mostly a discount on
-the exchange dollar. Tether's own discount entered only the anchor, which is why the raw slope fell short of one. The
-HAC interval of the GMM estimate is narrower than the block-bootstrap interval and excludes one; we treat the bootstrap
-interval as the headline because the offset is persistent, and read the estimate as close to, not equal to, one. Across \NumRACells{} specifications fixed in advance (five windows,
-four instrument sets, three reference venues, two versions of $X$ and three block lengths), the GMM estimate ranged
-from \NumRAGmmMin{} to \NumRAGmmMax{} (median \NumRAGmmMed{}); every bootstrap interval excluded zero, and the window
-mattered most (the full grid is in the artifact). Kraken's USDT price itself fell as Bitfinex's offset widened
-(slope \NumRAAThreeSlope{}): Tether's own discount co-moved with Bitfinex's trouble, which is the contamination that
-netting removes and the model allows. By year, the
+the bitcoin quote error, rules out measurement error in $L$ as the source of the shortfall (\NumKStressDayIvAdj{}).
+Sample sizes differ by design: Kraken traded in \NumKCovTraded{} of the \NumKCovHours{} window hours, the anchor
+regressions use the \NumKStressHrN{} hours in which $L$, $D$ and $X$ all exist, the GMM uses \NumGBfxPrimaryN{} (it needs all
+four instrument gaps), and Table~\ref{tab:anchor} counts only large-gap hours. In the sense of
+\S\ref{sec:anchored-theory}, Bitfinex's premium was therefore mostly a discount on the exchange dollar in this window: $\lambda$
+concerns the offset's variation and does not identify a constant level premium. Tether's own discount entered only the
+anchor, which is why the raw slope fell short of one. The
+hourly GMM intervals are much narrower than the daily month-block interval and exclude one; because the offset is
+persistent and the simulation shows HAC covering only \NumGSThreeCover{} in a mixture, we treat the month-block interval
+as the headline and read the estimate as close to, not equal to, one. Across \NumRACells{} specifications (five windows,
+four instrument sets, three reference venues, two versions of $X$ and three block lengths), a grid specified before it was
+run but after the headline was seen, the GMM estimate ranged from \NumRAGmmMin{} to \NumRAGmmMax{} (median
+\NumRAGmmMed{}); the bootstrap interval contained one in \NumRAGmmBootOnePct\% of the GMM cells, and the window
+mattered most (the grid is not reproduced here). Kraken's USDT price itself fell as Bitfinex's offset widened
+(slope \NumRAAThreeSlope{}), the contamination that netting removes. By year, the
 adjusted slope was \NumKYTwoZeroOneEightDaySlopeAdj{} in 2018 (the raw slope there, \NumKYTwoZeroOneEightDaySlopeD{}, is
-above one on \NumKYTwoZeroOneEightDayN{} days) and \NumKYTwoZeroOneNineDaySlopeAdj{} in 2019. In the calm years it was
-lower (\NumKYTwoZeroTwoOneDaySlopeAdj{} in 2021 to \NumKYTwoZeroTwoThreeDaySlopeAdj{} in 2023), where gaps are a few
-basis points and few hours are large; we do not read those years as unit shifts, nor as demand. The result rests on
-Kraken's USDT price being outside Bitfinex's ledger; Kraken's USDT market missed no stretch longer than
-\NumKCovLongestGap{} hour of the window.
+above one; \NumKYTwoZeroOneEightHrN{} hours on \NumKYTwoZeroOneEightDayN{} days) and \NumKYTwoZeroOneNineDaySlopeAdj{} in 2019.
+In the calm years it was lower (\NumKYTwoZeroTwoZeroDaySlopeAdj{} in 2020, \NumKYTwoZeroTwoOneDaySlopeAdj{} in 2021,
+\NumKYTwoZeroTwoTwoDaySlopeAdj{} in 2022 and \NumKYTwoZeroTwoThreeDaySlopeAdj{} in 2023, with intervals that exclude one in
+Table~\ref{tab:anchor-ext}), where gaps are a few basis points and few hours are large; we do not read those years as unit
+shifts, nor as demand. The anchored result is a statement about the stress window, not about Bitfinex's dollar in general, and it rests on
+Kraken's USDT price being outside Bitfinex's ledger.
 
-\paragraph{Binance.US: the same test.} In June and July 2023 the median offset was \NumUAnchorBnusL{} bps
-in the large-gap hours and the median USDT dislocation \NumUAnchorBnusD{} bps. The slope was \NumUAnchorBnusSlope{} and
-the residual \NumUAnchorBnusT{} bps (Table~\ref{tab:anchor}, Appendix). A closed fiat on-ramp is the mechanism behind such a shift, not an alternative to it. Tether carried no discount of its own there;
-Binance.US's dollar moved, and everything quoted in it moved with it.
+\paragraph{Binance.US: a mechanical test.} Two windows are kept apart. Table~\ref{tab:anchor} (Appendix) uses the hours of
+June and July 2023 with a large gap: the median offset was \NumUAnchorBnusL{} bps over 721 such hours, the median USDT
+dislocation \NumUAnchorBnusD{} bps, the residual \NumUAnchorBnusT{} bps (shown rounded to whole bps in the table) and the
+slope \NumUAnchorBnusSlope{}. \S\ref{sec:2023} uses the shorter window from 22 June to 31 July, with deposits shut and
+withdrawals open (a median gap of \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours). The slope near one is close
+to mechanical once deposits closed: a venue-wide shock of this size dwarfs every other source of variance, so an item that
+moves with the venue gives slope one. The netting changed nothing (\NumGBusTwoRawLam{} unnetted against \NumGBusTwoLam{}
+netted, \S\ref{sec:anchored-theory}) because Kraken's USDT was at par. The single-anchor test was consistent with a unit
+shift, and the two-anchor test rejected (Bitstamp's USDC leg was itself depegged), so we do not say that Binance.US passed.
+A closed fiat on-ramp is the mechanism behind such a shift, not an alternative to it, and it also limits arbitrage in
+Tether, so a flow-constrained venue would look the same.
 
 \paragraph{Formal test.} Section~\ref{sec:anchored-theory} formalises the test. On the Bitfinex stress window the GMM
-estimate of the unit share was \NumGBfxPrimaryLam{} (HAC 95\% interval \NumGBfxPrimaryLo{} to \NumGBfxPrimaryHi{}), with
-Hansen's $J$ giving $p=\NumGBfxPrimaryJP{}$. A unit share of one is rejected ($p$ \NumGBfxPrimaryPOne{}), so about
-\NumGBfxPrimaryLam{} of the offset, not all of it, was a unit shift; we say close to one, not equal to one. For
-Binance.US in 2023 the estimate was \NumGBusUsdtLam{} (\NumGBusUsdtLo{} to \NumGBusUsdtHi{}). Table~\ref{tab:theory} gives
-the simulated size and power and these estimates.
+estimate of the unit share was \NumGBfxPrimaryLam{}, with Hansen's $J$ giving $p=\NumGBfxPrimaryJP{}$. A unit share of one is
+rejected ($p$ \NumGBfxPrimaryPOne{}), so about \NumGBfxPrimaryLam{} of the offset's variation, not all of it, was a unit
+shift; we say close to one, not equal to one. For Binance.US in 2023 the estimate was \NumGBusUsdtLam{} (HAC only;
+\S\ref{sec:anchored-theory}). Table~\ref{tab:theory} gives the simulated size and power and these estimates.
 
-\input{generated/theory_table}
-
-\paragraph{Demand and placebo.} Hours in which the bitcoin and ether gaps agreed but the anchor did not follow were
-\NumUAnchorDemandShare\% of the \NumUAnchorDemandHours{} agreeing hours since the market opened. On open rails, the
-reverse placebo (the Coinbase--Bitstamp bitcoin gap against Bitstamp's USDT, \NumUAnchorPlaceboHours{} large-gap hours)
-gave a slope of \NumUAnchorPlaceboSlope{} with an interval from \NumUAnchorPlaceboSlopeLo{} to
-\NumUAnchorPlaceboSlopeHi{}, which includes 0; with so few hours it is directional evidence only.
+\paragraph{Demand and placebo.} Call an hour with $|L|\ge 50$ bps \emph{agreeing} if the ether gap is within a quarter of
+the bitcoin gap, and say the anchor \emph{did not follow} if $|T|$ exceeded half of $|L|$. This held in
+\NumUAnchorDemandShare\% of the \NumUAnchorDemandHours{} agreeing hours since USDT listed on Bitfinex
+(\NumUAnchorDemandStressShare\% in the stress window). Table~\ref{tab:anchor} counts a different thing, the hours in which
+$|T|$ stayed within a quarter of $|L|$ (a stricter test of following, over all large-gap hours), so the two shares are not
+comparable; the hours in between neither follow nor clearly fail to. On open rails, the reverse placebo (the
+Coinbase--Bitstamp bitcoin gap against Bitstamp's USDT, \NumUAnchorPlaceboHours{} large-gap hours) gave a slope of
+\NumUAnchorPlaceboSlope{} with an interval from \NumUAnchorPlaceboSlopeLo{} to \NumUAnchorPlaceboSlopeHi{}. That interval
+contains both 0 and 1, so it cannot reject either and is not an informative placebo; a larger shared-dollar placebo is not
+available in these data.
 
 \subsection{Held-out assets}
 \label{sec:heldout}
@@ -304,171 +329,188 @@ intervals (\NumPBootDraws{} draws).
 
 \paragraph{Per year and per asset.} A pooled score is dominated by the hours and assets where the gap is large. On the
 test assets the pooled score was \NumPTestPooledEst{} (95\% interval \NumPTestPooledEstLo{} to \NumPTestPooledEstHi{}), but
-it is driven by XRP (\NumUTestXrpPct\%) and by 2019 (\NumUTestNineteenPct\%). The medians are more telling. Across the
-five test years the median score was \NumRMedTestEstYearMedian{} (range \NumRMedTestEstYearMin{} to
-\NumRMedTestEstYearMax{}); across the five test assets it was \NumRMedTestEstAssetMedian{} (\NumRMedTestEstAssetMin{} to
-\NumRMedTestEstAssetMax{}); across the asset-by-year cells it was \NumRMedTestEstCellMedian{}. From 2020 to 2023 the yearly
-score was between \NumUTestYearMinPct\% and \NumUTestYearMaxPct\%. So one offset per source-hour removes most of the gap
-in the stress years and about a third to two-fifths in calm years, on assets it never saw. On the dev assets the
-corresponding medians were \NumRMedDevEstYearMedian{} per year and \NumRMedDevEstAssetMedian{} per asset.
+it is driven by XRP (\NumUTestXrpPct\%) and by 2019 (\NumUTestNineteenPct\%). The medians are more telling: across the five
+calendar years 2019 to 2023 the median score was \NumRMedTestEstYearMedian{} (range \NumRMedTestEstYearMin{} to
+\NumRMedTestEstYearMax{}), across the five test assets \NumRMedTestEstAssetMedian{} (\NumRMedTestEstAssetMin{} to
+\NumRMedTestEstAssetMax{}) and across asset-by-year cells \NumRMedTestEstCellMedian{}; from 2020 to 2023 the yearly score was
+between \NumUTestYearMinPct\% and \NumUTestYearMaxPct\%. So one offset per source-hour removes most of the gap in the stress
+years and about a third to two-fifths in calm years. On the dev assets the medians were \NumRMedDevEstYearMedian{} per year
+and \NumRMedDevEstAssetMedian{} per asset.
 
 \paragraph{Held-out time.} Withholding assets is not withholding time, so Table~\ref{tab:robust-eval} scores each period
-on its own data, and the estimator is causal. In 2017--2019 the test assets scored \NumRPeriodOneTestEst{} (interval
+on its own data. The estimator is causal and keeps no state, so this tests only the constant $c$. In 2017--2019 the test assets scored \NumRPeriodOneTestEst{} (interval
 \NumRPeriodOneTestEstMonthLo{} to \NumRPeriodOneTestEstMonthHi{}; only \NumRPeriodOneTestHours{} hours, since the test
-assets list late), and the dev assets \NumRPeriodOneDevEst{}. In 2020--2023 the test assets scored
-\NumRPeriodTwoTestEst{} (\NumRPeriodTwoTestEstMonthLo{} to \NumRPeriodTwoTestEstMonthHi{}), but the dev assets only
-\NumRPeriodTwoDevEst{}: in calm years the correction helps on some assets and not on others. Re-picking $c$ on
-2017--2019 data alone gave \NumRHonestChosen{} and a 2020--2023 test score of \NumRHonestTestEst{}. Calendar-month blocks
-widen the pooled test interval to \NumRMonthTestPooledEstLo{} to \NumRMonthTestPooledEstHi{}, and quarter blocks to
+assets list late) and the dev assets \NumRPeriodOneDevEst{}. In 2020--2023 the test assets scored
+\NumRPeriodTwoTestEst{} (\NumRPeriodTwoTestEstMonthLo{} to \NumRPeriodTwoTestEstMonthHi{}) but the dev assets only
+\NumRPeriodTwoDevEst{}: in calm years the correction helps on some assets and not on others. Re-picking $c$ on 2017--2019
+data alone gave \NumRHonestChosen{} and a 2020--2023 test score of \NumRHonestTestEst{}. Calendar-month blocks widen the
+pooled test interval to \NumRMonthTestPooledEstLo{} to \NumRMonthTestPooledEstHi{}, and quarter blocks to
 \NumRQuarterTestPooledEstLo{} to \NumRQuarterTestPooledEstHi{}, against \NumPTestPooledEstLo{} to \NumPTestPooledEstHi{} for
-week blocks; offsets that persist for months make short blocks too optimistic.
+week blocks. Tables~\ref{tab:robust-eval} and \ref{tab:heldout-ci} use week blocks as the default, but offsets that persist
+for months make them too optimistic, so the month and quarter intervals are the ones to read.
 
-\paragraph{Baseline and controls.} The estimator is indistinguishable from the plain cross-asset median $b_2$: the pooled
-test difference was \NumPTestPooledDiff{} (interval \NumPTestPooledDiffLo{} to \NumPTestPooledDiffHi{}). The contribution
-is therefore the unit model and its validation, not a better estimator. A median suffices. On Coinbase--Bitstamp, the pair
-with a shared dollar, the pooled score was \NumPCtrlCbBstPooledEst{} (interval \NumPCtrlCbBstPooledEstLo{} to
-\NumPCtrlCbBstPooledEstHi{}) and the mean absolute correction was \NumPCtrlCbBstPooledAbsEst{} bps, against
-\NumPCtrlBfxBstPooledAbsEst{} bps on Bitfinex--Bitstamp, a pair with separate dollars. Table~\ref{tab:heldout-ci}
-(Appendix) gives each asset.
+\paragraph{Baseline and controls.} The estimator ties the plain cross-asset median $b_2$ on the pooled test score (difference
+\NumPTestPooledDiff{}, interval \NumPTestPooledDiffLo{} to \NumPTestPooledDiffHi{}); some per-asset and control differences are
+small but exclude zero (Table~\ref{tab:heldout-ci}). The contribution is the unit model and its validation, not a better
+estimator, and the score shows only that offsets are shared across assets, which common demand would produce as well; the
+anchor separates unit from demand. On Coinbase--Bitstamp, the pair with a shared dollar, the pooled score was
+\NumPCtrlCbBstPooledEst{} (interval \NumPCtrlCbBstPooledEstLo{} to \NumPCtrlCbBstPooledEstHi{}) and the mean absolute
+correction \NumPCtrlCbBstPooledAbsEst{} bps, against \NumPCtrlBfxBstPooledAbsEst{} bps on Bitfinex--Bitstamp, a pair with
+separate dollars.
 
 \subsection{Fusion benchmark: when units matter}
 \label{sec:bench}
 \input{generated/bench_table}
 A fusion service cares about the fused price, not the offset. We therefore froze three methods and scored each once on
-episodes it had never seen (Table~\ref{tab:bench}; Table~\ref{tab:fixed}), against the plain median, volume-weighted
-mean, CRH and GTM, a Gaussian truth model for continuous values~\cite{li2015survey}. UNIT-TD is the held-out-asset test above. FUSE fuses the dollar prices of
+episodes outside its development data (Table~\ref{tab:bench}; Table~\ref{tab:fixed}; T1 is the project's motivating episode,
+so it was known), against the plain median, volume-weighted
+mean, CRH and GTM, a Gaussian truth model for continuous values described in the survey~\cite{li2015survey}. UNIT-TD is the held-out-asset test above. FUSE fuses the dollar prices of
 Bitfinex, Coinbase, Bitstamp and, in 2023, Binance.US into one price, scored against Kraken, which never entered fusion.
 STABLE fuses markets quoted in different stablecoins into one dollar price, again against Kraken. Every score is relative
 to the plain median.
 
+\paragraph{Methods.} The \emph{round-2 unit-aware fuser} corrects each source for an estimated unit offset and then runs CRH
+with reliabilities refit on a trailing window. The \emph{round-3 fuser} identifies which units are dollars from a graph of
+the quoted markets, gives every unit a value by shortest path to a dollar, smooths these values over time, and fuses the
+converted prices with a dollar-weighted trimmed median. Both are causal, see only anonymised source labels and never see the
+Kraken reference. The \emph{oracle} is the median of the sources known to be clean (Coinbase and Bitstamp in FUSE, the
+USD-quoted markets in STABLE). It uses fewer sources, so it carries more venue noise, which is why it can be worse than the
+median where little needs correcting (T4, X3, X4). We report no intervals on these ratios: each cell is one episode, so an
+interval over hours would understate the uncertainty.
+
 The plain median was hard to beat. In UNIT-TD the estimator scored \NumBTdTestScore{} against \NumBTdBTwo{} for the median,
-\NumBTdCrh{} for CRH and \NumBTdGtm{} for GTM. In FUSE, the fuser beat the median in the Bitfinex episode T1
+\NumBTdCrh{} for CRH and \NumBTdGtm{} for GTM. In FUSE, the round-3 fuser beat the median in the Bitfinex episode T1
 (\NumBFuseTOneFuser{}), but CRH (\NumBFuseTOneCrh{}) and dropping the most deviant source (\NumBFuseTOneDropDeviant{}) beat
 it, it lost on Binance.US T2 (\NumBFuseTTwoFuser{}), and on FTX, SVB and the calm period it was within
-\NumBFuseTThreeFuser{} to \NumBFuseTFiveFuser{} of the median. Volume weighting and GTM broke down in T1
-(\NumBFuseTOneVwap{} and \NumBFuseTOneGtm{}). In STABLE, the method won on the USDC run X1 (\NumBStableXOneFuser{}, against
+\NumBFuseTThreeFuser{} to \NumBFuseTFiveFuser{} of the median. In STABLE, the round-3 fuser won on the USDC run X1 (\NumBStableXOneFuser{}, against
 \NumBStableXOneBTwo{} for converting each quote unit at its stablecoin rate, \NumBStableXOneBOne{} for volume weighting and
 \NumBStableXOneBThree{} for CRH) and lost on TUSD X2 (\NumBStableXTwoFuser{}), FDUSD X3 (\NumBStableXThreeFuser{}) and on the
-calm placebo X4 (\NumBStableXFourFuser{}), which failed the method's own check.
+calm placebo X4 (\NumBStableXFourFuser{}), which failed the fuser's own placebo check.
 
-The scope condition is therefore narrow and positive. Unit-aware fusion won when a large group of sources shared a unit
-and that unit moved by more than venue noise, as in the March 2023 USDC run. Where the shift touched a minority of sources,
-a median already absorbs it (an injected-bias test in the artifact shows this), and correcting adds noise: the extra error in X4, where nothing
-needed correcting, is the price. Two sources are a different case. With Bitfinex and one open venue the median, CRH and GTM
-coincide and cannot say which dollar is off; the unit-aware fuser cut the median error in Bitfinex's 2018--19 stress from
+The scope condition is therefore a hypothesis from one winning episode in nine cells, which the follow-up below tests. Unit-aware fusion won
+when a large group of sources shared a unit and that unit moved by more than venue noise, as in the March 2023 USDC run.
+Where the shift touches a minority of sources, a median already absorbs it, and correcting adds noise: the extra error in
+X4, where nothing needed correcting, is the price. Two sources are a different case. With Bitfinex and one open venue the
+median, CRH and GTM coincide and cannot say which dollar is off; the unit-aware fuser cut the median error in Bitfinex's
+2018--19 stress from
 \NumTAllBothStressBfxTwentyEighteenNineteenMedianMed{} to \NumTAllBothStressBfxTwentyEighteenNineteenUnitAwareMed{} bps, about
-that of the open venue alone (\NumTAllBothStressBfxTwentyEighteenNineteenOpenOnlyMed{}; Appendix~\ref{app:td}). Units add
-information about which source is off when prices cannot say.
+that of the open venue alone (\NumTAllBothStressBfxTwentyEighteenNineteenOpenOnlyMed{}; Appendix~\ref{app:td}). The
+fused price here is close to the open venue's, and we do not claim it as independent evidence that units can be identified
+from two sources.
+
+\paragraph{Out-of-sample test of the scope condition.} We then pre-registered one further test (Table~\ref{tab:fixed}):
+the frozen round-3 fuser on untouched events where most volume shares a stablecoin unit that moved. Three USDT events
+(November--December 2018, April--May 2019, March 2020) passed the feasibility gate, giving \NumQSHiPooled{} hours with the
+majority-unit shift; two others (Q-E1, Q-E5) failed it. On those hours the fuser beat the median (log-error difference
+\NumQVsBZeroMean{}, 95\% interval \NumQVsBZeroLo{} to \NumQVsBZeroHi{} over \NumQNBlocks{} blocks), unit conversion
+(\NumQVsBTwoMean{}, \NumQVsBTwoLo{} to \NumQVsBTwoHi{}) and CRH (\NumQVsBThreeMean{}, \NumQVsBThreeLo{} to \NumQVsBThreeHi{}).
+The mean absolute error was \NumQMaeFuser{} bps, against \NumQMaeBZero{} for the median, \NumQMaeBThree{} for CRH,
+\NumQMaeBTwo{} for conversion and \NumQMaeOracle{} for the oracle. Four caveats. Conversion was weak in 2018--19 because the
+only USDT/USD rate came from Bitfinex, whose own dollar was dislocated. The Q-E2 placebo is uninformative. The test covers
+three events, all USDT. And two of the five planned events failed the feasibility gate.
 
 \subsection{Size and timing of the calm-year offsets}
 \label{sec:noise}
-The calm-year offsets are systematic but too small to trade. Calm years here are 2020 to 2023. The round-trip band of a
-pair is the sum of its two venues' base-tier taker fees, from \NumNBandMin{} to \NumNBandMax{} bps across pair-years. The
-median absolute hourly bitcoin gap between Bitfinex and Bitstamp was between \NumNBfxBstGapBtcMin{} and
-\NumNBfxBstGapBtcMax{} bps, inside the band, and the gap exceeded the band in at most \NumNCalmAboveBandMaxPct\% of hours
-for any pair. Halving every band (\NumNHalfBandMin{} bps at the narrowest) leaves the
-median gap inside it. These offsets are not arbitrage opportunities.
-
-They are persistent and shared across assets. The first-order autocorrelation of the daily Bitfinex gap was between
-\NumNBfxBstAcOneMin{} and \NumNBfxBstAcOneMax{} against Bitstamp, and the share of the daily ether and bitcoin gaps that
-was common to both was between \NumNBfxBstCommonDailyMin{} and \NumNBfxBstCommonDailyMax{}. The conclusion does not depend
-on the timing convention: the hourly explained share was between \NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{} with
-hourly medians, between \NumNBfxBstExplLastMin{} and \NumNBfxBstExplLastMax{} with last closes, and between
-\NumNBfxBstExplSyncMin{} and \NumNBfxBstExplSyncMax{} where all legs traded in the final minute; in all
-\NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the cross-correlation peaked at zero minutes. The Coinbase--Bitstamp
-gaps behaved like noise (median absolute bitcoin gap \NumNCbBstGapBtcMin{} to \NumNCbBstGapBtcMax{} bps, a few ticks). A
-price feed that fuses these sources still cares about a persistent bias of a few basis points, even though no one can
-trade it away.
+The calm-year offsets (2020 to 2023) are systematic but too small to trade. The round-trip band of a pair is the sum of its
+two venues' base-tier taker fees, from \NumNBandMin{} to \NumNBandMax{} bps across pair-years. The median absolute hourly
+bitcoin gap between Bitfinex and Bitstamp was between \NumNBfxBstGapBtcMin{} and \NumNBfxBstGapBtcMax{} bps, inside the band,
+and the gap exceeded the band in at most \NumNCalmAboveBandMaxPct\% of hours for any pair. They are persistent and shared
+across assets: the first-order autocorrelation of the daily Bitfinex gap was between \NumNBfxBstAcOneMin{} and
+\NumNBfxBstAcOneMax{} against Bitstamp, and the centred daily common share of the ether and bitcoin gaps (a correlation of
+the two, not the explained share of Table~\ref{tab:unit_diag}) was between \NumNBfxBstCommonDailyMin{} and
+\NumNBfxBstCommonDailyMax{}. The hourly explained share was between \NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{} with
+hourly medians and between \NumNBfxBstExplLastMin{} and \NumNBfxBstExplLastMax{} with last closes, and in all
+\NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the cross-correlation peaked at zero minutes. A price feed that fuses
+these sources still cares about a persistent bias of a few basis points, even though no one can trade it away.
 
 \subsection{Monitoring}
 \label{sec:monitor}
-\input{generated/detector_eval_table}
 The monitor flags an hour when the bitcoin gap to the reference is at least 100 bps and a second asset (ether or Tether)
-agrees with it to within a quarter of its size; consecutive flags merge into alarm episodes. The rule, thresholds and
-baselines were fixed before the evaluation (Table~\ref{tab:detector}). Baselines are a price-gap alarm on bitcoin
+agrees with it to within a quarter of its size; consecutive flags merge into alarm episodes. This is a thresholded form of
+the cross-item agreement behind Eq.~(2), not the shrunk estimator itself. The rule, thresholds and
+baselines were fixed before the evaluation (Table~\ref{tab:detector}), but Binance.US and Bitfinex are development venues
+(Table~\ref{tab:fixed}). Baselines are a price-gap alarm on bitcoin
 alone, a trailing robust $z$-score of the gap, and the USDT premium.
 
-On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per exchange-year (\NumUDetFaBfxCount{} episodes),
+On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per venue-year (\NumUDetFaBfxCount{} episodes),
 against \NumUBaseFaBfxTwo{} for the plain price-gap alarm (\NumUBaseFaBfxCount{}), at the same recall:
 \NumUDetCaught{} of \NumUDetCovered{} labelled episodes. The second-asset test keeps the gap alarm's recall and removes
 two thirds of its false alarms. At its fixed setting the trailing $z$-score caught every Bitfinex episode and raised
-\NumSBTwoRateBfx{} false alarm episodes per exchange-year. On Binance.US the monitor caught all labelled episodes. On
+\NumSBTwoRateBfx{} false alarm episodes per venue-year. On Binance.US, where the rule was fitted, the monitor caught all labelled episodes. On
 Coinbase it raised no alarm after \NumUCbLastAlarm{}; its \NumUCbEpisodes{} alarm episodes all fall in the 2017 bubble
 (Appendix~\ref{app:windows}).
 
-\paragraph{Operating curves.} One threshold is one operating point, so we swept each rule's threshold
-(committed tables hold the full sweep). The denominator of a false-alarm rate is the evaluated
-venue-hours divided by 8,766 hours per year; for the monitor it was \NumSHoursDetBfx{} hours, or \NumSYearsDetBfx{} years,
-on Bitfinex. At matched recall of at least 0.85, which allows one of the \NumSDetCoveredBfx{} Bitfinex positives to be
-missed, the monitor had the fewest false alarms of the price-threshold rules: \NumSDetAtEightyFiveBfx{} per venue-year,
-against \NumSBOneAtEightyFiveBfx{} for the gap-only rule and \NumSTwoAtEightyFiveBfx{} for the matched two-asset rule. The
-robust $z$-score reached full recall with fewer false alarms, \NumSBTwoAtFullBfx{} per venue-year against
-\NumSDetAtFullBfx{} for the monitor, so it is the better rule at the high-recall end.
+In Table~\ref{tab:detector}, episodes minus false alarms counts the alarm episodes that overlap a labelled event. It can
+exceed the number of labels caught, because several alarm episodes can hit one label. Years of coverage also differ by
+method (\NumSYearsDetBus{} against \NumSYearsBOneBus{} on Binance.US), because each rule is scored on the hours where it is
+defined, so false alarm rates are not simple ratios of the counts. We give no intervals; with \NumUDetCovered{} labelled
+episodes on Bitfinex and a handful elsewhere they would be wide.
 
-\paragraph{The 2018 timeline.} Bitfinex's daily bitcoin gap to the reference first exceeded 100 bps on
-\NumSFirstDayAbove{}. The first run above that level lasted \NumSFirstRunDays{} days, and the gap was above it on
-\NumSDaysAboveToNyag{} of the \NumSCalendarDaysToNyag{} days from that date to \NumSNyagDate, when regulators disclosed
-the loss of funds held at a payment processor. Reports of the banking-partner problem are dated \NumSNobleDate{} and of a
-deposit pause \NumSDepositPauseDate{}. The gap was visible in public prices for about \NumSMonthsToNyag{} months before the
-loss was disclosed. This is a statement about elapsed time, not a lead over the market.
+\paragraph{Operating curves.} We swept each rule's threshold (the sweep is not reproduced here); the false-alarm denominator
+is the evaluated venue-hours over 8,766 hours per year (\NumSYearsDetBfx{} years for the monitor on Bitfinex). At matched
+recall of at least 0.85, which allows one of the \NumSDetCoveredBfx{} Bitfinex positives to be missed, the monitor had the
+fewest false alarms of the price-threshold rules (\NumSDetAtEightyFiveBfx{} per venue-year, against \NumSBOneAtEightyFiveBfx{}
+for the gap-only rule), but the robust $z$-score reached full recall with fewer (\NumSBTwoAtFullBfx{} against
+\NumSDetAtFullBfx{}), so it is the better rule at the high-recall end.
 
-\subsection{Three shocks in 2023}\label{sec:shocks}
+\paragraph{The 2018 timeline.} Bitfinex's daily bitcoin gap first exceeded 100 bps on \NumSFirstDayAbove{}, about
+\NumSMonthsToNyag{} months before regulators disclosed the loss of funds at a payment processor (\NumSNyagDate): elapsed
+time, not a lead over the market.
+
+\subsection{Two shocks and a null in 2023}\label{sec:shocks}
 \label{sec:2023}
-\paragraph{Binance.US.} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
-partners stopped dollar payments~\cite{theblock2023binanceus}. In the window with deposits shut and withdrawals open,
-the median bitcoin gap to Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs
-traded. The sign is negative (source minus reference): assets were cheaper in Binance.US's dollar, so that dollar traded
-at a premium. Bitcoin and Tether showed the same dislocation, with an hourly correlation of changes of
-\NumIdentChgTrans{}, and the ledger component accounted for a median \NumDecBnusShare\% of the Tether dislocation
-(Figure~\ref{fig:which}b, Appendix).
+\paragraph{Binance.US} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
+partners stopped dollar payments~\cite{theblock2023binanceus}. From 22 June to 31 July, with deposits shut and withdrawals
+open, the median bitcoin gap to Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs
+traded (Table~\ref{tab:anchor} uses all large-gap hours of June and July). The sign is negative: assets were cheaper in
+Binance.US's dollar, so that dollar traded at a premium. Bitcoin and Tether showed the same dislocation (hourly correlation
+of changes \NumIdentChgTrans{}), and the ledger component accounted for a median \NumDecBnusShare\% of the Tether
+dislocation (Figure~\ref{fig:which}b).
 
-\paragraph{Silvergate, Signature and USDC.} The closure of Silvergate and Signature in March 2023 raised no alarm on
+\paragraph{Silvergate, Signature and USDC} The closure of Silvergate and Signature in March 2023 raised no alarm on
 Bitfinex, Coinbase or Binance.US (\NumUMarAlarmDays{} alarm days). A dislocation of the exchange dollar appeared only
 where rails closed with no substitute: Bitfinex in 2017--2018 and Binance.US from June 2023. In the March 2023 USDC
 run, the token component on Binance.US was \NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps: the token
 moved, not the exchange dollar (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on
 Bitstamp, and was at least 100 bps below par in \NumUUsdcHoursGeHundred{} hours.
 
-\paragraph{Chainlink.} If a Chainlink feed had inherited the depeg, its error would regress on the depeg size with a slope
-equal to the share $s$ of its sources quoted in USDC. We did not measure $s$, but $s\le 1$, so a slope of one is an upper
-bound and the observed slope bounds $s$ times the pass-through. It was \NumUOracleSlopeBtc{} for bitcoin and
-\NumUOracleSlopeEth{} for ether, against \NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the USDC
-feed itself, which responded as expected. This is one episode and one oracle family.
+\paragraph{Chainlink.} A Chainlink feed that inherited the depeg would regress on its size with a slope up to the (unmeasured)
+share of USDC-quoted sources. The slope was \NumUOracleSlopeBtc{} for bitcoin and \NumUOracleSlopeEth{} for ether, against
+\NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the USDC feed: one episode, one oracle family.
 
 \section{Discussion}
+\label{sec:discussion}
 \paragraph{What aggregators and oracles should do.} Keep the plain median by default; across three locked tests it was
-hard to beat, and it absorbs a minority of shifted sources. Correct for units when three things hold. A group of sources
-shares a unit that can move, such as a stablecoin or a platform credit. The shift can be large relative to venue noise.
-And side information exists that identifies the unit: several unrelated items per source, or an anchor with an external
-price. Then label each source's unit, correct instead of dropping the source (which preserves its volume), and report the
-estimated offset. Where only two sources quote, a median cannot say which unit is off, and the offset can. The same
-approach applies to platform credits, multi-currency marketplaces and loyalty points, wherever an anchor item with a known
-value exists; we have tested it only on crypto exchanges.
+hard to beat, and it absorbs a minority of shifted sources. Our winning episodes suggest that correcting for units may pay
+when a group of sources shares a unit that can move, the shift is large relative to venue noise, and side information
+identifies the unit (several unrelated items per source, or an anchor with an external price). Then report the estimated
+offset and, if the source's volume matters, correct instead of dropping it (dropping the most deviant source did as well in
+T1). Where only two sources quote, a median cannot say which unit is off, and the offset can. The same approach may apply
+to platform credits, multi-currency marketplaces and loyalty points wherever an anchor item with a known value exists; we
+have tested it only on crypto exchanges.
 
-\paragraph{A second application.} The same model applies to Korean exchanges, whose won prices carry the ``Kimchi''
-premium. In a pre-registered study, bitcoin, ether and XRP gaps on Upbit moved together in every window: the smallest
-pairwise correlation was \NumKREOneMinCorr{} in December 2017 to January 2018, when the bitcoin premium was
-\NumKREOneBtcPremPct\%, and \NumKRETwoMinCorr{} in spring 2021. USDT/KRW, the anchor, existed only from December 2023;
-in that window the anchored slope was \NumKRAnchMeanIv{} (interval \NumKRAnchMeanIvLo{} to \NumKRAnchMeanIvHi{}),
-mostly a won-unit wedge with some residual, on \NumKRAnchMeanN{} hours.
+\paragraph{A second application.} In a pre-registered study (Table~\ref{tab:fixed}) of Korean exchanges, with gaps net of the
+official won--dollar rate (FRED DEXKOUS), bitcoin, ether and XRP gaps on Upbit moved together in every window (smallest
+pairwise correlation \NumKREOneMinCorr{}, in the 2017--18 episode with an \NumKREOneBtcPremPct\% bitcoin premium). USDT/KRW,
+the anchor, existed only from December 2023, so the earlier premia have no anchor test, and it carries the wedge itself
+(median \NumKRAnchMedianDPct\% against a common component of \NumKRAnchMedianLPct\%), so it is not fixed in the Korean dollar
+unit. The anchored slope was \NumKRAnchMeanIv{} (interval \NumKRAnchMeanIvLo{} to \NumKRAnchMeanIvHi{}) on
+\NumKRAnchMeanN{} hours, biased toward one by FX noise common to gaps and anchor. We read it as a won-unit wedge with some
+residual, and no more.
 
-\paragraph{Limits.} The diagnostic rests on three USD exchanges and the benchmark on three locked tests with few
-episodes each, so the scope condition is a pattern in a small sample, not an estimate. The estimator ties the plain
-median, so the evidence is for the unit model and not for a better estimator. The held-out score in calm years is a third
-to two-fifths on the test assets and near zero on the dev assets, and its intervals widen with longer blocks. The anchor
-needs an item fixed in the true unit: USDT is one only up to its own redemption risk, which the Kraken price corrects for
-only if Kraken's ledger is outside Bitfinex's, and it exists on Bitfinex only from 2018-11-27, so the earlier banking
-episodes have no anchor. When two of three exchanges share a biased unit, prices alone cannot say which unit is true; an
-outside anchor is needed. The calm-year offsets sit inside fee bands that come from secondary sources, the monitor is
-scored on a handful of labelled events, and the oracle check covers one episode.
+\paragraph{Limits.} The diagnostic rests on three USD exchanges, the benchmark on three locked tests with few episodes each,
+and the anchored evidence on one regime (Bitfinex's stress window) and a Binance.US episode in which the slope is close to
+mechanical, so the scope condition is a pattern in a small sample, not an estimate. A1 (equal loading of every non-anchor
+item) is not tested asset by asset, and the uneven per-asset scores of Table~\ref{tab:heldout-ci} suggest it fails for some.
+The estimator ties the plain median. The anchor is fixed in the true unit only up to USDT's redemption risk, which the
+Kraken price corrects for only if Kraken's ledger is outside Bitfinex's, and it exists on Bitfinex only from 2018-11-27. When
+two of three exchanges share a biased unit, prices alone cannot say which is true. The fee bands come from secondary sources,
+the monitor is scored on a handful of labelled events and the oracle check covers one episode.
 
 \section{Reproducibility}
-Every number in this paper is a macro generated from committed reports and logs by the macro modules of \texttt{www\_paper}
-(\texttt{macros}, \texttt{rescue\_macros}, \texttt{unit\_macros}, \texttt{posthoc\_macros}, \texttt{sweep\_macros},
-\texttt{noise\_macros}, \texttt{anchor\_ext\_macros}, \texttt{robust\_macros}, \texttt{td\_macros} and \texttt{bench\_macros}),
-and tests fail if a macro is stale or a number is typed by hand. The three locked tests were scored once, and the benchmark
-table is parsed from their logs. Inputs are free public files recorded by hash, and a fixed gate rebuilds the PDF and checks
-page limits and anonymity.
+Every number in this paper is a macro generated from committed reports and logs by code that is not part of this
+submission, and tests fail if a macro is stale or a number is typed by hand. The locked tests were scored once. Inputs are
+free public files recorded by hash.
 
 \FloatBarrier
 \bibliographystyle{ACM-Reference-Format}
@@ -485,11 +527,12 @@ assets the estimator exceeded CRH by \NumTPartTestEstMinusCrh{} (interval \NumTP
 \NumTPartTestEstMinusCrhHi{}) and GTM by \NumTPartTestEstMinusGtm{} (\NumTPartTestEstMinusGtmLo{} to
 \NumTPartTestEstMinusGtmHi{}). Both were computed after the locked test and are descriptive.
 
-\section{Held-out Scores by Asset, and the Full Anchor Table}
+\section{Simulation, Held-out Scores by Asset, and the Full Anchor Table}
 \label{app:heldout}
 Table~\ref{tab:heldout-ci} gives the held-out score for every asset, with block-bootstrap intervals, for the
 estimator and the two baselines. Table~\ref{tab:anchor} gives the anchor regression for every slice, before netting
 USDT's external price.
+\input{generated/theory_table}
 \input{generated/heldout_ci_table}
 \input{generated/anchor_table}
 
@@ -497,17 +540,18 @@ USDT's external price.
 \label{app:monitor}
 Figure~\ref{fig:which} shows the two 2023 shocks that \S\ref{sec:shocks} describes: a token run (USDC) and a ledger-dollar
 shift (Binance.US).
-\begin{figure*}[t]
+\begin{figure*}[!tp]
 \includegraphics[width=\textwidth]{figures/which_dollar.pdf}
 \caption{Two shocks on one exchange. (a) USDC in March 2023: the observed dislocation $D$ is almost entirely the token
 component $T$, while the ledger component $L$ priced through bitcoin stays near zero. (b) Binance.US's dollar in 2023:
-daily median dislocation of USDT and bitcoin against Bitstamp, with documented rail phases shaded. Three unrelated
-assets carry the same dislocation.}
+daily median dislocation of USDT, bitcoin and USDC against Bitstamp, May to July, with documented rail phases shaded.
+The USDT and bitcoin lines move together.}
 \label{fig:which}
 \end{figure*}
 
 \section{Alarm Windows in 2017 and the Label List}
 \label{app:windows}
+\input{generated/detector_eval_table}
 The \NumUCbEpisodes{} Coinbase alarm episodes fall between \NumUCbFirstAlarm{} and \NumUCbLastAlarm{}. In seven of
 them Coinbase prices stood above Bitstamp's; in the last they stood below. Bitfinex's \NumUDetFaBfxCount{} false alarms
 were a two-day episode in November 2017 and one-day episodes in 2019 and 2022. None of these windows is in the label

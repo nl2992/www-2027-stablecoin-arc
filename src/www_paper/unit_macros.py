@@ -295,7 +295,7 @@ def anchor_table() -> str:
     rows += ["\\midrule", _anchor_row("Binance.US, June--July 2023", bn["jun_jul_2023"]),
              _anchor_row("Binance.US, all of 2023", bn["year_2023"]), "\\midrule",
              _anchor_row("Placebo: Coinbase--Bitstamp, Bitstamp USDT", placebo)]
-    return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
+    return (f"{HEADER}\n\\begin{{table*}}[!tp]\n\\footnotesize\n"
             "\\caption{Stablecoin anchor test. $L$: hourly bitcoin gap of the venue against the open-rail reference (Bitstamp), bps; "
             "$D$: $10^4\\log$ of the venue's USDT/USD price; $T=D-L$. Hours, medians and the share with $|T|\\le 0.25|L|$ use hours "
             "with $|L|\\ge 50$ bps (placebo: $|L|\\ge 20$ bps between Coinbase and Bitstamp, with $D$ the Bitstamp USDT/USD price, "
@@ -320,7 +320,7 @@ def diagnostic_table() -> str:
     head = " & ".join(f"\\multicolumn{{3}}{{c}}{{{label}}}" for _, label in PAIRS)
     rules = " ".join(f"\\cmidrule(lr){{{2 + 3 * i}-{4 + 3 * i}}}" for i in range(3))
     sub = " & ".join(["$\\rho$ & gap & share"] * 3)
-    return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
+    return (f"{HEADER}\n\\begin{{table*}}[!tp]\n\\footnotesize\n"
             "\\caption{Unit diagnostic by exchange pair and year (hourly median of traded-minute log closes). "
             "$\\rho$: correlation across days of the daily-median bitcoin and ether gaps; gap: median absolute hourly bitcoin "
             "gap in bps; share: $1-\\overline{(g_{ETH}-g_{BTC})^2}/\\overline{g_{ETH}^2}$ on hourly data, the part of the "
@@ -379,14 +379,11 @@ def detector_table() -> str:
                         f"{fa['per_venue_year']['total']:.2f} \\\\")
         if method != "b3":
             rows[-1] += "\n\\addlinespace"
-    return (f"{HEADER}\n\\begin{{table}}[t]\n\\footnotesize\n"
-            "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022). Recall: labelled "
-            "episodes caught over labelled episodes with data coverage. False alarms: alarm episodes with no labelled "
-            "event, in total and per exchange-year. Method definitions and the rule are fixed in advance; "
-            "-- means the method was not evaluated for that exchange.}\n"
+    return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
+            "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022). Recall: labelled episodes caught over labelled episodes with data coverage. False: alarm episodes with no labelled event, in total and per venue-year. Episodes minus false alarms are the episodes overlapping a label; several can hit one label. Years of coverage differ by method. The rule was fixed beforehand, but Binance.US and Bitfinex are development venues. -- means not evaluated.}\n"
             "\\label{tab:detector}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}llrrrr@{}}\n\\toprule\n"
             "Method & Exchange & Episodes & Recall & False & Per year \\\\\n\\midrule\n"
-            + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
+            + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
 
 
 FEED_LABEL = {"BTC/USD": "BTC/USD", "ETH/USD": "ETH/USD", "USDT/USD": "USDT/USD", "USDC/USD": "USDC/USD",

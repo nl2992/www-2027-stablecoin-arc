@@ -104,7 +104,7 @@ def table() -> str:
         rows.append("\\midrule")
     for name, c in d["controls"].items():
         rows.append(row(CTRL_LABEL[name], c["bootstrap"]["pooled"]))
-    return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
+    return (f"{HEADER}\n\\begin{{table*}}[!tp]\n\\footnotesize\n"
             "\\caption{Share of the mean-square cross-exchange gap removed (Bitfinex versus Coinbase), by withheld asset, "
             "with 95\\% block-bootstrap intervals (blocks are ISO weeks; 1,000 draws). $b_1$: same-hour bitcoin gap; $b_2$: "
             "same-hour median gap of the visible assets; Estimator: the fixed estimator; $\\Delta$: Estimator minus $b_2$. "
