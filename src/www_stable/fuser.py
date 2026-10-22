@@ -15,6 +15,7 @@ W_ROOT = 2.0
 REL_WIN = 72
 REL_C = 0.0003
 REL_ON = 1
+TRIM = 0.002
 
 
 def _nanmed(x: np.ndarray) -> np.ndarray:
@@ -99,4 +100,10 @@ def fuse(markets: dict[str, pd.DataFrame], meta: dict[str, dict[str, str]], side
         dev = np.where(np.isfinite(dev), dev, np.nanmean(dev, axis=1, keepdims=True) if False else REL_C * 3)
         W = w[None, :] / (dev + REL_C)
         f = _wmed(X, W)
+        if TRIM > 0:
+            near = np.isfinite(X) & (np.abs(X - f[:, None]) <= TRIM)
+            ws = np.where(near, W, 0.0)
+            den = ws.sum(axis=1)
+            g = (np.where(near, X, 0.0) * ws).sum(axis=1) / np.where(den > 0, den, 1.0)
+            f = np.where(den > 0, g, f)
     return pd.Series(f, index=idx)
