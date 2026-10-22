@@ -27,14 +27,14 @@ unit, the dollar, without its backing, and fusion reads a shift in that backing 
 source's values as true values plus a source-unit offset shared by all its items. Agreement across unrelated items
 identifies the offset, and a unit anchor, an item fixed in the true unit, separates a unit shift from demand. We
 formalise the test with an identification result, a GMM over-identification test and a calibrated simulation of size and
-power. On cryptocurrency exchanges, whose dollars are ledger claims, it gives the first test of a reading that Flowerday
-et al. (2026) say cannot be tested directly. Netting Tether's external price from Kraken out of Bitfinex's USDT/USD price
+power. On cryptocurrency exchanges, whose dollars are ledger claims, it gives a direct test of a reading that Flowerday
+et al. (2026) could not test with their data. Netting Tether's external price from Kraken out of Bitfinex's USDT/USD price
 makes it track Bitfinex's offset with slope close to one (\NumKStressDaySlopeAdj{}, 95\% interval
 \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}, up from \NumKStressDaySlopeD{}). Bitfinex's 2018 to 2019
-premium was therefore two discounts, one on the ledger dollar and one on Tether. Binance.US in 2023 was a pure
-ledger-dollar shift (slope \NumUAnchorBnusSlope{}). On assets withheld from development, one offset per source-hour
-removed most of the gap in the stress years and, by the median year (\NumRMedTestEstYearMedian{}) and median asset
-(\NumRMedTestEstAssetMedian{}), about a third to two-fifths in calm years. Across three locked fusion tests, a plain
+premium was thus mostly a ledger-dollar discount; Tether's own discount had depressed the raw anchor. Binance.US's 2023
+offset passed the same test (slope \NumUAnchorBnusSlope{}). On assets withheld from development, one offset per source-hour
+removed \NumRPeriodOneTestEst{} of the mean-square gap from 2017 to 2019 and \NumRPeriodTwoTestEst{} from 2020 to
+2023. Across three locked fusion tests, a plain
 median was hard to beat. Unit-aware fusion won when a large group of sources shared a unit that moved by more than venue
 noise (the USDC 2023 test, error \NumBStableXOneFuser{} of the median's) and not otherwise. Aggregators should correct
 when a shared unit can move and otherwise keep the median.
@@ -77,8 +77,8 @@ We make four contributions.
 \begin{enumerate}
 \item \emph{An identification test.} Each source's prices equal true prices plus a unit offset and an item residual. The
 offset is identified by cross-item agreement and a unit anchor corrected for the anchor's external price
-(\S\ref{sec:model}). It gives the first test of the reading that Bitfinex's premium priced its dollar, and splits that
-premium into a ledger-dollar discount and a Tether discount (\S\ref{sec:anchor}).
+(\S\ref{sec:model}). It gives a direct test of the reading that Bitfinex's premium priced its dollar, and separates that
+dollar from Tether's own discount, which contaminates the raw anchor (\S\ref{sec:anchor}).
 \item \emph{Held-out validation.} Scores on withheld assets are reported per year, per asset and per asset-by-time cell,
 with longer bootstrap blocks and shared-dollar controls, not only pooled (\S\ref{sec:heldout}).
 \item \emph{A fusion benchmark and a scope condition.} Three locked tests, with truth-discovery baselines, show that a
@@ -191,8 +191,8 @@ Developed on dev data & The estimator (\NumULoopIter{} runs, \NumULoopKept{} kep
 assets or episodes only. \\
 Locked test, scored once & Withheld assets XRP, LINK, SOL, DOGE and ADA; FUSE episodes T1--T5; STABLE episodes X1--X4.
 The estimator, the FUSE fuser and the STABLE fuser were frozen first. \\
-Post hoc & The anchor tests and the placebo (the external-price test was specified before the Kraken file was
-downloaded, but not registered); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
+Post hoc & The anchor tests and the placebo (the external-price correction was specified after the raw slope of
+\NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
 GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks and the oracle pilot. \\
 \bottomrule
 \end{tabular}
@@ -241,7 +241,7 @@ stablecoin-funded buying. The anchor separates the two (\S\ref{sec:model}). Tabl
 slope of the anchor's daily gap on the offset, first as quoted on the exchange ($D$ on $L$) and then net of the external
 price ($(D-X)$ on $L$).
 
-\paragraph{Bitfinex: two discounts.} USDT/USD began trading on Bitfinex on 2018-11-27, so the test covers the stress
+\paragraph{Bitfinex: the dollar, net of Tether.} USDT/USD began trading on Bitfinex on 2018-11-27, so the test covers the stress
 window from that date to 2019-05-31. The slope of $D$ on $L$ was \NumKStressDaySlopeD{} (daily data, \NumKStressDayN{}
 days). It is below 1, so a minority demand component or a USDT-specific component remained, and it is far from the 0 of a
 demand-only reading. The USDT-specific component is visible. In the large-gap hours the median offset was
@@ -254,8 +254,10 @@ Netting the external price out raised the slope to \NumKStressDaySlopeAdj{}, wit
 \NumKStressDaySlopeAdjWkHi{} over weeks. Hourly data gave the same estimate (\NumKStressHrSlopeAdj{}, from
 \NumKStressHrN{} hours). Instrumenting $L$ with the Bitfinex--Coinbase ether gap, which shares the ledger dollar but not
 the bitcoin quote error, rules out measurement error in $L$ as the source of the shortfall (\NumKStressDayIvAdj{}, interval
-\NumKStressDayIvAdjWkLo{} to \NumKStressDayIvAdjWkHi{}). Bitfinex's bitcoin premium therefore had two parts: a discount
-on the exchange dollar, and Tether's own discount, which shows up as the gap between the raw slope and one. By year, the
+\NumKStressDayIvAdjWkLo{} to \NumKStressDayIvAdjWkHi{}). Bitfinex's bitcoin premium was therefore mostly a discount on
+the exchange dollar. Tether's own discount entered only the anchor, which is why the raw slope fell short of one. The
+HAC interval of the GMM estimate is narrower than the block-bootstrap interval and excludes one; we treat the bootstrap
+interval as the headline because the offset is persistent, and read the estimate as close to, not equal to, one. By year, the
 adjusted slope was \NumKYTwoZeroOneEightDaySlopeAdj{} in 2018 (the raw slope there, \NumKYTwoZeroOneEightDaySlopeD{}, is
 above one on \NumKYTwoZeroOneEightDayN{} days) and \NumKYTwoZeroOneNineDaySlopeAdj{} in 2019. In the calm years it was
 lower (\NumKYTwoZeroTwoOneDaySlopeAdj{} in 2021 to \NumKYTwoZeroTwoThreeDaySlopeAdj{} in 2023), where gaps are a few
@@ -263,9 +265,9 @@ basis points and few hours are large; we do not read those years as unit shifts,
 Kraken's USDT price being outside Bitfinex's ledger; Kraken's USDT market missed no stretch longer than
 \NumKCovLongestGap{} hour of the window.
 
-\paragraph{Binance.US: a pure ledger-dollar shift.} In June and July 2023 the median offset was \NumUAnchorBnusL{} bps
+\paragraph{Binance.US: the same test.} In June and July 2023 the median offset was \NumUAnchorBnusL{} bps
 in the large-gap hours and the median USDT dislocation \NumUAnchorBnusD{} bps. The slope was \NumUAnchorBnusSlope{} and
-the residual \NumUAnchorBnusT{} bps (Table~\ref{tab:anchor}, Appendix). Tether carried no discount of its own there;
+the residual \NumUAnchorBnusT{} bps (Table~\ref{tab:anchor}, Appendix). A closed fiat on-ramp is the mechanism behind such a shift, not an alternative to it. Tether carried no discount of its own there;
 Binance.US's dollar moved, and everything quoted in it moved with it.
 
 \paragraph{Formal test.} Section~\ref{sec:anchored-theory} formalises the test. On the Bitfinex stress window the GMM
@@ -403,7 +405,7 @@ the loss of funds held at a payment processor. Reports of the banking-partner pr
 deposit pause \NumSDepositPauseDate{}. The gap was visible in public prices for about \NumSMonthsToNyag{} months before the
 loss was disclosed. This is a statement about elapsed time, not a lead over the market.
 
-\subsection{Three shocks in 2023}
+\subsection{Three shocks in 2023}\label{sec:shocks}
 \label{sec:2023}
 \paragraph{Binance.US.} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
 partners stopped dollar payments~\cite{theblock2023binanceus}. In the window with deposits shut and withdrawals open,
@@ -481,11 +483,16 @@ assets the estimator exceeded CRH by \NumTPartTestEstMinusCrh{} (interval \NumTP
 
 \section{Held-out Scores by Asset, and the Full Anchor Table}
 \label{app:heldout}
+Table~\ref{tab:heldout-ci} gives the held-out score for every asset, with block-bootstrap intervals, for the
+estimator and the two baselines. Table~\ref{tab:anchor} gives the anchor regression for every slice, before netting
+USDT's external price.
 \input{generated/heldout_ci_table}
 \input{generated/anchor_table}
 
 \section{The 2023 Shocks}
 \label{app:monitor}
+Figure~\ref{fig:which} shows the two 2023 shocks that \S\ref{sec:shocks} describes: a token run (USDC) and a ledger-dollar
+shift (Binance.US).
 \begin{figure*}[t]
 \includegraphics[width=\textwidth]{figures/which_dollar.pdf}
 \caption{Two shocks on one exchange. (a) USDC in March 2023: the observed dislocation $D$ is almost entirely the token
