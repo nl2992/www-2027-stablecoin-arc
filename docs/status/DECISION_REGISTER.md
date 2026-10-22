@@ -19,6 +19,7 @@ Each decision lists its evidence and who made it. Scope decisions need independe
 | D13 | 2026-10-20 | One-episode oracle audit pilot (USDC, March 2023): read-only Ethereum calls via the user's existing Alchemy key (`WWW_ETH_RPC_URL` in `.env`, never printed) for Chainlink feed history, plus public Pyth Benchmarks and CryptoCompare hourly history (no account creation) | User instruction | Authorized |
 | D14 | 2026-10-20 | Free Bitstamp public HOURLY candles, 2017-01 to 2023-12, for LTC, XRP, XLM, LINK, BCH vs USD (multi-asset shared-dollar control; about 5 series, under 10 MB) | User instruction | Authorized |
 | D15 | 2026-10-20 | Kraken's free downloadable OHLCVT bundle (USDT/USD, BTC/USD, ETH/USD) to test the USDT anchor against an external USDT price | User instruction | Authorized. User approved the full ~9.5 GB five-part archive from assets.kraken.com on 2026-10-20; verify against Kraken's SHA-256, extract only USDTUSD/XBTUSD/ETHUSD, delete the rest |
+| D16 | 2026-10-21 | Round-3 data: Binance public klines (data.binance.vision) for ETH quoted in USDT/BUSD/TUSD/FDUSD and BTC/USDC where listed, episode months 2022-04/05, 2022-10/11, 2023-01..04, 2023-12, 2024-01, 2025-02..04; Bitstamp minute BTC/USDC 2023-02..04 and BTC/USD, ETH/USD 2025-04 (about 30-35 files, under 150 MB) | User instruction | Authorized |
 
 ## Scope: CEX–DEX restoration capacity vs on-chain-only fallback
 
