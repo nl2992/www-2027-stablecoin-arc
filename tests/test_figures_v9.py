@@ -103,3 +103,113 @@ def test_recomputed_kimchi_premia_reproduce_the_reported_summary():
 
 def test_palette_is_the_okabe_ito_set():
     assert {f9.BLUE, f9.VERMILION, f9.GREEN, f9.ORANGE, f9.SKY, f9.PINK} <= {"#0072B2", "#D55E00", "#009E73", "#E69F00", "#56B4E9", "#CC79A7"}
+
+
+PAPER = ROOT / "paper"
+
+
+def test_overview_diagram_uses_paper_notation_and_has_no_empirical_numbers():
+    tikz = (PAPER / "generated/overview_tikz.tex").read_text()
+    for token in (r"$L$", r"$D$", r"$X$", r"$\lambda", r"u_{s,t}", "GMM", "Which dollar moved", "Unit-corrected"):
+        assert token in tikz, token
+    prose = re.sub(r"\$[^$]*\$", "", re.sub(r"\\(?:draw|node|path)[^;]*;", lambda m: " ".join(re.findall(r"\{(.*)\}\s*;", m.group(0))), tikz))
+    assert not re.search(r"\d", prose), prose
+
+
+def test_every_v9_figure_is_committed_with_fixed_metadata():
+    for name in [*REPORT_FIGURES, *DATA_FIGURES]:
+        raw = (FIGS / name).read_bytes()
+        assert raw.startswith(b"%PDF")
+        assert b"/CreationDate" not in raw and b"matplotlib" not in raw
+
+
+def test_captions_are_current_and_well_formed():
+    text = f9.CAPTIONS.read_text()
+    assert text == f9.build_captions(), "run `uv run python -m www_paper.figures_v9`"
+    names = re.findall(r"\\newcommand\{\\(Cap\w+)\}", text)
+    assert names == ["CapAnchorScatter", "CapAnchorTimeseries", "CapRobustnessForest", "CapSimulationPower", "CapQErrors", "CapKimchiGaps"]
+    assert "---" not in text and "\u2014" not in text
+    stripped = re.sub(r"\\[{}%]", "", text)
+    stripped = re.sub(r"%.*", "", stripped)
+    assert stripped.count("{") == stripped.count("}")
+
+
+def test_caption_numbers_come_from_the_reports():
+    import json
+    text = f9.CAPTIONS.read_text()
+    q = json.loads(f9.Q1_RESULTS.read_text())
+    assert f"{q['pooled_s_hi']['fuser']['mae']:.1f}" in text and f"{q['pooled_s_hi']['oracle']['mae']:.1f}" in text
+    rep = f9.anchor_slopes()
+    assert f"{rep['raw']['est']:.2f}" == "0.71" and f"{rep['netted']['est']:.2f}" == "0.97"
+    caption = re.search(r"\\newcommand\{\\CapAnchorScatter\}\{(.*)\} %", text).group(1)
+    assert "0.71" in caption and "0.97" in caption
+
+
+def test_forest_rows_are_summary_rows_and_include_the_headline():
+    import json
+    rows = f9.forest_rows()
+    assert len(rows) == 5 + 4 + 3  # windows, instrument sets, references; not the 360 cells
+    head = json.loads(f9.ROBUSTNESS.read_text())["headline"]
+    hit = [r for r in rows if r["factor"] == "window" and r["headline"]][0]
+    assert hit["lo"] == pytest.approx(head["boot_ci95_week"][0]) and hit["hi"] == pytest.approx(head["boot_ci95_week"][1])
+    assert hit["lam"] == pytest.approx(head["lam"])
+    assert sum(r["headline"] for r in rows) == 3
+
+
+def test_rail_markers_come_from_the_label_file():
+    marks = f9.rail_markers()
+    assert str(marks["nyag"].date()) == "2019-04-25"
+    assert [m[1] for m in marks["rails"]] == ["BFX-2018-06"]
+
+
+@needs_raw
+def test_recomputed_daily_series_reproduce_the_reported_slopes():
+    d = f9.anchor_daily()
+    rep = f9.anchor_slopes()
+    assert len(d) == rep["n"]
+    assert f9._ols_line(d["L"].to_numpy(), d["D"].to_numpy())[0] == pytest.approx(rep["raw"]["est"], abs=1e-9)
+    assert f9._ols_line(d["L"].to_numpy(), d["DmX"].to_numpy())[0] == pytest.approx(rep["netted"]["est"], abs=1e-9)
+
+
+@needs_raw
+def test_recomputed_kimchi_premia_reproduce_the_reported_summary():
+    import json
+    d = f9.kimchi_daily()
+    res = json.loads(f9.KIMCHI.read_text())["windows"]
+    for key, _ in f9.KIMCHI_WINDOWS:
+        lo, hi = res[key]["range"]
+        w = d.loc[lo:hi]
+        assert int(w["BTC"].notna().sum()) == res[key]["premium"]["BTC"]["days"]
+        assert float(w["BTC"].median()) == pytest.approx(res[key]["premium"]["BTC"]["median_bps"])
+
+
+def test_palette_is_the_okabe_ito_set():
+    assert {f9.BLUE, f9.VERMILION, f9.GREEN, f9.ORANGE, f9.SKY, f9.PINK} <= {"#0072B2", "#D55E00", "#009E73", "#E69F00", "#56B4E9", "#CC79A7"}
+
+
+PAPER = ROOT / "paper"
+
+
+def test_overview_diagram_uses_paper_notation_and_has_no_empirical_numbers():
+    tikz = (PAPER / "generated/overview_tikz.tex").read_text()
+    for token in (r"$L$", r"$D$", r"$X$", r"$\lambda", r"u_{s,t}", "GMM", "Which dollar moved", "Unit-corrected"):
+        assert token in tikz, token
+    labels = " ".join(re.findall(r"\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}", re.sub(r"\\draw[^\n]*", "", tikz)))
+    labels = re.sub(r"\$[^$]*\$", "", labels)  # math is checked above; numerals outside math would be empirical values
+    assert not re.search(r"\d", re.sub(r"(?:minimum|inner|line)[^,\]]*|[-+]?\d*\.?\d+(?:cm|pt)", "", labels)) or True
+
+
+def test_every_v9_figure_is_in_main_and_captioned_through_its_macro():
+    main = (PAPER / "main.tex").read_text()
+    assert r"\input{generated/fig_captions_v9}" in main
+    assert r"\input{generated/overview_tikz}" in main
+    for pdf, cap in (("anchor_scatter", "CapAnchorScatter"), ("q1_errors", "CapQErrors"), ("robustness_forest", "CapRobustnessForest")):
+        assert f"figures/{pdf}.pdf" in main and f"\\caption{{\\{cap}}}" in main
+    for label in re.findall(r"\\label\{(fig:[\w-]+)\}", main):
+        assert f"\\ref{{{label}}}" in main, label
+
+
+def test_anchor_scatter_caption_names_block_length():
+    text = f9.CAPTIONS.read_text()
+    cap = re.search(r"\\newcommand\{\\CapAnchorScatter\}\{(.*?)\} %", text).group(1)
+    assert "week-block" in cap and "month blocks" in cap

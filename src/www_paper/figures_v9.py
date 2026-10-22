@@ -16,6 +16,7 @@ with every number read from the reports.
 
 from __future__ import annotations
 
+import contextlib
 import json
 from functools import lru_cache
 from pathlib import Path
@@ -66,9 +67,20 @@ def _style() -> dict:
             "axes.unicode_minus": False}
 
 
+@contextlib.contextmanager
+def _rc():
+    """Matplotlib defaults plus this module's style, so state left in rcParams by other figure code cannot change the output."""
+    with matplotlib.rc_context():
+        plt.rcdefaults()
+        plt.rcParams.update(_style())
+        yield
+
+
 def _save(fig: plt.Figure, path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, metadata=PDF_METADATA, bbox_inches="tight", pad_inches=0.02)
+    with matplotlib.rc_context():
+        plt.rcdefaults()  # save under default settings whatever other figure code left in rcParams
+        fig.savefig(path, metadata=PDF_METADATA, bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
     return path
 
@@ -123,7 +135,7 @@ def anchor_scatter(out: Path, daily: pd.DataFrame | None = None) -> Path:
     """Supports: netting Tether's own price on Kraken moves the Bitfinex USDT slope on the BTC gap from 0.71 to 0.97."""
     d = anchor_daily() if daily is None else daily
     rep = anchor_slopes()
-    with plt.rc_context(_style()):
+    with _rc():
         fig, axes = plt.subplots(1, 2, figsize=(SINGLE, 1.95), sharex=True, sharey=True, gridspec_kw={"wspace": 0.08})
         lo, hi = -450, 450
         grid = np.array([lo, hi])
@@ -170,7 +182,7 @@ def anchor_timeseries(out: Path, daily: pd.DataFrame | None = None) -> Path:
     """Supports: the Bitfinex USDT residual D - X follows the BTC gap L through the NYAG and fiat-rail dates, while D and X alone do not."""
     d = anchor_daily() if daily is None else daily
     marks = rail_markers()
-    with plt.rc_context(_style()):
+    with _rc():
         fig, (a, b) = plt.subplots(2, 1, figsize=(FULL, 3.1), sharex=True, gridspec_kw={"height_ratios": [2.2, 1], "hspace": 0.2})
         a.plot(d.index, d["L"], color=GREY, linewidth=2.2, alpha=0.55, label="$L$: BTC gap, Bitfinex vs Bitstamp")
         a.plot(d.index, d["D"], color=VERMILION, linewidth=0.9, linestyle="-", label="$D$: Bitfinex USDT/USD")
@@ -225,7 +237,7 @@ LEVEL_LABELS = {"stress": "stress window", "stress_to_mar": "to Mar 2019", "jan_
 def robustness_forest(out: Path, path: Path = ROBUSTNESS) -> Path:
     """Supports: the netted unit-offset estimate stays close to one across windows, instrument sets and references, and is far from zero."""
     rows = forest_rows(path)
-    with plt.rc_context(_style()):
+    with _rc():
         fig, (a0, a1) = plt.subplots(1, 2, figsize=(SINGLE, 3.2), sharey=True, gridspec_kw={"width_ratios": [1, 8], "wspace": 0.05})
         y, ticks, names, bold = 0.0, [], [], []
         for factor, title in FOREST_FACTORS:
@@ -275,7 +287,7 @@ def simulation_power(out: Path, path: Path = SIMULATION) -> Path:
     sim = _j(path)["scenarios"]
     x = np.arange(len(SIM_SCENARIOS))
     w = 0.34
-    with plt.rc_context(_style()):
+    with _rc():
         fig, ax = plt.subplots(figsize=(SINGLE, 2.0))
         r1 = [sim[s]["estimators"]["gmm"]["rej_lam1"] for s in SIM_SCENARIOS]
         r0 = [sim[s]["estimators"]["gmm"]["rej_lam0"] for s in SIM_SCENARIOS]
@@ -308,7 +320,7 @@ def q1_errors(out: Path, path: Path = Q1_RESULTS) -> Path:
     events = list(q["kept_events"])
     groups = [(e, {m: q["per_event"][e]["s_hi"][m]["mae"] for m, *_ in Q1_METHODS}) for e in events]
     groups.append(("pooled", {m: q["pooled_s_hi"][m]["mae"] for m, *_ in Q1_METHODS}))
-    with plt.rc_context(_style()):
+    with _rc():
         fig, (a, b) = plt.subplots(2, 1, figsize=(SINGLE, 3.5), gridspec_kw={"height_ratios": [1.7, 1], "hspace": 0.62})
         k = len(Q1_METHODS)
         step = 0.15
@@ -351,7 +363,7 @@ def kimchi_gaps(out: Path, daily: pd.DataFrame | None = None, path: Path = KIMCH
     """Supports: the KRW premia of BTC, ETH and XRP move together in both high-premium episodes (common component)."""
     d = kimchi_daily() if daily is None else daily
     res = _j(path)["windows"]
-    with plt.rc_context(_style()):
+    with _rc():
         fig, axes = plt.subplots(2, 1, figsize=(SINGLE, 3.3), gridspec_kw={"hspace": 0.5})
         for ax, (key, title), tag in zip(axes, KIMCHI_WINDOWS, ("(a)", "(b)")):
             lo, hi = res[key]["range"]
@@ -393,10 +405,10 @@ def build_captions() -> str:
     caps = {
         "CapAnchorScatter": (
             f"Each point is one of the {rep['n']} days of the Bitfinex anchored window. Panel (a) plots the Bitfinex USDT price $D$ against the BTC gap $L$; "
-            f"the dashed line has slope one and the fitted slope is {raw['est']:.2f} (95\\% weekly-block interval {raw['ci95_week'][0]:.2f} to "
+            f"the dashed line has slope one and the fitted slope is {raw['est']:.2f} (95\\% interval from a week-block bootstrap, {raw['ci95_week'][0]:.2f} to "
             f"{raw['ci95_week'][1]:.2f}). Panel (b) subtracts Tether's own deviation $X$ measured on Kraken and the fitted slope becomes "
             f"{net['est']:.2f} ({net['ci95_week'][0]:.2f} to {net['ci95_week'][1]:.2f}); hourly GMM gives "
-            f"{gmm['not_netted|eth_ltc_bch_etc']['lam']:.2f} before and {gmm['netted|eth_ltc_bch_etc']['lam']:.2f} after netting.",
+            f"{gmm['not_netted|eth_ltc_bch_etc']['lam']:.2f} before and {gmm['netted|eth_ltc_bch_etc']['lam']:.2f} after netting. The headline interval in the text uses month blocks instead.",
             "reports/unit_td/anchor_external.json slices/stress/adjusted_LDX/daily; reports/theory/gmm_applied.json"),
         "CapAnchorTimeseries": (
             f"Daily medians over the same window: the Bitfinex BTC gap $L$ (wide grey line), Bitfinex USDT $D$, and $D$ net of Kraken USDT $X$ (dashed), "

@@ -1,0 +1,47 @@
+% Method overview (Figure 1). Hand-written TikZ; contains no empirical numbers.
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >=Stealth,
+  box/.style={draw=black!70, rounded corners=1.5pt, line width=0.5pt, align=center, inner sep=3pt, fill=white},
+  src/.style={box, fill=black!5, minimum width=2.5cm, minimum height=0.62cm},
+  off/.style={box, draw=blue!60!black, fill=blue!7, minimum width=2.9cm},
+  anc/.style={box, draw=orange!70!black, fill=orange!9, minimum width=2.9cm},
+  tst/.style={box, draw=black, fill=black!4, minimum width=3.3cm},
+  outp/.style={box, draw=green!40!black, fill=green!8, minimum width=3.0cm},
+  hd/.style={font=\footnotesize\bfseries, text=black!70},
+  arr/.style={->, line width=0.6pt, black!75}
+]
+% column headings
+\node[hd] at (0,3.05) {1. Sources};
+\node[hd] at (4.2,3.05) {2. Two readings per source};
+\node[hd] at (8.6,3.05) {3. Test};
+\node[hd] at (12.75,3.05) {4. Outputs};
+% sources
+\node[src] (s1) at (0,2.15) {Source $s$ (exchange)};
+\node[src] (s2) at (0,1.15) {Reference $r$ (exchange)};
+\node[font=\scriptsize, text=black!70, align=center] (note) at (0,0.4) {each quotes every item\\in its own ledger ``USD''};
+\node[src, dashed] (ext) at (0,-0.8) {Independent venue};
+\node[font=\scriptsize, text=black!70] at (0,-1.55) {$p_{s,a,t}=p^*_{a,t}+u_{s,t}+e_{s,a,t}$};
+% readings
+\node[off] (L) at (4.2,2.1) {\textbf{Cross-item offset $L$}\\[-1pt]\scriptsize common gap of unrelated items\\[-1pt]\scriptsize (BTC, ETH, altcoins) to $r$};
+\node[anc] (D) at (4.2,0.55) {\textbf{Unit anchor $D$}\\[-1pt]\scriptsize stablecoin/USD on $s$};
+\node[anc] (X) at (4.2,-0.8) {\textbf{External price $X$}\\[-1pt]\scriptsize same stablecoin, venue outside $s$};
+% test
+\node[tst] (T) at (8.6,1.05) {\textbf{Slope $\lambda$ of $D-X$ on $L$}\\[1pt]
+$\lambda\approx 1$: unit shift in $u_{s,t}$\\
+$\lambda\approx 0$: source-wide demand\\[1pt]
+\scriptsize GMM estimate, $J$ over-identification check};
+% outputs
+\node[outp] (O1) at (12.75,1.95) {\textbf{Unit-corrected}\\\textbf{fused price}\\[-1pt]\scriptsize $\hat u_{s,t}$ removed before fusing};
+\node[outp] (O2) at (12.75,0.05) {\textbf{Which dollar moved}\\[-1pt]\scriptsize $s$, $r$ or the stablecoin};
+% arrows
+\draw[arr] (s1.east) -- ++(0.35,0) |- (L.west);
+\draw[arr] (s2.east) -- ++(0.35,0) |- (L.west);
+\draw[arr] (s1.east) -- ++(0.55,0) |- (D.west);
+\draw[arr] (ext.east) -- (X.west);
+\draw[arr] (L.east) -- ++(0.4,0) |- ([yshift=0.25cm]T.west);
+\draw[arr] (D.east) -- ++(0.4,0) |- (T.west);
+\draw[arr] (X.east) -- ++(0.4,0) |- ([yshift=-0.25cm]T.west);
+\draw[arr] (T.east) -- ++(0.35,0) |- (O1.west);
+\draw[arr] (T.east) -- ++(0.35,0) |- (O2.west);
+\end{tikzpicture}
