@@ -12,6 +12,8 @@ import pandas as pd
 HOLD = 24
 SMOOTH = 3
 W_ROOT = 2.0
+SLOW = 48
+BAND = 0.0005
 REL_WIN = 72
 REL_C = 0.0003
 REL_ON = 1
@@ -87,7 +89,9 @@ def fuse(markets: dict[str, pd.DataFrame], meta: dict[str, dict[str, str]], side
     units = sorted({meta[m]["unit"] for m in names})
     root = dollar_unit(meta, side)
     vals = unit_values(units, root, side, n)
-    vals = {u: pd.Series(v).rolling(SMOOTH, min_periods=1).median().to_numpy() for u, v in vals.items()}
+    fast = {u: pd.Series(v).rolling(SMOOTH, min_periods=1).median().to_numpy() for u, v in vals.items()}
+    slow = {u: pd.Series(v).rolling(SLOW, min_periods=1).median().to_numpy() for u, v in vals.items()}
+    vals = {u: np.where(np.abs(fast[u] - slow[u]) < BAND, slow[u], fast[u]) for u in vals}
     cols = []
     for m in names:
         r = vals[meta[m]["unit"]]
