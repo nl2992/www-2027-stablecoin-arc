@@ -122,14 +122,14 @@
       dent votes. These methods treat a source’s error as reliability or                unchanged.
 137                                                                                                                                                                    195
       noise. A unit offset is a different kind of error: it is shared by all of a
-138                                                                                         Estimator. For source 𝑠 and hour 𝑡, let 𝑔𝑎 be the gap to the ref-          196
-      source’s claims, it can be large and persistent, and a reliable source
-139                                                                                     erence source for the 𝑛 items visible on both, 𝑚 their median and              197
-      can have it. The additive model resembles median polish and a two-
-140                                                                                     𝜎ˆ 2 = (1.4826 MAD) 2 𝑛/(𝑛 − 1), with MAD the median absolute                  198
-      way fixed-effects decomposition, and the additive form is not new.
-141                                                                                     deviation of the gaps around 𝑚. The estimate is                                199
-      What we add is the identification of the unit component by an an-
+138
+      source’s claims, it can be large and persistent, and a reliable source                Estimator. For source 𝑠 and hour 𝑡, let 𝑔𝑎 be the gap to the ref-          196
+139
+      can have it. The additive model resembles median polish and a two-                erence source for the 𝑛 items visible on both, 𝑚 their median and              197
+140
+      way fixed-effects decomposition, and the additive form is not new.                𝜎ˆ 2 = (1.4826 MAD) 2 𝑛/(𝑛 − 1), with MAD the median absolute                  198
+141
+      What we add is the identification of the unit component by an an-                 deviation of the gaps around 𝑚. The estimate is                                199
 142                                                                                                                                                                    200
       chor, and validation of the estimate on held-out items, episodes                                         {        {    𝑐 𝜎ˆ 2 /𝑛 }}
 143
@@ -140,31 +140,49 @@
 147   link feeds against a single exchange, and Schwenkler et al. [15] au-   𝑐 𝜎ˆ 2 /𝑛 of the noise in the median, so a median that the cross-item                     205
 148   dited crypto data vendors. Both take exchange prices as the bench-     dispersion cannot distinguish from zero is set to zero. We claim no                       206
 149   mark. We ask which unit that benchmark is in.                          optimality, since in one dimension such shrinkage does not domi-                          207
-150                                                                          nate the unshrunk estimate. The constant 𝑐 was fixed on develop-                          208
-151      Cross-exchange premia and stablecoins. Makarov and Schoar [13]      ment assets; re-picking it on 2017–2019 data gave 0.25 with nearly                        209
-152   documented large, persistent price gaps across exchanges and a         the same scores (§5.3). The estimator adds little to the plain median,                    210
-153   component common to gaps within a country. We identify an exchange- which we report plainly.                                                                     211
-154   level component within USD, per exchange and hour. The closest                                                                                                   212
-155   work is Flowerday et al. [4], who studied bitcoin on four exchanges         Unit anchor and the external-price correction. A unit anchor 𝑘 is                    213
-156   to mid-2021. They read Bitfinex’s premium as possibly a discount       an item whose true price is fixed in the true unit, so 𝑝𝑘∗ = 0 and its                    214
-157   on its dollar balances, but say that the channel “cannot be tested     price on source 𝑠 is 𝑢𝑠,𝑡 +𝑒𝑠,𝑘,𝑡 . Let 𝐿 be the offset estimated from the                215
-158   directly” with their data and that they do not decompose the pre-      other items and 𝐷 the anchor’s price on 𝑠. Under a pure unit shift                        216
-159   mium. We test it: netting out an external Tether price splits the      𝐷   moves one for one with 𝐿. Under demand for the source’s items,                        217
-160   premium into a ledger-dollar part and a Tether part. Lyons and         which moves the items and not the anchor, 𝐷 does not move with 𝐿.                         218
-161   Viswanath-Natraj [11] study the October 2018 attack on Tether,         The slope of 𝐷 on 𝐿 is 1 under a pure unit shift and 0 under source-                      219
-162   which is the Tether part alone. Other work links bitcoin gaps to cap-  wide item demand. But an anchor is itself a claim: a stablecoin has                       220
-163   ital controls [1, 2] and to exchange default risk [6]; studies of pegs a token component 𝑥 of its own. Then 𝐷 = 𝑢 + 𝑥 + 𝑒, and the slope                         221
-164   and runs treat a token’s exchange price as the token’s value [10, 12], of 𝐷 on 𝐿 is 1 plus the slope of 𝑥 on 𝐿, which is not zero when the                       222
-165   and Griffin and Shams [5] tied Tether issuance on Bitfinex to bit-     token’s discount comes and goes with the exchange’s. Let 𝑋 be the                         223
-166   coin prices. We separate a token move from a unit move on the          anchor’s price on a venue outside 𝑠’s ledger, so 𝑋 = 𝑥 + 𝑒 ′ . Then                       224
-167   same exchange.                                                                                                                                                   225
-                                                                                                           𝐷 − 𝑋 = 𝑢 + 𝑒,                            (3)
+150
+         Cross-exchange premia and stablecoins. Makarov and Schoar [13]      nate the unshrunk estimate. The constant 𝑐 was fixed on develop-                          208
+151
+      documented large, persistent price gaps across exchanges and a         ment assets; re-picking it on 2017–2019 data gave 0.25 with nearly                        209
+152
+      component common to gaps within a country. We identify an exchange- the same scores (§5.3). The estimator adds little to the plain median,                       210
+153
+      level component within USD, per exchange and hour. The closest         which we report plainly.                                                                  211
+154                                                                                                                                                                    212
+      work is Flowerday et al. [4], who studied bitcoin on four exchanges         Unit anchor and the external-price correction. A unit anchor 𝑘 is
+155                                                                                                                                                                    213
+      to mid-2021. They read Bitfinex’s premium as possibly a discount       an item whose true price is fixed in the true unit, so 𝑝𝑘∗ = 0 and its
+156                                                                                                                                                                    214
+      on its dollar balances, but say that the channel “cannot be tested     price on source 𝑠 is 𝑢𝑠,𝑡 +𝑒𝑠,𝑘,𝑡 . Let 𝐿 be the offset estimated from the
+157                                                                                                                                                                    215
+      directly” with their data and that they do not decompose the pre-      other items and 𝐷 the anchor’s price on 𝑠. Under a pure unit shift
+158                                                                                                                                                                    216
+      mium. We test it: netting out an external Tether price separates       𝐷 moves one for one with 𝐿. Under demand for the source’s items,
+159                                                                                                                                                                    217
+      the ledger-dollar shift from Tether’s own discount, which other-       which moves the items and not the anchor, 𝐷 does not move with 𝐿.
+160                                                                                                                                                                    218
+      wise contaminates the stablecoin anchor. Lyons and Viswanath-          The slope of 𝐷 on 𝐿 is 1 under a pure unit shift and 0 under source-
+161                                                                                                                                                                    219
+      Natraj [11] study the October 2018 attack on Tether, which con-        wide item demand. But an anchor is itself a claim: a stablecoin has
+162                                                                                                                                                                    220
+      cerns Tether’s own discount. Other work links bitcoin gaps to cap-     a token component 𝑥 of its own. Then 𝐷 = 𝑢 + 𝑥 + 𝑒, and the slope
+163                                                                                                                                                                    221
+      ital controls [1, 2] and to exchange default risk [6]; studies of pegs of 𝐷 on 𝐿 is 1 plus the slope of 𝑥 on 𝐿, which is not zero when the
+164                                                                                                                                                                    222
+      and runs treat a token’s exchange price as the token’s value [10, 12], token’s discount comes and goes with the exchange’s. Let 𝑋 be the
+165                                                                                                                                                                    223
+      and Griffin and Shams [5] tied Tether issuance on Bitfinex to bit-     anchor’s price on a venue outside 𝑠’s ledger, so 𝑋 = 𝑥 + 𝑒 ′ . Then
+166                                                                                                                                                                    224
+      coin prices. We separate a token move from a unit move on the
+167                                                                                                                                                                    225
+      same exchange.                                                                                       𝐷 − 𝑋 = 𝑢 + 𝑒,                            (3)
 168                                                                                                                                                                    226
-169   3    MODEL                                                                        and the slope of 𝐷 −𝑋 on 𝐿 is 1 under a pure unit shift whatever the           227
-170
-      Let 𝑝𝑠,𝑎,𝑡 be the log price of item 𝑎 on source 𝑠 in hour 𝑡, in basis             token does. In crypto the anchor is the dollar stablecoin USDT, 𝐷              228
-171
-      points (104 times the log). We model                                              is its price on the exchange and 𝑋 its price on Kraken. The residual           229
+169
+      3    MODEL                                                                        and the slope of 𝐷 −𝑋 on 𝐿 is 1 under a pure unit shift whatever the           227
+170                                                                                     token does. In crypto the anchor is the dollar stablecoin USDT, 𝐷              228
+      Let 𝑝𝑠,𝑎,𝑡 be the log price of item 𝑎 on source 𝑠 in hour 𝑡, in basis
+171                                                                                     is its price on the exchange and 𝑋 its price on Kraken. The residual           229
+      points (104 times the log). We model
 172                                                                                     𝑇 = 𝐷 − 𝐿 is the part of the anchor’s move that the offset does not            230
                                       ∗
 173                         𝑝𝑠,𝑎,𝑡 = 𝑝𝑎,𝑡 + 𝑢𝑠,𝑡 + 𝑒𝑠,𝑎,𝑡 ,                  (1)        explain, and 𝑇 −𝑋 is what remains after the external price is netted           231

@@ -108,9 +108,9 @@ persistent price gaps across exchanges and a component common to gaps within a c
 exchange-level component \emph{within} USD, per exchange and hour. The closest work is Flowerday et
 al.~\cite{flowerday2026bitcoin}, who studied bitcoin on four exchanges to mid-2021. They read Bitfinex's premium as
 possibly a discount on its dollar balances, but say that the channel ``cannot be tested directly'' with their data and
-that they do not decompose the premium. We test it: netting out an external Tether price splits the premium into a
-ledger-dollar part and a Tether part. Lyons and Viswanath-Natraj~\cite{lyons2023keeps} study the October 2018 attack on
-Tether, which is the Tether part alone. Other work links bitcoin gaps to capital controls~\cite{choi2019kimchi,borri2023discounts}
+that they do not decompose the premium. We test it: netting out an external Tether price separates the ledger-dollar shift from
+Tether's own discount, which otherwise contaminates the stablecoin anchor. Lyons and Viswanath-Natraj~\cite{lyons2023keeps}
+study the October 2018 attack on Tether, which concerns Tether's own discount. Other work links bitcoin gaps to capital controls~\cite{choi2019kimchi,borri2023discounts}
 and to exchange default risk~\cite{guo2025default}; studies of pegs and runs treat a token's exchange price as the token's
 value~\cite{ma2025runs,liu2023anatomy}, and Griffin and Shams~\cite{griffin2020untethered} tied Tether issuance on
 Bitfinex to bitcoin prices. We separate a token move from a unit move on the same exchange.
