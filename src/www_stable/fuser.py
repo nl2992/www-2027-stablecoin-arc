@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 HOLD = 24
+SMOOTH = 3
 
 
 def _nanmed(x: np.ndarray) -> np.ndarray:
@@ -68,6 +69,7 @@ def fuse(markets: dict[str, pd.DataFrame], meta: dict[str, dict[str, str]], side
     units = sorted({meta[m]["unit"] for m in names})
     root = dollar_unit(meta, side)
     vals = unit_values(units, root, side, n)
+    vals = {u: pd.Series(v).rolling(SMOOTH, min_periods=1).median().to_numpy() for u, v in vals.items()}
     cols = []
     for m in names:
         r = vals[meta[m]["unit"]]
