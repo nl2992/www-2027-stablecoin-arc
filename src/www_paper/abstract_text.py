@@ -13,7 +13,10 @@ ROOT = Path(__file__).resolve().parents[2]
 MAIN = ROOT / "paper/main.tex"
 MACRO_FILES = [ROOT / "paper/generated/numbers.tex", ROOT / "paper/generated/rescue_numbers.tex",
                ROOT / "paper/generated/unit_numbers.tex", ROOT / "paper/generated/posthoc_numbers.tex",
-               ROOT / "paper/generated/sweep_numbers.tex", ROOT / "paper/generated/noise_numbers.tex"]
+               ROOT / "paper/generated/sweep_numbers.tex", ROOT / "paper/generated/noise_numbers.tex",
+               ROOT / "paper/generated/anchor_ext_numbers.tex", ROOT / "paper/generated/robust_numbers.tex",
+               ROOT / "paper/generated/td_numbers.tex", ROOT / "paper/generated/bench_numbers.tex",
+               ROOT / "paper/generated/theory_numbers.tex"]
 OUTPUT = ROOT / "docs/review/ABSTRACT_SUBMISSION.md"
 
 

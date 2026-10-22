@@ -11,7 +11,7 @@ ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
 RESCUE_OUTPUT = ROOT / "paper/generated/rescue_numbers.tex"
 UNIT_OUTPUT = ROOT / "paper/generated/unit_numbers.tex"
-EXTRA_OUTPUTS = [ROOT / f"paper/generated/{n}_numbers.tex" for n in ("posthoc", "sweep", "noise")]
+EXTRA_OUTPUTS = [ROOT / f"paper/generated/{n}_numbers.tex" for n in ("posthoc", "sweep", "noise", "anchor_ext", "robust", "td", "bench", "theory")]
 
 
 def test_generated_numbers_are_current():
@@ -31,10 +31,11 @@ def test_generated_tables_not_in_the_paper_are_still_current():
 
 
 def test_paper_includes_the_unit_tables_and_figure():
-    for name in ("unit_diagnostic_table", "heldout_ci_table", "detector_eval_table", "monitor_sweep_table", "noise_table", "oracle_pilot_table", "t2_breakdown_table",
-                 "label_list_table", "anchor_table", "ledger_phase_table"):
+    for name in ("unit_diagnostic_table", "heldout_ci_table", "detector_eval_table", "t2_breakdown_table",
+                 "anchor_table", "anchor_ext_table", "robust_eval_table", "bench_table",
+                 "td_realdata_table", "theory_table", "theory_section"):
         assert f"\\input{{generated/{name}}}" in MAIN, name
-    assert "figures/unit_rate.pdf" in MAIN and "figures/monitor_sweep.pdf" in MAIN and "\\input{generated/unit_numbers}" in MAIN
+    assert "figures/unit_rate.pdf" in MAIN and "\\input{generated/unit_numbers}" in MAIN
 
 
 def test_every_number_macro_used_is_defined_and_no_literal_bps_values_slip_in():
@@ -95,3 +96,15 @@ def test_submission_abstract_is_generated_from_the_paper():
     assert OUTPUT.read_text() == build(), "run `uv run python -m www_paper.abstract_text`"
     text = OUTPUT.read_text()
     assert "\\" not in text.split("**Abstract")[1] and "Num" not in text.split("**Abstract")[1]
+
+
+def test_v6_structure_and_claims():
+    from www_paper import bench_macros as B
+    assert B.NUMBERS.read_text() == B.numbers() and B.TABLE.read_text() == B.table(), "run `uv run python -m www_paper.bench_macros`"
+    body = MAIN.split("\\begin{document}", 1)[1]
+    abstract = body.split("\\begin{abstract}")[1].split("\\end{abstract}")[0]
+    assert len(re.sub(r"\\Num[A-Za-z]+\{\}", "1", abstract).split()) <= 300
+    assert "one for one" not in abstract  # lambda = 1 is rejected on Bitfinex; say close to one
+    assert "tab:fixed" in body and "tab:bench" in body
+    stable = B.parse_log(B._one("final_stable_*.log"))
+    assert stable["placebo_ok"] == "False"  # the paper says the STABLE method failed its own calm check

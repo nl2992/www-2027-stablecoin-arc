@@ -360,7 +360,7 @@ def heldout_table() -> str:
             "Asset & $b_0$ & $b_1$ & $b_2$ & Final \\\\\n\\midrule\n" + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
 
-METHOD_LABEL = {"detector": "Decomposition monitor", "b1": "Price gap", "b2": "Trailing robust $z$", "b3": "USDT premium"}
+METHOD_LABEL = {"detector": "Offset monitor", "b1": "Price gap", "b2": "Trailing robust $z$", "b3": "USDT premium"}
 VENUE_LABEL = {"bitfinex": "Bitfinex", "binance_us": "Binance.US", "coinbase": "Coinbase"}
 
 
@@ -379,13 +379,13 @@ def detector_table() -> str:
                         f"{fa['per_venue_year']['total']:.2f} \\\\")
         if method != "b3":
             rows[-1] += "\n\\addlinespace"
-    return (f"{HEADER}\n\\begin{{table}}[t]\n\\small\n"
+    return (f"{HEADER}\n\\begin{{table}}[t]\n\\footnotesize\n"
             "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022). Recall: labelled "
             "episodes caught over labelled episodes with data coverage. False alarms: alarm episodes with no labelled "
             "event, in total and per exchange-year. Method definitions and the rule are fixed in advance; "
             "-- means the method was not evaluated for that exchange.}\n"
-            "\\label{tab:detector}\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}llrrrr@{}}\n\\toprule\n"
-            "Method & Exchange & Episodes & Recall & False alarms & per year \\\\\n\\midrule\n"
+            "\\label{tab:detector}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}llrrrr@{}}\n\\toprule\n"
+            "Method & Exchange & Episodes & Recall & False & Per year \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table}\n")
 
 
@@ -441,7 +441,7 @@ def t2_table() -> str:
         rows.append(f"{label} & " + " & ".join(cells) + " \\\\")
     deltas = ", ".join(str(r["delta_bps"]) for r in t2["records"]
                        if r["k"] == 1 and r["fuser"] == "median" and r["shape"] == "constant")
-    return (f"{HEADER}\n\\begin{{table}}[t]\n\\small\n"
+    return (f"{HEADER}\n\\begin{{table}}[t]\n\\footnotesize\n"
             "\\caption{Fusion under an injected unit bias on $k$ of three exchanges (development assets, 2021--2023). "
             "Breakdown: the smallest constant bias in bps (grid: " + deltas + ") at which the 95th percentile of the "
             "absolute fused-price error exceeds 50 bps, pooled over which exchanges are hit and for the worst choice; "

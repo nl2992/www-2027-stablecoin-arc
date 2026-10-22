@@ -1,0 +1,950 @@
+1
+2
+      Same Name, Different Unit: Identifying Source-Specific Units in                                                                                                                                59
+                                                                                                                                                                                                     60
+3                          Web Price Fusion                                                                                                                                                          61
+4                                                                                                                                                                                                    62
+5                                                                              Anonymous Author(s)                                                                                                   63
+6                                                                                                                                                                                                    64
+7    ABSTRACT                                                                                                                              Bitfinex vs Bitstamp                   Daily, by year     65
+                                                                                                                                 1000
+8    Web services that fuse values from many sources, such as price                                                          BTC
+                                                                                                                                        100
+                                                                                                                                                                                                     66
+9    aggregators, indexes and oracles, assume that sources with the                                 100                      ETH                              2023                                   67
+
+
+
+
+                                                                                                       daily median gap (bps)
+10   same unit name share one backing. Often they do not: a platform’s                               10
+                                                                                                                                         10                                                          68
+
+
+
+
+                                                                                                                                                                  ETH gap (bps)
+11   ledger balance can carry the name of a common unit, the dollar,                                                                                          2021                                   69
+12   without its backing, and fusion reads a shift in that backing as a                               0                                   0                                                          70
+13   change in value. We model each source’s values as true values plus                            −10
+                                                                                                                                                              2019                                   71
+                                                                                                                                       −10
+14   a source-unit offset shared by all its items. Agreement across unre-                                                                                                                            72
+                                                                                                  −100
+15   lated items identifies the offset, and a unit anchor, an item fixed in                                                           −100
+                                                                                                                                                              2017                                   73
+16   the true unit, separates a unit shift from demand. We formalise the                         −1000                                                                                               74
+17   test with an identification result, a GMM over-identification test                                    2018   2020  2022   2024         −100   0     100                                         75
+                                                                                                                                              BTC gap (bps)
+18   and a calibrated simulation of size and power. On cryptocurrency                                                                                                                                76
+19   exchanges, whose dollars are ledger claims, it gives the first test of                                                                                                                          77
+20   a reading that Flowerday et al. (2026) say cannot be tested directly.                  Figure 1: Bitfinex against Bitstamp, 2017–2023. Left: daily                                              78
+21   Netting Tether’s external price from Kraken out of Bitfinex’s USDT/USD median hourly gap for bitcoin and ether in basis points (bps);                                                           79
+22   price makes it track Bitfinex’s offset with slope close to one (0.97,                  shading marks labelled Bitfinex banking episodes. Right:                                                 80
+23   95% interval 0.94 to 1.00, up from 0.71). Bitfinex’s 2018 to 2019 pre-                 the two gaps against each other, by year; the dashed line is                                             81
+24   mium was therefore two discounts, one on the ledger dollar and                         equality.                                                                                                82
+25   one on Tether. Binance.US in 2023 was a pure ledger-dollar shift                                                                                                                                83
+26   (slope 1.00). On assets withheld from development, one offset per                                                                                                                               84
+27   source-hour removed most of the gap in the stress years and, by                                                                                                                                 85
+28   the median year (0.389) and median asset (0.378), about a third to                     Fusion reads this as a change in value, and it reports a unit drift as                                   86
+29   two-fifths in calm years. Across three locked fusion tests, a plain                    a price change.                                                                                          87
+30   median was hard to beat. Unit-aware fusion won when a large                                This is hard for two reasons. A source’s unit is never quoted, so                                    88
+31   group of sources shared a unit that moved by more than venue                           it cannot   be read off. And any single item can move for its own                                        89
+32   noise (the USDC 2023 test, error 0.72 of the median’s) and not oth-                    reasons,   so a gap on one item says little. Source-reliability weights                                  90
+33   erwise. Aggregators should correct when a shared unit can move                         treat a source’s error as noise that differs by claim, and robust ag-                                    91
+34   and otherwise keep the median.                                                         gregation tolerates a minority of bad sources; neither is built for                                      92
+35                                                                                          an error that all of one source’s claims share.                                                          93
+     ACM Reference Format:                                                                      Crypto exchanges are a good test domain. An exchange quotes
+36                                                                                                                                                                                                   94
+     Anonymous Author(s). 2026. Same Name, Different Unit: Identifying Source-
+37                                                                                          assets in “USD”, but that dollar is a balance in its own ledger, re-                                     95
+     Specific Units in Web Price Fusion. In Proceedings of Proceedings of the ACM
+38   Web Conference 2027 (WWW ’27). ACM, New York, NY, USA, 11 pages.
+                                                                                            deemed through banking partners. When the partners leave, the                                            96
+39   https://doi.org/10.1145/nnnnnnn.nnnnnnn                                                balance can trade away from a bank dollar. Prices are public and                                         97
+40                                                                                          hourly, and the failures are dated. Bitfinex is the clearest case: from                                  98
+41   1 INTRODUCTION                                                                         2018 to 2019 its bitcoin price stood apart from other exchanges’                                         99
+42                                                                                          prices for months (Figure 1), while its banking access was in doubt.                                     100
+     Web services fuse prices or values from many sources: aggregators,
+43                                                                                          Whether that premium priced the exchange’s dollar or the coin has                                        101
+     indexes, oracles, marketplaces and comparison sites. They assume
+44                                                                                          been argued but not tested.                                                                              102
+     that all sources quote in one unit. Some do not. A platform’s ledger
+45                                                                                              Our idea is that a shift in a source’s unit moves every item on                                      103
+     balance, a platform credit, a price on a multi-currency marketplace
+46                                                                                          that source by the same amount. Agreement of the gaps across                                             104
+     and a loyalty point can all carry the same name as a common unit,
+47                                                                                          unrelated items therefore identifies a source-specific offset. Agree-                                    105
+     such as “dollar”, without the same backing. When the backing of
+48                                                                                          ment alone cannot tell a unit shift from demand that hits all of a                                       106
+     one source weakens, every price on that source moves together.
+49                                                                                          source’s items, so we add a unit anchor: an item whose true price                                        107
+50   Permission to make digital or hard copies of all or part of this work for personal or  is fixed in the true unit. Its price on the source measures the unit                                     108
+     classroom use is granted without fee provided that copies are not made or distributed  directly, once the anchor’s own external value is netted out.
+51   for profit or commercial advantage and that copies bear this notice and the full cita-                                                                                                          109
+52   tion on the first page. Copyrights for components of this work owned by others than        We make four contributions.                                                                          110
+     ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or re-
+53
+     publish, to post on servers or to redistribute to lists, requires prior specific permission                                (1) An identification test. Each source’s prices equal true prices   111
+54   and/or a fee. Request permissions from permissions@acm.org.                                                                    plus a unit offset and an item residual. The offset is identi-   112
+55   WWW ’27, 2027,                                                                                                                 fied by cross-item agreement and a unit anchor corrected         113
+     © 2026 Association for Computing Machinery.
+56
+     ACM ISBN 978-x-xxxx-xxxx-x/YY/MM…$15.00                                                                                        for the anchor’s external price (§3). It gives the first test    114
+57   https://doi.org/10.1145/nnnnnnn.nnnnnnn                                                                                        of the reading that Bitfinex’s premium priced its dollar,        115
+58                                                                                                 1                                                                                                 116
+      WWW ’27, 2027,                                                                                                                                         Anon.
+
+
+117           and splits that premium into a ledger-dollar discount and                 where 𝑝 ∗ is the item’s value in a common unit, 𝑢𝑠,𝑡 is the source’s           175
+118           a Tether discount (§5.2).                                                 unit offset and 𝑒 is an item-specific residual. The gap between sources        176
+119       (2) Held-out validation. Scores on withheld assets are reported               𝑠 and 𝑟 is 𝑔𝑎,𝑡 = (𝑢𝑠,𝑡 − 𝑢𝑟,𝑡 ) + (𝑒𝑠,𝑎,𝑡 − 𝑒𝑟,𝑎,𝑡 ). The first term is the   177
+120           per year, per asset and per asset-by-time cell, with longer               same for every item; the second is not. In crypto, 𝑠 is an exchange,           178
+121           bootstrap blocks and shared-dollar controls, not only pooled              𝑎 is an asset, 𝑝 is its USD price and 𝑢𝑠,𝑡 is the exchange’s dollar            179
+122           (§5.3).                                                                   exchange rate.                                                                 180
+123       (3) A fusion benchmark and a scope condition. Three locked                                                                                                   181
+124           tests, with truth-discovery baselines, show that a plain me-                 Conventions. Gaps are source minus reference, so 𝑢 > 0 means                182
+125           dian is hard to beat and say when unit awareness pays                     the source quotes items dearer in its unit, that is, its unit is at a dis-     183
+126           (§5.4).                                                                   count to the reference’s, and 𝑢 < 0 means its unit trades at a pre-            184
+127       (4) A monitor with a fixed rule, scored against baselines, and                mium. Hours are UTC. The estimate for hour 𝑡 uses only prices of               185
+128           an account of three shocks in 2023 (§5.6, §5.7).                          hour 𝑡 (it is causal and keeps no state). The diagnostic and anchor            186
+129
+                                                                                        tests use the hourly median of traded-minute closes, the bench-                187
+                                                                                        marks the last traded close in each hour.
+130   2    RELATED WORK                                                                                                                                                188
+131                                                                                                                                                                    189
+         Truth discovery and data fusion. TruthFinder [16] and CRH [7]                     Identification by agreement. Items with unrelated residuals (bit-
+132                                                                                                                                                                    190
+      estimate each source’s reliability from conflicting claims, and Dong              coin, ether and altcoins) have gaps that agree only through the
+133                                                                                                                                                                    191
+      et al. [3] show that dependent sources must not count as indepen-                 common offset. When their gaps agree, the common part is 𝑢𝑠 −𝑢𝑟 .
+134                                                                                                                                                                    192
+      dent votes. These methods treat a source’s error as reliability or                Triangular parity checks it: the price of one item in terms of an-
+135                                                                                                                                                                    193
+      noise. A unit offset is a different kind of error: it is shared by all of a       other on the same source is free of the unit, so a shift in 𝑢 leaves it
+136                                                                                                                                                                    194
+      source’s claims, it can be large and persistent, and a reliable source            unchanged.
+137                                                                                                                                                                    195
+      can have it. The additive model resembles median polish and a two-
+138                                                                                         Estimator. For source 𝑠 and hour 𝑡, let 𝑔𝑎 be the gap to the ref-          196
+      way fixed-effects decomposition, and the additive form is not new.
+139                                                                                     erence source for the 𝑛 items visible on both, 𝑚 their median and              197
+      What we add is the identification of the unit component by an an-
+140                                                                                     𝜎ˆ 2 = (1.4826 MAD) 2 𝑛/(𝑛 − 1), with MAD the median absolute                  198
+      chor, and validation of the estimate on held-out items, episodes
+141                                                                                     deviation of the gaps around 𝑚. The estimate is                                199
+      and sources (§5.4, Appendix B).
+142                                                                                                                                                                    200
+                                                                                                                {        {    𝑐 𝜎ˆ 2 /𝑛 }}
+143      Oracles and data quality. Liu et al. [8] found that oracle prices                      𝑢ˆ𝑠,𝑡 = 𝑚 · min 1, max 0, 1 −              ,      𝑐 = 12 ,      (2)    201
+144   deviate from exchange rates. Nadler et al. [13] benchmarked Chain-                                                        𝑚2                                     202
+145   link feeds against a single exchange, and Schwenkler et al. [14] au-   and 𝑢ˆ𝑠,𝑡 = 0 when 𝑛 < 2. The factor is a plug-in, positive-part                          203
+146   dited crypto data vendors. Both take exchange prices as the bench-     shrinkage of the James–Stein kind: it removes from 𝑚 2 an estimate                        204
+147   mark. We ask which unit that benchmark is in.                          𝑐 𝜎ˆ 2 /𝑛 of the noise in the median, so a median that the cross-item                     205
+148                                                                          dispersion cannot distinguish from zero is set to zero. We claim no                       206
+149      Cross-exchange premia and stablecoins. Makarov and Schoar [12]      optimality, since in one dimension such shrinkage does not dom-                           207
+150   documented large, persistent price gaps across exchanges and a         inate the unshrunk estimate. The constant 𝑐 was fixed on devel-                           208
+151   component common to gaps within a country. We identify an exchange- opment assets; re-picking it on 2017–2019 data gave 0.25 with the                            209
+152   level component within USD, per exchange and hour. The closest         same scores (§5.3). The estimator adds nothing measurable to the                          210
+153   work is Flowerday et al. [4], who studied bitcoin on four exchanges    plain median, which we report plainly.                                                    211
+154   to mid-2021. They read Bitfinex’s premium as possibly a discount                                                                                                 212
+155   on its dollar balances, so that a quote there “embeds” a discount           Unit anchor and the external-price correction. A unit anchor 𝑘 is                    213
+156   on the fiat side, but say that the channel “cannot be tested directly” an item whose true price is fixed in the true unit, so 𝑝𝑘∗ = 0 and its                    214
+157   and that they do not decompose the premium. We test it. Netting        price on source 𝑠 is 𝑢𝑠,𝑡 +𝑒𝑠,𝑘,𝑡 . Let 𝐿 be the offset estimated from the                215
+158   out an external Tether price splits the premium into a ledger-dollar   other items and 𝐷 the anchor’s price on 𝑠. Under a pure unit shift                        216
+159   part and a Tether part. Lyons and Viswanath-Natraj [10] study          𝐷   moves one for one with 𝐿. Under demand for the source’s items,                        217
+160   the October 2018 attack on Tether, with a falling Tether price and     which moves the items and not the anchor, 𝐷 does not move with 𝐿.                         218
+161   wider spreads that they link to Bitfinex suspending dollar convert-    The slope of 𝐷 on 𝐿 is 1 under a pure unit shift and 0 under source-                      219
+162   ibility. That is the Tether part alone; it does not touch the bitcoin  wide item demand. But an anchor is itself a claim: a stablecoin has                       220
+163   premium. Other work links bitcoin gaps to capital controls [1, 2]      a token component 𝑥 of its own. Then 𝐷 = 𝑢 + 𝑥 + 𝑒, and the slope                         221
+164   and to exchange default risk [6]. Studies of pegs and runs treat a     of 𝐷 on 𝐿 is 1 plus the slope of 𝑥 on 𝐿, which is not zero when the                       222
+165   token’s exchange price as the token’s value [9, 11], and Griffin and   token’s discount comes and goes with the exchange’s. Let 𝑋 be the                         223
+166   Shams [5] tied Tether issuance on Bitfinex to bitcoin prices. We       anchor’s price on a venue outside 𝑠’s ledger, so 𝑋 = 𝑥 + 𝑒 ′ . Then                       224
+167   separate a token move from a unit move on the same exchange.                                                                                                     225
+                                                                                                           𝐷 − 𝑋 = 𝑢 + 𝑒,                            (3)
+168                                                                                                                                                                    226
+169   3    MODEL                                                                        and the slope of 𝐷 −𝑋 on 𝐿 is 1 under a pure unit shift whatever the           227
+170
+      Let 𝑝𝑠,𝑎,𝑡 be the log price of item 𝑎 on source 𝑠 in hour 𝑡, in basis             token does. In crypto the anchor is the dollar stablecoin USDT, 𝐷              228
+171
+      points (104 times the log). We model                                              is its price on the exchange and 𝑋 its price on Kraken. The residual           229
+172                                                                                     𝑇 = 𝐷 − 𝐿 is the part of the anchor’s move that the offset does not            230
+                                      ∗
+173                         𝑝𝑠,𝑎,𝑡 = 𝑝𝑎,𝑡 + 𝑢𝑠,𝑡 + 𝑒𝑠,𝑎,𝑡 ,                  (1)        explain, and 𝑇 −𝑋 is what remains after the external price is netted           231
+174                                                                                 2                                                                                  232
+      Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion                                                             WWW ’27, 2027,
+
+
+233   out. The same split applies to any stablecoin 𝑞, with 𝑇𝑞 = 𝐷𝑞 − 𝐿                      by −0.533. Leaving the depeg in gives a bias of −0.254, the gap be-      291
+234   its token component.                                                                   tween the data’s 0.731 and 0.971. HAC intervals cover at 0.92 in a       292
+235                                                                                          pure shift but at 0.72 in the mixture, where the realised unit share     293
+         Development loop. We developed the estimator in a fixed har-
+236                                                                                          varies by window; the block bootstrap is no better there (0.77). 𝐽       294
+      ness that scores the share of a held-out item’s mean-square gap
+237                                                                                          has size 0.06 but rejects at only 0.03 when every anchor’s depeg         295
+      that the correction removes, with the item hidden from the esti-
+238                                                                                          loads alike and at 0.48 when loadings differ. On the Bitfinex stress     296
+      mate, and also scores a control pair. A bounded loop of 12 iterations
+239                                                                                          window, 𝜆ˆ = 0.971 (HAC 95% interval 0.961 to 0.981; block boot-         297
+      kept 3 changes and discarded 9. Temporal smoothing, Kalman fil-
+240                                                                                          strap 0.962 to 0.980), 𝐽 = 2.94 (𝑝 = 0.40); 𝜆 = 0 is rejected (𝑝         298
+      tering, reliability weighting and liquidity weighting did not help,
+241                                                                                          <0.001), and so is 𝜆 = 1 (𝑝 <0.001). Without the netting the esti-       299
+      because the unit moves from hour to hour. The estimator is there-
+242                                                                                          mate is 0.731. Binance.US 2023 gives 1.003 (0.999 to 1.007; 𝑝 = 0.11     300
+      fore cross-sectional.
+243                                                                                          for 𝜆 = 1). Adding USDC netted with Bitstamp’s USDC price does           301
+244                                                                                          not pass: 𝐽 = 26.28 (𝑝 <0.001). We do not read this as evidence          302
+      3.1     Identification and inference for the
+245                                                                                          about Binance.US, because Bitstamp’s USDC price was itself de-           303
+246           anchored test                                                                  pegged in March 2023, so the netting is contaminated; the result is      304
+247       Setup. Take source 𝑠 against reference 𝑟 in hour 𝑡, in bps, with                   a caution about that second anchor, not a second confirmation.           305
+248   𝑢𝑟,𝑡 absorbed. Items other than the anchor share the offset 𝑐𝑡 = 𝑢𝑡 +                                                                                           306
+249   𝛿𝑡 , where 𝑢𝑡 is the unit offset and 𝛿𝑡 is source-wide item demand,                    4   DATA                                                                 307
+250   which enters every non-anchor item and not the anchor. The cross-                                                                                               308
+                                                                                             We use public one-minute candles for BTC and ETH on Bitfinex,
+251   item offset is 𝐿𝑡 = 𝑐𝑡 + 𝜀𝑡 . The anchor 𝑘 has true price 𝑝𝑘∗ ≡ 0 up                                                                                            309
+                                                                                             Coinbase and Bitstamp from 2017 to 2023, and hourly candles for
+252   to its own deviation 𝑥𝑡 , so its observed price is 𝐷𝑡 = 𝑢𝑡 + 𝑥𝑡 + 𝜂𝑡 .                                                                                          310
+                                                                                             nine further assets on Bitfinex and Coinbase (LTC, BCH, ETC, XLM,
+253   We measure 𝑥𝑡 on an independent venue, 𝑋𝑡 = 𝑥𝑡 + 𝜉𝑡 , and use                                                                                                   311
+                                                                                             XRP, LINK, SOL, DOGE and ADA). For Bitstamp we also use hourly
+254   𝑌𝑡 = 𝐷𝑡 − 𝑋𝑡 = 𝑢𝑡 + 𝜂𝑡 − 𝜉𝑡 (we write 𝜂𝑡 for 𝜂𝑡 − 𝜉𝑡 below). The                                                                                                312
+                                                                                             candles for six assets (ETH, LTC, BCH, XLM, LINK and XRP) from
+255   unit share of the offset is 𝜆 = Cov(𝑢, 𝑐)/Var(𝑐): 𝜆 = 1 under a                                                                                                 313
+                                                                                             2019 to 2023, which supply the controls in §5.3. For Binance.US we
+256   pure unit shift (𝛿 ≡ 0) and 𝜆 = 0 under pure demand (𝑢 ≡ 0).                                                                                                    314
+                                                                                             use candles from 2022 to 2025. USDT/USD prices on Kraken come
+257   A1 (additivity): the model above, with unit loading on 𝑐 for every                                                                                              315
+                                                                                             from its public OHLCVT archive; its market traded in 99.93% of the
+258   non-anchor item. A2: the reference venue’s unit is stable over the                                                                                              316
+                                                                                             hours of the Bitfinex stress window (4,461 of 4,464), and Kraken’s
+259   window (𝑢𝑟 is constant). A3: 𝑋 measures 𝑥 on a venue whose error                                                                                                317
+                                                                                             own bitcoin price stayed close to Bitstamp’s (median absolute gap
+260   𝜉 is independent of (𝑢, 𝛿, 𝜀, 𝜂); 𝑥 may co-move with 𝑐. A4: a second                                                                                            318
+                                                                                             2.8 bps), so we take it as outside Bitfinex’s ledger. All sources are
+261   item’s offset 𝑍𝑡 = 𝛾𝑐𝑡 + 𝜈𝑡 , 𝛾 ≠ 0, with 𝜈 independent of (𝑐, 𝜂, 𝜀)                                                                                            319
+                                                                                             free and unauthenticated, each acquisition is recorded with a hash
+262   and Cov(𝜂, 𝑐) = Cov(𝜀, 𝜂) = 0 (relevance and exclusion).                                                                                                        320
+                                                                                             in a manifest, and rebuild scripts regenerate the panels. Taker fee
+263                                                                                                                                                                   321
+          PRoposition 3.1. Under A1–A4, 𝛽 = Cov(𝐷−𝑋, 𝑍 )/Cov(𝐿, 𝑍 ) =                        schedules, used only to size the noise bands in §5.5, come from
+264                                                                                                                                                                   322
+      𝜆. The OLS slope of 𝐷 − 𝑋 on 𝐿 is 𝜆 Var(𝑐)/(Var(𝑐) + Var(𝜀)), atten-                   secondary sources: 2 schedule entries rest on dated news articles,
+265                                                                                                                                                                   323
+      uated by the noise in 𝐿. Without the netting, the IV slope of 𝐷 on 𝐿                   2 are inferred from them and 4 are unverified.
+266                                                                                                                                                                   324
+      is 𝜆 + Cov(𝑥, 𝑐)/Var(𝑐).
+267                                                                                             Labels. The monitor is scored against 33 dated events (deposit        325
+268      PRoof. Cov(𝑌, 𝑍 ) = 𝛾 Cov(𝑢+𝜂, 𝑐) = 𝛾 Cov(𝑢, 𝑐) and Cov(𝐿, 𝑍 ) =                    pauses, withdrawal delays, bank-partner losses, rail shutdowns, restora- 326
+269   𝛾 Var(𝑐) by A4; the ratio is 𝜆. The OLS slope is Cov(𝑢, 𝑐)/Var(𝐿)                      tions and confounders) for Bitfinex, Bitstamp, Coinbase, Kraken          327
+270   with Var(𝐿) = Var(𝑐)+Var(𝜀). Without 𝑋 , Cov(𝐷, 𝑍 ) gains 𝛾 Cov(𝑥, 𝑐).                 and Binance.US. They were compiled from public sources without           328
+271                                                                   □                      reference to prices; the dated list ships with the artifact.             329
+272                                                                                                                                                                   330
+         Over-identification. With anchors 𝑘 = 1..𝐾 and instruments 𝑗 =
+273
+                                                                                             5 RESULTS                                                                331
+274   1..𝑚, the moments 𝐸 [𝑧 𝑗 (𝑌𝑘 − 𝜇𝑘 − 𝜆𝐿)] = 0, 𝑧 = (1, 𝑍 1, .., 𝑍𝑚 ),                                                                                            332
+275   identify one 𝜆. Two-step GMM with a Bartlett HAC weight gives                          5.1 Which exchanges have their own dollar                                333
+276   Hansen’s 𝐽 ∼ 𝜒𝐾𝑚−1
+                       2      under the null. 𝐽 rejects a contaminated in-                   Table 2 reports, for each pair of exchanges and year, the correla-       334
+277   strument or anchor-specific depegs with different loadings on 𝑐;                       tion of daily bitcoin and ether gaps, the median bitcoin gap and         335
+278   it has no power against a depeg that loads on 𝑐 equally in every                       the share of the hourly ether gap that the bitcoin gap accounts          336
+279   anchor, so the netting by 𝑋 is what removes that bias, not the test.                   for. For Bitfinex against Bitstamp, the daily bitcoin and ether gaps     337
+280
+         Inference. Hourly offsets are persistent (𝜌ˆ𝑐 = 0.995 on the stress                 were correlated at 0.949 or more in every year, and the bitcoin gap      338
+281
+      window), so we use HAC standard errors with Andrews’ band-                             accounted for between 0.63 and 0.99 of the ether gap. The com-           339
+282
+      width (the fixed Newey–West rule is a check) and a moving-block                        ponent common to Bitfinex’s assets therefore persisted in every          340
+283                                                                                          year, in calm years as well as in the banking episodes of 2017–          341
+      bootstrap with block length 𝑏 = ⌈(2𝜌 2 /(1 − 𝜌 2 ) 2 ) 1/3𝑛 1/3 ⌉, 𝜌 the
+284                                                                                          2019. Whether it is a unit shift, rather than demand, is the ques-       342
+      lag-one autocorrelation of the IV score.
+285                                                                                          tion of §5.2, and the anchor answers it for the stress windows only.     343
+286     Evidence. Table 4 gives 1,000 simulated windows of 4,434 hours                       Bitfinex against Coinbase gave the same pattern.                         344
+287   per scenario, calibrated to the stress window. IV is unbiased in a                        Coinbase and Bitstamp shared a common component in 2017               345
+288   pure shift (bias 0.000), a mixture (0.000), a netted depeg (0.000) and,                and, more weakly, in 2018. From 2019 to 2023 their median bitcoin        346
+289   with noise in 𝐿 as large as its signal, −0.003, where OLS is biased                    gap was between 0.7 and 2.3 bps, the correlation of the daily gaps       347
+290                                                                                      3                                                                            348
+      WWW ’27, 2027,                                                                                                                                                             Anon.
+
+
+349   Table 1: What was fixed when. Pre-registered: written down before the data or the result existed. Locked: the method was                                                           407
+350   frozen and scored once. Post hoc: computed after related results were seen, and descriptive.                                                                                       408
+351                                                                                                                                                                                      409
+352      Status                     Items                                                                                                                                                410
+353      Pre-registered             The monitor rule, thresholds, baselines and the label list, before the 2017–2023 prices were downloaded (the rule was fitted on Binance.US in        411
+354                                 2022–23, and Bitfinex’s event windows had been seen). The episodes, splits, score and keep rule of the fusion tests FUSE and STABLE, before          412
+                                    any result of each round.
+355                                                                                                                                                                                      413
+         Developed on dev data      The estimator (12 runs, 3 kept), the FUSE fuser (24 runs, 5 kept) and the STABLE fuser (15 runs, 5 kept), each on development assets or episodes
+356                                 only.                                                                                                                                                414
+357      Locked test, scored once   Withheld assets XRP, LINK, SOL, DOGE and ADA; FUSE episodes T1–T5; STABLE episodes X1–X4. The estimator, the FUSE fuser and the                      415
+                                    STABLE fuser were frozen first.
+358                                                                                                                                                                                      416
+         Post hoc                   The anchor tests and the placebo (the external-price test was specified before the Kraken file was downloaded, but not registered); per-year,
+359                                 per-asset and asset-by-time scores, longer blocks and intervals; the CRH and GTM rows on the withheld assets; operating curves; fee bands;           417
+360                                 the 2023 shocks and the oracle pilot.                                                                                                                418
+361                                                                                                                                                                                      419
+362   Table 2: Unit diagnostic by exchange pair and year (hourly median of traded-minute log closes). 𝜌: correlation across days of                                                      420
+363   the daily-median bitcoin and ether gaps; gap: median absolute hourly bitcoin gap in bps; share: 1 − (𝑔𝐸𝑇 𝐻 − 𝑔𝐵𝑇𝐶 ) 2 /𝑔𝐸𝑇
+                                                                                                                              2
+                                                                                                                                 𝐻 on
+                                                                                                                                                                                         421
+364   hourly data, the part of the ether gap that the bitcoin gap alone accounts for. 2017 Coinbase–Bitstamp and Bitfinex–Bitstamp                                                       422
+365   rows use the months in which Bitstamp ether trades are available (from September 2017).                                                                                            423
+366                                                                                                                                                                                      424
+367                                                                                                                                                                                      425
+                                                         Year    Bitfinex–Bitstamp     Bitfinex–Coinbase       Coinbase–Bitstamp
+368                                                                                                                                                                                      426
+                                                                   𝜌    gap    share     𝜌    gap      share     𝜌    gap    share
+369                                                                                                                                                                                      427
+                                                         2017    0.99   33.5    0.95   0.99   45.4      0.94   0.98   32.1    0.92
+370                                                                                                                                                                                      428
+                                                         2018    1.00   13.1    0.99   1.00   13.4      0.99   0.95    4.4    0.58
+371                                                      2019    1.00   41.7    0.99   1.00   41.4      1.00   0.21    2.3    0.02                                                       429
+372                                                      2020    0.97   11.1    0.79   0.98   11.1      0.89   0.28    1.6    0.12                                                       430
+                                                         2021    0.95    4.2    0.63   0.96    4.0      0.71   0.44    1.3    0.01
+373                                                      2022    0.96    4.4    0.77   0.97    4.7      0.91   0.53    1.2    0.33                                                       431
+374                                                      2023    0.99    6.6    0.80   0.99    6.7      0.81   0.71    0.7    0.01                                                       432
+375                                                                                                                                                                                      433
+376                                                                                                                                                                                      434
+377
+      was at most 0.71, and the bitcoin gap accounted for at most 0.33                               (0.97, interval 0.95 to 1.00). Bitfinex’s bitcoin premium therefore                 435
+378
+      of the ether gap. These gaps were mostly asset-specific, so the two                            had two parts: a discount on the exchange dollar, and Tether’s own                  436
+379
+      exchanges shared a dollar.                                                                     discount, which shows up as the gap between the raw slope and                       437
+380
+                                                                                                     one. By year, the adjusted slope was 0.97 in 2018 (the raw slope                    438
+381   5.2    Is the offset a unit, and whose?                                                        there, 2.06, is above one on 35 days) and 1.01 in 2019. In the calm                 439
+                                                                                                     years it was lower (0.83 in 2021 to 0.86 in 2023), where gaps are
+382   A gap that agrees across assets could be the exchange’s dollar, or                                                                                                                 440
+                                                                                                     a few basis points and few hours are large; we do not read those
+383   demand for crypto on that exchange, such as margin or stablecoin-                                                                                                                  441
+                                                                                                     years as unit shifts, nor as demand. The result rests on Kraken’s
+384   funded buying. The anchor separates the two (§3). Table 3 reports                                                                                                                  442
+                                                                                                     USDT price being outside Bitfinex’s ledger; Kraken’s USDT mar-
+385   the slope of the anchor’s daily gap on the offset, first as quoted on                                                                                                              443
+                                                                                                     ket missed no stretch longer than 1 hour of the window.
+386   the exchange (𝐷 on 𝐿) and then net of the external price ((𝐷 − 𝑋 )                                                                                                                 444
+387   on 𝐿).                                                                                            Binance.US: a pure ledger-dollar shift. In June and July 2023 the
+                                                                                                                                                                                         445
+388                                                                                                                                                                                      446
+                                                                                                     median offset was −413 bps in the large-gap hours and the median
+389      Bitfinex: two discounts. USDT/USD began trading on Bitfinex on                                                                                                                  447
+                                                                                                     USDT dislocation −411 bps. The slope was 1.00 and the residual
+390   2018-11-27, so the test covers the stress window from that date to                                                                                                                 448
+                                                                                                     −3.5 bps (Table 12, Appendix). Tether carried no discount of its
+391   2019-05-31. The slope of 𝐷 on 𝐿 was 0.71 (daily data, 186 days). It                                                                                                                449
+                                                                                                     own there; Binance.US’s dollar moved, and everything quoted in
+392   is below 1, so a minority demand component or a USDT-specific                                                                                                                      450
+                                                                                                     it moved with it.
+393   component remained, and it is far from the 0 of a demand-only                                                                                                                      451
+394   reading. The USDT-specific component is visible. In the large-gap                                  Formal test. Section 3.1 formalises the test. On the Bitfinex stress            452
+395   hours the median offset was 255.7 bps, the part of USDT’s move                                 window the GMM estimate of the unit share was 0.971 (HAC 95%                        453
+396   that the offset did not explain, 𝑇 , had a median of −39.1 bps, and                            interval 0.961 to 0.981), with Hansen’s 𝐽 giving 𝑝 = 0.40. A unit                   454
+397   USDT traded at a median of −43.1 bps on Kraken. The two series                                 share of one is rejected (𝑝 <0.001), so about 0.971 of the offset, not              455
+398   moved together (hourly correlation of 𝑇 and 𝑋 0.99), and the me-                               all of it, was a unit shift; we say close to one, not equal to one. For             456
+399   dian difference 𝑇 − 𝑋 was 5.4 bps.                                                             Binance.US in 2023 the estimate was 1.003 (0.999 to 1.007). Table 4                 457
+400      Netting the external price out raised the slope to 0.97, with 95%                           gives the simulated size and power and these estimates.                             458
+401   block-bootstrap intervals of 0.94 to 1.00 over months and 0.95 to                                                                                                                  459
+402   1.00 over weeks. Hourly data gave the same estimate (0.97, from                                   Demand and placebo. Hours in which the bitcoin and ether gaps                    460
+403   4,434 hours). Instrumenting 𝐿 with the Bitfinex–Coinbase ether                                 agreed but the anchor did not follow were 21% of the 4,633 agreeing                 461
+404   gap, which shares the ledger dollar but not the bitcoin quote er-                              hours since the market opened. On open rails, the reverse placebo                   462
+405   ror, rules out measurement error in 𝐿 as the source of the shortfall                           (the Coinbase–Bitstamp bitcoin gap against Bitstamp’s USDT, 15                      463
+406                                                                                           4                                                                                          464
+      Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion                                                                                                            WWW ’27, 2027,
+
+
+465   Table 3: External-price anchor test. 𝑋 = 104 log 𝑃 Kraken (USDT/USD) is USDT’s price on Kraken; 𝐿 is the Bitfinex–Bitstamp bitcoin                                                                           523
+466   gap, 𝐷 = 104 log 𝑃 Bfx (USDT/USD) and 𝑇 = 𝐷 − 𝐿 (bps). Slopes are OLS on daily medians (hours where 𝐿, 𝐷, 𝑋 all exist); 𝐷 on 𝐿                                                                               524
+467   reproduces Table 12 up to the hours in which Kraken traded; (𝐷 − 𝑋 ) on 𝐿 has 95% block-bootstrap intervals over weeks and                                                                                   525
+468   over months (1,000 draws; – when fewer than five blocks); IV uses the Bitfinex–Coinbase ETH gap as instrument for 𝐿. Medians                                                                                 526
+469   of 𝑇 , 𝑋 and 𝑇 −𝑋 and corr(𝑇 , 𝑋 ) (hourly) use hours with |𝐿| ≥ 50 bps for the medians. If 𝑇 = 𝑋 , the (𝐷 −𝑋 ) slope is 1 and 𝑇 −𝑋 = 0.                                                                     527
+470                                                                                                                                                                                                                528
+471           Slice                                Hours    𝐷 on 𝐿            (𝐷 − 𝑋 ) on 𝐿       95% CI (weeks)           95% CI (months)       IV     Med 𝑇      Med 𝑋      Med 𝑇 − 𝑋         corr (𝑇 , 𝑋 )      529
+472           Stress, 2018-11-27 to 2019-05-31      4,434          0.71                    0.97   [0.95, 1.00]             [0.94, 1.00]         0.97      − 39       − 43                   5            0.99      530
+473           2018                                    823          2.06                    0.97   [0.91, 1.04]             –                    0.98      − 59       − 63                   2            0.99      531
+              2019                                  8,703          0.77                    1.01   [0.99, 1.03]             [0.98, 1.04]         1.01      − 28       − 31                   3            0.98
+474                                                                                                                                                                                                                532
+              2020                                  8,767          0.58                    0.87   [0.81, 0.91]             [0.80, 0.91]         0.89      − 23       − 15                 −3             0.79
+475           2021                                  8,738          0.61                    0.83   [0.79, 0.87]             [0.76, 0.89]         0.88      − 24          2                − 22            0.78      533
+476           2022                                  8,753          0.23                    0.84   [0.78, 0.93]             [0.76, 0.94]         0.88      − 69       − 55                 −7             0.90      534
+              2023                                  8,753          0.16                    0.86   [0.79, 0.94]             [0.82, 0.93]         0.87      100        103                  −2             0.94
+477                                                                                                                                                                                                                535
+478                                                                                                                                                                                                                536
+479   Table 4: Anchored unit-offset estimator. Top: 1,000 simulated windows of 4,434 hours per scenario, calibrated to the Bitfinex                                                                                537
+480   stress window; 𝜆 is the unit share of the offset. Bias is the mean error of the OLS, IV (one instrument) and two-anchor GMM                                                                                  538
+481   estimates of 𝜆. Rejection rates are 5% Wald tests of 𝜆 = 1 and 𝜆 = 0 (size when the null is true, power otherwise); coverage is                                                                              539
+482   of the true 𝜆 by the HAC interval of GMM and IV and by the block-bootstrap interval of IV; 𝐽 is the rejection rate of the over-                                                                              540
+483   identifying test (5 df). Bottom: GMM estimates on the held data with HAC intervals, Wald 𝑝-values and Hansen’s 𝐽 (statistic,                                                                                 541
+484   𝑝-value).                                                                                                                                                                                                    542
+485                                                                                                                                                                                                                543
+486                   Scenario                                            𝜆    Bias OLS      Bias IV      Bias GMM          Rej. 𝜆=1      Rej. 𝜆=0     Cov. GMM     Cov. IV     Cov. boot       𝐽 rej.             544
+487                   S1, pure unit shift                            1.0         − 0.004        0.000             0.000          0.08         1.00          0.92       0.94              0.93    0.06              545
+488                   S2, pure source-wide demand                    0.0           0.000        0.000             0.000          1.00         0.08          0.92       0.94              0.94    0.04              546
+                      S3, mixture, unit share 0.5                    0.5         − 0.002        0.000             0.000          1.00         1.00          0.72       0.78              0.77    0.02
+489                                                                                                                                                                                                                547
+                      S4, unit shift + anchor depeg, not netted      1.0         − 0.257      − 0.254           − 0.253          0.99         1.00          0.01       0.09              0.11    0.03
+490                   S5, unit shift + anchor depeg, netted          1.0         − 0.004        0.000             0.000          0.09         1.00          0.92       0.94              0.94    0.04              548
+491                   S6, unit shift, heavy noise in L               1.0         − 0.533      − 0.003           − 0.005          0.07         1.00          0.93       0.94              0.93    0.06              549
+                      S7, as S4, depeg loadings differ by anchor     1.0         − 0.260      − 0.257           − 0.030          0.28         1.00          0.72       0.07              0.05    0.48
+492                                                                                                                                                                                                                550
+493                               Sample                                                                Hours         𝜆ˆ     95% CI            𝑝 (𝜆=1)    𝑝 (𝜆=0)               𝐽 (𝑝 )                             551
+494                                                                                                                                                                                                                552
+                                  Bitfinex, USDT netted with Kraken, 4 instruments                      4,433     0.971      [0.961, 0.981]     <0.001     <0.001         2.9 (0.40)
+495                               Bitfinex, USDT netted, ETH gap only                                   4,433     0.971      [0.961, 0.981]     <0.001     <0.001                 –                                553
+496                               Bitfinex, USDT not netted, 4 instruments                              4,433     0.731      [0.606, 0.857]     <0.001     <0.001         0.6 (0.90)                               554
+                                  Binance.US 2023, USDT netted                                          4,582     1.003      [0.999, 1.007]       0.11     <0.001         1.7 (0.19)
+497                                                                                                                                                                                                                555
+                                  Binance.US Feb–Jul 2023, USDT and USDC netted                         3,419     1.008      [1.005, 1.011]     <0.001     <0.001     26.3 (<0.001)
+498                               Binance.US Feb–Jul 2023, USDT and USDC not netted                     3,419     1.009      [1.005, 1.012]     <0.001     <0.001         2.4 (0.50)                               556
+499                                                                                                                                                                                                                557
+500                                                                                                                                                                                                                558
+501   large-gap hours) gave a slope of 0.50 with an interval from −2.04 to                                         asset-by-year cells it was 0.421. From 2020 to 2023 the yearly score                            559
+502   1.84, which includes 0; with so few hours it is directional evidence                                         was between 30% and 45%. So one offset per source-hour removes                                  560
+503   only.                                                                                                        most of the gap in the stress years and about a third to two-fifths                             561
+504                                                                                                                in calm years, on assets it never saw. On the dev assets the corre-                             562
+505   5.3     Held-out assets                                                                                      sponding medians were 0.379 per year and 0.740 per asset.                                       563
+506      Protocol. The score is the share of the mean-square Bitfinex–                                                                                                                                             564
+                                                          ∑             ∑                                             Held-out time. Withholding assets is not withholding time, so
+507   Coinbase gap that the correction removes, 1 − (𝑔 − ˆ        𝑢) 2 / 𝑔2 ,                                      Table 5 scores each period on its own data, and the estimator is                                565
+508   where 𝑢ˆ is estimated without the scored asset on either exchange.                                           causal. In 2017–2019 the test assets scored 0.989 (interval 0.907                               566
+509   Five dev assets (ETH, LTC, BCH, ETC, XLM) were scored during                                                                                                                                                 567
+                                                                                                                   to 0.994; only 7,388 hours, since the test assets list late), and the
+510   development. The five test assets (XRP, LINK, SOL, DOGE, ADA)                                                                                                                                                568
+                                                                                                                   dev assets 0.672. In 2020–2023 the test assets scored 0.353 (0.265 to
+511   were never loaded during development and were scored once. Three                                                                                                                                             569
+                                                                                                                   0.450), but the dev assets only 0.012: in calm years the correction
+512   checks passed: the estimator is causal, it is invariant to relabelling                                                                                                                                       570
+                                                                                                                   helps on some assets and not on others. Re-picking 𝑐 on 2017–2019
+513   exchanges, and its source has no file access, dates or exchange                                                                                                                                              571
+                                                                                                                   data alone gave 0.25 and a 2020–2023 test score of 0.356. Calendar-
+514   names. Intervals are 95% block-bootstrap intervals (1000 draws).                                                                                                                                             572
+                                                                                                                   month blocks widen the pooled test interval to 0.484 to 0.933, and
+515                                                                                                                                                                                                                573
+                                                                                                                   quarter blocks to 0.369 to 0.946, against 0.662 to 0.922 for week
+516      Per year and per asset. A pooled score is dominated by the hours                                          blocks; offsets that persist for months make short blocks too opti-                             574
+517   and assets where the gap is large. On the test assets the pooled                                             mistic.                                                                                         575
+518   score was 0.846 (95% interval 0.662 to 0.922), but it is driven by XRP                                                                                                                                       576
+519   (97%) and by 2019 (99%). The medians are more telling. Across the                                               Baseline and controls. The estimator is indistinguishable from                               577
+520   five test years the median score was 0.389 (range 0.305 to 0.989);                                           the plain cross-asset median 𝑏 2 : the pooled test difference was                               578
+521   across the five test assets it was 0.378 (0.273 to 0.974); across the                                        0.000 (interval −0.003 to 0.002). The contribution is therefore the                             579
+522                                                                                                        5                                                                                                       580
+      WWW ’27, 2027,                                                                                                                                        Anon.
+
+
+581   Table 5: Assets-by-time holdout. Share of the mean-square Bitfinex–Coinbase gap removed on withheld assets in each period;                                    639
+582   the estimator is causal, so a period is scored on data it sees only up to each hour. The last block re-picks the shrinkage constant                           640
+583   on 2017–2019 dev data only. Intervals are 95% bootstrap with calendar-month blocks (1,000 draws). The control panel starts in                                 641
+584   2019. Scores are post hoc and descriptive.                                                                                                                    642
+585                                                                                                                                                                 643
+586                    Period                                    Set                            Hours 𝑏 1     𝑏2      Estimator Estimator, 95% CI                   644
+587                    2017–2019                                 Test assets                    7,388 0.989   0.989   0.989     0.989 [0.907, 0.994]                645
+588                    2017–2019                                 Dev assets                    88,316 0.668   0.671   0.672     0.672 [0.482, 0.854]                646
+                       2017–2019                                 Control (Coinbase–Bitstamp)   33,584 − 0.030 − 0.024 − 0.001   − 0.001 [ − 0.083, 0.044]
+589                                                                                                                                                                 647
+590                    2020–2023                                 Test assets                 111,905 0.262    0.356   0.353     0.353 [0.265, 0.450]                648
+                       2020–2023                                 Dev assets                  174,127 0.009    0.012   0.012     0.012 [ − 0.001, 0.082]
+591                    2020–2023                                 Control (Coinbase–Bitstamp) 176,341 0.018    0.045   0.054     0.054 [0.011, 0.102]                649
+592                                                                                                                                                                 650
+                       2020–2023, 𝑐 = 0.25 re-picked on 2017–2019 Test assets                 111,905 0.262   0.356   0.356     0.356 [0.268, 0.453]
+593                    2020–2023, 𝑐 = 0.25 re-picked on 2017–2019 Dev assets                  174,127 0.009   0.012   0.012     0.012 [ − 0.001, 0.082]             651
+594                    2020–2023, 𝑐 = 0.25 re-picked on 2017–2019 Control (Coinbase–Bitstamp) 176,341 0.018   0.045   0.052     0.052 [0.008, 0.099]                652
+595                                                                                                                                                                 653
+596                                                                                                                                                                 654
+597
+      unit model and its validation, not a better estimator. A median                     5.5      Size and timing of the calm-year offsets                         655
+      suffices. On Coinbase–Bitstamp, the pair with a shared dollar, the                  The calm-year offsets are systematic but too small to trade. Calm
+598                                                                                                                                                                 656
+      pooled score was 0.042 (interval 0.009 to 0.081) and the mean abso-                 years here are 2020 to 2023. The round-trip band of a pair is the
+599                                                                                                                                                                 657
+      lute correction was 2.7 bps, against 22.2 bps on Bitfinex–Bitstamp,                 sum of its two venues’ base-tier taker fees, from 50 to 100 bps
+600                                                                                                                                                                 658
+      a pair with separate dollars. Table 11 (Appendix) gives each asset.                 across pair-years. The median absolute hourly bitcoin gap between
+601                                                                                                                                                                 659
+602                                                                                       Bitfinex and Bitstamp was between 4.2 and 11.1 bps, inside the            660
+603                                                                                       band, and the gap exceeded the band in at most 0.80% of hours for         661
+604   5.4    Fusion benchmark: when units matter                                          any pair. Halving every band (25 bps at the narrowest) leaves the         662
+605   A fusion service cares about the fused price, not the offset. We                    median gap inside it. These offsets are not arbitrage opportunities.      663
+606   therefore froze three methods and scored each once on episodes it                      They are persistent and shared across assets. The first-order au-      664
+607   had never seen (Table 6; Table 1), against the plain median, volume-                tocorrelation of the daily Bitfinex gap was between 0.56 and 0.86         665
+608   weighted mean, CRH and GTM, a Gaussian truth model. UNIT-                           against Bitstamp, and the share of the daily ether and bitcoin gaps       666
+609   TD is the held-out-asset test above. FUSE fuses the dollar prices                   that was common to both was between 0.95 and 0.99. The con-               667
+610   of Bitfinex, Coinbase, Bitstamp and, in 2023, Binance.US into one                   clusion does not depend on the timing convention: the hourly ex-          668
+611   price, scored against Kraken, which never entered fusion. STABLE                    plained share was between 0.63 and 0.80 with hourly medians, be-          669
+612   fuses markets quoted in different stablecoins into one dollar price,                tween 0.51 and 0.84 with last closes, and between 0.55 and 0.86           670
+613   again against Kraken. Every score is relative to the plain median.                  where all legs traded in the final minute; in all 12 of 12 lead-lag       671
+614      The plain median was hard to beat. In UNIT-TD the estimator                      series the cross-correlation peaked at zero minutes. The Coinbase–        672
+615   scored 0.846 against 0.847 for the median, 0.837 for CRH and 0.842                  Bitstamp gaps behaved like noise (median absolute bitcoin gap 0.7         673
+616   for GTM. In FUSE, the fuser beat the median in the Bitfinex episode                 to 1.6 bps, a few ticks). A price feed that fuses these sources still     674
+617   T1 (0.93), but CRH (0.88) and dropping the most deviant source                      cares about a persistent bias of a few basis points, even though no       675
+618   (0.89) beat it, it lost on Binance.US T2 (1.50), and on FTX, SVB and                one can trade it away.                                                    676
+619   the calm period it was within 0.95 to 0.97 of the median. Volume                                                                                              677
+620   weighting and GTM broke down in T1 (15.20 and 9.76). In STABLE,                                                                                               678
+621   the method won on the USDC run X1 (0.72, against 0.77 for convert-                                                                                            679
+622   ing each quote unit at its stablecoin rate, 6.26 for volume weight-                 5.6      Monitoring                                                       680
+623   ing and 2.18 for CRH) and lost on TUSD X2 (1.33), FDUSD X3 (2.46)                   The monitor flags an hour when the bitcoin gap to the reference is        681
+624   and on the calm placebo X4 (1.32), which failed the method’s own                    at least 100 bps and a second asset (ether or Tether) agrees with it      682
+625   check.                                                                              to within a quarter of its size; consecutive flags merge into alarm       683
+626      The scope condition is therefore narrow and positive. Unit-aware                 episodes. The rule, thresholds and baselines were fixed before the        684
+627   fusion won when a large group of sources shared a unit and that                     evaluation (Table 7). Baselines are a price-gap alarm on bitcoin          685
+628   unit moved by more than venue noise, as in the March 2023 USDC                      alone, a trailing robust 𝑧-score of the gap, and the USDT premium.        686
+629   run. Where the shift touched a minority of sources, a median al-                        On Bitfinex the monitor raised 0.43 false alarm episodes per          687
+630   ready absorbs it (Appendix A), and correcting adds noise: the ex-                   exchange-year (3 episodes), against 1.29 for the plain price-gap          688
+631   tra error in X4, where nothing needed correcting, is the price. Two                 alarm (9), at the same recall: 7 of 9 labelled episodes. The second-      689
+632   sources are a different case. With Bitfinex and one open venue the                  asset test keeps the gap alarm’s recall and removes two thirds of its     690
+633   median, CRH and GTM coincide and cannot say which dollar is                         false alarms. At its fixed setting the trailing 𝑧-score caught every      691
+634   off; the unit-aware fuser cut the median error in Bitfinex’s 2018–                  Bitfinex episode and raised 2.88 false alarm episodes per exchange-       692
+635   19 stress from 111.1 to 8.8 bps, about that of the open venue alone                 year. On Binance.US the monitor caught all labelled episodes. On          693
+636   (8.5; Appendix B). Units add information about which source is off                  Coinbase it raised no alarm after 2018-01-29; its 8 alarm episodes        694
+637   when prices cannot say.                                                             all fall in the 2017 bubble (Appendix E).                                 695
+638                                                                                   6                                                                             696
+      Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion                                                                               WWW ’27, 2027,
+
+
+697   Table 6: The three locked fusion tests. Each method was frozen, then scored once on episodes it had never seen (T1 Oct 2018                                                     755
+698   to May 2019, T2 May to Jul 2023, T3 Nov 2022, T4 Mar 2023, T5 other 2022–23; X1 Mar 2023, X2 Jan 2024, X3 Apr 2025, X4 Dec                                                      756
+699   2023 and Feb–Mar 2025). UNIT-TD: share of the mean-square Bitfinex–Coinbase gap removed on five withheld assets (higher                                                         757
+700   is better). FUSE (T1–T5) and STABLE (X1–X4): mean absolute error of the fused dollar price against a Kraken reference that                                                      758
+701   never entered fusion, divided by the plain median’s error on the same hours (below 1 beats the median; bold: best method in                                                     759
+702   the column; for STABLE the plain median treats every stablecoin as one dollar). The oracle knows which sources are clean and                                                    760
+703   is a reference point. In STABLE, X4 is a calm placebo on which the method’s own check (at most 1.02) failed. † Post hoc: not                                                    761
+704   in the locked log.                                                                                                                                                              762
+705                                                                                                                                                                                   763
+706                                                                      UNIT-TD                               FUSE                             STABLE                                764
+707                            Method                                    Held-out        T1              T2        T3     T4     T5     X1     X2      X3     X4                      765
+708                                                                 (share removed)    Bitfinex       Binance.US   FTX    SVB    calm   USDC   TUSD   FDUSD   calm                    766
+709                            Plain median                               0.847         1.00            1.00       1.00 1.00     1.00   1.00   1.00   1.00    1.00                    767
+710                            Volume-weighted mean                          –         15.20            1.39       0.96 1.26     1.04   6.26   1.46   3.05    1.87                    768
+                               Drop the most deviant source                  –          0.89            0.94       1.01 1.13     1.03    –      –      –       –
+711                            Convert quote units, then median              –           –               –          –    –        –     0.77   1.95   2.66    2.19                    769
+712                            CRH                                        0.837†       0.88             1.20       0.92 1.04     0.99   2.18   0.82   1.15    0.98                    770
+713                            GTM                                        0.842†       9.76             5.98       0.93 1.03     1.02    –      –      –       –                      771
+                               Earlier unit-aware method (frozen)            –         1.02             1.03       1.12 1.23     1.17   1.67   0.90   1.04    1.13
+714                                                                                                                                                                                   772
+                               Same-hour bitcoin gap                      0.826          –               –          –    –        –      –      –      –       –
+715                            Method of this round                       0.846        0.93             1.50       0.95 0.97     0.97   0.72   1.33   2.46    1.32                    773
+716                            Oracle (reference, not a method)             –           0.88            0.79       0.92   1.07   0.96   0.65   0.63   4.04    2.02                    774
+717                                                                                                                                                                                   775
+718                                                                                                                                                                                   776
+719
+      Table 7: Alarm episodes by method and exchange, 2017–2023                                          level lasted 22 days, and the gap was above it on 172 of the 197             777
+720
+      (Binance.US from October 2022). Recall: labelled episodes                                          days from that date to 25 April 2019, when regulators disclosed the          778
+721
+      caught over labelled episodes with data coverage. False                                            loss of funds held at a payment processor. Reports of the banking-           779
+722
+      alarms: alarm episodes with no labelled event, in total and                                        partner problem are dated 30 September 2018 and of a deposit                 780
+723
+      per exchange-year. Method definitions and the rule are fixed                                       pause 11 October 2018. The gap was visible in public prices for              781
+724
+      in advance; – means the method was not evaluated for that                                          about 6.5 months before the loss was disclosed. This is a statement          782
+725
+      exchange.                                                                                          about elapsed time, not a lead over the market.                              783
+726                                                                                                                                                                                   784
+727           Method            Exchange     Episodes Recall False Per year                              5.7       Three shocks in 2023                                               785
+728           Offset monitor    Bitfinex            12     7/9       3          0.43                        Binance.US.. In June 2023, after the SEC complaint, Binance.US            786
+              Offset monitor    Binance.US           5     4/4       1          1.31
+729
+              Offset monitor    Coinbase             8     0/5       8          1.26
+                                                                                                         suspended dollar deposits as its banking partners stopped dollar             787
+730                                                                                                      payments [15]. In the window with deposits shut and withdrawals              788
+              Price gap         Bitfinex            18     7/9       9          1.29
+731
+              Price gap         Binance.US           5     4/4       1          1.26                     open, the median bitcoin gap to Bitstamp was 557 bps in magnitude            789
+732           Price gap         Coinbase            20     0/5      20          2.86                     over 530 hours in which all legs traded. The sign is negative (source        790
+733           Trailing robust 𝑧 Bitfinex            38     9/9      20          2.88                     minus reference): assets were cheaper in Binance.US’s dollar, so             791
+734           Trailing robust 𝑧 Binance.US           7     4/4       2          2.97                     that dollar traded at a premium. Bitcoin and Tether showed the               792
+              Trailing robust 𝑧 Coinbase            26     3/5      24          3.45
+735                                                                                                      same dislocation, with an hourly correlation of changes of 0.95, and         793
+736           USDT premium      Bitfinex             6     1/3      2           0.39                     the ledger component accounted for a median 99% of the Tether                794
+              USDT premium      Binance.US           –       –      –              –
+737           USDT premium      Coinbase             –       –      –              –                     dislocation (Figure 2b, Appendix).                                           795
+738                                                                                                                                                                                   796
+                                                                                                            Silvergate, Signature and USDC.. The closure of Silvergate and
+739                                                                                                                                                                                   797
+                                                                                                         Signature in March 2023 raised no alarm on Bitfinex, Coinbase or
+740                                                                                                                                                                                   798
+          Operating curves. One threshold is one operating point, so we                                  Binance.US (0 alarm days). A dislocation of the exchange dollar ap-
+741                                                                                                                                                                                   799
+      swept each rule’s threshold (committed tables hold the full sweep).                                peared only where rails closed with no substitute: Bitfinex in 2017–
+742                                                                                                                                                                                   800
+      The denominator of a false-alarm rate is the evaluated venue-hours                                 2018 and Binance.US from June 2023. In the March 2023 USDC run,
+743                                                                                                                                                                                   801
+      divided by 8,766 hours per year; for the monitor it was 61,183 hours,                              the token component on Binance.US was -95.8 bps and the ledger
+744                                                                                                                                                                                   802
+      or 6.98 years, on Bitfinex. At matched recall of at least 0.85, which                              component -2.4 bps: the token moved, not the exchange dollar (Fig-
+745                                                                                                                                                                                   803
+      allows one of the 9 Bitfinex positives to be missed, the monitor had                               ure 2a). USDC fell to a peak of 1,477 bps below par on Bitstamp, and
+746                                                                                                                                                                                   804
+      the fewest false alarms of the price-threshold rules: 0.86 per venue-                              was at least 100 bps below par in 46 hours.
+747                                                                                                                                                                                   805
+      year, against 1.86 for the gap-only rule and 1.86 for the matched
+748
+      two-asset rule. The robust 𝑧-score reached full recall with fewer                                     Chainlink. If a Chainlink feed had inherited the depeg, its error         806
+749
+      false alarms, 1.15 per venue-year against 3.44 for the monitor, so it                              would regress on the depeg size with a slope equal to the share 𝑠            807
+750
+      is the better rule at the high-recall end.                                                         of its sources quoted in USDC. We did not measure 𝑠, but 𝑠 ≤ 1, so           808
+751                                                                                                      a slope of one is an upper bound and the observed slope bounds 𝑠             809
+752      The 2018 timeline. Bitfinex’s daily bitcoin gap to the reference                                times the pass-through. It was 0.007 for bitcoin and 0.007 for ether,        810
+753   first exceeded 100 bps on 10 October 2018. The first run above that                                against 0.010 for the Tether feed and 0.140 for the USDC feed itself,        811
+754                                                                                               7                                                                                   812
+      WWW ’27, 2027,                                                                                                                                                          Anon.
+
+
+813   which responded as expected. This is one episode and one oracle                           Table 8: Fusion under an injected unit bias on 𝑘 of three ex-                            871
+814   family.                                                                                   changes (development assets, 2021–2023). Breakdown: the                                  872
+815                                                                                             smallest constant bias in bps (grid: 25, 50, 100, 200, 400, 800)                         873
+816                                                                                             at which the 95th percentile of the absolute fused-price error                           874
+      6    DISCUSSION                                                                           exceeds 50 bps, pooled over which exchanges are hit and for
+817                                                                                                                                                                                      875
+818
+         What aggregators and oracles should do. Keep the plain median                          the worst choice; none: not reached on the grid. Replay: 95th                            876
+819
+      by default; across three locked tests it was hard to beat, and it ab-                     percentile error in bps when the bias follows the Bitfinex                               877
+820
+      sorbs a minority of shifted sources. Correct for units when three                         2018–19 gap.                                                                             878
+821
+      things hold. A group of sources shares a unit that can move, such                                                                                                                  879
+822
+      as a stablecoin or a platform credit. The shift can be large relative                                                               𝑘=1                        𝑘=2                 880
+823
+      to venue noise. And side information exists that identifies the unit:                                                                                                              881
+                                                                                                 Fuser                            Pooled Worst Replay Pooled Worst Replay
+824
+      several unrelated items per source, or an anchor with an external                                                                                                                  882
+                                                                                                 Median                            none    none      12.9       50      50    460.8
+825
+      price. Then label each source’s unit, correct instead of dropping the                      Volume-weighted mean               100     100     265.2      100     100    362.8      883
+826
+      source (which preserves its volume), and report the estimated off-                         Source weighting (CRH)            none    none       7.5       50      50    463.7      884
+      set. Where only two sources quote, a median cannot say which unit                          Unit-aware median                 none    none      12.9       50      50    460.8
+827                                                                                              Unit-aware cluster                none    none      12.9       50      50    460.8      885
+828
+      is off, and the offset can. The same approach applies to platform                          Unit-aware median (𝑏 2 units)       50      50     335.6       50      50    403.2      886
+829
+      credits, multi-currency marketplaces and loyalty points, wherever                          Unit-aware cluster (𝑏 2 units)     100      50      68.4       50      50    449.3
+                                                                                                                                                                                         887
+830
+      an anchor item with a known value exists; we have tested it only                                                                                                                   888
+831
+      on crypto exchanges.                                                                                                                                                               889
+832                                                                                              [4] Ethan Flowerday, Neil Gandal, Hanna Halaburda, Eric Olson, and Gabriela             890
+         Limits. The diagnostic rests on three USD exchanges and the                                 Ardel. 2026. Bitcoin arbitrage: The role of an exchange. Quantitative Finance
+833                                                                                                                                                                                      891
+      benchmark on three locked tests with few episodes each, so the                                 and Economics 10, 3 (2026), 624–648. https://doi.org/10.3934/QFE.2026024
+834                                                                                              [5] John M. Griffin and Amin Shams. 2020. Is Bitcoin Really Untethered? The Journal     892
+      scope condition is a pattern in a small sample, not an estimate.                               of Finance 75, 4 (2020), 1913–1964. https://doi.org/10.1111/jofi.12903
+835                                                                                                                                                                                      893
+      The estimator ties the plain median, so the evidence is for the unit                       [6] Weiwei Guo, Silvia Intini, and Hossein Jahanshahloo. 2025. Bitcoin Arbitrage
+836                                                                                                  and Exchange Default Risk. Finance Research Letters 71 (2025).                      894
+      model and not for a better estimator. The held-out score in calm                           [7] Qi Li, Yaliang Li, Jing Gao, Bo Zhao, Wei Fan, and Jiawei Han. 2014. Resolving
+837                                                                                                                                                                                      895
+      years is a third to two-fifths on the test assets and near zero on the                         Conflicts in Heterogeneous Data by Truth Discovery and Source Reliability Es-
+838                                                                                                                                                                                      896
+      dev assets, and its intervals widen with longer blocks. The anchor                             timation. In Proceedings of the 2014 ACM SIGMOD International Conference on
+839                                                                                                  Management of Data. https://doi.org/10.1145/2588555.2610509                         897
+      needs an item fixed in the true unit: USDT is one only up to its                           [8] Bowen Liu, Pawel Szalachowski, and Jianying Zhou. 2021. A First Look into
+840                                                                                                                                                                                      898
+      own redemption risk, which the Kraken price corrects for only if                               DeFi Oracles. In 2021 IEEE International Conference on Decentralized Applications
+841                                                                                                                                                                                      899
+      Kraken’s ledger is outside Bitfinex’s, and it exists on Bitfinex only                          and Infrastructures (DAPPS). 39–48. https://doi.org/10.1109/DAPPS52256.2021.
+842                                                                                                  00010                                                                               900
+      from 2018-11-27, so the earlier banking episodes have no anchor.                           [9] Jiageng Liu, Igor Makarov, and Antoinette Schoar. 2023. Anatomy of a Run: The
+843                                                                                                                                                                                      901
+      When two of three exchanges share a biased unit, prices alone can-                             Terra Luna Crash. NBER Working Paper 31160. National Bureau of Economic
+844                                                                                                  Research. https://www.nber.org/papers/w31160                                        902
+      not say which unit is true; an outside anchor is needed. The calm-                        [10] Richard K. Lyons and Ganesh Viswanath-Natraj. 2023. What keeps stablecoins
+845                                                                                                                                                                                      903
+      year offsets sit inside fee bands that come from secondary sources,                            stable? Journal of International Money and Finance 131 (2023), 102777.
+846                                                                                                                                                                                      904
+      the monitor is scored on a handful of labelled events, and the oracle                     [11] Yiming Ma, Yao Zeng, and Anthony Lee Zhang. 2025. Stablecoin Runs and the
+847                                                                                                  Centralization of Arbitrage. NBER Working Paper 33882. National Bureau of           905
+      check covers one episode.                                                                      Economic Research.
+848                                                                                                                                                                                      906
+                                                                                                [12] Igor Makarov and Antoinette Schoar. 2020. Trading and arbitrage in cryptocur-
+849                                                                                                                                                                                      907
+                                                                                                     rency markets. Journal of Financial Economics 135, 2 (2020), 293–319.
+850   7    REPRODUCIBILITY                                                                      [13] Matthias Nadler, Katrin Schuler, and Fabian Schär. 2026. Blockchain price ora-      908
+                                                                                                     cles: Accuracy and violation recovery. Journal of Corporate Finance 96 (2026),
+851   Every number in this paper is a macro generated from commit-                                   102908. https://doi.org/10.1016/j.jcorpfin.2025.102908
+                                                                                                                                                                                         909
+852   ted reports and logs by the macro modules of www_paper (macros,                           [14] Gustavo Schwenkler, Aakash Shah, and Darren Yang. 2026. Aggregate Confu-            910
+853   rescue_macros, unit_macros, posthoc_macros, sweep_macros,                                      sion in Crypto Market Data. Management Science (2026). https://doi.org/10.          911
+854
+                                                                                                     1287/mnsc.2025.00611                                                                912
+      noise_macros, anchor_ext_macros, robust_macros, td_macros                                 [15] The Block. 2023. BinanceUS Suspends USD Deposits, Says Bank Partners Will
+855   and bench_macros), and tests fail if a macro is stale or a number                              Pause Dollar Payments Next Week.          https://www.theblock.co/post/233917/      913
+856   is typed by hand. The three locked tests were scored once, and                                 binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-               914
+                                                                                                     payments-next-week
+857   the benchmark table is parsed from their logs. Inputs are free pub-                       [16] Xiaoxin Yin, Jiawei Han, and P. S. Yu. 2008. Truth Discovery with Multiple
+                                                                                                                                                                                         915
+858   lic files recorded by hash, and a fixed gate rebuilds the PDF and                              Conflicting Information Providers on the Web. IEEE Transactions on Knowledge        916
+                                                                                                     and Data Engineering 20, 6 (2008), 796–808. https://doi.org/10.1109/TKDE.2007.
+859   checks page limits and anonymity.                                                              190745
+                                                                                                                                                                                         917
+860                                                                                                                                                                                      918
+861                                                                                                                                                                                      919
+862
+      REFERENCES                                                                                A     FUSION UNDER AN INJECTED UNIT BIAS                                                 920
+       [1] Nicola Borri and Kirill Shakhnov. 2023. Cryptomarket Discounts. Journal of
+863        International Money and Finance 139 (2023), 102963. https://doi.org/10.1016/j.       Table 8 injects a constant or replayed unit bias on 𝑘 of three ex-                       921
+864        jimonfin.2023.102963                                                                 changes (BTC and ETH, calm window) and compares fusers. With                             922
+       [2] Kyoung Jin Choi, Alfred Lehar, and Ryan Stauffer. 2019. Bitcoin Microstruc-
+865
+           ture and the Kimchi Premium.         Working Paper. University of Calgary,
+                                                                                                𝑘 = 1 the plain median, CRH-style source weighting and the de-                           923
+866        Haskayne School of Business.       https://snb.ch/dam/jcr:474400ba-255b-49a4-        fault unit-aware median are unaffected on the grid, while the volume-                    924
+867        b2b8-5e3626719730/sem_2019_05_31_lehar.n.pdf                                         weighted mean breaks down at 100 bps. With 𝑘 = 2 every fuser                             925
+       [3] Xin Luna Dong, Laure Berti-Equille, and Divesh Srivastava. 2009. Integrating
+868
+           Conflicting Data: The Role of Source Dependence. Proceedings of the VLDB En-         fails at the smallest bias, as it must: the two exchanges with the                       926
+869        dowment 2, 1 (2009), 550–561. https://doi.org/10.14778/1687627.1687690               biased dollar form the majority, and nothing in prices says which                        927
+870                                                                                         8                                                                                            928
+      Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion                                                           WWW ’27, 2027,
+
+
+929   dollar is the true one. A unit-aware fuser using a single asset’s                      C HELD-OUT SCORES BY ASSET, AND THE                                   987
+930   gap as the rate can be worse than the median when its reference                          FULL ANCHOR TABLE                                                   988
+931   is the biased exchange. Unit awareness adds information (which                                                                                               989
+932   exchanges share a dollar), not accuracy.                                               D THE 2023 SHOCKS                                                     990
+933                                                                                          E ALARM WINDOWS IN 2017 AND THE                                       991
+934   B     TRUTH DISCOVERY ON REAL DATA                                                       LABEL LIST                                                          992
+935   Table 9 fuses Bitfinex with one open-rail venue and scores the re-                                                                                           993
+                                                                                             The 8 Coinbase alarm episodes fall between 2017-09-02 and 2018-
+936   sult against the other open-rail venue, for the median, volume-                                                                                              994
+                                                                                             01-29. In seven of them Coinbase prices stood above Bitstamp’s; in
+937   weighted mean, CRH, GTM and the unit-aware fuser. With two                                                                                                   995
+                                                                                             the last they stood below. Bitfinex’s 3 false alarms were a two-day
+938   sources the median, CRH and GTM coincide. Table 10 gives the                                                                                                 996
+                                                                                             episode in November 2017 and one-day episodes in 2019 and 2022.
+939   held-out-asset score for CRH and GTM beside the estimator: on the                                                                                            997
+                                                                                             None of these windows is in the label set, so they count as false
+940   test assets the estimator exceeded CRH by 0.009 (interval −0.019                       alarms. The 2017 alarms may reflect dollar funding frictions on US
+                                                                                                                                                                   998
+941   to 0.051) and GTM by 0.004 (−0.015 to 0.030). Both were computed                                                                                             999
+                                                                                             exchanges, such as purchase limits and deposit backlogs; we did
+942   after the locked test and are descriptive.                                                                                                                   1000
+                                                                                             not test this.
+943                                                                                                                                                                1001
+944                                                                                                                                                                1002
+945                                                                                                                                                                1003
+946                                                                                                                                                                1004
+947                                                                                                                                                                1005
+948                                                                                                                                                                1006
+949                                                                                                                                                                1007
+950                                                                                                                                                                1008
+951                                                                                                                                                                1009
+952                                                                                                                                                                1010
+953                                                                                                                                                                1011
+954                                                                                                                                                                1012
+955                                                                                                                                                                1013
+956                                                                                                                                                                1014
+957                                                                                                                                                                1015
+958                                                                                                                                                                1016
+959                                                                                                                                                                1017
+960                                                                                                                                                                1018
+961                                                                                                                                                                1019
+962                                                                                                                                                                1020
+963                                                                                                                                                                1021
+964                                                                                                                                                                1022
+965                                                                                                                                                                1023
+966                                                                                                                                                                1024
+967                                                                                                                                                                1025
+968                                                                                                                                                                1026
+969                                                                                                                                                                1027
+970                                                                                                                                                                1028
+971                                                                                                                                                                1029
+972                                                                                                                                                                1030
+973                                                                                                                                                                1031
+974                                                                                                                                                                1032
+975                                                                                                                                                                1033
+976                                                                                                                                                                1034
+977                                                                                                                                                                1035
+978                                                                                                                                                                1036
+979                                                                                                                                                                1037
+980                                                                                                                                                                1038
+981                                                                                                                                                                1039
+982                                                                                                                                                                1040
+983                                                                                                                                                                1041
+984                                                                                                                                                                1042
+985                                                                                                                                                                1043
+986                                                                                      9                                                                         1044
+       WWW ’27, 2027,                                                                                                                                                              Anon.
+
+
+1045   Table 9: Error of the fused USD price against a held-out open-rail venue (leave-one-venue-out: Bitfinex and one open-rail venue                                                     1103
+1046   are fused and scored against the other, Coinbase or Bitstamp; seven assets, 2017–2023, both references pooled). Median and                                                          1104
+1047   95th-percentile absolute error in bps, and hours above 50 bps. CRH and GTM use a trailing 30-day window. With two sources                                                           1105
+1048   the median, CRH and GTM coincide.                                                                                                                                                   1106
+1049                                                                                                                                                                                       1107
+1050                                                                   All hours             Bitfinex 2017-04..07 Bitfinex 2018-10..2019-05     2023                                       1108
+1051                            Method                              Med P95 >50              Med P95 >50          Med P95          >50      Med P95 >50                                    1109
+1052                            Median                               7.9   118    59,016     75.3     367   4,901    111.1    270      38,445        5.3    25     839                     1110
+                                Volume-weighted                      7.3   133    61,352     81.2     416   5,118    121.9    323      38,520        4.2    26     972
+1053                                                                                                                                                                                       1111
+                                CRH                                  7.9   118    59,016     75.3     367   4,901    111.1    270      38,445        5.3    25     839
+1054                            GTM                                  7.9   118    59,015     75.3     367   4,901    111.1    270      38,445        5.3    25     839                     1112
+1055                            Unit-aware                           6.0    38    20,345     54.5     294   4,180     8.8     33        920          4.0    24     783                     1113
+                                Unit-aware, one vote per unit        7.1   152    56,942     70.9     422   4,736    124.5    420      31,355        4.6    25     856
+1056                                                                                                                                                                                       1114
+1057
+                                Open-rail venue alone (not a fuser) 6.0 41 22,622 44.2 247                  3,614     8.5   37         1,232         3.6    27    1,236                    1115
+                                Bitfinex alone (not a fuser)        11.5 226 80,827 125.5 665               5,849    224.2 535         44,467        8.3    31    1,612
+1058                                                                                                                                                                                       1116
+1059   Table 10: Held-out-asset correction (Bitfinex versus Coinbase), share of the mean-square gap removed, with 95% block-                                                               1117
+1060   bootstrap intervals as in Table 11. CRH and GTM resolve the pair offset from the other visible assets’ gaps with reliabilities                                                      1118
+1061   fitted on the trailing 30 days.                                                                                                                                                     1119
+1062                                                                                                                                                                                       1120
+1063                                                                                                                                                                                       1121
+                                                 𝑏1                   𝑏2                        CRH                     GTM                   Estimator
+1064                                                                                                                                                                                       1122
+                                   Dev, pooled 0.441 [0.278, 0.642] 0.444 [0.280, 0.644] 0.407 [0.245, 0.620] 0.374 [0.233, 0.569] 0.445 [0.281, 0.643]
+1065                                                                                                                                                                                       1123
+                                   Test, pooled 0.826 [0.609, 0.911] 0.847 [0.662, 0.922] 0.837 [0.639, 0.915] 0.842 [0.656, 0.917] 0.846 [0.662, 0.922]
+1066                                                                                                                                                                                       1124
+1067   Table 11: Share of the mean-square cross-exchange gap removed (Bitfinex versus Coinbase), by withheld asset, with 95% block-                                                        1125
+1068   bootstrap intervals (blocks are ISO weeks; 1,000 draws). 𝑏 1 : same-hour bitcoin gap; 𝑏 2 : same-hour median gap of the visible                                                     1126
+1069   assets; Estimator: the fixed estimator; Δ: Estimator minus 𝑏 2 . Controls pool the withheld assets ETH, LTC, BCH, XLM, LINK                                                         1127
+1070   and XRP over 2019–2023 for the pair named. Scores are post-hoc and descriptive; the estimator was not changed.                                                                      1128
+1071                                                                                                                                                                                       1129
+1072                                                                                                                                                                                       1130
+                        Asset                                         𝑏1                         𝑏2                        Estimator                 Δ vs 𝑏 2
+1073                                                                                                                                                                                       1131
+                        ETH                                           0.954 [0.930, 0.971]       0.936 [0.901, 0.959]      0.947 [0.922, 0.965]      0.011 [ − 0.002, 0.030]
+1074                    LTC                                           0.866 [0.784, 0.932]       0.876 [0.801, 0.935]      0.872 [0.795, 0.934]      − 0.004 [ − 0.009, 0.002]             1132
+1075                    BCH                                           0.378 [0.089, 0.906]       0.390 [0.101, 0.913]      0.390 [0.100, 0.912]      − 0.001 [ − 0.003, 0.000]             1133
+1076
+                        ETC                                           0.067 [ − 0.029, 0.245]    0.071 [ − 0.027, 0.253]   0.071 [ − 0.027, 0.252]   0.000 [ − 0.001, 0.000]               1134
+                        XLM                                           0.727 [0.368, 0.858]       0.743 [0.418, 0.863]      0.740 [0.407, 0.862]      − 0.003 [ − 0.009, 0.000]
+1077                    Dev, pooled                                   0.441 [0.278, 0.642]       0.444 [0.280, 0.644]      0.445 [0.281, 0.643]      0.001 [ − 0.001, 0.003]               1135
+1078                                                                                                                                                                                       1136
+                        ADA                                           0.225 [0.143, 0.366]       0.348 [0.230, 0.504]      0.339 [0.226, 0.496]      − 0.009 [ − 0.016, 0.005]
+1079                    DOGE                                          0.366 [0.273, 0.456]       0.401 [0.301, 0.492]      0.401 [0.303, 0.492]      0.000 [ − 0.005, 0.005]               1137
+1080                    LINK                                          0.203 [0.155, 0.275]       0.281 [0.229, 0.362]      0.273 [0.222, 0.353]      − 0.008 [ − 0.012, − 0.001]           1138
+                        SOL                                           0.225 [0.151, 0.329]       0.377 [0.207, 0.480]      0.378 [0.215, 0.478]      0.001 [ − 0.005, 0.012]
+1081                    XRP                                           0.971 [0.911, 0.987]       0.973 [0.914, 0.987]      0.974 [0.917, 0.987]      0.001 [0.000, 0.003]                  1139
+1082                    Test, pooled                                  0.826 [0.609, 0.911]       0.847 [0.662, 0.922]      0.846 [0.662, 0.922]      0.000 [ − 0.003, 0.002]               1140
+1083                    Control: Bitfinex–Bitstamp (separate dollar) 0.924 [0.860, 0.955]  0.926 [0.863, 0.956]    0.923 [0.858, 0.954]              − 0.003 [ − 0.008, − 0.001]           1141
+1084                    Control: Coinbase–Bitstamp (shared dollar) 0.008 [ − 0.020, 0.040] 0.031 [ − 0.007, 0.070] 0.042 [0.009, 0.081]              0.011 [0.007, 0.017]                  1142
+1085                                                                                                                                                                                       1143
+1086                                                                                                                                                                                       1144
+1087                                                                                                                                                                                       1145
+1088                                                                                                                                                                                       1146
+1089                                                                                                                                                                                       1147
+1090                                                                                                                                                                                       1148
+1091                                                                                                                                                                                       1149
+1092                                                                                                                                                                                       1150
+1093                                                                                                                                                                                       1151
+1094                                                                                                                                                                                       1152
+1095                                                                                                                                                                                       1153
+1096                                                                                                                                                                                       1154
+1097                                                                                                                                                                                       1155
+1098                                                                                                                                                                                       1156
+1099                                                                                                                                                                                       1157
+1100                                                                                                                                                                                       1158
+1101                                                                                                                                                                                       1159
+1102                                                                                            10                                                                                         1160
+       Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion                                                                                    WWW ’27, 2027,
+
+
+1161   Table 12: Stablecoin anchor test. 𝐿: hourly bitcoin gap of the venue against the open-rail reference (Bitstamp), bps; 𝐷: 104 log                                                     1219
+1162   of the venue’s USDT/USD price; 𝑇 = 𝐷 − 𝐿. Hours, medians and the share with |𝑇 | ≤ 0.25|𝐿| use hours with |𝐿| ≥ 50 bps (placebo:                                                     1220
+1163   |𝐿| ≥ 20 bps between Coinbase and Bitstamp, with 𝐷 the Bitstamp USDT/USD price, 2022-04 to 2023-12; its slope excludes May                                                           1221
+1164   2022 and March 2023, the months of USDT’s own token events). Slope: OLS slope of daily-median 𝐷 on daily-median 𝐿 with                                                               1222
+1165   a 95% block-bootstrap interval (weeks, 1,000 draws). A shift in the venue’s dollar gives slope 1 and 𝑇 = 0; crypto-only demand                                                       1223
+1166   gives slope 0.                                                                                                                                                                       1224
+1167                                                                                                                                                                                        1225
+1168                                       Slice                                       Hours   Median 𝐿   Median 𝐷     Median 𝑇      Slope [95% CI]      |𝑇 | ≤ 0.25|𝐿 |                    1226
+1169                                       Bitfinex stress, 2018-11-27 to 2019-05-31   3,848       256          199        − 39     0.71 [0.56, 0.88]               50%                     1227
+1170                                       Bitfinex 2018                                 823       305          254        − 59     2.06 [1.22, 2.95]               44%                     1228
+                                           Bitfinex 2019                               3,805       220          172        − 29     0.77 [0.66, 0.91]               51%
+1171                                                                                                                                                                                        1229
+                                           Bitfinex 2020                                 160         59          40        − 23     0.58 [0.45, 0.72]               31%
+1172                                       Bitfinex 2021                                  21         59          18        − 24     0.61 [0.46, 0.74]               10%                     1230
+1173                                       Bitfinex 2022                                  28         72           1        − 69     0.23 [0.11, 0.47]                0%                     1231
+                                           Bitfinex 2023                                  25       − 66          38        100    0.16 [ − 0.09, 0.51]               0%
+1174                                                                                                                                                                                        1232
+1175
+                                           Binance.US, June–July 2023                    721      − 413       − 411         −4      1.00 [0.97, 1.01]               97%                     1233
+                                           Binance.US, all of 2023                       797      − 376       − 372         −2      1.01 [0.97, 1.01]               95%
+1176                                                                                                                                                                                        1234
+                                           Placebo: Coinbase–Bitstamp, Bitstamp USDT      15       − 21        − 12          10   0.50 [ − 2.04, 1.84]               0%
+1177                                                                                                                                                                                        1235
+1178                                                                                                                                                                                        1236
+1179                                       (a) Token failure: USDC, March 2023                      (b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)                       1237
+1180                                                                                                                                                                                        1238
+                                   0
+1181                                                                                                                                                                                        1239
+1182
+                                                                                                   0                                                                                        1240
+                               −200
+
+
+
+
+         bps (hourly median)
+1183                                                                                                                                                                                        1241
+1184
+                                                                                               −500                                                                                         1242
+1185
+                               −400                                                                                                                                                         1243
+                                                                                           −1000
+1186                                                                                                                                                                                        1244
+1187                           −600                                                                                                                                                         1245
+                                                                                           −1500
+1188                                                                                                                                                                                        1246
+1189                           −800                                                                                                                                                         1247
+                                                   observed D (USDC/USDvenue)              −2000               PDUSDT
+1190                                                                                                                                                                                        1248
+                                                   token component T                                           PDBTC
+1191                           −1000                                                                                                                                                        1249
+                                                   ledger component L (BTC)                −2500               PDUSDC
+1192                                                                                                                                                                                        1250
+1193                                                                                                                                                                                        1251
+1194                                        00   12   00   12   00   12   00   12    00                      5-0
+                                                                                                                1
+                                                                                                                       5-1
+                                                                                                                          5
+                                                                                                                                  6-0
+                                                                                                                                     1
+                                                                                                                                            6-1
+                                                                                                                                               5
+                                                                                                                                                       7-0
+                                                                                                                                                          1
+                                                                                                                                                                 7-1
+                                                                                                                                                                    5
+                                                                                                                                                                            8-0
+                                                                                                                                                                               1
+                                                                                                                                                                                            1252
+                                         -10 3-10 3-11 3-11 3-12 3-12 3-13 3-13 3-14                      3-0       3-0        3-0       3-0        3-0       3-0        3-0
+                                       03   0    0    0    0    0    0    0    0                         2         2          2         2          2         2          2
+1195                                                                                                   20        20         20        20         20        20         20                    1253
+1196                                                                                                                                                                                        1254
+1197                                                                                                                                                                                        1255
+1198   Figure 2: Two shocks on one exchange. (a) USDC in March 2023: the observed dislocation 𝐷 is almost entirely the token com-                                                           1256
+1199   ponent 𝑇 , while the ledger component 𝐿 priced through bitcoin stays near zero. (b) Binance.US’s dollar in 2023: daily median                                                        1257
+1200   dislocation of USDT and bitcoin against Bitstamp, with documented rail phases shaded. Three unrelated assets carry the same                                                          1258
+1201   dislocation.                                                                                                                                                                         1259
+1202                                                                                                                                                                                        1260
+1203                                                                                                                                                                                        1261
+1204                                                                                                                                                                                        1262
+1205                                                                                                                                                                                        1263
+1206                                                                                                                                                                                        1264
+1207                                                                                                                                                                                        1265
+1208                                                                                                                                                                                        1266
+1209                                                                                                                                                                                        1267
+1210                                                                                                                                                                                        1268
+1211                                                                                                                                                                                        1269
+1212                                                                                                                                                                                        1270
+1213                                                                                                                                                                                        1271
+1214                                                                                                                                                                                        1272
+1215                                                                                                                                                                                        1273
+1216                                                                                                                                                                                        1274
+1217                                                                                                                                                                                        1275
+1218                                                                                                11                                                                                      1276
+

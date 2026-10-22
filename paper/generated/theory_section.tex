@@ -46,4 +46,6 @@ On the Bitfinex stress window, $\hat\lambda=\NumGBfxPrimaryLam{}$ (HAC 95\% inte
 block bootstrap \NumGBfxBootLo{} to \NumGBfxBootHi{}), $J=\NumGBfxPrimaryJ{}$ ($p=\NumGBfxPrimaryJP{}$); $\lambda=0$ is rejected
 ($p$ \NumGBfxPrimaryPZero{}), and so is $\lambda=1$ ($p$ \NumGBfxPrimaryPOne{}). Without the netting the
 estimate is \NumGBfxNaiveLam{}. Binance.US 2023 gives \NumGBusUsdtLam{} (\NumGBusUsdtLo{} to \NumGBusUsdtHi{}; $p=\NumGBusUsdtPOne{}$ for $\lambda=1$). Adding
-USDC netted with Bitstamp's USDC price, $J=\NumGBusTwoJ{}$ ($p$ \NumGBusTwoJP{}) rejects the over-identifying restrictions.
+USDC netted with Bitstamp's USDC price does not pass: $J=\NumGBusTwoJ{}$ ($p$ \NumGBusTwoJP{}). We do not read this as evidence
+about Binance.US, because Bitstamp's USDC price was itself depegged in March 2023, so the netting is contaminated; the result is a
+caution about that second anchor, not a second confirmation.
