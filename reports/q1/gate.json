@@ -1,0 +1,110 @@
+{
+ "preregistration": "autoresearch/program_q1.md",
+ "events": {
+  "Q-E1": {
+   "window": [
+    "2018-10-08",
+    "2018-10-31"
+   ],
+   "shifted_unit": "USDT",
+   "window_hours": 576,
+   "hours_with_share": 573,
+   "hours_with_offset": 0,
+   "hours_share_ge_0.5": 247,
+   "hours_abs_offset_ge_25": 0,
+   "median_share": 0.4760296364791512,
+   "median_abs_offset_bps": null,
+   "offset_source_hours": {},
+   "offset_source_used": "none",
+   "s_hi_hours": 0,
+   "kept": false
+  },
+  "Q-E2": {
+   "window": [
+    "2018-11-27",
+    "2018-12-31"
+   ],
+   "shifted_unit": "USDT",
+   "window_hours": 840,
+   "hours_with_share": 840,
+   "hours_with_offset": 823,
+   "hours_share_ge_0.5": 366,
+   "hours_abs_offset_ge_25": 745,
+   "median_share": 0.48554661305573,
+   "median_abs_offset_bps": 87.13323902257132,
+   "offset_source_hours": {
+    "bitfinex_netted_anchor": 823
+   },
+   "offset_source_used": "bitfinex_netted_anchor",
+   "s_hi_hours": 317,
+   "kept": true
+  },
+  "Q-E3": {
+   "window": [
+    "2019-04-20",
+    "2019-05-31"
+   ],
+   "shifted_unit": "USDT",
+   "window_hours": 1008,
+   "hours_with_share": 998,
+   "hours_with_offset": 1008,
+   "hours_share_ge_0.5": 649,
+   "hours_abs_offset_ge_25": 789,
+   "median_share": 0.5316151316914679,
+   "median_abs_offset_bps": 56.01490547129126,
+   "offset_source_hours": {
+    "bitfinex_netted_anchor": 1008
+   },
+   "offset_source_used": "bitfinex_netted_anchor",
+   "s_hi_hours": 499,
+   "kept": true
+  },
+  "Q-E4": {
+   "window": [
+    "2020-03-09",
+    "2020-03-31"
+   ],
+   "shifted_unit": "USDT",
+   "window_hours": 552,
+   "hours_with_share": 552,
+   "hours_with_offset": 552,
+   "hours_share_ge_0.5": 542,
+   "hours_abs_offset_ge_25": 169,
+   "median_share": 0.6801033986781932,
+   "median_abs_offset_bps": 17.983819413793974,
+   "offset_source_hours": {
+    "binance_us": 552
+   },
+   "offset_source_used": "binance_us",
+   "s_hi_hours": 165,
+   "kept": true
+  },
+  "Q-E5": {
+   "window": [
+    "2022-09-05",
+    "2022-10-05"
+   ],
+   "shifted_unit": "BUSD",
+   "window_hours": 744,
+   "hours_with_share": 744,
+   "hours_with_offset": 0,
+   "hours_share_ge_0.5": 0,
+   "hours_abs_offset_ge_25": 0,
+   "median_share": 0.24971245878776022,
+   "median_abs_offset_bps": null,
+   "offset_source_hours": {},
+   "offset_source_used": "none",
+   "s_hi_hours": 0,
+   "kept": false
+  }
+ },
+ "kept_events": [
+  "Q-E2",
+  "Q-E3",
+  "Q-E4"
+ ],
+ "pooled_s_hi_hours": 981,
+ "n_kept": 3,
+ "proceed": true,
+ "note": "gate computed from volumes and non-Kraken stablecoin rates only; no fusion error computed"
+}
