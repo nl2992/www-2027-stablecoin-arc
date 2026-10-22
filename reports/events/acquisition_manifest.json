@@ -1,5 +1,5 @@
 {
- "authorized": "User authorization 2026-10-19: download Bitfinex, Coinbase and Bitstamp public 1-minute candles, 2017-01 to 2023-12 (continuous detector evaluation, about 530 files, about 1.1 GB); no paid or authenticated access.",
+ "authorized": "User authorization 2026-10-19: download Bitfinex, Coinbase and Bitstamp public 1-minute candles, 2017-01 to 2023-12 (continuous detector evaluation, about 530 files, about 1.1 GB); no paid or authenticated access. Round 3 (decision D16, 2026-10-21): User authorization 2026-10-21 (decision D16): Binance public monthly 1m spot klines (data.binance.vision) for ETH quoted in USDT/BUSD/TUSD/FDUSD, BTC/USDC, and the ETHUST and USDCUSDT side series where they exist; Bitstamp public minute candles for BTC/USDC 2023-02..04 and BTC/USD, ETH/USD 2025-04. Total under 150 MB; no other hosts; symbol-months that do not exist are recorded NOT_AVAILABLE.",
  "records": [
   {
    "venue": "bitstamp",
@@ -6745,7 +6745,8 @@
    "error": "TimeoutError: The read operation timed out",
    "for_events": [
     "X2023-06-BINANCEUS-DEBANKING"
-   ]
+   ],
+   "superseded_by": "D16 re-download (timeout in the first attempt)"
   },
   {
    "venue": "bitstamp",
@@ -21084,11 +21085,1506 @@
    "last_utc": "2026-09-30T23:00Z",
    "terms_note": "Public bulk download linked from Kraken's support page; provider terms of use apply; raw files are not redistributed in this repository.",
    "authorization": "User authorization 2026-10-20 (decision D15): download Kraken's free OHLCVT bundle from assets.kraken.com, linked from Kraken's support page, and extract USDTUSD, XBTUSD and ETHUSD at 1 and 60 minutes; no paid or authenticated access."
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2022-04.zip",
+   "bytes": 2008130,
+   "sha256": "f5eefaafeebe9934811c1ccc46acc93e3de342761dc33349ab6917ade9018e5c",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2022-04.zip",
+   "bytes": 1935119,
+   "sha256": "b41b9652d5821a6f94d2ddf854e74401ba4beeaeab7af6b934b90e6dfa7d630b",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2022-04.zip",
+   "bytes": 773842,
+   "sha256": "4bc3842f65ab6b56db4cef9f7981de38803e40dca874e104967558e0baa5380d",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2022-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2022-04.zip",
+   "bytes": 1938773,
+   "sha256": "ce2cd908000585e1d2205f6df0abfa509827f02e7c35d54000c6bd746ee672ae",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUST-1m-2022-04.zip",
+   "bytes": 827248,
+   "sha256": "7aac4759605b76b56966c89bbae1e3cee93998ee4d864a17ab6f06595ac3a577",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2022-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2022-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2022-04.zip",
+   "bytes": 1283388,
+   "sha256": "c9828ee91d5a663b63ce0127300255e2c7ccd6218efc1a8923084b5d0827cbeb",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2022-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2022-05.zip",
+   "bytes": 2110136,
+   "sha256": "7f3e2df3fc5c365cd678233c27d7a8864855bab0709370ac665d388e5795dfc3",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2022-05.zip",
+   "bytes": 2046874,
+   "sha256": "208cd8b4d5e51ac22b362ad8a80eb0f145bc88f778446d96b736ecfb6e8d55b3",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2022-05.zip",
+   "bytes": 907675,
+   "sha256": "51d7a96c3e4e4ffec9601a3c7bf7a4d30b908222a055caf4106a6f9e24da410b",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2022-05.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2022-05.zip",
+   "bytes": 2062518,
+   "sha256": "3c6e3f48f70c7f8d1b4e5b497bfaf7e151ba42b8e1944abf9c84388daeae2aac",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUST-1m-2022-05.zip",
+   "bytes": 504543,
+   "sha256": "80c83c35c2da2cbd60ce688f897675d6ce604dfa9b6745eb89826b1e6ee5f75e",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2022-05",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2022-05.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2022-05.zip",
+   "bytes": 1415621,
+   "sha256": "850cc5387dfa2dd90674426798a816f559a2f1e88c042bd006c1b5ba991c29d3",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2022-05.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2022-10.zip",
+   "bytes": 2020787,
+   "sha256": "99648a89a2a713738cf36780f748a6ab9f84737d52fde3728dd59218ac832bc3",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-10.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2022-10.zip",
+   "bytes": 1976954,
+   "sha256": "c9047605f9752a9fb571de9cc96f7d67bda004daa8a48f3988ebfcad8e5496b4",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-10.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2022-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2022-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2022-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2022-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2022-10",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2022-10.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2022-11.zip",
+   "bytes": 1994209,
+   "sha256": "925acf2264f9ffbe1dea1beada4b480eed9bfd7585bebe799a276d7e85ada0df",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2022-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-11.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2022-11.zip",
+   "bytes": 1960574,
+   "sha256": "3d8446d26c23d172bbd836b073da02b5be33b36fa0b7292c219c2674c86d6d76",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2022-11.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2022-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2022-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2022-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2022-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2022-11",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2022-11.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2023-01.zip",
+   "bytes": 1989184,
+   "sha256": "c69ea0c9b620b53f15dc5e20a1446a2f233e2d8c8dd8eaa8bf49dae92f3162c3",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2023-01.zip",
+   "bytes": 1952610,
+   "sha256": "0181e6fb55ecbcefc33aeb4f877ad2cf4dad7eb41b8ee8f0a1cb9539363b6274",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2023-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2023-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2023-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2023-02.zip",
+   "bytes": 1828792,
+   "sha256": "4ee0c9bf3c53c038798df52b085156f0fae2c59406e3e1c02ade5f680a129a11",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2023-02.zip",
+   "bytes": 1786343,
+   "sha256": "fc4c870cf20952df9a089d1951c7b13eff61ed6725ce4db15e5d25de261ad093",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2023-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2023-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2023-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2023-03.zip",
+   "bytes": 2052232,
+   "sha256": "e2552c2298f4b67027bfa1f7da364b0d398e96a76dae8fa2085dddf357f60a69",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2023-03.zip",
+   "bytes": 1980689,
+   "sha256": "2afc93418c02ab70ff95a12341e7f7db61f95bd0552af1bdca7578257fc99f2d",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2023-03.zip",
+   "bytes": 592609,
+   "sha256": "ef04b798572d670c81d97ba725d2c8f6a1640bb18849949137fbcaf2c2fbd42d",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2023-03.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2023-03.zip",
+   "bytes": 1141942,
+   "sha256": "bfe2ac9dabee48bfa2ca9c6c6af9da1f02d3ca8add1a5eedd2da80a696896e85",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2023-03.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2023-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2023-03.zip",
+   "bytes": 977925,
+   "sha256": "531af60d212c8ef114340f8a216aa7ae0d9370531bcda679cdeaf305f744ccd6",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2023-04.zip",
+   "bytes": 1956086,
+   "sha256": "87d0e7d1a21d72636f60cdd50557c90cc1921664596f5b4e9713c0365c3410c5",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2023-04.zip",
+   "bytes": 1860045,
+   "sha256": "e006becb192a1e4c3e97027d04d629a10183198d373c7e834d4e19d2e34a14dc",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2023-04.zip",
+   "bytes": 1439790,
+   "sha256": "d39cf83b9a2b40ba41ec5b5d8d5dafd26eaebf8591d552e242b98e0a9eb54eb6",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2023-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2023-04.zip",
+   "bytes": 1571686,
+   "sha256": "b0de4a96b1d24179a28d1585a6217f33b8860a786fd8a64a004d089b8fafc8c2",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2023-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2023-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2023-04.zip",
+   "bytes": 1310231,
+   "sha256": "9eaaeda2e49f8a1de4c02f6ec54f2f9e958549123c3174b250c701991a418d0a",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2023-12.zip",
+   "bytes": 2040096,
+   "sha256": "9a0d342828ced43d17a97341234ec9d6344eba9945b5a5dccc73eabb253a83bb",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHBUSD-1m-2023-12.zip",
+   "bytes": 708834,
+   "sha256": "6ee92fa39197044e8253e6f15d3df1c70db8c34cc03fefb2c3bb63729209ea90",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2023-12.zip",
+   "bytes": 1406252,
+   "sha256": "69933b196a85efd38d818daaec288943550c3776f80ec53fb09f6049c8d7c3e4",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHFDUSD-1m-2023-12.zip",
+   "bytes": 1799086,
+   "sha256": "341b6171dbcab8815ac4336e660a6fcbab10e92980118db42831471dcfe03330",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2023-12.zip",
+   "bytes": 1917962,
+   "sha256": "8ae6d9540d3f66aa00dba8c7c3906d72a5d6f1778049b7890ad5a46a67eb0416",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2023-12.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2023-12",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-12.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2023-12.zip",
+   "bytes": 1399961,
+   "sha256": "5e688234a77534bc270f94b84e41bdd06d9ded46bca5b3b53f145d4a732c4afa",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2023-12.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2024-01.zip",
+   "bytes": 2050101,
+   "sha256": "2fb2c9b77365183f77e185de3578de2f3be5fefe433d7c0564f033f968d5e23c",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2024-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2024-01.zip",
+   "bytes": 1416104,
+   "sha256": "f8f83bc795e8ba19a658fbd6194e3e92397bfbc83141094ae364a01a7de98d5a",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHFDUSD-1m-2024-01.zip",
+   "bytes": 2019832,
+   "sha256": "8e5e66fc3ffb02f38c878fa4a12a500f3016a6c00ef7ac48eecdf65022d97e89",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2024-01.zip",
+   "bytes": 1993866,
+   "sha256": "c4ac7543df77dc4cc0e047610137be63bd865ac789aee73fd667dc3906d39919",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2024-01.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2024-01",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2024-01.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2024-01.zip",
+   "bytes": 1440820,
+   "sha256": "7b507c01d0764e6e56d7dfbd36b3dd24ec759bb2f0bf4275e7420cc6d68a0dc7",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2024-01.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2025-02.zip",
+   "bytes": 1930330,
+   "sha256": "5ec2fb4e87e29241745ee7e9449fb86f4f44bad96508a80a1af0e308d73c6f5a",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2025-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2025-02.zip",
+   "bytes": 742813,
+   "sha256": "2b9cf5bf33e191f937fb23eaf500a45799e8f7087ecd6b4445a402251d5ff60f",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHFDUSD-1m-2025-02.zip",
+   "bytes": 1957328,
+   "sha256": "66b5c3921cb7d276210e509e7e754eaca94964dca01cc7e229b14ba1f091fb43",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2025-02.zip",
+   "bytes": 1904739,
+   "sha256": "a56493073532ed0842a749b14902ae73ebd9f1b8021c55180a680f19ea63904c",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2025-02.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2025-02",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2025-02.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2025-02.zip",
+   "bytes": 1336798,
+   "sha256": "fe38413bea753bc1557a08a104fb0ab8642f555a513d3dbc8a2fe35ff8110207",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2025-02.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2025-03.zip",
+   "bytes": 2096749,
+   "sha256": "609346fc0dc8f8f1cf283c5cb373d1bb25f26f1716fc67c3883d2176ce9cf40b",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2025-03.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2025-03.zip",
+   "bytes": 799582,
+   "sha256": "7de0df2f1c806437d08f0b5200a3dcb4685efade897fc9fa89c901032a388a2f",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHFDUSD-1m-2025-03.zip",
+   "bytes": 2147047,
+   "sha256": "0831c17b3a4cb426aa55b63bd12e69372d4ad41f465b8b6b366cd43b9b173e3e",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2025-03.zip",
+   "bytes": 2116317,
+   "sha256": "46e8d3a76dc9e26a9bc584f823676255c277c481dd17dc811db42fd70105156c",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2025-03.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2025-03",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2025-03.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2025-03.zip",
+   "bytes": 1442504,
+   "sha256": "cfaf0605e090465e7ef414ef19df76c57ca65d71a60c2ac0a23e64a210502f09",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2025-03.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUSDT",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHUSDT-1m-2025-04.zip",
+   "bytes": 2029272,
+   "sha256": "32505b36565f7c446a3946dc6ea2f511e71d0f72c13cca2b09bb83307f198f8e",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHBUSD",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHBUSD/1m/ETHBUSD-1m-2025-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHTUSD",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHTUSD-1m-2025-04.zip",
+   "bytes": 674487,
+   "sha256": "f7e8eede4daa48950f67dfa63ca6ff5c694ca599e622140280519d486f18938d",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHTUSD/1m/ETHTUSD-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHFDUSD",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/ETHFDUSD-1m-2025-04.zip",
+   "bytes": 2010108,
+   "sha256": "0ffee853d741313e4737cd1466f4065e4b45133d3f8a3c28763ca68682ec0db8",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/ETHFDUSD/1m/ETHFDUSD-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "BTCUSDC",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/BTCUSDC-1m-2025-04.zip",
+   "bytes": 2031188,
+   "sha256": "1d6aa04d5b637fd0c59b77527be5034b6e7e84eeaa556980ed31ad59b688a215",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDC/1m/BTCUSDC-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "ETHUST",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUST/1m/ETHUST-1m-2025-04.zip",
+   "status": "NOT_AVAILABLE",
+   "http_status": 404,
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "binance",
+   "symbol": "USDCUSDT",
+   "month": "2025-04",
+   "url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2025-04.zip",
+   "status": "VERIFIED",
+   "file": "data/raw/binance/USDCUSDT-1m-2025-04.zip",
+   "bytes": 1407347,
+   "sha256": "882b55339d39537f13a14b23ded81f0cc010608f47aa237f7a95f012e3492348",
+   "source_url": "https://data.binance.vision/data/spot/monthly/klines/USDCUSDT/1m/USDCUSDT-1m-2025-04.zip",
+   "listed_etag": null,
+   "listed_bytes_match": null,
+   "checksum_verified": true,
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDC",
+   "month": "2023-02",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdc/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDC-1m-2023-02.csv",
+   "bytes": 1509882,
+   "sha256": "8c892c2d988ae2f20ea1be58cb4969c1b2dc81785689bfbe22fde45a59ca4b43",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 41,
+   "rows": 40320,
+   "traded_minutes": 2397,
+   "first_utc": "2023-02-01T00:00Z",
+   "last_utc": "2023-02-28T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDC",
+   "month": "2023-03",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdc/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDC-1m-2023-03.csv",
+   "bytes": 1673318,
+   "sha256": "5d850e2184e9888462c914fc44073cfa8b1764a8fbbea7912ca5657b8aa25251",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 45,
+   "rows": 44640,
+   "traded_minutes": 2799,
+   "first_utc": "2023-03-01T00:00Z",
+   "last_utc": "2023-03-31T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSDC",
+   "month": "2023-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusdc/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp/BTCUSDC-1m-2023-04.csv",
+   "bytes": 1611122,
+   "sha256": "12ede6af86fd0012ab581c92e31aaeca765e2f67291c80fdfd849a2a87c3d1da",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 1683,
+   "first_utc": "2023-04-01T00:00Z",
+   "last_utc": "2023-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ]
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "BTCUSD",
+   "month": "2025-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/btcusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp_stable/BTCUSD-1m-2025-04.csv",
+   "bytes": 1972934,
+   "sha256": "2dceacfed02f76f5da0c00a46be17eb5cadf6b033ce7f575e571ac84303bbb62",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 42858,
+   "first_utc": "2025-04-01T00:00Z",
+   "last_utc": "2025-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ],
+   "notes": "Round-3 (D16) file kept in a separate directory so earlier analyses that glob data/raw/bitstamp are unchanged."
+  },
+  {
+   "venue": "bitstamp",
+   "symbol": "ETHUSD",
+   "month": "2025-04",
+   "url": "https://www.bitstamp.net/api/v2/ohlc/ethusd/?step=60&limit=1000&start=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bitstamp_stable/ETHUSD-1m-2025-04.csv",
+   "bytes": 2086858,
+   "sha256": "de064e1eab1f4abd0a2b977442a4db2eedc08a470f1ba15b800e214ffaecd31d",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "pages": 44,
+   "rows": 43200,
+   "traded_minutes": 41187,
+   "first_utc": "2025-04-01T00:00Z",
+   "last_utc": "2025-04-30T23:59Z",
+   "terms_note": "Public market-data archive downloaded with user authorization (2026-10-11); provider terms of use apply; raw files are not redistributed in this repository.",
+   "for_events": [
+    "ROUND3-STABLE"
+   ],
+   "notes": "Round-3 (D16) file kept in a separate directory so earlier analyses that glob data/raw/bitstamp are unchanged."
   }
  ],
  "summary": {
-  "VERIFIED": 1060,
-  "NOT_AVAILABLE": 38,
+  "VERIFIED": 1121,
+  "NOT_AVAILABLE": 73,
   "CHECKSUM_FAILED": 0
  }
 }
