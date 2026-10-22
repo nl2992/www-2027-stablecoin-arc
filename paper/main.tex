@@ -327,7 +327,7 @@ with a shared dollar, the pooled score was \NumPCtrlCbBstPooledEst{} (interval \
 \input{generated/bench_table}
 A fusion service cares about the fused price, not the offset. We therefore froze three methods and scored each once on
 episodes it had never seen (Table~\ref{tab:bench}; Table~\ref{tab:fixed}), against the plain median, volume-weighted
-mean, CRH and GTM, a Gaussian truth model. UNIT-TD is the held-out-asset test above. FUSE fuses the dollar prices of
+mean, CRH and GTM, a Gaussian truth model for continuous values~\cite{li2015survey}. UNIT-TD is the held-out-asset test above. FUSE fuses the dollar prices of
 Bitfinex, Coinbase, Bitstamp and, in 2023, Binance.US into one price, scored against Kraken, which never entered fusion.
 STABLE fuses markets quoted in different stablecoins into one dollar price, again against Kraken. Every score is relative
 to the plain median.

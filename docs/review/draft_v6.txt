@@ -113,7 +113,7 @@
                                                                                         marks the last traded close in each hour.
 130   2    RELATED WORK                                                                                                                                                188
 131                                                                                                                                                                    189
-         Truth discovery and data fusion. TruthFinder [16] and CRH [7]                     Identification by agreement. Items with unrelated residuals (bit-
+         Truth discovery and data fusion. TruthFinder [17] and CRH [7]                     Identification by agreement. Items with unrelated residuals (bit-
 132                                                                                                                                                                    190
       estimate each source’s reliability from conflicting claims, and Dong              coin, ether and altcoins) have gaps that agree only through the
 133                                                                                                                                                                    191
@@ -136,13 +136,13 @@
       and sources (§5.4, Appendix B).
 142                                                                                                                                                                    200
                                                                                                                 {        {    𝑐 𝜎ˆ 2 /𝑛 }}
-143      Oracles and data quality. Liu et al. [8] found that oracle prices                      𝑢ˆ𝑠,𝑡 = 𝑚 · min 1, max 0, 1 −              ,      𝑐 = 12 ,      (2)    201
-144   deviate from exchange rates. Nadler et al. [13] benchmarked Chain-                                                        𝑚2                                     202
-145   link feeds against a single exchange, and Schwenkler et al. [14] au-   and 𝑢ˆ𝑠,𝑡 = 0 when 𝑛 < 2. The factor is a plug-in, positive-part                          203
+143      Oracles and data quality. Liu et al. [9] found that oracle prices                      𝑢ˆ𝑠,𝑡 = 𝑚 · min 1, max 0, 1 −              ,      𝑐 = 12 ,      (2)    201
+144   deviate from exchange rates. Nadler et al. [14] benchmarked Chain-                                                        𝑚2                                     202
+145   link feeds against a single exchange, and Schwenkler et al. [15] au-   and 𝑢ˆ𝑠,𝑡 = 0 when 𝑛 < 2. The factor is a plug-in, positive-part                          203
 146   dited crypto data vendors. Both take exchange prices as the bench-     shrinkage of the James–Stein kind: it removes from 𝑚 2 an estimate                        204
 147   mark. We ask which unit that benchmark is in.                          𝑐 𝜎ˆ 2 /𝑛 of the noise in the median, so a median that the cross-item                     205
 148                                                                          dispersion cannot distinguish from zero is set to zero. We claim no                       206
-149      Cross-exchange premia and stablecoins. Makarov and Schoar [12]      optimality, since in one dimension such shrinkage does not dom-                           207
+149      Cross-exchange premia and stablecoins. Makarov and Schoar [13]      optimality, since in one dimension such shrinkage does not dom-                           207
 150   documented large, persistent price gaps across exchanges and a         inate the unshrunk estimate. The constant 𝑐 was fixed on devel-                           208
 151   component common to gaps within a country. We identify an exchange- opment assets; re-picking it on 2017–2019 data gave 0.25 with the                            209
 152   level component within USD, per exchange and hour. The closest         same scores (§5.3). The estimator adds nothing measurable to the                          210
@@ -152,13 +152,13 @@
 156   on the fiat side, but say that the channel “cannot be tested directly” an item whose true price is fixed in the true unit, so 𝑝𝑘∗ = 0 and its                    214
 157   and that they do not decompose the premium. We test it. Netting        price on source 𝑠 is 𝑢𝑠,𝑡 +𝑒𝑠,𝑘,𝑡 . Let 𝐿 be the offset estimated from the                215
 158   out an external Tether price splits the premium into a ledger-dollar   other items and 𝐷 the anchor’s price on 𝑠. Under a pure unit shift                        216
-159   part and a Tether part. Lyons and Viswanath-Natraj [10] study          𝐷   moves one for one with 𝐿. Under demand for the source’s items,                        217
+159   part and a Tether part. Lyons and Viswanath-Natraj [11] study          𝐷   moves one for one with 𝐿. Under demand for the source’s items,                        217
 160   the October 2018 attack on Tether, with a falling Tether price and     which moves the items and not the anchor, 𝐷 does not move with 𝐿.                         218
 161   wider spreads that they link to Bitfinex suspending dollar convert-    The slope of 𝐷 on 𝐿 is 1 under a pure unit shift and 0 under source-                      219
 162   ibility. That is the Tether part alone; it does not touch the bitcoin  wide item demand. But an anchor is itself a claim: a stablecoin has                       220
 163   premium. Other work links bitcoin gaps to capital controls [1, 2]      a token component 𝑥 of its own. Then 𝐷 = 𝑢 + 𝑥 + 𝑒, and the slope                         221
-164   and to exchange default risk [6]. Studies of pegs and runs treat a     of 𝐷 on 𝐿 is 1 plus the slope of 𝑥 on 𝐿, which is not zero when the                       222
-165   token’s exchange price as the token’s value [9, 11], and Griffin and   token’s discount comes and goes with the exchange’s. Let 𝑋 be the                         223
+164   and to exchange default risk [6]. Studies of pegs and runs treat a to- of 𝐷 on 𝐿 is 1 plus the slope of 𝑥 on 𝐿, which is not zero when the                       222
+165   ken’s exchange price as the token’s value [10, 12], and Griffin and    token’s discount comes and goes with the exchange’s. Let 𝑋 be the                         223
 166   Shams [5] tied Tether issuance on Bitfinex to bitcoin prices. We       anchor’s price on a venue outside 𝑠’s ledger, so 𝑋 = 𝑥 + 𝑒 ′ . Then                       224
 167   separate a token move from a unit move on the same exchange.                                                                                                     225
                                                                                                            𝐷 − 𝑋 = 𝑢 + 𝑒,                            (3)
@@ -466,17 +466,17 @@
       a pair with separate dollars. Table 11 (Appendix) gives each asset.                 across pair-years. The median absolute hourly bitcoin gap between
 601                                                                                                                                                                 659
 602                                                                                       Bitfinex and Bitstamp was between 4.2 and 11.1 bps, inside the            660
-603                                                                                       band, and the gap exceeded the band in at most 0.80% of hours for         661
-604   5.4    Fusion benchmark: when units matter                                          any pair. Halving every band (25 bps at the narrowest) leaves the         662
-605   A fusion service cares about the fused price, not the offset. We                    median gap inside it. These offsets are not arbitrage opportunities.      663
-606   therefore froze three methods and scored each once on episodes it                      They are persistent and shared across assets. The first-order au-      664
-607   had never seen (Table 6; Table 1), against the plain median, volume-                tocorrelation of the daily Bitfinex gap was between 0.56 and 0.86         665
-608   weighted mean, CRH and GTM, a Gaussian truth model. UNIT-                           against Bitstamp, and the share of the daily ether and bitcoin gaps       666
-609   TD is the held-out-asset test above. FUSE fuses the dollar prices                   that was common to both was between 0.95 and 0.99. The con-               667
-610   of Bitfinex, Coinbase, Bitstamp and, in 2023, Binance.US into one                   clusion does not depend on the timing convention: the hourly ex-          668
-611   price, scored against Kraken, which never entered fusion. STABLE                    plained share was between 0.63 and 0.80 with hourly medians, be-          669
-612   fuses markets quoted in different stablecoins into one dollar price,                tween 0.51 and 0.84 with last closes, and between 0.55 and 0.86           670
-613   again against Kraken. Every score is relative to the plain median.                  where all legs traded in the final minute; in all 12 of 12 lead-lag       671
+603   5.4    Fusion benchmark: when units matter                                          band, and the gap exceeded the band in at most 0.80% of hours for         661
+604   A fusion service cares about the fused price, not the offset. We                    any pair. Halving every band (25 bps at the narrowest) leaves the         662
+605   therefore froze three methods and scored each once on episodes it                   median gap inside it. These offsets are not arbitrage opportunities.      663
+606   had never seen (Table 6; Table 1), against the plain median, volume-                   They are persistent and shared across assets. The first-order au-      664
+607   weighted mean, CRH and GTM, a Gaussian truth model for contin-                      tocorrelation of the daily Bitfinex gap was between 0.56 and 0.86         665
+608   uous values [8]. UNIT-TD is the held-out-asset test above. FUSE                     against Bitstamp, and the share of the daily ether and bitcoin gaps       666
+609   fuses the dollar prices of Bitfinex, Coinbase, Bitstamp and, in 2023,               that was common to both was between 0.95 and 0.99. The con-               667
+610   Binance.US into one price, scored against Kraken, which never en-                   clusion does not depend on the timing convention: the hourly ex-          668
+611   tered fusion. STABLE fuses markets quoted in different stablecoins                  plained share was between 0.63 and 0.80 with hourly medians, be-          669
+612   into one dollar price, again against Kraken. Every score is relative                tween 0.51 and 0.84 with last closes, and between 0.55 and 0.86           670
+613   to the plain median.                                                                where all legs traded in the final minute; in all 12 of 12 lead-lag       671
 614      The plain median was hard to beat. In UNIT-TD the estimator                      series the cross-correlation peaked at zero minutes. The Coinbase–        672
 615   scored 0.846 against 0.847 for the median, 0.837 for CRH and 0.842                  Bitstamp gaps behaved like noise (median absolute bitcoin gap 0.7         673
 616   for GTM. In FUSE, the fuser beat the median in the Bitfinex episode                 to 1.6 bps, a few ticks). A price feed that fuses these sources still     674
@@ -551,7 +551,7 @@
 729
               Offset monitor    Coinbase             8     0/5       8          1.26
                                                                                                          suspended dollar deposits as its banking partners stopped dollar             787
-730                                                                                                      payments [15]. In the window with deposits shut and withdrawals              788
+730                                                                                                      payments [16]. In the window with deposits shut and withdrawals              788
               Price gap         Bitfinex            18     7/9       9          1.29
 731
               Price gap         Binance.US           5     4/4       1          1.26                     open, the median bitcoin gap to Bitstamp was 557 bps in magnitude            789
@@ -635,9 +635,9 @@
       on crypto exchanges.                                                                                                                                                               889
 832                                                                                              [4] Ethan Flowerday, Neil Gandal, Hanna Halaburda, Eric Olson, and Gabriela             890
          Limits. The diagnostic rests on three USD exchanges and the                                 Ardel. 2026. Bitcoin arbitrage: The role of an exchange. Quantitative Finance
-833                                                                                                                                                                                      891
-      benchmark on three locked tests with few episodes each, so the                                 and Economics 10, 3 (2026), 624–648. https://doi.org/10.3934/QFE.2026024
-834                                                                                              [5] John M. Griffin and Amin Shams. 2020. Is Bitcoin Really Untethered? The Journal     892
+833                                                                                                  and Economics 10, 3 (2026), 624–648. https://doi.org/10.3934/QFE.2026024            891
+      benchmark on three locked tests with few episodes each, so the                             [5] John M. Griffin and Amin Shams. 2020. Is Bitcoin Really Untethered? The Journal
+834                                                                                                                                                                                      892
       scope condition is a pattern in a small sample, not an estimate.                               of Finance 75, 4 (2020), 1913–1964. https://doi.org/10.1111/jofi.12903
 835                                                                                                                                                                                      893
       The estimator ties the plain median, so the evidence is for the unit                       [6] Weiwei Guo, Silvia Intini, and Hossein Jahanshahloo. 2025. Bitcoin Arbitrage
@@ -648,90 +648,90 @@
 838                                                                                                                                                                                      896
       dev assets, and its intervals widen with longer blocks. The anchor                             timation. In Proceedings of the 2014 ACM SIGMOD International Conference on
 839                                                                                                  Management of Data. https://doi.org/10.1145/2588555.2610509                         897
-      needs an item fixed in the true unit: USDT is one only up to its                           [8] Bowen Liu, Pawel Szalachowski, and Jianying Zhou. 2021. A First Look into
+      needs an item fixed in the true unit: USDT is one only up to its                           [8] Yaliang Li, Jing Gao, Chuishi Meng, Qi Li, Lu Su, Bo Zhao, Wei Fan, and Jiawei
 840                                                                                                                                                                                      898
-      own redemption risk, which the Kraken price corrects for only if                               DeFi Oracles. In 2021 IEEE International Conference on Decentralized Applications
-841                                                                                                                                                                                      899
-      Kraken’s ledger is outside Bitfinex’s, and it exists on Bitfinex only                          and Infrastructures (DAPPS). 39–48. https://doi.org/10.1109/DAPPS52256.2021.
-842                                                                                                  00010                                                                               900
-      from 2018-11-27, so the earlier banking episodes have no anchor.                           [9] Jiageng Liu, Igor Makarov, and Antoinette Schoar. 2023. Anatomy of a Run: The
+      own redemption risk, which the Kraken price corrects for only if                               Han. 2015. A Survey on Truth Discovery. SIGKDD Explorations 17, 2 (2015),
+841                                                                                                  1–16. arXiv:1505.02463.                                                             899
+      Kraken’s ledger is outside Bitfinex’s, and it exists on Bitfinex only                      [9] Bowen Liu, Pawel Szalachowski, and Jianying Zhou. 2021. A First Look into
+842                                                                                                                                                                                      900
+      from 2018-11-27, so the earlier banking episodes have no anchor.                               DeFi Oracles. In 2021 IEEE International Conference on Decentralized Applications
 843                                                                                                                                                                                      901
-      When two of three exchanges share a biased unit, prices alone can-                             Terra Luna Crash. NBER Working Paper 31160. National Bureau of Economic
-844                                                                                                  Research. https://www.nber.org/papers/w31160                                        902
-      not say which unit is true; an outside anchor is needed. The calm-                        [10] Richard K. Lyons and Ganesh Viswanath-Natraj. 2023. What keeps stablecoins
+      When two of three exchanges share a biased unit, prices alone can-                             and Infrastructures (DAPPS). 39–48. https://doi.org/10.1109/DAPPS52256.2021.
+844                                                                                                  00010                                                                               902
+      not say which unit is true; an outside anchor is needed. The calm-                        [10] Jiageng Liu, Igor Makarov, and Antoinette Schoar. 2023. Anatomy of a Run: The
 845                                                                                                                                                                                      903
-      year offsets sit inside fee bands that come from secondary sources,                            stable? Journal of International Money and Finance 131 (2023), 102777.
+      year offsets sit inside fee bands that come from secondary sources,                            Terra Luna Crash. NBER Working Paper 31160. National Bureau of Economic
 846                                                                                                                                                                                      904
-      the monitor is scored on a handful of labelled events, and the oracle                     [11] Yiming Ma, Yao Zeng, and Anthony Lee Zhang. 2025. Stablecoin Runs and the
-847                                                                                                  Centralization of Arbitrage. NBER Working Paper 33882. National Bureau of           905
-      check covers one episode.                                                                      Economic Research.
+      the monitor is scored on a handful of labelled events, and the oracle                          Research. https://www.nber.org/papers/w31160
+847                                                                                             [11] Richard K. Lyons and Ganesh Viswanath-Natraj. 2023. What keeps stablecoins          905
+      check covers one episode.                                                                      stable? Journal of International Money and Finance 131 (2023), 102777.
 848                                                                                                                                                                                      906
-                                                                                                [12] Igor Makarov and Antoinette Schoar. 2020. Trading and arbitrage in cryptocur-
-849                                                                                                                                                                                      907
-                                                                                                     rency markets. Journal of Financial Economics 135, 2 (2020), 293–319.
-850   7    REPRODUCIBILITY                                                                      [13] Matthias Nadler, Katrin Schuler, and Fabian Schär. 2026. Blockchain price ora-      908
-                                                                                                     cles: Accuracy and violation recovery. Journal of Corporate Finance 96 (2026),
-851   Every number in this paper is a macro generated from commit-                                   102908. https://doi.org/10.1016/j.jcorpfin.2025.102908
+                                                                                                [12] Yiming Ma, Yao Zeng, and Anthony Lee Zhang. 2025. Stablecoin Runs and the
+849                                                                                                  Centralization of Arbitrage. NBER Working Paper 33882. National Bureau of           907
+850   7    REPRODUCIBILITY                                                                           Economic Research.                                                                  908
+                                                                                                [13] Igor Makarov and Antoinette Schoar. 2020. Trading and arbitrage in cryptocur-
+851   Every number in this paper is a macro generated from commit-                                   rency markets. Journal of Financial Economics 135, 2 (2020), 293–319.
                                                                                                                                                                                          909
-852   ted reports and logs by the macro modules of www_paper (macros,                           [14] Gustavo Schwenkler, Aakash Shah, and Darren Yang. 2026. Aggregate Confu-            910
-853   rescue_macros, unit_macros, posthoc_macros, sweep_macros,                                      sion in Crypto Market Data. Management Science (2026). https://doi.org/10.          911
-854
-                                                                                                     1287/mnsc.2025.00611                                                                912
-      noise_macros, anchor_ext_macros, robust_macros, td_macros                                 [15] The Block. 2023. BinanceUS Suspends USD Deposits, Says Bank Partners Will
-855   and bench_macros), and tests fail if a macro is stale or a number                              Pause Dollar Payments Next Week.          https://www.theblock.co/post/233917/      913
-856   is typed by hand. The three locked tests were scored once, and                                 binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-               914
+852   ted reports and logs by the macro modules of www_paper (macros,                           [14] Matthias Nadler, Katrin Schuler, and Fabian Schär. 2026. Blockchain price ora-      910
+853                                                                                                  cles: Accuracy and violation recovery. Journal of Corporate Finance 96 (2026),      911
+      rescue_macros, unit_macros, posthoc_macros, sweep_macros,                                      102908. https://doi.org/10.1016/j.jcorpfin.2025.102908
+854   noise_macros, anchor_ext_macros, robust_macros, td_macros                                                                                                                          912
+                                                                                                [15] Gustavo Schwenkler, Aakash Shah, and Darren Yang. 2026. Aggregate Confu-
+855   and bench_macros), and tests fail if a macro is stale or a number                              sion in Crypto Market Data. Management Science (2026). https://doi.org/10.          913
+                                                                                                     1287/mnsc.2025.00611
+856   is typed by hand. The three locked tests were scored once, and                            [16] The Block. 2023. BinanceUS Suspends USD Deposits, Says Bank Partners Will
+                                                                                                                                                                                         914
+857   the benchmark table is parsed from their logs. Inputs are free pub-                            Pause Dollar Payments Next Week.          https://www.theblock.co/post/233917/      915
+858   lic files recorded by hash, and a fixed gate rebuilds the PDF and                              binanceus-suspends-usd-deposits-says-bank-partners-will-pause-dollar-               916
                                                                                                      payments-next-week
-857   the benchmark table is parsed from their logs. Inputs are free pub-                       [16] Xiaoxin Yin, Jiawei Han, and P. S. Yu. 2008. Truth Discovery with Multiple
-                                                                                                                                                                                         915
-858   lic files recorded by hash, and a fixed gate rebuilds the PDF and                              Conflicting Information Providers on the Web. IEEE Transactions on Knowledge        916
-                                                                                                     and Data Engineering 20, 6 (2008), 796–808. https://doi.org/10.1109/TKDE.2007.
-859   checks page limits and anonymity.                                                              190745
+859   checks page limits and anonymity.                                                         [17] Xiaoxin Yin, Jiawei Han, and P. S. Yu. 2008. Truth Discovery with Multiple
                                                                                                                                                                                          917
-860                                                                                                                                                                                      918
-861                                                                                                                                                                                      919
+860                                                                                                  Conflicting Information Providers on the Web. IEEE Transactions on Knowledge        918
+861                                                                                                  and Data Engineering 20, 6 (2008), 796–808. https://doi.org/10.1109/TKDE.2007.      919
 862
-      REFERENCES                                                                                A     FUSION UNDER AN INJECTED UNIT BIAS                                                 920
+      REFERENCES                                                                                     190745
+                                                                                                                                                                                         920
        [1] Nicola Borri and Kirill Shakhnov. 2023. Cryptomarket Discounts. Journal of
-863        International Money and Finance 139 (2023), 102963. https://doi.org/10.1016/j.       Table 8 injects a constant or replayed unit bias on 𝑘 of three ex-                       921
-864        jimonfin.2023.102963                                                                 changes (BTC and ETH, calm window) and compares fusers. With                             922
+863        International Money and Finance 139 (2023), 102963. https://doi.org/10.1016/j.                                                                                                921
+864        jimonfin.2023.102963                                                                 A     FUSION UNDER AN INJECTED UNIT BIAS                                                 922
        [2] Kyoung Jin Choi, Alfred Lehar, and Ryan Stauffer. 2019. Bitcoin Microstruc-
 865
            ture and the Kimchi Premium.         Working Paper. University of Calgary,
-                                                                                                𝑘 = 1 the plain median, CRH-style source weighting and the de-                           923
-866        Haskayne School of Business.       https://snb.ch/dam/jcr:474400ba-255b-49a4-        fault unit-aware median are unaffected on the grid, while the volume-                    924
-867        b2b8-5e3626719730/sem_2019_05_31_lehar.n.pdf                                         weighted mean breaks down at 100 bps. With 𝑘 = 2 every fuser                             925
+                                                                                                Table 8 injects a constant or replayed unit bias on 𝑘 of three ex-                       923
+866        Haskayne School of Business.       https://snb.ch/dam/jcr:474400ba-255b-49a4-        changes (BTC and ETH, calm window) and compares fusers. With                             924
+867        b2b8-5e3626719730/sem_2019_05_31_lehar.n.pdf                                         𝑘 = 1 the plain median, CRH-style source weighting and the de-                           925
        [3] Xin Luna Dong, Laure Berti-Equille, and Divesh Srivastava. 2009. Integrating
 868
-           Conflicting Data: The Role of Source Dependence. Proceedings of the VLDB En-         fails at the smallest bias, as it must: the two exchanges with the                       926
-869        dowment 2, 1 (2009), 550–561. https://doi.org/10.14778/1687627.1687690               biased dollar form the majority, and nothing in prices says which                        927
+           Conflicting Data: The Role of Source Dependence. Proceedings of the VLDB En-         fault unit-aware median are unaffected on the grid, while the volume-                    926
+869        dowment 2, 1 (2009), 550–561. https://doi.org/10.14778/1687627.1687690               weighted mean breaks down at 100 bps. With 𝑘 = 2 every fuser                             927
 870                                                                                         8                                                                                            928
       Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion                                                           WWW ’27, 2027,
 
 
-929   dollar is the true one. A unit-aware fuser using a single asset’s                      C HELD-OUT SCORES BY ASSET, AND THE                                   987
-930   gap as the rate can be worse than the median when its reference                          FULL ANCHOR TABLE                                                   988
-931   is the biased exchange. Unit awareness adds information (which                                                                                               989
-932   exchanges share a dollar), not accuracy.                                               D THE 2023 SHOCKS                                                     990
-933                                                                                          E ALARM WINDOWS IN 2017 AND THE                                       991
-934   B     TRUTH DISCOVERY ON REAL DATA                                                       LABEL LIST                                                          992
-935   Table 9 fuses Bitfinex with one open-rail venue and scores the re-                                                                                           993
+929   fails at the smallest bias, as it must: the two exchanges with the                     C HELD-OUT SCORES BY ASSET, AND THE                                   987
+930   biased dollar form the majority, and nothing in prices says which                        FULL ANCHOR TABLE                                                   988
+931   dollar is the true one. A unit-aware fuser using a single asset’s                                                                                            989
+932   gap as the rate can be worse than the median when its reference                        D THE 2023 SHOCKS                                                     990
+933   is the biased exchange. Unit awareness adds information (which                         E ALARM WINDOWS IN 2017 AND THE                                       991
+934   exchanges share a dollar), not accuracy.                                                 LABEL LIST                                                          992
+935                                                                                                                                                                993
                                                                                              The 8 Coinbase alarm episodes fall between 2017-09-02 and 2018-
-936   sult against the other open-rail venue, for the median, volume-                                                                                              994
+936   B     TRUTH DISCOVERY ON REAL DATA                                                                                                                           994
                                                                                              01-29. In seven of them Coinbase prices stood above Bitstamp’s; in
-937   weighted mean, CRH, GTM and the unit-aware fuser. With two                                                                                                   995
-                                                                                             the last they stood below. Bitfinex’s 3 false alarms were a two-day
-938   sources the median, CRH and GTM coincide. Table 10 gives the                                                                                                 996
-                                                                                             episode in November 2017 and one-day episodes in 2019 and 2022.
-939   held-out-asset score for CRH and GTM beside the estimator: on the                                                                                            997
-                                                                                             None of these windows is in the label set, so they count as false
-940   test assets the estimator exceeded CRH by 0.009 (interval −0.019                       alarms. The 2017 alarms may reflect dollar funding frictions on US
+937   Table 9 fuses Bitfinex with one open-rail venue and scores the re-                     the last they stood below. Bitfinex’s 3 false alarms were a two-day
+                                                                                                                                                                   995
+938   sult against the other open-rail venue, for the median, volume-                        episode in November 2017 and one-day episodes in 2019 and 2022.
+                                                                                                                                                                   996
+939   weighted mean, CRH, GTM and the unit-aware fuser. With two                             None of these windows is in the label set, so they count as false
+                                                                                                                                                                   997
+940   sources the median, CRH and GTM coincide. Table 10 gives the                           alarms. The 2017 alarms may reflect dollar funding frictions on US
                                                                                                                                                                    998
-941   to 0.051) and GTM by 0.004 (−0.015 to 0.030). Both were computed                                                                                             999
-                                                                                             exchanges, such as purchase limits and deposit backlogs; we did
-942   after the locked test and are descriptive.                                                                                                                   1000
-                                                                                             not test this.
-943                                                                                                                                                                1001
-944                                                                                                                                                                1002
+941   held-out-asset score for CRH and GTM beside the estimator: on the                      exchanges, such as purchase limits and deposit backlogs; we did
+                                                                                                                                                                   999
+942   test assets the estimator exceeded CRH by 0.009 (interval −0.019                       not test this.
+                                                                                                                                                                   1000
+943   to 0.051) and GTM by 0.004 (−0.015 to 0.030). Both were computed                                                                                             1001
+944   after the locked test and are descriptive.                                                                                                                   1002
 945                                                                                                                                                                1003
 946                                                                                                                                                                1004
 947                                                                                                                                                                1005
