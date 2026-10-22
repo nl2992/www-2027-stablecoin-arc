@@ -22580,10 +22580,150 @@
     "ROUND3-STABLE"
    ],
    "notes": "Round-3 (D16) file kept in a separate directory so earlier analyses that glob data/raw/bitstamp are unchanged."
+  },
+  {
+   "venue": "upbit",
+   "symbol": "KRW-BTC",
+   "month": "2017-10..2023-12",
+   "url": "https://api.upbit.com/v1/candles/minutes/60?market=KRW-BTC&count=200&to=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/upbit/KRW-BTC_60m.csv",
+   "bytes": 5112562,
+   "sha256": "43c305e7ed06bef940ce90f5669b8d7dd72fbd54ceedefb54dd00c51e9d2bbf8",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 54700,
+   "first_utc": "2017-10-01T00:00:00",
+   "last_utc": "2023-12-31T23:00:00",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Hourly candles, UTC hour start; hours with no trade are absent."
+  },
+  {
+   "venue": "upbit",
+   "symbol": "KRW-ETH",
+   "month": "2017-10..2023-12",
+   "url": "https://api.upbit.com/v1/candles/minutes/60?market=KRW-ETH&count=200&to=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/upbit/KRW-ETH_60m.csv",
+   "bytes": 4897885,
+   "sha256": "b60b5e6dc6ce48637902eec24ed2fc0cd8f270a250ec1e3f336aecf726282121",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 54595,
+   "first_utc": "2017-10-01T00:00:00",
+   "last_utc": "2023-12-31T23:00:00",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Hourly candles, UTC hour start; hours with no trade are absent."
+  },
+  {
+   "venue": "upbit",
+   "symbol": "KRW-XRP",
+   "month": "2017-10..2023-12",
+   "url": "https://api.upbit.com/v1/candles/minutes/60?market=KRW-XRP&count=200&to=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/upbit/KRW-XRP_60m.csv",
+   "bytes": 4395372,
+   "sha256": "e47ff29e9b29a59c1f507c874c5665247b7eace1b5d9f84bc2d3cbd5de3e7029",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 54582,
+   "first_utc": "2017-10-01T00:00:00",
+   "last_utc": "2023-12-31T23:00:00",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Hourly candles, UTC hour start; hours with no trade are absent."
+  },
+  {
+   "venue": "upbit",
+   "symbol": "KRW-BCH",
+   "month": "2017-10..2023-12",
+   "url": "https://api.upbit.com/v1/candles/minutes/60?market=KRW-BCH&count=200&to=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/upbit/KRW-BCH_60m.csv",
+   "bytes": 4792397,
+   "sha256": "63066e04625d479f9cffb6b424ac4415e14eee764e5ce1e6b6984db4dbd0d84e",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 54586,
+   "first_utc": "2017-10-01T00:00:00",
+   "last_utc": "2023-12-31T23:00:00",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Hourly candles, UTC hour start; hours with no trade are absent."
+  },
+  {
+   "venue": "upbit",
+   "symbol": "KRW-ETC",
+   "month": "2017-10..2023-12",
+   "url": "https://api.upbit.com/v1/candles/minutes/60?market=KRW-ETC&count=200&to=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/upbit/KRW-ETC_60m.csv",
+   "bytes": 4557678,
+   "sha256": "46532daf31b1944d7b7c6cd68466c3a38e0df66bf054a851c3554ae2493ff7bf",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 54508,
+   "first_utc": "2017-10-01T00:00:00",
+   "last_utc": "2023-12-31T23:00:00",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Hourly candles, UTC hour start; hours with no trade are absent."
+  },
+  {
+   "venue": "bithumb",
+   "symbol": "KRW-USDT",
+   "month": "2017-10..2023-12",
+   "url": "https://api.bithumb.com/v1/candles/minutes/60?market=KRW-USDT&count=200&to=<paged>",
+   "status": "VERIFIED",
+   "file": "data/raw/bithumb/KRW-USDT_60m.csv",
+   "bytes": 45128,
+   "sha256": "184a416dcc3ebd0245aaf519e54e843a521ddd37fd70c1476b19ab70220c93c1",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 597,
+   "first_utc": "2023-12-07T03:00:00",
+   "last_utc": "2023-12-31T23:00:00",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Used because Upbit KRW-USDT starts 2024-06; Bithumb first month is 2023-12."
+  },
+  {
+   "venue": "fred",
+   "symbol": "DEXKOUS",
+   "month": "2017-10..2023-12",
+   "url": "https://api.stlouisfed.org/fred/series/observations?series_id=DEXKOUS&api_key=<redacted>&file_type=json&observation_start=2017-01-01&observation_end=2024-01-31",
+   "status": "VERIFIED",
+   "file": "data/raw/fred/DEXKOUS.csv",
+   "bytes": 36858,
+   "sha256": "01b1d30f6f623fad15a0e504979fd845bdf4803d92933076338a0ee699563190",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)",
+   "rows": 1848,
+   "first_utc": "2017-01-02",
+   "last_utc": "2024-01-31",
+   "terms_note": "Public market-data API; provider terms of use apply; raw files are not redistributed in this repository.",
+   "authorization": "User authorization 2026-10-22 (decision D17): Upbit (Bithumb only where Upbit lacks the series) public candle API for KRW-quoted majors and KRW-USDT, and FRED daily KRW/USD (DEXKOUS) with the user's key held in local .env only.",
+   "for_events": [
+    "KIMCHI"
+   ],
+   "notes": "Daily KRW per USD, H.10 noon New York buying rate; '.' marks no observation."
   }
  ],
  "summary": {
-  "VERIFIED": 1121,
+  "VERIFIED": 1128,
   "NOT_AVAILABLE": 73,
   "CHECKSUM_FAILED": 0
  }
