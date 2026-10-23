@@ -6,7 +6,7 @@
 anchor share the offset $c_t=u_t+\delta_t$, where $u_t$ is the unit offset and $\delta_t$ is source-wide item demand, which
 enters every non-anchor item and not the anchor. The cross-item offset of Eq.~\eqref{eq:median} is $L_t=c_t+\varepsilon_t$.
 The anchor $D_t$ (Eq.~\eqref{eq:anchor}) and its netted form $Y_t$ (Eq.~\eqref{eq:netted}) are as in \S\ref{sec:model}. The estimand is the unit share of the offset's
-time variation,
+time variation (Eq.~\eqref{eq:lambda}),
 \begin{equation}
 \lambda=\frac{\mathrm{Cov}(u,c)}{\mathrm{Var}(c)}=1-\frac{\mathrm{Cov}(\delta,c)}{\mathrm{Var}(c)}.
 \label{eq:lambda}
@@ -54,7 +54,7 @@ rejected, it does not say the shift was purely unit.
 E\big[z_j\,(Y_k-\mu_k-\lambda L)\big]=0,\qquad j=0,\dots,m,\ k=1,\dots,K,
 \label{eq:moments}
 \end{equation}
-which are $K(m+1)$ conditions for $K+1$ parameters ($\lambda$ and the intercepts $\mu_k$). Two-step GMM with a Bartlett HAC weight $\hat S^{-1}$ gives Hansen's statistic
+which (Eq.~\eqref{eq:moments}) are $K(m+1)$ conditions for $K+1$ parameters ($\lambda$ and the intercepts $\mu_k$). Two-step GMM with a Bartlett heteroskedasticity- and autocorrelation-consistent (HAC) weight $\hat S^{-1}$ gives Hansen's statistic (Eq.~\eqref{eq:J})
 \begin{equation}
 J=n\,\bar g(\hat\lambda)'\,\hat S^{-1}\,\bar g(\hat\lambda)\ \sim\ \chi^2_{Km-1},
 \label{eq:J}

@@ -21,6 +21,7 @@
 
 \acmConference[WWW '27]{The ACM Web Conference 2027}{2027}{}
 
+\captionsetup{textfont=normalfont}
 \setlength{\textfloatsep}{8pt plus 2pt minus 2pt}\setlength{\floatsep}{6pt plus 2pt minus 2pt}\setlength{\intextsep}{6pt plus 2pt minus 2pt}\setlength{\abovecaptionskip}{3pt}
 \begin{document}
 
@@ -32,7 +33,7 @@ with the same unit name share one backing. Often they do not: a platform's ledge
 unit, the dollar, without its backing, and fusion reads a shift in that backing as a change in value. We model each
 source's values as true values plus a source-unit offset shared by all its items. Agreement across unrelated items
 identifies the offset, and a unit anchor, an item fixed in the true unit, separates a unit shift from demand. We
-formalise the test with an identification result, a GMM over-identification test and a simulation of size and
+formalise the test with an identification result, a generalised-method-of-moments (GMM) over-identification test and a simulation of size and
 power. On cryptocurrency exchanges, whose
 dollars are ledger claims, it tests a reading that Flowerday et al. (2026) say cannot be tested directly with their data.
 In the anchored window from 2018-11-27 to 2019-05-31, netting Tether's external price from Kraken out of Bitfinex's
@@ -94,7 +95,7 @@ episodes (\S\ref{sec:monitor}, \S\ref{sec:2023}).
 \end{enumerate}
 
 \section{Related Work}
-\paragraph{Truth discovery and data fusion.} TruthFinder~\cite{yin2008truth} and CRH~\cite{li2014resolving} estimate
+\paragraph{Truth discovery and data fusion.} TruthFinder~\cite{yin2008truth} and CRH (conflict resolution on heterogeneous data)~\cite{li2014resolving} estimate
 each source's reliability from conflicting claims, and Dong et al.~\cite{dong2009integrating} show that dependent
 sources must not count as independent votes. These methods treat a source's error as reliability or noise. A unit
 offset is a different kind of error: it is shared by all of a source's claims, it can be large and persistent, and a
@@ -122,7 +123,7 @@ Bitfinex to bitcoin prices. We separate a token move from a unit move on the sam
 \section{Model}
 \label{sec:model}
 Let $p_{s,a,t}$ be the log price of item $a$ on source $s$ in hour $t$, in basis points ($10^4$ times the log). We
-model
+model (Eq.~\eqref{eq:source})
 \begin{equation}
 p_{s,a,t} = p^*_{a,t} + u_{s,t} + e_{s,a,t},
 \label{eq:source}
@@ -134,7 +135,7 @@ exchange rate. The gap between sources $s$ and $r$ is
 g_{a,t} = p_{s,a,t}-p_{r,a,t} = (u_{s,t}-u_{r,t}) + (e_{s,a,t}-e_{r,a,t}).
 \label{eq:gap}
 \end{equation}
-\emph{Intuition:} the first term is the same for every item, the second is not, so what the gaps of unrelated items
+\emph{Intuition:} in Eq.~\eqref{eq:gap} the first term is the same for every item, the second is not, so what the gaps of unrelated items
 share is the unit.
 
 \paragraph{Conventions.} Gaps are source minus reference, so $u>0$ means the source quotes items dearer in its unit,
@@ -155,7 +156,7 @@ L_t &= m_t = \operatorname{median}_a\, g_{a,t}, \label{eq:median}\\
 \mathrm{MAD}_t=\operatorname{median}_a\,|g_{a,t}-m_t|, \label{eq:mad}\\
 \hat u_{s,t} &= m_t \cdot \min\!\Big\{1,\ \max\!\Big\{0,\ 1 - \frac{c\,\hat\sigma^2_t/n}{m_t^2}\Big\}\Big\},\qquad c=\tfrac12, \label{eq:shrink}
 \end{align}
-and $\hat u_{s,t}=0$ when $n<2$. \emph{Intuition:} the median is the offset the items agree on; the factor is the share
+and $\hat u_{s,t}=0$ when $n<2$ (Eqs.~\eqref{eq:mad} and \eqref{eq:shrink}). \emph{Intuition:} the median is the offset the items agree on; the factor is the share
 of $m^2$ left after removing an estimate $c\,\hat\sigma^2/n$ of the noise in the median, so a median that the
 cross-item dispersion cannot distinguish from zero is set to zero, and a median far above the dispersion is left almost
 untouched. The factor is a plug-in, positive-part shrinkage of the James--Stein kind. We claim no optimality, since in
@@ -277,7 +278,9 @@ and $X$ is Tether's price outside the exchange; $T$ close to $X$ (small $T-X$, c
 \paragraph{Bitfinex: the dollar, net of Tether.} Figure~\ref{fig:anchor-scatter} is the picture to start from: look at how the daily points fall below the dashed unit line in panel (a) and onto it in panel (b). USDT/USD began trading on Bitfinex on 2018-11-27, so the test covers the stress
 window from that date to 2019-05-31. The slope of $D$ on $L$ was \NumKStressDaySlopeD{} (daily data, \NumKStressDayN{}
 days). It is below 1, so a minority demand component or a USDT-specific component remained, and it is far from the 0 of a
-demand-only reading. The USDT-specific component is visible. In the large-gap hours the median offset was
+demand-only reading. 
+
+The USDT-specific component is visible. In the large-gap hours the median offset was
 \NumKStressMedL{} bps, the part of USDT's move that the offset did not explain, $T$, had a median of \NumKStressMedT{}
 bps, and USDT traded at a median of \NumKStressMedX{} bps on Kraken. The two series moved together (hourly correlation of
 $T$ and $X$ \NumKStressCorrTX{}), and the median difference $T-X$ was \NumKStressMedTmX{} bps.
@@ -288,13 +291,17 @@ the week-block, HAC and hourly bootstrap intervals for the same estimate are rep
 With about six month-blocks it is itself imprecise. Hourly data gave the same estimate (\NumKStressHrSlopeAdj{}, from
 \NumKStressHrN{} hours). Instrumenting $L$ with the Bitfinex--Coinbase ether gap, which shares the ledger dollar but not
 the bitcoin quote error, rules out measurement error in $L$ as the source of the shortfall (\NumKStressDayIvAdj{}).
+
+
 Sample sizes differ by design (Kraken traded in \NumKCovTraded{} of the \NumKCovHours{} window hours; the GMM uses \NumGBfxPrimaryN{} hours, since it needs all four instrument gaps). In the sense of
 \S\ref{sec:anchored-theory}, Bitfinex's premium was therefore mostly a discount on the exchange dollar in this window: $\lambda$
 concerns the offset's variation and does not identify a constant level premium. Tether's own discount entered only the
 anchor, which is why the raw slope fell short of one. The
 hourly GMM intervals are much narrower than the daily month-block interval and exclude one; because the offset is
 persistent and the simulation shows HAC covering only \NumGSThreeCover{} in a mixture, we treat the month-block interval
-as the headline and read the estimate as close to, not equal to, one. Across \NumRACells{} specifications (five windows, four instrument sets, three reference venues, two versions of $X$ and
+as the headline and read the estimate as close to, not equal to, one. 
+
+Across \NumRACells{} specifications (five windows, four instrument sets, three reference venues, two versions of $X$ and
 three block lengths; specified before it was run but after the headline was seen) the GMM estimate ranged from
 \NumRAGmmMin{} to \NumRAGmmMax{} (median \NumRAGmmMed{}); the bootstrap interval contained one in \NumRAGmmBootOnePct\% of the
 GMM cells, and the window mattered most (Figure~\ref{fig:forest}: look at whether any row leaves the neighbourhood of the dashed line at one). Kraken's USDT price itself fell as Bitfinex's offset widened
@@ -500,11 +507,11 @@ $N_t=\{m:|x_{m,t}-f^1_t|\le\tau\}$ and
 \end{equation}
 or $f^1_t$ if $N_t$ is empty. The output $\hat f_t$ is the fused log dollar price.
 \end{enumerate}
-\emph{Intuition:} a quote's unit is priced from stablecoin rates, converted prices are weighted by how closely they
+\emph{Intuition:} in Eqs.~\eqref{eq:unitval}--\eqref{eq:fused} a quote's unit is priced from stablecoin rates, converted prices are weighted by how closely they
 have tracked the consensus, and markets quoted in the dollar count more because the root is the only unit not valued by a chain of other rates.
 The snapping step keeps a stable unit value from jittering with the fast median.
 
-The follow-up test of \S\ref{sec:bench} was fixed in advance by two definitions. With $\pi_t$ the share of bitcoin volume quoted in the
+The follow-up test of \S\ref{sec:bench} was fixed in advance by two definitions, Eqs.~\eqref{eq:shi} and \eqref{eq:endpoint}. With $\pi_t$ the share of bitcoin volume quoted in the
 shifted unit and $\omega_t$ that unit's deviation from the dollar, taken from a source other than Kraken,
 \begin{equation}
 S_{\mathrm{hi}}=\{t:\ \pi_t\ge 0.5,\ |\omega_t|\ge 25\ \mathrm{bps}\},
