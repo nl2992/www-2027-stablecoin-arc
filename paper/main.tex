@@ -54,7 +54,7 @@ Web services fuse prices or values from many sources: aggregators, indexes, orac
 sites. They assume that all sources quote in one unit. Some do not. A platform's ledger balance, a platform credit, a
 price on a multi-currency marketplace and a loyalty point can all carry the same name as a common unit, such as
 ``dollar'', without the same backing. When the backing of one source weakens, every price on that source moves
-together. Fusion reads this as a change in value, and it reports a unit drift as a price change.
+together. Fusion reads this as a change in value, so a unit drift is reported as a price change.
 
 This is hard for two reasons. A source's unit is never quoted, so it cannot be read off, and any single item can move
 for its own reasons. Source-reliability weights treat a source's error as noise that differs by claim, and robust
@@ -62,9 +62,9 @@ aggregation tolerates a minority of bad sources; neither is built for an error t
 
 Crypto exchanges are a good test domain. An exchange quotes assets in ``USD'', but that dollar is a balance in its own
 ledger, redeemed through banking partners, and when the partners leave it can trade away from a bank dollar. Prices are
-public and hourly, and the failures are dated. Bitfinex is the clearest case: from 2018 to 2019 its bitcoin price stood
+public and hourly, and the failures are dated. Bitfinex is a clear case: from 2018 to 2019 its bitcoin price stood
 apart from other exchanges' prices for months (Figure~\ref{fig:unit} in \S\ref{sec:diag}), while its banking access was in doubt. Whether that
-premium priced the exchange's dollar or the coin has been argued but not tested.
+premium reflected a discount on the exchange's dollar or on the coin has been argued but not tested.
 
 Our idea is that a shift in a source's unit moves every item on that source by the same amount. Agreement of the gaps
 across unrelated items therefore identifies a source-specific offset. Agreement alone cannot tell a unit shift from
@@ -84,7 +84,7 @@ We make four contributions.
 \begin{enumerate}
 \item \emph{An identification test.} Each source's prices equal true prices plus a unit offset and an item residual. The
 offset is identified by cross-item agreement and a unit anchor corrected for the anchor's external price
-(\S\ref{sec:model}). It gives a test of the reading that Bitfinex's premium priced its dollar, and separates that
+(\S\ref{sec:model}). It gives a test of the reading that Bitfinex's premium reflected a discount on its dollar, and separates that
 dollar from Tether's own discount, which contaminates the raw anchor (\S\ref{sec:anchor}).
 \item \emph{Held-out validation.} Scores on withheld assets are reported per year, per asset and per asset-by-time cell,
 with longer bootstrap blocks and shared-dollar controls (\S\ref{sec:heldout}).
@@ -162,7 +162,7 @@ cross-item dispersion cannot distinguish from zero is set to zero, and a median 
 untouched. The factor is a plug-in, positive-part shrinkage of the James--Stein kind. We claim no optimality, since in
 one dimension such shrinkage does not dominate the unshrunk estimate. The constant $c$ was fixed on development assets;
 re-picking it on 2017--2019 data gave \NumRHonestChosen{} with nearly the same scores (\S\ref{sec:heldout}). The estimator
-adds little to the plain median, which we report plainly. In the anchor tests (\S\ref{sec:anchor}) $L$ is the bitcoin
+adds little to the plain median, and we say so. In the anchor tests (\S\ref{sec:anchor}) $L$ is the bitcoin
 gap and the gaps of other assets serve as instruments.
 
 \paragraph{Unit anchor and the external-price correction.} A unit anchor $k$ is an item whose true price is fixed in the
@@ -275,7 +275,7 @@ exchange's unit explains the offset it is near one, and near zero if demand does
 more cautious). IV is the same slope with another asset's gap as instrument. In the last four columns, $T$ is the anchor's move that $L$ does not explain
 and $X$ is Tether's price outside the exchange; $T$ close to $X$ (small $T-X$, correlation near one) is the sign that the contamination was Tether's own and netting removes it.
 
-\paragraph{Bitfinex: the dollar, net of Tether.} Figure~\ref{fig:anchor-scatter} is the picture to start from: look at how the daily points fall below the dashed unit line in panel (a) and onto it in panel (b). USDT/USD began trading on Bitfinex on 2018-11-27, so the test covers the stress
+\paragraph{Bitfinex: the dollar, net of Tether.} In Figure~\ref{fig:anchor-scatter}, the daily points fall below the dashed unit line in panel (a) and onto it in panel (b). USDT/USD began trading on Bitfinex on 2018-11-27, so the test covers the stress
 window from that date to 2019-05-31. The slope of $D$ on $L$ was \NumKStressDaySlopeD{} (daily data, \NumKStressDayN{}
 days). It is below 1, so a minority demand component or a USDT-specific component remained, and it is far from the 0 of a
 demand-only reading. 
@@ -290,7 +290,7 @@ of \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}. This is the int
 the week-block, HAC and hourly bootstrap intervals for the same estimate are reported once, in \S\ref{sec:anchored-theory}.
 With about six month-blocks it is itself imprecise. Hourly data gave the same estimate (\NumKStressHrSlopeAdj{}, from
 \NumKStressHrN{} hours). Instrumenting $L$ with the Bitfinex--Coinbase ether gap, which shares the ledger dollar but not
-the bitcoin quote error, rules out measurement error in $L$ as the source of the shortfall (\NumKStressDayIvAdj{}).
+the bitcoin quote error, argues against measurement error in $L$ as the source of the shortfall (\NumKStressDayIvAdj{}).
 
 
 Sample sizes differ by design (Kraken traded in \NumKCovTraded{} of the \NumKCovHours{} window hours; the GMM uses \NumGBfxPrimaryN{} hours, since it needs all four instrument gaps). In the sense of
@@ -304,7 +304,7 @@ as the headline and read the estimate as close to, not equal to, one.
 Across \NumRACells{} specifications (five windows, four instrument sets, three reference venues, two versions of $X$ and
 three block lengths; specified before it was run but after the headline was seen) the GMM estimate ranged from
 \NumRAGmmMin{} to \NumRAGmmMax{} (median \NumRAGmmMed{}); the bootstrap interval contained one in \NumRAGmmBootOnePct\% of the
-GMM cells, and the window mattered most (Figure~\ref{fig:forest}: look at whether any row leaves the neighbourhood of the dashed line at one). Kraken's USDT price itself fell as Bitfinex's offset widened
+GMM cells, and the window mattered most (Figure~\ref{fig:forest} plots each row against the dashed line at one). Kraken's USDT price itself fell as Bitfinex's offset widened
 (slope \NumRAAThreeSlope{}), the contamination that netting removes. By year, the
 adjusted slope was \NumKYTwoZeroOneEightDaySlopeAdj{} in 2018 (the raw slope there, \NumKYTwoZeroOneEightDaySlopeD{}, is
 above one; \NumKYTwoZeroOneEightHrN{} hours on \NumKYTwoZeroOneEightDayN{} days) and \NumKYTwoZeroOneNineDaySlopeAdj{} in 2019.
@@ -420,7 +420,7 @@ majority-unit shift; two others (Q-E1, Q-E5) failed it. On those hours the fuser
 Figure~\ref{fig:q1} shows these errors, panel (a) for the level and panel (b) for the differences against each comparator. The mean absolute error was \NumQMaeFuser{} bps, against \NumQMaeBZero{} for the median, \NumQMaeBThree{} for CRH,
 \NumQMaeBTwo{} for conversion and \NumQMaeOracle{} for the oracle. Four caveats. Conversion was weak in 2018--19 because the
 only USDT/USD rate came from Bitfinex, whose own dollar was dislocated. The Q-E2 placebo is uninformative. The test covers
-three events, all USDT. And two of the five planned events failed the feasibility gate.
+three events, all USDT, and two of the five planned events failed the feasibility gate.
 
 \subsection{Monitor and calm-year offsets}
 \label{sec:noise}
@@ -455,7 +455,7 @@ official won--dollar rate, bitcoin, ether and XRP gaps on Upbit moved together i
 correlation \NumKREOneMinCorr{}). USDT/KRW, the anchor, existed only from December 2023 and carries the wedge itself (median
 \NumKRAnchMedianDPct\% against a common component of \NumKRAnchMedianLPct\%), so it is not fixed in the Korean dollar unit. The
 anchored slope was \NumKRAnchMeanIv{} (interval \NumKRAnchMeanIvLo{} to \NumKRAnchMeanIvHi{}), biased toward one by FX noise common to
-gaps and anchor. We read it as a won-unit wedge with some residual, and no more.
+gaps and anchor. We read it as a won-unit wedge with some residual.
 
 \paragraph{Limits.} The diagnostic rests on three USD exchanges, the benchmark on three locked tests with few episodes each,
 and the anchored evidence on one regime (Bitfinex's stress window) and a Binance.US episode in which the slope is close to
