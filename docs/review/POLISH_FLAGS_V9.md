@@ -25,3 +25,7 @@ The prose was already hedged and bounded, so the pass was light: 10 edits in `pa
 - Related Work mixes present and past tense for prior work; left as is.
 - Sections 3 and 5 have no leading sentence; adding one needs space.
 - The abstract was left untouched at 296 words.
+
+## Author decision (2026-10-23)
+
+All four flagged edits accepted as written.
