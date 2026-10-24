@@ -35,9 +35,9 @@ def numbers() -> str:
         add(f"SHi{EV[e]}", str(v["s_hi_hours"]), f"events/{e}/s_hi_hours", "gate")
     add("SHiPooled", str(g["pooled_s_hi_hours"]), "pooled_s_hi_hours", "gate")
     add("NKept", str(g["n_kept"]), "n_kept", "gate")
-    for tag, k in (("B", "fuser_vs_B0"), ("Bc", "fuser_vs_B2"), ("Bd", "fuser_vs_B3")):
+    for tag, k in (("B", "fuser_vs_B0"), ("Bc", "fuser_vs_B2"), ("Bd", "fuser_vs_B3"), ("O", "fuser_vs_oracle")):
         p = r["primary"][k]
-        name = {"B": "VsBZero", "Bc": "VsBTwo", "Bd": "VsBThree"}[tag]
+        name = {"B": "VsBZero", "Bc": "VsBTwo", "Bd": "VsBThree", "O": "VsUsdOnly"}[tag]
         add(f"{name}Mean", f(p["mean"]), f"primary/{k}/mean")
         add(f"{name}Lo", f(p["ci95"][0]), f"primary/{k}/ci95[0]")
         add(f"{name}Hi", f(p["ci95"][1]), f"primary/{k}/ci95[1]")

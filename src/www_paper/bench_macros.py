@@ -42,7 +42,7 @@ ROWS = [
     ("Same-hour bitcoin gap", "b1", None, None),
     ("Round-3 fuser (estimator in UNIT-TD)", "est", "fuser", "fuser"),
 ]
-ORACLE = ("Oracle (reference, not a method)", None, "oracle", "oracle")
+ORACLE = ("Median of clean or USD-quoted sources", None, "oracle", "oracle")
 WORD = {"median": "Median", "vwap": "Vwap", "drop_deviant": "DropDeviant", "crh": "Crh", "gtm": "Gtm",
         "unit_aware": "UnitAware", "fuser": "Fuser", "oracle": "Oracle", "trimmed": "Trimmed",
         "B0": "BZero", "B1": "BOne", "B2": "BTwo", "B3": "BThree", "B4": "BFour"}

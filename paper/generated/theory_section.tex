@@ -13,8 +13,8 @@ time variation (Eq.~\eqref{eq:lambda}),
 \end{equation}
 $\lambda=1$ under a pure unit shift ($\delta\equiv0$), whenever demand is uncorrelated with the offset, and $\lambda=0$ under pure
 demand ($u\equiv0$). The moments leave intercepts free, so a persistent level premium from demand is not identified, and if
-demand co-moves with the unit ($\delta=\kappa u$), $\lambda=1/(1+\kappa)$: $\lambda$ is a covariance share, not an additive share
-of the premium.
+demand co-moves with the unit ($\delta=\kappa u$), $\lambda=1/(1+\kappa)$: $\lambda$ is a covariance share
+of the offset's variation.
 \emph{A1} (additivity): the model above, with unit loading on $c$ for every non-anchor item (not tested asset by asset), and $\varepsilon$ independent of $(u,\delta,\eta)$.
 \emph{A2}: the reference venue's unit is stable over the window ($u_r$ is constant).
 \emph{A3}: $X$ measures $x$ on a venue whose error $\xi$ is independent of $(u,\delta,\varepsilon,\eta)$; $x$ may co-move with $c$ (we write $\eta$ for $\eta-\xi$ below).
@@ -38,10 +38,10 @@ Without the netting, the IV slope of $D$ on $L$ is
 $\mathrm{Cov}(Y,Z)=\gamma\,\mathrm{Cov}(u+\eta,c)=\gamma\,\mathrm{Cov}(u,c)$ and $\mathrm{Cov}(L,Z)=\gamma\,\mathrm{Var}(c)$ by A4; the ratio is $\lambda$. The
 OLS slope is $\mathrm{Cov}(u,c)/\mathrm{Var}(L)$ with $\mathrm{Var}(L)=\mathrm{Var}(c)+\mathrm{Var}(\varepsilon)$. Without $X$, $\mathrm{Cov}(D,Z)$ gains $\gamma\,\mathrm{Cov}(x,c)$.
 \end{proof}
-\emph{Intuition:} $Z$ moves with the offset but not with the anchor's own noise, so the ratio isolates how much of the
+\emph{Intuition:} $Z$ moves with the offset and is uncorrelated with the anchor's own noise, so the ratio isolates how much of the
 anchor's co-movement with the offset runs through $u$. The bias term $\mathrm{Cov}(x,c)/\mathrm{Var}(c)$ in
-Eq.~\eqref{eq:bias} is the token's own co-movement with the offset; $D-X$ contains $u$ but, up to the independent
-error $\xi$, not $x$, so that term drops out of Eq.~\eqref{eq:iv}.
+Eq.~\eqref{eq:bias} is the token's own co-movement with the offset; $D-X$ contains $u$ and, up to the independent
+error $\xi$, no $x$, so that term drops out of Eq.~\eqref{eq:iv}.
 
 \paragraph{Reading $\hat\lambda$.} On the Bitfinex stress window $\hat\lambda=\NumGBfxPrimaryLam{}$. In words: when the
 offset moved, the netted anchor moved almost one for one, so most of the offset's time variation was a unit shift and
@@ -61,8 +61,8 @@ J=n\,\bar g(\hat\lambda)'\,\hat S^{-1}\,\bar g(\hat\lambda)\ \sim\ \chi^2_{Km-1}
 \end{equation}
 with $\bar g$ the sample moments. For the headline, $K=1$ and $m=4$, so $J$ has \NumGBfxPrimaryJDf{} degrees of freedom. \emph{Intuition:} if one $\lambda$ explains every
 moment, the leftover moments are small; $J$ measures how large they are. $J$ rejects a contaminated instrument or anchor-specific depegs with different
-loadings on $c$; it has no power against a depeg that loads on $c$ equally in every anchor, so the netting by $X$ is what
-removes that bias, not the test.
+loadings on $c$; it has no power against a depeg that loads on $c$ equally in every anchor, so the netting by $X$
+removes that bias.
 
 \paragraph{Inference.} Hourly offsets are persistent ($\hat\rho_c=\NumGCalRhoC{}$ on the stress window), so we use HAC standard errors
 with Andrews' bandwidth (the fixed Newey--West rule is a check) and a moving-block bootstrap with block length
@@ -80,7 +80,7 @@ On the Bitfinex stress window ($K=1$, $m=4$, \NumGBfxPrimaryN{} hours, \NumGBfxP
 Intervals for this one estimate: hourly GMM, HAC \NumGBfxPrimaryLo{} to \NumGBfxPrimaryHi{}; hourly moving-block bootstrap
 (block \NumGBfxBootBlock{} hours), \NumGBfxBootLo{} to \NumGBfxBootHi{}; daily OLS slope of \S\ref{sec:anchor}, week blocks
 \NumKStressDaySlopeAdjWkLo{} to \NumKStressDaySlopeAdjWkHi{} and month blocks \NumKStressDaySlopeAdjMoLo{} to
-\NumKStressDaySlopeAdjMoHi{}. The hourly intervals are narrower than the daily ones, not wider; because HAC and the hourly
+\NumKStressDaySlopeAdjMoHi{}. The hourly intervals are narrower than the daily ones; because HAC and the hourly
 bootstrap undercover when the offset is persistent, the headline elsewhere is the month-block interval. Without the netting the estimate is \NumGBfxNaiveLam{}.
 Binance.US 2023 ($K=1$, $m=2$, \NumGBusUsdtN{} hours) gives \NumGBusUsdtLam{} (HAC \NumGBusUsdtLo{} to \NumGBusUsdtHi{};
 $p=\NumGBusUsdtPOne{}$ for $\lambda=1$), a HAC interval that is probably too narrow, and the netting changes nothing there
