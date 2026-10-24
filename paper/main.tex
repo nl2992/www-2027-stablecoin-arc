@@ -29,23 +29,22 @@
 \title{Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion}
 
 \begin{abstract}
-Web services that fuse values from many sources, such as price aggregators, indexes and oracles, assume that sources
-with the same unit name share one backing. Often they do not: a platform's ledger balance can carry the name of a common
-unit, the dollar, without its backing, and fusion reads a shift in that backing as a change in value. We model each
-source's values as true values plus a source-unit offset shared by all its items. Agreement across unrelated items
-identifies the offset, and a unit anchor, an item fixed in the true unit, separates a unit shift from demand. We
-formalise the test with an identification result, a generalised-method-of-moments (GMM) over-identification test and a simulation of size and
-power. On cryptocurrency exchanges, whose
-dollars are ledger claims, it tests a reading that Flowerday et al. (2026) say cannot be tested directly with their data.
-In the anchored window from 2018-11-27 to 2019-05-31, netting Tether's external price from Kraken out of Bitfinex's
-USDT/USD price makes it track Bitfinex's offset with slope close to one (\NumKStressDaySlopeAdj{}, 95\% month-block
-bootstrap interval \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}, up from \NumKStressDaySlopeD{}): the
-offset's variation was mostly a ledger-dollar shift. Binance.US's 2023 slope was near one (\NumUAnchorBnusSlope{}), which is close
-to mechanical once deposits closed; its two-anchor test rejected. On assets withheld from development, one offset per
-source-hour removed \NumRPeriodOneTestEst{} of the mean-square gap from 2017 to 2019 and \NumRPeriodTwoTestEst{} from 2020
-to 2023 (pooled; median over assets \NumRMedTestEstAssetMedian{}). Across three locked fusion tests a plain median was hard to beat; unit-aware fusion won once (USDC 2023, error
-\NumBStableXOneFuser{} of the median's). In a pre-registered follow-up on untouched events (three USDT events) where most
-volume shared a stablecoin unit that moved, a frozen unit-aware fuser beat the median, unit conversion and CRH.
+Price aggregators, indexes and oracles combine prices from many web sources and assume that every source's dollar is the
+same dollar. Often it is not. A crypto exchange's dollar balance is a claim on that exchange, and it can lose value when the
+exchange's banking breaks down. An aggregator then mistakes a change in the dollar for a change in price. We show how to
+detect this from public prices. When an exchange's dollar moves, every asset on that exchange moves by the same amount, so
+the part of the price gaps that all assets share measures the dollar's offset. A stablecoin traded on the exchange,
+corrected for its own price elsewhere, then separates a move in the dollar from demand for the assets. We give an
+identification result, a generalised-method-of-moments (GMM) test and a simulation of the test's size and power.
+Flowerday et al.\ (2026) proposed that Bitfinex's 2018--19 premium reflected a discount on its dollar but could not test it.
+From November 2018 to May 2019, once Tether's own price on Kraken was netted out, Bitfinex's Tether price tracked its
+dollar offset with slope \NumKStressDaySlopeAdj{} (95\% interval \NumKStressDaySlopeAdjMoLo{} to
+\NumKStressDaySlopeAdjMoHi{}), up from \NumKStressDaySlopeD{}: the offset moved mostly with Bitfinex's dollar. Binance.US in
+2023 gave a slope of \NumUAnchorBnusSlope{}, as expected once its deposits closed, though a two-stablecoin version of the
+test rejected. On assets kept out of development, one offset per exchange and hour removed \NumRPeriodOneTestEst{} of the
+squared price gap in 2017--19 and \NumRPeriodTwoTestEst{} in 2020--23. A plain median was hard to beat in three fusion
+tests scored once each. In a pre-registered test on new events, where most trading shared one stablecoin that lost its
+peg, a frozen unit-aware method beat the median, stablecoin conversion and source-reliability weighting (CRH).
 \end{abstract}
 
 % CCS concepts: IDs entered from memory; verify at https://dl.acm.org/ccs before submission.
