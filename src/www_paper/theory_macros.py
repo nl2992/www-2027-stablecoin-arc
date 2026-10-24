@@ -111,15 +111,11 @@ def table() -> str:
         r = app[sec]["specs"][key]
         arows.append(" & ".join([label, num(r["n"], 0), num(r["lam"], 3), ci(r["ci95"]), pval(r["p_lam1"]), pval(r["p_lam0"]),
                                  "--" if r["J_df"] == 0 else f"{num(r['J'], 1)} ({pval(r['J_p'])})"]) + " \\\\")
-    cap = (f"Anchored unit-offset estimator. Top: {num(sim['reps'], 0)} simulated windows of {num(sim['hours'], 0)} hours per scenario, "
-           "calibrated to the Bitfinex stress window; $\\lambda$ is the unit share of the offset. Bias is the mean error of OLS, "
-           "IV (one instrument) and two-anchor GMM. Rejection rates are 5\\% Wald tests of $\\lambda=1$ and $\\lambda=0$; coverage is "
-           "by the HAC interval of GMM and IV and the block-bootstrap interval of IV; $J$ rejects the over-identifying test "
-           "(two anchors, three instruments, 5 df). Bottom: GMM estimates with HAC intervals, Wald $p$-values and Hansen's $J$ "
-           "(statistic, $p$); df $=Km-1$ for $K$ anchors and $m$ instruments (3, 0, 3, 1, 3 and 3 in the rows below, in order; "
-           "the ETH-only row is just identified). Samples differ by window and instrument availability.")
+    cap = ("Anchored unit-offset estimator. Top: simulated windows by scenario. Bottom: GMM estimates on the real windows, "
+           "with HAC intervals, Wald $p$-values and Hansen's $J$ (statistic, $p$), df $=Km-1$ for $K$ anchors and $m$ "
+           "instruments (3, 0, 3, 1, 3 and 3 in the rows below, in order; the ETH-only row is just identified).")
     return f"""{HEADER}
-\\begin{{table*}}[!tp]
+\\begin{{table*}}[!t]
 \\footnotesize
 \\caption{{{cap}}}
 \\label{{tab:theory}}

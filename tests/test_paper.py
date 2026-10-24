@@ -31,8 +31,8 @@ def test_generated_tables_not_in_the_paper_are_still_current():
 
 
 def test_paper_includes_the_unit_tables_and_figure():
-    for name in ("unit_diagnostic_table", "heldout_ci_table", "detector_eval_table",
-                 "anchor_table", "anchor_ext_table", "robust_eval_table", "bench_table",
+    for name in ("unit_diagnostic_table", "heldout_ci_table",
+                 "anchor_table", "anchor_ext_table", "bench_table",
                  "td_realdata_table", "theory_table", "theory_section"):
         assert f"\\input{{generated/{name}}}" in MAIN, name
     assert "figures/unit_rate.pdf" in MAIN and "\\input{generated/unit_numbers}" in MAIN

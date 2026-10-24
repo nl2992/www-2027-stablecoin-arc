@@ -133,7 +133,7 @@ def capacity_paths(path: Path, out: Path) -> Path:
     _style()
     data = json.loads(path.read_text())
     results = [r for r in data["results"] if r["event_id"] in CAPACITY_SERIES]
-    fig, axes = plt.subplots(1, len(results), figsize=(7.0, 2.1), sharey=False)
+    fig, axes = plt.subplots(1, len(results), figsize=(7.0, 1.8), sharey=False)
     for ax, res in zip(np.atleast_1d(axes), results):
         key, label = CAPACITY_SERIES[res["event_id"]]
         for window, style in (("control", ":"), ("baseline", "-"), ("event_hourly", "-"), ("recovery", "-")):
@@ -164,27 +164,27 @@ def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
     h = pd.DataFrame.from_dict(d, orient="index", columns=["D", "L", "T", "D_ref"])
     h.index = pd.to_datetime(h.index)
     p = json.loads(platform.read_text())
-    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 2.3), gridspec_kw={"width_ratios": [1, 1.4]})
-    a.plot(h.index, h["D"], linewidth=0.9, label="observed $D$ (USDC/USD$_{venue}$)")
-    a.plot(h.index, h["T"], linewidth=0.9, linestyle="--", label="token component $T$")
-    a.plot(h.index, h["L"], linewidth=0.9, label="ledger component $L$ (BTC)")
-    a.set_title("(a) Token failure: USDC, March 2023", fontsize=7)
+    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 1.8), gridspec_kw={"width_ratios": [1, 1.3]})
+    a.plot(h.index, h["D"], linewidth=1.2, label="observed $D$ (USDC/USD$_{venue}$)")
+    a.plot(h.index, h["T"], linewidth=1.2, linestyle="--", label="token component $T$")
+    a.plot(h.index, h["L"], linewidth=1.2, label="ledger component $L$ (BTC)")
+    a.set_title("(a) Token failure: USDC, March 2023", fontsize=8)
     a.set_ylabel("bps (hourly median)")
     for name, key, style in (("USDT", "daily_median_pd_usdt", "-"), ("BTC", "daily_median_pd_btc", "--"),
                              ("USDC", "daily_median_pd_usdc", ":")):
         s = pd.Series(p[key]).loc["2023-05-01":"2023-07-31"]
-        b.plot(pd.to_datetime(s.index), s.to_numpy(), style, linewidth=0.9, label=f"PD$_{{{name}}}$")
+        b.plot(pd.to_datetime(s.index), s.to_numpy(), style, linewidth=1.2, label=f"PD$_{{{name}}}$")
     shade = {"sec_complaint": "#fdd49e", "deposits_suspended": "#fc8d59", "withdrawal_halt_window": "#d7301f",
              "crypto_only_transition": "#9ecae1"}
     for ph in p["phases"]:
         if ph["phase"] in shade:
             b.axvspan(pd.Timestamp(ph["start"]), pd.Timestamp(min(ph["end"], "2023-07-31")), color=shade[ph["phase"]],
                       alpha=0.35, linewidth=0)
-    b.set_title("(b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)", fontsize=7)
+    b.set_title("(b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)", fontsize=8)
     for ax in (a, b):
         ax.axhline(0, color="black", linewidth=0.5)
-        ax.tick_params(axis="x", labelrotation=30, labelsize=6)
-        ax.legend(fontsize=6, frameon=False, loc="lower left")
+        ax.tick_params(axis="x", labelrotation=30, labelsize=7)
+        ax.legend(fontsize=7, frameon=False, loc="lower left")
     return _save(fig, out)
 
 
@@ -199,7 +199,7 @@ def monitor_timeline(path: Path, out: Path) -> Path:
     h.index = pd.to_datetime(h.index)
     segments = [("2022-10-01", "2022-12-01"), ("2023-02-01", "2023-08-01"), ("2025-02-01", "2025-04-01")]
     widths = [(pd.Timestamp(b) - pd.Timestamp(a)).days for a, b in segments]
-    fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.0), sharey=True, gridspec_kw={"width_ratios": widths})
+    fig, axes = plt.subplots(1, 3, figsize=(7.0, 1.8), sharey=True, gridspec_kw={"width_ratios": widths})
     for ax, (a, b) in zip(axes, segments):
         g = h[(h.index >= pd.Timestamp(a, tz="UTC")) & (h.index < pd.Timestamp(b, tz="UTC"))]
         ax.plot(g.index, g["L"].astype(float), linewidth=0.6, label="ledger component $L$")

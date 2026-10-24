@@ -111,10 +111,8 @@ def table() -> str:
         lines.append(f"2020--2023, $c={_num(h['chosen_constant'], 2)}$ re-picked on 2017--2019 & {label} & {r['n_hours']:,} & "
                      f"{_s(r['b1'])} & {_s(r['b2'])} & {_s(r['est'])} & {_f(r['month_block_ci']['est'])} \\\\")
     return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
-            "\\caption{Assets-by-time holdout. Share of the mean-square Bitfinex--Coinbase gap removed on withheld assets in "
-            "each period; the estimator is causal, so a period is scored on data it sees only up to each hour. The last block "
-            "re-picks the shrinkage constant on 2017--2019 dev data only. Intervals are 95\\% bootstrap with calendar-month "
-            "blocks (1,000 draws). The control panel starts in 2019. Scores are post hoc and descriptive.}\n"
+            "\\caption{Assets-by-time holdout: share of the Bitfinex--Coinbase gap removed on withheld assets, by period, with "
+            "95\\% bootstrap intervals. Scores are post hoc and descriptive.}\n"
             "\\label{tab:robust-eval}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}llrllll@{}}\n\\toprule\n"
             "Period & Set & Hours & $b_1$ & $b_2$ & Estimator & Estimator, 95\\% CI \\\\\n\\midrule\n" + "\n".join(lines)
             + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")

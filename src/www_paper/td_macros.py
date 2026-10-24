@@ -84,30 +84,15 @@ def table() -> str:
         return f"{s['median_abs_bps']:.1f} & {s['p95_abs_bps']:.0f} & {s['hours_gt_50']:,}"
 
     r1 = [f"{M_LABEL[m]} & " + " & ".join(cell(m, g) for g in cols) + " \\\\" for m in M_WORD]
-    t1 = ("\\begin{table*}[!tp]\n\\footnotesize\n\\caption{Error of the fused USD price against a held-out open-rail venue "
-          "(leave-one-venue-out: Bitfinex and one open-rail venue are fused and scored against the other, Coinbase or Bitstamp; "
-          "seven assets, 2017--2023, both references pooled). Median and 95th-percentile absolute error in bps, and hours above "
-          "50 bps. CRH and GTM use a trailing 30-day window. With two sources the median, CRH and GTM coincide.}\n"
+    t1 = ("\\begin{table*}[!t]\n\\footnotesize\n\\caption{Error of the fused USD price against a held-out open-rail venue: median and 95th-percentile absolute error "
+          "in bps, and hours above 50 bps. With two sources the median, CRH and GTM coincide.}\n"
           "\\label{tab:td-index}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}lcccccccccccc@{}}\n\\toprule\n"
           " & \\multicolumn{3}{c}{All hours} & \\multicolumn{3}{c}{Bitfinex 2017-04..07} & \\multicolumn{3}{c}{Bitfinex 2018-10..2019-05} "
           "& \\multicolumn{3}{c}{2023} \\\\\n"
           "Method & Med & P95 & $>$50 & Med & P95 & $>$50 & Med & P95 & $>$50 & Med & P95 & $>$50 \\\\\n\\midrule\n"
           + "\n".join(r1[:6]) + "\n\\midrule\n" + "\n".join(r1[6:]) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
 
-    def f(st: dict[str, float]) -> str:
-        return f"{_num(st['point'], 3)} [{_num(st['lo'], 3)}, {_num(st['hi'], 3)}]"
-
-    r2 = []
-    for split, label in (("dev", "Dev, pooled"), ("test", "Test, pooled")):
-        b = d["part2"][split]["bootstrap"]["pooled"]
-        r2.append(f"{label} & " + " & ".join(f(b[m]) for m in P2_WORD) + " \\\\")
-    t2 = ("\\begin{table*}[!tp]\n\\footnotesize\n\\caption{Held-out-asset correction (Bitfinex versus Coinbase), share of the mean-square "
-          "gap removed, with 95\\% block-bootstrap intervals as in Table~\\ref{tab:heldout-ci}. CRH and GTM resolve the pair offset "
-          "from the other visible assets' gaps with reliabilities fitted on the trailing 30 days.}\n"
-          "\\label{tab:td-heldout}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}llllll@{}}\n\\toprule\n"
-          " & " + " & ".join(P2_LABEL[m] for m in P2_WORD) + " \\\\\n\\midrule\n" + "\n".join(r2)
-          + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
-    return f"{HEADER}\n{t1}\n{t2}"
+    return f"{HEADER}\n{t1}"
 
 
 def main() -> None:

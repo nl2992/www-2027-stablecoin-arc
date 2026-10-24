@@ -295,12 +295,10 @@ def anchor_table() -> str:
     rows += ["\\midrule", _anchor_row("Binance.US, June--July 2023", bn["jun_jul_2023"]),
              _anchor_row("Binance.US, all of 2023", bn["year_2023"]), "\\midrule",
              _anchor_row("Placebo: Coinbase--Bitstamp, Bitstamp USDT", placebo)]
-    return (f"{HEADER}\n\\begin{{table*}}[!tp]\n\\footnotesize\n"
-            "\\caption{Stablecoin anchor test. $L$: hourly bitcoin gap of the venue against the open-rail reference (Bitstamp), bps; "
-            "$D$: $10^4\\log$ of the venue's USDT/USD price; $T=D-L$. Hours, medians and the share with $|T|\\le 0.25|L|$ use hours "
-            "with $|L|\\ge 50$ bps (placebo: $|L|\\ge 20$ bps between Coinbase and Bitstamp, with $D$ the Bitstamp USDT/USD price, "
-            "2022-04 to 2023-12; its slope excludes May 2022 and March 2023, the months of USDT's own token events). Slope: OLS slope of daily-median $D$ on daily-median $L$ with a 95\\% block-bootstrap interval "
-            "(weeks, 1,000 draws). A shift in the venue's dollar gives slope 1 and $T=0$; crypto-only demand gives slope 0.}\n"
+    return (f"{HEADER}\n\\begin{{table*}}[!t]\n\\footnotesize\n"
+            "\\caption{Stablecoin anchor test by slice. $L$ is the venue's bitcoin gap to Bitstamp, $D$ its USDT/USD price and "
+            "$T=D-L$, all in bps. Slope is $D$ on $L$ with a 95\\% block-bootstrap interval: 1 means the venue's dollar shifted, "
+            "0 means crypto-only demand.}\n"
             "\\label{tab:anchor}\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}lrrrrrr@{}}\n\\toprule\n"
             "Slice & Hours & Median $L$ & Median $D$ & Median $T$ & Slope [95\\% CI] & $|T|\\le 0.25|L|$ \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
@@ -320,12 +318,10 @@ def diagnostic_table() -> str:
     head = " & ".join(f"\\multicolumn{{3}}{{c}}{{{label}}}" for _, label in PAIRS)
     rules = " ".join(f"\\cmidrule(lr){{{2 + 3 * i}-{4 + 3 * i}}}" for i in range(3))
     sub = " & ".join(["$\\rho$ & gap & share"] * 3)
-    return (f"{HEADER}\n\\begin{{table*}}[!tp]\n\\footnotesize\n"
-            "\\caption{Unit diagnostic by exchange pair and year (hourly median of traded-minute log closes). "
-            "$\\rho$: correlation across days of the daily-median bitcoin and ether gaps; gap: median absolute hourly bitcoin "
-            "gap in bps; share: $1-\\overline{(g_{ETH}-g_{BTC})^2}/\\overline{g_{ETH}^2}$ on hourly data, the part of the "
-            "ether gap that the bitcoin gap alone accounts for. 2017 Coinbase--Bitstamp and Bitfinex--Bitstamp rows use "
-            "the months in which Bitstamp ether trades are available (from September 2017).}\n"
+    return (f"{HEADER}\n\\begin{{table*}}[!t]\n\\footnotesize\n"
+            "\\caption{Unit diagnostic by exchange pair and year, from hourly medians of traded-minute log closes. "
+            "$\\rho$, gap and share are defined in Appendix~\\ref{app:anchor}. The two 2017 pairs with Bitstamp use the months "
+            "in which its ether trades are available (from September 2017).}\n"
             "\\label{tab:unit_diag}\n\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}lrrrrrrrrr@{}}\n\\toprule\n"
             f"Year & {head} \\\\\n{rules}\n & {sub} \\\\\n\\midrule\n" + "\n".join(rows)
             + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
@@ -380,7 +376,8 @@ def detector_table() -> str:
         if method != "b3":
             rows[-1] += "\n\\addlinespace"
     return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
-            "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022). Recall: labelled episodes caught over labelled episodes with data coverage. False: alarm episodes with no labelled event, in total and per venue-year. Episodes minus false alarms are the episodes overlapping a label; several can hit one label. Years of coverage differ by method. The rule was fixed beforehand, but Binance.US and Bitfinex are development venues. -- means not evaluated.}\n"
+            "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022): recall on labelled "
+            "episodes, and false alarms in total and per venue-year. -- means not evaluated.}\n"
             "\\label{tab:detector}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}llrrrr@{}}\n\\toprule\n"
             "Method & Exchange & Episodes & Recall & False & Per year \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")

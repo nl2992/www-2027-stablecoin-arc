@@ -263,7 +263,7 @@ line is equality.}
 \label{fig:unit}
 \end{figure}
 Figure~\ref{fig:unit} shows the Bitfinex gaps in bitcoin and ether moving together through the banking episodes.
-Table~\ref{tab:unit_diag} (Appendix~\ref{app:details}) reports three things for each pair of exchanges and year: the
+Table~\ref{tab:unit_diag} (Appendix~\ref{app:anchor}) reports three things for each pair of exchanges and year: the
 correlation of daily bitcoin and ether gaps, the median bitcoin gap, and the share of the hourly ether gap that the bitcoin
 gap accounts for. For Bitfinex against Bitstamp, the daily bitcoin and ether gaps were correlated at
 \NumUBfxBstCorrMinExact{} or more in every year. The bitcoin gap accounted for between \NumUBfxBstShareMin{} and
@@ -348,7 +348,7 @@ flow-constrained venue would look the same.
 $\hat\lambda=\NumGBfxPrimaryLam{}$ (Hansen's $J$ $p=\NumGBfxPrimaryJP{}$). It rejects $\lambda=1$ ($p$
 \NumGBfxPrimaryPOne{}), so about that share of the offset's variation was a unit shift and we say close to one. For
 Binance.US in 2023 the estimate was \NumGBusUsdtLam{} (HAC only). Table~\ref{tab:theory} gives the simulated size and
-power, and Appendix~\ref{app:details} gives the demand and placebo checks.
+power, and Appendix~\ref{app:anchor} gives the demand and placebo checks.
 
 \subsection{Held-out assets}
 \label{sec:heldout}
@@ -372,7 +372,7 @@ five calendar years 2019 to 2023 the median score was \NumRMedTestEstYearMedian{
 was between \NumUTestYearMinPct\% and \NumUTestYearMaxPct\%. So one offset per source-hour removes most of the gap in the
 stress years and about a third to two-fifths in calm years.
 
-\paragraph{Held-out time.} Withholding assets leaves time pooled, so Table~\ref{tab:robust-eval} scores each period on its
+\paragraph{Held-out time.} Withholding assets leaves time pooled, so we score each period on its
 own data. The estimator is causal and keeps no state, so this tests only the constant $c$. In 2017--2019 the test assets
 scored \NumRPeriodOneTestEst{} (interval \NumRPeriodOneTestEstMonthLo{} to \NumRPeriodOneTestEstMonthHi{}; only
 \NumRPeriodOneTestHours{} hours, since the test assets list late) and the dev assets \NumRPeriodOneDevEst{}. In 2020--2023
@@ -380,7 +380,7 @@ the test assets scored \NumRPeriodTwoTestEst{} (\NumRPeriodTwoTestEstMonthLo{} t
 dev assets only \NumRPeriodTwoDevEst{}. In calm years the correction helps on some assets and not on others. Re-picking $c$
 on 2017--2019 data alone gave \NumRHonestChosen{} and a 2020--2023 test score of \NumRHonestTestEst{}. Calendar-month blocks widen the pooled test interval to \NumRMonthTestPooledEstLo{} to \NumRMonthTestPooledEstHi{}, and
 quarter blocks to \NumRQuarterTestPooledEstLo{} to \NumRQuarterTestPooledEstHi{}, against \NumPTestPooledEstLo{} to
-\NumPTestPooledEstHi{} for week blocks. Tables~\ref{tab:robust-eval} and \ref{tab:heldout-ci} use week blocks as the
+\NumPTestPooledEstHi{} for week blocks. Table~\ref{tab:heldout-ci} uses week blocks as the
 default. Offsets that persist for months make week blocks too optimistic, so the month and quarter intervals are the ones to
 read.
 
@@ -512,9 +512,8 @@ thin.
 \bibliography{references}}
 
 \appendix
-\let\footnotesize\scriptsize\small\renewcommand{\arraystretch}{0.8}
-\input{generated/unit_diagnostic_table}
-\input{generated/robust_eval_table}
+\renewcommand{\dbltopfraction}{0.95}\renewcommand{\textfraction}{0.1}
+\small\renewcommand{\arraystretch}{0.85}
 \section{The Round-3 Fusion Algorithm}
 \label{sec:fuser}
 The final fuser of \S\ref{sec:bench} (round 3 in the tables) turns quotes in several units into one dollar price. Its
@@ -568,8 +567,7 @@ For a method $B$, with $e^{B}_t$ the fused price minus Kraken's in bps, the prim
 pooled over kept events. Success means that the upper 95\% day-block bootstrap bound of $\Delta_B$ is below zero. The headline
 needs this for $B$ = median, conversion and CRH.
 
-
-\section{Method and Check Details}
+\section{Methods and Development Loop}
 \label{app:details}
 \paragraph{Methods.} The \emph{round-2 unit-aware fuser} corrects each source for an estimated unit offset and then runs CRH
 with reliabilities refit on a trailing window. The \emph{round-3 fuser} (Appendix~\ref{sec:fuser}) identifies which units are dollars from a graph of
@@ -585,70 +583,117 @@ item's mean-square gap that the correction removes, with the item hidden from th
 Temporal smoothing, Kalman filtering, reliability weighting and liquidity weighting did not help on the harness score, so
 the estimator is cross-sectional. We did not diagnose why smoothing failed.
 
+\section{Unit Diagnostic, Anchor Test and Simulation}
+\label{app:anchor}
+\paragraph{Unit diagnostic.} Table~\ref{tab:unit_diag} shows, for each pair of exchanges and year, whether the bitcoin and
+ether gaps move together. The column $\rho$ is the correlation across days of the daily-median bitcoin and ether gaps. The
+column gap is the median absolute hourly bitcoin gap in bps. The column share is
+$1-\overline{(g_{ETH}-g_{BTC})^2}/\overline{g_{ETH}^2}$ on hourly data, the part of the ether gap that the bitcoin gap alone
+accounts for. The control pair Coinbase--Bitstamp has the lowest share in every year.
+\input{generated/unit_diagnostic_table}
+
+\paragraph{Anchor test by slice.} Table~\ref{tab:anchor} gives the anchor regression for every slice, before netting
+USDT's external price. $L$ is the hourly bitcoin gap of the venue against the open-rail reference (Bitstamp) in bps, $D$ is
+$10^4\log$ of the venue's USDT/USD price, and $T=D-L$. Hours, medians and the share with $|T|\le 0.25|L|$ use hours with
+$|L|\ge 50$ bps. The placebo uses $|L|\ge 20$ bps between Coinbase and Bitstamp, with $D$ the Bitstamp USDT/USD price, from
+2022-04 to 2023-12; its slope leaves out May 2022 and March 2023, the months of USDT's own token events. The slope is the OLS
+slope of daily-median $D$ on daily-median $L$, with a 95\% block-bootstrap interval (weeks, 1,000 draws). A shift in the
+venue's dollar gives slope 1 and $T=0$; crypto-only demand gives slope 0.
+\input{generated/anchor_table}
+
 \paragraph{Demand and placebo.} Call an hour with $|L|\ge 50$ bps \emph{agreeing} if the ether gap is within a quarter of
 the bitcoin gap, and say the anchor \emph{did not follow} if $|T|$ exceeded half of $|L|$. This held in
 \NumUAnchorDemandShare\% of the \NumUAnchorDemandHours{} agreeing hours since USDT listed on Bitfinex
-(\NumUAnchorDemandStressShare\% in the stress window). Table~\ref{tab:anchor} counts the hours in which $|T|$ stayed within
+(\NumUAnchorDemandStressShare\% in the stress window). The last column of Table~\ref{tab:anchor} counts the hours in which $|T|$ stayed within
 a quarter of $|L|$. That is a stricter test of following, over all large-gap hours, so the two shares are not comparable.
 The hours in between neither follow nor clearly fail to follow. On open rails we ran a reverse placebo: the Coinbase--Bitstamp bitcoin gap against Bitstamp's USDT
 (\NumUAnchorPlaceboHours{} large-gap hours). It gave a slope of \NumUAnchorPlaceboSlope{} with an interval from
 \NumUAnchorPlaceboSlopeLo{} to \NumUAnchorPlaceboSlopeHi{}. That interval contains both 0 and 1, so it cannot reject either
 and is not an informative placebo. A larger shared-dollar placebo is not available in these data.
 
-\section{Truth Discovery on Real Data}
+\paragraph{Simulation.} The top panel of Table~\ref{tab:theory} reports \NumGSimReps{} simulated windows of \NumGSimHours{}
+hours per scenario, calibrated to the Bitfinex stress window; $\lambda$ is the unit share of the offset. Bias is the mean
+error of OLS, IV (one instrument) and two-anchor GMM. Rejection rates are five-percent Wald tests of $\lambda=1$ and $\lambda=0$.
+Coverage is by the HAC interval of GMM and IV and by the block-bootstrap interval of IV. $J$ rejects the over-identifying
+test (two anchors, three instruments, 5 df). The bottom panel gives the GMM estimates on the real windows. Samples differ by
+window and instrument availability.
+\input{generated/theory_table}
+
+\section{Held-out Scores by Asset and Period}
+\label{app:heldout}
+\paragraph{By asset.} Table~\ref{tab:heldout-ci} gives the held-out score for every asset, with block-bootstrap intervals
+(blocks are ISO weeks, 1,000 draws), for the estimator and the two baselines. $b_1$ is the same-hour bitcoin gap and $b_2$ the
+same-hour median gap of the visible assets. Estimator is the fixed estimator and $\Delta$ is Estimator minus $b_2$. The control
+rows pool the withheld assets ETH, LTC, BCH, XLM, LINK and XRP over 2019--2023 for the pair named.
+\input{generated/heldout_ci_table}
+
+\paragraph{By period.} The scores of withheld assets in each period are given in the text of \S\ref{sec:heldout} rather than in a
+table. The estimator is causal, so a period is scored on data it sees only up to each hour. Intervals are 95\% bootstrap with
+calendar-month blocks (1,000 draws), and the last check re-picks the shrinkage constant on 2017--2019 development data only. The
+control panel starts in 2019.
+
+\section{Fusion Benchmark and Truth Discovery}
 \label{app:td}
+\paragraph{Index error.} Table~\ref{tab:td-index} fuses Bitfinex with one open-rail venue and scores the result against the other
+open-rail venue (leave-one-venue-out, Coinbase or Bitstamp as the reference; seven assets, 2017--2023, both references
+pooled), for the median, volume-weighted mean, CRH, GTM and the unit-aware fuser. CRH and GTM use a trailing 30-day window.
+With two sources the median, CRH and GTM coincide.
 \input{generated/td_realdata_table}
-Table~\ref{tab:td-index} fuses Bitfinex with one open-rail venue and scores the result against the other open-rail venue,
-for the median, volume-weighted mean, CRH, GTM and the unit-aware fuser. With two sources the median, CRH and GTM
-coincide. Table~\ref{tab:td-heldout} gives the held-out-asset score for CRH and GTM beside the estimator. On the test
-assets the estimator exceeded CRH by \NumTPartTestEstMinusCrh{} (interval \NumTPartTestEstMinusCrhLo{} to
+
+\paragraph{Held-out assets.} CRH and GTM were also scored on the held-out assets, resolving the Bitfinex--Coinbase pair offset
+from the other visible assets' gaps with reliabilities fitted on the trailing 30 days. On the test assets the estimator exceeded CRH by \NumTPartTestEstMinusCrh{} (interval \NumTPartTestEstMinusCrhLo{} to
 \NumTPartTestEstMinusCrhHi{}) and GTM by \NumTPartTestEstMinusGtm{} (\NumTPartTestEstMinusGtmLo{} to
 \NumTPartTestEstMinusGtmHi{}). Both were computed after the locked test and are descriptive.
 
-\section{Simulation, Held-out Scores by Asset, and the Full Anchor Table}
-\label{app:heldout}
-Table~\ref{tab:heldout-ci} gives the held-out score for every asset, with block-bootstrap intervals, for the
-estimator and the two baselines. Table~\ref{tab:anchor} gives the anchor regression for every slice, before netting
-USDT's external price.
-\input{generated/theory_table}
-\input{generated/heldout_ci_table}
-\input{generated/anchor_table}
-
-\section{The 2023 Shocks}
+\section{Monitoring, Calm-Year Offsets and the 2023 Shocks}
 \label{app:monitor}
-Figure~\ref{fig:which} shows the two 2023 shocks that \S\ref{sec:shocks} describes: a token run (USDC) and a ledger-dollar
-shift (Binance.US).
-\paragraph{Binance.US} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
-partners stopped dollar payments~\cite{theblock2023binanceus}. From 22 June to 31 July, with deposits shut and withdrawals
-open, the median bitcoin gap to Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs
-traded. The sign is negative: assets were cheaper in
-Binance.US's dollar, so that dollar traded at a premium. Bitcoin and Tether showed the same dislocation (hourly correlation
-of changes \NumIdentChgTrans{}), and the ledger component accounted for a median \NumDecBnusShare\% of the Tether
-dislocation (Figure~\ref{fig:which}b).
+\subsection{Size and timing of the calm-year offsets}
+\label{app:secondary}
+As \S\ref{sec:noise} says, the calm-year offsets (2020 to 2023) are systematic but too small to trade. The round-trip band of
+a pair is the sum of its two venues' base-tier taker fees, from \NumNBandMin{} to \NumNBandMax{} bps across pair-years. The
+gap exceeded the band in at most \NumNCalmAboveBandMaxPct\% of hours for any pair. They are persistent and shared across assets. The first-order autocorrelation of the daily Bitfinex gap was between
+\NumNBfxBstAcOneMin{} and \NumNBfxBstAcOneMax{} against Bitstamp. The centred daily common share of the ether and bitcoin
+gaps (a correlation of the two, distinct from the explained share of Table~\ref{tab:unit_diag}) was between
+\NumNBfxBstCommonDailyMin{} and \NumNBfxBstCommonDailyMax{}. The hourly explained share was between
+\NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{} with hourly medians and between \NumNBfxBstExplLastMin{} and
+\NumNBfxBstExplLastMax{} with last closes. In all \NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the
+cross-correlation peaked at zero minutes.
 
-\paragraph{Silvergate, Signature and USDC} The closure of Silvergate and Signature in March 2023 raised no alarm on
-Bitfinex, Coinbase or Binance.US (\NumUMarAlarmDays{} alarm days). A dislocation of the exchange dollar appeared only
-where rails closed with no substitute: Bitfinex in 2017--2018 and Binance.US from June 2023. In the March 2023 USDC
-run, the token component on Binance.US was \NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps. The token
-moved and the exchange dollar held (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on
-Bitstamp, and was at least 100 bps below par in \NumUUsdcHoursGeHundred{} hours.
+\subsection{Monitoring}
+The monitor flags an hour when the bitcoin gap to the reference is at least 100 bps and a second asset (ether or Tether)
+agrees with it to within a quarter of its size. Consecutive flags merge into alarm episodes. This is a thresholded form of
+the cross-item agreement behind Eq.~\eqref{eq:median}, applied without shrinkage. The rule, thresholds and
+baselines were fixed before the evaluation, but Binance.US and Bitfinex are development venues
+(Table~\ref{tab:fixed}). The baselines are a price-gap alarm on bitcoin alone, a trailing robust $z$-score of the gap, and
+the USDT premium. A false alarm is an alarm episode with no labelled event; episodes minus false alarms are the episodes overlapping a label, and
+several can hit one label. The per-method table of episodes is not reproduced here; the key rows follow.
 
+On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per venue-year (\NumUDetFaBfxCount{} episodes),
+against \NumUBaseFaBfxTwo{} for the plain price-gap alarm (\NumUBaseFaBfxCount{}), at the same recall:
+\NumUDetCaught{} of \NumUDetCovered{} labelled episodes. The second-asset test keeps the gap alarm's recall and removes
+two thirds of its false alarms. At its fixed setting the trailing $z$-score caught every Bitfinex episode and raised
+\NumSBTwoRateBfx{} false alarm episodes per venue-year. On Binance.US, where the rule was fitted, the monitor caught all
+labelled episodes. On Coinbase it raised no alarm after \NumUCbLastAlarm{}. Its \NumUCbEpisodes{} alarm episodes all fall in
+the 2017 bubble, between \NumUCbFirstAlarm{} and \NumUCbLastAlarm{}\label{app:windows}. Bitfinex's \NumUDetFaBfxCount{} false alarms fall in 2017, 2019 and 2022. None is labelled, so all count as false alarms. Years of coverage differ by method (\NumSYearsDetBus{} against \NumSYearsBOneBus{} on Binance.US), because each rule is scored on the
+hours where it is defined, so false alarm rates are not simple ratios of the counts. We give no intervals, as the labelled
+episodes are few.
 
-\begin{figure*}[!tp]
-\centering\includegraphics[width=0.36\textwidth]{figures/which_dollar.pdf}
-\caption{Two shocks on one exchange. (a) USDC in March 2023: the observed dislocation $D$ is almost entirely the token
-component $T$, while the ledger component $L$ priced through bitcoin stays near zero. (b) Binance.US's dollar in 2023:
-daily median dislocation of USDT, bitcoin and USDC against Bitstamp, May to July, with documented rail phases shaded.
-The USDT and bitcoin lines move together.}
+\paragraph{Early depeg test and Chainlink.} A pre-registered early-depeg test on \NumQTNScored{} events tied the pooled detector with two single-pair rules at an equal
+false-alarm rate (\NumQTFalseAlarmRateP{} per 1000 calm hours). Correcting the threshold-calibration rule after scoring made
+it worse. A Chainlink feed that inherited the depeg would regress on its size with a slope up to the (unmeasured)
+share of USDC-quoted sources. The slope was \NumUOracleSlopeBtc{} for bitcoin and \NumUOracleSlopeEth{} for ether, against
+\NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the USDC feed. This is one episode and one oracle family.
+
+% Floats are declared here so that they land beside Sections F.3 and G.
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/which_dollar.pdf}
+\caption{Two shocks on one exchange. (a) USDC in March 2023: the dislocation $D$ is almost entirely the token component
+$T$. (b) Binance.US's dollar, May to July 2023: USDT and bitcoin dislocations move together; rail phases are shaded.}
 \label{fig:which}
 \end{figure*}
-
-\section{What Was Fixed When}
-Table~\ref{tab:fixed} records which results were pre-registered, locked or computed post hoc.
 \begin{table*}[!t]
-\scriptsize
-\caption{What was fixed when. Pre-registered: written down before the data or the result existed. Locked: the method was
-frozen and scored once. Post hoc: computed after related results were seen, and descriptive.}
+\footnotesize
+\caption{What was fixed when. Pre-registered: written down before the data or the result existed. Locked: frozen and scored once. Post hoc: computed after related results were seen, and descriptive.}
 \label{tab:fixed}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}lp{0.80\textwidth}@{}}
@@ -676,47 +721,31 @@ GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks an
 \end{tabular}
 \end{table*}
 
-\input{generated/detector_eval_table}
-\section{Secondary Results: Calm-Year Offsets and the Monitor}
-\label{app:secondary}
-\subsection{Size and timing of the calm-year offsets}
-As \S\ref{sec:noise} says, the calm-year offsets (2020 to 2023) are systematic but too small to trade. The round-trip band of
-a pair is the sum of its two venues' base-tier taker fees, from \NumNBandMin{} to \NumNBandMax{} bps across pair-years. The
-gap exceeded the band in at most \NumNCalmAboveBandMaxPct\% of hours for any pair. They are persistent and shared across assets. The first-order autocorrelation of the daily Bitfinex gap was between
-\NumNBfxBstAcOneMin{} and \NumNBfxBstAcOneMax{} against Bitstamp. The centred daily common share of the ether and bitcoin
-gaps (a correlation of the two, distinct from the explained share of Table~\ref{tab:unit_diag}) was between
-\NumNBfxBstCommonDailyMin{} and \NumNBfxBstCommonDailyMax{}. The hourly explained share was between
-\NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{} with hourly medians and between \NumNBfxBstExplLastMin{} and
-\NumNBfxBstExplLastMax{} with last closes. In all \NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the
-cross-correlation peaked at zero minutes.
+\subsection{The 2023 shocks}
+Figure~\ref{fig:which} shows the two 2023 shocks that \S\ref{sec:shocks} describes. Panel (a) is the USDC run of March 2023,
+where the dislocation $D$ is almost entirely the token component $T$ and the ledger component $L$ priced through bitcoin
+stays near zero. Panel (b) is the daily median dislocation of USDT, bitcoin and USDC against Bitstamp from May to July 2023,
+with documented rail phases shaded.
 
-\subsection{Monitoring}
-The monitor flags an hour when the bitcoin gap to the reference is at least 100 bps and a second asset (ether or Tether)
-agrees with it to within a quarter of its size. Consecutive flags merge into alarm episodes. This is a thresholded form of
-the cross-item agreement behind Eq.~\eqref{eq:median}, applied without shrinkage. The rule, thresholds and
-baselines were fixed before the evaluation (Table~\ref{tab:detector}), but Binance.US and Bitfinex are development venues
-(Table~\ref{tab:fixed}). The baselines are a price-gap alarm on bitcoin alone, a trailing robust $z$-score of the gap, and
-the USDT premium.
+\paragraph{Binance.US} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
+partners stopped dollar payments~\cite{theblock2023binanceus}. From 22 June to 31 July, with deposits shut and withdrawals
+open, the median bitcoin gap to Bitstamp was \NumUBnusMedBps{} bps in magnitude over \NumUBnusHours{} hours in which all legs
+traded. The sign is negative: assets were cheaper in
+Binance.US's dollar, so that dollar traded at a premium. Bitcoin and Tether showed the same dislocation (hourly correlation
+of changes \NumIdentChgTrans{}), and the ledger component accounted for a median \NumDecBnusShare\% of the Tether
+dislocation (Figure~\ref{fig:which}b).
 
-On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per venue-year (\NumUDetFaBfxCount{} episodes),
-against \NumUBaseFaBfxTwo{} for the plain price-gap alarm (\NumUBaseFaBfxCount{}), at the same recall:
-\NumUDetCaught{} of \NumUDetCovered{} labelled episodes. The second-asset test keeps the gap alarm's recall and removes
-two thirds of its false alarms. At its fixed setting the trailing $z$-score caught every Bitfinex episode and raised
-\NumSBTwoRateBfx{} false alarm episodes per venue-year. On Binance.US, where the rule was fitted, the monitor caught all
-labelled episodes. On Coinbase it raised no alarm after \NumUCbLastAlarm{}. Its \NumUCbEpisodes{} alarm episodes all fall in
-the 2017 bubble (Appendix~\ref{app:windows}). Years of coverage differ by method (\NumSYearsDetBus{} against \NumSYearsBOneBus{} on Binance.US), because each rule is scored on the
-hours where it is defined, so false alarm rates are not simple ratios of the counts. We give no intervals, as the labelled
-episodes are few.
+\paragraph{Silvergate, Signature and USDC} The closure of Silvergate and Signature in March 2023 raised no alarm on
+Bitfinex, Coinbase or Binance.US (\NumUMarAlarmDays{} alarm days). A dislocation of the exchange dollar appeared only
+where rails closed with no substitute: Bitfinex in 2017--2018 and Binance.US from June 2023. In the March 2023 USDC
+run, the token component on Binance.US was \NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps. The token
+moved and the exchange dollar held (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on
+Bitstamp, and was at least 100 bps below par in \NumUUsdcHoursGeHundred{} hours.
 
-A pre-registered early-depeg test on \NumQTNScored{} events tied the pooled detector with two single-pair rules at an equal
-false-alarm rate (\NumQTFalseAlarmRateP{} per 1000 calm hours). Correcting the threshold-calibration rule after scoring made
-it worse.
 
-\paragraph{Chainlink.} A Chainlink feed that inherited the depeg would regress on its size with a slope up to the (unmeasured)
-share of USDC-quoted sources. The slope was \NumUOracleSlopeBtc{} for bitcoin and \NumUOracleSlopeEth{} for ether, against
-\NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the USDC feed. This is one episode and one oracle family.
-
-\paragraph{Alarm windows.}\label{app:windows} The \NumUCbEpisodes{} Coinbase alarm episodes fall between \NumUCbFirstAlarm{} and \NumUCbLastAlarm{}; Bitfinex's
-\NumUDetFaBfxCount{} false alarms fall in 2017, 2019 and 2022. None is labelled, so all count as false alarms.
+\section{What Was Fixed When}
+\label{app:fixed}
+Table~\ref{tab:fixed} records which results were pre-registered, locked or computed post hoc.
+\FloatBarrier
 
 \end{document}

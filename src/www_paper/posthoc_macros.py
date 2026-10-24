@@ -104,12 +104,9 @@ def table() -> str:
         rows.append("\\midrule")
     for name, c in d["controls"].items():
         rows.append(row(CTRL_LABEL[name], c["bootstrap"]["pooled"]))
-    return (f"{HEADER}\n\\begin{{table*}}[!tp]\n\\footnotesize\n"
-            "\\caption{Share of the mean-square cross-exchange gap removed (Bitfinex versus Coinbase), by withheld asset, "
-            "with 95\\% block-bootstrap intervals (blocks are ISO weeks; 1,000 draws). $b_1$: same-hour bitcoin gap; $b_2$: "
-            "same-hour median gap of the visible assets; Estimator: the fixed estimator; $\\Delta$: Estimator minus $b_2$. "
-            "Controls pool the withheld assets ETH, LTC, BCH, XLM, LINK and XRP over 2019--2023 for the pair named. "
-            "Scores are post-hoc and descriptive; the estimator was not changed.}\n"
+    return (f"{HEADER}\n\\begin{{table*}}[!t]\n\\footnotesize\n"
+            "\\caption{Share of the mean-square Bitfinex--Coinbase gap removed, by withheld asset, with 95\\% block-bootstrap "
+            "intervals. Scores are post hoc and descriptive; the estimator was not changed.}\n"
             "\\label{tab:heldout-ci}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}lllll@{}}\n\\toprule\n"
             "Asset & $b_1$ & $b_2$ & Estimator & $\\Delta$ vs $b_2$ \\\\\n\\midrule\n" + "\n".join(rows)
             + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")
