@@ -1,0 +1,137 @@
+{
+ "preregistration": "autoresearch/program_q2.md",
+ "scored_events": [
+  "E1",
+  "E2",
+  "E3",
+  "E4",
+  "E5",
+  "E6"
+ ],
+ "thresholds_bps": {
+  "tau_P": 162.34131599223537,
+  "tau_S1": 485.0816495955179,
+  "h_S2": 27370.5
+ },
+ "per_event": {
+  "E1": {
+   "scored": true,
+   "onset_utc": "2018-11-27 15:00:00+00:00",
+   "single_pair_market": "binance.USDT",
+   "lead_hours": {
+    "P": -72.0,
+    "S1": -66.0,
+    "S2": -15.0
+   }
+  },
+  "E2": {
+   "scored": true,
+   "onset_utc": "2019-04-20 03:00:00+00:00",
+   "single_pair_market": "binance.USDT",
+   "lead_hours": {
+    "P": null,
+    "S1": null,
+    "S2": 63.0
+   }
+  },
+  "E3": {
+   "scored": true,
+   "onset_utc": "2020-03-13 11:00:00+00:00",
+   "single_pair_market": "binance.USDT",
+   "lead_hours": {
+    "P": -9.0,
+    "S1": -9.0,
+    "S2": null
+   }
+  },
+  "E4": {
+   "scored": true,
+   "onset_utc": "2023-03-11 04:00:00+00:00",
+   "single_pair_market": "bitstamp.USDC",
+   "lead_hours": {
+    "P": 1.0,
+    "S1": 2.0,
+    "S2": null
+   }
+  },
+  "E5": {
+   "scored": true,
+   "onset_utc": "2024-01-08 12:00:00+00:00",
+   "single_pair_market": "binance.TUSD",
+   "lead_hours": {
+    "P": null,
+    "S1": null,
+    "S2": null
+   }
+  },
+  "E6": {
+   "scored": true,
+   "onset_utc": "2025-04-02 15:00:00+00:00",
+   "single_pair_market": "binance.FDUSD",
+   "lead_hours": {
+    "P": 0.0,
+    "S1": null,
+    "S2": null
+   }
+  }
+ },
+ "misses": {
+  "P": 2,
+  "S1": 3,
+  "S2": 4
+ },
+ "median_lead_hours": {
+  "P": 0.5,
+  "S1": 37.0,
+  "S2": 72.0
+ },
+ "median_lead_hours_detected_only": {
+  "P": -4.5,
+  "S1": -9.0,
+  "S2": 24.0
+ },
+ "miss_lead_convention_hours": 72,
+ "false_alarms_per_1000_calm_hours": {
+  "P": 0.9259259259259259,
+  "S1": 0.9259259259259259,
+  "S2": 0.9259259259259259
+ },
+ "bootstrap": {
+  "draws": 1000,
+  "seed": 20261023,
+  "unit": "event",
+  "n_events": 6,
+  "differences_hours": {
+   "P_minus_S1": {
+    "point": -36.5,
+    "ci95": [
+     -72.0,
+     0.0
+    ],
+    "mean_of_draws": -19.413
+   },
+   "P_minus_S2": {
+    "point": -71.5,
+    "ci95": [
+     -81.0,
+     9.0
+    ],
+    "mean_of_draws": -54.3515
+   }
+  }
+ },
+ "success_rule": {
+  "S1": {
+   "P_median_earlier": true,
+   "ci_upper_below_0": false,
+   "P_misses_not_more": true,
+   "outcome": "tie"
+  },
+  "S2": {
+   "P_median_earlier": true,
+   "ci_upper_below_0": false,
+   "P_misses_not_more": true,
+   "outcome": "tie"
+  }
+ }
+}
