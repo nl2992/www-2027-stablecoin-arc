@@ -1,0 +1,84 @@
+{
+ "preregistration": "autoresearch/program_q2.md",
+ "n_calm_hours": 4320,
+ "target_false_alarms_per_1000_calm_hours": 1.0,
+ "allowed_false_alarms": 4,
+ "events": {
+  "E1": {
+   "calm_hours": 720,
+   "single_pair_market": "binance.USDT",
+   "calm_first_utc": "2018-10-28 00:00:00+00:00",
+   "calm_last_utc": "2018-11-26 23:00:00+00:00",
+   "obs_hours": {
+    "P": 713,
+    "S1": 713
+   }
+  },
+  "E2": {
+   "calm_hours": 720,
+   "single_pair_market": "binance.USDT",
+   "calm_first_utc": "2019-03-21 00:00:00+00:00",
+   "calm_last_utc": "2019-04-19 23:00:00+00:00",
+   "obs_hours": {
+    "P": 720,
+    "S1": 720
+   }
+  },
+  "E3": {
+   "calm_hours": 720,
+   "single_pair_market": "binance.USDT",
+   "calm_first_utc": "2020-02-08 00:00:00+00:00",
+   "calm_last_utc": "2020-03-08 23:00:00+00:00",
+   "obs_hours": {
+    "P": 713,
+    "S1": 713
+   }
+  },
+  "E4": {
+   "calm_hours": 720,
+   "single_pair_market": "bitstamp.USDC",
+   "calm_first_utc": "2023-02-06 00:00:00+00:00",
+   "calm_last_utc": "2023-03-07 23:00:00+00:00",
+   "obs_hours": {
+    "P": 618,
+    "S1": 618
+   }
+  },
+  "E5": {
+   "calm_hours": 720,
+   "single_pair_market": "binance.TUSD",
+   "calm_first_utc": "2023-12-02 00:00:00+00:00",
+   "calm_last_utc": "2023-12-31 23:00:00+00:00",
+   "obs_hours": {
+    "P": 720,
+    "S1": 720
+   }
+  },
+  "E6": {
+   "calm_hours": 720,
+   "single_pair_market": "binance.FDUSD",
+   "calm_first_utc": "2025-03-02 00:00:00+00:00",
+   "calm_last_utc": "2025-03-31 23:00:00+00:00",
+   "obs_hours": {
+    "P": 720,
+    "S1": 720
+   }
+  }
+ },
+ "thresholds_bps": {
+  "tau_P": 162.34131599223537,
+  "tau_S1": 485.0816495955179,
+  "h_S2": 27370.5
+ },
+ "false_alarms": {
+  "P": 4,
+  "S1": 4,
+  "S2": 4
+ },
+ "realised_per_1000_calm_hours": {
+  "P": 0.9259259259259259,
+  "S1": 0.9259259259259259,
+  "S2": 0.9259259259259259
+ },
+ "note": "calm hours only; event windows not read"
+}
