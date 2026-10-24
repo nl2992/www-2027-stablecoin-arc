@@ -24,15 +24,17 @@ def allowed(n_calm: int) -> int:
 
 
 def calibrate_threshold(stats: list[pd.Series], n_calm: int) -> tuple[float, int]:
-    """Smallest tau with pooled episodes(|stat| >= tau) <= allowed. ``stats`` are calm-hour series (NaN = no observation)."""
+    """Smallest tau such that the pooled episodes(|stat| >= tau') <= allowed for every tau' >= tau (scan down from the top; the
+    episode count is not monotone in tau, e.g. a tiny tau gives one long run). ``stats`` are calm-hour series (NaN = no obs)."""
     cap = allowed(n_calm)
     vals = np.unique(np.abs(np.concatenate([s.dropna().to_numpy() for s in stats])))
-    for tau in vals:
+    best, best_n = (float(vals[-1]) + 1e-9 if len(vals) else 0.0), 0
+    for tau in vals[::-1]:
         n = sum(D.episodes(D.threshold_alarms(s, tau)) for s in stats)
-        if n <= cap:
-            return float(tau), int(n)
-    top = float(vals[-1]) if len(vals) else 0.0
-    return top + 1e-9, 0
+        if n > cap:
+            break
+        best, best_n = float(tau), int(n)
+    return best, best_n
 
 
 def calibrate_cusum(gaps: list[pd.Series], n_calm: int) -> tuple[float, int]:

@@ -9,8 +9,8 @@
   "E6"
  ],
  "thresholds_bps": {
-  "tau_P": 162.34131599223537,
-  "tau_S1": 485.0816495955179,
+  "tau_P": 445.32111924200547,
+  "tau_S1": 488.00222710140065,
   "h_S2": 27370.5
  },
  "per_event": {
@@ -19,7 +19,7 @@
    "onset_utc": "2018-11-27 15:00:00+00:00",
    "single_pair_market": "binance.USDT",
    "lead_hours": {
-    "P": -72.0,
+    "P": -65.0,
     "S1": -66.0,
     "S2": -15.0
    }
@@ -39,7 +39,7 @@
    "onset_utc": "2020-03-13 11:00:00+00:00",
    "single_pair_market": "binance.USDT",
    "lead_hours": {
-    "P": -9.0,
+    "P": null,
     "S1": -9.0,
     "S2": null
    }
@@ -49,7 +49,7 @@
    "onset_utc": "2023-03-11 04:00:00+00:00",
    "single_pair_market": "bitstamp.USDC",
    "lead_hours": {
-    "P": 1.0,
+    "P": 2.0,
     "S1": 2.0,
     "S2": null
    }
@@ -69,24 +69,24 @@
    "onset_utc": "2025-04-02 15:00:00+00:00",
    "single_pair_market": "binance.FDUSD",
    "lead_hours": {
-    "P": 0.0,
+    "P": null,
     "S1": null,
     "S2": null
    }
   }
  },
  "misses": {
-  "P": 2,
+  "P": 4,
   "S1": 3,
   "S2": 4
  },
  "median_lead_hours": {
-  "P": 0.5,
+  "P": 72.0,
   "S1": 37.0,
   "S2": 72.0
  },
  "median_lead_hours_detected_only": {
-  "P": -4.5,
+  "P": -31.5,
   "S1": -9.0,
   "S2": 24.0
  },
@@ -103,32 +103,32 @@
   "n_events": 6,
   "differences_hours": {
    "P_minus_S1": {
-    "point": -36.5,
+    "point": 35.0,
     "ci95": [
-     -72.0,
-     0.0
+     0.0,
+     81.0
     ],
-    "mean_of_draws": -19.413
+    "mean_of_draws": 22.83
    },
    "P_minus_S2": {
-    "point": -71.5,
+    "point": 0.0,
     "ci95": [
-     -81.0,
+     -70.0,
      9.0
     ],
-    "mean_of_draws": -54.3515
+    "mean_of_draws": -12.1085
    }
   }
  },
  "success_rule": {
   "S1": {
-   "P_median_earlier": true,
+   "P_median_earlier": false,
    "ci_upper_below_0": false,
-   "P_misses_not_more": true,
+   "P_misses_not_more": false,
    "outcome": "tie"
   },
   "S2": {
-   "P_median_earlier": true,
+   "P_median_earlier": false,
    "ci_upper_below_0": false,
    "P_misses_not_more": true,
    "outcome": "tie"
