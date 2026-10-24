@@ -30,3 +30,7 @@ Scope: body and appendices of `paper/main.tex` and `paper/generated/theory_secti
 26. Table order. The two appendix tables on the unit diagnostic and the robustness evaluation now sit before Appendix A in the source so that the floats fit in 12 pages. Only table numbers shift in the PDF.
 
 Banned constructions: none remain in `main.tex` or `theory_section.tex` (checked by search for "rather than", "instead", "not ... but", ", not").
+
+## Author decision (2026-10-24)
+
+All 26 flagged edits accepted as written.
