@@ -1,0 +1,4945 @@
+{
+ "rule": {
+  "coverage_min": 0.8,
+  "last_month": "2025-09",
+  "stress": "median over the month's hours of |L - median_month(L)| >= 25 bps; L only, never D",
+  "stress_bps": 25.0
+ },
+ "units": {
+  "binance-ARS": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 20,
+    "excluded_no_L": 0,
+    "stress": 8
+   },
+   "fiat": "ARS",
+   "months": {
+    "2023-06": {
+     "coverage": {
+      "BTC": 0.3083,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-07": {
+     "coverage": {
+      "BTC": 0.9798,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-08": {
+     "coverage": {
+      "BTC": 0.996,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-09": {
+     "coverage": {
+      "BTC": 0.9889,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-10": {
+     "coverage": {
+      "BTC": 0.9892,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-11": {
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-12": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-01": {
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-02": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2024-03": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-04": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-05": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-06": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-07": {
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.3978,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8427,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 55.4654
+    },
+    "2024-09": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.7125,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-10": {
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.6734,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-11": {
+     "L_hours": 718,
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.8111,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 131.0195
+    },
+    "2024-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8669,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 387.2324
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8401,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 54.5275
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8304,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 60.8748
+    },
+    "2025-03": {
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.7608,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-04": {
+     "coverage": {
+      "BTC": 0.9944,
+      "ETH": 0.7653,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-05": {
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.7151,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-06": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.7556,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8414,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 107.3918
+    },
+    "2025-08": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8616,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 105.6531
+    },
+    "2025-09": {
+     "L_hours": 716,
+     "coverage": {
+      "BTC": 0.9944,
+      "ETH": 0.8792,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 253.2903
+    }
+   },
+   "venue": "binance"
+  },
+  "binance-BRL": {
+   "counts": {
+    "calm": 2,
+    "excluded_coverage": 1,
+    "excluded_no_L": 0,
+    "stress": 57
+   },
+   "fiat": "BRL",
+   "months": {
+    "2020-10": {
+     "coverage": {
+      "BTC": 0.5712,
+      "ETH": 0.0336,
+      "USDT": 0.5591
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.9014,
+      "USDT": 0.9833
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 109.3374
+    },
+    "2020-12": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9677,
+      "USDT": 0.9892
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 127.3442
+    },
+    "2021-01": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 146.0448
+    },
+    "2021-02": {
+     "L_hours": 670,
+     "coverage": {
+      "BTC": 0.997,
+      "ETH": 0.997,
+      "USDT": 0.997
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 74.4676
+    },
+    "2021-03": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9987,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 114.8893
+    },
+    "2021-04": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.9931,
+      "USDT": 0.9931
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 106.8278
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 88.8509
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 95.5193
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 97.2122
+    },
+    "2021-08": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9946,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 68.6094
+    },
+    "2021-09": {
+     "L_hours": 718,
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.9972,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 116.1229
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 111.0978
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 82.9866
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.7295
+    },
+    "2022-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 135.2004
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 120.5553
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 126.4821
+    },
+    "2022-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 93.6354
+    },
+    "2022-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 231.5603
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 193.2165
+    },
+    "2022-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 102.2798
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 87.7833
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 77.8465
+    },
+    "2022-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 75.9626
+    },
+    "2022-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 124.4298
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 52.702
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 139.9232
+    },
+    "2023-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 42.2314
+    },
+    "2023-03": {
+     "L_hours": 742,
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.9973,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 80.6241
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 69.2357
+    },
+    "2023-05": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 44.1141
+    },
+    "2023-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 130.9714
+    },
+    "2023-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 61.8462
+    },
+    "2023-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 40.6329
+    },
+    "2023-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 59.0059
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 65.4146
+    },
+    "2023-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 29.7539
+    },
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 50.9725
+    },
+    "2024-01": {
+     "L_hours": 738,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 49.4137
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 696,
+     "status": "calm",
+     "stress_stat_bps": 22.7464
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 37.3676
+    },
+    "2024-04": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 128.3075
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 63.1505
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 95.9498
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 153.4941
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 95.0664
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 136.8982
+    },
+    "2024-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 122.7263
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 59.7087
+    },
+    "2024-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 126.3864
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 129.1923
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 67.5815
+    },
+    "2025-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 79.1778
+    },
+    "2025-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 98.973
+    },
+    "2025-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 19.9712
+    },
+    "2025-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 78.5511
+    },
+    "2025-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 52.5117
+    },
+    "2025-08": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.2057
+    },
+    "2025-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 84.6396
+    }
+   },
+   "venue": "binance"
+  },
+  "binance-NGN": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 68,
+    "excluded_no_L": 0,
+    "stress": 4
+   },
+   "fiat": "NGN",
+   "months": {
+    "2019-10": {
+     "coverage": {
+      "BTC": 0.2151,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "BTC": 0.9014,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "BTC": 0.9422,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "BTC": 0.957,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "BTC": 0.9813,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "coverage": {
+      "BTC": 0.9958,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.1183,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-09": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 0.6528
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-10": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9987,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 53.9153
+    },
+    "2020-11": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.9986,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 237.6249
+    },
+    "2020-12": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9933,
+      "USDT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 84.1439
+    },
+    "2021-01": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 39.9329
+    },
+    "2021-02": {
+     "coverage": {
+      "BTC": 0.997,
+      "ETH": 0.3036,
+      "USDT": 0.997
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2021-03": {
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.0,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-04": {
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.0,
+      "USDT": 0.9917
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-05": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-06": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-07": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-08": {
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.0,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-09": {
+     "coverage": {
+      "BTC": 0.9958,
+      "ETH": 0.0,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-10": {
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.0,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-11": {
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-12": {
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.0,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-01": {
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-02": {
+     "coverage": {
+      "BTC": 0.9896,
+      "ETH": 0.0,
+      "USDT": 0.9926
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2022-03": {
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.0,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-04": {
+     "coverage": {
+      "BTC": 0.0042,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-10": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-11": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-12": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-01": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-02": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2023-03": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-04": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-06": {
+     "coverage": {
+      "BTC": 0.7208,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-07": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-08": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-09": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-10": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-11": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-12": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-01": {
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-02": {
+     "coverage": {
+      "BTC": 0.9971,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2024-03": {
+     "coverage": {
+      "BTC": 0.1962,
+      "ETH": 0.0,
+      "USDT": 0.1976
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-04": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-10": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-11": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-12": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-01": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-02": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2025-03": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-04": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    }
+   },
+   "venue": "binance"
+  },
+  "binance-RUB": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 24,
+    "excluded_no_L": 0,
+    "stress": 46
+   },
+   "fiat": "RUB",
+   "months": {
+    "2019-12": {
+     "coverage": {
+      "BTC": 0.8522,
+      "ETH": 0.6868,
+      "USDT": 0.1895
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "L_hours": 707,
+     "coverage": {
+      "BTC": 0.9503,
+      "ETH": 0.8656,
+      "USDT": 0.9435
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 51.6326
+    },
+    "2020-02": {
+     "L_hours": 687,
+     "coverage": {
+      "BTC": 0.9871,
+      "ETH": 0.9382,
+      "USDT": 0.9842
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 71.1869
+    },
+    "2020-03": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9758,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 389.7646
+    },
+    "2020-04": {
+     "L_hours": 716,
+     "coverage": {
+      "BTC": 0.9944,
+      "ETH": 0.9625,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 85.7503
+    },
+    "2020-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9919,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 168.1536
+    },
+    "2020-06": {
+     "L_hours": 717,
+     "coverage": {
+      "BTC": 0.9958,
+      "ETH": 0.9944,
+      "USDT": 0.9944
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 86.8078
+    },
+    "2020-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9933,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 59.1472
+    },
+    "2020-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 90.1093
+    },
+    "2020-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 92.0997
+    },
+    "2020-10": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 155.9418
+    },
+    "2020-11": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.9986,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 80.4159
+    },
+    "2020-12": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9933,
+      "USDT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 65.4156
+    },
+    "2021-01": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 98.7075
+    },
+    "2021-02": {
+     "L_hours": 670,
+     "coverage": {
+      "BTC": 0.997,
+      "ETH": 0.997,
+      "USDT": 0.997
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 80.6875
+    },
+    "2021-03": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9987,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 115.3736
+    },
+    "2021-04": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.9917,
+      "USDT": 0.9917
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 88.7002
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 34.2488
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 64.7871
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 56.7307
+    },
+    "2021-08": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9946,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.609
+    },
+    "2021-09": {
+     "L_hours": 718,
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.9972,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 33.9679
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 87.6181
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 202.2483
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 37.7422
+    },
+    "2022-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 156.9445
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 141.6747
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 675.4518
+    },
+    "2022-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 330.1793
+    },
+    "2022-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 405.3462
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 499.9456
+    },
+    "2022-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 335.169
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 93.6883
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 71.7372
+    },
+    "2022-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.996,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 66.013
+    },
+    "2022-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9986,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 70.7176
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9987,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 394.1064
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.996,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 141.7023
+    },
+    "2023-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9955,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 160.7177
+    },
+    "2023-03": {
+     "L_hours": 742,
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.9946,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 57.7302
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 96.7901
+    },
+    "2023-05": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9987,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 77.7951
+    },
+    "2023-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 103.6744
+    },
+    "2023-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9973,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 61.4349
+    },
+    "2023-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9973,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 89.7963
+    },
+    "2023-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9944,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 60.4404
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9879,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 209.1763
+    },
+    "2023-11": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.6319,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-12": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-01": {
+     "coverage": {
+      "BTC": 0.9409,
+      "ETH": 0.0,
+      "USDT": 0.9449
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-02": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2024-03": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-04": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-10": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-11": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-12": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-01": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-02": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2025-03": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-04": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    }
+   },
+   "venue": "binance"
+  },
+  "binance-TRY": {
+   "counts": {
+    "calm": 6,
+    "excluded_coverage": 3,
+    "excluded_no_L": 0,
+    "stress": 61
+   },
+   "fiat": "TRY",
+   "months": {
+    "2019-12": {
+     "coverage": {
+      "BTC": 0.2406,
+      "ETH": 0.0565,
+      "USDT": 0.1263
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "BTC": 0.8522,
+      "ETH": 0.5914,
+      "USDT": 0.8253
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "BTC": 0.9526,
+      "ETH": 0.7845,
+      "USDT": 0.9511
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "L_hours": 731,
+     "coverage": {
+      "BTC": 0.9825,
+      "ETH": 0.9624,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 256.3718
+    },
+    "2020-04": {
+     "L_hours": 717,
+     "coverage": {
+      "BTC": 0.9958,
+      "ETH": 0.9597,
+      "USDT": 0.9958
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 168.4163
+    },
+    "2020-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9718,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 164.0149
+    },
+    "2020-06": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.9181,
+      "USDT": 0.9944
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 80.0373
+    },
+    "2020-07": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9503,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 27.9227
+    },
+    "2020-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9973,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 104.6172
+    },
+    "2020-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9875,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 66.5809
+    },
+    "2020-10": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9812,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 84.2361
+    },
+    "2020-11": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.9944,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 280.4886
+    },
+    "2020-12": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9933,
+      "USDT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 109.6513
+    },
+    "2021-01": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 86.4435
+    },
+    "2021-02": {
+     "L_hours": 670,
+     "coverage": {
+      "BTC": 0.997,
+      "ETH": 0.997,
+      "USDT": 0.997
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 82.866
+    },
+    "2021-03": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9987,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 217.2434
+    },
+    "2021-04": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.9931,
+      "USDT": 0.9917
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 64.2032
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 111.5959
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 105.3124
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 62.8921
+    },
+    "2021-08": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9946,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.3698
+    },
+    "2021-09": {
+     "L_hours": 718,
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.9972,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 211.2615
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 364.0101
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 561.7489
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 569.686
+    },
+    "2022-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 96.2462
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 88.1083
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 77.1757
+    },
+    "2022-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 44.8794
+    },
+    "2022-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 223.9494
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 170.5332
+    },
+    "2022-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 170.8786
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 84.9014
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 56.2572
+    },
+    "2022-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 29.8888
+    },
+    "2022-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 34.5084
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 20.4079
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 33.4471
+    },
+    "2023-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 33.134
+    },
+    "2023-03": {
+     "L_hours": 742,
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.9973,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 43.1044
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 225.7791
+    },
+    "2023-05": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 88.3624
+    },
+    "2023-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 338.9512
+    },
+    "2023-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 152.3329
+    },
+    "2023-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 28.5765
+    },
+    "2023-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "calm",
+     "stress_stat_bps": 23.8938
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 58.5485
+    },
+    "2023-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 54.9843
+    },
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 70.5461
+    },
+    "2024-01": {
+     "L_hours": 738,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 33.3889
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 87.6934
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 99.2424
+    },
+    "2024-04": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 62.6945
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 18.7539
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 112.4046
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 30.5815
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 61.2185
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "calm",
+     "stress_stat_bps": 20.4923
+    },
+    "2024-10": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 10.5417
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 27.1895
+    },
+    "2024-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 63.954
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.5506
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 50.6188
+    },
+    "2025-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 65.5369
+    },
+    "2025-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "calm",
+     "stress_stat_bps": 19.8617
+    },
+    "2025-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 46.9926
+    },
+    "2025-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 48.5351
+    },
+    "2025-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.4091
+    },
+    "2025-08": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.4431
+    },
+    "2025-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 25.3837
+    }
+   },
+   "venue": "binance"
+  },
+  "binance-UAH": {
+   "counts": {
+    "calm": 3,
+    "excluded_coverage": 31,
+    "excluded_no_L": 0,
+    "stress": 30
+   },
+   "fiat": "UAH",
+   "months": {
+    "2020-06": {
+     "coverage": {
+      "BTC": 0.1569,
+      "ETH": 0.0,
+      "USDT": 0.1736
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "coverage": {
+      "BTC": 0.832,
+      "ETH": 0.0,
+      "USDT": 0.8441
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "coverage": {
+      "BTC": 0.9503,
+      "ETH": 0.0,
+      "USDT": 0.9798
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-09": {
+     "coverage": {
+      "BTC": 0.9653,
+      "ETH": 0.0,
+      "USDT": 0.9931
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-10": {
+     "coverage": {
+      "BTC": 0.9772,
+      "ETH": 0.0,
+      "USDT": 0.9879
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.0,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-12": {
+     "coverage": {
+      "BTC": 0.9892,
+      "ETH": 0.0,
+      "USDT": 0.9933
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-01": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-02": {
+     "coverage": {
+      "BTC": 0.997,
+      "ETH": 0.0,
+      "USDT": 0.997
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2021-03": {
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.0,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-04": {
+     "coverage": {
+      "BTC": 0.9917,
+      "ETH": 0.0,
+      "USDT": 0.9931
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-05": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.1156,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9986,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 39.851
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 23.0891
+    },
+    "2021-08": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9933,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 33.3403
+    },
+    "2021-09": {
+     "L_hours": 718,
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.9972,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 28.9419
+    },
+    "2021-10": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 28.2415
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 140.9017
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 110.4399
+    },
+    "2022-01": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9987,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 179.5698
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 117.0517
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 167.3153
+    },
+    "2022-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 44.1032
+    },
+    "2022-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9987,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 363.9891
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 73.2717
+    },
+    "2022-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 553.2474
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.1411
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 98.1344
+    },
+    "2022-10": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9879,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 76.3704
+    },
+    "2022-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9944,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 64.8242
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9825,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.194
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9906,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 49.2051
+    },
+    "2023-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9926,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "calm",
+     "stress_stat_bps": 17.1987
+    },
+    "2023-03": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9476,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 29.0137
+    },
+    "2023-04": {
+     "L_hours": 713,
+     "coverage": {
+      "BTC": 0.9903,
+      "ETH": 0.9458,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 76.2418
+    },
+    "2023-05": {
+     "L_hours": 728,
+     "coverage": {
+      "BTC": 0.9798,
+      "ETH": 0.8871,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 65.8229
+    },
+    "2023-06": {
+     "L_hours": 708,
+     "coverage": {
+      "BTC": 0.9833,
+      "ETH": 0.8764,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "calm",
+     "stress_stat_bps": 23.5769
+    },
+    "2023-07": {
+     "L_hours": 716,
+     "coverage": {
+      "BTC": 0.9624,
+      "ETH": 0.8589,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.5322
+    },
+    "2023-08": {
+     "L_hours": 696,
+     "coverage": {
+      "BTC": 0.9355,
+      "ETH": 0.8589,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 53.1826
+    },
+    "2023-09": {
+     "L_hours": 679,
+     "coverage": {
+      "BTC": 0.9431,
+      "ETH": 0.8375,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 40.8474
+    },
+    "2023-10": {
+     "coverage": {
+      "BTC": 0.9597,
+      "ETH": 0.7997,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-11": {
+     "L_hours": 705,
+     "coverage": {
+      "BTC": 0.9792,
+      "ETH": 0.8583,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 48.2449
+    },
+    "2023-12": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 0.9677,
+      "ETH": 0.8239,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 97.7267
+    },
+    "2024-01": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9745,
+      "ETH": 0.8575,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 59.6372
+    },
+    "2024-02": {
+     "L_hours": 683,
+     "coverage": {
+      "BTC": 0.9813,
+      "ETH": 0.8894,
+      "USDT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 39.4474
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9153,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 79.9669
+    },
+    "2024-04": {
+     "coverage": {
+      "BTC": 0.9764,
+      "ETH": 0.7889,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-05": {
+     "coverage": {
+      "BTC": 0.9073,
+      "ETH": 0.6465,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-06": {
+     "coverage": {
+      "BTC": 0.9458,
+      "ETH": 0.5403,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-07": {
+     "coverage": {
+      "BTC": 0.8831,
+      "ETH": 0.5766,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-08": {
+     "coverage": {
+      "BTC": 0.8884,
+      "ETH": 0.5847,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-09": {
+     "coverage": {
+      "BTC": 0.8861,
+      "ETH": 0.5375,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-10": {
+     "coverage": {
+      "BTC": 0.8817,
+      "ETH": 0.5013,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-11": {
+     "coverage": {
+      "BTC": 0.9444,
+      "ETH": 0.6347,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-12": {
+     "coverage": {
+      "BTC": 0.918,
+      "ETH": 0.5968,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-01": {
+     "coverage": {
+      "BTC": 0.9234,
+      "ETH": 0.5739,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-02": {
+     "coverage": {
+      "BTC": 0.9494,
+      "ETH": 0.628,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2025-03": {
+     "coverage": {
+      "BTC": 0.9005,
+      "ETH": 0.0,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-04": {
+     "coverage": {
+      "BTC": 0.9097,
+      "ETH": 0.0,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-05": {
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-06": {
+     "coverage": {
+      "BTC": 0.9694,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-07": {
+     "coverage": {
+      "BTC": 0.9247,
+      "ETH": 0.0,
+      "USDT": 0.9973
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-08": {
+     "coverage": {
+      "BTC": 0.9247,
+      "ETH": 0.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-09": {
+     "coverage": {
+      "BTC": 0.8611,
+      "ETH": 0.0,
+      "USDT": 0.9972
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    }
+   },
+   "venue": "binance"
+  },
+  "binance-ZAR": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 45,
+    "excluded_no_L": 0,
+    "stress": 22
+   },
+   "fiat": "ZAR",
+   "months": {
+    "2020-03": {
+     "coverage": {
+      "BTC": 0.1277,
+      "ETH": 0.0887,
+      "USDT": 0.1344
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "BTC": 0.8653,
+      "ETH": 0.5778,
+      "USDT": 0.8125
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "BTC": 0.9046,
+      "ETH": 0.5753,
+      "USDT": 0.836
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "coverage": {
+      "BTC": 0.7917,
+      "ETH": 0.5569,
+      "USDT": 0.6708
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "coverage": {
+      "BTC": 0.797,
+      "ETH": 0.6492,
+      "USDT": 0.7473
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 0.996,
+      "ETH": 0.9691,
+      "USDT": 0.9274
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 102.7485
+    },
+    "2020-09": {
+     "L_hours": 713,
+     "coverage": {
+      "BTC": 0.9903,
+      "ETH": 0.8542,
+      "USDT": 0.8875
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 93.9087
+    },
+    "2020-10": {
+     "coverage": {
+      "BTC": 0.9798,
+      "ETH": 0.5874,
+      "USDT": 0.8306
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.7375,
+      "USDT": 0.9153
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-12": {
+     "coverage": {
+      "BTC": 0.9745,
+      "ETH": 0.7419,
+      "USDT": 0.9476
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-01": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.8522,
+      "USDT": 0.9785
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 103.1789
+    },
+    "2021-02": {
+     "L_hours": 667,
+     "coverage": {
+      "BTC": 0.9926,
+      "ETH": 0.8735,
+      "USDT": 0.9866
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 124.3229
+    },
+    "2021-03": {
+     "coverage": {
+      "BTC": 0.9664,
+      "ETH": 0.7957,
+      "USDT": 0.9772
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-04": {
+     "coverage": {
+      "BTC": 0.0444,
+      "ETH": 0.0444,
+      "USDT": 0.0472
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-10": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-11": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-12": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-01": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-02": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2022-03": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-04": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-05": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-06": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-07": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-08": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-09": {
+     "coverage": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-10": {
+     "coverage": {
+      "BTC": 0.8952,
+      "ETH": 0.6452,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-11": {
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.8708,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-12": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.7876,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-01": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.8656,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-02": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9182,
+      "USDT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2023-03": {
+     "coverage": {
+      "BTC": 0.9973,
+      "ETH": 0.9073,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-04": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9431,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-05": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.918,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-06": {
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.9069,
+      "USDT": 0.7208
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-07": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9664,
+      "ETH": 0.8548,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 150.2586
+    },
+    "2023-08": {
+     "L_hours": 727,
+     "coverage": {
+      "BTC": 0.9772,
+      "ETH": 0.9059,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 64.8919
+    },
+    "2023-09": {
+     "L_hours": 696,
+     "coverage": {
+      "BTC": 0.9667,
+      "ETH": 0.9361,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 40.3512
+    },
+    "2023-10": {
+     "L_hours": 734,
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.9315,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 57.6598
+    },
+    "2023-11": {
+     "L_hours": 713,
+     "coverage": {
+      "BTC": 0.9903,
+      "ETH": 0.9208,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 53.4222
+    },
+    "2023-12": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9503,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.938
+    },
+    "2024-01": {
+     "L_hours": 733,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.8884,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 36.0999
+    },
+    "2024-02": {
+     "L_hours": 691,
+     "coverage": {
+      "BTC": 0.9928,
+      "ETH": 0.931,
+      "USDT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 38.5736
+    },
+    "2024-03": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9892,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 26.8219
+    },
+    "2024-04": {
+     "L_hours": 710,
+     "coverage": {
+      "BTC": 0.9931,
+      "ETH": 0.9819,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 68.2773
+    },
+    "2024-05": {
+     "L_hours": 734,
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.9288,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 93.7791
+    },
+    "2024-06": {
+     "L_hours": 714,
+     "coverage": {
+      "BTC": 0.9917,
+      "ETH": 0.9111,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 97.6625
+    },
+    "2024-07": {
+     "L_hours": 734,
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.9489,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 34.6894
+    },
+    "2024-08": {
+     "L_hours": 721,
+     "coverage": {
+      "BTC": 0.9691,
+      "ETH": 0.8911,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 123.5341
+    },
+    "2024-09": {
+     "L_hours": 704,
+     "coverage": {
+      "BTC": 0.9778,
+      "ETH": 0.8792,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 122.067
+    },
+    "2024-10": {
+     "L_hours": 737,
+     "coverage": {
+      "BTC": 0.9906,
+      "ETH": 0.8427,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 39.6263
+    },
+    "2024-11": {
+     "L_hours": 716,
+     "coverage": {
+      "BTC": 0.9944,
+      "ETH": 0.8819,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 86.49
+    },
+    "2024-12": {
+     "L_hours": 738,
+     "coverage": {
+      "BTC": 0.9919,
+      "ETH": 0.8898,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 104.4539
+    },
+    "2025-01": {
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.797,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-02": {
+     "coverage": {
+      "BTC": 0.9732,
+      "ETH": 0.7738,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2025-03": {
+     "coverage": {
+      "BTC": 0.9852,
+      "ETH": 0.7124,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-04": {
+     "coverage": {
+      "BTC": 0.9889,
+      "ETH": 0.7333,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-05": {
+     "coverage": {
+      "BTC": 0.9919,
+      "ETH": 0.7272,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-06": {
+     "coverage": {
+      "BTC": 0.9972,
+      "ETH": 0.6875,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2025-07": {
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.6935,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-08": {
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.7728,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-09": {
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.6069,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    }
+   },
+   "venue": "binance"
+  },
+  "bithumb-KRW": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 0,
+    "excluded_no_L": 0,
+    "stress": 22
+   },
+   "fiat": "KRW",
+   "months": {
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 0.8024
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 96.0792
+    },
+    "2024-01": {
+     "L_hours": 738,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 55.7955
+    },
+    "2024-02": {
+     "L_hours": 693,
+     "coverage": {
+      "BTC": 0.9957,
+      "ETH": 0.9986,
+      "USDT": 0.9957
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 55.9492
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 145.5964
+    },
+    "2024-04": {
+     "L_hours": 715,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 94.0128
+    },
+    "2024-05": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9919,
+      "USDT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 64.3311
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 28.9501
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 44.391
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 154.9662
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 0.9986,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 74.5849
+    },
+    "2024-10": {
+     "L_hours": 739,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9919,
+      "USDT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 80.433
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 51.6001
+    },
+    "2024-12": {
+     "L_hours": 738,
+     "coverage": {
+      "BTC": 0.9919,
+      "ETH": 0.9906,
+      "USDT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 318.4024
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 78.2011
+    },
+    "2025-02": {
+     "L_hours": 668,
+     "coverage": {
+      "BTC": 0.994,
+      "ETH": 0.994,
+      "USDT": 0.994
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 202.4682
+    },
+    "2025-03": {
+     "L_hours": 734,
+     "coverage": {
+      "BTC": 0.9866,
+      "ETH": 0.9866,
+      "USDT": 0.9866
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 54.3137
+    },
+    "2025-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 68.9441
+    },
+    "2025-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 80.5962
+    },
+    "2025-06": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 65.0201
+    },
+    "2025-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 29.368
+    },
+    "2025-08": {
+     "L_hours": 738,
+     "coverage": {
+      "BTC": 0.9933,
+      "ETH": 0.9933,
+      "USDT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.6157
+    },
+    "2025-09": {
+     "L_hours": 719,
+     "coverage": {
+      "BTC": 0.9986,
+      "ETH": 0.9986,
+      "USDT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 48.8151
+    }
+   },
+   "venue": "bithumb"
+  },
+  "upbit-KRW": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 7,
+    "excluded_no_L": 0,
+    "stress": 15
+   },
+   "fiat": "KRW",
+   "months": {
+    "2023-12": {
+     "coverage": {
+      "BTC": 0.9879,
+      "ETH": 0.9892,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-01": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-02": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 0.0
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2024-03": {
+     "coverage": {
+      "BTC": 0.996,
+      "ETH": 0.996,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-04": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-05": {
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-06": {
+     "coverage": {
+      "BTC": 0.9958,
+      "ETH": 0.9958,
+      "USDT": 0.7819
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.5765
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 153.905
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 76.0162
+    },
+    "2024-10": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9946,
+      "USDT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 84.5042
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 54.1184
+    },
+    "2024-12": {
+     "L_hours": 741,
+     "coverage": {
+      "BTC": 0.996,
+      "ETH": 0.996,
+      "USDT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 318.743
+    },
+    "2025-01": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9987,
+      "ETH": 0.9987,
+      "USDT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 78.0684
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 202.3992
+    },
+    "2025-03": {
+     "L_hours": 740,
+     "coverage": {
+      "BTC": 0.9946,
+      "ETH": 0.9933,
+      "USDT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 56.1285
+    },
+    "2025-04": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 70.5397
+    },
+    "2025-05": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 81.572
+    },
+    "2025-06": {
+     "L_hours": 716,
+     "coverage": {
+      "BTC": 0.9944,
+      "ETH": 0.9944,
+      "USDT": 0.9944
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 64.5011
+    },
+    "2025-07": {
+     "L_hours": 744,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.9817
+    },
+    "2025-08": {
+     "L_hours": 743,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 46.5506
+    },
+    "2025-09": {
+     "L_hours": 720,
+     "coverage": {
+      "BTC": 1.0,
+      "ETH": 1.0,
+      "USDT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 48.5096
+    }
+   },
+   "venue": "upbit"
+  }
+ }
+}
