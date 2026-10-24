@@ -238,7 +238,8 @@ def robustness_forest(out: Path, path: Path = ROBUSTNESS) -> Path:
     """Supports: the netted unit-offset estimate stays close to one across windows, instrument sets and references, and is far from zero."""
     rows = forest_rows(path)
     with _rc():
-        fig, (a0, a1) = plt.subplots(1, 2, figsize=(SINGLE, 3.2), sharey=True, gridspec_kw={"width_ratios": [1, 8], "wspace": 0.05})
+        plt.rcParams.update({"ytick.labelsize": 8, "xtick.labelsize": 8, "legend.fontsize": 7.5})
+        fig, (a0, a1) = plt.subplots(1, 2, figsize=(SINGLE, 3.5), sharey=True, gridspec_kw={"width_ratios": [1, 8], "wspace": 0.05})
         y, ticks, names, bold = 0.0, [], [], []
         for factor, title in FOREST_FACTORS:
             ticks.append(y)
@@ -247,8 +248,8 @@ def robustness_forest(out: Path, path: Path = ROBUSTNESS) -> Path:
             y += 1.0
             for row in [r for r in rows if r["factor"] == factor]:
                 color, marker = (VERMILION, "D") if row["headline"] else (BLUE, "o")
-                a1.plot([row["lo"], row["hi"]], [y, y], color=color, linewidth=1.3, solid_capstyle="butt")
-                a1.plot([row["lam"]], [y], marker=marker, color=color, markersize=3.6 if row["headline"] else 3.2, markeredgewidth=0)
+                a1.plot([row["lo"], row["hi"]], [y, y], color=color, linewidth=1.5, solid_capstyle="butt")
+                a1.plot([row["lam"]], [y], marker=marker, color=color, markersize=4.4 if row["headline"] else 3.8, markeredgewidth=0)
                 ticks.append(y)
                 names.append("  " + LEVEL_LABELS[row["level"]])
                 bold.append(False)
@@ -268,12 +269,12 @@ def robustness_forest(out: Path, path: Path = ROBUSTNESS) -> Path:
         a0.set_xlim(-0.04, 0.04)
         a0.set_xticks([0])
         a1.spines["left"].set_visible(False)
-        fig.supxlabel("$\\hat\\lambda$ (GMM, 95% weekly-block bootstrap interval)", fontsize=7, y=-0.03)
+        fig.supxlabel("$\\hat\\lambda$ (GMM, 95% weekly-block bootstrap interval)", fontsize=8, y=-0.03)
         a1.plot([], [], color=BLACK, linestyle="--", linewidth=0.8, label="$\\lambda=1$")
         a1.plot([], [], color=BLACK, linestyle=":", linewidth=0.8, label="$\\lambda=0$ (left scale)")
-        a1.plot([], [], marker="D", color=VERMILION, linestyle="none", markersize=3.6, label="headline cell")
+        a1.plot([], [], marker="D", color=VERMILION, linestyle="none", markersize=4.4, label="headline cell")
         a1.legend(loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=3, frameon=False, handlelength=1.4, handletextpad=0.3,
-                  columnspacing=0.8, borderaxespad=0.2, fontsize=6)
+                  columnspacing=0.8, borderaxespad=0.2, fontsize=7)
     return _save(fig, out)
 
 

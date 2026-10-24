@@ -167,6 +167,7 @@ def test_committed_outputs_are_consistent_and_fresh():
 def test_generated_tex_matches_reports():
     assert (ROOT / "paper/generated/theory_numbers.tex").read_text() == theory_macros.numbers()
     assert (ROOT / "paper/generated/theory_table.tex").read_text() == theory_macros.table()
+    assert (ROOT / "paper/generated/sim_table.tex").read_text() == theory_macros.sim_table()
     sec = (ROOT / "paper/generated/theory_section.tex").read_text()
     import re
     names = set(re.findall(r"\\(NumG[A-Za-z]+)", sec))
