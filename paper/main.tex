@@ -16,6 +16,7 @@
 \input{generated/robust_anchor_numbers}
 \input{generated/kimchi_numbers}
 \input{generated/q1_numbers}
+\input{generated/q2_numbers}
 \input{generated/fig_captions_v9}
 \usepackage{tikz}\usetikzlibrary{arrows.meta}
 
@@ -46,6 +47,19 @@ to 2023 (pooled; median over assets \NumRMedTestEstAssetMedian{}). Across three 
 \NumBStableXOneFuser{} of the median's). In a pre-registered follow-up on untouched events (three USDT events) where most
 volume shared a stablecoin unit that moved, a frozen unit-aware fuser beat the median, unit conversion and CRH.
 \end{abstract}
+
+% CCS concepts: IDs entered from memory; verify at https://dl.acm.org/ccs before submission.
+\begin{CCSXML}
+<ccs2012>
+<concept><concept_id>10010405.10003550</concept_id><concept_desc>Applied computing~Electronic commerce</concept_desc><concept_significance>500</concept_significance></concept>
+<concept><concept_id>10010405.10010455.10010460</concept_id><concept_desc>Applied computing~Economics</concept_desc><concept_significance>300</concept_significance></concept>
+<concept><concept_id>10002951.10003227.10003351</concept_id><concept_desc>Information systems~Data mining</concept_desc><concept_significance>300</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Applied computing~Electronic commerce}
+\ccsdesc[300]{Applied computing~Economics}
+\ccsdesc[300]{Information systems~Data mining}
+\keywords{price fusion, unit of account, stablecoins, identification, truth discovery, cryptocurrency exchanges}
 
 \maketitle
 
@@ -465,6 +479,12 @@ The anchor is fixed in the true unit only up to USDT's redemption risk, which Kr
 ledger is outside Bitfinex's, and it exists on Bitfinex only from 2018-11-27. When two of three exchanges share a biased
 unit, prices alone cannot say which is true. The fee bands, monitor labels and oracle check are thin.
 
+% AUTHOR DECISION REQUIRED (GenAI disclosure): ACM policy requires that generative-AI use to create
+% content be disclosed in the end-matter credits section; WWW 2027 says LLMs may help rephrase text but authors are
+% solely responsible. Such a section is not allowed in the anonymous submission, so decide the wording
+% and place (camera-ready only vs. a neutral statement) yourself. Do not fill in without the author.
+\paragraph{Ethics.} The study uses only public exchange price files and public chain data; it involves no human participants or personal data.
+
 \paragraph{Reproducibility.} Every number is a macro generated from committed reports and logs, and tests fail if one is stale or typed by hand. Inputs are free public files recorded by hash.
 
 \FloatBarrier
@@ -650,8 +670,7 @@ across assets: the first-order autocorrelation of the daily Bitfinex gap was bet
 the two, not the explained share of Table~\ref{tab:unit_diag}) was between \NumNBfxBstCommonDailyMin{} and
 \NumNBfxBstCommonDailyMax{}. The hourly explained share was between \NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{} with
 hourly medians and between \NumNBfxBstExplLastMin{} and \NumNBfxBstExplLastMax{} with last closes, and in all
-\NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the cross-correlation peaked at zero minutes. A price feed that fuses
-these sources still cares about a persistent bias of a few basis points, even though no one can trade it away.
+\NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the cross-correlation peaked at zero minutes.
 
 \subsection{Monitoring}
 The monitor flags an hour when the bitcoin gap to the reference is at least 100 bps and a second asset (ether or Tether)
@@ -669,10 +688,12 @@ two thirds of its false alarms. At its fixed setting the trailing $z$-score caug
 Coinbase it raised no alarm after \NumUCbLastAlarm{}; its \NumUCbEpisodes{} alarm episodes all fall in the 2017 bubble
 (Appendix~\ref{app:windows}).
 
-In Table~\ref{tab:detector}, episodes minus false alarms counts the alarm episodes that overlap a labelled event. It can
-exceed the number of labels caught, because several alarm episodes can hit one label. Years of coverage also differ by
+Years of coverage differ by
 method (\NumSYearsDetBus{} against \NumSYearsBOneBus{} on Binance.US), because each rule is scored on the hours where it is
 defined, so false alarm rates are not simple ratios of the counts. We give no intervals, as the labelled episodes are few.
+
+A pre-registered early-depeg test on \NumQTNScored{} events tied the pooled detector with two single-pair rules at an equal
+false-alarm rate (\NumQTFalseAlarmRateP{} per 1000 calm hours); correcting the threshold-calibration rule after scoring made it worse.
 
 \paragraph{Chainlink.} A Chainlink feed that inherited the depeg would regress on its size with a slope up to the (unmeasured)
 share of USDC-quoted sources. The slope was \NumUOracleSlopeBtc{} for bitcoin and \NumUOracleSlopeEth{} for ether, against
@@ -682,7 +703,6 @@ share of USDC-quoted sources. The slope was \NumUOracleSlopeBtc{} for bitcoin an
 \label{app:windows}
 The \NumUCbEpisodes{} Coinbase alarm episodes fall between \NumUCbFirstAlarm{} and \NumUCbLastAlarm{}. In seven of
 them Coinbase prices stood above Bitstamp's; in the last they stood below. Bitfinex's \NumUDetFaBfxCount{} false alarms
-were a two-day episode in November 2017 and one-day episodes in 2019 and 2022. None of these windows is in the label
-set, so they count as false alarms.
+were a two-day episode in November 2017 and one-day episodes in 2019 and 2022. None is labelled, so all count as false alarms.
 
 \end{document}
