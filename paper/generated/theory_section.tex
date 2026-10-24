@@ -2,32 +2,35 @@
 % Uses the acmart `proposition' and `proof' environments.
 \subsection{Identification and inference for the anchored test}
 \label{sec:anchored-theory}
+This subsection states what the anchored test identifies, what it assumes and how it performs.
+
 \paragraph{Setup.} Take source $s$ against reference $r$ in hour $t$, in bps, with $u_{r,t}$ absorbed. Items other than the
-anchor share the offset $c_t=u_t+\delta_t$, where $u_t$ is the unit offset and $\delta_t$ is source-wide item demand, which
-enters every non-anchor item and not the anchor. The cross-item offset of Eq.~\eqref{eq:median} is $L_t=c_t+\varepsilon_t$.
-The anchor $D_t$ (Eq.~\eqref{eq:anchor}) and its netted form $Y_t$ (Eq.~\eqref{eq:netted}) are as in \S\ref{sec:model}. The estimand is the unit share of the offset's
-time variation (Eq.~\eqref{eq:lambda}),
+anchor share the offset $c_t=u_t+\delta_t$. Here $u_t$ is the unit offset and $\delta_t$ is source-wide item demand, which
+enters every non-anchor item and leaves the anchor alone. The cross-item offset of Eq.~\eqref{eq:median} is
+$L_t=c_t+\varepsilon_t$. The anchor $D_t$ (Eq.~\eqref{eq:anchor}) and its netted form $Y_t$ (Eq.~\eqref{eq:netted}) are
+as in \S\ref{sec:model}. The quantity we estimate is $\lambda$, the share of the offset's time variation that comes from the
+unit (Eq.~\eqref{eq:lambda}),
 \begin{equation}
 \lambda=\frac{\mathrm{Cov}(u,c)}{\mathrm{Var}(c)}=1-\frac{\mathrm{Cov}(\delta,c)}{\mathrm{Var}(c)}.
 \label{eq:lambda}
 \end{equation}
-$\lambda=1$ under a pure unit shift ($\delta\equiv0$), whenever demand is uncorrelated with the offset, and $\lambda=0$ under pure
-demand ($u\equiv0$). The moments leave intercepts free, so a persistent level premium from demand is not identified, and if
-demand co-moves with the unit ($\delta=\kappa u$), $\lambda=1/(1+\kappa)$: $\lambda$ is a covariance share
-of the offset's variation.
-\emph{A1} (additivity): the model above, with unit loading on $c$ for every non-anchor item (not tested asset by asset), and $\varepsilon$ independent of $(u,\delta,\eta)$.
+So $\lambda=1$ under a pure unit shift ($\delta\equiv0$), and also whenever demand is uncorrelated with the offset. And
+$\lambda=0$ under pure demand ($u\equiv0$). The moments leave intercepts free, so a persistent level premium from demand is
+not identified. If demand co-moves with the unit ($\delta=\kappa u$), then $\lambda=1/(1+\kappa)$. In short, $\lambda$ is a
+covariance share of the offset's variation. We need four assumptions. \emph{A1} (additivity): the model above, with the unit loading on $c$ for every non-anchor item
+(not tested asset by asset), and $\varepsilon$ independent of $(u,\delta,\eta)$.
 \emph{A2}: the reference venue's unit is stable over the window ($u_r$ is constant).
 \emph{A3}: $X$ measures $x$ on a venue whose error $\xi$ is independent of $(u,\delta,\varepsilon,\eta)$; $x$ may co-move with $c$ (we write $\eta$ for $\eta-\xi$ below).
 \emph{A4}: a second item's offset $Z_t=\gamma c_t+\nu_t$, $\gamma\neq0$, with $\nu$ independent of $(u,\delta,\eta,\varepsilon)$ and
-$\mathrm{Cov}(\eta,c)=\mathrm{Cov}(\varepsilon,\eta)=0$ (relevance and exclusion); these are assumptions we cannot test.
+$\mathrm{Cov}(\eta,c)=\mathrm{Cov}(\varepsilon,\eta)=0$ (relevance and exclusion). We cannot test these assumptions.
 
 \begin{proposition}
-Under A1--A4, the instrumental-variable (IV) ratio identifies the unit share,
+Under A1--A4, the instrumental-variable (IV) ratio identifies the unit share. An instrument here is another asset's gap.
 \begin{equation}
 \beta=\frac{\mathrm{Cov}(D-X,\,Z)}{\mathrm{Cov}(L,\,Z)}=\lambda .
 \label{eq:iv}
 \end{equation}
-The OLS slope of $D-X$ on $L$ is $\lambda\,\mathrm{Var}(c)/(\mathrm{Var}(c)+\mathrm{Var}(\varepsilon))$, attenuated by the noise in $L$.
+The ordinary least squares (OLS) slope of $D-X$ on $L$ is $\lambda\,\mathrm{Var}(c)/(\mathrm{Var}(c)+\mathrm{Var}(\varepsilon))$, attenuated by the noise in $L$.
 Without the netting, the IV slope of $D$ on $L$ is
 \begin{equation}
 \beta_{\mathrm{raw}}=\lambda+\frac{\mathrm{Cov}(x,c)}{\mathrm{Var}(c)} .
@@ -38,52 +41,62 @@ Without the netting, the IV slope of $D$ on $L$ is
 $\mathrm{Cov}(Y,Z)=\gamma\,\mathrm{Cov}(u+\eta,c)=\gamma\,\mathrm{Cov}(u,c)$ and $\mathrm{Cov}(L,Z)=\gamma\,\mathrm{Var}(c)$ by A4; the ratio is $\lambda$. The
 OLS slope is $\mathrm{Cov}(u,c)/\mathrm{Var}(L)$ with $\mathrm{Var}(L)=\mathrm{Var}(c)+\mathrm{Var}(\varepsilon)$. Without $X$, $\mathrm{Cov}(D,Z)$ gains $\gamma\,\mathrm{Cov}(x,c)$.
 \end{proof}
-\emph{Intuition:} $Z$ moves with the offset and is uncorrelated with the anchor's own noise, so the ratio isolates how much of the
-anchor's co-movement with the offset runs through $u$. The bias term $\mathrm{Cov}(x,c)/\mathrm{Var}(c)$ in
-Eq.~\eqref{eq:bias} is the token's own co-movement with the offset; $D-X$ contains $u$ and, up to the independent
+\emph{Intuition:} $Z$ moves with the offset and is uncorrelated with the anchor's own noise. The ratio therefore isolates how
+much of the anchor's co-movement with the offset runs through $u$. The bias term $\mathrm{Cov}(x,c)/\mathrm{Var}(c)$ in
+Eq.~\eqref{eq:bias} is the token's own co-movement with the offset. $D-X$ contains $u$ and, up to the independent
 error $\xi$, no $x$, so that term drops out of Eq.~\eqref{eq:iv}.
 
 \paragraph{Reading $\hat\lambda$.} On the Bitfinex stress window $\hat\lambda=\NumGBfxPrimaryLam{}$. In words: when the
-offset moved, the netted anchor moved almost one for one, so most of the offset's time variation was a unit shift and
-the remainder was demand or an anchor-specific component. It does not say that the offset's \emph{level} on any date
-was that share unit and the rest demand (intercepts are free), it does not split each hour, and, because $\lambda=1$ is
-rejected, it does not say the shift was purely unit.
+offset moved, the netted anchor moved almost one for one. Most of the offset's time variation was therefore a unit shift, and
+the remainder was demand or an anchor-specific component. The estimate does not say that the offset's \emph{level} on any
+date was that share unit and the rest demand, because intercepts are free. It does not split each hour. And because
+$\lambda=1$ is rejected, it does not say the shift was purely unit.
 
-\paragraph{Over-identification.} With anchors $k=1,\dots,K$ and instruments $j=1,\dots,m$, take $z=(1,Z_1,\dots,Z_m)$ and the moments
+\paragraph{Over-identification.} Generalised method of moments (GMM) chooses $\lambda$ so that moment conditions hold as
+closely as possible, and Hansen's $J$ tests whether they can all hold at once. With anchors $k=1,\dots,K$ and instruments $j=1,\dots,m$, take $z=(1,Z_1,\dots,Z_m)$ and the moments
 \begin{equation}
 E\big[z_j\,(Y_k-\mu_k-\lambda L)\big]=0,\qquad j=0,\dots,m,\ k=1,\dots,K,
 \label{eq:moments}
 \end{equation}
-which (Eq.~\eqref{eq:moments}) are $K(m+1)$ conditions for $K+1$ parameters ($\lambda$ and the intercepts $\mu_k$). Two-step GMM with a Bartlett heteroskedasticity- and autocorrelation-consistent (HAC) weight $\hat S^{-1}$ gives Hansen's statistic (Eq.~\eqref{eq:J})
+which (Eq.~\eqref{eq:moments}) are $K(m+1)$ conditions for $K+1$ parameters ($\lambda$ and the intercepts $\mu_k$). Two-step GMM
+with a Bartlett heteroskedasticity- and autocorrelation-consistent (HAC) weight $\hat S^{-1}$ (robust to changing variance and
+serial correlation) gives Hansen's statistic (Eq.~\eqref{eq:J})
 \begin{equation}
 J=n\,\bar g(\hat\lambda)'\,\hat S^{-1}\,\bar g(\hat\lambda)\ \sim\ \chi^2_{Km-1},
 \label{eq:J}
 \end{equation}
-with $\bar g$ the sample moments. For the headline, $K=1$ and $m=4$, so $J$ has \NumGBfxPrimaryJDf{} degrees of freedom. \emph{Intuition:} if one $\lambda$ explains every
-moment, the leftover moments are small; $J$ measures how large they are. $J$ rejects a contaminated instrument or anchor-specific depegs with different
-loadings on $c$; it has no power against a depeg that loads on $c$ equally in every anchor, so the netting by $X$
-removes that bias.
+with $\bar g$ the sample moments. For the headline, $K=1$ and $m=4$, so $J$ has \NumGBfxPrimaryJDf{} degrees of freedom.
+\emph{Intuition:} if one $\lambda$ explains every moment, the leftover moments are small, and $J$ measures how large they
+are. $J$ rejects a contaminated instrument, or anchor-specific depegs with different loadings on $c$. It has no power
+against a depeg that loads on $c$ equally in every anchor. The netting by $X$ removes that bias.
 
-\paragraph{Inference.} Hourly offsets are persistent ($\hat\rho_c=\NumGCalRhoC{}$ on the stress window), so we use HAC standard errors
-with Andrews' bandwidth (the fixed Newey--West rule is a check) and a moving-block bootstrap with block length
-$b=\lceil(2\rho^2/(1-\rho^2)^2)^{1/3}n^{1/3}\rceil$, $\rho$ the lag-one autocorrelation of the IV score.
+\paragraph{Inference.} Hourly offsets are persistent ($\hat\rho_c=\NumGCalRhoC{}$ on the stress window). We therefore use HAC standard errors
+with Andrews' bandwidth (the fixed Newey--West rule is a check) and a moving-block bootstrap, which resamples runs of consecutive hours. Its block length is
+$b=\lceil(2\rho^2/(1-\rho^2)^2)^{1/3}n^{1/3}\rceil$, with $\rho$ the lag-one autocorrelation of the IV score.
 
-\paragraph{Evidence.} Table~\ref{tab:theory} gives \NumGSimReps{} simulated windows of \NumGSimHours{} hours per scenario,
-calibrated to the stress window. IV is unbiased in a pure shift (bias \NumGSOneBiasIv{}), a mixture (\NumGSThreeBiasIv{}), a netted depeg
-(\NumGSFiveBiasIv{}) and, with noise in $L$ as large as its signal, \NumGSSixBiasIv{}, where OLS is biased by
-\NumGSSixBiasOls{}. Leaving the depeg in gives a bias of \NumGSFourBiasIv{}, of the order of the data's gap between \NumGBfxNaiveLam{} (hourly GMM; the daily OLS slope is \NumKStressDaySlopeD{}) and \NumGBfxPrimaryLam{}.
-HAC intervals cover at \NumGSOneCover{} in a pure shift but at \NumGSThreeCover{} in the mixture, where the realised unit
-share varies by window; the block bootstrap is no better there (\NumGSThreeCoverBoot{}). $J$ has size \NumGSOneJRej{} but
-rejects at only \NumGSFourJRej{} when every anchor's depeg loads alike and at \NumGSSevenJRej{} when loadings differ.
-On the Bitfinex stress window ($K=1$, $m=4$, \NumGBfxPrimaryN{} hours, \NumGBfxPrimaryJDf{} df), $\hat\lambda=\NumGBfxPrimaryLam{}$ with $J=\NumGBfxPrimaryJ{}$
-($p=\NumGBfxPrimaryJP{}$); $\lambda=0$ is rejected ($p$ \NumGBfxPrimaryPZero{}), and so is $\lambda=1$ ($p$ \NumGBfxPrimaryPOne{}).
+\paragraph{Simulation.} Table~\ref{tab:theory} gives \NumGSimReps{} simulated windows of \NumGSimHours{} hours per scenario,
+calibrated to the stress window. IV is unbiased in a pure shift (bias \NumGSOneBiasIv{}), a mixture (\NumGSThreeBiasIv{}) and a
+netted depeg (\NumGSFiveBiasIv{}). It is also unbiased when the noise in $L$ is as large as its signal (\NumGSSixBiasIv{}),
+where OLS is biased by \NumGSSixBiasOls{}. Leaving the depeg in gives a bias of \NumGSFourBiasIv{}. That is of the order of
+the data's gap between \NumGBfxNaiveLam{} (hourly GMM; the daily OLS slope is \NumKStressDaySlopeD{}) and
+\NumGBfxPrimaryLam{}. HAC intervals cover at \NumGSOneCover{} in a pure shift but at \NumGSThreeCover{} in the mixture, where
+the realised unit share varies by window. The block bootstrap is no better there (\NumGSThreeCoverBoot{}). $J$ has size
+\NumGSOneJRej{}. It rejects at only \NumGSFourJRej{} when every anchor's depeg loads alike, and at \NumGSSevenJRej{} when
+loadings differ.
+
+\paragraph{Bitfinex stress window.} Here $K=1$, $m=4$, with \NumGBfxPrimaryN{} hours and \NumGBfxPrimaryJDf{} degrees of
+freedom. The estimate is $\hat\lambda=\NumGBfxPrimaryLam{}$ with $J=\NumGBfxPrimaryJ{}$ ($p=\NumGBfxPrimaryJP{}$).
+The test rejects $\lambda=0$ ($p$ \NumGBfxPrimaryPZero{}) and also rejects $\lambda=1$ ($p$ \NumGBfxPrimaryPOne{}).
 Intervals for this one estimate: hourly GMM, HAC \NumGBfxPrimaryLo{} to \NumGBfxPrimaryHi{}; hourly moving-block bootstrap
 (block \NumGBfxBootBlock{} hours), \NumGBfxBootLo{} to \NumGBfxBootHi{}; daily OLS slope of \S\ref{sec:anchor}, week blocks
 \NumKStressDaySlopeAdjWkLo{} to \NumKStressDaySlopeAdjWkHi{} and month blocks \NumKStressDaySlopeAdjMoLo{} to
-\NumKStressDaySlopeAdjMoHi{}. The hourly intervals are narrower than the daily ones; because HAC and the hourly
-bootstrap undercover when the offset is persistent, the headline elsewhere is the month-block interval. Without the netting the estimate is \NumGBfxNaiveLam{}.
-Binance.US 2023 ($K=1$, $m=2$, \NumGBusUsdtN{} hours) gives \NumGBusUsdtLam{} (HAC \NumGBusUsdtLo{} to \NumGBusUsdtHi{};
-$p=\NumGBusUsdtPOne{}$ for $\lambda=1$), a HAC interval that is probably too narrow, and the netting changes nothing there
-(two anchors, February to July: \NumGBusTwoLam{} netted, \NumGBusTwoRawLam{} not). Adding USDC netted with Bitstamp's
-depegged USDC price fails the over-identification test ($J=\NumGBusTwoJ{}$, $p$ \NumGBusTwoJP{}; not netted, $J=\NumGBusTwoRawJ{}$,
-$p=\NumGBusTwoRawJP{}$). We report every $J$ and did not fix in advance which results count.
+\NumKStressDaySlopeAdjMoHi{}. The hourly intervals are narrower than the daily ones. HAC and the hourly bootstrap
+undercover when the offset is persistent, so the headline elsewhere is the month-block interval. Without the netting the
+estimate is \NumGBfxNaiveLam{}.
+
+\paragraph{Binance.US 2023.} With $K=1$, $m=2$ and \NumGBusUsdtN{} hours, the estimate is \NumGBusUsdtLam{} (HAC
+\NumGBusUsdtLo{} to \NumGBusUsdtHi{}; $p=\NumGBusUsdtPOne{}$ for $\lambda=1$). That HAC interval is probably too narrow.
+In the two-anchor version (February to July), the netting changes nothing: the estimate is \NumGBusTwoLam{} netted and
+\NumGBusTwoRawLam{} not netted. Adding USDC netted with Bitstamp's depegged USDC price fails the over-identification test
+($J=\NumGBusTwoJ{}$, $p$ \NumGBusTwoJP{}; not netted, $J=\NumGBusTwoRawJ{}$, $p=\NumGBusTwoRawJP{}$). We report every $J$
+and did not fix in advance which results count.
