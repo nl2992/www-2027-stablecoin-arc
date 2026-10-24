@@ -1,0 +1,153 @@
+{
+ "decision": "D19",
+ "pre_registration": "autoresearch/program_panel.md",
+ "commit": "bfb6205",
+ "binance": {
+  "base": "https://data.binance.vision/data/spot/monthly/klines/{symbol}/1h/{symbol}-1h-{month}.zip",
+  "last_month": "2025-09",
+  "fiats_requested": [
+   "NGN",
+   "TRY",
+   "ARS",
+   "BRL",
+   "RUB",
+   "UAH",
+   "ZAR",
+   "EUR",
+   "GBP",
+   "AUD"
+  ],
+  "bases": [
+   "BTC",
+   "ETH",
+   "USDT"
+  ],
+  "not_available": [
+   "USDTEUR",
+   "USDTGBP",
+   "USDTAUD"
+  ],
+  "note": "EUR, GBP, AUD have no USDT market, so they fail the all-three-pairs market set and BTC/ETH files were not fetched.",
+  "months_verified": {
+   "BTCARS": {
+    "n": 28,
+    "first": "2023-06",
+    "last": "2025-09"
+   },
+   "BTCBRL": {
+    "n": 60,
+    "first": "2020-10",
+    "last": "2025-09"
+   },
+   "BTCNGN": {
+    "n": 41,
+    "first": "2019-10",
+    "last": "2024-03"
+   },
+   "BTCRUB": {
+    "n": 50,
+    "first": "2019-12",
+    "last": "2024-01"
+   },
+   "BTCTRY": {
+    "n": 70,
+    "first": "2019-12",
+    "last": "2025-09"
+   },
+   "BTCUAH": {
+    "n": 64,
+    "first": "2020-06",
+    "last": "2025-09"
+   },
+   "BTCZAR": {
+    "n": 50,
+    "first": "2020-03",
+    "last": "2025-09"
+   },
+   "ETHARS": {
+    "n": 15,
+    "first": "2024-07",
+    "last": "2025-09"
+   },
+   "ETHBRL": {
+    "n": 60,
+    "first": "2020-10",
+    "last": "2025-09"
+   },
+   "ETHNGN": {
+    "n": 7,
+    "first": "2020-08",
+    "last": "2021-02"
+   },
+   "ETHRUB": {
+    "n": 48,
+    "first": "2019-12",
+    "last": "2023-11"
+   },
+   "ETHTRY": {
+    "n": 70,
+    "first": "2019-12",
+    "last": "2025-09"
+   },
+   "ETHUAH": {
+    "n": 46,
+    "first": "2021-05",
+    "last": "2025-02"
+   },
+   "ETHZAR": {
+    "n": 50,
+    "first": "2020-03",
+    "last": "2025-09"
+   },
+   "USDTARS": {
+    "n": 30,
+    "first": "2023-04",
+    "last": "2025-09"
+   },
+   "USDTBRL": {
+    "n": 60,
+    "first": "2020-10",
+    "last": "2025-09"
+   },
+   "USDTNGN": {
+    "n": 43,
+    "first": "2020-09",
+    "last": "2024-03"
+   },
+   "USDTRUB": {
+    "n": 50,
+    "first": "2019-12",
+    "last": "2024-01"
+   },
+   "USDTTRY": {
+    "n": 70,
+    "first": "2019-12",
+    "last": "2025-09"
+   },
+   "USDTUAH": {
+    "n": 64,
+    "first": "2020-06",
+    "last": "2025-09"
+   },
+   "USDTZAR": {
+    "n": 42,
+    "first": "2020-03",
+    "last": "2025-09"
+   }
+  }
+ },
+ "krw": {
+  "venues": [
+   "upbit",
+   "bithumb"
+  ],
+  "markets": [
+   "KRW-BTC",
+   "KRW-ETH",
+   "KRW-USDT"
+  ],
+  "window": "2023-12..2025-09",
+  "interval": "60m"
+ },
+ "dest": "data/raw/panel"
+}
