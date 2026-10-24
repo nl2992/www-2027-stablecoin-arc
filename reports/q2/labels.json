@@ -1,0 +1,117 @@
+{
+ "preregistration": "autoresearch/program_q2.md",
+ "rule": "first hour with |dev|>=50 bps for 3 consecutive hours",
+ "scorable": [
+  "E1",
+  "E2",
+  "E3",
+  "E4",
+  "E5",
+  "E6"
+ ],
+ "events": {
+  "E1": {
+   "unit": "USDT",
+   "window": [
+    "2018-11-27",
+    "2018-12-31"
+   ],
+   "panel": "q1",
+   "window_hours": 840,
+   "hours_with_label": 823,
+   "label_source_hours": {
+    "bitfinex_netted_anchor": 823
+   },
+   "hours_abs_dev_ge_50": 635,
+   "max_abs_dev_bps": 330.0030295875462,
+   "onset_utc": "2018-11-27 15:00:00+00:00",
+   "scorable": true
+  },
+  "E2": {
+   "unit": "USDT",
+   "window": [
+    "2019-04-20",
+    "2019-05-31"
+   ],
+   "panel": "q1",
+   "window_hours": 1008,
+   "hours_with_label": 1008,
+   "label_source_hours": {
+    "bitfinex_netted_anchor": 1008
+   },
+   "hours_abs_dev_ge_50": 567,
+   "max_abs_dev_bps": 371.9139205142737,
+   "onset_utc": "2019-04-20 03:00:00+00:00",
+   "scorable": true
+  },
+  "E3": {
+   "unit": "USDT",
+   "window": [
+    "2020-03-09",
+    "2020-03-31"
+   ],
+   "panel": "q1",
+   "window_hours": 552,
+   "hours_with_label": 552,
+   "label_source_hours": {
+    "binance_us": 552
+   },
+   "hours_abs_dev_ge_50": 21,
+   "max_abs_dev_bps": 117.30922875698698,
+   "onset_utc": "2020-03-13 11:00:00+00:00",
+   "scorable": true
+  },
+  "E4": {
+   "unit": "USDC",
+   "window": [
+    "2023-03-08",
+    "2023-03-20"
+   ],
+   "panel": "stable",
+   "window_hours": 312,
+   "hours_with_label": 312,
+   "label_source_hours": {
+    "binance_us": 312
+   },
+   "hours_abs_dev_ge_50": 63,
+   "max_abs_dev_bps": 1310.2026243840396,
+   "onset_utc": "2023-03-11 04:00:00+00:00",
+   "scorable": true
+  },
+  "E5": {
+   "unit": "TUSD",
+   "window": [
+    "2024-01-01",
+    "2024-01-31"
+   ],
+   "panel": "stable",
+   "window_hours": 744,
+   "hours_with_label": 744,
+   "label_source_hours": {
+    "chain_usdt": 744
+   },
+   "hours_abs_dev_ge_50": 469,
+   "max_abs_dev_bps": 279.025404007446,
+   "onset_utc": "2024-01-08 12:00:00+00:00",
+   "scorable": true
+  },
+  "E6": {
+   "unit": "FDUSD",
+   "window": [
+    "2025-04-01",
+    "2025-04-30"
+   ],
+   "panel": "stable",
+   "window_hours": 720,
+   "hours_with_label": 720,
+   "label_source_hours": {
+    "chain_usdt": 720
+   },
+   "hours_abs_dev_ge_50": 118,
+   "max_abs_dev_bps": 412.9779519544604,
+   "onset_utc": "2025-04-02 15:00:00+00:00",
+   "scorable": true
+  }
+ },
+ "note": "computed from label-source series only; Kraken not read; no detector run"
+}
