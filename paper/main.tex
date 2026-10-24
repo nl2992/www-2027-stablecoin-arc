@@ -31,20 +31,20 @@
 \begin{abstract}
 Price aggregators, indexes and oracles combine prices from many web sources and assume that every source's dollar is the
 same dollar. Often it is not. A crypto exchange's dollar balance is a claim on that exchange, and it can lose value when the
-exchange's banking breaks down. An aggregator then mistakes a change in the dollar for a change in price. We show how to
-detect this from public prices. When an exchange's dollar moves, every asset on that exchange moves by the same amount, so
+exchange's banking breaks down. An aggregator then mistakes a change in the dollar for a change in price. We detect this from public prices. When an exchange's dollar moves, every asset on that exchange moves by the same amount, so
 the part of the price gaps that all assets share measures the dollar's offset. A stablecoin traded on the exchange,
 corrected for its own price elsewhere, then separates a move in the dollar from demand for the assets. We give an
-identification result, a generalised-method-of-moments (GMM) test and a simulation of the test's size and power.
+identification result, a moment-based test and a simulation of its size and power.
 Flowerday et al. (2026) proposed that Bitfinex's 2018--19 premium reflected a discount on its dollar but could not test it.
 From November 2018 to May 2019, once Tether's own price on Kraken was netted out, Bitfinex's Tether price tracked its
 dollar offset with slope \NumKStressDaySlopeAdj{} (95\% interval \NumKStressDaySlopeAdjMoLo{} to
-\NumKStressDaySlopeAdjMoHi{}), up from \NumKStressDaySlopeD{}: the offset moved mostly with Bitfinex's dollar. Binance.US in
-2023 gave a slope of \NumUAnchorBnusSlope{}, as expected once its deposits closed, though a two-stablecoin version of the
+\NumKStressDaySlopeAdjMoHi{}), up from \NumKStressDaySlopeD{}: the offset moved close to one for one with Bitfinex's dollar. Binance.US in
+2023 gave a slope of \NumUAnchorBnusSlope{}, close to mechanical once its deposits closed, though a two-stablecoin version of the
 test rejected. On assets kept out of development, one offset per exchange and hour removed \NumRPeriodOneTestEst{} of the
-squared price gap in 2017--19 and \NumRPeriodTwoTestEst{} in 2020--23. A plain median was hard to beat in three fusion
-tests scored once each. In a pre-registered test on new events, where most trading shared one stablecoin that lost its
-peg, a frozen unit-aware method beat the median, stablecoin conversion and source-reliability weighting (CRH).
+squared price gap in 2017--19 and \NumRPeriodTwoTestEst{} in 2020--23. A plain median was hard to beat in three one-shot fusion
+tests. In a pre-registered test on new events, where most trading shared one stablecoin that lost its
+peg, a frozen unit-aware method beat the median, stablecoin conversion and source-reliability weighting (CRH), and narrowly
+beat a median of dollar-quoted markets.
 \end{abstract}
 
 % CCS concepts: IDs entered from memory; verify at https://dl.acm.org/ccs before submission.
