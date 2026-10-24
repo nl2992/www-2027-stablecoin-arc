@@ -164,11 +164,11 @@ def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
     h = pd.DataFrame.from_dict(d, orient="index", columns=["D", "L", "T", "D_ref"])
     h.index = pd.to_datetime(h.index)
     p = json.loads(platform.read_text())
-    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 1.8), gridspec_kw={"width_ratios": [1, 1.3]})
+    fig, (a, b) = plt.subplots(2, 1, figsize=(3.4, 2.7))
     a.plot(h.index, h["D"], linewidth=1.2, label="observed $D$ (USDC/USD$_{venue}$)")
     a.plot(h.index, h["T"], linewidth=1.2, linestyle="--", label="token component $T$")
     a.plot(h.index, h["L"], linewidth=1.2, label="ledger component $L$ (BTC)")
-    a.set_title("(a) Token failure: USDC, March 2023", fontsize=8)
+    a.set_title("(a) Token failure: USDC, March 2023", fontsize=7.5)
     a.set_ylabel("bps (hourly median)")
     for name, key, style in (("USDT", "daily_median_pd_usdt", "-"), ("BTC", "daily_median_pd_btc", "--"),
                              ("USDC", "daily_median_pd_usdc", ":")):
@@ -180,11 +180,14 @@ def which_dollar(decomp: Path, platform: Path, out: Path) -> Path:
         if ph["phase"] in shade:
             b.axvspan(pd.Timestamp(ph["start"]), pd.Timestamp(min(ph["end"], "2023-07-31")), color=shade[ph["phase"]],
                       alpha=0.35, linewidth=0)
-    b.set_title("(b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)", fontsize=8)
+    b.set_title("(b) Ledger failure: Binance.US dollar, 2023 (shaded: rail events)", fontsize=7.5)
+    b.set_ylabel("bps (daily median)")
     for ax in (a, b):
         ax.axhline(0, color="black", linewidth=0.5)
-        ax.tick_params(axis="x", labelrotation=30, labelsize=7)
-        ax.legend(fontsize=7, frameon=False, loc="lower left")
+        ax.tick_params(axis="x", labelrotation=30, labelsize=6.5)
+        ax.tick_params(axis="y", labelsize=6.5)
+        ax.legend(fontsize=6.5, frameon=False, loc="lower left")
+    fig.tight_layout(h_pad=0.6)
     return _save(fig, out)
 
 

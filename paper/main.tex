@@ -643,6 +643,35 @@ open-rail venue (leave-one-venue-out, Coinbase or Bitstamp as the reference; sev
 pooled), for the median, volume-weighted mean, CRH, GTM and the unit-aware fuser. CRH and GTM use a trailing 30-day window.
 With two sources the median, CRH and GTM coincide.
 \input{generated/td_realdata_table}
+\begin{table*}[!tb]
+\scriptsize
+\caption{What was fixed when. Pre-registered: written down before the data or the result existed. Locked: frozen and scored once. Post hoc: computed after related results were seen, and descriptive.}
+\label{tab:fixed}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lp{0.84\textwidth}@{}}
+\toprule
+Status & Items \\
+\midrule
+Pre-registered & The monitor rule, thresholds, baselines and the label list were written before the 2017--2023 prices were
+downloaded, but the rule was fitted on Binance.US in 2022--23 and Bitfinex's event windows had been seen. The monitor is
+therefore pre-registered only for venue-months it had not been fitted or checked on (Coinbase); its Binance.US and Bitfinex
+results are development results. The episodes, splits, score and keep rule of the fusion tests FUSE and STABLE, before any
+result of each round, and the Q1 test (frozen round-3 fuser, untouched majority-unit events, gate and endpoints fixed before
+its data). The Upbit/Kimchi study (hypotheses, windows, FX netting and anchor test), before any of its prices
+were downloaded (\S\ref{sec:discussion}). \\
+Developed on dev data & The estimator (\NumULoopIter{} runs, \NumULoopKept{} kept), the FUSE fuser (\NumBFuseLoopRuns{} runs,
+\NumBFuseLoopKept{} kept) and the STABLE fuser (\NumBStableLoopRuns{} runs, \NumBStableLoopKept{} kept), each on development
+assets or episodes only. \\
+Locked test, scored once & Withheld assets XRP, LINK, SOL, DOGE and ADA; FUSE episodes T1--T5; STABLE episodes X1--X4; Q1 events Q-E2 to Q-E4.
+The estimator, the FUSE fuser and the STABLE fuser were frozen first. T1, the Bitfinex stress, is the episode that
+motivated the project, so it was known before scoring. \\
+Post hoc & The anchor tests and the placebo (the external-price correction was specified after the raw slope of
+\NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); the \NumRACells{}-specification
+grid (specified before it was run, but after the headline slope was seen); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
+GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks and the oracle pilot. \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \paragraph{Two sources.} With Bitfinex and one open venue, the median, CRH and GTM coincide and cannot say which
 dollar is off. The unit-aware fuser cut the median error in Bitfinex's 2018--19 stress from
@@ -697,68 +726,29 @@ share of USDC-quoted sources. The slope was \NumUOracleSlopeBtc{} for bitcoin an
 
 % Floats are declared here so that they land beside Sections F.3 and G.
 \begin{figure}[!t]
-\centering\includegraphics[width=0.85\columnwidth]{figures/which_dollar.pdf}
+\centering\includegraphics[width=\columnwidth]{figures/which_dollar.pdf}
 \caption{Two shocks on one exchange. (a) USDC in March 2023: the dislocation $D$ is almost entirely the token component
 $T$. (b) Binance.US's dollar, May to July 2023: USDT and bitcoin dislocations move together; rail phases are shaded.}
 \label{fig:which}
 \end{figure}
-\begin{table}[!tb]
-\scriptsize
-\caption{What was fixed when. Pre-registered: written down before the data or the result existed. Locked: frozen and scored once. Post hoc: computed after related results were seen, and descriptive.}
-\label{tab:fixed}
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lp{0.62\columnwidth}@{}}
-\toprule
-Status & Items \\
-\midrule
-Pre-registered & The monitor rule, thresholds, baselines and the label list were written before the 2017--2023 prices were
-downloaded, but the rule was fitted on Binance.US in 2022--23 and Bitfinex's event windows had been seen. The monitor is
-therefore pre-registered only for venue-months it had not been fitted or checked on (Coinbase); its Binance.US and Bitfinex
-results are development results. The episodes, splits, score and keep rule of the fusion tests FUSE and STABLE, before any
-result of each round, and the Q1 test (frozen round-3 fuser, untouched majority-unit events, gate and endpoints fixed before
-its data). The Upbit/Kimchi study (hypotheses, windows, FX netting and anchor test), before any of its prices
-were downloaded (\S\ref{sec:discussion}). \\
-Developed on dev data & The estimator (\NumULoopIter{} runs, \NumULoopKept{} kept), the FUSE fuser (\NumBFuseLoopRuns{} runs,
-\NumBFuseLoopKept{} kept) and the STABLE fuser (\NumBStableLoopRuns{} runs, \NumBStableLoopKept{} kept), each on development
-assets or episodes only. \\
-Locked test, scored once & Withheld assets XRP, LINK, SOL, DOGE and ADA; FUSE episodes T1--T5; STABLE episodes X1--X4; Q1 events Q-E2 to Q-E4.
-The estimator, the FUSE fuser and the STABLE fuser were frozen first. T1, the Bitfinex stress, is the episode that
-motivated the project, so it was known before scoring. \\
-Post hoc & The anchor tests and the placebo (the external-price correction was specified after the raw slope of
-\NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); the \NumRACells{}-specification
-grid (specified before it was run, but after the headline slope was seen); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
-GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks and the oracle pilot. \\
-\bottomrule
-\end{tabular}
-\end{table}
+
 
 \subsection{The 2023 shocks}
-Figure~\ref{fig:which} shows both shocks (\S\ref{sec:shocks}).
-
-\paragraph{Binance.US} In June 2023, after the SEC complaint, Binance.US suspended dollar deposits as its banking
-partners stopped dollar payments~\cite{theblock2023binanceus}. Assets were cheaper in Binance.US's dollar, so that dollar traded
-at a premium. Bitcoin and Tether showed the same dislocation (hourly correlation of changes \NumIdentChgTrans{}).
-
-\paragraph{Silvergate, Signature and USDC} The closure of Silvergate and Signature in March 2023 raised no alarm on
-Bitfinex, Coinbase or Binance.US (\NumUMarAlarmDays{} alarm days). A dislocation of the exchange dollar appeared only
-where rails closed with no substitute: Bitfinex in 2017--2018 and Binance.US from June 2023. In the March 2023 USDC
-run, the token component on Binance.US was \NumDecSvbT{} bps and the ledger component \NumDecSvbL{} bps. The token
-moved and the exchange dollar held (Figure~\ref{fig:which}a). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on
-Bitstamp, and was at least 100 bps below par in \NumUUsdcHoursGeHundred{} hours.
-
+Figure~\ref{fig:which} shows both shocks (\S\ref{sec:shocks}). On Binance.US in June 2023, after its banking partners
+stopped dollar payments~\cite{theblock2023binanceus}, bitcoin and Tether showed the same dislocation (hourly correlation
+of changes \NumIdentChgTrans{}). In the March 2023 USDC run the token component on Binance.US was \NumDecSvbT{} bps and
+the ledger component \NumDecSvbL{} bps (Figure~\ref{fig:which}a); USDC fell to a peak of \NumUUsdcPeakBps{} bps below par
+on Bitstamp. The closure of Silvergate and Signature raised no alarm (\NumUMarAlarmDays{} alarm days).
 
 \section{What Was Fixed When, Ethics and Reproducibility}
 \label{app:fixed}
 Table~\ref{tab:fixed} records which results were pre-registered, locked or computed post hoc.
-\FloatBarrier
 
 % AUTHOR DECISION REQUIRED (GenAI disclosure): ACM policy requires that generative-AI use to create
 % content be disclosed in the end-matter credits section; WWW 2027 says LLMs may help rephrase text but authors are
 % solely responsible. Such a section is not allowed in the anonymous submission, so decide the wording
 % and place (camera-ready only vs. a neutral statement) yourself. Do not fill in without the author.
-\paragraph{Ethics.} The study uses only public exchange price files and public chain data; it involves no human participants or personal data.
-
-\paragraph{Reproducibility.} Every number is a macro generated from committed reports and logs, and tests fail if one is stale or typed by hand. Inputs are free public files recorded by hash.
+\paragraph{Ethics and reproducibility.} The study uses only public exchange price files and public chain data; it involves no human participants or personal data. Every number is a macro generated from committed reports and logs, and tests fail if one is stale or typed by hand. Inputs are free public files recorded by hash.
 
 
 \end{document}
