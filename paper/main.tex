@@ -40,13 +40,13 @@ banking fails, and a service then mistakes a change in the dollar for a change i
 public prices. What all assets on an exchange share in their price gaps measures its dollar offset, and a stablecoin
 traded there, corrected for its price elsewhere, separates a move in the dollar from demand for the assets. On Bitfinex from November 2018 to May 2019, net of Tether's own price on Kraken, its Tether price tracked the offset with slope \NumKStressDaySlopeAdj{} (95\% interval \NumKStressDaySlopeAdjMoLo{} to
 \NumKStressDaySlopeAdjMoHi{}); Binance.US in 2023 gave \NumUAnchorBnusSlope{}, close to mechanical. A pre-registered panel of eight
-currency units gave a pooled \NumPNPooledStressLam{} (\NumPNPooledStressLo{} to \NumPNPooledStressHi{}), partly
-reflecting triangular arbitrage within each venue, and a pre-registered Kraken slice, uninformative about a wedge,
+currency units gave a pooled \NumPNPooledStressLam{} (\NumPNPooledStressLo{} to \NumPNPooledStressHi{}), just short of its
+pre-registered target of an interval including one and partly reflecting triangular arbitrage within each venue, and a pre-registered Kraken slice, uninformative about a wedge,
 gave \NumPKPooledStressLam{} (\NumPKPooledStressLo{} to \NumPKPooledStressHi{}). A plain median was hard to beat in three fusion tests
 and failed in two pre-registered ones. Where most trading shared a stablecoin that lost its peg, a frozen unit-aware method beat it
 (log-error difference \NumQVsBZeroMean{}, \NumQVsBZeroLo{} to \NumQVsBZeroHi{}). In six local-currency markets, converting at
-official rates erred by \NumPFMaeO{} bps against \NumPFMaeA{} through the venue's own stablecoin, and the median of officially converted
-markets by \NumPFFusMOMae{} bps against \NumPFFusMAMae{}. We tested only crypto exchanges.
+official rates erred by \NumPFMaeO{} bps against \NumPFMaeA{} through the venue's own stablecoin (\NumEXCompMaeC{} with the stablecoin taken at par), and the median of officially
+converted markets by \NumPFFusMOMae{} bps against \NumPFFusMAMae{}. We tested only crypto exchanges.
 \end{abstract}
 
 % CCS concepts: IDs entered from memory; verify at https://dl.acm.org/ccs before submission.
@@ -358,8 +358,9 @@ required the pooled IV interval to exclude 0 and K2 required a majority of curre
 sides of the relation, so the slope is weak evidence of a venue-specific wedge.
 
 \paragraph{Placebos (post hoc).} Pairing a currency's gap with another currency's USDT price gave slopes well below one
-(median \NumEXPlaceboStressPairMedian{} over \NumEXPlaceboStressPairs{} pairs, none reaching one); with no wedge (Binance.US
-against Bitstamp, October 2022) the slope was \NumEXCalmPrimaryLam{}.
+(median \NumEXPlaceboStressPairMedian{}, range \NumEXPlaceboStressPairMin{} to \NumEXPlaceboStressPairMax{}; \NumEXPlaceboStressPairsIncludeOne{} of
+\NumEXPlaceboStressPairs{} intervals include one); with no wedge (Binance.US against Bitstamp, October 2022, \NumEXCalmPrimaryHours{} hours)
+the slope was \NumEXCalmPrimaryLam{} (\NumEXCalmPrimaryLo{} to \NumEXCalmPrimaryHi{}).
 
 \paragraph{Caveats.} (a) On a venue that also lists BTC/USDT, $D-X-L$ equals, up to sign, the gap between that venue's implied
 BTC/USDT and Kraken's. A slope near one therefore partly reflects triangular arbitrage within the venue; the alternative it
@@ -630,7 +631,7 @@ therefore pre-registered only for venue-months it had not been fitted or checked
 results are development results. The episodes, splits, score and keep rule of the fusion tests FUSE and STABLE, before any
 result of each round, and the Q1 test (frozen round-3 fuser, untouched majority-unit events, gate and endpoints fixed before
 its data). The Upbit/Kimchi study, before any of its prices
-were downloaded (Appendix~\ref{app:korea}). The currency-wedge panel (test, instrument, stress rule, P1 to P3, falsification rule and robustness), in a time-stamped document written before any of its prices
+were downloaded (Appendix~\ref{app:korea}). The currency-wedge panel (test, instrument, stress rule, P1, P2, falsification rule and robustness), in a time-stamped document written before any of its prices
 were listed or downloaded (\S\ref{sec:panel}). The Kraken slice (the same anchored test on five Kraken currencies, with its hypotheses K1 and K2), before any Kraken
 fiat-pair data were downloaded. The official-rate fusion test (official against anchor conversion in six currency units, its endpoint, and the exclusion of
 currencies without an official rate), before any official rate was downloaded or any error computed (\S\ref{sec:bench}). \\
