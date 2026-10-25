@@ -23,6 +23,8 @@ Each decision lists its evidence and who made it. Scope decisions need independe
 | D17 | 2026-10-22 | Kimchi-premium application: Upbit (and Bithumb if needed) public candle API for KRW-quoted BTC, ETH, XRP and other majors plus KRW-USDT; FRED daily KRW/USD (DEXKOUS) via the user's FRED key stored only in local `.env` as FRED_API_KEY | User instruction | Authorized |
 | D18 | 2026-10-22 | Q1 data: Binance public monthly 1m klines (data.binance.vision) BTCUSDT, ETHUSDT 2018-09..12, 2019-03..05, 2020-02..03; BTCUSDT, ETHUSDT, BTCBUSD, ETHBUSD 2022-08..10 (about 26 files, about 150 MB) | User instruction | Authorized |
 | D19 | 2026-10-24 | Currency-wedge panel data: Binance public monthly 1h klines (data.binance.vision) for BTC/ETH/USDT quoted in NGN, TRY, ARS, BRL, RUB, UAH, ZAR, EUR, GBP, AUD where listed, up to 2025-09; Upbit and Bithumb public 60-minute candles for KRW-BTC/ETH/USDT 2023-12..2025-09 | User instruction ("gogogogo") | Authorized |
+| D20 | 2026-10-25 | ECB euro foreign exchange reference rates history (eurofxref-hist.zip, ecb.europa.eu) for the panel fusion test | User instruction | Authorized |
+| D21 | 2026-10-25 | Kraken OHLCVT full archive re-download (assets.kraken.com, about 9.5 GB, SHA-256 verified) to extract only XBT/ETH/USDT pairs in EUR, GBP, CAD, AUD, CHF, JPY (60-minute), then delete the archive | User instruction | Authorized |
 
 ## Scope: CEX–DEX restoration capacity vs on-chain-only fallback
 
