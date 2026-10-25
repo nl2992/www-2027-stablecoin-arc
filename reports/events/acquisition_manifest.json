@@ -42698,10 +42698,26 @@
    "rows": 15892,
    "first_utc": "2023-12-07T03:00:00",
    "last_utc": "2025-09-30T23:00:00"
+  },
+  {
+   "venue": "ecb-reference-rates",
+   "symbol": "eurofxref-hist",
+   "month": "1999-01..2026-10",
+   "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip",
+   "for_events": [
+    "PANEL_FUSION"
+   ],
+   "authorization": "User authorization 2026-10-25 (decision D20): the single public ECB euro foreign exchange reference rates history file eurofxref-hist.zip from ecb.europa.eu; nothing else new.",
+   "terms_note": "Public ECB statistical data; ECB reuse terms apply; the raw file is not redistributed in this repository.",
+   "status": "VERIFIED",
+   "file": "data/raw/ecb/eurofxref-hist.zip",
+   "bytes": 641786,
+   "sha256": "d0c1083db615c0c6a3c6a33a3c64e15716794816fc0ed08e1cbd44e5819fe7f1",
+   "hash_kind": "self-recorded at acquisition (provider publishes no checksum)"
   }
  ],
  "summary": {
-  "VERIFIED": 2179,
+  "VERIFIED": 2180,
   "NOT_AVAILABLE": 76,
   "CHECKSUM_FAILED": 0
  }
