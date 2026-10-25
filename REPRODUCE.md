@@ -182,6 +182,10 @@ uv run python -m www_panel.classify   # step 2: 80% coverage rule and stress/cal
 uv run python -m www_panel.run        # step 3: OLS and IV, moving-block bootstrap (7-day blocks, 1,000 draws, seed 20261024) -> reports/panel/results.json
 ```
 
+```sh
+uv run python -m www_panel.cluster    # POST HOC (not pre-registered): unit-clustered bootstrap, leave-one-unit-out -> reports/panel/cluster.json; changes nothing in results.json
+```
+
 `months.json` was committed (`daa167b`) before D or X was loaded. Do not change the stress threshold, the netting or the instrument. Outcome: P1 narrow fail (interval excludes 0, lies just below 1), P2 pass (8 of 8 currencies in [0.8, 1.2]).
 
 ### Kimchi premium application **[PRE-REGISTERED]**

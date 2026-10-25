@@ -14,7 +14,7 @@ REQUIRED = [
     "www_auto.noise_bounds", "www_theory.applied", "www_theory.simulate", "www_theory.robustness",
     "www_fuse.panel", "www_fuse.harness", "www_stable.panel", "www_stable.harness",
     "www_q1.panel", "www_q1.gate", "www_q1.run", "www_q2.labels", "www_q2.calibrate", "www_q2.run",
-    "www_panel.classify", "www_panel.run", "www_kimchi.analysis",
+    "www_panel.classify", "www_panel.run", "www_panel.cluster", "www_kimchi.analysis",
     "www_rescue.detector_eval", "www_rescue.monitor_sweep", "www_paper.macros", "www_paper.panel_macros",
     "www_paper.q1_macros", "www_paper.q2_macros", "www_paper.bench_macros", "www_paper.figures",
     "www_paper.figures_panel", "www_paper.gate",
