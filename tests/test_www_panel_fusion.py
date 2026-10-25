@@ -21,12 +21,12 @@ def ecb_frame() -> pd.DataFrame:
 
 
 def test_fx_alignment_has_no_look_ahead():
-    h = pd.date_range("2024-03-01 12:00", "2024-03-05 12:00", freq="h", tz="UTC")
+    h = pd.date_range("2024-03-01 12:00", "2024-03-05 20:00", freq="h", tz="UTC")
     s = fx.hourly_official(ecb_frame(), "TRY", h)
     assert np.isnan(s[:"2024-03-01 13:00"]).all()  # nothing published before 13:15 UTC; hour 13:00 starts before publication
     assert s["2024-03-01 14:00"] == 30.0 and s["2024-03-04 13:00"] == 30.0  # carried forward over the weekend
     assert s["2024-03-04 14:00"] == 32.0 and s["2024-03-05 13:00"] == 32.0
-    assert (s.dropna() != 99.0).all()  # the 2024-03-05 rate is not used before its publication
+    assert (s[:"2024-03-05 13:00"] != 99.0).all() and s["2024-03-05 14:00"] == 99.0  # the 2024-03-05 rate is not used before its publication
 
 
 def test_fx_is_cross_rate_and_rub_stops():
