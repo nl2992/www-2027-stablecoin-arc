@@ -20,6 +20,7 @@
 \input{generated/panel_numbers}
 \input{generated/panel_fusion_numbers}
 \input{generated/panel_kraken_numbers}
+\input{generated/explore_numbers}
 \input{generated/fig_captions_v9}
 \input{generated/fig_caption_panel}
 \usepackage{tikz}\usetikzlibrary{arrows.meta}
@@ -356,6 +357,10 @@ required the pooled IV interval to exclude 0 and K2 required a majority of curre
 (\NumPKAudLam{}, \NumPKAudLo{} to \NumPKAudHi{}). For these freely convertible currencies, intraday moves of the exchange rate enter both
 sides of the relation, so the slope is weak evidence of a venue-specific wedge.
 
+\paragraph{Placebos (post hoc).} Pairing a currency's gap with another currency's USDT price gave slopes well below one
+(median \NumEXPlaceboStressPairMedian{} over \NumEXPlaceboStressPairs{} pairs, none reaching one); with no wedge (Binance.US
+against Bitstamp, October 2022) the slope was \NumEXCalmPrimaryLam{}.
+
 \paragraph{Caveats.} (a) On a venue that also lists BTC/USDT, $D-X-L$ equals, up to sign, the gap between that venue's implied
 BTC/USDT and Kraken's. A slope near one therefore partly reflects triangular arbitrage within the venue; the alternative it
 rules out is venue-specific crypto demand, as in the Bitfinex test. (b) The panel is a within-day test across units and is not a stress-versus-calm comparison: the stress rule flagged
@@ -426,7 +431,8 @@ any data, since the ECB has no rate for them. The pooled mean log-error differen
 for O and \NumPFMaeA{} for A, and O is biased (mean signed error \NumPFBiasO{} bps, against \NumPFBiasA{}). The median of officially converted markets also fails
 (\NumPFFusMOMae{} against \NumPFFusMAMae{} bps for the median of A prices; difference \NumPFFusMean{}, \NumPFFusLo{} to \NumPFFusHi{}), since the wedges share a sign.
 A is close to a triangular identity, since it runs through the venue's own BTC/USDT, and the gap partly reflects that. The test measures
-the error of using official rates where a currency wedge exists, and does not claim that A uses less information than O.
+the error of using official rates where a currency wedge exists, and does not claim that A uses less information than O. Converting through the venue's USDT at one dollar (post hoc) erred
+\NumEXCompMaeC{} bps: most of the gain comes from the stablecoin market, and Tether's correction adds a little more.
 
 \subsection{Calm years, a monitor and two 2023 shocks}
 \label{sec:noise}\label{sec:monitor}\label{sec:2023}\label{sec:shocks}
@@ -439,10 +445,9 @@ dislocation. In the March 2023 USDC run the token component on Binance.US was
 
 \section{Discussion}
 \label{sec:discussion}
-\paragraph{What aggregators and oracles should do.} Keep the plain median by default: it was hard to beat in three tests with frozen
-methods and it absorbs a minority of shifted sources. It fails when the sources share a wedge of one sign,
-as with local-currency markets converted at official rates. Correcting for units may pay when a group of
-sources shares a unit that can move, the shift is large relative to venue noise, and an anchor with an external price identifies the unit. Then convert through the anchor and report the estimated offset. We have tested the approach only on crypto exchanges.
+\paragraph{What aggregators and oracles should do.} Keep the plain median by default; it absorbs a minority of shifted
+sources. Where a group of sources shares a unit that can move by more than venue noise, as with local-currency markets
+at official rates, convert through an anchor with an external price and report the offset. We tested only crypto exchanges.
 
 \paragraph{Limits.} Korean exchanges, with gaps net of the official won--dollar rate, gave \NumKRAnchMeanIv{} (Appendix~\ref{app:korea}). The diagnostic rests on three USD exchanges and the benchmark on three tests with few episodes each. The anchored evidence rests on Bitfinex's stress window, a Binance.US episode that is close to mechanical, and a panel that partly reflects triangular arbitrage. The Kraken slice
 is weak evidence of a venue-specific wedge, and the official-rate test has six units and a near-identity anchor conversion. A1 is not tested asset by
@@ -464,9 +469,9 @@ allow redistributing raw files, so none is shared; scripts that rebuild them fro
 Web services that fuse prices assume every source quotes the same unit. We identify a unit shift from public prices with
 the part of the price gaps that unrelated items share and a netted stablecoin anchor. On Bitfinex in 2018--19 the netted slope was \NumKStressDaySlopeAdj{}
 (interval \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}), and a pre-registered panel of eight currency units
-gave a pooled \NumPNPooledStressLam{}, and a Kraken slice gave \NumPKPooledStressLam{}. We read the evidence as close to one, with reservations. A plain median is hard to beat in fusion, but it fails when
-sources share a wedge of one sign: the median of officially converted local-currency markets erred by \NumPFFusMOMae{} bps, against \NumPFFusMAMae{} through the venue's stablecoin. Keep the median by default, and
-correct for units when sources share a unit that can move and an anchor is available.
+gave a pooled \NumPNPooledStressLam{}; we read these as close to one, with reservations. The median fails when sources
+share a wedge of one sign (\NumPFFusMOMae{} against \NumPFFusMAMae{} bps). Keep it by default, and correct for units when a
+shared unit can move and an anchor is available.
 
 \FloatBarrier
 {\let\small\footnotesize
@@ -637,7 +642,7 @@ The estimator, the FUSE fuser and the STABLE fuser were frozen first. T1, the Bi
 motivated the project, so it was known before scoring. \\
 Post hoc & The anchor tests and the placebo (the external-price correction was specified after the raw slope of
 \NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); the \NumRACells{}-specification
-grid (specified before it was run, but after the headline slope was seen); the panel's currency-clustered checks (\S\ref{sec:panel}); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
+grid (specified before it was run, but after the headline slope was seen); the panel's currency-clustered checks and placebos, and the comparator in the official-rate test (\S\ref{sec:panel}); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
 GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks and the oracle pilot. \\
 \bottomrule
 \end{tabular}

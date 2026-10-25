@@ -9,6 +9,8 @@ def test_body_pages_is_the_page_where_references_start():
     pages = ["1 INTRODUCTION\nWeb", "text", "11 REPRODUCIBILITY\n\nREFERENCES\n[1] x", "[9] y"]
     assert body_pages(pages) == 3
     assert body_pages(["no refs here", "in-text mention of references only"]) is None
+    top = ["1 INTRODUCTION", "text", "Same Name, Different Unit\nWWW \u201927, 2027,\n12\nREFERENCES\n[1] x"]
+    assert body_pages(top) == 2  # references open a fresh page: the body ends on the page before
 
 
 def test_docclass_check_ignores_whitespace_and_requires_anonymous_review():

@@ -41,11 +41,21 @@ class Gate:
         return all(self.checks.values())
 
 
+def _content_lines(text: str) -> list[str]:
+    """Page lines without blanks, line numbers and the running header (title / venue / author line)."""
+    out = [ln.strip() for ln in text.splitlines() if ln.strip() and not re.fullmatch(r"\s*\d+\s*", ln)]
+    while out and (re.search(r"WWW\s*[\u2019']\d\d|^Anon\.?$", out[0]) or out[0].startswith("Same Name")):
+        out.pop(0)
+    return out
+
+
 def body_pages(page_texts: list[str]) -> int | None:
-    """1-based index of the page whose text starts the REFERENCES section (that page included)."""
+    """Number of pages holding main-text content: the page where REFERENCES starts, or the page before it when the
+    REFERENCES heading is the first content on its page (WWW counts references outside the 8-page limit)."""
     for i, text in enumerate(page_texts, 1):
         if re.search(r"^\s*REFERENCES\s*$", text, re.M):
-            return i
+            lines = _content_lines(text)
+            return i - 1 if i > 1 and lines and lines[0] == "REFERENCES" else i
     return None
 
 
