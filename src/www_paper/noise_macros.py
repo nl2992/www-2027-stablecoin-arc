@@ -128,7 +128,7 @@ def table() -> str:
     return f"""{HEADER}
 \\begin{{table*}}[t]
 \\footnotesize
-\\caption{{Noise bounds on the pair gaps. Band: sum of the two venues' base-tier taker fees (bps; hour-weighted within a year; \\texttt{{configs/fee\\_schedule.json}}). Tick: the smallest recurring minute-to-minute price change in bps of the median close, larger of the two venues, BTC / ETH. $|L|$: median absolute hourly BTC gap (bps). $>$Band: share of hours (percent) with the BTC gap beyond the band. AC(1): first-order autocorrelation of the daily cross-asset gap (mean of the BTC and ETH daily-median gaps). Agreement: explained share $1-\\overline{{(g_{{ETH}}-g_{{BTC}})^2}}/\\overline{{g_{{ETH}}^2}}$ of the hourly ETH gap by the BTC gap, with hourly medians of traded minutes (Med), the last traded close (Last), or only hours in which all four legs traded in the final minute (Sync).}}
+\\caption{{Noise bounds on the pair gaps. Band: sum of the two venues' base-tier taker fees (bps; hour-weighted within a year). Tick: the smallest recurring minute-to-minute price change in bps of the median close, larger of the two venues, BTC / ETH. $|L|$: median absolute hourly BTC gap (bps). $>$Band: share of hours (percent) with the BTC gap beyond the band. AC(1): first-order autocorrelation of the daily cross-asset gap (mean of the BTC and ETH daily-median gaps). Agreement: explained share $1-\\overline{{(g_{{ETH}}-g_{{BTC}})^2}}/\\overline{{g_{{ETH}}^2}}$ of the hourly ETH gap by the BTC gap, with hourly medians of traded minutes (Med), the last traded close (Last), or only hours in which all four legs traded in the final minute (Sync).}}
 \\label{{tab:noise}}
 \\setlength{{\\tabcolsep}}{{4pt}}
 \\begin{{tabular}}{{@{{}}lrrrrrrrr@{{}}}}

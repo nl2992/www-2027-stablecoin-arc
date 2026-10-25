@@ -127,6 +127,9 @@ def cluster_macros() -> list[str]:
         w = c["wedge_bps"][cur]
         add(f"Wedge{_tag(cur)}", f"{w['median_abs_dev_from_month_median_bps']:.0f}", f"wedge_bps/{cur}/median_abs_dev_from_month_median_bps")
         add(f"AbsL{_tag(cur)}", f"{w['median_abs_L_bps']:,.0f}", f"wedge_bps/{cur}/median_abs_L_bps")
+    wedges = [c["wedge_bps"][cur]["median_abs_dev_from_month_median_bps"] for cur in ORDER]
+    add("WedgeMin", f"{min(wedges):.0f}", "wedge_bps/*/median_abs_dev_from_month_median_bps (min)")
+    add("WedgeMax", f"{max(wedges):.0f}", "wedge_bps/*/median_abs_dev_from_month_median_bps (max)")
     vc = c["venue_concentration"]
     for key, tag in (("binance_only", "BinOnly"), ("krw_only", "KrwOnly")):
         add(f"{tag}Lam", f(vc[key]["lam"]), f"venue_concentration/{key}/lam")

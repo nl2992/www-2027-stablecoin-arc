@@ -1,4 +1,4 @@
-% Every empirical number is a \Num... macro generated from committed reports and logs
+% Every empirical number is a \Num... macro generated from stored reports and logs
 % (paper/generated/*_numbers.tex). Do not type numbers by hand.
 \documentclass[sigconf,review,anonymous]{acmart}
 \usepackage{placeins}
@@ -41,8 +41,9 @@ From November 2018 to May 2019, once Tether's own price on Kraken was netted out
 dollar offset with slope \NumKStressDaySlopeAdj{} (95\% interval \NumKStressDaySlopeAdjMoLo{} to
 \NumKStressDaySlopeAdjMoHi{}), up from \NumKStressDaySlopeD{}: the offset moved nearly in step with Bitfinex's dollar. Binance.US in
 2023 gave a slope of \NumUAnchorBnusSlope{}, close to mechanical once its deposits closed, though a two-stablecoin version of the
-test rejected. The pre-registered test across eight currency units on three venues gave slopes between \NumPNRangeMin{} and
-\NumPNRangeMax{} (pooled \NumPNPooledStressLam{}). A plain median was hard to beat in three one-shot fusion
+test rejected. A pre-registered panel of eight currency units gave a primary interval just below one (pooled
+\NumPNPooledStressLam{}, 95\% interval \NumPNPooledStressLo{} to \NumPNPooledStressHi{}), with every currency between
+\NumPNRangeMin{} and \NumPNRangeMax{}. A plain median was hard to beat in three one-shot fusion
 tests. In a pre-registered test on new events, where most trading shared one stablecoin that lost its
 peg, a frozen unit-aware method beat the median, stablecoin conversion and source-reliability weighting (CRH), and narrowly
 beat a median of dollar-quoted markets.
@@ -101,7 +102,8 @@ We make three contributions.
 item residual. The offset is identified by cross-item agreement and by a unit anchor corrected for the anchor's external price
 (\S\ref{sec:model}). The test checks whether Bitfinex's premium reflected a discount on its dollar, and it separates that
 dollar from Tether's own discount, which contaminates the raw anchor (\S\ref{sec:anchor}). A pre-registered panel of eight
-currency units on three venues replicates it (\S\ref{sec:panel}). Simulations give its size and power,
+currency units on three venues gives a pooled slope just below one, which partly reflects triangular arbitrage within each
+venue (\S\ref{sec:panel}). Simulations give its size and power,
 and a held-out validation on withheld assets, years and shared-dollar controls supports the one-offset model
 (\S\ref{sec:heldout}).
 \item \emph{A fusion benchmark that shows when a plain median suffices and when unit-aware fusion helps.} Three tests with
@@ -348,36 +350,42 @@ placebo checks.
 \subsection{A pre-registered panel: eight currency units}
 \label{sec:panel}
 \paragraph{Design.} Three objections remain: the evidence is one episode, the netting was chosen after the raw slope was seen,
-and Kraken's independence from Bitfinex is an assumption. We therefore wrote the test down before any data were listed
-(Table~\ref{tab:fixed}). A venue's balance in a local currency can sit at a wedge to the official currency, so the same
-test applies to Binance in seven currencies (TRY, BRL, RUB, UAH, ZAR, ARS, NGN) and to Upbit and Bithumb in won. It is the same
-netted, instrumented test: hourly $(D-X)$ on $L$, with the ether gap as instrument and Kraken's USDT/USD as $X$. All three
+and Kraken's independence is an assumption. We therefore wrote the test down, time-stamped, before any data were listed
+(Table~\ref{tab:fixed}). It fixed three terms: P1, the pooled IV interval excludes 0 and includes 1; P2, a majority of the
+currencies with at least 3 stress months lie in $[0.8, 1.2]$; and a falsification rule, the pooled upper bound falls below 0.5.
+A venue's balance in a local currency can sit at a wedge to the official currency, so the same
+test applies to Binance in seven currencies (TRY, BRL, RUB, UAH, ZAR, ARS, NGN) and to Upbit and Bithumb in won: hourly $(D-X)$ on $L$, with the ether gap as instrument and Kraken's USDT/USD as $X$. All three
 series contain the official exchange rate, which is fixed within a UTC day, so we use within-day variation (day fixed effects)
 and the rate cancels. A venue-month counts as stress by a rule that uses $L$ only. Intervals come from a moving-block bootstrap
 over weeks.
 
 \begin{figure}[t]
-\centering\includegraphics[width=0.8\columnwidth]{figures/panel_forest.pdf}
+\centering\includegraphics[width=0.68\columnwidth]{figures/panel_forest.pdf}
 \caption{Pre-registered panel: IV slope of $(D-X)$ on $L$ by currency unit (stress venue-months, number in brackets), with 95\%
-moving-block bootstrap intervals, and pooled. KRW pools Upbit and Bithumb. Per-currency values are in \texttt{reports/panel/results.json}.}
+moving-block bootstrap intervals, and pooled. KRW pools Upbit and Bithumb. Per-currency values are in the text and the table below.}
 \label{fig:panel}
 \end{figure}
 \paragraph{Results.} Pooled over \NumPNPooledStressDays{} unit-days (\NumPNPooledStressHours{} hours), the IV slope was
 \NumPNPooledStressLam{} (95\% interval \NumPNPooledStressLo{} to \NumPNPooledStressHi{}). Every currency lay between
 \NumPNRangeMin{} and \NumPNRangeMax{} (Figure~\ref{fig:panel}). P2 passed: \NumPNPTwoInside{} of \NumPNPTwoEligible{}
-currencies fell in the pre-registered range. The falsification rule was not triggered. P1 failed narrowly: its interval excludes
-zero but lies just below one, as on Bitfinex. OLS gave \NumPNRobOlsPooled{}. Replacing Kraken's USDT price by Binance.US's gave
-\NumPNAltBusLam{} (\NumPNAltBusLo{} to \NumPNAltBusHi{}) and Bitstamp's gave \NumPNAltBstLam{} (\NumPNAltBstLo{} to
-\NumPNAltBstHi{}). So the slope was close to one in many episodes, with a different venue and external price in each.
+currencies fell in the pre-registered range. The falsification rule was not triggered. P1 failed narrowly: the interval excludes
+zero and lies just below one, as on Bitfinex. OLS gave \NumPNRobOlsPooled{}. Using Binance.US's USDT price as $X$ gave
+\NumPNAltBusLam{} (\NumPNAltBusLo{} to \NumPNAltBusHi{}) and Bitstamp's \NumPNAltBstLam{} (\NumPNAltBstLo{} to
+\NumPNAltBstHi{}).
+
+A post hoc check treats whole currencies as the units of resampling. Resampling them gives a pooled $\hat\lambda$ of \NumPNClusLam{}
+with interval \NumPNClusLo{} to \NumPNClusHi{} (\NumPNClusDraws{} draws), and leaving out any one currency gives \NumPNLooMin{} to
+\NumPNLooMax{}. The effective number of independent units is about \NumPNNeffKish{} (Kish) to \NumPNNeffDeff{} (design effect
+\NumPNDeff{}) of 8. The Binance units alone give \NumPNBinOnlyLam{} (\NumPNBinOnlyLo{} to \NumPNBinOnlyHi{}). Monthly wedges (median absolute deviation of $L$ from its month median) ranged from \NumPNWedgeMin{} to \NumPNWedgeMax{} bps across currencies.
 
 \paragraph{Caveats.} (a) On a venue that also lists BTC/USDT, $D-X-L$ equals, up to sign, the gap between that venue's implied
-BTC/USDT and Kraken's. A slope near one therefore partly reflects triangular arbitrage within the venue, and the alternative it
-rules out is venue-specific crypto demand. This is the same structure as the Bitfinex test. (b) The stress rule flagged
-\NumPNStressUnitMonths{} of \NumPNMonthCount{} venue-months, because $L$ includes drift in the official rate, so the split into
-stress and calm months is uninformative (calm pooled slope \NumPNPooledCalmLam{}). (c) Intraday moves in the official rate would
-pull $\hat\lambda$ toward one, so the daily robustness with week fixed effects (\NumPNRobDailyLam{}) is uninformative. (d) Won is
-the weakest case: Upbit gave \NumPNUpbitLam{} and Bithumb \NumPNBithumbLam{} (\NumPNBithumbLo{} to \NumPNBithumbHi{}), and one
-Bithumb month gave \NumPNMonthMin{}.
+BTC/USDT and Kraken's. A slope near one therefore partly reflects triangular arbitrage within the venue; the alternative it
+rules out is venue-specific crypto demand, as in the Bitfinex test. (b) The panel is a within-day test across units and is not a stress-versus-calm comparison: the stress rule flagged
+\NumPNStressUnitMonths{} of \NumPNMonthCount{} venue-months, because $L$ includes drift in the official rate, so the split
+is uninformative (calm pooled slope \NumPNPooledCalmLam{}). (c) Intraday moves in the official rate would
+pull $\hat\lambda$ toward one, so the daily check with week fixed effects (\NumPNRobDailyLam{}) is uninformative. (d) Won is
+the weakest case: Upbit gave \NumPNUpbitLam{}, Bithumb \NumPNBithumbLam{} (\NumPNBithumbLo{} to \NumPNBithumbHi{}), and one
+Bithumb month \NumPNMonthMin{}.
 
 \subsection{Held-out assets}
 \label{sec:heldout}
@@ -397,7 +405,7 @@ it is driven by XRP (\NumUTestXrpPct\%) and by 2019 (\NumUTestNineteenPct\%). Th
 was between \NumUTestYearMinPct\% and \NumUTestYearMaxPct\%. So one offset per source-hour removes most of the gap in the
 stress years and about a third to two-fifths in calm years.
 
-\paragraph{Held-out time.} Scored period by period, the test assets scored \NumRPeriodOneTestEst{} in 2017--2019 and \NumRPeriodTwoTestEst{} in 2020--2023 (Appendix~\ref{app:heldout}).
+\paragraph{Held-out time.} By period, the test assets scored \NumRPeriodOneTestEst{} in 2017--2019 and \NumRPeriodTwoTestEst{} in 2020--2023 (Appendix~\ref{app:heldout}).
 
 \paragraph{Baseline and controls.} The estimator ties the plain cross-asset median $b_2$ on the pooled test score
 (difference \NumPTestPooledDiff{}, interval \NumPTestPooledDiffLo{} to \NumPTestPooledDiffHi{}). Some per-asset and control
@@ -469,22 +477,18 @@ sources shares a unit that can move, the shift is large relative to venue noise,
 (several unrelated items per source, or an anchor with an external price). In that case, report the estimated offset. Where only two sources quote, a median cannot say which unit is off, and the offset can. The approach may
 apply to platform credits and loyalty points where an anchor item exists; we have tested it only on crypto exchanges.
 
-\paragraph{A second application.} Korean exchanges, with gaps net of the official won--dollar rate, gave a slope of \NumKRAnchMeanIv{} (Appendix~\ref{app:korea}); the panel adds Upbit and Bithumb (\S\ref{sec:panel}).
-
-\paragraph{Limits.} The diagnostic rests on three USD exchanges. The benchmark rests on three tests with frozen methods and
+\paragraph{Limits.} Korean exchanges, with gaps net of the official won--dollar rate, gave \NumKRAnchMeanIv{} (Appendix~\ref{app:korea}). The diagnostic rests on three USD exchanges. The benchmark rests on three tests with frozen methods and
 few episodes each. The anchored evidence rests on Bitfinex's stress window, a Binance.US episode in which
-the slope is close to mechanical, and a panel in which the slope partly reflects triangular arbitrage within the venue. The scope condition is therefore a pattern in a small sample. A1 is not tested asset by
+the slope is close to mechanical, and a panel in which the slope partly reflects triangular arbitrage within the venue. The scope condition is a pattern in a small sample. A1 is not tested asset by
 asset, and the uneven per-asset scores of Table~\ref{tab:heldout-ci} suggest it fails for some. The estimator ties the plain
-median. The anchor is fixed in the true unit only up to USDT's redemption risk. Kraken's price corrects for that risk only
-if Kraken's ledger is outside Bitfinex's. The anchor also exists on Bitfinex only from 2018-11-27. When two of three
-exchanges share a biased unit, prices alone cannot say which is true. The fee bands, monitor labels and oracle check are
-thin.
+median. Kraken's price corrects for USDT's redemption risk only
+if Kraken's ledger is outside Bitfinex's. When two of three
+exchanges share a biased unit, prices alone cannot say which is true.
 
 \section{Conclusion}
 \label{sec:conclusion}
-Web services that fuse prices assume every source quotes the same unit, and a source whose unit moves shifts all of its
-items together. We identify that shift from public prices, using the part of the price gaps that unrelated items share and a
-stablecoin anchor corrected for its external price. On Bitfinex in 2018--19 the netted slope was \NumKStressDaySlopeAdj{}
+Web services that fuse prices assume every source quotes the same unit. We identify a unit shift from public prices, using
+the part of the price gaps that unrelated items share and a stablecoin anchor corrected for its external price. On Bitfinex in 2018--19 the netted slope was \NumKStressDaySlopeAdj{}
 (interval \NumKStressDaySlopeAdjMoLo{} to \NumKStressDaySlopeAdjMoHi{}), and a pre-registered panel of eight currency units
 gave slopes between \NumPNRangeMin{} and \NumPNRangeMax{} (pooled \NumPNPooledStressLam{}). The evidence now spans the
 Bitfinex stress window, Binance.US and the panel. We read it as close to one, with two reservations: the Binance.US slope is close to
@@ -652,9 +656,8 @@ downloaded, but the rule was fitted on Binance.US in 2022--23 and Bitfinex's eve
 therefore pre-registered only for venue-months it had not been fitted or checked on (Coinbase); its Binance.US and Bitfinex
 results are development results. The episodes, splits, score and keep rule of the fusion tests FUSE and STABLE, before any
 result of each round, and the Q1 test (frozen round-3 fuser, untouched majority-unit events, gate and endpoints fixed before
-its data). The Upbit/Kimchi study (hypotheses, windows, FX netting and anchor test), before any of its prices
-were downloaded (Appendix~\ref{app:korea}). The currency-wedge panel (netted test, day fixed effects, instrument, stress rule,
-hypotheses P1 to P3, falsification rule and robustness; \texttt{program\_panel.md}, commit bfb6205), before any of its prices
+its data). The Upbit/Kimchi study, before any of its prices
+were downloaded (Appendix~\ref{app:korea}). The currency-wedge panel (test, instrument, stress rule, P1 to P3, falsification rule and robustness), in a time-stamped document written before any of its prices
 were listed or downloaded (\S\ref{sec:panel}). \\
 Developed on dev data & The estimator (\NumULoopIter{} runs, \NumULoopKept{} kept), the FUSE fuser (\NumBFuseLoopRuns{} runs,
 \NumBFuseLoopKept{} kept) and the STABLE fuser (\NumBStableLoopRuns{} runs, \NumBStableLoopKept{} kept), each on development
@@ -664,7 +667,7 @@ The estimator, the FUSE fuser and the STABLE fuser were frozen first. T1, the Bi
 motivated the project, so it was known before scoring. \\
 Post hoc & The anchor tests and the placebo (the external-price correction was specified after the raw slope of
 \NumKStressDaySlopeD{} was seen and before the Kraken file was downloaded; not registered); the \NumRACells{}-specification
-grid (specified before it was run, but after the headline slope was seen); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
+grid (specified before it was run, but after the headline slope was seen); the panel's currency-clustered checks (\S\ref{sec:panel}); per-year, per-asset and asset-by-time scores, longer blocks and intervals; the CRH and
 GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks and the oracle pilot. \\
 \bottomrule
 \end{tabular}
@@ -679,12 +682,11 @@ GTM rows on the withheld assets; operating curves; fee bands; the 2023 shocks an
 \label{app:monitor}
 \subsection{Size and timing of the calm-year offsets}
 \label{app:secondary}
-As \S\ref{sec:noise} says, the calm-year offsets (2020 to 2023) are systematic but too small to trade. The round-trip band of
+The calm-year offsets (2020 to 2023) are systematic but too small to trade (\S\ref{sec:noise}). The round-trip band of
 a pair is the sum of its two venues' base-tier taker fees, from \NumNBandMin{} to \NumNBandMax{} bps across pair-years. The
 gap exceeded the band in at most \NumNCalmAboveBandMaxPct\% of hours for any pair. They are persistent and shared across assets: the first-order autocorrelation of the daily Bitfinex gap was between
 \NumNBfxBstAcOneMin{} and \NumNBfxBstAcOneMax{} against Bitstamp, and the hourly explained share was between
-\NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{} with hourly medians (\NumNBfxBstExplLastMin{} to
-\NumNBfxBstExplLastMax{} with last closes). In all \NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the
+\NumNBfxBstExplMedMin{} and \NumNBfxBstExplMedMax{}. In all \NumNLagZeroCount{} of \NumNLagTotal{} lead-lag series the
 cross-correlation peaked at zero minutes.
 
 \subsection{Monitoring}
@@ -696,17 +698,15 @@ On Bitfinex the monitor raised \NumUDetFaBfxTwo{} false alarm episodes per venue
 against \NumUBaseFaBfxTwo{} for the plain price-gap alarm (\NumUBaseFaBfxCount{}), at the same recall:
 \NumUDetCaught{} of \NumUDetCovered{} labelled episodes. On Binance.US, where the rule was fitted, it caught all
 labelled episodes. On Coinbase its \NumUCbEpisodes{} alarm episodes all fall in the 2017 bubble, between \NumUCbFirstAlarm{}
-and \NumUCbLastAlarm{}\label{app:windows}. Bitfinex's \NumUDetFaBfxCount{} false alarms fall in 2017, 2019 and 2022. We give no
-intervals, as the labelled episodes are few.
+and \NumUCbLastAlarm{}\label{app:windows}.
 
 \paragraph{Early depeg test and Chainlink.} A pre-registered early-depeg test on \NumQTNScored{} events tied the pooled detector with two single-pair rules at an equal
-false-alarm rate (\NumQTFalseAlarmRateP{} per 1000 calm hours). A Chainlink feed that inherited the USDC depeg would regress on its size;
-the slope was \NumUOracleSlopeBtc{} for bitcoin and \NumUOracleSlopeEth{} for ether, against
-\NumUOracleSlopeUsdt{} for the Tether feed and \NumUOracleSlopeUsdc{} for the USDC feed (one episode, one oracle family).
+false-alarm rate (\NumQTFalseAlarmRateP{} per 1000 calm hours). A Chainlink feed that inherited the USDC depeg would regress on its size: the slope was \NumUOracleSlopeBtc{} (bitcoin) and \NumUOracleSlopeEth{} (ether) against
+\NumUOracleSlopeUsdt{} (Tether) and \NumUOracleSlopeUsdc{} (USDC).
 
 % Floats are declared here so that they land beside Sections F.3 and G.
 \begin{figure}[!t]
-\centering\includegraphics[width=0.85\columnwidth]{figures/which_dollar.pdf}
+\centering\includegraphics[width=0.6\columnwidth]{figures/which_dollar.pdf}
 \caption{Two shocks on one exchange. (a) USDC in March 2023: the dislocation $D$ is almost entirely the token component
 $T$. (b) Binance.US's dollar, May to July 2023: USDT and bitcoin dislocations move together; rail phases are shaded.}
 \label{fig:which}
@@ -716,14 +716,14 @@ $T$. (b) Binance.US's dollar, May to July 2023: USDT and bitcoin dislocations mo
 
 \subsection{The 2023 shocks}
 Figure~\ref{fig:which} shows both shocks (\S\ref{sec:shocks}). On Binance.US in June 2023, after its banking partners
-stopped dollar payments~\cite{theblock2023binanceus}, bitcoin and Tether showed the same dislocation (hourly correlation
-of changes \NumIdentChgTrans{}). USDC fell to a peak of \NumUUsdcPeakBps{} bps below par on Bitstamp in March 2023
-(\NumUMarAlarmDays{} alarm days at the Silvergate and Signature closures).
+stopped dollar payments~\cite{theblock2023binanceus}, bitcoin and Tether dislocated together (hourly correlation
+of changes \NumIdentChgTrans{}). USDC fell to \NumUUsdcPeakBps{} bps below par on Bitstamp in March 2023
+(\NumUMarAlarmDays{} alarm days at the bank closures).
 
 \section{Korean Exchanges}
 \label{app:korea}
-We pre-registered a study of Korean exchanges (Table~\ref{tab:fixed}) with gaps net of the official won--dollar rate. Bitcoin, ether and
-XRP gaps on Upbit moved together in every window (smallest pairwise correlation \NumKREOneMinCorr{}). The anchor, USDT/KRW, exists only from December 2023
+We pre-registered a study of Korean exchanges (Table~\ref{tab:fixed}) with gaps net of the official won--dollar rate. Gaps for Bitcoin, ether and
+XRP on Upbit moved together in every window (smallest pairwise correlation \NumKREOneMinCorr{}). The anchor, USDT/KRW, starts in December 2023
 and carries the wedge itself (median \NumKRAnchMedianDPct\% against a common component of \NumKRAnchMedianLPct\%). The anchored
 slope was \NumKRAnchMeanIv{} (interval \NumKRAnchMeanIvLo{} to \NumKRAnchMeanIvHi{}), biased toward one by common FX noise.
 
@@ -733,6 +733,6 @@ slope was \NumKRAnchMeanIv{} (interval \NumKRAnchMeanIvLo{} to \NumKRAnchMeanIvH
 % content be disclosed in the end-matter credits section; WWW 2027 says LLMs may help rephrase text but authors are
 % solely responsible. Such a section is not allowed in the anonymous submission, so decide the wording
 % and place (camera-ready only vs. a neutral statement) yourself. Do not fill in without the author.
-\paragraph{Ethics and reproducibility.} The study uses only public exchange price files; it involves no human participants or personal data. Every number is a macro generated from committed reports and logs, and tests fail if one is stale or typed by hand.
+\paragraph{Ethics and reproducibility.} The study uses only public price files, with no human participants or personal data. Every number is a generated macro; tests fail if one is stale.
 
 \end{document}
