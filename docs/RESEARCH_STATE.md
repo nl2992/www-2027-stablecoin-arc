@@ -1,132 +1,69 @@
 # Research state (durable; read at the start of every iteration)
 
-Cross-check against `git log` and the code before acting. Update at the end of every iteration.
+Last updated 2026-10-24 (paper draft v15, branch `autoresearch/stable`). Cross-check against `git log` and the code before acting. The loop is paused for the submission; see `docs/status/CURRENT_STATE.md` for the snapshot and `docs/status/DECISION_REGISTER.md` (D1 to D19) for the decision trail.
 
-**Objective:** test whether constraints on executable arbitrage restoration capacity help explain the magnitude, persistence and resolution of stablecoin price fragmentation, *across independent stress events and normal regimes*. March 2023 is the anchor, not the whole sample. No causal claims beyond what the evidence supports.
+## Objective
 
-**Environment:** numpy is capped below 2.5, because NumPy 2.5 deprecates generic timedeltas that pandas 2.3 still creates. Run the suite with `-W error::DeprecationWarning`.
+**Paper:** "Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion" (`paper/main.tex`). WWW 2027, Research Track, Web Economics and Digital Society; double-blind; **full paper due 25 October 2026 AoE** (abstract was due 18 October). 8 body pages, 12 in total.
 
-**Repository conventions:** commits, merges and PRs carry no AI/tool attribution. Never force-push or merge PRs without authorization. Licensed raw data stays out of Git.
+**Question:** can the unit offset of a web source (a crypto exchange's ledger "dollar") be identified from public prices, and when does correcting for it improve a fused price?
 
-## Branches and checkpoint commits (stacked)
+**Earlier objective (superseded):** whether executable arbitrage-restoration capacity explains stablecoin fragmentation. It stopped for lack of crisis-day order-book and archive-state data (paid, declined) and became a descriptive multi-event study (D10), then this paper. The capacity code and reports remain, with no capacity claim.
 
-| Checkpoint | Branch | Head | Status |
-|---|---|---|---|
-| C0 audit | merged into main line | 9157037 | accepted |
-| C1 L2 replay prototype | c1/orderbook-validation | ad74f00 | accepted |
-| C2 access feasibility + CoinAPI follow-up | c2/data-access-feasibility | c48e714 → 8610d57 (source gate) | PR nl2992/www-2027-stablecoin-arc#3 open |
-| C3 fragmentation/persistence (anchor) | c3/fragmentation-persistence | 331ea9a | pushed, no PR |
-| E1 multi-event registry + adapters | e1/multi-event-registry | ef2e29d | pushed, no PR |
-| M1 manuscript skeleton | m1/manuscript-skeleton | 96b9a4d | pushed, no PR |
-| C4 capacity method (offline) | c4/capacity-method | 9924197 | pushed, no PR |
-| M2 literature + generated tables | m2/literature-and-tables | dac411f | pushed, no PR |
-| C4b v3 swap + redemption window | c4b/v3-and-redemption-window | 15459bf | pushed, no PR |
-| M3 figures | m3/figures | d4af74b | pushed, no PR |
-| P1 pre-analysis plan (frozen) + plan DVs + batch + USD-leg design | p1/pre-analysis-plan | 1057fcd | pushed, no PR |
-| C5 event-linked contract registry | c5/event-contracts | 7344b16 | pushed, no PR |
-| M4 multi-event data section | m4/data-section | 8e2cec9 | pushed, no PR |
-| C5b block-pinned validation plan (offline) | c5b/validation-plan | a6b77a8 | pushed, no PR |
-| R1 replication guide + post-C2 review packet | r1/replication-package | 75051f0 | pushed, no PR |
-| E3 authorized data acquisition + first multi-event run | e3/acquire-public-data | 355fb27 | pushed |
-| E4 Bitstamp USD leg (A3) + re-run | e4/bitstamp-usd-leg | 9460500 | **PR nl2992/www-2027-stablecoin-arc#4** (base c2/data-access-feasibility) |
+**Rules:** commits, merges and PRs carry no AI/tool attribution. Never force-push. Raw data stays out of Git; free public sources only (D1). Credentials live only in the git-ignored `.env`. Locked and pre-registered results are never re-run with changes. NumPy is capped below 2.5 (pandas 2.3 deprecation); run the suite with `-W error::DeprecationWarning`.
 
-## Component status
+## Method
 
-| ID | Component | Status | Evidence |
-|---|---|---|---|
-| C0 | IAQF panel audit, corrected parity formula | DONE | `docs/c0_review_packet.md` |
-| C1 | L2 replay prototype (Tardis normalized CSV) | DONE; crisis cells ACCESS_BLOCKED | `docs/c1_review_packet.md` |
-| C2 | Source feasibility + source gate | DONE; CoinAPI CONDITIONAL; no L2 source selected | `docs/c2_source_decision.md` |
-| C3 | Anchor fragmentation + robustness | DONE (descriptive, candle-based) | `docs/c3_fragmentation.md` |
-| E1 | Event registry, rules R1–R4, coverage matrix | DONE (first pass) | `docs/e1_event_registry.md` |
-| E2a | Binance public-kline adapter (parse, checksum, ms/µs units, gaps, manifest) | DONE (offline, synthetic tests) | `src/www_events/binance_klines.py` |
-| E2b | Event protocol runner (windows, quote-basis conversion, R1, diagnostics) | DONE; anchor run | `src/www_events/runner.py`, `reports/events/E2023-03-USDC-SVB_protocol.json` |
-| E2 | Multi-event panel harmonization (download + R1 on each event) | BLOCKED: file-download authorization | E1 decision 1 |
-| C4a | Capacity method: book walk, cost-bounded K(δ), triangle restoration (synthetic only) | DONE offline | `docs/c4_capacity_method.md` |
-| C4 | CEX executable capacity (historical) | BLOCKED: no authorized L2 + capacity gate | C2 gate |
-| C5 | On-chain capacity | BLOCKED: no authorized archive endpoint | `docs/c2_ethereum_access.md` |
-| C6 | Capacity → persistence inference | BLOCKED on C4/C5 | — |
-| M | Manuscript | SKELETON + related work (16 verified bib entries) + generated registry table + 3 generated figures (timeline, coverage heatmap, anchor D vs W) + generated coverage table + multi-event data section; numbers generated from reports; PDF build unverified (no TeX installed) | `paper/` |
+Shared offset across unrelated items on a source, plus a stablecoin anchor netted against an outside price (Kraken USDT/USD). Slope near 1 means a unit shift; near 0 means demand. IV/GMM with HAC and a Hansen J check, plus a simulation of size and power (`www_theory`). Fusion: a causal, anonymised fuser that removes estimated offsets, benchmarked on frozen splits (`www_auto`, `www_fuse`, `www_stable`).
 
-## Event coverage (from `configs/event_registry.json`, after the Bitstamp run on 2026-10-11)
+## Findings (all numbers are macros in `paper/generated/`, from `reports/`)
 
-- ACCEPTED independent clusters: **3**: CL-2023-03-SVB (anchor, exploratory), CL-2024-01-TUSD (out-of-sample, Bitstamp USD leg per A3) and CL-2025-04-FDUSD (out-of-sample).
-  - The three-verified-episodes criterion is **met**.
-  - The confirmatory framing is **not**: only two confirmatory episodes exist, both out-of-sample, and there is no confirmatory in-sample event.
-- REJECTED (R1 not met):
-  - the BUSD placebo;
-  - FTX-USDT on Binance.US;
-  - June 2023 USDT on Bitstamp. That was the expected negative case, and it confirms the Binance.US +361 bps was the A2 artifact.
-- DATA_VERIFIED:
-  - UST 2022: no recovery window after the delisting. USTC/BUSD continues on Binance, but splicing the two pairs would be an unregistered choice.
-  - USDe 2025: its designated Binance.US USDT gate failed at 15 bps. Bitstamp robustness passes, but under A3 that cannot change status.
-- Robustness reports: `reports/events/*_robustness_*.json`.
-- Known data defect: Bitstamp USDTUSD print at 2,959.99 on 2022-11-08 09:42 UTC. It invalidates only the FTX Bitstamp robustness R1.
-- Results table: `reports/events/cross_event_results.md` and `paper/generated/results_table.tex`.
+| Result | Outcome | Evidence |
+|---|---|---|
+| Bitfinex anchor, 2018-11 to 2019-05, netted | slope 0.97 (0.94 to 1.00), raw 0.71; 360-cell robustness grid, GMM estimates from 0.970 (median 0.984) | `reports/unit_td/anchor_external.json`, `reports/theory/` |
+| Binance.US 2023 | slope 1.00, mechanical; two-stablecoin test rejects | `reports/unit_td/anchor.json`, `reports/theory/gmm_applied.json` |
+| Held-out assets (UNIT-TD, locked 724455b) | 0.846 vs 0.847 for the cross-asset median (tie); contribution is the unit model | `autoresearch/final_test_724455b.log`, `reports/unit_td/posthoc.json` |
+| FUSE (locked 914b3cb) | median hard to beat: wins Bitfinex T1 (0.93), loses Binance.US T2 (1.50) | `autoresearch/final_fuse_914b3cb.log` |
+| STABLE (locked ca38772) | wins USDC X1 (0.72); loses TUSD X2, FDUSD X3 and the calm placebo X4 | `autoresearch/final_stable_ca38772.log` |
+| Calm years | offsets inside the round-trip fee band; monitor has fewer false alarms than a price-gap alarm | `reports/unit_td/noise_bounds.json`, `reports/rescue/` |
+| Kimchi (pre-registered) | common component in every window; USDT/KRW anchor only from 2023-12, biased toward 1 (appendix) | `reports/kimchi/results.json` |
 
-## Authorization state
+## Pre-registrations and outcomes
 
-| Item | State |
-|---|---|
-| Paid data / accounts / credentials / provider contact | NOT authorized (user reconfirmed: no paid access) |
-| Downloading free public data files: Binance.com and Binance.US klines | **AUTHORIZED by user 2026-10-11** (no paid access). 54 archives acquired and checksum-verified (`reports/events/acquisition_manifest.json`) |
-| Bitstamp public OHLC | **AUTHORIZED by user 2026-10-11**. 23 months acquired; self-recorded hashes in the manifest |
-| Historical capacity estimation | FORBIDDEN until execution-state data validated **and** separately authorized |
-| Continuity standard for L2 (PROVIDER_NORMALIZED vs NATIVE_SEQUENCE) | open user decision; current default PROVIDER_NORMALIZED |
+| Study | Registered | Outcome |
+|---|---|---|
+| Event study plan | `docs/PRE_ANALYSIS_PLAN.md`, hash in `configs/plan_freeze.json` | candle-level, descriptive; three accepted clusters, two confirmatory |
+| Detector evaluation | `docs/review/DETECTOR_PREREG.md` (2026-10-19) | P2 passes, P1 split, P3 and P4 fail; not falsified |
+| UNIT-TD, FUSE, STABLE | `autoresearch/program_unit_td.md`, `program_fuse.md`, `program_stable.md` | locked tests as above |
+| Kimchi | `docs/kimchi/PREREG.md` (before any price download, D17) | reported in the appendix |
+| **Q1** | `autoresearch/program_q1.md` (`7e45e0a`, 2026-10-22; D18) | **Win.** Gate kept 3 of 5 events (981 hours). Frozen fuser beats B0 (-1.08 [-1.36, -0.83]), B2 and B3, and narrowly beats the USD-only median (-0.07 [-0.11, -0.03]). Calm placebo ok. |
+| **Q2** | `autoresearch/program_q2.md` (`2189195`, 2026-10-23) | **Tie.** 6 events scored; pooled P median lead 72 h with 4 misses vs S1 37 h (3 misses) and S2 72 h (4 misses); bootstrap intervals include 0. Calibration rule corrected once after a scoring run (`55b50ed`); both versions tie (`docs/review/Q2_CALIBRATION_CHANGE.md`). |
+| **Panel** | `autoresearch/program_panel.md` (`bfb6205`, 2026-10-24; D19) | **P1 narrow fail:** pooled IV 0.978 (0.962 to 0.989) excludes 0 and excludes 1. **P2 pass:** 8 of 8 currencies in [0.8, 1.2]. Falsification not triggered. P3: one venue-month at 0.30. |
 
-## Cross-event decisions (generated)
+## Open items
 
-`python -m www_events.summary` produces `reports/events/cross_event_summary.json`. Current output: framing DESCRIPTIVE; H1 in-sample INSUFFICIENT_EVENTS; out-of-sample 2/2 (TUSD, FDUSD) satisfy H1, with no in-sample result to replicate; H2 DESCRIPTIVE_ONLY (2/2 ratio > 1, sign-test p = 0.5; the placebo is also > 1 and DV5 is numerically unstable); H3 NOT_TESTABLE.
+1. **GenAI disclosure.** Wording and place are an author decision (a credits section is not allowed in the anonymous version). A placeholder comment sits in `paper/main.tex`; nothing is written.
+2. **CCS concept IDs** were entered from memory; verify at https://dl.acm.org/ccs.
+3. **Submission.** Only the human author submits on OpenReview (profiles, dual-submission confirmation). Authors' list is frozen. Check that the 18 October abstract was accepted.
+4. **Anonymity (B1).** As of 2026-10-12 (`docs/WWW2027_GOAL.md`) the GitHub repository was public and carried the author's name. Check its visibility and decide whether to make it private until after review. The gate scans the paper only.
+5. **Layout.** The gate counts about 58 overfull boxes (advisory only).
+6. After review: code and data release (`resource/` package); an archival repository with a DOI is needed for the Artifacts badge.
+7. `REPRODUCE.md` has not been re-run from an empty disk. Two inputs have no script: the D12 hourly-candle call list and the D15 Kraken download (documented there).
 
-## Pre-analysis plan
+## Timeline since 2026-10-19
 
-Frozen 2026-10-11 (`docs/PRE_ANALYSIS_PLAN.md`, SHA-256 pinned in `configs/plan_freeze.json`). Amendments go only in `docs/PRE_ANALYSIS_AMENDMENTS.md`. The anchor is exploratory. Newly measured events must carry `measurement.measured_utc` after the freeze.
+| Date | Work | Commits (head) |
+|---|---|---|
+| 10-19 | continuous detector pre-registration and evaluation; fiat-rail labels (D1 amendment); D11 | `7459c5a` to `2e1b18d` |
+| 10-20 | hourly candles (D12, D14); UNIT-TD harness, 12-iteration loop, locked test of `724455b`; oracle pilot (D13); Kraken anchor (D15); new framing and abstract v3 | `92d2f89` to `c211c25` |
+| 10-21 | FUSE round (24 runs, locked `914b3cb`); STABLE pre-registration and data (D16); STABLE round (15 runs, locked `ca38772`) | `78d059e` to `6d6dc33` |
+| 10-22 | Kimchi (D17); theory, simulation and robustness grid; Q1 pre-registration and data (D18) | `7c39655` to `7e45e0a` |
+| 10-23 | Q1 locked run; Q2 pre-registration, labels, calibration, scoring and the calibration correction; v9 to v13 text, figures and WWW compliance | `93d6f58` to `7127325` |
+| 10-24 | panel pre-registration (D19), download, classification, estimation, macros, tests; panel integrated as a main result; readability passes; draft v15 | `bfb6205` to `3a8542a` |
 
-## Outstanding scientific issues
+## Where things are
 
-0. Anchor finding to test across events: the peg dislocation (stablecoin/USD) is far more persistent than the within-venue triangle wedge (half-life about 20 h vs minutes). Fragmentation measures must keep these separate.
-
-1. Binance.com series are USDT-quoted. Deviations measured on them are relative to USDT, and USDT/USD verification is needed per window (critical for 2022 clusters).
-2. Cross-event comparability. Venue, quote basis and data type differ across events, and this must be reported per event, not pooled blindly.
-3. Minute last-trade closes include bid-ask bounce. Persistence should use horizon-aggregated measures (C3 robustness).
-4. The anchor control window (February 2023) is not covered by the IAQF panel.
-
-## Prioritized next tasks
-
-0. **Toward a confirmatory in-sample event (free data only):**
-   - candidates: DAI 2020 and USDD 2022, which need a free USD-venue source;
-   - pre-register a UST splice (USTUSDT then USTCBUSD with a BUSD→USD conversion) **before** measuring it, or record UST as unacceptable under R3.
-1. **Mechanism covariate table:** tabulate the plan-6 covariates (BTC volatility, traded share, missing runs, redemption-window hours) per accepted event as associations only.
-2. **Capacity extensions (offline):** multi-range v3 tick crossing; two-venue transfer-delay bound.
-3. **Ethereum:** extend the contract registry with event-specific deployments (Curve UST-3CRV for 2022; 3pool for June 2023; USDe pools for 2025). Source documentation only.
-
-## Iteration log
-
-| # | Time (ET) | Branch @ commit | Work | Tests |
-|---|---|---|---|---|
-| 0 | 2026-10-11 03:50 | c2 @ 8610d57 | C2 source gate | 53 passed |
-| 1 | 04:20 | c3 @ 0e8f2df | C3 module + anchor report | 62 passed |
-| 2 | 04:40 | c3 @ 331ea9a | C3 robustness (horizons, bootstrap diffs, Coinbase leg) | 66 passed |
-| 3 | 05:10 | e1 @ 8a57c31 | E1 registry, rules, coverage matrix, anchor R1 | 82 passed |
-| 4 | 05:00 | e1 @ eadccd7 | Binance kline adapter + manifest; pin numpy<2.5 (pandas 2.3 deprecation); reports regenerated byte-identical | 89 passed, -W error::DeprecationWarning clean |
-| 5 | 05:25 | e1 @ ef2e29d | Event protocol runner; anchor protocol report | 95 passed |
-| 6 | 05:55 | m1 @ 96b9a4d | Manuscript skeleton, generated number macros, verified bibliography, consistency tests | 99 passed |
-| 7 | 06:20 | c4 @ a6af6f8 | Offline capacity method on synthetic books | 110 passed |
-| 8 | 06:45 | c4 @ 9924197 | Reverse loop; Curve StableSwap + Uniswap v2 integer math (synthetic) | 118 passed |
-| 9 | 07:10 | m2 @ dac411f | Related work with 7 newly verified references; generated registry table; paper tests extended | 119 passed |
-| 10 | 07:35 | c4b @ 15459bf | Uniswap v3 single-range swap; DST-aware redemption window | 125 passed |
-| 11 | 08:20 | m3 @ d4af74b | Deterministic figures (timeline, coverage heatmap, anchor D vs W) wired into the paper; matplotlib dependency | 130 passed |
-| 12 | 08:50 | p1 @ c94425c | Frozen pre-analysis plan + hash test + amendments log; DL random effects, Holm, sign test | 137 passed |
-| 13 | 09:25 | p1 @ 4d90727 | Plan DVs (DV1 bootstrap test, DV3 trailing recovery, gates, covariates) in runner; amendment A1 (DV3 window clipped at extreme); anchor re-run EXPLORATORY | 144 passed |
-| 14 | 09:55 | p1 @ 24f5cb3 | Cross-event summary builder applying frozen decision rules (currently INSUFFICIENT_EVENTS); anchor plan results in paper via macros | 149 passed |
-| 15 | 10:25 | p1 @ 4da93f2 | DV4/DV5 in runner; H2 rule in summary; anchor DV5 ≈ 95 (exploratory) | 152 passed |
-| 16 | 10:55 | p1 @ 66789db | Binance triangle adapter; triangle-leg listings in coverage matrix (USDe has no BTCUSDE) | 153 passed |
-| 17 | 11:25 | p1 @ adcf75a | Batch driver with rule-based status updates and audit log; run config; anchor re-run unchanged, 5 Binance events skipped (data not acquired) | 156 passed |
-| 18 | 11:55 | p1 @ 1057fcd | USD reference design (Binance.US primary, Bitstamp secondary, Kraken bundle tertiary; Coinbase excluded, Kraken REST unusable); cross-venue quote leg in runner/batch | 157 passed |
-| 19 | 12:25 | c5 @ 7344b16 | Event-linked contract registry: wormhole-UST/3CRV (Jump-documented), legacy UST, BUSD, USDe/USDC (UNVERIFIED aggregator) | 158 passed |
-| 20 | 12:55 | m4 @ 8e2cec9 | Multi-event data section; generated coverage appendix table; brace/environment balance test (no TeX available) | 160 passed |
-| 21 | 13:25 | c5b @ a6b77a8 | Offline block-pinned validation plan: pure-Python keccak (vector-tested), calldata, block search, dry run; 4 pool/event items, 0 network calls | 165 passed |
-| 22 | 13:55 | r1 @ 75051f0 | REPRODUCE.md, post-C2 review packet, command/hash consistency tests | 167 passed |
-| 23 | 14:30 | e3 @ feca745 + this commit | User authorized downloads; 54 archives acquired and verified; Binance.US 11-column layout supported; batch over 8 events; amendment A2 (post-data, USD-rail validity); summary bug fixed (only ACCEPTED primaries are confirmatory); results table and multi-event paper section | 170 passed |
-| 24 | 15:10 | e4 @ (this commit) | Bitstamp authorized; 23 months acquired; A3 venue priority committed before analysis; re-run: TUSD ACCEPTED, June 2023 REJECTED on valid USD; 3 accepted clusters; PR #4 opened | 173 passed |
-| 25 | 14:45 | p2 @ (this commit) | Plan-7 robustness in runner (R1 at 50/200, trimmed DV1, 15/30/60-min half-lives); robustness appendix table; classifications threshold-invariant; half-lives fragile | 175 passed |
+- Reproduction guide: `REPRODUCE.md`. Overview and repository map: `README.md`.
+- Evidence matrix and requirements audit: `docs/WWW2027_EVIDENCE_MATRIX.md`, `docs/review/WWW2027_REQUIREMENTS.md`. Goal tracker with deadlines: `docs/WWW2027_GOAL.md`.
+- Review history: `docs/review/` (simulated reviews v3 to v7, polish and readability flags, HKUSTDial evaluations, draft text v3 to v15).
+- Earlier component history (C0 to C6, E1 to E4, P1 and P2, M1 to M4), with the original status tables, is in the git history of this file (`git log -p docs/RESEARCH_STATE.md`) and in `docs/c*_*.md`, `docs/e1_event_registry.md` and `docs/review_packet_post_c2.md`.

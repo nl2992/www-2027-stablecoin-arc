@@ -1,177 +1,73 @@
-# Current state: Phase 0 reconciliation (Implementation Specification v3)
+# Current state: submission freeze for WWW 2027 (draft v15)
 
-**Audited:** 2026-10-11, 14:50 America/New_York.
-**Workspace:** `WWW Paper`; origin `git@github.com:nl2992/www-2027-stablecoin-arc.git`.
-**Branch / HEAD at audit start:** `p2/robustness` @ `e9a6780ead3dcbc89068760b540fd67aba809222`, clean working tree. PR #4 (`e4/bitstamp-usd-leg` → `c2/data-access-feasibility`) points at the same SHA.
-**Since the last CoinAPI checkpoint** (`c48e714`, 2026-10-11 01:31 EDT): 31 commits on stacked branches (`c2` → `c3` → `e1` → `m1` → `c4` → `m2` → `c4b` → `m3` → `p1` → `c5` → `m4` → `c5b` → `r1` → `e3` → `e4` → `p2`).
-**Tests:** `uv run pytest -q -W error::DeprecationWarning` collects and passes 175 tests, all offline.
+**Updated:** 2026-10-24. **Workspace:** `WWW Paper`; origin `git@github.com:nl2992/www-2027-stablecoin-arc.git`.
+**Branch:** `autoresearch/stable`, based on the work through commit `3a8542a` ("Integrate the pre-registered currency-wedge panel as a main result ... draft v15").
+**Deadline:** WWW 2027 full paper due **25 October 2026 AoE**, strict. Results 15 December, rebuttal 15 to 20 December, notification 4 January 2027 (`docs/review/WWW2027_REQUIREMENTS.md`).
+**Tests:** the offline suite runs with `uv run pytest -q -W error::DeprecationWarning` passes 497 tests, all offline (2026-10-24).
 
-Every statement below is classified by its evidence type: **executed** (a report produced from real data), **synthetic** (a code path tested only on constructed inputs), **documented** (an external source, nothing acquired), or **absent**.
+The previous version of this file (an audit dated 2026-10-11 under Implementation Specification v3) is superseded; it is in the git history. Evidence types below: **executed** (a report from real data), **locked** (run once, log committed), **pre-registered**.
 
-## 1. Status register
+## 1. The paper
 
-| Component | Evidence | Status | Remaining work |
-|---|---|---|---|
-| Existing IAQF data ingestion | `panel_1min.parquet` SHA-256 `17704ff0…11b3`, IAQF repo `b484e8b` (clean); audit `reports/c0/panel_quality.json`; `docs/c0_review_packet.md` | **Verified (executed)** for the 2023-03-01..21 Binance.US/Coinbase one-minute candle panel | Upstream raw pulls are absent, so the panel cannot be regenerated from source. Candles are last trades, not quotes. The control window for the anchor (February 2023) is not covered. |
-| Historical CEX data sources: candles | `reports/events/acquisition_manifest.json`: 77 archives, all `VERIFIED`. These are Binance.com (31, provider checksums), Binance.US (23, provider checksums) and Bitstamp (23, self-recorded hashes). All downloads were user-authorized; no paid source was used. | **Verified (executed)** for one-minute klines over the event months listed in `configs/acquisition_plan.json` | Binance's UST pair stops at 2022-05-13 00:49. There is no BTC/USDe market on Binance. A corrupt Bitstamp USDT/USD print at 2022-11-08 09:42 UTC is documented and not filtered. |
-| Historical CEX data sources: L2 order books | `docs/c2_source_decision.md`, `reports/c2/source_decision.json`. CoinAPI is CONDITIONAL (REJECT under a native-sequence standard). Tardis crisis-day files are paid. The only L2 held locally is the Tardis public first-of-month sample BTCUSD 2023-03-01, SHA-256 `2061a9ff…8511`. | **Blocked** (paid access declined by the user) | No crisis-day L2 for any event. The free Tardis first-of-month files could supply normal-market L2 days, but they have not been acquired and need approval. |
-| Order-book reconstruction | `src/www_c1/replay.py`; `reports/c1/march01_sample_validation.json` (7,264,627 rows replayed); `tests/test_c1_*` | **Partial (executed on one normal-market day)** | Native sequence continuity cannot be verified from normalized CSV. No crisis-day replay. Depth, VWAP and slippage metrics from replayed books have not been computed. |
-| Historical DEX state | `reports/c2/contract_registry.json`: 8 entries, of which 7 are `SOURCE_DOCUMENTED`. The USDe/USDC pool is `UNVERIFIED` (aggregator listing only). `reports/c2/validation_plan.json` holds 4 pool/event items and records 0 network calls. | **Blocked (documented only)** | No archive RPC has been authorized, so no code hash, coin order, balance or `get_dy` has been read at any historical block. ABI signatures are `ASSUMED`. |
-| ARC measurement | `src/www_capacity/orderbook.py` (book walk, cost-bounded K(δ), forward and reverse triangle restoration); `amm.py` (StableSwap, Uniswap v2, Uniswap v3 single range); `redemption.py`; `docs/c4_capacity_method.md`; tests with hand-computed fixtures | **Synthetic only.** Formulas and numerical fixtures exist; no historical ARC value has been computed (gated). | No gas, latency, transfer delay, shared-liquidity, inventory across venues, or multi-range v3 modelling. AMM math has not been validated against on-chain calls. The spec's two-quantity separation (standardized capacity vs observed net arbitrage) is not yet formally documented. |
-| Multi-event coverage | `configs/event_registry.json` (16 entries, 13 clusters); rules R1–R4 in `src/www_events/registry.py`; `reports/events/coverage_matrix.json`; `reports/events/status_log.json` | **Verified (executed) at candle level.** Three accepted independent clusters: SVB 2023 (anchor, exploratory), TUSD 2024 and FDUSD 2025 (both out-of-sample). Rejected: BUSD placebo, FTX-USDT (Binance.US), June 2023 USDT (Bitstamp). Data-verified only: UST 2022, USDe 2025. | No accepted confirmatory **in-sample** event. No separate non-crisis control periods beyond the per-event matched 7-day controls. DAI 2020 and USDD 2022 have no free USD-venue data identified. |
-| Statistical experiments | Frozen plan `docs/PRE_ANALYSIS_PLAN.md` (SHA pinned in `configs/plan_freeze.json`); amendments A1 (pre-data), A2 (post-data), A3 (pre-Bitstamp analysis); `reports/events/*_protocol.json`; `reports/events/cross_event_summary.json`; robustness (plan section 7) in each protocol | **Partial (executed, descriptive).** Per-event DV1–DV5 with block-bootstrap CIs; mechanical H1 and H2 decisions. H1 in-sample is `INSUFFICIENT_EVENTS`; out-of-sample 2/2 satisfy it; H2 is descriptive only (the placebo ratio is also above 1, and DV5 is unstable). | **None of the spec's Phase 5 baseline comparisons exist:** no AR/OU, duration/hazard, volume/liquidity or nonlinear benchmarks, no chronological prediction evaluation, and no calibration. The design is descriptive, not predictive. |
-| Manuscript | `paper/main.tex` (ACM sigconf, labelled provisional); 16 verified references; generated numbers, tables and figures (`tests/test_paper.py`, `tests/test_figures.py`) | **Partial (provisional draft)** | The PDF build is unverified (no TeX installed). The capacity sections are `[PENDING]`. Spec v3 asks for the manuscript only after the core results pass review, and this draft predates that review, so it must be treated as provisional. |
+"Same Name, Different Unit: Identifying Source-Specific Units in Web Price Fusion." Question: can a source's unit offset be identified from public prices, and when does correcting for it help a fused price? Method: shared cross-item offset, a netted stablecoin anchor, IV/GMM, simulation, and a causal unit-aware fuser (`README.md` has the overview).
 
-## 2. Data inventory (spec Phase 0, item 7)
+Form: `paper/main.tex`, `[sigconf,review,anonymous]{acmart}`, 8 body pages and 12 in total, anonymous, no repository links. The gate (`uv run python -m www_paper.gate`) enforces page limits, undefined references, document class and an anonymity scan.
 
-| Class | Items |
-|---|---|
-| **Stored** | IAQF panel; Tardis Binance.US BTCUSD L2 2023-03-01; 77 kline archives (per the manifest), git-ignored under `data/` |
-| **Verifiably reconstructible** | Every protocol report from stored inputs via `REPRODUCE.md`. Within-venue triangles for SVB, TUSD, FDUSD, BUSD, FTX and June 2023. |
-| **Offered by a provider, not acquired** | Tardis crisis-day L2 (paid); CoinAPI full-book flat files (usage-priced); Tardis free first-of-month L2 for other months (free, not approved); Kraken OHLCVT bundle |
-| **Historical availability unknown** | Archive-node access with acceptable public terms; USDD and DAI-2020 minute data on a USD venue; Bitstamp `usdtusd` before 2022-04 |
-| **Confirmed unavailable** | Binance BTC/USDe klines; Binance UST after 2022-05-13 00:49 (continuation exists only as USTC/BUSD); Kraken REST history beyond 720 bars; Coinbase candles without credentials |
+## 2. Status register
 
-## 3. Executed experiments and numerical findings (spec Phase 0, item 8)
-
-All values below are read from committed reports.
-
-| Experiment | Input | Report | Headline |
-|---|---|---|---|
-| C3 anchor wedge levels and persistence | IAQF panel | `reports/c3/fragmentation_persistence.json`, `robustness.json` | Median USDC wedge rose from 2.06 to 8.13 bps (crisis minus pre: +6.08, 95% CI 3.75–9.16) |
-| Anchor protocol (exploratory) | IAQF panel | `reports/events/E2023-03-USDC-SVB_protocol.json` | DV1 +208 bps (CI 92–336, baseline reference); recovery about 68 h; DV5 about 95 |
-| Multi-event protocols | Binance, Binance.US and Bitstamp archives | `reports/events/*_protocol.json`, `cross_event_results.md` | TUSD DV1 +113 bps (CI 100–121); FDUSD DV1 +45 bps (CI 34–51); triangle wedges unchanged in both; placebo DV1 −3 bps |
-| Robustness (plan section 7) | same | `plan.robustness` in each protocol | R1 classification invariant at 50/100/200 bps; half-lives fragile |
-| L2 replay | Tardis sample | `reports/c1/march01_sample_validation.json` | 7.26 M rows replayed; 1 exchange-timestamp regression; no crossed books |
-
-**Not executed:** any ARC or capacity value on real data, any DEX state read, any CEX depth metric on a crisis day, and any baseline model comparison.
-
-## 4. Reconciliation with earlier plans
-
-- **C0–C2** are accepted (PRs #1–#3, open). C3–C5, E1–E4, P1–P2, M1–M4 and R1 are new since `c48e714` and are bundled in PR #4.
-- **C6–C9 and G0–G4:** no planning documents with these labels exist in this repository. The only occurrence is "C6" in `docs/RESEARCH_STATE.md`, which marks capacity-to-persistence inference as blocked. Reconciliation against those plans requires the reviewer to supply them.
-- **Spec v3 departures to review:**
-  1. The design so far is a descriptive event study, not the spec's ARC-versus-baseline predictive framework (Phase 5).
-  2. A provisional manuscript exists ahead of the spec's review gate.
-  3. Normal-market periods appear only as per-event matched control windows.
-
-## 5. Highest-information unfinished task
-
-**Decide whether event-day execution state is obtainable without paid data.** Every ARC claim, and the spec's Phase 1 exit test ("if historical CEX depth is unavailable across events, reassess whether an on-chain-only contribution remains defensible"), depends on it. Paid L2 has been declined, so the only route is historical on-chain state. The task:
-
-- **Required inputs:** a user-approved, free, unauthenticated Ethereum archive endpoint whose published terms permit research use (none is approved today).
-- **Work:** execute the existing offline plan (`reports/c2/validation_plan.json`). That is 4 pool/event items and about 36 read-only calls: Curve 3pool at the SVB and June 2023 start blocks, and the UST(Wormhole)/3CRV and legacy UST pools at the May 2022 start block. Resolve blocks by timestamp.
-- **Expected outputs:** block-pinned code hashes, coin order, decimals, A, fee, balances and `get_dy` quotes, with block hashes recorded.
-- **Acceptance tests:**
-  - the bytecode is non-empty at each block;
-  - `coins(i)` matches the documented tokens;
-  - the offline `stableswap_get_dy` reproduces the on-chain `get_dy` to within 1 raw unit at each block;
-  - every call is read-only (dry-run validator passes).
-- **Approvals needed:** (1) the endpoint, with its terms reviewed; (2) whether the paper may proceed on an on-chain-only capacity contribution if CEX depth stays unavailable.
-
-**A cheaper parallel option (also needs approval):** download the free Tardis first-of-month L2 files for the event months. These are normal-market days, so they would add CEX depth for normal-market comparisons (spec Study E) and further replay validation, but no crisis-day depth.
-
-## 6. Pre-registration recorded in this audit (no measurement)
-
-The user agreed on 2026-10-11 to pre-register the UST series rule before any measurement. It is recorded as amendment **A4** in `docs/PRE_ANALYSIS_AMENDMENTS.md`. Acquiring and measuring the USTC/BUSD continuation waits until after independent review.
-
-## 7. Bounded feasibility checkpoint (after reviewer decisions 2, 4 and 5)
-
-| Check | Commands | Outcome | Evidence |
-|---|---|---|---|
-| UST A4 preconditions and run | `uv run python -m www_events.acquire`; `uv run python -m www_events.ust_splice` | All preconditions **pass**. Chronology: Binance removed UST pairs at 2022-05-13 00:40; UST/BUSD reopened at about 14:30 the same day; USTC/BUSD opened 2022-05-30 09:30. **The registered USTCBUSD splice covers 0 of 10,080 recovery-window minutes, so R3 still fails and UST stays DATA_VERIFIED.** This is a negative result for the rule as registered. | `reports/events/E2022-05-UST-COLLAPSE_a4_splice.json`; status log entry; archives USTBUSD, USTCBUSD and BUSDUSDT for 2022-05 in the manifest |
-| Ethereum archive (free) | 5 read-only calls in total (see probe) | **Stopped.** NodeFlare public tier: `state at block #14000001 is pruned`. Other candidates excluded on terms, archive or account grounds. No historical pool state was reproduced. | `reports/c2/archive_probe.json` |
-| Tardis free first-of-month L2 | `uv run python -m www_events.acquire`; `uv run python -m www_c1.depth --inputs data/raw/tardis/*.csv.gz` | 3 files (60 KB–3 MB). Replay is clean: 0 timestamp regressions, 0 crossed samples, 0 invalid rows. Median depth within ±10 bps: Binance.US USDC/USD about $0.57 M bid / $1.54 M ask; Binance TUSD/USDT about 1.66 M / 1.67 M USDT; Binance FDUSD/USDT about 62 M / 52 M USDT. Spreads are at one tick (about 1 bp). **Normal-market only.** | `reports/c1/normal_market_depth.json`; manifest records `tardis:*` |
-
-The decision register, including the CEX–DEX versus on-chain-only scope split, is in `docs/status/DECISION_REGISTER.md`.
-
-## 8. UST under amendment A5 (user-approved)
-
-`uv run python -m www_events.batch` with the A5 spec in `configs/event_runs.json` (source `ust_splice`, continuation USTBUSD). The spliced series covers baseline 100%, control 100%, event 96% and recovery 100% of minutes. Results:
-- R1 passes: extreme −32,190 bps at 2022-05-13 01:41 UTC; 1,440 breaching minutes.
-- DV1 +1,028 bps (95% CI 723–2,244).
-- Recovery censored at 190+ h (recovery-window median \|D\| 23,627 bps: no recovery).
-- Robustness: R1 passes at 50 and 200 bps; trimmed DV1 +1,027 bps.
-
-Registry status is **ACCEPTED** and analysis status is **EXPLORATORY** (post-hoc eligibility). There are now 4 accepted independent clusters: UST and SVB exploratory, TUSD and FDUSD confirmatory and out-of-sample. Framing remains DESCRIPTIVE.
-
-## 9. Alternative-explanation covariates (plan section 6; associations only)
-
-`reports/events/mechanism_covariates.md` and `paper/generated/mechanism_table.tex` are generated by `python -m www_paper.macros`.
-
-- **BTC volatility ratio, event over reference:** SVB 2.03, UST 2.63, USDe 4.46 (market-wide stress) versus TUSD 1.07, FDUSD 0.75 (issuer-specific).
-- **Extremes outside a generic US banking window:** 6 of 8 events. Such hours make up 76% of a week, so this is close to the base rate and is **not** evidence for a redemption-hours mechanism. The window is an assumption, not issuer-documented.
-
-UST remains EXPLORATORY (user decision, 2026-10-11).
-
-## 10. Systematic in-sample screen (amendment A6, pre-registered at `a3ad1a6` before any screen data)
-
-`uv run python -m www_events.acquire` acquired 122 Binance.US archives, all checksum-verified. `uv run python -m www_events.screen` wrote `reports/events/screen_A6.json`: 10 detections in 5 clusters.
-
-| Cluster | Detections (bps) | Outcome |
+| Component | Status | Evidence |
 |---|---|---|
-| 2020-03-12 → 14 | USDT +706 (premium) | Matches Black Thursday; registered as a linked leg (CANDIDATE) |
-| 2020-08-24 → 09-19 | DAI +550 (premium) | **New**. Sourced: yield-farming premium (CoinDesk, Decrypt, Cointelegraph). Measured: R1 passes but R3 fails (Binance.US DAIUSD listed 2020-08-20; baseline 35%, control 0%), so DATA_VERIFIED |
-| 2022-05-12 | USDT −458 | Matches Terra |
-| 2023-03-10 → 13 | USDC −1,470, DAI −1,161, USDT +164 | Matches SVB; reproduces the anchor independently |
-| 2023-05-07 → 09 | USDC +953, TUSD +519, USDT +363, DAI +363 | **New**. All coins at a premium together, which points to venue USD stress. Only one source (Blockworks), so UNRESOLVED |
+| Unit probe, UNIT-TD benchmark | **Executed; locked test run** (`724455b`: 0.846 vs 0.847 for the median) | `reports/unit_td/`, `autoresearch/final_test_724455b.log` |
+| Anchor and external anchor (Bitfinex, Binance.US) | **Executed.** Netted slope 0.97 (0.94 to 1.00) | `reports/unit_td/anchor*.json` |
+| Anchored-test theory: GMM, simulation, 360-cell robustness grid | **Executed** | `reports/theory/` |
+| FUSE | **Locked** (`914b3cb`); median hard to beat | `autoresearch/final_fuse_914b3cb.log` |
+| STABLE | **Locked** (`ca38772`); wins USDC, loses TUSD, FDUSD and the placebo | `autoresearch/final_stable_ca38772.log` |
+| Q1 | **Pre-registered; win** (3 events, 981 hours; beats B0, B2, B3 and narrowly the USD-only median) | `reports/q1/` |
+| Q2 | **Pre-registered; tie**, with a disclosed calibration change (`55b50ed`) | `reports/q2/`, `docs/review/Q2_CALIBRATION_CHANGE.md` |
+| Currency-wedge panel | **Pre-registered; P1 narrow fail, P2 pass.** Pooled IV 0.978 (0.962 to 0.989); 8 of 8 currencies in range | `reports/panel/` |
+| Kimchi application | **Pre-registered; executed** (appendix) | `reports/kimchi/results.json` |
+| Calm-year noise bounds, monitor, detector evaluation and sweep | **Executed** (detector rule pre-registered) | `reports/unit_td/noise_bounds.json`, `reports/rescue/` |
+| Oracle audit pilot (USDC 2023) | **Executed** (D13, one episode) | `reports/audit/usdc_2023_pilot.json` |
+| Event study, on-chain capacity (earlier phase) | **Executed** at candle level and on swap-validated pools; no capacity claim for CEX | `reports/events/`, `reports/c6/` |
+| Resource-track release | Built; derived series only | `resource/` |
+| Reproduction guide | Written from the code; **not re-run from an empty disk** | `REPRODUCE.md` |
 
-- No detection appears for FTX (November 2022), which is consistent with that rejection.
-- **The screen adds no confirmatory in-sample episode.**
-- **New limitation:** Binance.US's dollar already showed stress in May 2023, before the documented A2 impairment of 2023-06-09.
+## 3. Data
 
-## 11. Paper framing and archive readiness
+All downloads were user-authorized (D1 to D19) and are free public sources. The manifest `reports/events/acquisition_manifest.json` holds 2,179 VERIFIED records and 76 NOT_AVAILABLE. Raw files are git-ignored. No paid data, no CEX crisis-day order books, and no historical DEX state beyond the 84 read-only calls of D5. Panels are cached under `data/derived/` (git-ignored).
 
-- **Framing:** a descriptive, pre-registered multi-event study (decision D10). H1–H3 are frozen questions, reported as insufficient or untestable. Capacity is presented as validated method with explicit data limits.
-- **Archive executor:** `src/www_c2/archive_run.py`. It reads the endpoint from `WWW_ETH_RPC_URL` or a git-ignored `.env` and never writes it out. It resolves blocks, reads A, fee, coins, decimals, balances and `get_dy` (plus the 3pool virtual price for metapools), and reproduces each quote offline with `stableswap_get_dy`. It stops on pruned state, a wrong chain, or a spent call budget (default 150). Tested against a mock node, including the real error path. **Waiting only for the user-created key.**
+## 4. Open items
 
-## 12. Historical on-chain state reproduced (reviewer decision 2; user-created free Alchemy key)
+| # | Item | Owner | Note |
+|---|---|---|---|
+| 1 | **GenAI disclosure** | Author | Wording and place undecided; an anonymous version cannot carry a credits section. Placeholder comment in `paper/main.tex`. |
+| 2 | **CCS concept IDs** | Author | Entered from memory; verify at https://dl.acm.org/ccs. |
+| 3 | **Submission** | Author | OpenReview long-paper submission, profiles, dual-submission confirmation, check that the 18 October abstract registered. The assistant never submits. |
+| 4 | Repository visibility | Author | Was public with the author's name on 2026-10-12; decide before submission (`docs/WWW2027_GOAL.md`, B1). |
+| 5 | Overfull boxes (about 58) | Optional | Advisory metric in the gate. |
+| 6 | Post-review release | Author | Archive `resource/` with a DOI for the Artifacts badge. |
+| 7 | Reproduction from an empty disk | Optional | Two inputs lack scripts (D12 call list, D15 download), see `REPRODUCE.md`. |
 
-`uv run python -m www_c2.archive_run` made 84 read-only calls against `eth-mainnet.g.alchemy.com`. The key is held only in the git-ignored `.env` and was never written out; this is verified by checking the report. Output: `reports/c2/archive_validation.json`. Status COMPLETED, all 4 items reproduced.
+## 5. Pre-registration ledger
 
-| Event | Pool | Block (time UTC) | A | Fee | Balances | get_dy (1,000 units) | Offline difference |
-|---|---|---|---|---|---|---|---|
-| SVB 2023 | 3pool | 16,794,061 (2023-03-09 23:59:59) | 2000 | 1 bp | DAI 160.8 M, USDC 157.1 M, USDT 211.3 M | 999.886454 USDC | 0 |
-| June 2023 | 3pool | 17,481,592 (2023-06-14 23:59:59) | 2000 | 1 bp | 101.9 M / 104.6 M / 176.3 M | 999.917911 | 0 |
-| UST 2022 | Wormhole UST/3CRV | 14,726,563 (2022-05-06 23:59:42) | 200 | 4 bp | UST 664.6 M, 3CRV 568.6 M (virtual price 1.020807) | 978.560310 3CRV | 0 |
-| UST 2022 | Legacy UST metapool | same | 100 | 4 bp | 10.8 M / 10.3 M | 978.967404 3CRV | 0 |
+Written before the result existed; none is re-run with changes.
 
-**Independent evidence:**
-- 3pool `coins()` match the canonical DAI, USDC and USDT contracts.
-- 3pool bytecode hashes are identical at both 2023 blocks.
-- Block hashes and timestamps are recorded.
-- Offline StableSwap reproduces every quote exactly.
-
-**Limitations:**
-- The Wormhole pool is a 45-byte minimal proxy; its implementation is not yet identified.
-- No cross-check against an independently observed swap transaction has been done yet.
-- These are single pre-event blocks, not intra-event paths.
-
-**No capacity has been computed.** The contract registry marks these three contracts LIVE_VERIFIED, with block-level evidence.
-
-## 13. Swap cross-checks and on-chain capacity (user-approved; definition committed first at `15083b5`)
-
-**Swap cross-checks** (`uv run python -m www_c2.archive_checks`; `reports/c2/archive_checks.json`): get_dy at the block before a clean historical swap equals the amount actually received.
-
-| Pool | Swap | Result |
+| Study | Pre-registration | Outcome |
 |---|---|---|
-| 3pool, SVB | block 16,794,068 | difference 0 |
-| 3pool, June 2023 | block 17,481,613 | difference 0 |
-| Wormhole-UST/3CRV | underlying swap, block 14,726,611; EIP-1167 implementation `0x213be373…5bbe` | difference 0 |
-| Legacy UST metapool | underlying swap | 0.08 bps difference; no clean direct swap found, so **excluded** |
+| Event study | `docs/PRE_ANALYSIS_PLAN.md` (hash-pinned) | descriptive |
+| Detector evaluation | `docs/review/DETECTOR_PREREG.md` | P2 passes, P1 split, P3 and P4 fail |
+| UNIT-TD / FUSE / STABLE | `autoresearch/program_{unit_td,fuse,stable}.md` | locked tests above |
+| Kimchi | `docs/kimchi/PREREG.md` | appendix |
+| Q1 | `autoresearch/program_q1.md` | win |
+| Q2 | `autoresearch/program_q2.md` | tie |
+| Panel | `autoresearch/program_panel.md` | P1 narrow fail, P2 pass |
 
-**On-chain capacity** (`uv run python -m www_capacity.onchain_path`, 1,953 read-only calls; `reports/c6/onchain_capacity.json`; table `reports/c6/onchain_capacity_summary.md`). Medians at δ = 50 bps, baseline → event:
-- SVB USDC→DAI absorption: 177.4 M → 154.0 M (×0.87); USDC→USDT: 157.5 M → 0.
-- June 2023 USDT→DAI: 132.0 M → 42.5 M (×0.32), with the USDT share of the pool 30% → 67%.
-- UST→3CRV: 379.9 M → 0, with the UST share 51% → 92%; still 0 in recovery.
-- Restoration capacity rose in every case.
+## 6. Decision trail
 
-**Scope.** On-chain only, par-relative upper bounds. The DAI counterpart is valued at par even though DAI depegged during SVB, which overstates absorption. These are associations, not causal effects, and not CEX–DEX capacity.
+`docs/status/DECISION_REGISTER.md`: D1 (paid data declined) through D19 (currency-wedge panel data, 2026-10-24). Scope: the capacity framing is retired; claims are on units, identification and fusion. D10 fixed the descriptive, pre-registered framing for the event study; later decisions are data authorizations for the new studies.
 
-## 14. C6 robustness (2026-10-12)
+## 7. Next actions
 
-The re-run made 3,664 read-only calls and stores raw state per sample. Hourly event-window medians agree with the 6-hour series (SVB 156.6 M vs 154.0 M; June 2023 49.7 M vs 42.5 M; UST 0).
-
-**Counterpart re-valuation for SVB** (`uv run python -m www_capacity.revalue`; `reports/c6/onchain_capacity_cex_valued.json`). With DAI and USDT valued at their last traded Binance.US prices, USDC→DAI absorption at 50 bps falls from 154.0 M (par) to **0** in the event window, while baseline is essentially unchanged (177.4 → 177.1 M). The par-valued SVB figure overstated capacity. Par fallbacks (no trade within 60 minutes) are counted per window in the report.
-
-**Figure:** `paper/figures/onchain_capacity_paths.pdf`. The repository is public, and `main` contains all work through PR #4.
+1. The author resolves open items 1 to 4.
+2. Run `uv run python -m www_paper.gate` on the final commit and read the PDF once end to end.
+3. The author submits on OpenReview by 25 October 2026 AoE.
