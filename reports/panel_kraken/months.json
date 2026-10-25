@@ -1,0 +1,5975 @@
+{
+ "rule": {
+  "coverage_min": 0.8,
+  "first_month": "2017-01",
+  "last_month": "2025-03",
+  "stress": "median over the month's hours of |L - median_month(L)| >= 25 bps; L only, never D",
+  "stress_bps": 25.0
+ },
+ "units": {
+  "AUD": {
+   "counts": {
+    "calm": 1,
+    "excluded_coverage": 48,
+    "excluded_no_L": 0,
+    "stress": 50
+   },
+   "fiat": "AUD",
+   "months": {
+    "2017-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2017-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-06": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-07": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-08": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-09": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-10": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-11": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-12": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2018-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-06": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-07": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-08": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-09": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-10": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-11": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-12": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2019-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-06": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-07": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-08": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-09": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-10": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "coverage": {
+      "ETH": 0.2458,
+      "USDT": 0.3028,
+      "XBT": 0.3222
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "coverage": {
+      "ETH": 0.4704,
+      "USDT": 0.7043,
+      "XBT": 0.7944
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "coverage": {
+      "ETH": 0.6398,
+      "USDT": 0.746,
+      "XBT": 0.8763
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-09": {
+     "coverage": {
+      "ETH": 0.6611,
+      "USDT": 0.7361,
+      "XBT": 0.8764
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-10": {
+     "coverage": {
+      "ETH": 0.4503,
+      "USDT": 0.5605,
+      "XBT": 0.8508
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "coverage": {
+      "ETH": 0.6292,
+      "USDT": 0.7056,
+      "XBT": 0.9083
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-12": {
+     "coverage": {
+      "ETH": 0.6694,
+      "USDT": 0.8925,
+      "XBT": 0.9113
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-01": {
+     "L_hours": 725,
+     "coverage": {
+      "ETH": 0.9422,
+      "USDT": 0.957,
+      "XBT": 0.9745
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.3253
+    },
+    "2021-02": {
+     "L_hours": 669,
+     "coverage": {
+      "ETH": 0.9866,
+      "USDT": 0.9896,
+      "XBT": 0.9955
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 81.2826
+    },
+    "2021-03": {
+     "L_hours": 738,
+     "coverage": {
+      "ETH": 0.9315,
+      "USDT": 0.957,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.4035
+    },
+    "2021-04": {
+     "L_hours": 714,
+     "coverage": {
+      "ETH": 0.9542,
+      "USDT": 0.9931,
+      "XBT": 0.9917
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 56.5492
+    },
+    "2021-05": {
+     "L_hours": 738,
+     "coverage": {
+      "ETH": 0.9704,
+      "USDT": 0.996,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 39.621
+    },
+    "2021-06": {
+     "L_hours": 702,
+     "coverage": {
+      "ETH": 0.9111,
+      "USDT": 0.9542,
+      "XBT": 0.975
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 100.4877
+    },
+    "2021-07": {
+     "L_hours": 718,
+     "coverage": {
+      "ETH": 0.8952,
+      "USDT": 0.9677,
+      "XBT": 0.9651
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 83.6197
+    },
+    "2021-08": {
+     "L_hours": 730,
+     "coverage": {
+      "ETH": 0.961,
+      "USDT": 0.996,
+      "XBT": 0.9812
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 64.6693
+    },
+    "2021-09": {
+     "L_hours": 712,
+     "coverage": {
+      "ETH": 0.9708,
+      "USDT": 0.9972,
+      "XBT": 0.9889
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 80.4334
+    },
+    "2021-10": {
+     "L_hours": 738,
+     "coverage": {
+      "ETH": 0.9664,
+      "USDT": 0.9919,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 107.6118
+    },
+    "2021-11": {
+     "L_hours": 715,
+     "coverage": {
+      "ETH": 0.9778,
+      "USDT": 0.9917,
+      "XBT": 0.9931
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 100.9185
+    },
+    "2021-12": {
+     "L_hours": 730,
+     "coverage": {
+      "ETH": 0.9341,
+      "USDT": 0.9852,
+      "XBT": 0.9812
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 63.8771
+    },
+    "2022-01": {
+     "L_hours": 737,
+     "coverage": {
+      "ETH": 0.9543,
+      "USDT": 0.9933,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 48.3826
+    },
+    "2022-02": {
+     "L_hours": 658,
+     "coverage": {
+      "ETH": 0.9449,
+      "USDT": 0.9792,
+      "XBT": 0.9792
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 52.2147
+    },
+    "2022-03": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9624,
+      "USDT": 0.996,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 109.1726
+    },
+    "2022-04": {
+     "L_hours": 709,
+     "coverage": {
+      "ETH": 0.9361,
+      "USDT": 0.9833,
+      "XBT": 0.9847
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 103.6941
+    },
+    "2022-05": {
+     "L_hours": 732,
+     "coverage": {
+      "ETH": 0.9274,
+      "USDT": 0.9906,
+      "XBT": 0.9839
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 71.7437
+    },
+    "2022-06": {
+     "L_hours": 712,
+     "coverage": {
+      "ETH": 0.9458,
+      "USDT": 0.9778,
+      "XBT": 0.9889
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 101.8526
+    },
+    "2022-07": {
+     "L_hours": 734,
+     "coverage": {
+      "ETH": 0.9435,
+      "USDT": 0.9664,
+      "XBT": 0.9879
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 86.3921
+    },
+    "2022-08": {
+     "L_hours": 731,
+     "coverage": {
+      "ETH": 0.9288,
+      "USDT": 0.9651,
+      "XBT": 0.9825
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 73.2784
+    },
+    "2022-09": {
+     "L_hours": 717,
+     "coverage": {
+      "ETH": 0.95,
+      "USDT": 0.9917,
+      "XBT": 0.9958
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 127.9623
+    },
+    "2022-10": {
+     "L_hours": 739,
+     "coverage": {
+      "ETH": 0.871,
+      "USDT": 0.9852,
+      "XBT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 96.4917
+    },
+    "2022-11": {
+     "L_hours": 716,
+     "coverage": {
+      "ETH": 0.9417,
+      "USDT": 0.9764,
+      "XBT": 0.9944
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 94.8371
+    },
+    "2022-12": {
+     "L_hours": 738,
+     "coverage": {
+      "ETH": 0.8911,
+      "USDT": 0.8871,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.6785
+    },
+    "2023-01": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9153,
+      "USDT": 0.9543,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 108.1717
+    },
+    "2023-02": {
+     "L_hours": 668,
+     "coverage": {
+      "ETH": 0.9375,
+      "USDT": 0.9762,
+      "XBT": 0.994
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 64.2311
+    },
+    "2023-03": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9355,
+      "USDT": 0.9825,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 55.0861
+    },
+    "2023-04": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.925,
+      "USDT": 0.9764,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 35.2645
+    },
+    "2023-05": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9691,
+      "USDT": 0.9933,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 63.4175
+    },
+    "2023-06": {
+     "L_hours": 718,
+     "coverage": {
+      "ETH": 0.9847,
+      "USDT": 0.9986,
+      "XBT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 104.8034
+    },
+    "2023-07": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9798,
+      "USDT": 0.9973,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 75.4123
+    },
+    "2023-08": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9825,
+      "USDT": 0.9973,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 98.5701
+    },
+    "2023-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9764,
+      "USDT": 0.9986,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 27.9735
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9785,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.5252
+    },
+    "2023-11": {
+     "L_hours": 718,
+     "coverage": {
+      "ETH": 0.9861,
+      "USDT": 1.0,
+      "XBT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 106.3893
+    },
+    "2023-12": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9892,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 131.6915
+    },
+    "2024-01": {
+     "L_hours": 732,
+     "coverage": {
+      "ETH": 0.9772,
+      "USDT": 0.9892,
+      "XBT": 0.9839
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 85.3548
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "ETH": 0.9899,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 696,
+     "status": "calm",
+     "stress_stat_bps": 24.935
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 35.8987
+    },
+    "2024-04": {
+     "L_hours": 714,
+     "coverage": {
+      "ETH": 0.9917,
+      "USDT": 0.9917,
+      "XBT": 0.9917
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 74.843
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9892,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.7684
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9861,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 30.7378
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9892,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 72.2373
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9919,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 154.9675
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9847,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 93.4241
+    },
+    "2024-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9852,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 89.7283
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9944,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 53.8276
+    },
+    "2024-12": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 181.4796
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9933,
+      "USDT": 0.996,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.1361
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.9926,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 87.4289
+    },
+    "2025-03": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9946,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.7583
+    }
+   }
+  },
+  "CAD": {
+   "counts": {
+    "calm": 3,
+    "excluded_coverage": 43,
+    "excluded_no_L": 0,
+    "stress": 53
+   },
+   "fiat": "CAD",
+   "months": {
+    "2017-01": {
+     "coverage": {
+      "ETH": 0.1962,
+      "USDT": 0.0,
+      "XBT": 0.6573
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-02": {
+     "coverage": {
+      "ETH": 0.2887,
+      "USDT": 0.0,
+      "XBT": 0.6399
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2017-03": {
+     "coverage": {
+      "ETH": 0.6653,
+      "USDT": 0.0,
+      "XBT": 0.7823
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-04": {
+     "coverage": {
+      "ETH": 0.5042,
+      "USDT": 0.0,
+      "XBT": 0.7264
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-05": {
+     "coverage": {
+      "ETH": 0.8602,
+      "USDT": 0.0,
+      "XBT": 0.9758
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-06": {
+     "coverage": {
+      "ETH": 0.9319,
+      "USDT": 0.0,
+      "XBT": 0.9875
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-07": {
+     "coverage": {
+      "ETH": 0.9059,
+      "USDT": 0.0,
+      "XBT": 0.9449
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-08": {
+     "coverage": {
+      "ETH": 0.9032,
+      "USDT": 0.0,
+      "XBT": 0.9704
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-09": {
+     "coverage": {
+      "ETH": 0.8708,
+      "USDT": 0.0,
+      "XBT": 0.9583
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-10": {
+     "coverage": {
+      "ETH": 0.8642,
+      "USDT": 0.0,
+      "XBT": 0.957
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-11": {
+     "coverage": {
+      "ETH": 0.9181,
+      "USDT": 0.0,
+      "XBT": 0.9611
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-12": {
+     "coverage": {
+      "ETH": 0.9355,
+      "USDT": 0.0,
+      "XBT": 0.9785
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-01": {
+     "coverage": {
+      "ETH": 0.8938,
+      "USDT": 0.0,
+      "XBT": 0.9207
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-02": {
+     "coverage": {
+      "ETH": 0.9122,
+      "USDT": 0.0,
+      "XBT": 0.9821
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2018-03": {
+     "coverage": {
+      "ETH": 0.8239,
+      "USDT": 0.0,
+      "XBT": 0.9382
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-04": {
+     "coverage": {
+      "ETH": 0.8014,
+      "USDT": 0.0,
+      "XBT": 0.8903
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-05": {
+     "coverage": {
+      "ETH": 0.7473,
+      "USDT": 0.0,
+      "XBT": 0.8763
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-06": {
+     "coverage": {
+      "ETH": 0.7431,
+      "USDT": 0.0,
+      "XBT": 0.8611
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-07": {
+     "coverage": {
+      "ETH": 0.6935,
+      "USDT": 0.0,
+      "XBT": 0.8602
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-08": {
+     "coverage": {
+      "ETH": 0.7755,
+      "USDT": 0.0,
+      "XBT": 0.9099
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-09": {
+     "coverage": {
+      "ETH": 0.7764,
+      "USDT": 0.0,
+      "XBT": 0.9389
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-10": {
+     "coverage": {
+      "ETH": 0.789,
+      "USDT": 0.0,
+      "XBT": 0.9691
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-11": {
+     "coverage": {
+      "ETH": 0.85,
+      "USDT": 0.0,
+      "XBT": 0.9889
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-12": {
+     "coverage": {
+      "ETH": 0.8831,
+      "USDT": 0.0,
+      "XBT": 0.9879
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-01": {
+     "coverage": {
+      "ETH": 0.871,
+      "USDT": 0.0,
+      "XBT": 0.9772
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-02": {
+     "coverage": {
+      "ETH": 0.8557,
+      "USDT": 0.0,
+      "XBT": 0.9807
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2019-03": {
+     "coverage": {
+      "ETH": 0.8212,
+      "USDT": 0.0,
+      "XBT": 0.9906
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-04": {
+     "coverage": {
+      "ETH": 0.8806,
+      "USDT": 0.0,
+      "XBT": 0.9972
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-05": {
+     "coverage": {
+      "ETH": 0.9099,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-06": {
+     "coverage": {
+      "ETH": 0.9111,
+      "USDT": 0.0,
+      "XBT": 0.9889
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-07": {
+     "coverage": {
+      "ETH": 0.8575,
+      "USDT": 0.0,
+      "XBT": 0.9892
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-08": {
+     "coverage": {
+      "ETH": 0.7715,
+      "USDT": 0.0,
+      "XBT": 0.9946
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-09": {
+     "coverage": {
+      "ETH": 0.8,
+      "USDT": 0.0,
+      "XBT": 0.975
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-10": {
+     "coverage": {
+      "ETH": 0.7984,
+      "USDT": 0.0,
+      "XBT": 0.9772
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "ETH": 0.8417,
+      "USDT": 0.0,
+      "XBT": 0.9847
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "ETH": 0.6949,
+      "USDT": 0.121,
+      "XBT": 0.9718
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "ETH": 0.7944,
+      "USDT": 0.5202,
+      "XBT": 0.9812
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "ETH": 0.9253,
+      "USDT": 0.6839,
+      "XBT": 0.9885
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "coverage": {
+      "ETH": 0.9301,
+      "USDT": 0.7903,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "ETH": 0.9431,
+      "USDT": 0.6444,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "ETH": 0.9355,
+      "USDT": 0.6505,
+      "XBT": 0.9892
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "coverage": {
+      "ETH": 0.9292,
+      "USDT": 0.6278,
+      "XBT": 0.9903
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "L_hours": 739,
+     "coverage": {
+      "ETH": 0.9288,
+      "USDT": 0.9422,
+      "XBT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 35.362
+    },
+    "2020-08": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9758,
+      "USDT": 0.957,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 38.0726
+    },
+    "2020-09": {
+     "L_hours": 716,
+     "coverage": {
+      "ETH": 0.9458,
+      "USDT": 0.9222,
+      "XBT": 0.9944
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 52.3592
+    },
+    "2020-10": {
+     "L_hours": 740,
+     "coverage": {
+      "ETH": 0.9207,
+      "USDT": 0.8871,
+      "XBT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 52.9904
+    },
+    "2020-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9736,
+      "USDT": 0.9694,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 47.3153
+    },
+    "2020-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9892,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 48.0341
+    },
+    "2021-01": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9973,
+      "USDT": 0.9973,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 72.2842
+    },
+    "2021-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.9985,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 50.8816
+    },
+    "2021-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 57.2951
+    },
+    "2021-04": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 35.1819
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 33.5035
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 0.9903,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 100.1761
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "ETH": 0.9866,
+      "USDT": 0.9758,
+      "XBT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 52.6972
+    },
+    "2021-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9973,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 54.0646
+    },
+    "2021-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9903,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 30.068
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 0.9973,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 44.3844
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 94.4576
+    },
+    "2021-12": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9879,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 36.6786
+    },
+    "2022-01": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9879,
+      "USDT": 0.9946,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 54.9813
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.9494,
+      "USDT": 0.9926,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "calm",
+     "stress_stat_bps": 21.6952
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9879,
+      "USDT": 0.9933,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 74.1534
+    },
+    "2022-04": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9806,
+      "USDT": 0.9944,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 55.3401
+    },
+    "2022-05": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9785,
+      "USDT": 0.9919,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.7275
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9917,
+      "USDT": 0.9833,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 71.6496
+    },
+    "2022-07": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9731,
+      "USDT": 0.9785,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 47.1114
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9772,
+      "USDT": 0.9825,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 55.5683
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9764,
+      "USDT": 0.9861,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 92.981
+    },
+    "2022-10": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9583,
+      "USDT": 0.9879,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 54.3117
+    },
+    "2022-11": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9778,
+      "USDT": 0.9958,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 63.3753
+    },
+    "2022-12": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9664,
+      "USDT": 0.9892,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.5074
+    },
+    "2023-01": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9624,
+      "USDT": 0.9946,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 26.8538
+    },
+    "2023-02": {
+     "L_hours": 670,
+     "coverage": {
+      "ETH": 0.9286,
+      "USDT": 0.9955,
+      "XBT": 0.997
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 55.6275
+    },
+    "2023-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.961,
+      "USDT": 0.996,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 39.5776
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9667,
+      "USDT": 0.9986,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 32.6035
+    },
+    "2023-05": {
+     "L_hours": 740,
+     "coverage": {
+      "ETH": 0.961,
+      "USDT": 0.9946,
+      "XBT": 0.9946
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 35.9503
+    },
+    "2023-06": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9722,
+      "USDT": 0.9944,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 72.5469
+    },
+    "2023-07": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9583,
+      "USDT": 0.9973,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 23.0727
+    },
+    "2023-08": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.961,
+      "USDT": 0.9987,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 53.4897
+    },
+    "2023-09": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9639,
+      "USDT": 0.9931,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 35.3905
+    },
+    "2023-10": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9866,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.5848
+    },
+    "2023-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9944,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 43.5543
+    },
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9973,
+      "USDT": 0.9866,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 95.7323
+    },
+    "2024-01": {
+     "L_hours": 737,
+     "coverage": {
+      "ETH": 0.9866,
+      "USDT": 0.9691,
+      "XBT": 0.9906
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 34.8844
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "ETH": 0.9971,
+      "USDT": 0.9641,
+      "XBT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 26.9829
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 30.4176
+    },
+    "2024-04": {
+     "L_hours": 714,
+     "coverage": {
+      "ETH": 0.9917,
+      "USDT": 0.9806,
+      "XBT": 0.9917
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 70.2388
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9852,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 27.4318
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 0.9875,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 25.9085
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9892,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.2993
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9718,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 77.9751
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 0.9181,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "calm",
+     "stress_stat_bps": 24.5407
+    },
+    "2024-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.8978,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 60.7786
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9819,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 32.9191
+    },
+    "2024-12": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 109.0913
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 0.9946,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 34.4632
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9911,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 47.2331
+    },
+    "2025-03": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.7702,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    }
+   }
+  },
+  "CHF": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 49,
+    "excluded_no_L": 0,
+    "stress": 50
+   },
+   "fiat": "CHF",
+   "months": {
+    "2017-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2017-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-06": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-07": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-08": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-09": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-10": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-11": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-12": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2018-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-06": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-07": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-08": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-09": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-10": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-11": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-12": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-01": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-02": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2019-03": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-04": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-05": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-06": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-07": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-08": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-09": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-10": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "ETH": 0.0,
+      "USDT": 0.0,
+      "XBT": 0.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "ETH": 0.3642,
+      "USDT": 0.0,
+      "XBT": 0.4516
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "ETH": 0.5309,
+      "USDT": 0.0,
+      "XBT": 0.7151
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "ETH": 0.5201,
+      "USDT": 0.0,
+      "XBT": 0.727
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "coverage": {
+      "ETH": 0.5739,
+      "USDT": 0.0,
+      "XBT": 0.828
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "ETH": 0.4847,
+      "USDT": 0.0,
+      "XBT": 0.7681
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "ETH": 0.5027,
+      "USDT": 0.2083,
+      "XBT": 0.9032
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "coverage": {
+      "ETH": 0.5417,
+      "USDT": 0.2097,
+      "XBT": 0.8653
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "coverage": {
+      "ETH": 0.6653,
+      "USDT": 0.289,
+      "XBT": 0.8952
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "coverage": {
+      "ETH": 0.7258,
+      "USDT": 0.3024,
+      "XBT": 0.957
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-09": {
+     "coverage": {
+      "ETH": 0.7,
+      "USDT": 0.3833,
+      "XBT": 0.9431
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-10": {
+     "coverage": {
+      "ETH": 0.5753,
+      "USDT": 0.3441,
+      "XBT": 0.9597
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "coverage": {
+      "ETH": 0.7639,
+      "USDT": 0.4597,
+      "XBT": 0.9556
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-12": {
+     "coverage": {
+      "ETH": 0.7957,
+      "USDT": 0.5376,
+      "XBT": 0.9489
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-01": {
+     "coverage": {
+      "ETH": 0.9772,
+      "USDT": 0.7379,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.997,
+      "USDT": 0.8601,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 46.677
+    },
+    "2021-03": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9825,
+      "USDT": 0.8858,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 46.2383
+    },
+    "2021-04": {
+     "L_hours": 718,
+     "coverage": {
+      "ETH": 0.9944,
+      "USDT": 0.9361,
+      "XBT": 0.9972
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 80.6053
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9933,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.0274
+    },
+    "2021-06": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9597,
+      "USDT": 0.9958,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 91.2434
+    },
+    "2021-07": {
+     "L_hours": 737,
+     "coverage": {
+      "ETH": 0.9409,
+      "USDT": 0.9919,
+      "XBT": 0.9906
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 27.7557
+    },
+    "2021-08": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9489,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 35.2655
+    },
+    "2021-09": {
+     "L_hours": 717,
+     "coverage": {
+      "ETH": 0.9375,
+      "USDT": 1.0,
+      "XBT": 0.9958
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 52.4317
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9597,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 46.9762
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.975,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 77.2764
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9234,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 25.296
+    },
+    "2022-01": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9207,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.1751
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.9226,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 25.0175
+    },
+    "2022-03": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9207,
+      "USDT": 1.0,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 47.3836
+    },
+    "2022-04": {
+     "L_hours": 715,
+     "coverage": {
+      "ETH": 0.9,
+      "USDT": 1.0,
+      "XBT": 0.9931
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 118.5167
+    },
+    "2022-05": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.922,
+      "USDT": 1.0,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 140.7256
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9347,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 71.9993
+    },
+    "2022-07": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9583,
+      "USDT": 0.9987,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 75.2146
+    },
+    "2022-08": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.953,
+      "USDT": 1.0,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 64.6773
+    },
+    "2022-09": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9528,
+      "USDT": 0.9986,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 94.3632
+    },
+    "2022-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9449,
+      "USDT": 0.9973,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 44.4695
+    },
+    "2022-11": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9736,
+      "USDT": 0.9986,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 86.6483
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9355,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 38.0241
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.957,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 33.6924
+    },
+    "2023-02": {
+     "L_hours": 669,
+     "coverage": {
+      "ETH": 0.9554,
+      "USDT": 1.0,
+      "XBT": 0.9955
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 36.9372
+    },
+    "2023-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9772,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 78.5737
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9736,
+      "USDT": 0.9986,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 56.4974
+    },
+    "2023-05": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9462,
+      "USDT": 0.9973,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 57.0073
+    },
+    "2023-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9528,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 56.7891
+    },
+    "2023-07": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9409,
+      "USDT": 1.0,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 101.6715
+    },
+    "2023-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9409,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 32.8882
+    },
+    "2023-09": {
+     "L_hours": 719,
+     "coverage": {
+      "ETH": 0.9181,
+      "USDT": 0.9986,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 68.9653
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.8965,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 67.0857
+    },
+    "2023-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9653,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 110.6631
+    },
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9839,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 88.0185
+    },
+    "2024-01": {
+     "L_hours": 737,
+     "coverage": {
+      "ETH": 0.9597,
+      "USDT": 0.9919,
+      "XBT": 0.9906
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 77.2187
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "ETH": 0.9655,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 47.4698
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9973,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 88.7748
+    },
+    "2024-04": {
+     "L_hours": 714,
+     "coverage": {
+      "ETH": 0.9694,
+      "USDT": 0.9931,
+      "XBT": 0.9917
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 34.1952
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9651,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 27.5439
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 40.6057
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9892,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 65.0275
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9839,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 86.9737
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9667,
+      "USDT": 0.9986,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 29.3618
+    },
+    "2024-10": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9597,
+      "USDT": 1.0,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 49.5921
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9944,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 59.1585
+    },
+    "2024-12": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9933,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 90.7017
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.9866,
+      "USDT": 0.996,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 35.2367
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.9777,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 52.4538
+    },
+    "2025-03": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9866,
+      "USDT": 0.9933,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 26.5689
+    }
+   }
+  },
+  "EUR": {
+   "counts": {
+    "calm": 2,
+    "excluded_coverage": 36,
+    "excluded_no_L": 0,
+    "stress": 61
+   },
+   "fiat": "EUR",
+   "months": {
+    "2017-01": {
+     "coverage": {
+      "ETH": 0.9946,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-02": {
+     "coverage": {
+      "ETH": 0.9985,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2017-03": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-04": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-05": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-06": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-07": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-08": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-09": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-10": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-11": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-12": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-01": {
+     "coverage": {
+      "ETH": 0.9382,
+      "USDT": 0.0,
+      "XBT": 0.9315
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-02": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2018-03": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-04": {
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 0.0,
+      "XBT": 0.9986
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-05": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-06": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-07": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-08": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-09": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-10": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-11": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-12": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-01": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-02": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2019-03": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-04": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-05": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-06": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-07": {
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 0.0,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-08": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-09": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-10": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.3522,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.957,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 34.9901
+    },
+    "2020-02": {
+     "L_hours": 696,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 66.6677
+    },
+    "2020-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 122.4484
+    },
+    "2020-04": {
+     "L_hours": 716,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 36.948
+    },
+    "2020-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 63.2057
+    },
+    "2020-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 37.0871
+    },
+    "2020-07": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 119.9061
+    },
+    "2020-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 28.8197
+    },
+    "2020-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 30.0155
+    },
+    "2020-10": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9973,
+      "XBT": 0.9973
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.5707
+    },
+    "2020-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 36.4254
+    },
+    "2020-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 47.3019
+    },
+    "2021-01": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 41.9096
+    },
+    "2021-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 31.5086
+    },
+    "2021-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 46.3836
+    },
+    "2021-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 69.3822
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 28.2087
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 103.9653
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "ETH": 0.9933,
+      "USDT": 0.9933,
+      "XBT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 26.9442
+    },
+    "2021-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 32.1376
+    },
+    "2021-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 54.4739
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 23.4963
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 97.8698
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 15.2894
+    },
+    "2022-01": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 30.5966
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 50.5638
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 54.117
+    },
+    "2022-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 47.9588
+    },
+    "2022-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 48.1668
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 53.1531
+    },
+    "2022-07": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 44.2525
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 96.639
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 65.9443
+    },
+    "2022-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 71.0314
+    },
+    "2022-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 70.3593
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.7416
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.0629
+    },
+    "2023-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 46.1514
+    },
+    "2023-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 77.1877
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 45.5921
+    },
+    "2023-05": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 102.1994
+    },
+    "2023-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 74.1438
+    },
+    "2023-07": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 80.6831
+    },
+    "2023-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 57.8261
+    },
+    "2023-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 41.1448
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 25.0461
+    },
+    "2023-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 102.0604
+    },
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 92.6221
+    },
+    "2024-01": {
+     "L_hours": 738,
+     "coverage": {
+      "ETH": 0.9906,
+      "USDT": 0.9919,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 35.8511
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 696,
+     "status": "stress",
+     "stress_stat_bps": 25.5353
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 38.0929
+    },
+    "2024-04": {
+     "L_hours": 715,
+     "coverage": {
+      "ETH": 0.9931,
+      "USDT": 0.9931,
+      "XBT": 0.9931
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 54.4339
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 47.2844
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 33.7868
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 30.6169
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 91.1809
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 41.6101
+    },
+    "2024-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 61.3336
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 91.2925
+    },
+    "2024-12": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 68.0633
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 0.996,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 59.6718
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 56.5445
+    },
+    "2025-03": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 32.7957
+    }
+   }
+  },
+  "GBP": {
+   "counts": {
+    "calm": 7,
+    "excluded_coverage": 43,
+    "excluded_no_L": 0,
+    "stress": 49
+   },
+   "fiat": "GBP",
+   "months": {
+    "2017-01": {
+     "coverage": {
+      "ETH": 0.2755,
+      "USDT": 0.0,
+      "XBT": 0.6761
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-02": {
+     "coverage": {
+      "ETH": 0.2232,
+      "USDT": 0.0,
+      "XBT": 0.561
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2017-03": {
+     "coverage": {
+      "ETH": 0.5242,
+      "USDT": 0.0,
+      "XBT": 0.625
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-04": {
+     "coverage": {
+      "ETH": 0.3389,
+      "USDT": 0.0,
+      "XBT": 0.5194
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-05": {
+     "coverage": {
+      "ETH": 0.7944,
+      "USDT": 0.0,
+      "XBT": 0.871
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-06": {
+     "coverage": {
+      "ETH": 0.9361,
+      "USDT": 0.0,
+      "XBT": 0.9486
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-07": {
+     "coverage": {
+      "ETH": 0.914,
+      "USDT": 0.0,
+      "XBT": 0.9315
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-08": {
+     "coverage": {
+      "ETH": 0.6129,
+      "USDT": 0.0,
+      "XBT": 0.6532
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-09": {
+     "coverage": {
+      "ETH": 0.2722,
+      "USDT": 0.0,
+      "XBT": 0.2931
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-10": {
+     "coverage": {
+      "ETH": 0.2997,
+      "USDT": 0.0,
+      "XBT": 0.3817
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-11": {
+     "coverage": {
+      "ETH": 0.3389,
+      "USDT": 0.0,
+      "XBT": 0.3083
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-12": {
+     "coverage": {
+      "ETH": 0.3871,
+      "USDT": 0.0,
+      "XBT": 0.2554
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-01": {
+     "coverage": {
+      "ETH": 0.5699,
+      "USDT": 0.0,
+      "XBT": 0.4987
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-02": {
+     "coverage": {
+      "ETH": 0.4583,
+      "USDT": 0.0,
+      "XBT": 0.4896
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2018-03": {
+     "coverage": {
+      "ETH": 0.3199,
+      "USDT": 0.0,
+      "XBT": 0.3535
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-04": {
+     "coverage": {
+      "ETH": 0.3444,
+      "USDT": 0.0,
+      "XBT": 0.3917
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-05": {
+     "coverage": {
+      "ETH": 0.3495,
+      "USDT": 0.0,
+      "XBT": 0.3172
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-06": {
+     "coverage": {
+      "ETH": 0.3778,
+      "USDT": 0.0,
+      "XBT": 0.2958
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-07": {
+     "coverage": {
+      "ETH": 0.3481,
+      "USDT": 0.0,
+      "XBT": 0.3481
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-08": {
+     "coverage": {
+      "ETH": 0.5054,
+      "USDT": 0.0,
+      "XBT": 0.4933
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-09": {
+     "coverage": {
+      "ETH": 0.45,
+      "USDT": 0.0,
+      "XBT": 0.4736
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-10": {
+     "coverage": {
+      "ETH": 0.2957,
+      "USDT": 0.0,
+      "XBT": 0.3858
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-11": {
+     "coverage": {
+      "ETH": 0.375,
+      "USDT": 0.0,
+      "XBT": 0.4444
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-12": {
+     "coverage": {
+      "ETH": 0.2903,
+      "USDT": 0.0,
+      "XBT": 0.3293
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-01": {
+     "coverage": {
+      "ETH": 0.4046,
+      "USDT": 0.0,
+      "XBT": 0.504
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-02": {
+     "coverage": {
+      "ETH": 0.4405,
+      "USDT": 0.0,
+      "XBT": 0.4062
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2019-03": {
+     "coverage": {
+      "ETH": 0.3952,
+      "USDT": 0.0,
+      "XBT": 0.3387
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-04": {
+     "coverage": {
+      "ETH": 0.4972,
+      "USDT": 0.0,
+      "XBT": 0.4861
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-05": {
+     "coverage": {
+      "ETH": 0.5376,
+      "USDT": 0.0,
+      "XBT": 0.4637
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-06": {
+     "coverage": {
+      "ETH": 0.3,
+      "USDT": 0.0,
+      "XBT": 0.3347
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-07": {
+     "coverage": {
+      "ETH": 0.3414,
+      "USDT": 0.0,
+      "XBT": 0.3441
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-08": {
+     "coverage": {
+      "ETH": 0.2715,
+      "USDT": 0.0,
+      "XBT": 0.4435
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-09": {
+     "coverage": {
+      "ETH": 0.3917,
+      "USDT": 0.0,
+      "XBT": 0.5139
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-10": {
+     "coverage": {
+      "ETH": 0.3911,
+      "USDT": 0.0,
+      "XBT": 0.5188
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "ETH": 0.3625,
+      "USDT": 0.0,
+      "XBT": 0.4931
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "ETH": 0.4368,
+      "USDT": 0.121,
+      "XBT": 0.7137
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "ETH": 0.4825,
+      "USDT": 0.4032,
+      "XBT": 0.828
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "ETH": 0.783,
+      "USDT": 0.5086,
+      "XBT": 0.9138
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "coverage": {
+      "ETH": 0.7944,
+      "USDT": 0.75,
+      "XBT": 0.9301
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "ETH": 0.6583,
+      "USDT": 0.7028,
+      "XBT": 0.9056
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "ETH": 0.7339,
+      "USDT": 0.8441,
+      "XBT": 0.9718
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "L_hours": 705,
+     "coverage": {
+      "ETH": 0.8389,
+      "USDT": 0.8694,
+      "XBT": 0.9792
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 91.6083
+    },
+    "2020-07": {
+     "coverage": {
+      "ETH": 0.7997,
+      "USDT": 0.8925,
+      "XBT": 0.9839
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "L_hours": 737,
+     "coverage": {
+      "ETH": 0.8965,
+      "USDT": 0.8817,
+      "XBT": 0.9906
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 24.1402
+    },
+    "2020-09": {
+     "L_hours": 709,
+     "coverage": {
+      "ETH": 0.8597,
+      "USDT": 0.8556,
+      "XBT": 0.9847
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 87.1562
+    },
+    "2020-10": {
+     "coverage": {
+      "ETH": 0.7836,
+      "USDT": 0.8481,
+      "XBT": 0.9879
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9139,
+      "USDT": 0.9736,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 55.8029
+    },
+    "2020-12": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9543,
+      "USDT": 1.0,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 64.8797
+    },
+    "2021-01": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9973,
+      "USDT": 0.9973,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 31.2547
+    },
+    "2021-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 82.5998
+    },
+    "2021-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 42.4517
+    },
+    "2021-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 50.8795
+    },
+    "2021-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 48.3923
+    },
+    "2021-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 0.9986,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 74.0669
+    },
+    "2021-07": {
+     "L_hours": 739,
+     "coverage": {
+      "ETH": 0.9933,
+      "USDT": 0.9933,
+      "XBT": 0.9933
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 39.2716
+    },
+    "2021-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 55.6907
+    },
+    "2021-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 51.7138
+    },
+    "2021-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 53.2305
+    },
+    "2021-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 49.8799
+    },
+    "2021-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 39.4836
+    },
+    "2022-01": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.5565
+    },
+    "2022-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "calm",
+     "stress_stat_bps": 23.5941
+    },
+    "2022-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 37.8381
+    },
+    "2022-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 40.6424
+    },
+    "2022-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 102.7905
+    },
+    "2022-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 65.9333
+    },
+    "2022-07": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 67.4034
+    },
+    "2022-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 113.3653
+    },
+    "2022-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 100.2287
+    },
+    "2022-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 105.4085
+    },
+    "2022-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 156.9614
+    },
+    "2022-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9987,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 76.003
+    },
+    "2023-01": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 0.9973,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 110.5736
+    },
+    "2023-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 0.9985,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 25.6439
+    },
+    "2023-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 94.7759
+    },
+    "2023-04": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "calm",
+     "stress_stat_bps": 23.4799
+    },
+    "2023-05": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 0.9987,
+      "XBT": 0.9987
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 55.3744
+    },
+    "2023-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 85.1856
+    },
+    "2023-07": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 0.9987,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 56.212
+    },
+    "2023-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 22.6182
+    },
+    "2023-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 0.9986,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 93.2243
+    },
+    "2023-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 27.4089
+    },
+    "2023-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 107.1273
+    },
+    "2023-12": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 32.1321
+    },
+    "2024-01": {
+     "L_hours": 738,
+     "coverage": {
+      "ETH": 0.9892,
+      "USDT": 0.9906,
+      "XBT": 0.9919
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 13.841
+    },
+    "2024-02": {
+     "L_hours": 696,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 696,
+     "status": "calm",
+     "stress_stat_bps": 22.8971
+    },
+    "2024-03": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 51.4604
+    },
+    "2024-04": {
+     "L_hours": 715,
+     "coverage": {
+      "ETH": 0.9931,
+      "USDT": 0.9917,
+      "XBT": 0.9931
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 60.1434
+    },
+    "2024-05": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 65.8248
+    },
+    "2024-06": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 34.1193
+    },
+    "2024-07": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 48.9741
+    },
+    "2024-08": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 118.1162
+    },
+    "2024-09": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 57.2552
+    },
+    "2024-10": {
+     "L_hours": 744,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 45.6692
+    },
+    "2024-11": {
+     "L_hours": 720,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 720,
+     "status": "stress",
+     "stress_stat_bps": 79.4592
+    },
+    "2024-12": {
+     "L_hours": 742,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 72.6001
+    },
+    "2025-01": {
+     "L_hours": 741,
+     "coverage": {
+      "ETH": 0.996,
+      "USDT": 0.996,
+      "XBT": 0.996
+     },
+     "hours": 744,
+     "status": "stress",
+     "stress_stat_bps": 91.6319
+    },
+    "2025-02": {
+     "L_hours": 672,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 672,
+     "status": "stress",
+     "stress_stat_bps": 64.354
+    },
+    "2025-03": {
+     "L_hours": 743,
+     "coverage": {
+      "ETH": 1.0,
+      "USDT": 1.0,
+      "XBT": 1.0
+     },
+     "hours": 744,
+     "status": "calm",
+     "stress_stat_bps": 17.1242
+    }
+   }
+  },
+  "JPY": {
+   "counts": {
+    "calm": 0,
+    "excluded_coverage": 99,
+    "excluded_no_L": 0,
+    "stress": 0
+   },
+   "fiat": "JPY",
+   "months": {
+    "2017-01": {
+     "coverage": {
+      "ETH": 0.1183,
+      "USDT": 0.0,
+      "XBT": 0.4234
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-02": {
+     "coverage": {
+      "ETH": 0.1815,
+      "USDT": 0.0,
+      "XBT": 0.5074
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2017-03": {
+     "coverage": {
+      "ETH": 0.4194,
+      "USDT": 0.0,
+      "XBT": 0.7433
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-04": {
+     "coverage": {
+      "ETH": 0.3389,
+      "USDT": 0.0,
+      "XBT": 0.7069
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-05": {
+     "coverage": {
+      "ETH": 0.6922,
+      "USDT": 0.0,
+      "XBT": 0.9341
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-06": {
+     "coverage": {
+      "ETH": 0.8917,
+      "USDT": 0.0,
+      "XBT": 0.9667
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-07": {
+     "coverage": {
+      "ETH": 0.8884,
+      "USDT": 0.0,
+      "XBT": 0.9583
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-08": {
+     "coverage": {
+      "ETH": 0.7231,
+      "USDT": 0.0,
+      "XBT": 0.9422
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-09": {
+     "coverage": {
+      "ETH": 0.6736,
+      "USDT": 0.0,
+      "XBT": 0.9181
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-10": {
+     "coverage": {
+      "ETH": 0.6734,
+      "USDT": 0.0,
+      "XBT": 0.8831
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2017-11": {
+     "coverage": {
+      "ETH": 0.6319,
+      "USDT": 0.0,
+      "XBT": 0.85
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2017-12": {
+     "coverage": {
+      "ETH": 0.7056,
+      "USDT": 0.0,
+      "XBT": 0.832
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-01": {
+     "coverage": {
+      "ETH": 0.7876,
+      "USDT": 0.0,
+      "XBT": 0.828
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-02": {
+     "coverage": {
+      "ETH": 0.6116,
+      "USDT": 0.0,
+      "XBT": 0.8095
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2018-03": {
+     "coverage": {
+      "ETH": 0.5618,
+      "USDT": 0.0,
+      "XBT": 0.7366
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-04": {
+     "coverage": {
+      "ETH": 0.4694,
+      "USDT": 0.0,
+      "XBT": 0.6625
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-05": {
+     "coverage": {
+      "ETH": 0.3468,
+      "USDT": 0.0,
+      "XBT": 0.4745
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-06": {
+     "coverage": {
+      "ETH": 0.3792,
+      "USDT": 0.0,
+      "XBT": 0.5347
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-07": {
+     "coverage": {
+      "ETH": 0.2446,
+      "USDT": 0.0,
+      "XBT": 0.3737
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-08": {
+     "coverage": {
+      "ETH": 0.3024,
+      "USDT": 0.0,
+      "XBT": 0.297
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-09": {
+     "coverage": {
+      "ETH": 0.4833,
+      "USDT": 0.0,
+      "XBT": 0.5028
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-10": {
+     "coverage": {
+      "ETH": 0.414,
+      "USDT": 0.0,
+      "XBT": 0.539
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2018-11": {
+     "coverage": {
+      "ETH": 0.3389,
+      "USDT": 0.0,
+      "XBT": 0.4028
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2018-12": {
+     "coverage": {
+      "ETH": 0.2527,
+      "USDT": 0.0,
+      "XBT": 0.2944
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-01": {
+     "coverage": {
+      "ETH": 0.2836,
+      "USDT": 0.0,
+      "XBT": 0.3589
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-02": {
+     "coverage": {
+      "ETH": 0.2604,
+      "USDT": 0.0,
+      "XBT": 0.2381
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2019-03": {
+     "coverage": {
+      "ETH": 0.1169,
+      "USDT": 0.0,
+      "XBT": 0.1626
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-04": {
+     "coverage": {
+      "ETH": 0.2292,
+      "USDT": 0.0,
+      "XBT": 0.2722
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-05": {
+     "coverage": {
+      "ETH": 0.3992,
+      "USDT": 0.0,
+      "XBT": 0.2648
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-06": {
+     "coverage": {
+      "ETH": 0.1806,
+      "USDT": 0.0,
+      "XBT": 0.1639
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-07": {
+     "coverage": {
+      "ETH": 0.2097,
+      "USDT": 0.0,
+      "XBT": 0.2392
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-08": {
+     "coverage": {
+      "ETH": 0.125,
+      "USDT": 0.0,
+      "XBT": 0.1532
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-09": {
+     "coverage": {
+      "ETH": 0.4097,
+      "USDT": 0.0,
+      "XBT": 0.3306
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-10": {
+     "coverage": {
+      "ETH": 0.336,
+      "USDT": 0.0,
+      "XBT": 0.3683
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2019-11": {
+     "coverage": {
+      "ETH": 0.2347,
+      "USDT": 0.0,
+      "XBT": 0.2806
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2019-12": {
+     "coverage": {
+      "ETH": 0.1048,
+      "USDT": 0.0,
+      "XBT": 0.1774
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-01": {
+     "coverage": {
+      "ETH": 0.2648,
+      "USDT": 0.0,
+      "XBT": 0.3683
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-02": {
+     "coverage": {
+      "ETH": 0.2428,
+      "USDT": 0.0,
+      "XBT": 0.2514
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2020-03": {
+     "coverage": {
+      "ETH": 0.3199,
+      "USDT": 0.0,
+      "XBT": 0.4624
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-04": {
+     "coverage": {
+      "ETH": 0.1944,
+      "USDT": 0.0,
+      "XBT": 0.2222
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-05": {
+     "coverage": {
+      "ETH": 0.1788,
+      "USDT": 0.0699,
+      "XBT": 0.1962
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-06": {
+     "coverage": {
+      "ETH": 0.1944,
+      "USDT": 0.0681,
+      "XBT": 0.2028
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-07": {
+     "coverage": {
+      "ETH": 0.1492,
+      "USDT": 0.207,
+      "XBT": 0.1169
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-08": {
+     "coverage": {
+      "ETH": 0.125,
+      "USDT": 0.0833,
+      "XBT": 0.1465
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-09": {
+     "coverage": {
+      "ETH": 0.2097,
+      "USDT": 0.2028,
+      "XBT": 0.2111
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-10": {
+     "coverage": {
+      "ETH": 0.0941,
+      "USDT": 0.1586,
+      "XBT": 0.246
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2020-11": {
+     "coverage": {
+      "ETH": 0.2681,
+      "USDT": 0.5069,
+      "XBT": 0.4333
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2020-12": {
+     "coverage": {
+      "ETH": 0.3051,
+      "USDT": 0.3804,
+      "XBT": 0.5403
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-01": {
+     "coverage": {
+      "ETH": 0.6761,
+      "USDT": 0.4825,
+      "XBT": 0.836
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-02": {
+     "coverage": {
+      "ETH": 0.7961,
+      "USDT": 0.5699,
+      "XBT": 0.9137
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2021-03": {
+     "coverage": {
+      "ETH": 0.6882,
+      "USDT": 0.3925,
+      "XBT": 0.8548
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-04": {
+     "coverage": {
+      "ETH": 0.7556,
+      "USDT": 0.4097,
+      "XBT": 0.8986
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-05": {
+     "coverage": {
+      "ETH": 0.9637,
+      "USDT": 0.6129,
+      "XBT": 0.9745
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-06": {
+     "coverage": {
+      "ETH": 0.9389,
+      "USDT": 0.4528,
+      "XBT": 0.9528
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-07": {
+     "coverage": {
+      "ETH": 0.7849,
+      "USDT": 0.1075,
+      "XBT": 0.7742
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-08": {
+     "coverage": {
+      "ETH": 0.7796,
+      "USDT": 0.3589,
+      "XBT": 0.7836
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-09": {
+     "coverage": {
+      "ETH": 0.6972,
+      "USDT": 0.2153,
+      "XBT": 0.6667
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-10": {
+     "coverage": {
+      "ETH": 0.7245,
+      "USDT": 0.3616,
+      "XBT": 0.8199
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2021-11": {
+     "coverage": {
+      "ETH": 0.675,
+      "USDT": 0.4139,
+      "XBT": 0.9194
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2021-12": {
+     "coverage": {
+      "ETH": 0.8871,
+      "USDT": 0.5336,
+      "XBT": 0.9409
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-01": {
+     "coverage": {
+      "ETH": 0.8831,
+      "USDT": 0.3616,
+      "XBT": 0.8132
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-02": {
+     "coverage": {
+      "ETH": 0.939,
+      "USDT": 0.2634,
+      "XBT": 0.8333
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2022-03": {
+     "coverage": {
+      "ETH": 0.6156,
+      "USDT": 0.2245,
+      "XBT": 0.6949
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-04": {
+     "coverage": {
+      "ETH": 0.6222,
+      "USDT": 0.3,
+      "XBT": 0.5792
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-05": {
+     "coverage": {
+      "ETH": 0.6438,
+      "USDT": 0.3992,
+      "XBT": 0.6694
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-06": {
+     "coverage": {
+      "ETH": 0.7625,
+      "USDT": 0.4583,
+      "XBT": 0.7569
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-07": {
+     "coverage": {
+      "ETH": 0.7648,
+      "USDT": 0.379,
+      "XBT": 0.672
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-08": {
+     "coverage": {
+      "ETH": 0.625,
+      "USDT": 0.2608,
+      "XBT": 0.6142
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-09": {
+     "coverage": {
+      "ETH": 0.6597,
+      "USDT": 0.2931,
+      "XBT": 0.7847
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-10": {
+     "coverage": {
+      "ETH": 0.4839,
+      "USDT": 0.1465,
+      "XBT": 0.4341
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2022-11": {
+     "coverage": {
+      "ETH": 0.6917,
+      "USDT": 0.4722,
+      "XBT": 0.7472
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2022-12": {
+     "coverage": {
+      "ETH": 0.5188,
+      "USDT": 0.2419,
+      "XBT": 0.5793
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-01": {
+     "coverage": {
+      "ETH": 0.5444,
+      "USDT": 0.2554,
+      "XBT": 0.6613
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-02": {
+     "coverage": {
+      "ETH": 0.2738,
+      "USDT": 0.1786,
+      "XBT": 0.3274
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2023-03": {
+     "coverage": {
+      "ETH": 0.461,
+      "USDT": 0.3992,
+      "XBT": 0.7097
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-04": {
+     "coverage": {
+      "ETH": 0.4653,
+      "USDT": 0.3278,
+      "XBT": 0.6333
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-05": {
+     "coverage": {
+      "ETH": 0.2863,
+      "USDT": 0.3118,
+      "XBT": 0.5793
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-06": {
+     "coverage": {
+      "ETH": 0.2722,
+      "USDT": 0.4792,
+      "XBT": 0.5833
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-07": {
+     "coverage": {
+      "ETH": 0.1855,
+      "USDT": 0.4395,
+      "XBT": 0.4825
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-08": {
+     "coverage": {
+      "ETH": 0.1734,
+      "USDT": 0.3078,
+      "XBT": 0.3978
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-09": {
+     "coverage": {
+      "ETH": 0.1417,
+      "USDT": 0.2542,
+      "XBT": 0.3736
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-10": {
+     "coverage": {
+      "ETH": 0.2124,
+      "USDT": 0.2231,
+      "XBT": 0.5188
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2023-11": {
+     "coverage": {
+      "ETH": 0.2694,
+      "USDT": 0.2319,
+      "XBT": 0.5639
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2023-12": {
+     "coverage": {
+      "ETH": 0.2823,
+      "USDT": 0.2984,
+      "XBT": 0.6519
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-01": {
+     "coverage": {
+      "ETH": 0.3199,
+      "USDT": 0.4073,
+      "XBT": 0.6613
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-02": {
+     "coverage": {
+      "ETH": 0.2328,
+      "USDT": 0.1882,
+      "XBT": 0.6408
+     },
+     "hours": 696,
+     "status": "excluded_coverage"
+    },
+    "2024-03": {
+     "coverage": {
+      "ETH": 0.4153,
+      "USDT": 0.5081,
+      "XBT": 0.8024
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-04": {
+     "coverage": {
+      "ETH": 0.5028,
+      "USDT": 0.4069,
+      "XBT": 0.7819
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-05": {
+     "coverage": {
+      "ETH": 0.3374,
+      "USDT": 0.3051,
+      "XBT": 0.5565
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-06": {
+     "coverage": {
+      "ETH": 0.2375,
+      "USDT": 0.2653,
+      "XBT": 0.4125
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-07": {
+     "coverage": {
+      "ETH": 0.3293,
+      "USDT": 0.3696,
+      "XBT": 0.7984
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-08": {
+     "coverage": {
+      "ETH": 0.3858,
+      "USDT": 0.6129,
+      "XBT": 0.6573
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-09": {
+     "coverage": {
+      "ETH": 0.4611,
+      "USDT": 0.5306,
+      "XBT": 0.7403
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-10": {
+     "coverage": {
+      "ETH": 0.3038,
+      "USDT": 0.3656,
+      "XBT": 0.6801
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2024-11": {
+     "coverage": {
+      "ETH": 0.2944,
+      "USDT": 0.4764,
+      "XBT": 0.8264
+     },
+     "hours": 720,
+     "status": "excluded_coverage"
+    },
+    "2024-12": {
+     "coverage": {
+      "ETH": 0.3306,
+      "USDT": 0.4355,
+      "XBT": 0.7648
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-01": {
+     "coverage": {
+      "ETH": 0.3185,
+      "USDT": 0.4422,
+      "XBT": 0.7258
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    },
+    "2025-02": {
+     "coverage": {
+      "ETH": 0.4315,
+      "USDT": 0.5298,
+      "XBT": 0.7158
+     },
+     "hours": 672,
+     "status": "excluded_coverage"
+    },
+    "2025-03": {
+     "coverage": {
+      "ETH": 0.418,
+      "USDT": 0.3226,
+      "XBT": 0.7554
+     },
+     "hours": 744,
+     "status": "excluded_coverage"
+    }
+   }
+  }
+ }
+}
