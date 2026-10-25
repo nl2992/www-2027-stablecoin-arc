@@ -64,6 +64,10 @@ def numbers() -> str:
         add(f"{v.capitalize()}Lam", f(e["iv"]["lam"]), f"by_venue/{v}/stress/iv/lam")
         add(f"{v.capitalize()}Lo", f(e["iv"]["lo"]), f"by_venue/{v}/stress/iv/lo")
         add(f"{v.capitalize()}Hi", f(e["iv"]["hi"]), f"by_venue/{v}/stress/iv/hi")
+    cur_lams = [r["by_currency"][c]["stress"]["iv"]["lam"] for c in ORDER]
+    add("RangeMin", f(min(cur_lams), 2), "by_currency/*/stress/iv/lam (min)")
+    add("RangeMax", f(max(cur_lams), 2), "by_currency/*/stress/iv/lam (max)")
+    add("StressUnitMonths", str(sum(c["stress_months"] for c in r["by_currency"].values())), "by_currency/*/stress_months (sum)")
     p1, p2, fa = r["P1"], r["P2"], r["falsification"]
     add("POnePass", yn(p1["pass"]), "P1/pass")
     add("POneExcludesZero", yn(p1["excludes_0"]), "P1/excludes_0")

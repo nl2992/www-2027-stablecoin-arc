@@ -19,7 +19,8 @@ MACRO_FILES = [ROOT / "paper/generated/numbers.tex", ROOT / "paper/generated/res
                ROOT / "paper/generated/theory_numbers.tex", ROOT / "paper/generated/robust_anchor_numbers.tex",
                ROOT / "paper/generated/kimchi_numbers.tex",
                ROOT / "paper/generated/q1_numbers.tex",
-               ROOT / "paper/generated/q2_numbers.tex"]
+               ROOT / "paper/generated/q2_numbers.tex",
+               ROOT / "paper/generated/panel_numbers.tex"]
 OUTPUT = ROOT / "docs/review/ABSTRACT_SUBMISSION.md"
 
 
