@@ -160,12 +160,11 @@ def table() -> str:
             body.append("\\midrule")
         body.append(f"{label} & " + " & ".join(fmt(i, c) for c in cols) + " \\\\")
     return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
-            "\\caption{The three locked fusion tests. Each method was frozen, then scored once on episodes outside its development data "
-            "(T1 Oct 2018 to May 2019, T2 May to Jul 2023, T3 Nov 2022, T4 Mar 2023, T5 other 2022--23; X1 Mar 2023, X2 Jan 2024, X3 Apr 2025, X4 Dec 2023 and Feb--Mar 2025). UNIT-TD: share of the mean-square Bitfinex--Coinbase gap removed on five withheld assets (higher is better). "
+            "\\caption{The three locked fusion tests. Each method was frozen, then scored once on episodes outside its development data. "
+            "UNIT-TD: share of the mean-square Bitfinex--Coinbase gap removed on five withheld assets (higher is better). "
             "FUSE (T1--T5) and STABLE (X1--X4): mean absolute error of the fused dollar price against a Kraken reference that "
             "never entered fusion, divided by the plain median's error on the same hours (below 1 beats the median; bold: best "
-            "method in the column; for STABLE the plain median treats every stablecoin as one dollar). The oracle is the median of the sources known to be clean (fewer sources, so it can be worse than the median); it is a "
-            "reference point. In STABLE, X4 is a calm placebo on which the fuser's own check (ratio at most 1.02) failed. $^\\dagger$ Post hoc: not in the locked log.}\n"
+            "method in the column). X4 is a calm placebo on which the fuser's own check (ratio at most 1.02) failed. $^\\dagger$ Post hoc: not in the locked log.}\n"
             "\\label{tab:bench}\n\\setlength{\\tabcolsep}{3.5pt}\n\\begin{tabular}{@{}lcccccccccc@{}}\n\\toprule\n"
             " & UNIT-TD & \\multicolumn{5}{c}{FUSE} & \\multicolumn{4}{c}{STABLE} \\\\\n"
             "\\cmidrule(lr){3-7}\\cmidrule(lr){8-11}\n"

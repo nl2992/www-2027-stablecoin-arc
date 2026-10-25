@@ -126,8 +126,9 @@ def test_cluster_json_matches_pooled_point_estimate():
 
 
 def test_figure_is_fresh(tmp_path):
-    out = FP.panel_forest(tmp_path / "f.pdf")
-    assert out.read_bytes() == (ROOT / "paper/figures/panel_forest.pdf").read_bytes(), "run `uv run python -m www_paper.figures_panel`"
+    out = FP.panel_figure(tmp_path / "f.pdf")
+    assert out.read_bytes() == (ROOT / "paper/figures/panel_figure.pdf").read_bytes(), "run `uv run python -m www_paper.figures_panel`"
+    assert FP.build_caption() == FP.CAPTION.read_text(), "run `uv run python -m www_paper.figures_panel`"
 
 
 def test_preregistered_outcomes_match_results():
