@@ -255,6 +255,7 @@ def anchor_macros() -> list[tuple[str, str, str]]:
         ("NumUAnchorBfxSlopeLo", f"{y19['daily_slope_ci95'][0]:.2f}", f"{aj} bitfinex/slices/2019/daily_slope_ci95[0]"),
         ("NumUAnchorBfxSlopeHi", f"{y19['daily_slope_ci95'][1]:.2f}", f"{aj} bitfinex/slices/2019/daily_slope_ci95[1]"),
         ("NumUAnchorBnusL", _num(jj["median_L"], 0), f"{aj} binance_us/slices/jun_jul_2023/median_L (hours with |L| >= 50 bps)"),
+        ("NumUAnchorBnusHours", _num(jj["hours_big"], 0), f"{aj} binance_us/slices/jun_jul_2023/hours_big"),
         ("NumUAnchorBnusD", _num(jj["median_D"], 0), f"{aj} binance_us/slices/jun_jul_2023/median_D"),
         ("NumUAnchorBnusT", _num(jj["median_T"], 1), f"{aj} binance_us/slices/jun_jul_2023/median_T"),
         ("NumUAnchorBnusSlope", f"{jj['daily_slope']:.2f}", f"{aj} binance_us/slices/jun_jul_2023/daily_slope"),
@@ -376,8 +377,8 @@ def detector_table() -> str:
         if method != "b3":
             rows[-1] += "\n\\addlinespace"
     return (f"{HEADER}\n\\begin{{table*}}[t]\n\\footnotesize\n"
-            "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022): recall on labelled "
-            "episodes, and false alarms in total and per venue-year. -- means not evaluated.}\n"
+            "\\caption{Alarm episodes by method and exchange, 2017--2023 (Binance.US from October 2022): recall on labeled "
+            "episodes, and false alarms in total and per venue-year. A dash means not evaluated.}\n"
             "\\label{tab:detector}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}llrrrr@{}}\n\\toprule\n"
             "Method & Exchange & Episodes & Recall & False & Per year \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")

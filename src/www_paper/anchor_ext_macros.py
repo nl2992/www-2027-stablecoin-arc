@@ -136,7 +136,7 @@ def table() -> str:
            "$L$ is the Bitfinex--Bitstamp bitcoin gap, $D=10^4\\log P_{\\mathrm{Bfx}}(\\mathrm{USDT/USD})$ and $T=D-L$ (bps). "
            "Slopes are OLS on daily medians (hours where $L$, $D$, $X$ all exist); $D$ on $L$ reproduces Table~\\ref{tab:anchor} up to "
            "the hours in which Kraken traded; $(D-X)$ on $L$ has 95\\% block-bootstrap intervals over weeks and over months "
-           "(1,000 draws; -- when fewer than five blocks); IV uses the Bitfinex--Coinbase ETH gap as instrument for $L$. "
+           "(1,000 draws; a dash marks fewer than five blocks); IV uses the Bitfinex--Coinbase ETH gap as instrument for $L$. "
            "Medians of $T$, $X$ and $T-X$ and corr$(T,X)$ (hourly) use hours with $|L|\\ge 50$ bps for the medians. "
            "If $T=X$, the $(D-X)$ slope is 1 and $T-X=0$.")
     return f"""{HEADER}

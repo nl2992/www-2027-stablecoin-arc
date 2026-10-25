@@ -2,7 +2,6 @@
 % Uses the acmart `proposition' and `proof' environments.
 \subsection{Identification and inference for the anchored test}
 \label{sec:anchored-theory}
-This subsection states what the anchored test identifies, what it assumes and how it performs.
 
 \paragraph{Setup.} Take source $s$ against reference $r$ in hour $t$, in bps, with $u_{r,t}$ absorbed. Items other than the
 anchor share the offset $c_t=u_t+\delta_t$. Here $u_t$ is the unit offset and $\delta_t$ is source-wide item demand, which
@@ -48,11 +47,10 @@ error $\xi$, no $x$, so that term drops out of Eq.~\eqref{eq:iv}.
 
 \paragraph{Reading $\hat\lambda$.} On the Bitfinex stress window $\hat\lambda=\NumGBfxPrimaryLam{}$. In words: when the
 offset moved, the netted anchor moved almost one for one. Most of the offset's time variation was therefore a unit shift, and
-the remainder was demand or an anchor-specific component. The estimate does not say that the offset's \emph{level} on any
-date was that share unit and the rest demand, because intercepts are free. It does not split each hour. And because
-$\lambda=1$ is rejected, it does not say the shift was purely unit.
+the remainder was demand or an anchor-specific component. The estimate concerns variation over the window. Because intercepts are free, it gives no split of the offset's \emph{level} on any
+date, or of any single hour, into unit and demand, and because $\lambda=1$ is rejected the shift was not purely a unit shift.
 
-\paragraph{Over-identification.} Generalised method of moments (GMM) chooses $\lambda$ so that moment conditions hold as
+\paragraph{Over-identification.} Generalized method of moments (GMM) chooses $\lambda$ so that moment conditions hold as
 closely as possible, and Hansen's $J$ tests whether they can all hold at once. With anchors $k=1,\dots,K$ and instruments $j=1,\dots,m$, take $z=(1,Z_1,\dots,Z_m)$ and the moments
 \begin{equation}
 E\big[z_j\,(Y_k-\mu_k-\lambda L)\big]=0,\qquad j=0,\dots,m,\ k=1,\dots,K,
@@ -80,7 +78,7 @@ netted depeg (\NumGSFiveBiasIv{}). It is also unbiased when the noise in $L$ is 
 where OLS is biased by \NumGSSixBiasOls{}. Leaving the depeg in gives a bias of \NumGSFourBiasIv{}. That is of the order of
 the data's gap between \NumGBfxNaiveLam{} (hourly GMM; the daily OLS slope is \NumKStressDaySlopeD{}) and
 \NumGBfxPrimaryLam{}. HAC intervals cover at \NumGSOneCover{} in a pure shift but at \NumGSThreeCover{} in the mixture, where
-the realised unit share varies by window. The block bootstrap is no better there (\NumGSThreeCoverBoot{}). $J$ has size
+the realized unit share varies by window. The block bootstrap is no better there (\NumGSThreeCoverBoot{}). $J$ has size
 \NumGSOneJRej{}. It rejects at only \NumGSFourJRej{} when every anchor's depeg loads alike, and at \NumGSSevenJRej{} when
 loadings differ.
 

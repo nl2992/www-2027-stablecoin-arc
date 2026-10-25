@@ -85,9 +85,9 @@ def table() -> str:
 
     r1 = [f"{M_LABEL[m]} & " + " & ".join(cell(m, g) for g in cols) + " \\\\" for m in M_WORD]
     t1 = ("\\begin{table*}[!t]\n\\footnotesize\n\\caption{Error of the fused USD price against a held-out open-rail venue: median and 95th-percentile absolute error "
-          "in bps, and hours above 50 bps. With two sources the median, CRH and GTM coincide.}\n"
+          "in bps (Med, P95), and the number of hours with an error above 50 bps ($>$50). With two sources the median, CRH and GTM coincide.}\n"
           "\\label{tab:td-index}\n\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{@{}lcccccccccccc@{}}\n\\toprule\n"
-          " & \\multicolumn{3}{c}{All hours} & \\multicolumn{3}{c}{Bitfinex 2017-04..07} & \\multicolumn{3}{c}{Bitfinex 2018-10..2019-05} "
+          " & \\multicolumn{3}{c}{All hours} & \\multicolumn{3}{c}{Bitfinex Apr--Jul 2017} & \\multicolumn{3}{c}{Bitfinex Oct 2018--May 2019} "
           "& \\multicolumn{3}{c}{2023} \\\\\n"
           "Method & Med & P95 & $>$50 & Med & P95 & $>$50 & Med & P95 & $>$50 & Med & P95 & $>$50 \\\\\n\\midrule\n"
           + "\n".join(r1[:6]) + "\n\\midrule\n" + "\n".join(r1[6:]) + "\n\\bottomrule\n\\end{tabular}\n\\end{table*}\n")

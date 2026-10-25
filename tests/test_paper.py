@@ -11,7 +11,7 @@ ROOT = Path(__file__).parents[1]
 MAIN = (ROOT / "paper/main.tex").read_text()
 RESCUE_OUTPUT = ROOT / "paper/generated/rescue_numbers.tex"
 UNIT_OUTPUT = ROOT / "paper/generated/unit_numbers.tex"
-EXTRA_OUTPUTS = [ROOT / f"paper/generated/{n}_numbers.tex" for n in ("posthoc", "sweep", "noise", "anchor_ext", "robust", "td", "bench", "theory", "robust_anchor", "kimchi", "q1", "q2", "panel", "panel_fusion", "panel_kraken")]
+EXTRA_OUTPUTS = [ROOT / f"paper/generated/{n}_numbers.tex" for n in ("posthoc", "sweep", "noise", "anchor_ext", "robust", "td", "bench", "theory", "robust_anchor", "kimchi", "explore", "q1", "q2", "panel", "panel_fusion", "panel_kraken")]
 
 
 def test_generated_numbers_are_current():

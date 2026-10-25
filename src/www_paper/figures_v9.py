@@ -405,6 +405,7 @@ def build_captions() -> str:
     sims = sim["scenarios"]
     caps = {
         "CapAnchorScatter": (
+            f"Netting Tether's own price moves the Bitfinex daily slope from {raw['est']:.2f} to {net['est']:.2f}. "
             f"Each point is one of the {rep['n']} days of the Bitfinex anchored window. Panel (a) plots the Bitfinex USDT price $D$ against the BTC gap $L$; "
             f"the dashed line has slope one and the fitted slope is {raw['est']:.2f} (95\\% interval from a week-block bootstrap, {raw['ci95_week'][0]:.2f} to "
             f"{raw['ci95_week'][1]:.2f}). Panel (b) subtracts Tether's own deviation $X$ measured on Kraken and the fitted slope becomes "
@@ -431,11 +432,11 @@ def build_captions() -> str:
             f"{_pct(sims['S4']['estimators']['gmm']['rej_lam1'])}.",
             "reports/theory/simulation.json scenarios/*/estimators/{gmm,ols}"),
         "CapQErrors": (
-            f"Panel (a) gives the mean absolute error, on a log scale, of each method on the stressed hours $S_{{hi}}$ of the three kept events and pooled "
+            f"On the stressed hours the fuser's error is far below the median's. Panel (a) gives the mean absolute error, on a log scale, of each method on the stressed hours $S_{{\\mathrm{{hi}}}}$ of the three kept events and pooled "
             f"({q['pooled_s_hi']['fuser']['n']} hours). The pooled error is {q['pooled_s_hi']['fuser']['mae']:.1f} bps for the fuser, "
-            f"{q['pooled_s_hi']['B0']['mae']:.1f} for B0, {q['pooled_s_hi']['B2']['mae']:.1f} for B2, {q['pooled_s_hi']['B3']['mae']:.1f} for B3 and "
+            f"{q['pooled_s_hi']['B0']['mae']:.1f} for the median (B0), {q['pooled_s_hi']['B2']['mae']:.1f} for unit conversion (B2), {q['pooled_s_hi']['B3']['mae']:.1f} for CRH (B3) and "
             f"{q['pooled_s_hi']['oracle']['mae']:.1f} for the oracle. Panel (b) shows the pooled mean difference in log error against each comparator with a day-block "
-            f"95\\% interval; negative values favour the fuser, and the intervals against B0, B2 and B3 lie entirely below zero.",
+            f"95\\% interval; negative values favor the fuser, and the intervals against B0, B2 and B3 lie entirely below zero.",
             "reports/q1/results.json per_event, pooled_s_hi, primary"),
         "CapKimchiGaps": (
             f"Daily premium of the Korean won price over the dollar price for BTC, ETH and XRP in the two high-premium episodes. The three lines rise and fall "
