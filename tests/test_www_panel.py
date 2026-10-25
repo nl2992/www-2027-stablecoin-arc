@@ -10,6 +10,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from www_panel import cluster as CL  # noqa: E402
 from www_panel import run as R  # noqa: E402
 from www_paper import figures_panel as FP  # noqa: E402
 from www_paper import panel_macros as M  # noqa: E402
@@ -71,7 +72,57 @@ def test_committed_outputs_are_fresh():
     assert M.TABLE.read_text() == M.table(), "run `uv run python -m www_paper.panel_macros`"
     names = [line.split("}")[0].split("\\NumPN")[1] for line in M.NUMBERS.read_text().splitlines() if "newcommand" in line]
     assert all(n.isalpha() for n in names)
-    assert all("reports/panel/results.json" in line for line in M.NUMBERS.read_text().splitlines()[1:])
+    assert all("reports/panel/results.json" in line or "reports/panel/cluster.json" in line for line in M.NUMBERS.read_text().splitlines()[1:])
+
+
+def synthetic_totals(lams=(1.0, 0.9, 0.8, 1.1, 1.0), seed=3) -> dict:
+    """Per-unit moment totals [LY, L2Y, L2L, LL, n] with the planted IV slope lams[i] and equal weights."""
+    rng = np.random.default_rng(seed)
+    out = {}
+    for i, lam in enumerate(lams):
+        l2l = 100.0 + rng.normal(0, 1)
+        out[f"U{i}"] = np.array([lam * l2l, lam * l2l, l2l, l2l, 24.0])
+    return out
+
+
+def test_cluster_bootstrap_is_deterministic():
+    t = synthetic_totals()
+    a, b = CL.cluster_bootstrap(t), CL.cluster_bootstrap(t)
+    assert a == b
+    assert (CL.SEED, CL.DRAWS) == (20261025, 2000)
+    assert CL.cluster_bootstrap(t, seed=1) != a
+    assert a["lo"] <= a["lam"] <= a["hi"]
+
+
+def test_leave_one_out_on_synthetic_units():
+    t = synthetic_totals()
+    loo = CL.leave_one_out(t)
+    full = CL.iv_lam(sum(t.values()))
+    assert set(loo) == set(t)
+    assert min(loo.values()) <= full <= max(loo.values())
+    assert max(loo, key=loo.get) == "U2"  # dropping the lowest-slope unit raises the pooled slope the most
+    assert min(loo, key=loo.get) == "U3"  # dropping the highest-slope unit lowers it the most
+    assert all(0.8 < v < 1.1 for v in loo.values())
+    assert CL.leave_one_out({k: v for k, v in t.items() if k != "U2"})["U0"] == pytest.approx(
+        CL.iv_lam(sum(v for k, v in t.items() if k not in ("U0", "U2"))))
+
+
+def test_per_unit_summary_and_effective_n():
+    t = synthetic_totals()
+    s = CL.t_summary(CL.unit_lambdas(t))
+    assert s["lo"] < s["mean"] < s["hi"] and s["n"] == 5
+    assert CL.kish_n(t)["n_eff"] == pytest.approx(5.0, rel=1e-3)  # near-equal weights
+    skew = {**t, "U0": t["U0"] * 50}
+    assert CL.kish_n(skew)["n_eff"] < CL.kish_n(t)["n_eff"]
+    assert CL.design_effect(0.01, -0.01, 0.01, 8)["n_eff"] <= 8
+
+
+def test_cluster_json_matches_pooled_point_estimate():
+    c = json.loads((ROOT / "reports/panel/cluster.json").read_text())
+    r = json.loads((ROOT / "reports/panel/results.json").read_text())
+    assert c["pooled_point_check"]["this_run"] == pytest.approx(r["pooled_stress"]["iv"]["lam"], abs=1e-12)
+    assert len(c["design"]["units"]) == 8 and c["cluster_bootstrap"]["draws"] == 2000 and c["cluster_bootstrap"]["seed"] == 20261025
+    assert "POST HOC" in c["label"]
 
 
 def test_figure_is_fresh(tmp_path):

@@ -1,0 +1,163 @@
+{
+ "block_bootstrap_prereg": {
+  "hi": 0.9888636660131428,
+  "lam": 0.9779708238435406,
+  "lo": 0.9619259912026364
+ },
+ "cluster_bootstrap": {
+  "draws": 2000,
+  "hi": 0.9865298367151949,
+  "lam": 0.9779708238435406,
+  "lo": 0.9572889071631082,
+  "n_units": 8,
+  "sd": 0.007789511061959088,
+  "seed": 20261025
+ },
+ "design": {
+  "draws": 2000,
+  "sample": "pre-registered stress months, hourly",
+  "seed": 20261025,
+  "t_df": 7,
+  "units": [
+   "ARS",
+   "BRL",
+   "KRW",
+   "NGN",
+   "RUB",
+   "TRY",
+   "UAH",
+   "ZAR"
+  ]
+ },
+ "effective_units": {
+  "design_effect": {
+   "block_sd": 0.006871855819006722,
+   "cluster_sd": 0.007789511061959088,
+   "deff": 1.2849088463140002,
+   "n_eff": 6.226122594571192,
+   "n_eff_uncapped": 6.226122594571192
+  },
+  "kish": {
+   "n_eff": 4.7303044379900046,
+   "weights": {
+    "ARS": 0.030656926751301085,
+    "BRL": 0.15474848741767322,
+    "KRW": 0.08270702483892726,
+    "NGN": 0.01142543686704101,
+    "RUB": 0.30969493553072114,
+    "TRY": 0.27137897007774464,
+    "UAH": 0.05801263648953732,
+    "ZAR": 0.08137558202705425
+   }
+  }
+ },
+ "label": "POST HOC robustness; not pre-registered; changes nothing in results.json",
+ "leave_one_out": {
+  "ARS": 0.9776014205071702,
+  "BRL": 0.9752315880282874,
+  "KRW": 0.983596343268943,
+  "NGN": 0.9787763839043495,
+  "RUB": 0.9744778476058102,
+  "TRY": 0.9750379568222008,
+  "UAH": 0.9787798702640175,
+  "ZAR": 0.9785182427973925
+ },
+ "leave_one_out_range": {
+  "max": 0.983596343268943,
+  "max_dropped": "KRW",
+  "min": 0.9744778476058102,
+  "min_dropped": "RUB"
+ },
+ "per_unit_lambda": {
+  "ARS": 0.9896510084964385,
+  "BRL": 0.9929328002402029,
+  "KRW": 0.9155789114200986,
+  "NGN": 0.9082705406544752,
+  "RUB": 0.9857566120833258,
+  "TRY": 0.9858452313155022,
+  "UAH": 0.9648338324792517,
+  "ZAR": 0.9717911762718345
+ },
+ "per_unit_summary": {
+  "hi": 0.9925182950313824,
+  "lo": 0.9361467332089,
+  "mean": 0.9643325141201412,
+  "median": 0.9787738941775801,
+  "n": 8,
+  "sd": 0.03371420451930064,
+  "se": 0.011919771318953814,
+  "t": 2.3646243
+ },
+ "pooled_point_check": {
+  "results_json": 0.9779708238435406,
+  "this_run": 0.9779708238435406
+ },
+ "venue_concentration": {
+  "binance_only": {
+   "block_hi": 0.9877229225816228,
+   "block_lo": 0.9788445118730784,
+   "cluster_hi": 0.9878120723739084,
+   "cluster_lo": 0.9745006708575066,
+   "lam": 0.983596343268943,
+   "n_units": 7
+  },
+  "krw_only": {
+   "bithumb": {
+    "hi": 0.9599020772630226,
+    "lam": 0.832923433439431,
+    "lo": 0.6357201839849576
+   },
+   "block_hi": 1.0348396576277479,
+   "block_lo": 0.7591148068562813,
+   "lam": 0.9155789114200986,
+   "upbit": {
+    "hi": 1.1208000152060227,
+    "lam": 1.031880473053167,
+    "lo": 0.946115720300923
+   }
+  },
+  "note": "7 of 8 units are Binance markets; one external price (Kraken) and one instrument (the ETH gap) throughout"
+ },
+ "wedge_bps": {
+  "ARS": {
+   "median_abs_L_bps": 71277.19469674476,
+   "median_abs_dev_from_month_median_bps": 112.02344250395254,
+   "n_hours": 4934
+  },
+  "BRL": {
+   "median_abs_L_bps": 16668.191654713155,
+   "median_abs_dev_from_month_median_bps": 85.81856520129804,
+   "n_hours": 41499
+  },
+  "KRW": {
+   "median_abs_L_bps": 72439.64462887857,
+   "median_abs_dev_from_month_median_bps": 68.60192041029222,
+   "n_hours": 26819
+  },
+  "NGN": {
+   "median_abs_L_bps": 61674.341805328164,
+   "median_abs_dev_from_month_median_bps": 75.32529492284812,
+   "n_hours": 2942
+  },
+  "RUB": {
+   "median_abs_L_bps": 43029.5253026155,
+   "median_abs_dev_from_month_median_bps": 91.31657044589156,
+   "n_hours": 33284
+  },
+  "TRY": {
+   "median_abs_L_bps": 29197.261648212538,
+   "median_abs_dev_from_month_median_bps": 72.0660002557488,
+   "n_hours": 44308
+  },
+  "UAH": {
+   "median_abs_L_bps": 36401.46767254236,
+   "median_abs_dev_from_month_median_bps": 62.648570205667056,
+   "n_hours": 20837
+  },
+  "ZAR": {
+   "median_abs_L_bps": 29353.95688811531,
+   "median_abs_dev_from_month_median_bps": 67.38971628477884,
+   "n_hours": 14383
+  }
+ }
+}
