@@ -20,14 +20,16 @@ MACRO_FILES = [ROOT / "paper/generated/numbers.tex", ROOT / "paper/generated/res
                ROOT / "paper/generated/kimchi_numbers.tex",
                ROOT / "paper/generated/q1_numbers.tex",
                ROOT / "paper/generated/q2_numbers.tex",
-               ROOT / "paper/generated/panel_numbers.tex"]
+               ROOT / "paper/generated/panel_numbers.tex",
+               ROOT / "paper/generated/panel_fusion_numbers.tex",
+               ROOT / "paper/generated/panel_kraken_numbers.tex"]
 OUTPUT = ROOT / "docs/review/ABSTRACT_SUBMISSION.md"
 
 
 def macros() -> dict[str, str]:
     out: dict[str, str] = {}
     for f in MACRO_FILES:
-        for name, value in re.findall(r"\\newcommand\{\\(\w+)\}\{([^}]*)\}", f.read_text()):
+        for name, value in re.findall(r"\\newcommand\{\\(\w+)\}\{((?:[^{}]|\{[^{}]*\})*)\}", f.read_text()):
             out[name] = value
     return out
 
@@ -35,7 +37,7 @@ def macros() -> dict[str, str]:
 def plain(tex: str, table: dict[str, str]) -> str:
     text = re.sub(r"\\(Num\w+)\{\}", lambda m: table[m.group(1)], tex)
     text = re.sub(r"\\(Num[A-Za-z]+)", lambda m: table[m.group(1)], text)
-    text = text.replace("\\%", "%").replace("``", "\u201c").replace("''", "\u201d").replace("--", "\u2013")
+    text = text.replace("\\ensuremath{-}", "\u2212").replace("\\%", "%").replace("``", "\u201c").replace("''", "\u201d").replace("--", "\u2013")
     text = re.sub(r"\\emph\{([^}]*)\}", r"\1", text)
     text = re.sub(r"~", " ", text)
     if "\\" in text or "{" in text:
